@@ -1,4 +1,4 @@
-**************************************************************
+#**************************************************************
 *
 * Software:		LARRY DEMAR and DR. J
 * Initiated:		?
@@ -367,7 +367,7 @@ CK_2_CRED
 	MOVI	ADJCCONT,A0
 	CALLA	GET_ADJ 	;GET CONTINUE NUMBER
 	cmpi	2,a0		;1 or 2 is what we return
-	jrhi	c2c20		;>2?
+	jrhi	c2c20		;02H?
 	move	a0,a0		;Return NZ (unless its 2/0)
 	rets
 
@@ -925,11 +925,11 @@ SNDTST
 SNDTLP
 	CALLA	SCRCLR
 	MOVI	M_STEST,A0	;SOUND TEST MESSAGE
-	MOVI	>6080,A1
+	MOVI	06080H,A1
 	CLR	A2
 	MOVI	ROBO_WHITE,A3
 	CALLA	STRNEW1
-	MOVI	>B080,A1	;SCREEN ADDRESS
+	MOVI	0B080H,A1	;SCREEN ADDRESS
 	MOVE	A8,A0
 	CALLA	STRNEW1
 	ADDK	8,A0
@@ -965,13 +965,13 @@ SNDMES
 	.byte	"TUNE 1 (1)",0
 	.byte	MUSICHAN,1
 	.byte	"NO WAY (E6)",0
-	.byte	1,>e6
+	.byte	1,0e6H
 	.byte	"EXPL1 (30)",0
-	.byte	4,>30
+	.byte	4,030H
 	.byte	"TUNE 2 (9)",0
 	.byte	MUSICHAN,9
 	.byte	"SPIDER BOUNCE (83)",0
-	.byte	4,>83
+	.byte	4,083H
 	.byte	"MUSIC OFF (0)",0
 	.byte	MUSICHAN,0
 	.byte	0		;THE END OF TABLE
@@ -1255,7 +1255,7 @@ COIN_OCTO_AUDS
 ;;	AMAC	amst_s,0,AUDBEGIN,ROBO_GREEN	;On parachute
 ;;	AMAC	M_START,STARTS,0,ROBO_GREEN
 ;;	AMAC	M_PAIDC,0,AUDPAIDC,ROBO_WHITE
-;;	AMAC	M_SERV,0,AUDSERV,>1212
+;;	AMAC	M_SERV,0,AUDSERV,01212H
 ;;	AMAC	M_PLAYS,DOPLAYS,0,ROBO_YELLOW
 	.long	0
 
@@ -1285,7 +1285,7 @@ COIN1_AUDS
 COIN2_AUDS
 	.word	CP2_Y+AUD_DY+5,AUD_DY		;Y start, Y spacing
 	.word	AUD_LM,AUD_RM			;LFT/RGT margin X
-	AMAC	M_SERV,0,AUDSERV,>1212
+	AMAC	M_SERV,0,AUDSERV,01212H
 	AMAC	M_PLAYS,DOPLAYS,0,ROBO_YELLOW
 ;	AMAC	M_HSLEFT,DOHSLEFT,0,ROBO_YELLOW
 	.long	0
@@ -2006,7 +2006,7 @@ MISC_AUD
 	AMAC	M_P2MIN,DO_P2MIN,0,ROBO_YELLOW
 	AMAC	M_AVGT,DO_AVGT,0,ROBO_YELLOW
 	AMAC	M_ELAPSE,DO_ELAPSE,0,ROBO_YELLOW
-	AMAC	adiff_s,diff_prt,0,>1212
+	AMAC	adiff_s,diff_prt,0,01212H
 	.LONG	0
 
 adiff_s	TXTLINE	"GAME DIFFICULTY LEVEL"

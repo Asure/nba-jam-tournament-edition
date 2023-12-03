@@ -1,4 +1,4 @@
-**************************************************************
+#**************************************************************
 *
 * Software:		Shawn Liptak, Mark Turmell
 * Initiated:		10/8/92
@@ -34,29 +34,29 @@
 
 ;sounds external
 
-push1_snd	.word	>fd85,15,>8160,0	;Push ugh
-push2_snd	.word	>fd85,15,>816c,0	;Push ugh
-push3_snd	.word	>fd85,15,>816a,0	;Push ugh
+push1_snd	.word	0fd85H,15,08160H,0	;Push ugh
+push2_snd	.word	0fd85H,15,0816cH,0	;Push ugh
+push3_snd	.word	0fd85H,15,0816aH,0	;Push ugh
 
-**fall3_snd	.word	>fd86,20,>8170,0	;Fall ugh
+**fall3_snd	.word	0fd86H,20,08170H,0	;Fall ugh
 
-land_snd	.word	>fd89,40,>811d,0	;Body land on grnd
-boo_snd		.word	>f894,180,>8150,0	;Boo
+land_snd	.word	0fd89H,40,0811dH,0	;Body land on grnd
+boo_snd		.word	0f894H,180,08150H,0	;Boo
 
 
 
 ;not prime
-;oof_snd		.word	>f985,40,>815b,0	;Oof push
-;ungh_snd	.word	>f985,40,>815c,0	;Ungh push
+;oof_snd		.word	0f985H,40,0815bH,0	;Oof push
+;ungh_snd	.word	0f985H,40,0815cH,0	;Ungh push
 
 oof_snd		
-ungh_snd	.word	>fd85,15,>816c,0	;Push ugh
+ungh_snd	.word	0fd85H,15,0816cH,0	;Push ugh
 
-fall1_snd	.word	>fd88,20,>8164,0	;Fall ugh
-fall2_snd	.word	>fd88,20,>8166,0	;Fall ugh
+fall1_snd	.word	0fd88H,20,08164H,0	;Fall ugh
+fall2_snd	.word	0fd88H,20,08166H,0	;Fall ugh
 
-;fall1_snd	.word	>fd85,15,>8160,0	;Push ugh
-;fall2_snd	.word	>fd85,15,>816c,0	;Push ugh
+;fall1_snd	.word	0fd85H,15,08160H,0	;Push ugh
+;fall2_snd	.word	0fd85H,15,0816cH,0	;Push ugh
 
 
 ;symbols externally defined
@@ -85,7 +85,7 @@ fall2_snd	.word	>fd88,20,>8166,0	;Fall ugh
 
 ;equates for this file
 
-M_YF	.equ	>8000	;Y free (OFLAGS)
+M_YF	.equ	08000H	;Y free (OFLAGS)
 
 
 	.text

@@ -1,4 +1,4 @@
-**************************************************************
+#**************************************************************
 *
 * Software:		Shawn Liptak, Mark Turmell
 * Initiated:		9/17/92
@@ -33,33 +33,33 @@
 
 ;sounds external
 
-baddec_snd	.word	>f990,72,>81b7,0	;bad decision		<--change!
+baddec_snd	.word	0f990H,72,081b7H,0	;bad decision		<--change!
 
-win_snd		.word	>f3ff,>8,>80a5,0	;Winner snd
-;swipe_snd	.word	>f484,>4,>8119,0	;swipe at ball
-swat_snd	.word	>fd94,15,>8157,0	;Swat ball (Steals & blocks)
-steal_snd	.word	>fbf7,>8,>8093,0	;Steal
-sqk1_snd	.word	>f584,>4,>8114,0	;Sneaker squeek
-sqk2_snd	.word	>f584,>4,>8115,0
-sqk3_snd	.word	>f584,>4,>8116,0
-sqk4_snd	.word	>f584,>4,>8117,0
-airball_snd	.word	>f894,>38,>814d,0	;crowd screams "air ball"
-pass_snd	.word	>f3a7,>8,>808c,0	;short pass
-whstle_snd	.word	>f9f5,>30,>8148,0	;Ref whistle at game start
-;whstle2_snd	.word	>f9f5,>30,>8148,0	;Ref whistle for fouls
-tuneend_snd	.word	>f3ff,>8,>8003,0	;End game time tune
-;tuneend_snd	.word	>f3ff,>8,>8009,0	;End game time tune
-tuneend1_snd	.word	>f3ff,>8,>800a,0	;End quarter 1 tune
-tunehalf_snd	.word	>f3ff,>8,>8004,0	;Half time tune
+win_snd		.word	0f3ffH,08H,080a5H,0	;Winner snd
+;swipe_snd	.word	0f484H,04H,08119H,0	;swipe at ball
+swat_snd	.word	0fd94H,15,08157H,0	;Swat ball (Steals & blocks)
+steal_snd	.word	0fbf7H,08H,08093H,0	;Steal
+sqk1_snd	.word	0f584H,04H,08114H,0	;Sneaker squeek
+sqk2_snd	.word	0f584H,04H,08115H,0
+sqk3_snd	.word	0f584H,04H,08116H,0
+sqk4_snd	.word	0f584H,04H,08117H,0
+airball_snd	.word	0f894H,038H,0814dH,0	;crowd screams "air ball"
+pass_snd	.word	0f3a7H,08H,0808cH,0	;short pass
+whstle_snd	.word	0f9f5H,030H,08148H,0	;Ref whistle at game start
+;whstle2_snd	.word	0f9f5H,030H,08148H,0	;Ref whistle for fouls
+tuneend_snd	.word	0f3ffH,08H,08003H,0	;End game time tune
+;tuneend_snd	.word	0f3ffH,08H,08009H,0	;End game time tune
+tuneend1_snd	.word	0f3ffH,08H,0800aH,0	;End quarter 1 tune
+tunehalf_snd	.word	0f3ffH,08H,08004H,0	;Half time tune
 
-anncr1_snd	.word	>f9f6,120,>818e,0	;He shoots from downtown
-anncr2_snd	.word	>f9f6,110,>8190,0	;He shoots from the outside
-anncr4_snd	.word	>f9f6,80,>8183,0	;At the buzzer
-anncr5_snd	.word	>f9f6,70,>818b,0	;From long range
-;deflectd	.word	>f991,40,>81a9,0	;deflected
-fball_snd	.word	>fcb0,40,>8179,0	;Fire ball launch
-overtime_snd	.word	>f9ff,69,>8180,0	;overtime!
-rainbow_snd	.word	>f1a0,99,>81f0,0	;Rainbow
+anncr1_snd	.word	0f9f6H,120,0818eH,0	;He shoots from downtown
+anncr2_snd	.word	0f9f6H,110,08190H,0	;He shoots from the outside
+anncr4_snd	.word	0f9f6H,80,08183H,0	;At the buzzer
+anncr5_snd	.word	0f9f6H,70,0818bH,0	;From long range
+;deflectd	.word	0f991H,40,081a9H,0	;deflected
+fball_snd	.word	0fcb0H,40,08179H,0	;Fire ball launch
+overtime_snd	.word	0f9ffH,69,08180H,0	;overtime!
+rainbow_snd	.word	0f1a0H,99,081f0H,0	;Rainbow
 
 
 ;symbols externally defined
@@ -242,7 +242,7 @@ PLYRMAXX2	.equ	WRLDMID+370
  SUBR	plyr_start
 
 ;	movk	1,a0
-;	move	a0,@>fff80000,L
+;	move	a0,@0fff80000H,L
 
 	callr	joy_read2
 
@@ -260,17 +260,17 @@ PLYRMAXX2	.equ	WRLDMID+370
 	.ref	player4_data
 	movk	1,a3
 	move	@player1_data+PR_TEAMSDEF,a0,L
-	cmpi	>7ffffff,a0
+	cmpi	07ffffffH,a0
 	jrz	#easy0
 	move	@player2_data+PR_TEAMSDEF,a0,L
-	cmpi	>7ffffff,a0
+	cmpi	07ffffffH,a0
 	jrz	#easy0
 	movk	2,a3
 	move	@player3_data+PR_TEAMSDEF,a0,L
-	cmpi	>7ffffff,a0
+	cmpi	07ffffffH,a0
 	jrz	#easy0
 	move	@player4_data+PR_TEAMSDEF,a0,L
-	cmpi	>7ffffff,a0
+	cmpi	07ffffffH,a0
 	jrnz	#nea
 
 
@@ -305,9 +305,9 @@ PLYRMAXX2	.equ	WRLDMID+370
 
 ;	move	@plyrbighead,a0
 ;	zext	a0
-;	cmpi	>eaea,a0
+;	cmpi	0eaeaH,a0
 ;	jrnz	#no_3d
-;	movk	>f,a2
+;	movk	0fH,a2
 ;	move	a2,@stlpower
 ;	jruc	#adjoff
 ;#no_3d
@@ -317,7 +317,7 @@ PLYRMAXX2	.equ	WRLDMID+370
 	calla	GET_ADJ			;1-2
 	subk	1,a0
 	jrle	#adjoff			;No big heads?
-	movk	>f,a2
+	movk	0fH,a2
 #adjoff
 	move	a2,@plyrbighead
 
@@ -345,7 +345,7 @@ PLYRMAXX2	.equ	WRLDMID+370
  SUBRP	plyr_main
 
 
-	move	a13,a1			;>Clr PDATA & PSDATA areas
+	move	a13,a1			;0CHlr PDATA & PSDATA areas
 	addi	PDATA,a1
 	movi	(PRCSIZ-PDATA)/16,a2
 	clr	a0
@@ -353,7 +353,7 @@ PLYRMAXX2	.equ	WRLDMID+370
 	dsj	a2,#clrpd
 
 
-	move	a8,a0			;>Chk if plyr wants to override headsize
+	move	a8,a0			;0CHhk if plyr wants to override headsize
 	sll	4,a0			;*16
 	addi	P1CTRL,a0
 	move	*a0,a0
@@ -510,7 +510,7 @@ PLYRMAXX2	.equ	WRLDMID+370
 ;--
 
 
-	movi	team1,a14		;>Chk for conflicting pals
+	movi	team1,a14		;0CHhk for conflicting pals
 	move	*a14+,a3
 	move	*a14,a4
 	btst	1,a11
@@ -535,7 +535,7 @@ PLYRMAXX2	.equ	WRLDMID+370
 #altc	addk	32,a6			;*Alternates
 #keepc
 
-	move	a11,a2			;>Build plyr palette
+	move	a11,a2			;0BHuild plyr palette
 	sll	8+4,a2
 	addi	plyrpals_t,a2
 	PUSH	a2
@@ -629,7 +629,7 @@ PLYRMAXX2	.equ	WRLDMID+370
        	jruc	#smlhd
 
 
-#bighd2	subi	>a80,a0			;Really big head
+#bighd2	subi	0a80H,a0			;Really big head
 ;	addi	SCALETSIZE,a0
 #smlhd
 	move	a0,*a8(ODATA_p),L
@@ -749,7 +749,7 @@ PLYRMAXX2	.equ	WRLDMID+370
 	jrlt	#yesair
 	move	*a1(OYVEL),a0,L
 	abs	a0
-	cmpi	>c000,a0
+	cmpi	0c000H,a0
 	jrlt	#notinair
 
 #yesair
@@ -836,7 +836,7 @@ PLYRMAXX2	.equ	WRLDMID+370
 
 
 
-	move	*a13(plyr_num),a4	;>Do 1 in 4 ticks
+	move	*a13(plyr_num),a4	;0DHo 1 in 4 ticks
 	move	@PCNT,a0
 	move	a4,a1
 	sll	32-2,a0
@@ -908,9 +908,9 @@ PLYRMAXX2	.equ	WRLDMID+370
 	move	*a13(plyr_balldir),a1
 	sub	a1,a0
 	abs	a0
-	cmpi	>40,a0
+	cmpi	040H,a0
 	jrle	#dsml
-	subi	>80,a0
+	subi	080H,a0
 	abs	a0
 #dsml	subk	24,a0
 	jrle	#setdef			;Not between ball and hoop?
@@ -1044,7 +1044,7 @@ PLYRMAXX2	.equ	WRLDMID+370
 #noflm5
 
 	move	*a8(OZPOS),a1
-	cmpi	>410,a1
+	cmpi	0410H,a1
 	jrgt	#not_rear
 	move	*a8(OZVEL),a1,L
 	jrn	#fall			;Heading over scores table?
@@ -1364,7 +1364,7 @@ PLYRMAXX2	.equ	WRLDMID+370
 	move	*a13(plyr_autoctrl),a1
 	jrnz	#rok
 
-	move	*a8(OZPOS),a0		;>Clr joy bits that make us go out of bounds
+	move	*a8(OZPOS),a0		;0CHlr joy bits that make us go out of bounds
 	move	a0,a14
 	cmpi	CZMIN+8,a0
 	jrgt	#upok			;OK?
@@ -1503,7 +1503,7 @@ PLYRMAXX2	.equ	WRLDMID+370
 	sll	32-4,a0
 	jrz	#setdt			;No stick?
 
-	srl	32-4-3,a0		;>Convert to dir 0-127
+	srl	32-4-3,a0		;0CHonvert to dir 0-127
 	addi	#dirc_t,a0
 	movb	*a0,a0
 
@@ -1530,7 +1530,7 @@ PLYRMAXX2	.equ	WRLDMID+370
 	srl	32-7,a7
 	move	a7,*a13(plyr_dir)
 
-	movk	>1f,a0
+	movk	01fH,a0
 	callr	rnd
 	jrnz	#nosq			;No squeak?
 	move	@PCNT,a0
@@ -1624,7 +1624,7 @@ PLYRMAXX2	.equ	WRLDMID+370
 
 	move	*a13(plyr_autoctrl),a1
 	jrz	#noautoc
-	movi	>1a000,a14
+	movi	01a000H,a14
 	jruc	#noturb
 
 #noautoc
@@ -1633,7 +1633,7 @@ PLYRMAXX2	.equ	WRLDMID+370
 
 
 ;Double turbo mode
-;	addi	>5800,a14
+;	addi	05800H,a14
 
 	move	*a13(plyr_ownball),a1
 	jrle	#nobal			;Have ball?
@@ -1642,7 +1642,7 @@ PLYRMAXX2	.equ	WRLDMID+370
 ;half court, slow down!  I am trying to burn out the clock!
 
 	move	*a13(plyr_ohpdist),a1
-	cmpi	>174,a1
+	cmpi	0174H,a1
 	jrlt	#nobal
 	move	@shotimer,a1,L
 	jrz	#nobal
@@ -1652,7 +1652,7 @@ PLYRMAXX2	.equ	WRLDMID+370
 	move	*a13(plyr_ptsdown),a1
 	jrgt	#nobal			;If losing, don't slow down
 
-	subi	>3000,a14		;Slow him down
+	subi	03000H,a14		;Slow him down
 
 #nobal
 	move	@game_time,a1,L
@@ -1661,7 +1661,7 @@ PLYRMAXX2	.equ	WRLDMID+370
 
 ;Under 50 seconds, speed up losing players!
 
-;	move	*a13(plyr_ptsdown),a1	;>Adjust shot %
+;	move	*a13(plyr_ptsdown),a1	;0AdHjust shot %
 ;	jrle	#noxtraspd
 
 	move	*a13(plyr_num),a1
@@ -1678,28 +1678,28 @@ PLYRMAXX2	.equ	WRLDMID+370
 	cmp	a0,a1
 	jrge	#noxtraspd
 #yes
-	addi	>1c00,a14
+	addi	01c00H,a14
 #noxtraspd
 
 	move	*a13(plyr_offscrn),a1
 	jrz	#onscrn
-	addi	>e000,a14		;Speedup when offscrn on defense
+	addi	0e000H,a14		;Speedup when offscrn on defense
 	clr	a1
 	move	a1,*a13(plyr_offscrn)
 #onscrn
 
 	move	*a13(plyr_ownball),a1
 	jrz	#chkturb
-;MJT	subi	>e00,a14		;Slow offense down
-	subi	>e80,a14		;Slow offense down
+;MJT	subi	0e00H,a14		;Slow offense down
+	subi	0e80H,a14		;Slow offense down
 	move	a1,a1
 	jrn	#chkturb		;Buddy has ball?
-;MJT	subi	>1000,a14		;Slow him down
-	subi	>1100,a14		;Slow him down
+;MJT	subi	01000H,a14		;Slow him down
+	subi	01100H,a14		;Slow him down
 #chkturb
 	move	*a13(plyr_turbon),a0
 	jrz	#noturb
-	addi	>3e00,a14
+	addi	03e00H,a14
 #noturb
 	movk	11b,a0
 	and	a6,a0
@@ -1714,7 +1714,7 @@ PLYRMAXX2	.equ	WRLDMID+370
 
 ;	btst	4,a6			;3point DEBUG
 ;	jrz	#DEBUG
-;	movi	>2000,a14
+;	movi	02000H,a14
 ;#DEBUG
 
 	move	*a8(OXPOS),a4
@@ -1760,7 +1760,7 @@ PLYRMAXX2	.equ	WRLDMID+370
 
 ;-------
 
-					;>Do turbo meters
+					;0DHo turbo meters
 	btst	BUT3_B,a6		;Turbo but
 	jrz	#turdone
 
@@ -1800,20 +1800,20 @@ PLYRMAXX2	.equ	WRLDMID+370
 	jrnz	#s1
 
 	move	@game_time,a0,L
-	cmpi	>2040906,a0
+	cmpi	02040906H,a0
 	jrge	#noelbo
 
 #s1
 					;Shrink turbo meter for this plyr
 	move	*a13(plyr_PDATA_p),a2,L
 	move	*a2(ply_turbo),a1
-	cmpi	>5,a1			;>2f is max
+	cmpi	05H,a1			;02fH is max
 	jrlt	#noelbo			;Turbo too low?
-	subk	>4,a1			;Use a bunch up!
+	subk	04H,a1			;Use a bunch up!
 	move	a1,*a2(ply_turbo)
 	move	*a2(ply_meter_imgs+40h),a0,L
 	move	*a0(OFSET),a1		;Shrink meter
-	addk	>4,a1
+	addk	04H,a1
 	move	a1,*a0(OFSET)
 
 #notingame
@@ -1906,7 +1906,7 @@ PLYRMAXX2	.equ	WRLDMID+370
 	cmpi	RUNDRIBTURB_SEQ,a2
 	jrhi	#anicnt
 
-	move	a6,a1			;>Change ani if no joy
+	move	a6,a1			;0CHhange ani if no joy
 	sll	32-4,a1
 	jrz	#nojoy			;Joy neutral?
 
@@ -1925,24 +1925,24 @@ PLYRMAXX2	.equ	WRLDMID+370
 	btst	WALK_B,a0
 	jrnz	#anicnt
 
-	srl	32-4-3,a1		;>Convert to dir 0-127
+	srl	32-4-3,a1		;0CHonvert to dir 0-127
 	addi	#dirc_t,a1
 	movb	*a1,a1
 
 	sub	a7,a1
 	move	a1,a14			;Calc dir dist
 	abs	a14
-	cmpi	>40,a14
+	cmpi	040H,a14
 	jrle	#diffsml
 	neg	a1
-	subi	>80,a14
+	subi	080H,a14
 	abs	a14
 #diffsml
 	movk	WALKFDEF_SEQ,a0
 	cmpi	16,a14
 	jrlt	#setseq
 	movk	WALKBDEF_SEQ,a0
-	cmpi	>30,a14
+	cmpi	030H,a14
 	jrgt	#setseq
 	movk	WALKLDEF_SEQ,a0
 	move	a1,a1
@@ -2187,7 +2187,7 @@ PLYRMAXX2	.equ	WRLDMID+370
 	subi	WRLDMID,a0
 	abs	a0
 	move	a0,a3
-	movi	>20000,a14
+	movi	020000H,a14
 	cmpi	HOOPRX-WRLDMID+13,a0
 	jrge	#undrbb			;Under backboard?
 
@@ -2198,7 +2198,7 @@ PLYRMAXX2	.equ	WRLDMID+370
 ;	cmpi	HOOPRX-WRLDMID+13,a3
 ;	jrgt	#znubb			;!Under rim?
 
-	movi	>10000,a14
+	movi	010000H,a14
 	move	*a8(OXVAL),a1,L
 	cmpi	WRLDMID<<16,a1
 	jrlt	#rhoop
@@ -2206,7 +2206,7 @@ PLYRMAXX2	.equ	WRLDMID+370
 #rhoop	add	a14,a1
 	move	a1,*a8(OXVAL),L
 
-	movi	>10000,a14
+	movi	010000H,a14
 #undrbb
 	move	*a8(OZVAL),a1,L
 	cmpi	CZMID<<16,a1
@@ -2279,9 +2279,9 @@ PLYRMAXX2	.equ	WRLDMID+370
 	move	*a13(plyr_dir),a1
 	sub	a1,a0
 	abs	a0
-	cmpi	>40,a0
+	cmpi	040H,a0
 	jrle	#rdsml
-	subi	>80,a0
+	subi	080H,a0
 	abs	a0
 #rdsml	subk	32,a0
 	jrgt	#pass			;Not between ball and hoop?
@@ -2460,7 +2460,7 @@ PLYRMAXX2	.equ	WRLDMID+370
 	movk	DRN_PASS_M,a1
 ;	btst	6,a6
 ;	jrz	#regds			;No turbo?
-;	ori	>8000,a1
+;	ori	08000H,a1
 #regds	move	a1,*a0(plyr_d_cflgs)
 	jruc	#slp
 
@@ -2597,7 +2597,7 @@ PUR_C	.equ	4
 BLK_C	.equ	3
 WHT_C	.equ	6
 ;YEL_C	.equ	7
-	.asg	>80,I	;Always keeps home colors
+	.asg	080H,I	;Always keeps home colors
 
 #team_t	.byte	RED_C,GRN_C,BLU_C,RED_C,BLU_C,BLU_C,BLU_C,BLU_C
 	.byte	BLU_C,RED_C,BLU_C,RED_C,PUR_C,BLK_C,GRN_C,BLU_C
@@ -2610,7 +2610,7 @@ WHT_C	.equ	6
 * A0=Sequence #
 * A7=Dir 0-127
 * A13=*Player process
-* >A10=New ani cnt
+* 0A10H=New ani cnt
 * Trashes scratch
 
  SUBR	plyr_setseq
@@ -2634,7 +2634,7 @@ WHT_C	.equ	6
 	move	a1,*a13(plyr_seqflgs)
 
 
-	btst	DRIBBLE_B,a1		;>Calc new dribble mode
+	btst	DRIBBLE_B,a1		;0CaHlc new dribble mode
 	jrnz	#d
 
 	move	*a13(plyr_dribmode),a14
@@ -2770,7 +2770,7 @@ WHT_C	.equ	6
 	jruc	#x
 
 
-#4p					;>4 player version
+#4p					;04H player version
 	movi	P1CTRL,a1		;A1=*PxCTRL
 
 	move	@SWITCH,a2
@@ -2878,7 +2878,7 @@ WHT_C	.equ	6
 
 #nop3	srl	1,a0			;P4
 	jrnc	#x
-	move	@SWITCH+>20,a2
+	move	@SWITCH+020H,a2
 	not	a2
 	addk	16,a1
 	sll	32-8,a2
@@ -3018,7 +3018,7 @@ WHT_C	.equ	6
 
 #nop3	srl	1,a0
 	jrnc	#x
-	move	@SWITCH+>20,a2
+	move	@SWITCH+020H,a2
 	not	a2
 	addk	16,a1
 	sll	32-8,a2
@@ -3091,7 +3091,7 @@ WHT_C	.equ	6
 ;	jreq	#next			;Same team?
 
 
-	move	*a9(OZPOS),a2		;>Chk Z
+	move	*a9(OZPOS),a2		;0CHhk Z
 	sub	a6,a2
 	abs	a2
 	move	*a9(OIMG),a1,L
@@ -3102,7 +3102,7 @@ WHT_C	.equ	6
 	cmp	a3,a2
 	jrge	#next
 
-	move	*a9(OXPOS),a1		;>Chk box X
+	move	*a9(OXPOS),a1		;0CHhk box X
 	move	*a9(OXANI+16),a14
 	add	a14,a1
 	move	*a9(OSIZEX),a14
@@ -3173,13 +3173,13 @@ WHT_C	.equ	6
 	sub	a0,a2
 	move	a2,a14
 	abs	a14
-	cmpi	>40,a14
+	cmpi	040H,a14
 	jrle	#dsml
 	neg	a2
 #dsml	move	a2,a2
 	jrge	#angpos			;Positive angle?
-	addi	>28+>28,a0
-#angpos	subi	>28,a0
+	addi	028H+028H,a0
+#angpos	subi	028H,a0
 
 	addk	4,a0
 	sll	32-7,a0
@@ -3251,7 +3251,7 @@ WHT_C	.equ	6
 	move	*a13(plyr_ownball),a0
 	jrgt	#next			;I have ball?
 
-	move	*a13(plyr_stagcnt),a10	;>Add some stagger
+	move	*a13(plyr_stagcnt),a10	;0AddH some stagger
 	move	*a9(OPLINK),a14,L
 
 	move	*a14(plyr_seqflgs),a0
@@ -3318,7 +3318,7 @@ WHT_C	.equ	6
 	calla	RNDPER
 	jrls	#nopop
 
-;	movk	>1f,a0
+;	movk	01fH,a0
 ;	callr	rnd
 ;	jrnz	#nopop
 
@@ -3469,7 +3469,7 @@ tryblk_t
 	move	*a2(IFLAGS),a2
 	jrnn	#small			;Bit15 = Scale
 
-	addi	SCALETSIZE,a14		;>c80
+	addi	SCALETSIZE,a14		;0c80H
 
 ;Shawn, help!
 	move	@baby_flag,a2
@@ -3480,7 +3480,7 @@ tryblk_t
 #small
 	move	@baby_flag,a2
 	jrz	#cont
-	addi	>1a00,a14		;Small bodies for small artwork
+	addi	01a00H,a14		;Small bodies for small artwork
 #cont
 	move	a14,*a8(ODATA_p),L
 
@@ -3588,9 +3588,9 @@ tryblk_t
 	cmpi	40h,a14			;48h
 	jrlt	#tag1			;Too close for hook?
 	move	*a8(OZPOS),a14
-	cmpi	>430,a14
+	cmpi	0430H,a14
 	jrlt	#tag1
-	cmpi	>4fa,a14
+	cmpi	04faH,a14
 	jrgt	#tag1
 ;Okay to do hook!	
 
@@ -3627,9 +3627,9 @@ tryblk_t
 	move	*a13(plyr_dir),a14
 	sub	a3,a14
 	abs	a14
-	cmpi	>40,a14
+	cmpi	040H,a14
 	jrle	#nodov
-	subi	>80,a14
+	subi	080H,a14
 	abs	a14
 #nodov
 	subk	24,a14
@@ -3650,7 +3650,7 @@ tryblk_t
 ;	cmpi	36,a4			;Short range
 ;	jrle	#sj			;Too close?
 
-	move	*a8(OXVEL),a14,L	;>Chk velocity
+	move	*a8(OXVEL),a14,L	;0CHhk velocity
 	abs	a14
 	srl	16,a14
 	jrnz	#velok
@@ -3719,9 +3719,9 @@ tryblk_t
 	move	*a13(plyr_o1dir),a2
 	sub	a3,a2
 	abs	a2
-	cmpi	>40,a2
+	cmpi	040H,a2
 	jrle	#o1dsml
-	subi	>80,a2
+	subi	080H,a2
 	abs	a2
 #o1dsml
 
@@ -3772,9 +3772,9 @@ tryblk_t
 	move	*a13(plyr_o2dir),a2
 	sub	a3,a2
 	abs	a2
-	cmpi	>40,a2
+	cmpi	040H,a2
 	jrle	#o2dsml
-	subi	>80,a2
+	subi	080H,a2
 	abs	a2
 #o2dsml
 ;	subk	32,a2
@@ -3948,8 +3948,8 @@ tryblk_t
 ;	calla	snd_play1
 ;	DIE
 ;
-;push1_snd	.word	>fd85,15,>8160,0	;Push ugh
-;dnk_snd		.word	>fda9,120,>8167,0
+;push1_snd	.word	0fd85H,15,08160H,0	;Push ugh
+;dnk_snd		.word	0fda9H,120,08167H,0
 
 dnkthru_t
 	.word	0,0,0,0,0,0,0,100,150,250,350
@@ -4094,7 +4094,7 @@ dnkthru_t
 ;only do it if under 5 seconds in quarter
 	movk	SHOOTDESP2_SEQ,a0	;Heave
 	move	@game_time,a14,L
-	cmpi	>500,a14
+	cmpi	0500H,a14
 	jrlt	#heave			;Do it
 
 	move	@PCNT,a0
@@ -4316,7 +4316,7 @@ blktype_t
 	addi	250,a9
 #notshort
 
-	cmpi	>130,a11
+	cmpi	0130H,a11
 	jrlt	#notlong
 	subi	990,a9			;680 ;790 ;890
 ;	LOCKUP
@@ -4343,9 +4343,9 @@ blktype_t
 
 	sub	a10,a0
 	abs	a0
-	cmpi	>40,a0
+	cmpi	040H,a0
 	jrle	#1dsml
-	subi	>80,a0
+	subi	080H,a0
 	abs	a0
 #1dsml	subk	20,a0
 	jrge	#1far			;Not between me and hoop?
@@ -4376,9 +4376,9 @@ blktype_t
 
 	sub	a10,a0
 	abs	a0
-	cmpi	>40,a0
+	cmpi	040H,a0
 	jrle	#2dsml
-	subi	>80,a0
+	subi	080H,a0
 	abs	a0
 #2dsml	subk	20,a0
 	jrge	#2far			;Not between me and hoop?
@@ -4403,7 +4403,7 @@ blktype_t
 	jrge	#accok
 	movi	50,a9
 #accok
-;	CREATE	>6000,plyr_showshotpercent
+;	CREATE	06000H,plyr_showshotpercent
 
 
 
@@ -4421,7 +4421,7 @@ blktype_t
 #nohelping
 
 
-	move	*a13(plyr_ptsdown),a1	;>Adjust shot %
+	move	*a13(plyr_ptsdown),a1	;0AdHjust shot %
 	move	a1,a2
 	movk	20,a0			;20
 	mpys	a0,a1
@@ -4459,12 +4459,12 @@ blktype_t
 	movi	55,a0			;80
 	calla	RNDPER
 	jrls	nomis
-	move	*a13(plyr_ptsdown),a1	;>Adjust shot %
+	move	*a13(plyr_ptsdown),a1	;0AdHjust shot %
 	jrgt	nomis
 	movi	150,a9
 nomis
 	move	@game_time,a1,L
-	cmpi	>400,a1
+	cmpi	0400H,a1
 	jrgt	#nohelp
 
 	move	a2,a0
@@ -4489,14 +4489,14 @@ nomis
 ;I'm winning big, if end of game, allow shot to go in.
 
 	move	@game_time,a1,L
-	cmpi	>200,a1
+	cmpi	0200H,a1
 	jrgt	#losingbige
 
 	jruc	#willtie
 
 #tryhelp
 ;	move	@game_time,a1,L
-;	cmpi	>200,a1
+;	cmpi	0200H,a1
 ;	jrgt	#nobuzz
 ;
 ;#nobuzz
@@ -4568,14 +4568,14 @@ nomis
 
 	addi	750,a9			;Player is on fire!
 
-	cmpi	>148,a11
+	cmpi	0148H,a11
 	jrlt	#nofire
 
 	movi	100,a9			;Player is on fire!
 
 #nofire
 
-	move	*a7(OIMG),a3,L		;>Convert ball from player relative
+	move	*a7(OIMG),a3,L		;0CHonvert ball from player relative
 	move	*a3(IANIOFFX),a3
 	sll	16,a3
 	move	*a7(OXANI),a14,L
@@ -4594,7 +4594,7 @@ nomis
 	sll	16-(14+1),a3		;*64k /16k /2
 
 
-	move	*a13(plyr_seq),a0	;>Adjust pos for desp shots
+	move	*a13(plyr_seq),a0	;0AdHjust pos for desp shots
 	cmpi	DUNKLAY5_SEQ,a0
 	jrnz	#ck2
 	movi	[-10,0],a3
@@ -4700,7 +4700,7 @@ lay_perc
 ;	movi	890,a9			;Make those layups go in...
 	movi	870,a9			;800
 
-	move	*a13(plyr_ptsdown),a1	;>Adjust shot %
+	move	*a13(plyr_ptsdown),a1	;0AdHjust shot %
 	jrgt	#noms
 
 ;fix
@@ -4721,7 +4721,7 @@ lay_perc
 #xx	rets
 
 #noly0
-	move	*a13(plyr_seqflgs),a14	;>Adjust pos for desp shots
+	move	*a13(plyr_seqflgs),a14	;0AdHjust pos for desp shots
 	btst	LAYUP_B,a14
 	jrz	#noly
 ;Funky new layups
@@ -4777,7 +4777,7 @@ lay_perc
 	move	a11,a1
 	sll	32-6,a3
 	srl	32-6,a3
-	subk	>20,a3
+	subk	020H,a3
 	abs	a3			;0-32
 
 	move	*a13(plyr_ohpdist),a14	;distance from hoop
@@ -4790,7 +4790,7 @@ lay_perc
 	.ref	show_shot
 	jrz	#nosp
 	PUSH	a1,a7
-	CREATE	>6000,plyr_showshotpercent
+	CREATE	06000H,plyr_showshotpercent
 	PULL	a1,a7
 #nosp
 
@@ -4847,7 +4847,7 @@ lay_perc
 	move	a0,a0
 	jrnz	#athoop
 
-#offbb					;>Close bank shot
+#offbb					;0CHlose bank shot
 
 	move	@plyrnumonfire,a0
 	jrnn	#athoop			;cont
@@ -4919,7 +4919,7 @@ lay_perc
 #athoop
 	cmpi	55,a9			;25
 	jrge	#notlng
-	cmpi	>148,a11
+	cmpi	0148H,a11
 	jrlt	#notlng
 
 	movi	120,a0			;250
@@ -4927,10 +4927,10 @@ lay_perc
 	jrls	#noairb
 	jruc	#airok
 #notlng
-	movk	>1f,a0			;3%
+	movk	01fH,a0			;3%
 	cmpi	55,a11
 	jrge	#chkairb		;Not a close shot?
-	movi	>7f,a0			;1.5%
+	movi	07fH,a0			;1.5%
 #chkairb
 	callr	rnd
 	jrnz	#noairb			;No air ball?
@@ -4964,7 +4964,7 @@ lay_perc
 	move	a0,@shot_percentage	;miss
 	move	a2,a7
 
-	movk	20,a2			;>Air ball ;18
+	movk	20,a2			;0AHir ball ;18
 	movk	1,a0
 	callr	rnd
 	jrnz	#airf
@@ -4989,7 +4989,7 @@ lay_perc
 	clr	a0
 	move	a0,@shot_percentage	;miss
 
-	movk	>1f,a0			;Miss
+	movk	01fH,a0			;Miss
 	callr	rnd
 	sll	4,a0
 	addi	#misszx_t,a0
@@ -5051,7 +5051,7 @@ lay_perc
 
 	move	a1,a2
 
-	move	a3,a4			;>Calc distance (long+short/2.667)
+	move	a3,a4			;0CaHlc distance (long+short/2.667)
 	move	a5,a14
 	abs	a4
 	abs	a14
@@ -5127,7 +5127,7 @@ lay_perc
 	jrls	#regshot
 ;Try a rainbow!
 	move	@shot_distance,a0
-	cmpi	>104,a0
+	cmpi	0104H,a0
 	jrgt	#regshot
 	addk	20,a4
 
@@ -5286,7 +5286,7 @@ lay_perc
 
 
 	PUSHP	a8
-	movi	crplate2,a0		;>Change credit plate
+	movi	crplate2,a0		;0CHhange credit plate
 	move	@crplate_ptr,a8,L
 	move	*a8(OCTRL),a1
 	calla	obj_aniq
@@ -5438,7 +5438,7 @@ lay_perc
 	move	a1,a2
 
 	move	a0,a14
-	addi	>40,a14
+	addi	040H,a14
 	sll	32-7,a14
 	srl	32-7,a14
 
@@ -5549,10 +5549,10 @@ lay_perc
 	jrlt	#notbh
 
 	move	*a13(plyr_o1dist),a1
- 	cmpi	>78,a1
+ 	cmpi	078H,a1
 	jrlt	#notbh
 	move	*a13(plyr_o2dist),a1
-	cmpi	>78,a1
+	cmpi	078H,a1
 	jrlt	#notbh
  
 ;Want to stop ball from being inbounded using the BHPASS
@@ -5584,7 +5584,7 @@ lay_perc
 	move	a1,a2
 
 	move	a0,a14
-	addi	>40,a14
+	addi	040H,a14
 	sll	32-7,a14
 	srl	32-7,a14
 
@@ -5644,7 +5644,7 @@ lay_perc
 	move	a0,a7
 	move	a0,a3
 
-	addi	>40,a0
+	addi	040H,a0
 	sll	32-7,a0
 	srl	32-7,a0
 	move	a0,*a4(plyr_newdir)
@@ -5668,7 +5668,7 @@ lay_perc
 
 	PUSH	a0
 
-	movk	PS_DUNKS_TRY,a0		;>Dec dunk stats
+	movk	PS_DUNKS_TRY,a0		;0DecH dunk stats
 	move	*a13(plyr_num),a1
 	.ref	dec_player_stat
 	calla	dec_player_stat
@@ -5856,7 +5856,7 @@ lay_perc
 	move	*a0,a0
 	sll	32-4,a0
 	srl	32-4,a0
-	ori	>8000,a0
+	ori	08000H,a0
 	move	a0,*a4(plyr_nojoy)	;Neg
 	move	a0,*a4(plyr_newdir)
 
@@ -5911,7 +5911,7 @@ lay_perc
 	move	*a0(OZPOS),a1
 	sub	a1,a5			;Y delta
 
-	move	a3,a4			;>Calc distance (long+short/2.667)
+	move	a3,a4			;0CaHlc distance (long+short/2.667)
 	move	a5,a14
 	abs	a4
 	abs	a14
@@ -5946,7 +5946,7 @@ lay_perc
 	add	a2,a1
 	move	*a1,a1	
 
-;	movi	95,a1			;>Calc time
+;	movi	95,a1			;0CaHlc time
 
 	cmpi	300,a4
 	jrgt	#ct
@@ -6010,7 +6010,7 @@ lay_perc
 ;	jruc	#outb1
 ;#newway
 
-	move	a4,b0			;>Calc where ball should go
+	move	a4,b0			;0CaHlc where ball should go
 	move	*a2(OXVAL),a3,L
 	move	*a2(OXANI),a14,L
 	add	a14,a3
@@ -6090,7 +6090,7 @@ lay_perc
 	jrnz	#level
 ;Shawn, we have to fix this bounce pass
 
-	move	*a13(plyr_seq),a14	;>Chk for overhead pass
+	move	*a13(plyr_seq),a14	;0CHhk for overhead pass
 	subi	PASSNEWOH_SEQ,a14
 	jrz	#level
 	move	*a13(plyr_seqdir),a14
@@ -6161,7 +6161,7 @@ RTIME	.equ	25
 	jrnz	#x			;Someone else doing?
 
 	move	@game_time,a14,L
-	cmpi	>500,a14
+	cmpi	0500H,a14
 	jrge	#heave			;Do it
 	
 	move	*a13(plyr_num),a0
@@ -6173,7 +6173,7 @@ RTIME	.equ	25
 	jrz	#x			;Br=teammate shot
 
 #heave
-					;>Chk my start
+					;0CHhk my start
 	move	*a8(OZPOS),a1		;Get SZ
 	subi	CZMID,a1
 	abs	a1
@@ -6197,7 +6197,7 @@ RTIME	.equ	25
 	move	@ballobj_p,a5,L
 
 
-	movk	RTIME,a0		;>Find new Y pos in x ticks
+	movk	RTIME,a0		;0FHind new Y pos in x ticks
 	move	*a5(OYVAL),a4,L
 	move	*a5(OYVEL),a2,L
 	movi	GRAVB,a1
@@ -6218,12 +6218,12 @@ RTIME	.equ	25
 
 
 
-	move	*a5(OXVAL),a6,L		;>Find new XZ pos in x ticks
+	move	*a5(OXVAL),a6,L		;0FHind new XZ pos in x ticks
 	move	*a5(OXANI),a14,L
 	add	a14,a6
 	move	*a5(OZVAL),a7,L
 
-	move	a6,a0			;>Chk ball pos
+	move	a6,a0			;0CHhk ball pos
 	move	a7,a1
 	sra	16,a0
 	sra	16,a1
@@ -6249,7 +6249,7 @@ RTIME	.equ	25
 	sra	16,a6
 	sra	16,a7
 
-	move	a6,a0			;>Chk my destination
+	move	a6,a0			;0CHhk my destination
 	move	a7,a1
 
 	subi	CZMID,a1
@@ -6351,9 +6351,9 @@ RTIME	.equ	25
 	move	*a0(OIMG),a14,L
 	move	*a14(IANIOFFY),a14
 	add	a14,a1
-	movi	->a00,a14		;Push it towards gnd
+	movi	-0a00H,a14		;Push it towards gnd
 	mpys	a14,a1
-	addi	>16000,a1
+	addi	016000H,a1
 	move	a1,*a0(OYVEL),L
 #x	rets
 
@@ -6361,8 +6361,8 @@ RTIME	.equ	25
 #*******************************
 * Get a scaled objects anipt XY
 * A8=*Obj
-* >A0=Scaled Ani X (16:16)
-* >A1=Scaled Ani Y
+* 0A0H=Scaled Ani X (16:16)
+* 0A1H=Scaled Ani Y
 * Trashes scratch
 
  SUBR	anipt_getsclxy
@@ -6411,8 +6411,8 @@ RTIME	.equ	25
 #*******************************
 * Get a scaled objects 2nd anipt XY
 * A8=*Obj
-* >A0=Scaled Ani2 X (16:16)
-* >A1=Scaled Ani2 Y
+* 0A0H=Scaled Ani2 X (16:16)
+* 0A1H=Scaled Ani2 Y
 * Trashes scratch
 
  SUBRP	anipt2_getsclxy
@@ -6466,8 +6466,8 @@ RTIME	.equ	25
 #*******************************
 * Get a scaled objects 3rd anipt XY
 * A8=*Obj
-* >A0=Scaled Ani3 X (16:16)
-* >A1=Scaled Ani3 Y
+* 0A0H=Scaled Ani3 X (16:16)
+* 0A1H=Scaled Ani3 Y
 * Trashes scratch
 
  SUBR	anipt3_getsclxy
@@ -6583,7 +6583,7 @@ RTIME	.equ	25
 
  SUBRP	plyr_headalign
 
-	move	*a13(plyr_headobj_p),a6,L ;>A6=*Head obj
+	move	*a13(plyr_headobj_p),a6,L ;0A6H=*Head obj
 
 	move	*a8(OIMG),a0,L		;>Set Z
 	move	*a8(OZPOS),a14
@@ -6594,7 +6594,7 @@ RTIME	.equ	25
 	neg	a1
 	move	a1,*a6(OMISC)		;Z offset
 
-					;>Calc head scale anixy (A3,A5)
+					;0CaHlc head scale anixy (A3,A5)
 	subi	GZBASE,a14		;-Base
 	jrge	#zok
 	clr	a14
@@ -6666,7 +6666,7 @@ RTIME	.equ	25
 ;	neg	a1
 ;	move	a1,*a6(OMISC)		;Z offset
 ;
-;					;>Calc head scale anixy (A3,A5)
+;					;0CaHlc head scale anixy (A3,A5)
 ;	subi	GZBASE,a14		;-Base
 ;	jrge	#zok
 ;	clr	a14
@@ -6965,7 +6965,7 @@ RTIME	.equ	25
 	movk	1,a0			;Start jump
 	move	a0,*a11(plyr_jmpcnt)
 
-	movi	t1bcnt,a9		;>Count button1 down presses
+	movi	t1bcnt,a9		;0CHount button1 down presses
 	move	*a11(plyr_num),a1
 	btst	1,a1
 	jrz	#t1
@@ -7002,8 +7002,8 @@ RTIME	.equ	25
 	cmp	a1,a0
 	jrlt	#x			;Less presses than opponent?
 
-	movi	->18000,a0
-	movi	->f000,a1
+	movi	-018000H,a0
+	movi	-0f000H,a1
   	movi	-20,a3
 	btst	1,a5
 	jrz	#tm1a
@@ -7051,7 +7051,7 @@ RTIME	.equ	25
 	jrne	#not1st
 
 
-	movi	AUD_1STQUARTR,a0	;>1st guarter
+	movi	AUD_1STQUARTR,a0	;01Hst guarter
 	calla	AUD1
 
 	JSRP	plyr_endqfinishshot
@@ -7078,7 +7078,7 @@ RTIME	.equ	25
 	subk	1,a0
 	jrne	#nothalf
 
-	movi	AUD_HALFTIME,a0		;>2nd quarter
+	movi	AUD_HALFTIME,a0		;02Hnd quarter
 	calla	AUD1
 
 	JSRP	plyr_endqfinishshot
@@ -7193,18 +7193,18 @@ RTIME	.equ	25
  	movk	1,a0
 	move	a0,@HALT
 
-;	movi	>1e0c3100,a0
+;	movi	01e0c3100H,a0
 ;	move	a0,@WORLDTLX,L
 ;	clr	a0
 ;	move	a0,@WORLDTLY,L
 ;	move	@ballobj_p,a0,L
-;	movi	>1e7d6caf,a1
+;	movi	01e7d6cafH,a1
 ;	move	a1,*a0(OXVAL),L
-;	movi	>ffc265df,a1
+;	movi	0ffc265dfH,a1
 ;	move	a1,*a0(OYVAL),L
-;	movi	>0476c52d,a1
+;	movi	00476c52dH,a1
 ;	move	a1,*a0(OZVAL),L
-;	movi	>2500,a1
+;	movi	02500H,a1
 ;	move	a1,*a0(OZVEL),L
 ;	clr	a1
 ;	move	a1,*a0(OXVEL),L
@@ -7232,9 +7232,9 @@ delay_arws
 doplyrs
 ;	move	@plyrbighead,a0
 ;	zext	a0
-;	cmpi	>eaea,a0
+;	cmpi	0eaeaH,a0
 ;	jrnz	#no_3d
-;	movk	>f,a2
+;	movk	0fH,a2
 ;	move	a2,@stlpower
 ;	jruc	#adjoff
 ;#no_3d
@@ -7243,7 +7243,7 @@ doplyrs
 ;	calla	GET_ADJ			;1-2
 ;	subk	1,a0
 ;	jrle	#adjoff			;No big heads?
-;	movk	>f,a2
+;	movk	0fH,a2
 ;#adjoff
 ;	move	a2,@plyrbighead
 
@@ -7263,7 +7263,7 @@ doplyrs
 	subk	1,a0
 	jrne	#not3rd
 
-	movi	AUD_3RDQUARTR,a0	;>3rd quarter
+	movi	AUD_3RDQUARTR,a0	;03Hrd quarter
 	calla	AUD1
 	JSRP	plyr_endqfinishshot
 
@@ -7297,7 +7297,7 @@ doplyrs
 	subk	1,a0
 	jrne	#not4th
 
-	movi	AUD_4THQUARTR,a0	;>4th quarter
+	movi	AUD_4THQUARTR,a0	;04Hth quarter
 	calla	AUD1
 
 	JSRP	plyr_endqfinishshot
@@ -7326,7 +7326,7 @@ doplyrs
 	jreq	#tie
 
 
-#endofg	callr	endgame_audits		;>End of game
+#endofg	callr	endgame_audits		;0EHnd of game
 
 	SLEEP	TSEC*3-30
 
@@ -7536,7 +7536,7 @@ fix_floor
 ;	move	a0,@scores+10h
 
 
-	movi	AUD_COMPLETED,a0	;>4th quarter
+	movi	AUD_COMPLETED,a0	;04Hth quarter
 	calla	AUD1
 
 	move	@scores,a0
@@ -7715,7 +7715,7 @@ do_cpu_stats
 	movk	1,a0
 	callr	plyr_setac
 
-	clr	a0			;>Clr ctrl bits
+	clr	a0			;0CHlr ctrl bits
 	movi	P1CTRL,a1
 	movk	2,b0
 #stlp	move	a0,*a1+,L
@@ -8571,7 +8571,7 @@ plyr_tobend
 * Move the other 3 guys who aren't getting the ball
 * A9=1st pnum of team on defense (0/2)
 * A11=Team who gets ball (0=1, !0=2)
-* >A0=0 if all players in position (Pass CC)
+* 0A0H=0 if all players in position (Pass CC)
 * Trashes scratch, A2-A4
 
  SUBRP	plyrtob_moveo3
@@ -8613,7 +8613,7 @@ plyr_tobend
 * A0=X to seek
 * A1=Z
 * A2=Player # (0-3)
-* >A0=Joy bits set or 0 (Pass CC)
+* 0A0H=Joy bits set or 0 (Pass CC)
 * Trashes scratch
 
  SUBRP	plyrtob_seekxy
@@ -8814,7 +8814,7 @@ plyr_tobend
 	move	*a13(pft_pball),a10	;>Pass with turbo
 	sll	4,a10			;*16
 	addi	P1CTRL,a10
-	movi	>60,a0
+	movi	060H,a0
 	move	a0,*a10
 
 	SLEEPK	10
@@ -8847,12 +8847,12 @@ plyr_tobend
 	move	*a11+,a3		;Z
 	addi	300,a3
 	movi	alignimg_t,a2
-	movi	>800c|M_NOCOLL|M_3D|M_NOSCALE,a4
+	movi	0800cH|M_NOCOLL|M_3D|M_NOSCALE,a4
 	movi	CLSDEAD,a5
 	clr	a6
 	clr	a7
 	calla	BEGINOBJ2
-	movi	>101,a0
+	movi	0101H,a0
 	move	a0,*a8(OCONST)
 	movi	-300,a0
 	move	a0,*a8(OMISC)		;Z offset
@@ -8870,12 +8870,12 @@ plyr_tobend
 	move	*a11+,a3		;Z
 	addi	300,a3
 	movi	alignimg_t,a2
-	movi	>800c|M_NOCOLL|M_3D|M_NOSCALE,a4
+	movi	0800cH|M_NOCOLL|M_3D|M_NOSCALE,a4
 	movi	CLSDEAD,a5
 	clr	a6
 	clr	a7
 	calla	BEGINOBJ2
-	movi	>101,a0
+	movi	0101H,a0
 	move	a0,*a8(OCONST)
 	movi	-300,a0
 	move	a0,*a8(OMISC)		;Z offset
@@ -8892,12 +8892,12 @@ plyr_tobend
 	clr	a1			;Y
 	move	*a11+,a3		;Z
 	movi	alignimg_t,a2
-	movi	>800c|M_NOCOLL|M_3D|M_NOSCALE,a4
+	movi	0800cH|M_NOCOLL|M_3D|M_NOSCALE,a4
 	movi	CLSDEAD,a5
 	clr	a6
 	clr	a7
 	calla	BEGINOBJ
-	movi	>101,a0
+	movi	0101H,a0
 	move	a0,*a8(OCONST)
 #5	move	*a11+,a0		;X
 	cmpi	4000,a0
@@ -8948,7 +8948,7 @@ plyr_tobend
 alignimg_t
 	.word	1,1,0,0
 	.long	0
-	.word	>1000
+	.word	01000H
 	.long	#test_p
 
 
@@ -8967,12 +8967,12 @@ alignimg_t
 	clr	a1			;Y
 	movi	CZMIN,a3		;Z
 	movi	alignimg_t,a2
-	movi	>800c|M_NOCOLL|M_3D|M_NOSCALE,a4
+	movi	0800cH|M_NOCOLL|M_3D|M_NOSCALE,a4
 	movi	CLSDEAD,a5
 	clr	a6
 	clr	a7
 	calla	BEGINOBJ
-	movi	>101,a0
+	movi	0101H,a0
 	move	a0,*a8(OCONST)
 	movi	-300,a0
 	move	a0,*a8(OMISC)		;Z offset
@@ -9016,7 +9016,7 @@ alignimg_t
 * A6=Dest X
 * A7=Dest Z
 * A8=*Source obj
-* >A0=0-127
+* 0A0H=0-127
 * Trashes A0-A2,A14
 
  SUBRP	seekdir_obxz128
@@ -9032,7 +9032,7 @@ alignimg_t
 * A1=Src Y
 * A6=Dest X
 * A7=Dest Y
-* >A0=0-127
+* 0A0H=0-127
 * Trashes A0-A2,A14
 
  SUBR	seekdir_xyxy128
@@ -9056,7 +9056,7 @@ alignimg_t
 
 #200	sll	2,a2			;Oct*4
 #oct01	clr	a14
-	cmp	a1,a0			;>Cmp slope
+	cmp	a1,a0			;0CHmp slope
 	jrhs	#300
 
 	srl	2+2,a1			;Bigger/16
@@ -9078,7 +9078,7 @@ alignimg_t
 	jrlo	#lp2
 
 
-#x	movi	>7f,a0
+#x	movi	07fH,a0
 	and	a2,a0
 	rets
 
@@ -9089,8 +9089,8 @@ alignimg_t
 * Get dir and distance from object to object
 * A0=*Dest obj
 * A8=*Source obj
-* >A0=0-127
-* >A1=Distance
+* 0A0H=0-127
+* 0A1H=Distance
 * Trashes scratch, A2,A6,A7
 
  SUBRP	seekdirdist_obob128
@@ -9105,8 +9105,8 @@ alignimg_t
 * A6=Dest X
 * A7=Dest Z
 * A8=*Source obj
-* >A0=0-127
-* >A1=Distance
+* 0A0H=0-127
+* 0A1H=Distance
 * Trashes scratch, A2
 
  SUBR	seekdirdist_obxz128
@@ -9136,7 +9136,7 @@ alignimg_t
 
 #200	sll	2,a2			;Oct*4
 #oct01	clr	a14
-	cmp	a1,a0			;>Cmp slope
+	cmp	a1,a0			;0CHmp slope
 	jrhs	#300
 
 	move	a0,b0			;Save distance
@@ -9163,14 +9163,14 @@ alignimg_t
 #350	cmp	a1,a14
 	jrlo	#lp2
 
-#x					;>Calc distance (long+short/2.667)
+#x					;0CaHlc distance (long+short/2.667)
 	srl	1,b0			;Shorter/2
 	add	b0,b1
 	srl	2,b0			;Shorter/8
 	sub	b0,b1
 	move	b1,a1
 
-	movi	>7f,a0
+	movi	07fH,a0
 	and	a2,a0
 	rets
 
@@ -9179,7 +9179,7 @@ alignimg_t
 ********************************
 * Get random # with mask
 * A0=Mask
-* >A0=Rnd # (Pass CC)
+* 0A0H=Rnd # (Pass CC)
 * Trashes scratch
 
  SUBRP	rnd
@@ -9198,7 +9198,7 @@ alignimg_t
 ********************************
 * Quickly produce a random # in range 0-X
 * A0=X
-* >A0=Random # (0 to A0) (No CC)
+* 0A0H=Random # (0 to A0) (No CC)
 * Trashes scratch
 
  SUBR	rndrng0

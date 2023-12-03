@@ -1,4 +1,4 @@
-**************************************************************
+#**************************************************************
 *
 * Software:		Shawn Liptak, Mark Turmell
 * Initiated:		10/8/92
@@ -32,7 +32,7 @@
 
 ;sounds external
 
-swipe_snd	.word	>f584,>4,>8119,0	;swipe at ball
+swipe_snd	.word	0f584H,04H,08119H,0	;swipe at ball
 
 ;symbols externally defined
 
@@ -64,7 +64,7 @@ swipe_snd	.word	>f584,>4,>8119,0	;swipe at ball
 
 ;equates for this file
 
-M_YF	.equ	>8000	;Y free (OFLAGS)
+M_YF	.equ	08000H	;Y free (OFLAGS)
 
 
 	.text

@@ -37,7 +37,7 @@
 
 ;sounds
 
-tunegc_snd	.word	>f3fe,1,>800c,0		;Grand champion play tune
+tunegc_snd	.word	0f3feH,1,0800cH,0		;Grand champion play tune
 
 ;symbols defined in this file
 
@@ -190,23 +190,23 @@ tunegc_snd	.word	>f3fe,1,>800c,0		;Grand champion play tune
 
 
 
-congrats_snd	.word	>f3ff,>8,>8004,0	;
+congrats_snd	.word	0f3ffH,08H,08004H,0	;
 
 
 
 ********************************
 #*
 
-MAX_CRTIME	equ	>7fff		;30*60
+MAX_CRTIME	equ	07fffH		;30*60
 TEAMSEL_PAGE	equ	0*256
 NAMENT_PAGE	equ	1*256
 
-	.asg	>5e+5,x1
-	.asg	>a1+5,x1a
-	.asg	>e4+5,x2a
-	.asg	>ad+5,x1b
-	.asg	>12f5+2,y1
-	.asg	>131f,y1a
+	.asg	05eH+5,x1
+	.asg	0a1H+5,x1a
+	.asg	0e4H+5,x2a
+	.asg	0adH+5,x1b
+	.asg	012f5H+2,y1
+	.asg	0131fH,y1a
 
 
 	.def	ladder_imgs0
@@ -220,162 +220,162 @@ ladder_imgs0
 	.long	MAS_DAL,x2a,y1
 	.long	T_MAVS,x1b,y1a
 
-	.long	THM_DET,x1,y1->b3
-	.long	DUM_DET,x1a,y1->b3
+	.long	THM_DET,x1,y1-0b3H
+	.long	DUM_DET,x1a,y1-0b3H
 
-	.long	ELL_DET,x2a,y1->b3
-;	.long	HOR_HOU,x2a,y1->b3
-	.long	T_PISS,x1b,y1a->b3
+	.long	ELL_DET,x2a,y1-0b3H
+;	.long	HOR_HOU,x2a,y1-0b3H
+	.long	T_PISS,x1b,y1a-0b3H
 
 	.long	0
 
 ladder_imgs1
 ;4
-	.long	BAK_MLW,x1,y1->b3*2-2
-	.long	EDW_MLW,x1a,y1->b3*2-2
-	.long	DAY_MLW,x2a,y1->b3*2-2
-	.long	T_BUCKS,x1b,y1a->b3*2-2
+	.long	BAK_MLW,x1,y1-0b3H*2-2
+	.long	EDW_MLW,x1a,y1-0b3H*2-2
+	.long	DAY_MLW,x2a,y1-0b3H*2-2
+	.long	T_BUCKS,x1b,y1a-0b3H*2-2
 
-	.long	GUG_WAS,x1,y1->b3*3-2
-	.long	ELL_WAS,x1a,y1->b3*3-2
-	.long	CHE_WAS,x2a,y1->b3*3-2
-	.long	T_BULTS,x1b,y1a->b3*3-2
+	.long	GUG_WAS,x1,y1-0b3H*3-2
+	.long	ELL_WAS,x1a,y1-0b3H*3-2
+	.long	CHE_WAS,x2a,y1-0b3H*3-2
+	.long	T_BULTS,x1b,y1a-0b3H*3-2
 
-	.long	SIM_SAC,x1,y1->b3*4-4
-	.long	HUR_SAC,x1a,y1->b3*4-4
-	.long	RIC_SAC,x2a,y1->b3*4-4
-	.long	T_KINGS,x1b,y1a->b3*4-4
+	.long	SIM_SAC,x1,y1-0b3H*4-4
+	.long	HUR_SAC,x1a,y1-0b3H*4-4
+	.long	RIC_SAC,x2a,y1-0b3H*4-4
+	.long	T_KINGS,x1b,y1a-0b3H*4-4
 
-	.long	LTN_MIN,x1,y1->b3*5-4
-	.long	PRS_MIN,x1a,y1->b3*5-4
-	.long	RID_MIN,x2a,y1->b3*5-4
-	.long	T_TWOLV,x1b,y1a->b3*5-4
+	.long	LTN_MIN,x1,y1-0b3H*5-4
+	.long	PRS_MIN,x1a,y1-0b3H*5-4
+	.long	RID_MIN,x2a,y1-0b3H*5-4
+	.long	T_TWOLV,x1b,y1a-0b3H*5-4
 
 	.long	0
 
 ladder_imgs2
 ;4
-	.long	PEE_LAK,x1,y1->b3*6-6
-	.long	DIV_LAK,x1a,y1->b3*6-6
-	.long	CAM_LAK,x2a,y1->b3*6-6
-	.long	T_LAKS,x1b,y1a->b3*6-6
+	.long	PEE_LAK,x1,y1-0b3H*6-6
+	.long	DIV_LAK,x1a,y1-0b3H*6-6
+	.long	CAM_LAK,x2a,y1-0b3H*6-6
+	.long	T_LAKS,x1b,y1a-0b3H*6-6
 
-	.long	WLK_ATL,x1,y1->b3*7-6
-;	.long	MAN_CLP,x1,y1->b3*7-6
-	.long	HRP_CLP,x1a,y1->b3*7-6
-	.long	ROB_CLP,x2a,y1->b3*7-6
-	.long	T_CLIPS,x1b,y1a->b3*7-6
+	.long	WLK_ATL,x1,y1-0b3H*7-6
+;	.long	MAN_CLP,x1,y1-0b3H*7-6
+	.long	HRP_CLP,x1a,y1-0b3H*7-6
+	.long	ROB_CLP,x2a,y1-0b3H*7-6
+	.long	T_CLIPS,x1b,y1a-0b3H*7-6
 
-	.long	MCD_BOS,x1,y1->b3*8-8
-	.long	BRO_BOS,x1a,y1->b3*8-8
-	.long	GAM_BOS,x2a,y1->b3*8-8
-	.long	T_CELTS,x1b,y1a->b3*8-8
+	.long	MCD_BOS,x1,y1-0b3H*8-8
+	.long	BRO_BOS,x1a,y1-0b3H*8-8
+	.long	GAM_BOS,x2a,y1-0b3H*8-8
+	.long	T_CELTS,x1b,y1a-0b3H*8-8
 
-	.long	WEA_PHL,x1,y1->b3*9-8
-;	.long	BRA_PHL,x1a,y1->b3*9-8
-	.long	BRA_PHL,x2a,y1->b3*9-8
-	.long	HRN_PHL,x2a+400,y1->b3*9-8
-	.long	T_76RS,x1b,y1a->b3*9-8
+	.long	WEA_PHL,x1,y1-0b3H*9-8
+;	.long	BRA_PHL,x1a,y1-0b3H*9-8
+	.long	BRA_PHL,x2a,y1-0b3H*9-8
+	.long	HRN_PHL,x2a+400,y1-0b3H*9-8
+	.long	T_76RS,x1b,y1a-0b3H*9-8
 
 	.long	0
 
 ladder_imgs3
 ;4
-	.long	MIL_IND,x1,y1->b3*10-10
-	.long	SMI_IND,x1a,y1->b3*10-10
-	.long	SEL_IND,x2a,y1->b3*10-10
-	.long	T_PACER,x1b,y1a->b3*10-10
+	.long	MIL_IND,x1,y1-0b3H*10-10
+	.long	SMI_IND,x1a,y1-0b3H*10-10
+	.long	SEL_IND,x2a,y1-0b3H*10-10
+	.long	T_PACER,x1b,y1a-0b3H*10-10
 
-	.long	COL_NEJ,x1,y1->b3*11-10
-	.long	AND_NEJ,x1a,y1->b3*11-10
-	.long	MOR_NEJ,x2a,y1->b3*11-10
-	.long	T_NETS,x1b,y1a->b3*11-10
+	.long	COL_NEJ,x1,y1-0b3H*11-10
+	.long	AND_NEJ,x1a,y1-0b3H*11-10
+	.long	MOR_NEJ,x2a,y1-0b3H*11-10
+	.long	T_NETS,x1b,y1a-0b3H*11-10
 
-	.long	PRC_CLE,x1,y1->b3*12-12
-	.long	DAU_CLE,x1a,y1->b3*12-12
-	.long	NAN_CLE,x2a,y1->b3*12-12
-	.long	T_CAVS,x1b,y1a->b3*12-12
+	.long	PRC_CLE,x1,y1-0b3H*12-12
+	.long	DAU_CLE,x1a,y1-0b3H*12-12
+	.long	NAN_CLE,x2a,y1-0b3H*12-12
+	.long	T_CAVS,x1b,y1a-0b3H*12-12
 
-	.long	MUT_DEN,x1,y1->b3*13-12
-	.long	ELL_DEN,x1a,y1->b3*13-12
-	.long	ROG_DEN,x2a,y1->b3*13-12
-	.long	T_NUGS,x1b,y1a->b3*13-12
+	.long	MUT_DEN,x1,y1-0b3H*13-12
+	.long	ELL_DEN,x1a,y1-0b3H*13-12
+	.long	ROG_DEN,x2a,y1-0b3H*13-12
+	.long	T_NUGS,x1b,y1a-0b3H*13-12
 
 	.long	0
 
 ladder_imgs4
 ;4
-	.long	HRD_GLD,x1,y1->b3*14-14
-	.long	MUL_GLD,x1a,y1->b3*14-14
-	.long	WEB_GLD,x2a,y1->b3*14-14
-	.long	T_WARS,x1b,y1a->b3*14-14
+	.long	HRD_GLD,x1,y1-0b3H*14-14
+	.long	MUL_GLD,x1a,y1-0b3H*14-14
+	.long	WEB_GLD,x2a,y1-0b3H*14-14
+	.long	T_WARS,x1b,y1a-0b3H*14-14
 
-	.long	DRX_PRT,x1,y1->b3*15-14
-	.long	POR_PRT,x1a,y1->b3*15-14
-	.long	ROB_PRT,x2a,y1->b3*15-14
-	.long	T_BLAZ,x1b,y1a->b3*15-14
+	.long	DRX_PRT,x1,y1-0b3H*15-14
+	.long	POR_PRT,x1a,y1-0b3H*15-14
+	.long	ROB_PRT,x2a,y1-0b3H*15-14
+	.long	T_BLAZ,x1b,y1a-0b3H*15-14
 
-	.long	RCE_MIA,x1,y1->b3*16-16
-	.long	SKL_MIA,x1a,y1->b3*16-16
-	.long	MIN_MIA,x2a,y1->b3*16-16
-	.long	T_HEAT,x1b,y1a->b3*16-16
+	.long	RCE_MIA,x1,y1-0b3H*16-16
+	.long	SKL_MIA,x1a,y1-0b3H*16-16
+	.long	MIN_MIA,x2a,y1-0b3H*16-16
+	.long	T_HEAT,x1b,y1a-0b3H*16-16
 
-	.long	JON_CHA,x1,y1->b3*17-16
-	.long	HWK_CHA,x1a,y1->b3*17-16
-	.long	MOU_CHA,x2a,y1->b3*17-16
-	.long	T_HORS,x1b,y1a->b3*17-16
+	.long	JON_CHA,x1,y1-0b3H*17-16
+	.long	HWK_CHA,x1a,y1-0b3H*17-16
+	.long	MOU_CHA,x2a,y1-0b3H*17-16
+	.long	T_HORS,x1b,y1a-0b3H*17-16
 
 	.long	0
 
 ladder_imgs5
 ;4
-	.long	SKL_ORL,x1,y1->b3*18-18
-	.long	HAR_ORL,x1a,y1->b3*18-18
-	.long	AND_ORL,x2a,y1->b3*18-18
-	.long	T_MAGIC,x1b,y1a->b3*18-18
+	.long	SKL_ORL,x1,y1-0b3H*18-18
+	.long	HAR_ORL,x1a,y1-0b3H*18-18
+	.long	AND_ORL,x2a,y1-0b3H*18-18
+	.long	T_MAGIC,x1b,y1a-0b3H*18-18
 
-	.long	ROB_SAN,x1,y1->b3*19-18
-	.long	ROD_SAN,x1a,y1->b3*19-18
-	.long	ELS_SAN,x2a,y1->b3*19-18
-	.long	T_SPURS,x1b,y1a->b3*19-18
+	.long	ROB_SAN,x1,y1-0b3H*19-18
+	.long	ROD_SAN,x1a,y1-0b3H*19-18
+	.long	ELS_SAN,x2a,y1-0b3H*19-18
+	.long	T_SPURS,x1b,y1a-0b3H*19-18
 
-	.long	MLN_UTA,x1,y1->b3*20-20
-	.long	STK_UTA,x1a,y1->b3*20-20
-	.long	BEN_UTA,x2a,y1->b3*20-20
-	.long	T_JAZZ,x1b,y1a->b3*20-20
+	.long	MLN_UTA,x1,y1-0b3H*20-20
+	.long	STK_UTA,x1a,y1-0b3H*20-20
+	.long	BEN_UTA,x2a,y1-0b3H*20-20
+	.long	T_JAZZ,x1b,y1a-0b3H*20-20
 
-	.long	EWG_NEY,x1,y1->b3*21-20
-	.long	MAS_NEY,x1a,y1->b3*21-20
-	.long	STA_NEY,x2a,y1->b3*21-20
-	.long	T_KNIKS,x1b,y1a->b3*21-20
+	.long	EWG_NEY,x1,y1-0b3H*21-20
+	.long	MAS_NEY,x1a,y1-0b3H*21-20
+	.long	STA_NEY,x2a,y1-0b3H*21-20
+	.long	T_KNIKS,x1b,y1a-0b3H*21-20
 
 	.long	0
 
 ladder_imgs6
 ;4
-	.long	MAN_CLP,x1,y1->b3*22-22
-;	.long	WLK_ATL,x1,y1->b3*22-22
-	.long	AUG_ATL,x1a,y1->b3*22-22
-	.long	WLS_ATL,x2a,y1->b3*22-22
-	.long	T_HAWKS,x1b,y1a->b3*22-22
+	.long	MAN_CLP,x1,y1-0b3H*22-22
+;	.long	WLK_ATL,x1,y1-0b3H*22-22
+	.long	AUG_ATL,x1a,y1-0b3H*22-22
+	.long	WLS_ATL,x2a,y1-0b3H*22-22
+	.long	T_HAWKS,x1b,y1a-0b3H*22-22
 
-	.long	BRK_PHX,x1,y1->b3*23-22
-;	.long	MAJ_PHX,x1,y1->b3*23-22
-	.long	MAJ_PHX,x1a,y1->b3*23-22
-	.long	JOH_PHX,x2a,y1->b3*23-22
-	.long	T_SUNS,x1b,y1a->b3*23-22
+	.long	BRK_PHX,x1,y1-0b3H*23-22
+;	.long	MAJ_PHX,x1,y1-0b3H*23-22
+	.long	MAJ_PHX,x1a,y1-0b3H*23-22
+	.long	JOH_PHX,x2a,y1-0b3H*23-22
+	.long	T_SUNS,x1b,y1a-0b3H*23-22
 
-	.long	OLA_HOU,x1,y1->b3*24-24
-	.long	MAX_HOU,x1a,y1->b3*24-24
-;	.long	ELL_DET,x2a,y1->b3
-;	.long	ELL_DET,x2a,y1->b3*24-24
-	.long	HOR_HOU,x2a,y1->b3*24-24
-	.long	T_ROCKS,x1b,y1a->b3*24-24
+	.long	OLA_HOU,x1,y1-0b3H*24-24
+	.long	MAX_HOU,x1a,y1-0b3H*24-24
+;	.long	ELL_DET,x2a,y1-0b3H
+;	.long	ELL_DET,x2a,y1-0b3H*24-24
+	.long	HOR_HOU,x2a,y1-0b3H*24-24
+	.long	T_ROCKS,x1b,y1a-0b3H*24-24
 
-	.long	KMP_SEA,x1,y1->b3*25-24
-	.long	PAY_SEA,x1a,y1->b3*25-24
-	.long	GIL_SEA,x2a,y1->b3*25-24
-	.long	T_SONICS,x1b,y1a->b3*25-24
+	.long	KMP_SEA,x1,y1-0b3H*25-24
+	.long	PAY_SEA,x1a,y1-0b3H*25-24
+	.long	GIL_SEA,x2a,y1-0b3H*25-24
+	.long	T_SONICS,x1b,y1a-0b3H*25-24
 
 
 	.long	0
@@ -1170,7 +1170,7 @@ but_offs	.word	04h,0ch,1ch,24h
 
 	RETP
 
-bounce_snd	.word	>fc80,10,>8129,0	;Ball bounce
+bounce_snd	.word	0fc80H,10,08129H,0	;Ball bounce
 
 #*****************************************************************************
 
@@ -1243,8 +1243,8 @@ bounce_snd	.word	>fc80,10,>8129,0	;Ball bounce
 
 	.asg	3ah,X1
 	.asg	320,XF
-	.asg	>d7,Y1
-	.asg	>e6,Y2
+	.asg	0d7H,Y1
+	.asg	0e6H,Y2
 
 ;Display cities first
 
@@ -1310,7 +1310,7 @@ bounce_snd	.word	>fc80,10,>8129,0	;Ball bounce
 	movi	999,a1			;max value
 	calla	dec_to_asc
 	calla	copy_string
-	movi	>a0,a0
+	movi	0a0H,a0
 	move	a0,@mess_cursx
 	movi	Y1-1,a0
 	move	a0,@mess_cursy
@@ -1320,7 +1320,7 @@ bounce_snd	.word	>fc80,10,>8129,0	;Ball bounce
 	movi	999,a1			;max value
 	calla	dec_to_asc
 	calla	copy_string
-	movi	>a0,a0
+	movi	0a0H,a0
 	move	a0,@mess_cursx
 	movi	Y2-1,a0
 	move	a0,@mess_cursy
@@ -1332,7 +1332,7 @@ bounce_snd	.word	>fc80,10,>8129,0	;Ball bounce
 	movi	999,a1			;max value
 	calla	dec_to_asc
 	calla	copy_string
-	movi	>c8,a0
+	movi	0c8H,a0
 	move	a0,@mess_cursx
 	movi	Y1-1,a0
 	move	a0,@mess_cursy
@@ -1342,7 +1342,7 @@ bounce_snd	.word	>fc80,10,>8129,0	;Ball bounce
 	movi	999,a1			;max value
 	calla	dec_to_asc
 	calla	copy_string
-	movi	>c8,a0
+	movi	0c8H,a0
 	move	a0,@mess_cursx
 	movi	Y2-1,a0
 	move	a0,@mess_cursy
@@ -1354,7 +1354,7 @@ bounce_snd	.word	>fc80,10,>8129,0	;Ball bounce
 	movi	999,a1			;max value
 	calla	dec_to_asc
 	calla	copy_string
-	movi	>f0,a0
+	movi	0f0H,a0
 	move	a0,@mess_cursx
 	movi	Y1-1,a0
 	move	a0,@mess_cursy
@@ -1364,7 +1364,7 @@ bounce_snd	.word	>fc80,10,>8129,0	;Ball bounce
 	movi	999,a1			;max value
 	calla	dec_to_asc
 	calla	copy_string
-	movi	>f0,a0
+	movi	0f0H,a0
 	move	a0,@mess_cursx
 	movi	Y2-1,a0
 	move	a0,@mess_cursy
@@ -1376,7 +1376,7 @@ bounce_snd	.word	>fc80,10,>8129,0	;Ball bounce
 	movi	999,a1			;max value
 	calla	dec_to_asc
 	calla	copy_string
-	movi	>118,a0
+	movi	0118H,a0
 	move	a0,@mess_cursx
 	movi	Y1-1,a0
 	move	a0,@mess_cursy
@@ -1386,7 +1386,7 @@ bounce_snd	.word	>fc80,10,>8129,0	;Ball bounce
 	movi	999,a1			;max value
 	calla	dec_to_asc
 	calla	copy_string
-	movi	>118,a0
+	movi	0118H,a0
 	move	a0,@mess_cursx
 	movi	Y2-1,a0
 	move	a0,@mess_cursy
@@ -1961,78 +1961,78 @@ result_mod
 
 	
 #team_snds
-	.word	>f9a9,63,>81f6,0	;He scores    0  GOSKIE	
-	.word	>f9a9,47,>81c8,0	;Hello!       1  RIVETT		
-	.word	>f9a9,70,>819c,0	;boom shaka   2  CARLTON
-	.word	>f9a9,67,>8172,0	;It's blowout 3  DIVITA
-	.word	>f9a9,46,>81c2,0	;Yes!	      4  LIPTAK
-	.word	>f9a1,87,>81ab,0	;whoomp       5  TURMELL
-	.word	>f9a9,67,>8172,0	;It's blowout 6  HEY
-	.word	>f9a9,67,>8172,0	;It's blowout 7  PETRO
-	.word	>f9a9,63,>81f6,0	;He scores    8  NEWCOMER
-	.word	>f9a9,100,>81d6,0	;coffin       9  OURSLER
-	.word	>f9a9,47,>81c8,0	;Hello!       10 LASCO
-	.word	>f9a9,70,>819c,0	;boom shak    11 MORRIS
-	.word	>f9a9,47,>81c8,0	;Hello!       12 MEDNICK
-	.word	>f9a9,47,>812B,0	;shoes?       13 FORDEN	
-	.word	>f9a9,47,>812b,0	;fantastic    14 KINKEAD
-	.word	>f9a9,47,>81c8,0	;Hello!       15 JARVIS	
-;	.word	>f9a9,47,>8196,0	;	      16 SUBZ	
-	.word	>f9a9,47,>81c8,0	;Hello!       17 HAEGER	
-	.word	>f9a9,47,>81b7,0	;bad decision 18 SIMPSON
-	.word	>f9a9,47,>81c8,0	;Hello!       19 GREEN	
-	.word	>f9a9,47,>81c8,0	;Hello!       20 GENTILE
-	.word	>f9a9,67,>81e0,0	;its good     21 DILLON	
-	.word	>f9a9,47,>81c8,0	;Hello!       22 LOWES	
-	.word	>f9a9,47,>8175,0	;bucket       23 VOGEL	
-	.word	>f9a9,47,>81f0,0	;rainbow      24 TSUI	
-	.word	>f9a9,47,>81c8,0	;Hello!       25 KAM		
-	.word	>f9a9,47,>81c8,0	;Hello!       26 DEAL		
-	.word	>f9a9,47,>81d7,0	;gotta shoot  27 BOOTY		
-	.word	>f9a9,47,>81f6,0	;he scores    28 LOFFRE		
-	.word	>f9a9,47,>81e8,0	;swish!       29 PENACHO	
-	.word	>f9a9,47,>81e3,0	;range!       30 BARKER		
-	.word	>f9a9,47,>81c8,0	;Hello!       31 COX			
-;	.word	>f9a9,47,>80b0,0	;	      32 RAIDEN
-;	.word	>f9a9,47,>81f1,0	;no good      33 REAPER		
-	.word	>f9a9,47,>81c8,0	;Hello!       34 MACIKA		
-	.word	>f9a9,47,>81dd,0	;wide open    35 SHARPE		
-	.word	>f9a9,47,>81d9,0	;ugly shot    36 BERAN		
-;	.word	>f9a9,47,>8198,0	;brick!       37 COMAN		
-;	.word	>fda9,147,>8177,0	;tarzan       38 KONGO	
-	.word	>f9a9,47,>81ce,0	;knocked      39 PONTAREL	
-;	.word	>f9a9,47,>81c0,0	;excuse       40 ELVIS		
-	.word	>f9a9,47,>81b4,0	;no way       41 DAVIS		
-	.word	>f9a9,47,>81ae,0	;kaboom       42 BOON		
-	.word	>f9a9,47,>812B,0	;shoes!       43 TOBIAS		
-	.word	>f9a9,47,>8198,0	;brick        44 HEITSCH	
-	.word	>f9a9,47,>81c8,0	;Hello!       45 DABEL		
-	.word	>f9a9,47,>81c8,0	;Hello!       46 MARTINEZ	
-	.word	>f9a9,47,>81c8,0	;Hello!       47 DAVIES		
-	.word	>f9a9,47,>81ea,0	;oh my        48 HOSK		
-	.word	>f9a9,47,>819d,0	;sweet        49 OLIV		
-;	.word	>f9a9,47,>8197,0	;	      50 SCORP		
-;	.word	>f9a9,47,>81a5,0	;	      51 REPT		
-	.word	>f9a9,47,>81c8,0	;Hello!       52 GRANNER
-	.word	>f9a9,47,>81c8,0	;Hello!       53 GAY
-	.word	>f9a9,47,>81d6,0	;nail         54 SKILES
-	.word	>f9a9,47,>81c8,0	;Hello!       55 LINHOFF
+	.word	0f9a9H,63,081f6H,0	;He scores    0  GOSKIE	
+	.word	0f9a9H,47,081c8H,0	;Hello!       1  RIVETT		
+	.word	0f9a9H,70,0819cH,0	;boom shaka   2  CARLTON
+	.word	0f9a9H,67,08172H,0	;It's blowout 3  DIVITA
+	.word	0f9a9H,46,081c2H,0	;Yes!	      4  LIPTAK
+	.word	0f9a1H,87,081abH,0	;whoomp       5  TURMELL
+	.word	0f9a9H,67,08172H,0	;It's blowout 6  HEY
+	.word	0f9a9H,67,08172H,0	;It's blowout 7  PETRO
+	.word	0f9a9H,63,081f6H,0	;He scores    8  NEWCOMER
+	.word	0f9a9H,100,081d6H,0	;coffin       9  OURSLER
+	.word	0f9a9H,47,081c8H,0	;Hello!       10 LASCO
+	.word	0f9a9H,70,0819cH,0	;boom shak    11 MORRIS
+	.word	0f9a9H,47,081c8H,0	;Hello!       12 MEDNICK
+	.word	0f9a9H,47,0812BH,0	;shoes?       13 FORDEN	
+	.word	0f9a9H,47,0812bH,0	;fantastic    14 KINKEAD
+	.word	0f9a9H,47,081c8H,0	;Hello!       15 JARVIS	
+;	.word	0f9a9H,47,08196H,0	;	      16 SUBZ	
+	.word	0f9a9H,47,081c8H,0	;Hello!       17 HAEGER	
+	.word	0f9a9H,47,081b7H,0	;bad decision 18 SIMPSON
+	.word	0f9a9H,47,081c8H,0	;Hello!       19 GREEN	
+	.word	0f9a9H,47,081c8H,0	;Hello!       20 GENTILE
+	.word	0f9a9H,67,081e0H,0	;its good     21 DILLON	
+	.word	0f9a9H,47,081c8H,0	;Hello!       22 LOWES	
+	.word	0f9a9H,47,08175H,0	;bucket       23 VOGEL	
+	.word	0f9a9H,47,081f0H,0	;rainbow      24 TSUI	
+	.word	0f9a9H,47,081c8H,0	;Hello!       25 KAM		
+	.word	0f9a9H,47,081c8H,0	;Hello!       26 DEAL		
+	.word	0f9a9H,47,081d7H,0	;gotta shoot  27 BOOTY		
+	.word	0f9a9H,47,081f6H,0	;he scores    28 LOFFRE		
+	.word	0f9a9H,47,081e8H,0	;swish!       29 PENACHO	
+	.word	0f9a9H,47,081e3H,0	;range!       30 BARKER		
+	.word	0f9a9H,47,081c8H,0	;Hello!       31 COX			
+;	.word	0f9a9H,47,080b0H,0	;	      32 RAIDEN
+;	.word	0f9a9H,47,081f1H,0	;no good      33 REAPER		
+	.word	0f9a9H,47,081c8H,0	;Hello!       34 MACIKA		
+	.word	0f9a9H,47,081ddH,0	;wide open    35 SHARPE		
+	.word	0f9a9H,47,081d9H,0	;ugly shot    36 BERAN		
+;	.word	0f9a9H,47,08198H,0	;brick!       37 COMAN		
+;	.word	0fda9H,147,08177H,0	;tarzan       38 KONGO	
+	.word	0f9a9H,47,081ceH,0	;knocked      39 PONTAREL	
+;	.word	0f9a9H,47,081c0H,0	;excuse       40 ELVIS		
+	.word	0f9a9H,47,081b4H,0	;no way       41 DAVIS		
+	.word	0f9a9H,47,081aeH,0	;kaboom       42 BOON		
+	.word	0f9a9H,47,0812BH,0	;shoes!       43 TOBIAS		
+	.word	0f9a9H,47,08198H,0	;brick        44 HEITSCH	
+	.word	0f9a9H,47,081c8H,0	;Hello!       45 DABEL		
+	.word	0f9a9H,47,081c8H,0	;Hello!       46 MARTINEZ	
+	.word	0f9a9H,47,081c8H,0	;Hello!       47 DAVIES		
+	.word	0f9a9H,47,081eaH,0	;oh my        48 HOSK		
+	.word	0f9a9H,47,0819dH,0	;sweet        49 OLIV		
+;	.word	0f9a9H,47,08197H,0	;	      50 SCORP		
+;	.word	0f9a9H,47,081a5H,0	;	      51 REPT		
+	.word	0f9a9H,47,081c8H,0	;Hello!       52 GRANNER
+	.word	0f9a9H,47,081c8H,0	;Hello!       53 GAY
+	.word	0f9a9H,47,081d6H,0	;nail         54 SKILES
+	.word	0f9a9H,47,081c8H,0	;Hello!       55 LINHOFF
 
 ;Superstar special guests
-	.word	>f9a9,63,>81f6,0	;He scores    56 WILKINS
-	.word	>f9a9,47,>81c8,0	;Hello!       57 BROWN
-	.word	>f9a9,70,>819c,0	;boom shaka   58 MOURNING
-	.word	>f9a9,67,>8172,0	;It's blowout 59 PIPPEN  
-	.word	>f9a9,46,>81c2,0	;Yes!	      60 I. THOMAS
-	.word	>f9a1,87,>81ab,0	;whoomp       61 WEBBER
-	.word	>f9a9,67,>8172,0	;It's blowout 62 OLAJUWON
-	.word	>f9a9,67,>8172,0	;It's blowout 63 COLEMAN
-	.word	>f9a9,63,>81f6,0	;He scores    64 EWING
-	.word	>f9a9,100,>81d6,0	;coffin       65 BARKLEY
-	.word	>f9a9,47,>81c8,0	;Hello!       66 ROBINSON
-	.word	>f9a9,70,>819c,0	;boom shak    67 KEMP
-	.word	>f9a9,47,>81c8,0	;Hello!       68 MALONE
-	.word	>f9a9,47,>81c8,0	;Hello!       68 MALONE
+	.word	0f9a9H,63,081f6H,0	;He scores    56 WILKINS
+	.word	0f9a9H,47,081c8H,0	;Hello!       57 BROWN
+	.word	0f9a9H,70,0819cH,0	;boom shaka   58 MOURNING
+	.word	0f9a9H,67,08172H,0	;It's blowout 59 PIPPEN  
+	.word	0f9a9H,46,081c2H,0	;Yes!	      60 I. THOMAS
+	.word	0f9a1H,87,081abH,0	;whoomp       61 WEBBER
+	.word	0f9a9H,67,08172H,0	;It's blowout 62 OLAJUWON
+	.word	0f9a9H,67,08172H,0	;It's blowout 63 COLEMAN
+	.word	0f9a9H,63,081f6H,0	;He scores    64 EWING
+	.word	0f9a9H,100,081d6H,0	;coffin       65 BARKLEY
+	.word	0f9a9H,47,081c8H,0	;Hello!       66 ROBINSON
+	.word	0f9a9H,70,0819cH,0	;boom shak    67 KEMP
+	.word	0f9a9H,47,081c8H,0	;Hello!       68 MALONE
+	.word	0f9a9H,47,081c8H,0	;Hello!       68 MALONE
 
 
 #******************************************************************************
@@ -2709,7 +2709,7 @@ team_orders
 	calla	CR_CONTP		;Credits to continue
 	jrlo	#bx			;No?
    	move	@game_purchased,a0
-	cmpi	>f,a0
+	cmpi	0fH,a0
 	jrnz	#cont
 #bx
 ;2/9/93

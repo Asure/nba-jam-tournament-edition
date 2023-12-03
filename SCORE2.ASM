@@ -33,8 +33,8 @@
 
 ;sounds
 
-infoex_snd	.word	>f3ff,>8,>8097,0	;Info box exit
-warn2_snd	.word	>fbf7,19,>80a3,0	;Warning for info box
+infoex_snd	.word	0f3ffH,08H,08097H,0	;Info box exit
+warn2_snd	.word	0fbf7H,19,080a3H,0	;Warning for info box
 
 ;symbols externally defined
 
@@ -782,7 +782,7 @@ shakelp
 
 	.ref	game_time
 	move	@game_time,a14,L
-	cmpi	>900,a14
+	cmpi	0900H,a14
 	jrlt	#x
 
 	move	a1,a14
@@ -1011,7 +1011,7 @@ blink_plyr1
 
 	SLEEPK	2
 
-	movi	>1616,a2
+	movi	01616H,a2
 	move	a2,*a8(OCONST)
 
 	movk	3,a10
@@ -1029,7 +1029,7 @@ blink_plyr1
 
 
 bit_t	.word	1,2,4,8
-bit_and	.long	>e,>d,>b,>7
+bit_and	.long	0eH,0dH,0bH,07H
 boxy_t	.long	[48,0],[48+70,0],[48,0],[48+70,0]
 boxx_t	.long	[7,0],[47h+6,0],[0dah+6,0],[127h-23,0]
 msg_t	.long	message1,message2,message3,message4,message5,message6
@@ -1479,7 +1479,7 @@ logo_drift
 
 	move	a11,a0
 	movi	[40,0],a1
-	movi	>7591,a3				;Z
+	movi	07591H,a3				;Z
 	movi	DMAWNZ|M_NOCOLL|M_SCRNREL,a4
 	move	a9,a2
 	movi	CLSDEAD,a5
@@ -1496,7 +1496,7 @@ logo_drift
 	movi	[200,0],a0
 	movi	[20,0],a1
 	movi	bkbd1,a2
-	movi	>7591,a3				;Z
+	movi	07591H,a3				;Z
 	movi	DMAWNZ|M_NOCOLL|M_SCRNREL,a4
 	movi	CLSDEAD,a5
 	clr	a6
@@ -1506,7 +1506,7 @@ logo_drift
 	movi	[200,0],a0
 	movi	[20,0],a1
 	movi	bkbd2,a2
-	movi	>7591,a3				;Z
+	movi	07591H,a3				;Z
 	movi	DMAWNZ|M_NOCOLL|M_SCRNREL,a4
 	movi	CLSDEAD,a5
 	clr	a6
@@ -1516,7 +1516,7 @@ logo_drift
 	movi	[200,0],a0
 	movi	[20,0],a1
 	movi	bkbd3,a2
-	movi	>7591,a3				;Z
+	movi	07591H,a3				;Z
 	movi	DMAWNZ|M_NOCOLL|M_SCRNREL,a4
 	movi	CLSDEAD,a5
 	clr	a6
@@ -1530,7 +1530,7 @@ logo_drift
 	movi	[-100,0],a0
 	movi	[20,0],a1
 	movi	card_g,a2
-	movi	>7591,a3				;Z
+	movi	07591H,a3				;Z
 	movi	DMAWNZ|M_NOCOLL,a4
 	movi	CLSDEAD,a5
 	movi	[1,0],a6
@@ -1666,7 +1666,7 @@ del_me	SLEEP	74h
 	calla	DELOBJA8
 	DIE
 
-bounce_snd	.word	>fc80,10,>8129,0	;Ball bounce
+bounce_snd	.word	0fc80H,10,08129H,0	;Ball bounce
 
 
 #********************************

@@ -2,7 +2,7 @@
 .SUFFIXES : .EXE .ASM .OBJ .C
 #
 O =	NDSP1.OBJ MAIN.OBJ UTIL.OBJ PAL.OBJ MPROC.OBJ\
-	BAKGND.OBJ BGNDTBL.OBJ BGNDPAL.OBJ IMGTBL.OBJ IMGPAL.OBJ\
+	BAKGND.OBJ BGNDTBL.OBJ BGNDPAL.OBJ IMGTBL.OBJ IMGPAL.OBJ IMGPAL2.OBJ\
 	BB.OBJ PLYR.OBJ PLYR2.OBJ PLYRAT.OBJ PLYRSEQ.OBJ PLYRDSEQ.OBJ\
 	PLYRSEQ2.OBJ SCORE.OBJ SCORE2.OBJ BB2.OBJ\
 	DRONE.OBJ DRONE2.OBJ\
@@ -13,10 +13,10 @@ O =	NDSP1.OBJ MAIN.OBJ UTIL.OBJ PAL.OBJ MPROC.OBJ\
 
 
 bb.out: $(O)
-	d:\gsplnk bb.cmd
-	copy d:\bb.out c:\video\bball
-	copy d:\bb.map c:\video\bball
-	tv bb /v
+	gsplnk bb.cmd
+#	copy d:\bb.out c:\video\bball
+#	copy d:\bb.map c:\video\bball
+#	tv bb /v
 $(O): $*.asm
 
 ndsp1.obj: disp.equ court.tbl

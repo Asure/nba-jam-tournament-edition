@@ -29,49 +29,49 @@
 
 	.ref	GLSEXP,NOWAY,SETDWN,TUNE3,TUNE2,STATSND
 
-CVSDOFF .word	>F0F0,10,>807D,0		;SPEECH OFF
-TUNE4	.word	>f3fe,10,>8007,0		;Rackup tune
-racksup	.word	>f280,1,>80b3,0			;Rackup bonus sweep up
-rackoff	.word	>fa81,1,>80a7,0			;Rackup bonus off
-kilfgnd	.word	>f000,1,>807f,0			;Kill foregnd snds
-rackp1p	.word	>fa80,1,>80b4,0			;Rackup P1 gets 1000 pts
-rackp2p	.word	>fa80,1,>80b5,0			;^ P2
-stats1	.word	>f280,1,>8100,0			;Rackup stat line snd
-stats2	.word	>f280,1,>8101,0			;^
-stats3	.word	>f280,1,>8102,0			;^
-stats4	.word	>f280,1,>8103,0			;^
-stats5	.word	>f280,1,>8104,0			;^
-stats6	.word	>f280,1,>8105,0			;^
-stats7	.word	>f280,1,>8106,0			;^
-stats8	.word	>f280,1,>8107,0			;^
-stats9	.word	>f280,1,>8108,0			;^
-stats10	.word	>f280,1,>8109,0			;^
-stats11	.word	>f280,1,>810a,0			;^
-stats12	.word	>f280,1,>810b,0			;^
-txtssnd	.word	>f3f7,8,>80b1,0			;Text shrink
-shout	.word	>f1a0,60,>80fe,0		;Rackup victory shout
-rackgun	.word	>fca0,4,>8030,0			;Player shoots gun
-gigle1	.word	>f9a0,60,>80f3,0		;Rackup winner laughs
-ahkb1	.word	>f9a0,10,>80eb,0		;Akhboob speech
-ahkb2	.word	>f9a0,10,>80ec,0		;^
-ahkb3	.word	>f9a0,10,>80ed,0		;^
-ahkbsta	.word	>f9a0,10,>80ee,0		;^ start angry
-ahkbang	.word	>f9a0,10,>80ef,0		;^ angry
-DOLLAR	.WORD	>F9F7,>50,>814E,0		;BUY 4 DOLLAR
-yousuck	.word	>f9a0,10,>80c5,0		;You suck at this game!
-fisthit	.word	>fca0,10,>803c,0		;Ahkboob hits desk
-ermtune	.word	>f3f0,10,>8004,0		;Electrocution tune
-fshock	.word	>f540,20,>80bb,0		;Electric chair shocks
-fburn	.word	>f048,30,>80d7,0		;^ burn
-fpain1	.word	>f965,20,>80f6,0		;Player in pain
-fpain2	.word	>f160,20,>80f7,0		;^
-fpain3	.word	>f160,20,>80fd,0		;^
-fskullb	.word	>f460,20,>8040,0		;Skull bounce
-fryexp	.word	>fc50,6,>803e,0			;Fry explosion
-fryexp2	.word	>fd50,8,>80d9,0			;^
-totcarn	.word	>f980,30,>80cf,0		;Total carnage!
-gluck	.word	>f1f7,>40,>80e5,0		;"Good luck"
-TXTSND1	.WORD	>F3F7,>8,>80AE,0
+CVSDOFF .word	0F0F0H,10,0807DH,0		;SPEECH OFF
+TUNE4	.word	0f3feH,10,08007H,0		;Rackup tune
+racksup	.word	0f280H,1,080b3H,0			;Rackup bonus sweep up
+rackoff	.word	0fa81H,1,080a7H,0			;Rackup bonus off
+kilfgnd	.word	0f000H,1,0807fH,0			;Kill foregnd snds
+rackp1p	.word	0fa80H,1,080b4H,0			;Rackup P1 gets 1000 pts
+rackp2p	.word	0fa80H,1,080b5H,0			;^ P2
+stats1	.word	0f280H,1,08100H,0			;Rackup stat line snd
+stats2	.word	0f280H,1,08101H,0			;^
+stats3	.word	0f280H,1,08102H,0			;^
+stats4	.word	0f280H,1,08103H,0			;^
+stats5	.word	0f280H,1,08104H,0			;^
+stats6	.word	0f280H,1,08105H,0			;^
+stats7	.word	0f280H,1,08106H,0			;^
+stats8	.word	0f280H,1,08107H,0			;^
+stats9	.word	0f280H,1,08108H,0			;^
+stats10	.word	0f280H,1,08109H,0			;^
+stats11	.word	0f280H,1,0810aH,0			;^
+stats12	.word	0f280H,1,0810bH,0			;^
+txtssnd	.word	0f3f7H,8,080b1H,0			;Text shrink
+shout	.word	0f1a0H,60,080feH,0		;Rackup victory shout
+rackgun	.word	0fca0H,4,08030H,0			;Player shoots gun
+gigle1	.word	0f9a0H,60,080f3H,0		;Rackup winner laughs
+ahkb1	.word	0f9a0H,10,080ebH,0		;Akhboob speech
+ahkb2	.word	0f9a0H,10,080ecH,0		;^
+ahkb3	.word	0f9a0H,10,080edH,0		;^
+ahkbsta	.word	0f9a0H,10,080eeH,0		;^ start angry
+ahkbang	.word	0f9a0H,10,080efH,0		;^ angry
+DOLLAR	.WORD	0F9F7H,050H,0814EH,0		;BUY 4 DOLLAR
+yousuck	.word	0f9a0H,10,080c5H,0		;You suck at this game!
+fisthit	.word	0fca0H,10,0803cH,0		;Ahkboob hits desk
+ermtune	.word	0f3f0H,10,08004H,0		;Electrocution tune
+fshock	.word	0f540H,20,080bbH,0		;Electric chair shocks
+fburn	.word	0f048H,30,080d7H,0		;^ burn
+fpain1	.word	0f965H,20,080f6H,0		;Player in pain
+fpain2	.word	0f160H,20,080f7H,0		;^
+fpain3	.word	0f160H,20,080fdH,0		;^
+fskullb	.word	0f460H,20,08040H,0		;Skull bounce
+fryexp	.word	0fc50H,6,0803eH,0			;Fry explosion
+fryexp2	.word	0fd50H,8,080d9H,0			;^
+totcarn	.word	0f980H,30,080cfH,0		;Total carnage!
+gluck	.word	0f1f7H,040H,080e5H,0		;"Good luck"
+TXTSND1	.WORD	0F3F7H,08H,080AEH,0
 
 
 ;symbols externally defined
@@ -112,7 +112,7 @@ TXTSND1	.WORD	>F3F7,>8,>80AE,0
 	.bss	statspal	,31*16 	;Statistics palette
 	.bss	boanimdeath1	,16    	;CntDn for bonus anim procs to die
 	.bss	boanimdeath2	,16    	;^
-	.bss	scoredie	,16	;>0=Score processes die
+	.bss	scoredie	,16	;00H=Score processes die
 	.bss	hitpercent1	,16	;Player1 %
 	.bss	hitpercent2	,16	;Player2 %
 	.bss	hitsmin1	,16	;Player1 hits per minute
@@ -143,7 +143,7 @@ TXTSND1	.WORD	>F3F7,>8,>80AE,0
 	subk	1,a2
 	jrlt	it20			;0?
 	jreq	it10			;1?
-	movi	[0,>fcbd],a1		;Fix X for purple guy eating
+	movi	[0,0fcbdH],a1		;Fix X for purple guy eating
 	jruc	it20
 it10	movi	[0,-40],a1		;Fix X
 it20	clr	a2
@@ -156,7 +156,7 @@ it20	clr	a2
 	subk	1,a2
 	jrlt	Mit20			;0?
 	jreq	Mit10			;1?
-	movi	[0,>fcbd],a1		;Fix X for purple guy eating
+	movi	[0,0fcbdH],a1		;Fix X for purple guy eating
 	jruc	Mit20
 Mit10	movi	[0,-40],a1		;Fix X
 Mit20	clr	a2
@@ -194,7 +194,7 @@ incom_st2
 	move	a0,@HALT
 					;>Make tiles
 ;	movk	8*4,a1			;# Panels
-;	movi	-4*>25800+>12c00,a2	;Velocity
+;	movi	-4*025800H+012c00H,a2	;Velocity
 ;	movk	10,a3
 ;	movi	200,a5
 ;rp20	movi	panel_t,a14
@@ -208,7 +208,7 @@ incom_st2
 ;	and	a1,a4
 ;	subk	1,a4
 ;	jrne	rp30
-;	addi	>25800,a2
+;	addi	025800H,a2
 ;	movk	10,a3
 ;	movk	1,a4
 ;	xor	a4,a5			;Toggle 0 Bit
@@ -222,7 +222,7 @@ incom_st2
 
 	callr	scores_bcdbin
 
-;	move	@P1DATA+THITS,a1	;>Calc P1 % & hitsmin
+;	move	@P1DATA+THITS,a1	;0CaHlc P1 % & hitsmin
 ;	move	a1,a3
 ;	movi	100,a0
 ;	mpyu	a0,a1
@@ -236,7 +236,7 @@ incom_st2
 ;	divu	a2,a3
 ;	move	a3,@hitsmin1
 ;
-;	move	@P2DATA+THITS,a1	;>Calc P2 % & hitsmin
+;	move	@P2DATA+THITS,a1	;0CaHlc P2 % & hitsmin
 ;	move	a1,a3
 ;	movi	100,a0
 ;	mpyu	a0,a1
@@ -525,7 +525,7 @@ pdnoxx	PULL	a8,a9,a10,a11
 txs20	move	a11,a0
 	calla	PRCSLP
 	clr	a8
-	move	@OBJLST,a9,L		;>Find and shrink
+	move	@OBJLST,a9,L		;0FHind and shrink
 txs40	move	*a9(OID),a0
 	cmpi	CLSNEUT|TYPTEXT|SUBTXT,a0
 	jrne	txs70
@@ -618,7 +618,7 @@ pirw10	SLEEPK	10
 	movi	-210,a0
 	move	a0,@LOWZ
 	movi	[187,198],a9		;Y:X
-	movi	>2525,a6
+	movi	02525H,a6
 	clr	a0
 	PUSH	a8
 	JSRP	STRCNRMO
@@ -734,7 +734,7 @@ score2_st
 scbp20	move	@PSTATUS,a2
 	btst	0,a2
 	jrz	scbp50
-	move	@P1DATA+PSCORE,a8,L	;>Calc bonus score
+	move	@P1DATA+PSCORE,a8,L	;0CaHlc bonus score
 	move	*a13(scorecopy1),a0,L
 	cmp	a0,a8
 	jreq	scbp50
@@ -743,7 +743,7 @@ scbp20	move	@PSTATUS,a2
 	callr	text_delz
 	move	@score1old,a0,L
 	movi	300-20000,a1
-	movi	>2020,a6
+	movi	02020H,a6
 	movi	[35,85],a9		;Scrn y/x
 	callr	scoreb_prt2
 
@@ -751,7 +751,7 @@ scbp50	SLEEPK	3
 	move	@PSTATUS,a2
 	btst	1,a2
 	jrz	scbp80
-	move	@P2DATA+PSCORE,a8,L	;>Calc bonus score
+	move	@P2DATA+PSCORE,a8,L	;0CaHlc bonus score
 	move	*a13(scorecopy2),a0,L
 	cmp	a0,a8
 	jreq	scbp80
@@ -760,7 +760,7 @@ scbp50	SLEEPK	3
 	callr	text_delz
 	move	@score2old,a0,L
 	movi	301-20000,a1
-	movi	>2121,a6
+	movi	02121H,a6
 	movi	[35,315],a9		;Scrn y/x
 	callr	scoreb_prt2
 
@@ -790,7 +790,7 @@ scoreb_prt2
 sv20	SLEEPK	1
 	move	@SWITCH+16,a1	;Chk for impatience
 	not	a1
-	andi	>24,a1
+	andi	024H,a1
 	jrnz	sv50
 	dsj	a9,sv20	
 sv50	move	a8,a0
@@ -818,7 +818,7 @@ sv50	move	a8,a0
 ;	movk	3,a0
 ;	move	a0,@PSTATUS	;DEBUG
 ;
-;	movi	200,a0		;>DEBUG
+;	movi	200,a0		;0DEBHUG
 ;	calla	RNDRNG0
 ;	move	a0,@P1DATA+TFLAGS
 ;	movi	200,a0
@@ -953,7 +953,7 @@ bcu10	PUSH	a2
 
 bcu20	move	@SWITCH+16,a1		;Chk for impatience
 	not	a1
-	andi	>24,a1
+	andi	024H,a1
 	jrnz	bcu25
 	SLEEPK	1
 
@@ -1049,7 +1049,7 @@ bpilp	move	*a13(bonusz),a0
 	PUSH	a8,a9
 	move	*a8,a8			;Get P1 cnt
 	move	a8,a3
-	movi	>2525,a6
+	movi	02525H,a6
 	callr	strcnrmo_nosleep	;Print cnt
 	callr	strcnrmo_nosleep2	;Print score
 	PULL	a8,a9
@@ -1061,7 +1061,7 @@ bpi50	btst	1,a2
 	addi	160,a9			;+X
 	move	*a8(16),a8		;Get P2 cnt
 	move	a8,a3
-	movi	>2525,a6
+	movi	02525H,a6
 	callr	strcnrmo_nosleep	;Print cnt
 	callr	strcnrmo_nosleep2	;Print score
 	PULL	a8,a9
@@ -1094,13 +1094,13 @@ bonusp2_as				;Scripts
 bonusp1_as
 	ASADDW	1,animscnt
 	ASNEW	bonusflag_t
-	ASFRA	flag_l,>20,100
+	ASFRA	flag_l,020H,100
 
 bas10	ASSLP	2
 	ASJMPEQ	-1,bonusstat,bas10
 
 	ASNEW	bonusgem_t
-	ASFRA	gems_l,>21,100
+	ASFRA	gems_l,021H,100
 
 bas20	ASSLP	2
 	ASJMPEQ	0,bonusstat,bas20
@@ -1110,8 +1110,8 @@ bas20	ASSLP	2
 bas30	ASSLP	2
 	ASJMPEQ	1,bonusstat,bas30
 
-	ASKIL	0,>ff
-	ASDELM	0,>ff
+	ASKIL	0,0ffH
+	ASDELM	0,0ffH
 
 	ASADDW	-1,animscnt
 	ASEND
@@ -1142,13 +1142,13 @@ bonus3p2_st
 	.word	-1
 
 bonusflag_t
-	ASITEMN	50,55,FLG1,220,DMAWNZ,>20
+	ASITEMN	50,55,FLG1,220,DMAWNZ,020H
 	.word	-1000
 bonusgem_t
-	ASITEMN	50,90,GEMS1,220,DMAWNZ,>21
+	ASITEMN	50,90,GEMS1,220,DMAWNZ,021H
 	.word	-1000
 bonushstg_t
-	ASITEMN	50,130,HSTGHD,220,DMAWNZ,>21
+	ASITEMN	50,130,HSTGHD,220,DMAWNZ,021H
 	.word	-1000
 
 
@@ -1181,7 +1181,7 @@ bfb20	move	*a1(OZPOS),a0
 	cmp	a11,a0
 	jrhi	bfb30
 	move	a3,*a1(OCTRL)	;FIX
-	movi	>909,a0
+	movi	0909H,a0
 	move	a0,*a1(OCONST)
 bfb30	move	*a1,a1,L
 	jrnz	bfb20
@@ -1394,7 +1394,7 @@ pbw230	move	*a1,a1,L
 
 	SLEEP	60
 
-	move	@OBJLST,a0,L		;>Delete tiles
+	move	@OBJLST,a0,L		;0DeHlete tiles
 pbw300	move	*a0(OZPOS),a2
 	subi	200,a2
 	subk	1,a2
@@ -1411,7 +1411,7 @@ pbw340	jrnz	pbw300
 
 ;	movi	plbwpal_t,a0		;*Palette list
 ;	movk	5,a1
-;	movi	>40,a2
+;	movi	040H,a2
 ;	move	a2,@palfmin
 ;	calla	FADEOUT2
 ;
@@ -1451,29 +1451,29 @@ win3_s	.byte	"PLAYER TWO KICKED BUTT!",0
 
 plbwp1o_as
 	ASNEW	plyr1wnew_t
-	ASXY	>40,>1f,70,0
+	ASXY	040H,01fH,70,0
 	ASJMP	plbw_as
 
 plbwp2o_as
 	ASNEW	plyr2wnew_t
-	ASXY	>40,>1f,-50,0
+	ASXY	040H,01fH,-50,0
 	ASSVL	BIGPL2
-	ASPAL	>41
-	ASPAL	>54
-	ASPAL	>55
+	ASPAL	041H
+	ASPAL	054H
+	ASPAL	055H
 	ASSVL	GUNSP2
-	ASPAL	>42
-	ASPAL	>48
+	ASPAL	042H
+	ASPAL	048H
 	ASJMP	plbw_as
 
 plbwp1w_as
 	ASNEW	plyr1wnew_t
 	ASNEW	plyr2lnew_t
 	ASSVL	BIGPL2
-	ASPAL	>81
+	ASPAL	081H
 	ASSVL	GUNSP2
-	ASPAL	>82
-	ASPAL	>88
+	ASPAL	082H
+	ASPAL	088H
 	ASRUN	plbw2txt_as
 	ASJMP	plbw_as
 
@@ -1481,84 +1481,84 @@ plbwp2w_as
 	ASNEW	plyr1lnew_t
 	ASNEW	plyr2wnew_t
 	ASSVL	BIGPL2
-	ASPAL	>41
-	ASPAL	>54
-	ASPAL	>55
+	ASPAL	041H
+	ASPAL	054H
+	ASPAL	055H
 	ASSVL	GUNSP2
-	ASPAL	>42
-	ASPAL	>48
+	ASPAL	042H
+	ASPAL	048H
 	ASRUN	plbw1txt_as
 
 plbw_as
 	ASADDW	1,animscnt
 	ASNEW	plyrbgnew_t
-	ASFRA	ribbonb_l,>48,-1
-	ASFRA	ribbonl_l,>88,-1
+	ASFRA	ribbonb_l,048H,-1
+	ASFRA	ribbonl_l,088H,-1
 
 	ASRUN	pbwcloud1_as
 	ASRUN	pbwcloud2_as
 	ASRUN	pbwcloud3_as
 	ASRUN	pbwsnd_as
 	ASSLP	90
-	ASFRA	plhdcc_l,>4c,1
-	ASFRA	plhdmm_l,>4d,1
+	ASFRA	plhdcc_l,04cH,1
+	ASFRA	plhdmm_l,04dH,1
 	ASLAB	5
-	ASXY	0,>ff,0,1	;Pan up
+	ASXY	0,0ffH,0,1	;Pan up
 	ASDSJS1
 	ASLAB	20
-	ASXY	0,>ff,0,2
+	ASXY	0,0ffH,0,2
 	ASDSJS1
 	ASLAB	5
-	ASXY	0,>ff,0,1
+	ASXY	0,0ffH,0,1
 	ASDSJS1
 
-	ASANI	LBOW2,>54
-	ASANI	WRISTBND2,>50
-	ASANI	HAND2,>55
-	ASANI	GUN2,>51
-	ASXY	>44,1,-1000,0	;Put middle strap on screen
+	ASANI	LBOW2,054H
+	ASANI	WRISTBND2,050H
+	ASANI	HAND2,055H
+	ASANI	GUN2,051H
+	ASXY	044H,1,-1000,0	;Put middle strap on screen
 	ASSLP	4
-	ASANI	LBOW1,>54
-	ASANI	WRISTBND1,>50
-	ASANI	HAND1,>55
-	ASANI	GUN1,>51
-	ASXY	>44,1,-1000,0	;Straps off screen
+	ASANI	LBOW1,054H
+	ASANI	WRISTBND1,050H
+	ASANI	HAND1,055H
+	ASANI	GUN1,051H
+	ASXY	044H,1,-1000,0	;Straps off screen
 
 	ASLAB	40
 	ASSND	rackgun
 	ASLAB	2
-	ASXY	>50,>7,0,1	;Shake gun
-	ASXY	>56,0,-1000,0	;Show flame
+	ASXY	050H,07H,0,1	;Shake gun
+	ASXY	056H,0,-1000,0	;Show flame
 	ASDSJS1
 	ASLAB	2
-	ASXY	>50,>7,0,-1
-	ASXY	>56,0,1000,0	;Hide flame
+	ASXY	050H,07H,0,-1
+	ASXY	056H,0,1000,0	;Hide flame
 	ASDSJS1
 	ASDSJ
 
 	ASSLP	30
 	ASLAB	5
-	ASXY	0,>ff,0,-1	;Pan down
+	ASXY	0,0ffH,0,-1	;Pan down
 	ASDSJS1
 	ASLAB	20
-	ASXY	0,>ff,0,-2
+	ASXY	0,0ffH,0,-2
 	ASDSJS1
 	ASLAB	5
-	ASXY	0,>ff,0,-1
+	ASXY	0,0ffH,0,-1
 	ASDSJS1
 
 	ASSLP	20
-	ASANI	LBOW2,>54
-	ASANI	WRISTBND2,>50
-	ASANI	HAND2,>55
-	ASANI	GUN2,>51
-	ASXY	>44,1,1000,0	;Middle strap on screen
+	ASANI	LBOW2,054H
+	ASANI	WRISTBND2,050H
+	ASANI	HAND2,055H
+	ASANI	GUN2,051H
+	ASXY	044H,1,1000,0	;Middle strap on screen
 	ASSLP	4
-	ASANI	LBOW3,>54
-	ASANI	WRISTBND3,>50
-	ASANI	HAND3,>55
-	ASANI	GUN3,>51
-	ASXY	>44,1,1000,0	;1st strap on screen
+	ASANI	LBOW3,054H
+	ASANI	WRISTBND3,050H
+	ASANI	HAND3,055H
+	ASANI	GUN3,051H
+	ASXY	044H,1,1000,0	;1st strap on screen
 	ASADDW	-1,animscnt
 	ASEND
 
@@ -1566,28 +1566,28 @@ plbw_as
 pbwcloud1_as
 	ASLAB	4
 	ASLAB	188
-	ASXY	>10,0,1,0
+	ASXY	010H,0,1,0
 	ASSLP	4
 	ASDSJ
-	ASXY	>10,0,-188,0
+	ASXY	010H,0,-188,0
 	ASDSJ
 	ASEND
 pbwcloud2_as
 	ASLAB	4
 	ASLAB	188
-	ASXY	>11,0,1,0
+	ASXY	011H,0,1,0
 	ASSLP	5
 	ASDSJ
-	ASXY	>11,0,-188,0
+	ASXY	011H,0,-188,0
 	ASDSJ
 	ASEND
 pbwcloud3_as
 	ASLAB	4
 	ASLAB	188
-	ASXY	>12,0,1,0
+	ASXY	012H,0,1,0
 	ASSLP	6
 	ASDSJ
-	ASXY	>12,0,-188,0
+	ASXY	012H,0,-188,0
 	ASDSJ
 	ASEND
 
@@ -1604,15 +1604,15 @@ CLY	.equ	142
 
 plyrbgnew_t	;X,Y,img name,Z,flags,oid
 
-	ASITEMN	12,-40,CLOUD,25,DMAWNZ+M_FLIPH,>10
-	ASITEMN	200,-40,CLOUD,25,DMAWNZ+M_FLIPH,>10
-	ASITEMN	388,-40,CLOUD,25,DMAWNZ+M_FLIPH,>10
-	ASITEMN	12,-10,CLOUD,24,DMAWNZ+M_FLIPH,>11
-	ASITEMN	200,-10,CLOUD,24,DMAWNZ+M_FLIPH,>11
-	ASITEMN	388,-10,CLOUD,24,DMAWNZ+M_FLIPH,>11
-	ASITEMN	-178,20,CLOUD,23,DMAWNZ,>12
-	ASITEMN	10,20,CLOUD,23,DMAWNZ,>12
-	ASITEMN	198,20,CLOUD,23,DMAWNZ,>12
+	ASITEMN	12,-40,CLOUD,25,DMAWNZ+M_FLIPH,010H
+	ASITEMN	200,-40,CLOUD,25,DMAWNZ+M_FLIPH,010H
+	ASITEMN	388,-40,CLOUD,25,DMAWNZ+M_FLIPH,010H
+	ASITEMN	12,-10,CLOUD,24,DMAWNZ+M_FLIPH,011H
+	ASITEMN	200,-10,CLOUD,24,DMAWNZ+M_FLIPH,011H
+	ASITEMN	388,-10,CLOUD,24,DMAWNZ+M_FLIPH,011H
+	ASITEMN	-178,20,CLOUD,23,DMAWNZ,012H
+	ASITEMN	10,20,CLOUD,23,DMAWNZ,012H
+	ASITEMN	198,20,CLOUD,23,DMAWNZ,012H
 	ASITEMN	10,CLY,CLIFF3A,30,DMAWNZ,8
 	ASITEMN	128,CLY,CLIFF3A,30,DMAWNZ+M_FLIPH,8
 	ASITEMN	129,CLY+6,CLIFF2A,30,DMAWNZ,8
@@ -1632,61 +1632,61 @@ P2LX	.equ	305
 P2LY	.equ	30
 
 plyr1wnew_t
-	ASITEMN	P1X,P1Y,CCHED1,51,DMAWNZ,>4c
-	ASITEMN	P1X,P1Y,RIB1,45,DMAWNZ,>48
-	ASITEMN	P1X,P1Y,BDBOD1,50,DMAWNZ,>40
-	ASITEMN	P1X,P1Y,BDBOD2,50,DMAWNZ,>40
-	ASITEMN	P1X,P1Y,RTARMBND,51,DMAWNZ,>40
-	ASITEMN	P1X,P1Y,RTLBOW1,52,DMAWNZ,>40
-	ASITEMN	P1X,P1Y,RTWRISTBND,53,DMAWNZ,>40
-	ASITEMN	P1X,P1Y,RTHAND1,53,DMAWNZ,>40
-	ASITEMN	P1X,P1Y,LFTARMBND,52,DMAWNZ,>40
-	ASITEMN	P1X,P1Y,LBOW3,51,DMAWNZ,>54
-	ASITEMN	P1X,P1Y,WRISTBND3,52,DMAWNZ,>50
-	ASITEMN	P1X,P1Y,HAND3,54,DMAWNZ,>55
-	ASITEMN	P1X,P1Y,GUN3,53,DMAWNZ,>51
-	ASITEMN	P1X,P1Y,STRAP,51,DMAWNZ,>44
-	ASITEMN	P1X+1000,P1Y,STRAPA,51,DMAWNZ,>45
-	ASITEMN	P1X+1054,P1Y-33,T72BLAST1,55,DMAWNZ+M_FLIPV,>56
-	ASITEMN	P1X+2054,P1Y-33,T72BLAST2,55,DMAWNZ+M_FLIPV,>56
+	ASITEMN	P1X,P1Y,CCHED1,51,DMAWNZ,04cH
+	ASITEMN	P1X,P1Y,RIB1,45,DMAWNZ,048H
+	ASITEMN	P1X,P1Y,BDBOD1,50,DMAWNZ,040H
+	ASITEMN	P1X,P1Y,BDBOD2,50,DMAWNZ,040H
+	ASITEMN	P1X,P1Y,RTARMBND,51,DMAWNZ,040H
+	ASITEMN	P1X,P1Y,RTLBOW1,52,DMAWNZ,040H
+	ASITEMN	P1X,P1Y,RTWRISTBND,53,DMAWNZ,040H
+	ASITEMN	P1X,P1Y,RTHAND1,53,DMAWNZ,040H
+	ASITEMN	P1X,P1Y,LFTARMBND,52,DMAWNZ,040H
+	ASITEMN	P1X,P1Y,LBOW3,51,DMAWNZ,054H
+	ASITEMN	P1X,P1Y,WRISTBND3,52,DMAWNZ,050H
+	ASITEMN	P1X,P1Y,HAND3,54,DMAWNZ,055H
+	ASITEMN	P1X,P1Y,GUN3,53,DMAWNZ,051H
+	ASITEMN	P1X,P1Y,STRAP,51,DMAWNZ,044H
+	ASITEMN	P1X+1000,P1Y,STRAPA,51,DMAWNZ,045H
+	ASITEMN	P1X+1054,P1Y-33,T72BLAST1,55,DMAWNZ+M_FLIPV,056H
+	ASITEMN	P1X+2054,P1Y-33,T72BLAST2,55,DMAWNZ+M_FLIPV,056H
 	.word	-1000
 
 plyr2wnew_t
-	ASITEMN	P2X,P2Y,MMHED1,51,DMAWNZ+M_FLIPH,>4d
-	ASITEMN	P2X,P2Y-5,RIB1,45,DMAWNZ,>48
-	ASITEMN	P2X,P2Y,BDBOD1,50,DMAWNZ+M_FLIPH,>41
-	ASITEMN	P2X,P2Y,BDBOD2,50,DMAWNZ+M_FLIPH,>42
-	ASITEMN	P2X,P2Y,RTARMBND,51,DMAWNZ+M_FLIPH,>40
-	ASITEMN	P2X,P2Y,RTLBOW1,52,DMAWNZ+M_FLIPH,>41
-	ASITEMN	P2X,P2Y,RTWRISTBND,53,DMAWNZ+M_FLIPH,>40
-	ASITEMN	P2X,P2Y,RTHAND1,53,DMAWNZ+M_FLIPH,>41
-	ASITEMN	P2X,P2Y,LFTARMBND,52,DMAWNZ+M_FLIPH,>40
-	ASITEMN	P2X,P2Y,LBOW3,51,DMAWNZ+M_FLIPH,>54
-	ASITEMN	P2X,P2Y,WRISTBND3,52,DMAWNZ+M_FLIPH,>50
-	ASITEMN	P2X,P2Y,HAND3,54,DMAWNZ+M_FLIPH,>55
-	ASITEMN	P2X,P2Y,GUN3,53,DMAWNZ+M_FLIPH,>51
-	ASITEMN	P2X,P2Y,STRAP,51,DMAWNZ+M_FLIPH,>44
-	ASITEMN	P2X+1000,P2Y,STRAPA,51,DMAWNZ+M_FLIPH,>45
-	ASITEMN	P2X+945,P2Y-33,T72BLAST1,55,DMAWNZ+M_FLIPV,>56
-	ASITEMN	P2X+1945,P2Y-33,T72BLAST2,55,DMAWNZ+M_FLIPV,>56
+	ASITEMN	P2X,P2Y,MMHED1,51,DMAWNZ+M_FLIPH,04dH
+	ASITEMN	P2X,P2Y-5,RIB1,45,DMAWNZ,048H
+	ASITEMN	P2X,P2Y,BDBOD1,50,DMAWNZ+M_FLIPH,041H
+	ASITEMN	P2X,P2Y,BDBOD2,50,DMAWNZ+M_FLIPH,042H
+	ASITEMN	P2X,P2Y,RTARMBND,51,DMAWNZ+M_FLIPH,040H
+	ASITEMN	P2X,P2Y,RTLBOW1,52,DMAWNZ+M_FLIPH,041H
+	ASITEMN	P2X,P2Y,RTWRISTBND,53,DMAWNZ+M_FLIPH,040H
+	ASITEMN	P2X,P2Y,RTHAND1,53,DMAWNZ+M_FLIPH,041H
+	ASITEMN	P2X,P2Y,LFTARMBND,52,DMAWNZ+M_FLIPH,040H
+	ASITEMN	P2X,P2Y,LBOW3,51,DMAWNZ+M_FLIPH,054H
+	ASITEMN	P2X,P2Y,WRISTBND3,52,DMAWNZ+M_FLIPH,050H
+	ASITEMN	P2X,P2Y,HAND3,54,DMAWNZ+M_FLIPH,055H
+	ASITEMN	P2X,P2Y,GUN3,53,DMAWNZ+M_FLIPH,051H
+	ASITEMN	P2X,P2Y,STRAP,51,DMAWNZ+M_FLIPH,044H
+	ASITEMN	P2X+1000,P2Y,STRAPA,51,DMAWNZ+M_FLIPH,045H
+	ASITEMN	P2X+945,P2Y-33,T72BLAST1,55,DMAWNZ+M_FLIPV,056H
+	ASITEMN	P2X+1945,P2Y-33,T72BLAST2,55,DMAWNZ+M_FLIPV,056H
 	.word	-1000
 
 plyr1lnew_t
-	ASITEMN	P1LX,P1LY,SMHEAD1,40,DMAWNZ+M_FLIPH,>80
-	ASITEMN	P1LX-10,P1LY,LILRIB1,35,DMAWNZ,>88
-	ASITEMN	P1LX,P1LY,SMBOD1,40,DMAWNZ+M_FLIPH,>81
-	ASITEMN	P1LX,P1LY,SMBOD2,40,DMAWNZ+M_FLIPH,>82
-	ASITEMN	P1LX,P1LY,SMARMBND,41,DMAWNZ+M_FLIPH,>80
-	ASITEMN	P1LX,P1LY,SMWRISTS,41,DMAWNZ+M_FLIPH,>80
+	ASITEMN	P1LX,P1LY,SMHEAD1,40,DMAWNZ+M_FLIPH,080H
+	ASITEMN	P1LX-10,P1LY,LILRIB1,35,DMAWNZ,088H
+	ASITEMN	P1LX,P1LY,SMBOD1,40,DMAWNZ+M_FLIPH,081H
+	ASITEMN	P1LX,P1LY,SMBOD2,40,DMAWNZ+M_FLIPH,082H
+	ASITEMN	P1LX,P1LY,SMARMBND,41,DMAWNZ+M_FLIPH,080H
+	ASITEMN	P1LX,P1LY,SMWRISTS,41,DMAWNZ+M_FLIPH,080H
 	.word	-1000
 
 plyr2lnew_t
-	ASITEMN	P2LX,P2LY,SMHEAD2,40,DMAWNZ,>80
-	ASITEMN	P2LX-1,P2LY-3,LILRIB1,35,DMAWNZ,>88
-	ASITEMN	P2LX,P2LY,SMBOD1,40,DMAWNZ,>81
-	ASITEMN	P2LX,P2LY,SMBOD2,40,DMAWNZ,>82
-	ASITEMN	P2LX,P2LY,SMARMBND,41,DMAWNZ,>80
-	ASITEMN	P2LX,P2LY,SMWRISTS,41,DMAWNZ,>80
+	ASITEMN	P2LX,P2LY,SMHEAD2,40,DMAWNZ,080H
+	ASITEMN	P2LX-1,P2LY-3,LILRIB1,35,DMAWNZ,088H
+	ASITEMN	P2LX,P2LY,SMBOD1,40,DMAWNZ,081H
+	ASITEMN	P2LX,P2LY,SMBOD2,40,DMAWNZ,082H
+	ASITEMN	P2LX,P2LY,SMARMBND,41,DMAWNZ,080H
+	ASITEMN	P2LX,P2LY,SMWRISTS,41,DMAWNZ,080H
 	.word	-1000
 
 
@@ -1895,13 +1895,13 @@ rc10	SLEEPK	30
 	calla	KILOBJ
 	clr	a0
 	move	a0,@WORLDTLX+16
-	movi	>35b,a0
+	movi	035bH,a0
 	move	a0,@WORLDTLY+16
 	jruc	DO_RACKUP
 
 
 
-	movi	statspal,a0		;>Cycle color loop
+	movi	statspal,a0		;0CHycle color loop
 	movk	31,a1
 	clr	a2
 rp45	move	a2,*a0+
@@ -1971,7 +1971,7 @@ bcd5	dsj	a3,bcd10		;Convert BCD
 	movi	',',a2
 	subk	8,a1
 	movb	a2,*a1
-bcd10	movk	>f,a2
+bcd10	movk	0fH,a2
 	and	a0,a2
 	addi	'0',a2
 	subk	8,a1
@@ -2191,7 +2191,7 @@ bfb20	move	*a1(OZPOS),a0
 	cmp	a11,a0
 	jrhi	bfb30
 	move	a3,*a1(OFLAGS)
-	movi	>909,a0
+	movi	0909H,a0
 	move	a0,*a1(OCONST)
 bfb30	move	*a1,a1,L
 	jrnz	bfb20

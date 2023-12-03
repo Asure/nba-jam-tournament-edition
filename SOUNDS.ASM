@@ -1,4 +1,4 @@
-**************************************************************
+#**************************************************************
 *
 * Software:	George Petro
 * Initiated:		
@@ -306,7 +306,7 @@ sud8
 
 #*******************************
 * SNDSND - Raw hardware sound call
-* A3=Sound code 0->1ff
+* A3=Sound code 0-01ffH
 * Trashes B0,A14
 
 SNDSND
@@ -319,7 +319,7 @@ SNDSND
 ; 	callr	save_sound
 ; .endif
 
-	cmpi	>100,a3
+	cmpi	0100H,a3
 	jrlo	ss20			;Not extended sound call?
 	move	a3,b0
 	movi	EXTENDED_CODE,a3	;Send the extended feature
@@ -341,7 +341,7 @@ ss20
 	movk	8,a14
 	dsj	a14,$
 
-	ori	>ff00,a3		;Put out 1's
+	ori	0ff00H,a3		;Put out 1's
 	move	a3,@SOUND
 
 	movk	8,a14
@@ -486,30 +486,30 @@ FADE_DOWN_TAB
 * POPULAR SOUND CALLS
 
 *HIGH PRIORITY OFF CODES, NOTHING SHOULD BEAT THESE
-CVSDOFF		.WORD	>F0FF|>800,>01,>8000,0	;CVSD BACKGROUND LOOP OFF
-CVSDFOFF 	.WORD	>F0FF|>800,>01,>8000,0	;CVSD FOREGROUND LOOP OFF
-SOUNDOFF 	.WORD	>F0FF|>800,>01,>8000,0	;TURN SOUND SIDE OFF
-ALLOFF	 	.WORD	>F3FF|>800,>01,>8000,0	;MUSIC AND EFFECTS OFF
-musicoff_snd	.WORD	>F3FF|>800,>01,>807E,0	;TURN JUST MUSIC OFF
-MUSITOFF	.WORD	>F3FF|>800,>01,>8040,0	;MUSIC TRANSITION OFF
-YAMOFF		.WORD	>F2FF|>800,>01,>807F,0	;YAMAHA EFFECT OFF
+CVSDOFF		.WORD	0F0FFH|0800H,001H,08000H,0	;CVSD BACKGROUND LOOP OFF
+CVSDFOFF 	.WORD	0F0FFH|0800H,001H,08000H,0	;CVSD FOREGROUND LOOP OFF
+SOUNDOFF 	.WORD	0F0FFH|0800H,001H,08000H,0	;TURN SOUND SIDE OFF
+ALLOFF	 	.WORD	0F3FFH|0800H,001H,08000H,0	;MUSIC AND EFFECTS OFF
+musicoff_snd	.WORD	0F3FFH|0800H,001H,0807EH,0	;TURN JUST MUSIC OFF
+MUSITOFF	.WORD	0F3FFH|0800H,001H,08040H,0	;MUSIC TRANSITION OFF
+YAMOFF		.WORD	0F2FFH|0800H,001H,0807FH,0	;YAMAHA EFFECT OFF
 
-VOLUME0	.WORD	>F3FE,>1,>802F,0
-VOLUME1	.WORD	>F3FE,>1,>802E,0
-VOLUME2	.WORD	>F3FE,>1,>802D,0
-VOLUME3	.WORD	>F3FE,>1,>802C,0
-VOLUME4	.WORD	>F3FE,>1,>802B,0
-VOLUME5	.WORD	>F3FE,>1,>802A,0
-VOLUME6	.WORD	>F3FE,>1,>8029,0
-VOLUME7	.WORD	>F3FE,>1,>8028,0
-VOLUME8	.WORD	>F3FE,>1,>8027,0
-VOLUME9	.WORD	>F3FE,>1,>8026,0
-VOLUMEA	.WORD	>F3FE,>1,>8025,0
-VOLUMEB	.WORD	>F3FE,>1,>8024,0
-VOLUMEC	.WORD	>F3FE,>1,>8023,0
-VOLUMED	.WORD	>F3FE,>1,>8022,0
-VOLUMEE	.WORD	>F3FE,>1,>8021,0
-VOLUMEF	.WORD	>F3FE,>1,>8020,0
+VOLUME0	.WORD	0F3FEH,01H,0802FH,0
+VOLUME1	.WORD	0F3FEH,01H,0802EH,0
+VOLUME2	.WORD	0F3FEH,01H,0802DH,0
+VOLUME3	.WORD	0F3FEH,01H,0802CH,0
+VOLUME4	.WORD	0F3FEH,01H,0802BH,0
+VOLUME5	.WORD	0F3FEH,01H,0802AH,0
+VOLUME6	.WORD	0F3FEH,01H,08029H,0
+VOLUME7	.WORD	0F3FEH,01H,08028H,0
+VOLUME8	.WORD	0F3FEH,01H,08027H,0
+VOLUME9	.WORD	0F3FEH,01H,08026H,0
+VOLUMEA	.WORD	0F3FEH,01H,08025H,0
+VOLUMEB	.WORD	0F3FEH,01H,08024H,0
+VOLUMEC	.WORD	0F3FEH,01H,08023H,0
+VOLUMED	.WORD	0F3FEH,01H,08022H,0
+VOLUMEE	.WORD	0F3FEH,01H,08021H,0
+VOLUMEF	.WORD	0F3FEH,01H,08020H,0
 
 
 *SOUND PROCESSOR MAKES SOUNDS FOR N-CHANNELS (CURRENTLY 6):
@@ -528,17 +528,17 @@ VOLUMEF	.WORD	>F3FE,>1,>8020,0
 *SOUND WORD =8SSS SSS=SOUND CODE(000-FFF).
 
 
-coin_snd	.word	>f3ff,>8,>80a4,0	;coin in melody snd
+coin_snd	.word	0f3ffH,08H,080a4H,0	;coin in melody snd
 
-beep2_snd	.word	>fcf7,>5,>8123,0	;beep tone for diagnostics
-cntdown_snd	.word	>fcf5,5,>8123,0		;buyin cntdwn clang
+beep2_snd	.word	0fcf7H,05H,08123H,0	;beep tone for diagnostics
+cntdown_snd	.word	0fcf5H,5,08123H,0		;buyin cntdwn clang
 
 ;RJR (wrong channel - was 1 OKI 4  - supposed to be 0 OKI 3)
-;;;horn_snd	.word	>f9fe,>58,>8159,0	;horn
-horn_snd	.word	>f8fe,>58,>8159,0	;horn
+;;;horn_snd	.word	0f9feH,058H,08159H,0	;horn
+horn_snd	.word	0f8feH,058H,08159H,0	;horn
 
 
-tune2_snd	.word	>f3fe,1,>8002,0		;main game play tune
+tune2_snd	.word	0f3feH,1,08002H,0		;main game play tune
 
 #*****************************************************************************
 * saves 16 bits in a3
@@ -681,10 +681,10 @@ tune2_snd	.word	>f3fe,1,>8002,0		;main game play tune
 	.long	tuneot_snd,tuneot_snd,tuneot_snd,tuneot_snd
 	.long	tuneot_snd,tuneot_snd,tuneot_snd,tuneot_snd
 
-tuneq2_snd	.word	>f3ff,>8,>8006,0	;Quarter 2 tune
-tuneq3_snd	.word	>f3ff,>8,>8007,0	;Quarter 3 tune
-tuneq4_snd	.word	>f3ff,>8,>8008,0	;Quarter 4 tune
-tuneot_snd	.word	>f3ff,>8,>800b,0	;Quarter o.t.
+tuneq2_snd	.word	0f3ffH,08H,08006H,0	;Quarter 2 tune
+tuneq3_snd	.word	0f3ffH,08H,08007H,0	;Quarter 3 tune
+tuneq4_snd	.word	0f3ffH,08H,08008H,0	;Quarter 4 tune
+tuneot_snd	.word	0f3ffH,08H,0800bH,0	;Quarter o.t.
 
 
 

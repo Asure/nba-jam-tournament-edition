@@ -1,7 +1,7 @@
 	.FILE "imgpal.asm"
 	.OPTION B,D,L,T
 
-	.include imgtbl.glo
+	.include imgtbl2.glo
 	.DATA
 	.even
 

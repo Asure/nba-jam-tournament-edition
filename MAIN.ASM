@@ -1,4 +1,4 @@
-**************************************************************
+#**************************************************************
 *
 * Software:		Shawn Liptak and ?
 * Initiated:		?
@@ -79,9 +79,9 @@
 
  SUBR	init_all
 
-	clr	a0			;>Clr scratch mem
+	clr	a0			;0CHlr scratch mem
 	movi	SCRATCH,a1
-	movi	>8000-20,a2		;128K minus some stack
+	movi	08000H-20,a2		;128K minus some stack
 #lp	move	a0,*a1+,L
 	dsjs	a2,#lp
 
@@ -252,9 +252,9 @@ DIRQ
 	movi	DPYCTL,a8
 
 	move	*a8,a7			;>Shift register read to restart DMA
-	movi	NIL|DXV|SRT|>10,a0
+	movi	NIL|DXV|SRT|010H,a0
 	move	a0,*a8
-	movi	510*>1000,a2		;*Autoerase lines
+	movi	510*01000H,a2		;*Autoerase lines
 	pixt	*a2,a2			;Mem to shift reg xfer
 
 
@@ -295,10 +295,10 @@ di50	move	a7,*a8			;Restore
 
 
 	movi	-4,a0			;Page0
-	movi	PAGE1YO*>1000,b2	;*Page1
+	movi	PAGE1YO*01000H,b2	;*Page1
 	move	@dpage,a1
 	jrnz	#onp1
-	movi	->1004,a0		;Page1
+	movi	-01004H,a0		;Page1
 	clr	b2			;*Page0
 #onp1	move	a0,@DPYADR		;Override DPYSTRT
 	move	a0,@DPYSTRT		;If we don't page flip next time
@@ -320,7 +320,7 @@ di50	move	a7,*a8			;Restore
 	move	a2,a2
 	jrn	#noerase		;Erase off?
 
-	movi	CONTROL,a9		;>Clear whole page
+	movi	CONTROL,a9		;0CHlear whole page
 	move	*a9,a6
 	movk	8,a0
 	move	a0,*a9			;Transparency off
@@ -430,7 +430,7 @@ di400	move	a7,*a8			;Restore
 	callr	switch_stack		;Scan misc switches
 
 
-	move	@C_FLAGS,a0,L		;>Coin timers
+	move	@C_FLAGS,a0,L		;0CHoin timers
 	jrz	#ctoff
 	movi	C_FLAGS+24,a2
 #ctlp
@@ -459,7 +459,7 @@ ctim1
 	jrnz	dirqx			;Skip?
 
 
-					;>Do every 8 ticks
+					;0DHo every 8 ticks
 	.if	DEBUG
 	.else
 	move	@dirqtimer,a0
@@ -468,7 +468,7 @@ ctim1
 	.endif
 
 
-	move	@C_FRAC,a0		;>Count down coin fraction timer
+	move	@C_FRAC,a0		;0CHount down coin fraction timer
 	jrz	#nfrc			;No frac?
 	sll	32-8,a0
 	srl	32-8,a0
@@ -476,7 +476,7 @@ ctim1
 	move	a0,@C_FRAC
 #nfrc
 
-					;>Coin counters
+					;0CHoin counters
 	move	@COINCNTR,a0,L
 	jrz	l_dog			;Counters, timers inactive?
 
@@ -497,8 +497,8 @@ c_cntr0
 
 *GNP START 1/16/93
 	clr	a2			;counter on mask
-;	movi	>100,a3
-	MOVK	>1,a3
+;	movi	0100H,a3
+	MOVK	01H,a3
 	movk	2,a4
 c_cntr1l
 	movb	*a5,a0			;counter timer active?
@@ -526,7 +526,7 @@ l_dog
 
 	.else
 
-	movi	wdogbone_t,a1		;>Clock watchdog
+	movi	wdogbone_t,a1		;0CHlock watchdog
 	move	@SYSCOPY,a2
 	movk	1,a3
 	movi	SYSCTRL,a4
@@ -560,9 +560,9 @@ wdogbone_t
 	move	@SWITCH,a0,L
 
 	.if	TUNIT
-	ori	>f800ffff,a0	;Set ignore bits
+	ori	0f800ffffH,a0	;Set ignore bits
 	.else
-	ori	>ff007f7f,a0	;Set ignore bits
+	ori	0ff007f7fH,a0	;Set ignore bits
 	movb	@COINS+16,a1
 	jrn	swst30		;No P4 start?
 	subk	1,a0		;Clr bit 0
@@ -648,34 +648,34 @@ badtrap29
 ;Initial GSP I/O register values
 
 gspioinit_t
-	.word	015h		;>C0000000 -- HESYNC
-	.word	HEBLNKINIT	;>C0000010 -- HEBLNK
-	.word	0fah		;>C0000020 -- HSBLNK
-	.word	0fch		;>C0000030 -- HTOTAL
-	.word	3		;>C0000040 -- VESYNC
-	.word	20		;>C0000050 -- VEBLNK
-	.word	274		;>C0000060 -- VSBLNK	;254 lines
-	.word	288		;>C0000070 -- VTOTAL
-	.word	>f010		;>C0000080 -- DPYCTL	ENV|NIL|DXV|SRE|>10
-	.word	0fffch		;>C0000090 -- DPYSTRT
-	.word	EOSINT		;>C00000A0 -- DPYINT 
-	.word	2ch		;>C00000B0 -- CONTROL
-	.word	0		;>C00000C0 -- HSTDATA
-	.word	0		;>C00000D0 -- HSTADRL
-	.word	0		;>C00000E0 -- HSTADRH
-	.word	0		;>C00000F0 -- HSTCTLL
-	.word	0		;>C0000100 -- HSTCTLH
-	.word	0		;>C0000110 -- INTENBL
-	.word	0		;>C0000120 -- INTPEND
-	.word	0		;>C0000130 -- CONVSP
-	.word	0		;>C0000140 -- CONVDP
-	.word	PXSIZE		;>C0000150 -- PSIZE
-	.word	0		;>C0000160 -- PMASK
-	.word	0		;>C0000170 -- RESERVED
-	.word	0		;>C0000180 -- RESERVED
-	.word	0		;>C0000190 -- RESERVED
-	.word	0		;>C00001A0 -- RESERVED
-	.word	28		;>C00001B0 -- DPYTAP
+	.word	015h		;0C0000000H -- HESYNC
+	.word	HEBLNKINIT	;0C0000010H -- HEBLNK
+	.word	0fah		;0C0000020H -- HSBLNK
+	.word	0fch		;0C0000030H -- HTOTAL
+	.word	3		;0C0000040H -- VESYNC
+	.word	20		;0C0000050H -- VEBLNK
+	.word	274		;0C0000060H -- VSBLNK	;254 lines
+	.word	288		;0C0000070H -- VTOTAL
+	.word	0f010H		;0C0000080H -- DPYCTL	ENV|NIL|DXV|SRE|010H
+	.word	0fffch		;0C0000090H -- DPYSTRT
+	.word	EOSINT		;0C00000A0H -- DPYINT 
+	.word	2ch		;0C00000B0H -- CONTROL
+	.word	0		;0C00000C0H -- HSTDATA
+	.word	0		;0C00000D0H -- HSTADRL
+	.word	0		;0C00000E0H -- HSTADRH
+	.word	0		;0C00000F0H -- HSTCTLL
+	.word	0		;0C0000100H -- HSTCTLH
+	.word	0		;0C0000110H -- INTENBL
+	.word	0		;0C0000120H -- INTPEND
+	.word	0		;0C0000130H -- CONVSP
+	.word	0		;0C0000140H -- CONVDP
+	.word	PXSIZE		;0C0000150H -- PSIZE
+	.word	0		;0C0000160H -- PMASK
+	.word	0		;0C0000170H -- RESERVED
+	.word	0		;0C0000180H -- RESERVED
+	.word	0		;0C0000190H -- RESERVED
+	.word	0		;0C00001A0H -- RESERVED
+	.word	28		;0C00001B0H -- DPYTAP
 giiend
 
 

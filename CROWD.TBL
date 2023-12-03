@@ -1,0 +1,79 @@
+	.DATA
+sdcrwd1b:
+	.word   108,81,0,0
+	.long   01d1e97aH
+	.word   00H
+sdcrwd2b:
+	.word   63,59,0,0
+	.long   01d2fadaH
+	.word   00H
+sdcrwd3b:
+	.word   97,76,14,2
+	.long   01d36f02H
+	.word   00H
+sdcrwd4b:
+	.word   101,87,0,0
+	.long   01d45562H
+	.word   00H
+sdcrwd5b:
+	.word   91,55,0,0
+	.long   01d567faH
+	.word   00H
+sdcrwd6b:
+	.word   83,55,0,0
+	.long   01d60462H
+	.word   00H
+sdcrwd7b:
+	.word   72,46,3,1
+	.long   01d6930aH
+	.word   00H
+sdcrwd8b:
+	.word   111,44,40,0
+	.long   01d6fa8aH
+	.word   07000H
+sdcrwd1c:
+	.word   108,81,0,0
+	.long   01d78016H
+	.word   00H
+sdcrwd2c:
+	.word   63,59,0,0
+	.long   01d89176H
+	.word   00H
+sdcrwd3c:
+	.word   98,79,13,4
+	.long   01d9059eH
+	.word   00H
+sdcrwd4c:
+	.word   101,87,0,0
+	.long   01d9f78eH
+	.word   00H
+nsdcrwd1b:
+	.word   67,95,0,7
+	.long   01db0a26H
+	.word   00H
+nsdcrwd2b:
+	.word   56,67,-4,-4
+	.long   01dbd10eH
+	.word   00H
+nsdcrwd3b:
+	.word   71,74,-3,4
+	.long   01dc464eH
+	.word   00H
+nsdcrwd4b:
+	.word   96,88,-2,-1
+	.long   01dcea7eH
+	.word   00H
+sdcrwd5c:
+	.word   92,55,0,0
+	.long   01ddf27eH
+	.word   00H
+sdcrwd6c:
+	.word   84,55,0,0
+	.long   01de909eH
+	.word   00H
+sdcrwd7c:
+	.word   72,46,3,1
+	.long   01df20feH
+	.word   00H
+	.TEXT
+

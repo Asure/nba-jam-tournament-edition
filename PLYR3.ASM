@@ -39,11 +39,11 @@
 
 ;sounds external
 
-tunehalf_snd	.word	>f3ff,>8,>8004,0	;Half time tune
-report_snd	.word	>f981,1*60,>8171,1	;Halftime report
-altitude_snd	.word	>f981,30,>81cc,0	;Altitude
-cheer1_snd	.word	>fd84,100,>8111,0	;Long cheer
-cheer2_snd	.word	>f894,100,>8144,0	;Long cheer
+tunehalf_snd	.word	0f3ffH,08H,08004H,0	;Half time tune
+report_snd	.word	0f981H,1*60,08171H,1	;Halftime report
+altitude_snd	.word	0f981H,30,081ccH,0	;Altitude
+cheer1_snd	.word	0fd84H,100,08111H,0	;Long cheer
+cheer2_snd	.word	0f894H,100,08144H,0	;Long cheer
 
 ;symbols externally defined
 
@@ -110,7 +110,7 @@ CLIPTEST	.equ	0
 
 	calla	system_savegame
 
-	movi	>12345678,a0
+	movi	012345678H,a0
 	move	a0,@clipsrunning,L
 
 
@@ -156,7 +156,7 @@ CLIPTEST	.equ	0
 	move	*a0+,a10,L		;XY
 
 	move	@clipbits,a2,L
-	cmpi	>3ffff,a2		;18 bits
+	cmpi	03ffffH,a2		;18 bits
 	jrlo	#ok
 	clr	a2
 #ok
@@ -543,7 +543,7 @@ mslstxy_t
 #alp	move	*a8(OCTRL),a1
 	calla	obj_aniq_scld
 	move	*a9+,a0
-	cmpi	>100,a0
+	cmpi	0100H,a0
 	jrlo	#slp			;No flags?
 	move	a0,a2
 	move	*a9+,a0,L
@@ -615,26 +615,26 @@ SCLT	.macro	sx,sy,sxa,sya
 	.eval	:sxa:*1048,XA
 	.eval	:sya:*1048,YA
 	.loop	10
-	.word	>10000000/X,>10000000/Y
-	.word	>100000/(>10000000/X),>100000/(>10000000/Y)
+	.word	010000000H/X,010000000H/Y
+	.word	0100000H/(010000000H/X),0100000H/(010000000H/Y)
 	.eval	X+XA*1/4,X
 	.eval	Y+YA*1/4,Y
 	.endloop
 	.loop	10
-	.word	>10000000/X,>10000000/Y
-	.word	>100000/(>10000000/X),>100000/(>10000000/Y)
+	.word	010000000H/X,010000000H/Y
+	.word	0100000H/(010000000H/X),0100000H/(010000000H/Y)
 	.eval	X+XA*2/4,X
 	.eval	Y+YA*2/4,Y
 	.endloop
 	.loop	10
-	.word	>10000000/X,>10000000/Y
-	.word	>100000/(>10000000/X),>100000/(>10000000/Y)
+	.word	010000000H/X,010000000H/Y
+	.word	0100000H/(010000000H/X),0100000H/(010000000H/Y)
 	.eval	X+XA*3/4,X
 	.eval	Y+YA*3/4,Y
 	.endloop
 	.loop	10
-	.word	>10000000/X,>10000000/Y
-	.word	>100000/(>10000000/X),>100000/(>10000000/Y)
+	.word	010000000H/X,010000000H/Y
+	.word	0100000H/(010000000H/X),0100000H/(010000000H/Y)
 	.eval	X+XA,X
 	.eval	Y+YA,Y
 	.endloop
@@ -657,7 +657,7 @@ scale50_t
 
 	move	*a11(OXVEL),a6,L
 	sra	2,a6
-	movk	>a,a0
+	movk	0aH,a0
 	callr	rnd
 	subk	5,a0
 	sll	14,a0			;XVel
@@ -670,7 +670,7 @@ scale50_t
 #xnorm
 
 	move	*a11(OYVEL),a7,L
-	movk	>3,a0
+	movk	03H,a0
 	callr	rnd
 	sll	16,a0			;YVel
 	neg	a0
@@ -679,7 +679,7 @@ scale50_t
 
 ;	move	*a11(OYVEL),a7,L
 ;	sra	2,a7
-;	movk	>a,a0
+;	movk	0aH,a0
 ;	callr	rnd
 ;	subk	5,a0
 ;	sll	15,a0			;YVel
@@ -720,7 +720,7 @@ scale50_t
 
 	move	*a11(OZVEL),a2,L
 	sra	2,a2			;/4
-	movk	>f,a0
+	movk	0fH,a0
 	callr	rnd
 	subk	7,a0
 	sll	14,a0
@@ -803,7 +803,7 @@ spark_l
 ********************************
 * Get random # with mask
 * A0=Mask
-* >A0=Rnd # (Pass CC)
+* 0A0H=Rnd # (Pass CC)
 * Trashes scratch
 
  SUBRP	rnd

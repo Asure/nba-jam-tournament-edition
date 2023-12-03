@@ -148,7 +148,7 @@
 	move	*a13(plyr_dribmode),a14
 	jrn	#nodrib
 
-	move	*a13(plyr_num),a14	;>Chk for breakaway
+	move	*a13(plyr_num),a14	;0CHhk for breakaway
 	srl	1,a14
 	movk	1,a0
 	xor	a0,a14
@@ -177,7 +177,7 @@
 #noturb2
 
 	move	@game_time,a1,L
-	cmpi	>200,a1
+	cmpi	0200H,a1
 	jrlt	#shoot2			;Less than 2 secs?
 	move	@shotimer+16,a1		;Tens
 	jrnz	#scok
@@ -190,19 +190,19 @@
 	jrge	#x			;Too far?
 	cmpi	50,a14
 	jrlt	#shoot2			;Close?
-	movk	>1f,a0
+	movk	01fH,a0
 	callr	rnd
 	jrnz	#x
 	jruc	#shoot2
 
 
-#nodrib					;>Can't dribble
+#nodrib					;0CaHn't dribble
 	move	*a13(plyr_ohpdist),a0
 	cmpi	230,a0
 	jrlt	#shoot2
 	callr	drone_pass
 	jrnz	#x			;Pass OK?
-	movk	>1f,a0
+	movk	01fH,a0
 	callr	rnd
 	jrnz	#x			;97%?
 	jruc	#shoot2
@@ -210,7 +210,7 @@
 
 #shootrnd
 	move	@game_time,a1,L
-	cmpi	>200,a1
+	cmpi	0200H,a1
 	jrlt	#shoot2			;Less than 2 secs?
 	move	@shotimer+16,a1
 	jrnz	#scok2
@@ -232,9 +232,9 @@
 	move	*a13(plyr_o1dir),a2
 	sub	a0,a2
 	abs	a2
-	cmpi	>40,a2
+	cmpi	040H,a2
 	jrle	#o1dsml
-	subi	>80,a2
+	subi	080H,a2
 	abs	a2
 #o1dsml	subk	32,a2
 	jrlt	#goaround		;In front of me?
@@ -247,9 +247,9 @@
 	move	*a13(plyr_o2dir),a2
 	sub	a0,a2
 	abs	a2
-	cmpi	>40,a2
+	cmpi	040H,a2
 	jrle	#o2dsml
-	subi	>80,a2
+	subi	080H,a2
 	abs	a2
 #o2dsml	subk	32,a2
 	jrlt	#goaround		;In front of me?
@@ -326,14 +326,14 @@
 	btst	a1,a0
 	jrnz	#x			;Teammate is a human?
 
-	cmpi	230,a4			;>Chk if we need 3ptrs
+	cmpi	230,a4			;0CHhk if we need 3ptrs
 	jrlt	#no3
 	cmpi	290,a4
 	jrgt	#no3
 
 	movk	6,a1
 	move	@game_time,a2,L
-	cmpi	>1010000,a2
+	cmpi	01010000H,a2
 	jrgt	#hvtime			;Enough time?
 	movk	3,a1
 #hvtime
@@ -341,7 +341,7 @@
 	cmp	a1,a14
 	jrlt	#no3
 
-	cmpi	>40000,a2
+	cmpi	040000H,a2
 	jrlt	#shoot2			;Less than 40 secs?
 
 	movk	8,a0
@@ -385,12 +385,12 @@
 	XORK	1,a1
 	btst	a1,a0
 	jrnz	#x			;Teammate is a human?
-	movk	>1f,a0
+	movk	01fH,a0
 	callr	rnd
 	jrnz	#x
 
 	move	@game_time,a1,L
-	cmpi	>200,a1
+	cmpi	0200H,a1
 	jrlt	#x			;Less than 2 secs?
 	move	@shotimer+16,a1		;Tens
 	jrnz	#fk
@@ -433,12 +433,12 @@
 
 	move	*a13(plyr_ptsdown),a14
 	addk	5,a14
-	jrlt	#pss			;Winning by >5?
+	jrlt	#pss			;Winning by 05H?
 	move	*a13(plyr_seqflgs),a14
 	btst	DUNK_B,a14
 	jrnz	#x			;In a dunk?
 	move	@game_time,a1,L
-	cmpi	>200,a1
+	cmpi	0200H,a1
 	jrlt	#x			;Less than 2 secs?
 
 #pss	callr	drone_pass
@@ -500,9 +500,9 @@
 	move	*a13(plyr_o1dir),a2
 	sub	a3,a2
 	abs	a2
-	cmpi	>40,a2
+	cmpi	040H,a2
 	jrle	#o1dsml
-	subi	>80,a2
+	subi	080H,a2
 	abs	a2
 #o1dsml	subk	16,a2
 	jrlt	#pusho				;In front of me?
@@ -513,9 +513,9 @@
 	move	*a13(plyr_o2dir),a2
 	sub	a3,a2
 	abs	a2
-	cmpi	>40,a2
+	cmpi	040H,a2
 	jrle	#o2dsml
-	subi	>80,a2
+	subi	080H,a2
 	abs	a2
 #o2dsml	subk	16,a2
 	jrge	#nopush				;!In front?
@@ -546,7 +546,7 @@
 #nopush
 
 
-	movi	>7f,a0
+	movi	07fH,a0
 	callr	rnd
 	jrz	#newseek
 
@@ -585,7 +585,7 @@
 	callr	drone_seekxy
 	jrnz	#notthere
 
-	movk	>1f,a0				;3%
+	movk	01fH,a0				;3%
 	callr	rnd
 	jrnz	#x
 	clr	a0
@@ -635,7 +635,7 @@
 * A8=*Obj
 * A11=*Ctrl bits
 * A13=*Plyr process
-* >A0=!0 if pass OK (CC)
+* 0A0H=!0 if pass OK (CC)
 * Trashes scratch
 
  SUBRP	drone_pass
@@ -778,9 +778,9 @@
 	move	*a3(plyr_hpdir),a0	;Find dir difference
 	sub	a1,a0
 	abs	a0
-	cmpi	>40,a0
+	cmpi	040H,a0
 	jrle	#dsml
-	subi	>80,a0
+	subi	080H,a0
 	abs	a0
 #dsml	subk	28,a0
 	jrle	#gbc			;TM not between op and hoop?
@@ -800,7 +800,7 @@
 	move	*a2(OZPOS),a1		;Z
 
 	move	@game_time,a14,L
-	cmpi	>800,a14
+	cmpi	0800H,a14
 	jrlt	#setseek		;Less than 8 secs?
 	move	@shotimer+16,a14	;Tens
 	jrnz	#scok
@@ -882,7 +882,7 @@
 	jrgt	#psrnd			;!In his face?
 
 	move	@game_time,a14,L
-	cmpi	>800,a14
+	cmpi	0800H,a14
 	jrlt	#ps			;Less than 8 secs?
 	move	@shotimer+16,a14	;Tens
 	jrnz	#psrnd
@@ -917,7 +917,7 @@
 #skipsp
 
 
-	move	*a13(plyr_balldist),a14	;>Chk if I can block ball
+	move	*a13(plyr_balldist),a14	;0CHhk if I can block ball
 	cmpi	65,a14
 	jrge	#noblk
 
@@ -1152,7 +1152,7 @@
 	callr	drone_seekxy
 
 
-	move	*a13(plyr_balldist),a2	;>Chk if I can jump at ball
+	move	*a13(plyr_balldist),a2	;0CHhk if I can jump at ball
 	subk	30,a2
 	jrge	#nojmp
 
@@ -1198,7 +1198,7 @@
 * A1=Z
 * A8=*Obj
 * A11=*Ctrl bits
-* >A0=Joy bits set or 0 (Pass CC)
+* 0A0H=Joy bits set or 0 (Pass CC)
 * Trashes scratch
 
  SUBRP	drone_seekxy
@@ -1244,7 +1244,7 @@
 
 #*******************************
 * Get the current skill offset
-* >A0=Offset (0-30) *16
+* 0A0H=Offset (0-30) *16
 * Trashes scratch
 
  SUBRP	drone_getcurskillo
@@ -1304,7 +1304,7 @@
 	subk	3,a0			;-2 to 2
 	sll	1,a0			;*2
 
-	move	@gmqrtr,a14		;>Chk quarter minimum
+	move	@gmqrtr,a14		;0CHhk quarter minimum
 	cmpi	2,a14
 	jrle	#qok
 	movk	2,a14
@@ -1322,7 +1322,7 @@
 	btst	a1,a14
 	jrnz	#tminok			;Teammate is human?
 
-	move	@team1,a14		;>Chk team minimum
+	move	@team1,a14		;0CHhk team minimum
 	cmpi	3,b0
 	jrge	#t1
 	move	@team2,a14
@@ -1393,7 +1393,7 @@
 ********************************
 * Get random # with mask
 * A0=Mask
-* >A0=Rnd # (Pass CC)
+* 0A0H=Rnd # (Pass CC)
 * Trashes scratch
 
  SUBRP	rnd
@@ -1412,7 +1412,7 @@
 ********************************
 * Quickly produce a random # in range 0-X
 * A0=X
-* >A0=Random # (0 to A0) (No CC)
+* 0A0H=Random # (0 to A0) (No CC)
 * Trashes scratch
 
  SUBRP	rndrng0

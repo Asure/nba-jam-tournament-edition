@@ -1,4 +1,4 @@
-**************************************************************
+#**************************************************************
 *
 * Software:	? and Shawn Liptak
 * Initiated:	?
@@ -163,7 +163,7 @@ KILUP
 	move	@SYSCOPY,a0		;>Init sysctrl
 	srl	8,a0
 	sll	8,a0
-	movi	SYSCINIT&>ff,a1		;Don't touch 7seg LED
+	movi	SYSCINIT&0ffH,a1		;Don't touch 7seg LED
 	or	a1,a0
 	move	a0,@SYSCOPY
 	move	a0,@SYSCTRL
@@ -335,7 +335,7 @@ SRSL	.macro	a
 	dsj	b0,#lp
 
 
-	movi	ACTIVE,a2		;>Find end of list
+	movi	ACTIVE,a2		;0FHind end of list
 #prlp
 	move	a2,a3
 	move	*a2,a2,L
@@ -403,7 +403,7 @@ SRSL	.macro	a
 	move	*a13(PROCID),a11
 	subi	ANIMPID,a11
 	srl	8,a11
-	sll	8,a11			;A11=ID offset (0->300)
+	sll	8,a11			;A11=ID offset (0-0300H)
 
 	clr	a1
 	move	a1,*a13(animsfnum)
@@ -459,7 +459,7 @@ ans100	move	*a9+,a2,L		;*Image
 	PULL	a8
 	jruc	anslp
 
-asFRA					;>FRANIM
+asFRA					;0FHRANIM
 	move	a11,a6			;Save a11
 	move	*a8+,a9,L		;Get data
 	move	*a13(PROCID),a1		;Inherit same ID+1
@@ -658,7 +658,7 @@ asLABR					;>Set label randomly
 asDSJS1					;>Sleep 1, dec and loop to label
 	SLEEPK	1
 
-asDSJ					;>Decrement and loop to label
+asDSJ					;0DecHrement and loop to label
 	move	*a13(animslp_p),a1,L
 	move	-*a1,a2
 	subk	1,a2
@@ -691,7 +691,7 @@ ans1450	move	*a13(animslobj_p),a0,L	;Get * to last obj
 	move	a4,*a0(OPAL)
 	jruc	anslp
 
-asANI					;>Do ANI on OID
+asANI					;0DHo ANI on OID
 	move	*a8+,a5,L
 	move	*a8+,a1			;OID
 	addi	CLSANIM,a1
@@ -713,7 +713,7 @@ ans1620	callr	obj_find
 	jrnz	ans1620			;More?
 	jruc	anslp
 
-asDEL					;>Delete obj
+asDEL					;0DeHlete obj
 	move	*a8+,a0
 	clr	a1
 asdel5	addi	CLSANIM,a0
@@ -721,7 +721,7 @@ asdel5	addi	CLSANIM,a0
 	calla	obj_delc
 	jruc	anslp
 
-asDELM					;>Delete obj with mask
+asDELM					;0DeHlete obj with mask
 	move	*a8+,a0
 	move	*a8+,a1
 	jruc	asdel5
@@ -744,10 +744,10 @@ asRUNI					;>Run a new anim script with ID
 	add	a11,a1			;+offset
 	jruc	asrun5
 
-asCRE					;>Create a process
+asCRE					;0CHreate a process
 	move	*a8+,a7,L
 	move	*a8+,a9,L		;Pass A9 to process
-	movi	ANIMPID+>ff,a1
+	movi	ANIMPID+0ffH,a1
 	add	a11,a1			;+offset
 	calla	GETPRC
 	jruc	anslp
@@ -794,13 +794,13 @@ asJMPNE					;>Jump to new location if != to mem
 	move	a2,a8			;Do jmp
 	jruc	anslp
 
-asSNDD					;>Do a snd call in demo
+asSNDD					;0DHo a snd call in demo
 	movk	ADJMUSIC,a0		;Get demo music ON/OFF
 	calla	GET_ADJ
 	jrz	asSND			;Do sounds?
 	addk	32,a8
 	jruc	anslp
-asSND					;>Do a snd call
+asSND					;0DHo a snd call
 	move	*a8+,a0,L
 	calla	snd_play1
 	jruc	anslp
@@ -820,7 +820,7 @@ asSHOW					;>Show an OID (X-5000)
 	movi	-5000,a4
 	jruc	ashide2
 
-asADDW					;>Add WORD to mem
+asADDW					;0AddH WORD to mem
 	move	*a8+,a0,L
 	move	*a8+,a1
 	move	*a0,a2
@@ -828,7 +828,7 @@ asADDW					;>Add WORD to mem
 	move	a2,*a0
 	jruc	anslp
 
-asADDWO					;>Add WORD to last obj+offset
+asADDWO					;0AddH WORD to last obj+offset
 	move	*a8+,a0
 	move	*a13(animslobj_p),a1,L	;Get * to last one
 	move	*a8+,a2			;Offset
@@ -838,7 +838,7 @@ asADDWO					;>Add WORD to last obj+offset
 	move	a2,*a1
 	jruc	anslp
 
-asADDLO					;>Add LONG # to last obj+offset
+asADDLO					;0AddH LONG # to last obj+offset
 	move	*a8+,a0,L
 	move	*a13(animslobj_p),a1,L	;Get * to last one
 	move	*a8+,a2			;Offset
@@ -848,7 +848,7 @@ asADDLO					;>Add LONG # to last obj+offset
 	move	a2,*a1,L
 	jruc	anslp
 
-asADLVO					;>Add LONG value to last obj+offset
+asADLVO					;0AddH LONG value to last obj+offset
 	move	*a8+,a0
 	move	*a13(animslobj_p),a1,L	;Get * to last one
 	add	a0,a1			;+Offset
@@ -881,7 +881,7 @@ asSVL					;>Set value to long
 	move	a0,*a13(animsv),L
 	jruc	anslp
 
-asBXY					;>Add # to BaseXY
+asBXY					;0AddH # to BaseXY
 	move	*a8+,a0,L
 	move	*a13(animsbx),a1,L
 	addxy	a0,a1
@@ -931,7 +931,7 @@ asEND	SLEEPK	1			;>Wait on FRANIMs before exit
 
  SUBRP	anims_franim		;A9=*FRAN list, A10=OID, A11=# Loops
 
-	move	@OBJLST,a8,L		;>Find object
+	move	@OBJLST,a8,L		;0FHind object
 anf100	move	*a8(OID),a0
 	cmp	a10,a0
 	jreq	anf300
@@ -985,11 +985,11 @@ anw10	SLEEPK	3
 	move	a0,@animscnt
 
 	movi	ANIMPID,a0	;>Kill processes
-	movi	>3ff,a1
+	movi	03ffH,a1
 	calla	KILALLN
 
-	movi	CLSANIM,a0	;>Delete objs
-	movi	>3ff,a1
+	movi	CLSANIM,a0	;0DeHlete objs
+	movi	03ffH,a1
 	jauc	obj_delc
 
 
@@ -999,7 +999,7 @@ anw10	SLEEPK	3
 * A0=*1st obj
 * A1=OID
 * A2=!Mask
-* >A0=*Obj or 0 (Z)
+* 0A0H=*Obj or 0 (Z)
 * Trashes A1,A3
 
  SUBRP	obj_find
@@ -1060,7 +1060,7 @@ FLASHME
 	clr	a0
 	move	a0,*a8(OCONST)		;Clr color
 	move	*a8(OCTRL),a0
-	andi	>fff5,a0		;Clr constant & nonzero
+	andi	0fff5H,a0		;Clr constant & nonzero
 	addk	2,a0			;Set nonzero
 	move	a0,*a8(OCTRL)
 #x	DIE
@@ -1106,7 +1106,7 @@ COLCYC1	MOVE	*A5+,A7		;TRANSFER IT TWICE
 	ADD	A0,A10			;COLRAM DESTINATION
 
 COLCYCB
-	MOVE	A8,*A13(PDATA+>20),L	;SAVE RAM ADDRESS
+	MOVE	A8,*A13(PDATA+020H),L	;SAVE RAM ADDRESS
 COLCYCBL
 	MOVE	A8,A0			;GET SOURCE ADDRESS
 	MOVE	A10,A1			;GET DESTINATION CONSTANT
@@ -1115,7 +1115,7 @@ COLCYCBL
 	SUBK	16,A8
 	CMP	A8,A9
 	JRLO	CCYCBSLP
-	MOVE	*A13(PDATA+>20),A8,L	;GET SOURCE TABLE START
+	MOVE	*A13(PDATA+020H),A8,L	;GET SOURCE TABLE START
 CCYCBSLP
 	MOVE	A11,A0		;GET SLEEP TIME
 	CALLA	PRCSLP
@@ -1151,7 +1151,7 @@ CYCLE_TABLE
 	calla	pal_set			;do the transfer
 	MOVE	A11,A0
 	CALLA	PRCSLP
-	ADDK	>10,A9
+	ADDK	010H,A9
 	MOVE	*A9,A0
 	JRN	RESTUFF
 	MOVE	*A13(PDATA+16),A1	;PDATA+16=ENTRY WE STOP AT
@@ -1164,7 +1164,7 @@ RESTUFF	MOVE	A10,A9			;REACHED END OF TABLE, RESTUFF
 ****************************************************************
 * Converts a 32 bit hex # to a null terminated ascii string
 * A8=#
-* >A8=*String
+* 0A8H=*String
 
 HEXTOASC
 	PUSH	a1,a2,a9
@@ -1277,21 +1277,21 @@ STRRNRM
 STRLNRMO
 	mmtm	a12,a1,a2,a3,a4,a6,a14
 	movi	DMACNZ|M_NOCOLL,a4
-	movi	>10000,a14
+	movi	010000H,a14
 	jruc	stringr1
 
 ;CENTER JUSTIFY, NORMAL, OBJECT LIST
 STRCNRMO
 	mmtm	a12,a1,a2,a3,a4,a6,a14
 	movi	DMACNZ|M_NOCOLL,a4
-	movi	>10001,a14
+	movi	010001H,a14
 	jruc	stringr1
 
 ;CENTER JUSTIFY, NORMAL, OBJECT LIST, MULTIPLE COLORS!
 STRCNRMO_1
 	mmtm	a12,a1,a2,a3,a4,a6,a14
 	movi	DMAWNZ|M_NOCOLL,a4
-	movi	>10001,a14
+	movi	010001H,a14
 	move	a6,a5
 	jruc	stringr1_1
 
@@ -1299,7 +1299,7 @@ STRCNRMO_1
  SUBR	STRLNRMO_1
 	mmtm	a12,a1,a2,a3,a4,a6,a14
 	movi	DMAWNZ|M_NOCOLL,a4
-	movi	>10000,a14
+	movi	010000H,a14
 	move	a6,a5
 	jruc	stringr1_1
 
@@ -1339,7 +1339,7 @@ strr10	movb	*a8,a1			;Get a character
 					;Save sleep time
 strr20	PUSH	a0
 
-	subk	1,a1			;>Calc table offset
+	subk	1,a1			;0CaHlc table offset
 	sll	5,a1			;*32
 	add	a11,a1
 	move	*a1,a1,L		;Get * image header
@@ -1362,7 +1362,7 @@ strr20	PUSH	a0
 
 
 	move	a4,a1
-	andi	>803f,a1		;Kill mode bits
+	andi	0803fH,a1		;Kill mode bits
 	or	a1,a3
 	move	a3,*a0(OCTRL),L		;&OFSET
 
@@ -1397,7 +1397,7 @@ strrdma	PUSH	a3			;>Simple DMA
 	move	a5,a1			;Constant:Palette
 	PULL	a5
 	PUSH	a4
-	andi	>803f,a4
+	andi	0803fH,a4
 	or	a4,a5			;Offset:Control
 	move	a3,a4			;SAG
 
@@ -1564,7 +1564,7 @@ OBJON
 ********************************
 * GETCPNT - Get the center xy position of an object
 * A8=*Object
-* >A0=Center Y:Center X
+* 0A0H=Center Y:Center X
 
  SUBR	GETCPNT
 
@@ -1573,7 +1573,7 @@ OBJON
 	movx	a0,a1
 	move	*a8(OSIZE),a0,L
 	srl	1,a0			;/2
-	andi	>7fff7fff,a0		;Clr bit 15
+	andi	07fff7fffH,a0		;Clr bit 15
 	addxy	a1,a0
 	rets
 
@@ -1604,7 +1604,7 @@ GETAX1	MOVE	*A8(OXPOS),A0
 ****************************************************************
 * Quickly produce a random # in range -X to +X
 * A0=+X
-* >A0=Random # (-A0 to +A0) (CC)
+* 0A0H=Random # (-A0 to +A0) (CC)
 * Trashes scratch
 
  SUBR	RNDRNGS
@@ -1617,7 +1617,7 @@ GETAX1	MOVE	*A8(OXPOS),A0
 * Quickly produce a random # in a given range
 * A0=Lower bound
 * A1=Upper bound
-* >A0=Random # (A0 to A1) (CC)
+* 0A0H=Random # (A0 to A1) (CC)
 * Trashes scratch
 
  SUBR	RNDRNG
@@ -1642,7 +1642,7 @@ GETAX1	MOVE	*A8(OXPOS),A0
 ********************************
 * Quickly produce a random # in range 0-X
 * A0=X
-* >A0=Random # (0 to A0) (No CC)
+* 0A0H=Random # (0 to A0) (No CC)
 * Trashes scratch
 
  SUBR	RNDRNG0
@@ -1663,7 +1663,7 @@ GETAX1	MOVE	*A8(OXPOS),A0
 ********************************
 * Random % routine
 * A0=Probability of event (0-1000) (0=0%, 1000=100%)
-* >A0=0-999 (CC) (jrls nope, jrhi happened)
+* 0A0H=0-999 (CC) (jrls nope, jrhi happened)
 * Trashes scratch
 
  SUBR	RNDPER
@@ -1932,7 +1932,7 @@ franl	move	*a9+,a1,L
 
 	move	*a8(OCTRL),a4		;Current flags
 	move	*a9+,a0			;Sleep time
-	cmpi	>100,a0
+	cmpi	0100H,a0
 	jrlo	fran2			;Just sleep?
 	
 	PUSH	a1,a2,a7
@@ -2026,7 +2026,7 @@ FRANIMQ
 
 #lp	move	*a8(OCTRL),a4		;Current flags
 	move	*a9+,a0			;Sleep time
-	cmpi	>100,a0
+	cmpi	0100H,a0
 	jrlo	frq70			;No special bits?
 	
 	btst	BFLIPBIT,a0		;New flip?
@@ -2069,12 +2069,12 @@ frq80	move	*a9+,a1,L		;Get frame
 
 #***************************************************************
 * Hardware security check code (1b00000 & 1b80000)
-* >A0=0 if OK
+* 0A0H=0 if OK
 * Trashes scratch
 
-OFF	.equ	>69d2
-SEC	.equ	>1b15f50-OFF
-FAKEO	.equ	->b00050+OFF
+OFF	.equ	069d2H
+SEC	.equ	01b15f50H-OFF
+FAKEO	.equ	-0b00050H+OFF
 SECDB	.equ	0
 
  SUBR	security_chk
@@ -2138,15 +2138,15 @@ SECDB	.equ	0
 	getpc	a4
 	addi	#sec_t-$,a4,W
 	add	a4,a14
-	move	*a1(OFF+>49),a2	;Read 3rd sec value
+	move	*a1(OFF+049H),a2	;Read 3rd sec value
 	move	a2,b0
 	sll	16,b0
 	or	b0,b1
-	move	*a1(OFF+>89),a2	;Read 4th sec value
+	move	*a1(OFF+089H),a2	;Read 4th sec value
 	move	a2,b0
 	sll	8,b0
 	or	b0,b1
-	move	*a1(OFF+>c9),a2	;Read 5th sec value
+	move	*a1(OFF+0c9H),a2	;Read 5th sec value
 	move	a2,b0
 	or	b0,b1
 	popst
@@ -2158,134 +2158,134 @@ SECDB	.equ	0
 #x	rets
 
 #sec_t
-	.long	>00000000
-	.long	>04081020
-	.long	>08102000
-	.long	>0C183122
-	.long	>10200000
-	.long	>14281020
-	.long	>18312204
-	.long	>1C393326
-	.long	>20000001
-	.long	>24081021
-	.long	>28102000
-	.long	>2C183122
-	.long	>30200001
-	.long	>34281021
-	.long	>38312204
-	.long	>3C393326
-	.long	>00000102
-	.long	>04081122
-	.long	>08102102
-	.long	>0C183122
-	.long	>10200000
-	.long	>14281020
-	.long	>18312204
-	.long	>1C393326
-	.long	>20000103
-	.long	>24081123
-	.long	>28102102
-	.long	>2C183122
-	.long	>30200001
-	.long	>34281021
-	.long	>38312204
-	.long	>3C393326
-	.long	>00010204
-	.long	>04091224
-	.long	>08112204
-	.long	>0C193326
-	.long	>10210204
-	.long	>14291224
-	.long	>18312204
-	.long	>1C393326
-	.long	>20000001
-	.long	>24081021
-	.long	>28102000
-	.long	>2C183122
-	.long	>30200001
-	.long	>34281021
-	.long	>38312204
-	.long	>3C393326
-	.long	>00010306
-	.long	>04091326
-	.long	>08112306
-	.long	>0C193326
-	.long	>10210204
-	.long	>14291224
-	.long	>18312204
-	.long	>1C393326
-	.long	>20000103
-	.long	>24081123
-	.long	>28102102
-	.long	>2C183122
-	.long	>30200001
-	.long	>34281021
-	.long	>38312204
-	.long	>3C393326
-	.long	>00000000
-	.long	>01201028
-	.long	>02213018
-	.long	>03012030
-	.long	>04223138
-	.long	>05022110
-	.long	>06030120
-	.long	>07231108
-	.long	>08042231
-	.long	>09243219
-	.long	>0A251229
-	.long	>0B050201
-	.long	>0C261309
-	.long	>0D060321
-	.long	>0E072311
-	.long	>0F273339
-	.long	>10080422
-	.long	>1128140A
-	.long	>1229343A
-	.long	>13092412
-	.long	>142A351A
-	.long	>150A2532
-	.long	>160B0502
-	.long	>172B152A
-	.long	>180C2613
-	.long	>192C363B
-	.long	>1A2D160B
-	.long	>1B0D0623
-	.long	>1C2E172B
-	.long	>1D0E0703
-	.long	>1E0F2733
-	.long	>1F2F371B
-	.long	>20100804
-	.long	>2130182C
-	.long	>2231381C
-	.long	>23112834
-	.long	>2432393C
-	.long	>25122914
-	.long	>26130924
-	.long	>2733190C
-	.long	>28142A35
-	.long	>29343A1D
-	.long	>2A351A2D
-	.long	>2B150A05
-	.long	>2C361B0D
-	.long	>2D160B25
-	.long	>2E172B15
-	.long	>2F373B3D
-	.long	>30180C26
-	.long	>31381C0E
-	.long	>32393C3E
-	.long	>33192C16
-	.long	>343A3D1E
-	.long	>351A2D36
-	.long	>361B0D06
-	.long	>373B1D2E
-	.long	>381C2E17
-	.long	>393C3E3F
-	.long	>3A3D1E0F
-	.long	>3B1D0E27
-	.long	>3C3E1F2F
-	.long	>3D1E0F07
-	.long	>3E1F2F37
-	.long	>3F3F3F1F
+	.long	000000000H
+	.long	004081020H
+	.long	008102000H
+	.long	00C183122H
+	.long	010200000H
+	.long	014281020H
+	.long	018312204H
+	.long	01C393326H
+	.long	020000001H
+	.long	024081021H
+	.long	028102000H
+	.long	02C183122H
+	.long	030200001H
+	.long	034281021H
+	.long	038312204H
+	.long	03C393326H
+	.long	000000102H
+	.long	004081122H
+	.long	008102102H
+	.long	00C183122H
+	.long	010200000H
+	.long	014281020H
+	.long	018312204H
+	.long	01C393326H
+	.long	020000103H
+	.long	024081123H
+	.long	028102102H
+	.long	02C183122H
+	.long	030200001H
+	.long	034281021H
+	.long	038312204H
+	.long	03C393326H
+	.long	000010204H
+	.long	004091224H
+	.long	008112204H
+	.long	00C193326H
+	.long	010210204H
+	.long	014291224H
+	.long	018312204H
+	.long	01C393326H
+	.long	020000001H
+	.long	024081021H
+	.long	028102000H
+	.long	02C183122H
+	.long	030200001H
+	.long	034281021H
+	.long	038312204H
+	.long	03C393326H
+	.long	000010306H
+	.long	004091326H
+	.long	008112306H
+	.long	00C193326H
+	.long	010210204H
+	.long	014291224H
+	.long	018312204H
+	.long	01C393326H
+	.long	020000103H
+	.long	024081123H
+	.long	028102102H
+	.long	02C183122H
+	.long	030200001H
+	.long	034281021H
+	.long	038312204H
+	.long	03C393326H
+	.long	000000000H
+	.long	001201028H
+	.long	002213018H
+	.long	003012030H
+	.long	004223138H
+	.long	005022110H
+	.long	006030120H
+	.long	007231108H
+	.long	008042231H
+	.long	009243219H
+	.long	00A251229H
+	.long	00B050201H
+	.long	00C261309H
+	.long	00D060321H
+	.long	00E072311H
+	.long	00F273339H
+	.long	010080422H
+	.long	01128140AH
+	.long	01229343AH
+	.long	013092412H
+	.long	0142A351AH
+	.long	0150A2532H
+	.long	0160B0502H
+	.long	0172B152AH
+	.long	0180C2613H
+	.long	0192C363BH
+	.long	01A2D160BH
+	.long	01B0D0623H
+	.long	01C2E172BH
+	.long	01D0E0703H
+	.long	01E0F2733H
+	.long	01F2F371BH
+	.long	020100804H
+	.long	02130182CH
+	.long	02231381CH
+	.long	023112834H
+	.long	02432393CH
+	.long	025122914H
+	.long	026130924H
+	.long	02733190CH
+	.long	028142A35H
+	.long	029343A1DH
+	.long	02A351A2DH
+	.long	02B150A05H
+	.long	02C361B0DH
+	.long	02D160B25H
+	.long	02E172B15H
+	.long	02F373B3DH
+	.long	030180C26H
+	.long	031381C0EH
+	.long	032393C3EH
+	.long	033192C16H
+	.long	0343A3D1EH
+	.long	0351A2D36H
+	.long	0361B0D06H
+	.long	0373B1D2EH
+	.long	0381C2E17H
+	.long	0393C3E3FH
+	.long	03A3D1E0FH
+	.long	03B1D0E27H
+	.long	03C3E1F2FH
+	.long	03D1E0F07H
+	.long	03E1F2F37H
+	.long	03F3F3F1FH
 
 	.def	secend
 secend

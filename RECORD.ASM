@@ -231,7 +231,7 @@ record_sort_ram	equ	SCRATCH+8*256*1024
 	.global	hiscore_type
 	.text
 
-bounce_snd	.word	>fc80,10,>8129,0	;Ball bounce
+bounce_snd	.word	0fc80H,10,08129H,0	;Ball bounce
 
 #******************************************************************************
 

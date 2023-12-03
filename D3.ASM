@@ -26,10 +26,10 @@
 
 ;sound headers used
 
-tankexpsnd	.word	>fcc0,15,>8153,0	;Tank explosion
-plfiresnd	.word	>f450,20,>8129,0	;Player cannon
-enfiresnd	.word	>f460,20,>811d,0	;Enemy cannon
-plhit_snd	.word	>fcf5,05,>8138,0	;Hit backboard
+tankexpsnd	.word	0fcc0H,15,08153H,0	;Tank explosion
+plfiresnd	.word	0f450H,20,08129H,0	;Player cannon
+enfiresnd	.word	0f460H,20,0811dH,0	;Enemy cannon
+plhit_snd	.word	0fcf5H,05,08138H,0	;Hit backboard
 
 ;symbols externally defined
 
@@ -56,37 +56,37 @@ OBJPTR	.equ	0	;UHW
 *endstruct
 *struct XYZ
 PTX	.equ	0	;SDW
-PTY	.equ	>10	;SDW
-PTZ	.equ	>20	;SDW
+PTY	.equ	010H	;SDW
+PTZ	.equ	020H	;SDW
 *endstruct
 
 *struct D3OBJ
 D3LINK	.equ	0		;UHL *Next object or 0
-D3X	.equ	>20		;SHL X pos 24:8
-D3Y	.equ	>40		;SHL Y ^
-D3Z	.equ	>60		;SHL Z ^
-D3XV	.equ	>80		;SHL X vel 24:8
-D3YV	.equ	>a0		;SHL Y ^
-D3ZV	.equ	>c0		;SHL Z ^
-D3XA	.equ	>e0		;UHW X angle 0-255
-D3YA	.equ	>f0		;UHW Y ^
-D3ZA	.equ	>100		;UHW Z ^
-D3ID	.equ	>110		;UHW Type ID
-D3PTS	.equ	>120		;UHL *Points array (Cnt, XYZ,XYZ..)
-D3XPTS	.equ	>140		;UHL *Xformed points array (Cnt, XYZ,XYZ..)
-D3FACE	.equ	>160		;UHL *Face data
-D3ZTEMP	.equ	>180		;SHW View relative Z for sorting
-D3PLINK	.equ	>190		;UHL *Process that owns
-D3HDSZ	.equ	>1b0
+D3X	.equ	020H		;SHL X pos 24:8
+D3Y	.equ	040H		;SHL Y ^
+D3Z	.equ	060H		;SHL Z ^
+D3XV	.equ	080H		;SHL X vel 24:8
+D3YV	.equ	0a0H		;SHL Y ^
+D3ZV	.equ	0c0H		;SHL Z ^
+D3XA	.equ	0e0H		;UHW X angle 0-255
+D3YA	.equ	0f0H		;UHW Y ^
+D3ZA	.equ	0100H		;UHW Z ^
+D3ID	.equ	0110H		;UHW Type ID
+D3PTS	.equ	0120H		;UHL *Points array (Cnt, XYZ,XYZ..)
+D3XPTS	.equ	0140H		;UHL *Xformed points array (Cnt, XYZ,XYZ..)
+D3FACE	.equ	0160H		;UHL *Face data
+D3ZTEMP	.equ	0180H		;SHW View relative Z for sorting
+D3PLINK	.equ	0190H		;UHL *Process that owns
+D3HDSZ	.equ	01b0H
 *endstruct
 
 
-XPTMSZ	.equ	(16*3*11*D3NUMO/4)&>fffff0
+XPTMSZ	.equ	(16*3*11*D3NUMO/4)&0fffff0H
 
 	BSSX	d3vis_p		,32		;*1st in chain of visable objs
 	BSSX	d3free_p	,32		;*1st in chain of free objs
 
-	STRUCT	>1100000
+	STRUCT	01100000H
 	STRUC	d3objmem	,D3HDSZ*D3NUMO	;Object header mem
 	STRUC	d3xptmem	,XPTMSZ		;Xformed pts mem
 
@@ -274,7 +274,7 @@ dt40	move	*a10+,a6,L
 
 
 	move	@SWITCH,a0
-	andi	>5808,a0		;P1/2 sticks rgt and P2 but 1&3 down
+	andi	05808H,a0		;P1/2 sticks rgt and P2 but 1&3 down
 	jrnz	#slp
 
 	CREATE0	copyright_prtmsg
@@ -299,7 +299,7 @@ dt40	move	*a10+,a6,L
 	movk	1,a0
 	move	a0,@show_shot
 
-	movi	>eaea,a0
+	movi	0eaeaH,a0
 	move	a0,@plyrbighead
 
 	movk	8,a0
@@ -408,23 +408,23 @@ rocket_pts
 	.word	0,0,-1100
 
 rocketline_t
-	.word	>101,0,1*48,2*48,3*48,4*48,5*48,6*48,7*48,-1
-	.word	>202,0,8*48,9*48,1*48,-1
-	.word	>303,1*48,9*48,10*48,2*48,-1
-	.word	>202,2*48,10*48,11*48,3*48,-1
-	.word	>303,3*48,11*48,12*48,4*48,-1
-	.word	>202,4*48,12*48,13*48,5*48,-1
-	.word	>303,5*48,13*48,14*48,6*48,-1
-	.word	>202,6*48,14*48,15*48,7*48,-1
-	.word	>303,7*48,15*48,8*48,0*48,-1
-	.word	>404,9*48,8*48,16*48,-1
-	.word	>504,10*48,9*48,16*48,-1
-	.word	>404,11*48,10*48,16*48,-1
-	.word	>504,12*48,11*48,16*48,-1
-	.word	>404,13*48,12*48,16*48,-1
-	.word	>504,14*48,13*48,16*48,-1
-	.word	>404,15*48,14*48,16*48,-1
-	.word	>504,8*48,15*48,16*48,-1
+	.word	0101H,0,1*48,2*48,3*48,4*48,5*48,6*48,7*48,-1
+	.word	0202H,0,8*48,9*48,1*48,-1
+	.word	0303H,1*48,9*48,10*48,2*48,-1
+	.word	0202H,2*48,10*48,11*48,3*48,-1
+	.word	0303H,3*48,11*48,12*48,4*48,-1
+	.word	0202H,4*48,12*48,13*48,5*48,-1
+	.word	0303H,5*48,13*48,14*48,6*48,-1
+	.word	0202H,6*48,14*48,15*48,7*48,-1
+	.word	0303H,7*48,15*48,8*48,0*48,-1
+	.word	0404H,9*48,8*48,16*48,-1
+	.word	0504H,10*48,9*48,16*48,-1
+	.word	0404H,11*48,10*48,16*48,-1
+	.word	0504H,12*48,11*48,16*48,-1
+	.word	0404H,13*48,12*48,16*48,-1
+	.word	0504H,14*48,13*48,16*48,-1
+	.word	0404H,15*48,14*48,16*48,-1
+	.word	0504H,8*48,15*48,16*48,-1
 	.word	-1	;End
 
 
@@ -440,12 +440,12 @@ cube_pts
 	.word	-400,400,-200
 
 cubeline_t
-	.word	>101,0,1*48,2*48,3*48,-1
-	.word	>202,7*48,6*48,5*48,4*48,-1
-	.word	>303,3*48,2*48,6*48,7*48,-1
-	.word	>303,4*48,5*48,1*48,0,-1
-	.word	>404,5*48,6*48,2*48,1*48,-1
-	.word	>404,7*48,4*48,0,3*48,-1
+	.word	0101H,0,1*48,2*48,3*48,-1
+	.word	0202H,7*48,6*48,5*48,4*48,-1
+	.word	0303H,3*48,2*48,6*48,7*48,-1
+	.word	0303H,4*48,5*48,1*48,0,-1
+	.word	0404H,5*48,6*48,2*48,1*48,-1
+	.word	0404H,7*48,4*48,0,3*48,-1
 	.word	-1	;End
 
 
@@ -458,10 +458,10 @@ pyr_pts				;Pyramid
 	.word	0,300,0		;Tip
 
 pyrline_t
-	.word	>2626,0,4*48,3*48,-1
-	.word	>2a2a,1*48,4*48,0,-1
-	.word	>2626,2*48,4*48,1*48,-1
-	.word	>2a2a,3*48,4*48,2*48,-1
+	.word	02626H,0,4*48,3*48,-1
+	.word	02a2aH,1*48,4*48,0,-1
+	.word	02626H,2*48,4*48,1*48,-1
+	.word	02a2aH,3*48,4*48,2*48,-1
 	.word	-1	;End
 
 
@@ -474,11 +474,11 @@ pmsl_pts
 	.word	0,0,-200	;Tip
 
 pmslline_t
-	.word	>f0f,0,1*48,2*48,3*48,-1
-	.word	>1111,0,4*48,1*48,-1
-	.word	>1313,1*48,4*48,2*48,-1
-	.word	>1111,2*48,4*48,3*48,-1
-	.word	>1313,3*48,4*48,0*48,-1
+	.word	0f0fH,0,1*48,2*48,3*48,-1
+	.word	01111H,0,4*48,1*48,-1
+	.word	01313H,1*48,4*48,2*48,-1
+	.word	01111H,2*48,4*48,3*48,-1
+	.word	01313H,3*48,4*48,0*48,-1
 	.word	-1	;End
 
 
@@ -495,15 +495,15 @@ enmsl_pts
 	.word	0,0,-200	;Tip
 
 enmslline_t
-	.word	>0f0f,0,1*48,2*48,3*48,4*48,5*48,6*48,7*48,-1
-	.word	>1111,0*48,8*48,1*48,-1
-	.word	>1313,1*48,8*48,2*48,-1
-	.word	>1111,2*48,8*48,3*48,-1
-	.word	>1313,3*48,8*48,4*48,-1
-	.word	>1111,4*48,8*48,5*48,-1
-	.word	>1313,5*48,8*48,6*48,-1
-	.word	>1111,6*48,8*48,7*48,-1
-	.word	>1313,7*48,8*48,0*48,-1
+	.word	00f0fH,0,1*48,2*48,3*48,4*48,5*48,6*48,7*48,-1
+	.word	01111H,0*48,8*48,1*48,-1
+	.word	01313H,1*48,8*48,2*48,-1
+	.word	01111H,2*48,8*48,3*48,-1
+	.word	01313H,3*48,8*48,4*48,-1
+	.word	01111H,4*48,8*48,5*48,-1
+	.word	01313H,5*48,8*48,6*48,-1
+	.word	01111H,6*48,8*48,7*48,-1
+	.word	01313H,7*48,8*48,0*48,-1
 	.word	-1	;End
 
 
@@ -519,12 +519,12 @@ tanklow_pts
 	.word	-100,-40,-200
 
 tanklowline_t
-	.word	>505,0,1*48,2*48,3*48,-1	;Back
-	.word	>202,1*48,5*48,6*48,2*48,-1	;R
-	.word	>303,5*48,4*48,7*48,6*48,-1	;F
-	.word	>202,4*48,0,3*48,7*48,-1	;L
-	.word	>404,4*48,5*48,1*48,0,-1	;Top
-	.word	>101,3*48,2*48,6*48,7*48,-1	;Bot
+	.word	0505H,0,1*48,2*48,3*48,-1	;Back
+	.word	0202H,1*48,5*48,6*48,2*48,-1	;R
+	.word	0303H,5*48,4*48,7*48,6*48,-1	;F
+	.word	0202H,4*48,0,3*48,7*48,-1	;L
+	.word	0404H,4*48,5*48,1*48,0,-1	;Top
+	.word	0101H,3*48,2*48,6*48,7*48,-1	;Bot
 	.word	-1	;End
 
 
@@ -541,12 +541,12 @@ tanktur_pts
 	.word	-80,-40,-100
 
 tankturline_t
-	.word	>2626,0,1*48,2*48,3*48,-1	;Back
-	.word	>2a2a,1*48,5*48,6*48,2*48,-1	;R
-	.word	>2626,5*48,4*48,7*48,6*48,-1	;F
-	.word	>2a2a,4*48,0,3*48,7*48,-1	;L
-	.word	>404,4*48,5*48,1*48,0,-1	;Top
-	.word	>101,3*48,2*48,6*48,7*48,-1	;Bot
+	.word	02626H,0,1*48,2*48,3*48,-1	;Back
+	.word	02a2aH,1*48,5*48,6*48,2*48,-1	;R
+	.word	02626H,5*48,4*48,7*48,6*48,-1	;F
+	.word	02a2aH,4*48,0,3*48,7*48,-1	;L
+	.word	0404H,4*48,5*48,1*48,0,-1	;Top
+	.word	0101H,3*48,2*48,6*48,7*48,-1	;Bot
 	.word	-1	;End
 
 
@@ -571,8 +571,8 @@ gnd_pts
 	.word	-1000,0,1000
 
 gndline_t
-	.word	>2020,0,1*48,2*48,3*48,-1
-	.word	>2323,4*48,5*48,6*48,7*48,-1
+	.word	02020H,0,1*48,2*48,3*48,-1
+	.word	02323H,4*48,5*48,6*48,7*48,-1
 	.word	-1	;End
 
 
@@ -598,7 +598,7 @@ check_vislist
 
 #*******************************
 * Get a object from 3D free list
-* >A8=*Object or 0
+* 0A8H=*Object or 0
 * Trashes scratch
 
  SUBRP	_3d_getobj
@@ -608,7 +608,7 @@ check_vislist
 	jrz	#err
 	move	*a8,*a0,L	;Unlink
 
-	movi	d3world_t,a0	;>Add to end
+	movi	d3world_t,a0	;0AddH to end
 #lp	move	*a0+,a1,L
 	jrnz	#lp
 	move	a1,*a0,L
@@ -623,7 +623,7 @@ check_vislist
 
 #*******************************
 * Get a object from 3D free list
-* >A8=*Object or 0
+* 0A8H=*Object or 0
 * Trashes scratch
 
  SUBRP	_3d_getgndobj
@@ -633,7 +633,7 @@ check_vislist
 	jrz	#err
 	move	*a8,*a0,L	;Unlink
 
-	movi	d3gnd_t,a0	;>Add to end
+	movi	d3gnd_t,a0	;0AddH to end
 #lp	move	*a0+,a1,L
 	jrnz	#lp
 	move	a1,*a0,L
@@ -653,7 +653,7 @@ check_vislist
 
  SUBRP	_3d_freeobj
 
-	movi	d3world_t,a0		;>Find
+	movi	d3world_t,a0		;0FHind
 #lp	move	*a0+,a1,L
 	jrz	#free
 	cmp	a1,a8
@@ -680,7 +680,7 @@ check_vislist
 * A5=ZA
 * A6=*Points
 * A7=*Face data
-* >A8=*Object or 0
+* 0A8H=*Object or 0
 * Trashes scratch
 
  SUBRP	_3d_beginobj
@@ -706,7 +706,7 @@ check_vislist
 	move	a7,*a8(D3FACE),L
 	move	a13,*a8(D3PLINK),L
 
-	movi	d3world_t,a14	;>Add to end
+	movi	d3world_t,a14	;0AddH to end
 #lp	move	*a14+,a1,L
 	jrnz	#lp
 	move	a1,*a14,L
@@ -729,7 +729,7 @@ check_vislist
 	PUSH	a4,a13,a14
 	PUSH	b2,b3,b4,b5,b6,b7,b8,b9,b10
 
-	movi	d3world_t,a7		;>Add velocity to position
+	movi	d3world_t,a7		;0AddH velocity to position
 	jruc	#move
 
 #lpmv	addk	D3X,a0
@@ -907,7 +907,7 @@ dt7500
 #*******************************
 * Check distance and visability of objs center point
 * Adds to d3vis_p if visable
-* >A11=*Next free xform mem
+* 0A11H=*Next free xform mem
 * Trashes A0-A7,B0-B1
 
 ;x=x*cos(az)-y*sin(az)
@@ -954,10 +954,10 @@ SINAY	.equ	b5
 	move	@viewy,a13,L
 	move	@viewz,a14,L
 
-	movi	d3world_t,a4		;>Build table of visable objs
+	movi	d3world_t,a4		;0BHuild table of visable objs
 	clr	a0
 	move	a0,@d3vis_p,L		;Null end
-	movi	>600000,a10		;A10=Range limit
+	movi	0600000H,a10		;A10=Range limit
 	movi	d3xptmem,a11
 	jruc	#next
 
@@ -1050,7 +1050,7 @@ SINAY	.equ	b5
 	add	a2,a11
 	add	a2,a11
 
-	movi	d3vis_p,a8		;>Find spot in list based on Z
+	movi	d3vis_p,a8		;0FHind spot in list based on Z
 #lp2	move	a8,a2
 	move	*a8,a8,L
 	jrz	#atend			;End?
@@ -1107,8 +1107,8 @@ SINAY	.equ	b5
 	move	@viewy,a13,L
 	move	@viewz,a14,L
 
-	movi	d3gnd_t,a4		;>Build table of visable objs
-	movi	>600000,a10		;A10=Range limit
+	movi	d3gnd_t,a4		;0BHuild table of visable objs
+	movi	0600000H,a10		;A10=Range limit
 	jruc	#next
 
 #lp
@@ -1440,7 +1440,7 @@ SINAY	.equ	b5
 	sra	16,a1		;X about Y
 
 
-	add	a12,a1		;>Add position offset
+	add	a12,a1		;0AddH position offset
 	add	a13,a3
 	add	a14,a7
 	move	a1,*a6+		;New X
@@ -1701,8 +1701,8 @@ dxrlp
 	jruc	#x		;No pts visable
 
 #avis
-	movi	>7fff,a8
-	movi	->7fff,a9
+	movi	07fffH,a8
+	movi	-07fffH,a9
 #lp2
 	move	a0,a6
 	move	*a0+,a1		;X
@@ -2040,7 +2040,7 @@ HITRNG	.equ	450<<8
 	addk	1,a0
 	move	a0,a11			;A11=Turn speed
 #lp
-	movi	>1f,a0
+	movi	01fH,a0
 	callr	rnd
 	jrnz	#noseek
 
@@ -2096,7 +2096,7 @@ HITRNG	.equ	450<<8
 
 
 #noturn
-	movk	>7,a0
+	movk	07H,a0
 	callr	rnd
 	jrnz	#nofire
 
@@ -2178,7 +2178,7 @@ HITRNG	.equ	450<<8
 ********************************
 * Get random # with mask
 * A0=Mask
-* >A0=Rnd # (Pass CC)
+* 0A0H=Rnd # (Pass CC)
 * Trashes scratch
 
  SUBRP	rnd
@@ -2197,7 +2197,7 @@ HITRNG	.equ	450<<8
 ********************************
 * Quickly produce a random # in range 0-X
 * A0=X
-* >A0=Random # (0 to A0) (No CC)
+* 0A0H=Random # (0 to A0) (No CC)
 * Trashes scratch
 
  SUBRP	rndrng0
@@ -2259,7 +2259,7 @@ sov60	sra	1,a6			;>Scale down to A3
 	cmp	a3,a2
 	jrgt	sov60
 
-	move	a6,a4			;>Fine scale up to A3
+	move	a6,a4			;0FHine scale up to A3
 	move	a7,a5
 	sra	4,a4			;/16
 	sra	4,a5
@@ -2279,7 +2279,7 @@ sov150	add	a4,a6
 
 sov200
 	PULL	a0
-	rets				;>A6=XV, A7=YV
+	rets				;0A6H=XV, A7=YV
 
 
 #*******************************
@@ -2287,7 +2287,7 @@ sov200
 * A6=Dest X
 * A7=Dest Z
 * A8=*Source 3D obj
-* >A0=0-255
+* 0A0H=0-255
 * Trashes A0-A2,A14
 
  SUBRP	seekob_dir256
@@ -2314,7 +2314,7 @@ sov200
 
 #200	sll	3,a2			;Oct*8
 #oct01	clr	a14
-	cmp	a1,a0			;>Cmp slope
+	cmp	a1,a0			;0CHmp slope
 	jrhs	#300
 
 	srl	2+3,a1			;Bigger/32
@@ -2334,7 +2334,7 @@ sov200
 	jrlo	#lp2
 
 
-#x	movi	>ff,a0
+#x	movi	0ffH,a0
 	and	a2,a0
 	rets
 
@@ -2342,7 +2342,7 @@ sov200
 ********************************
 * Get sine or cosine
 * A0=Angle (0-255)
-* >A0=0-16384*4
+* 0A0H=0-16384*4
 
  SUBRP	cos_get
 
@@ -2366,8 +2366,8 @@ sov200
 ********************************
 * Get sine and cosine
 * A0=Angle (0-255)
-* >A0=Sine (0-16384*4)
-* >A1=Cos (0-16384*4)
+* 0A0H=Sine (0-16384*4)
+* 0A1H=Cos (0-16384*4)
 
  SUBRP	sinecos_get
 
@@ -2536,7 +2536,7 @@ collidelists
 	cmp	a9,a0
 	jrle	#lp2			;X2Max <= X1Min?
 
-	callr	ColFunc			;>Call colfunc for obj A1 and A2
+	callr	ColFunc			;0CaHll colfunc for obj A1 and A2
 	move	b0,b1			;B1=*Collision routine for obj A1
 	SWAP	a1,a2
 	callr	ColFunc
@@ -2894,7 +2894,7 @@ SHGO
 
 copyright_prt
 
-	movk	2,a3			;>Decode string
+	movk	2,a3			;0DecHode string
 	move	a13,a2
 	addi	cpm_s,a2
 	setf	8,0,0

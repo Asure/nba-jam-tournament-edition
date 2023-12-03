@@ -1,0 +1,3166 @@
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+                                                                     PAGE    1
+
+       1                            .file   "speech.asm"
+       3                            .width  132
+       4                            .option b,d,l,t
+       5                            .mnolist
+       6                    
+       7                    
+       8                            .include        "mproc.equ"
+       9                            .include        "disp.equ"
+      10                            .include        "sys.equ"
+      11                            .include        "gsp.equ"
+      12                            .include        "mac2.asm"
+      13                            .include        "imgtbl.glo"
+      14                            .include        "imgtbl2.glo"
+      15                            .include        "bgndtbl.glo"
+      16                            .include        "game.equ"
+      17                            .include        "audit.equ"
+      18                            .include        "shawn.hdr"
+      19                    
+      20                            .asg            0,SEQT
+      21                            .include        "plyr.equ"
+      22                    
+      23                    
+      24                    
+      25                            .ref    fire_flags
+      26                            .ref    ballobj_p
+      27                            .ref    special_heads                   ;-1 = normal player head
+      28                    
+      29                            .ref    brick_count
+      30                            .ref    plyrproc_t
+      31                            .ref    ballpnum,ballpnumshot
+      32                            .ref    inbound
+      33                            .ref    ballrimhitcnt,ballbbhitcnt
+      34                            .ref    snd_play1,snd_play1ovrp
+      35                            .ref    snd_play1ovr
+      36                            .ref    rndrng0,RNDPER
+      37                            .ref    game_time
+      38                            .ref    gmqrtr,scores
+      39                            .ref    ballptsforshot          ;Point value for current shot (1-3)
+      40                            .ref    team1,team2
+      41                    
+      42                            .ref    ballpnumscored          ;Last plyr who scored (0-3) or neg
+      43                            .ref    ballnumscored           ;# times last plyr scored
+      44                            .ref    plyrnumonfire           ;plyr who is on fire
+      45                    
+      46                    
+      47                    
+      48 00000000                   BSSX    last_name,      16      ;last name called (0-3)
+      49 00000000                   BSSX    last_name_time, 16      ;# ticks since name called
+      50 00000000                   BSSX    shot_type,      16      ;dunk, 3ptr etc
+      51 00000000                   BSSX    plyr_shot,      16      ;player who shot last
+      52 00000000                   BSSX    shot_percentage,16      ;0-999
+      53 00000000                   BSSX    shot_distance,  16      ;distance from hoop
+      54 00000060                   .bss    ugly_stat,      16      ;0=not ugly, 1=ugly called
+      55 00000000                   BSSX    score_diff,     16      ;+winning by, -losing by
+      56 00000080                   .bss    blowout_called, 16      ;0=not called, 1=called
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE    2
+
+      57 00000090                   .bss    needshot_called,16      ;0=not called, 1=called
+      58 000000a0                   .bss    freakout,       16      ;0=no freakout
+      59 00000000                   BSSX    jam_speech,     16      ;speech type to call when jammed
+      60 00000000                   BSSX    next_call,      16      ;# shots before next score call
+      61 000000d0                   .bss    sound_ram,      16*4*4  ;queued speech ram
+      62 000001d0                   .bss    sound_ram2,     16*4*4  ;queued speech ram
+      63 000002d0                   .bss    skycalled,      16      ;skyhook called (0=no)
+      64 00000000                   BSSX    spch_name_ram,  32*4
+      65 00000000                   BSSX    spch_pass_ram,  32*4
+      66                    
+      67 00000000                   .text
+      68                    
+      69                    
+      70 00000000           STAB_START
+      71                    
+      72 00000000     f981  scrs0   .word   0f981H,60,08182H,0      ;and it's good
+      73 00000040     f9a1  scrs1   .word   0f9a1H,60,081e0H,0      ;it's good (excited)
+      74 00000080     f981  scrs2   .word   0f981H,30,08187H,0      ;got it!
+      75 000000c0     f981  scrs3   .word   0f981H,30,081daH,0      ;finds the hole
+      76 00000100     f981  scrs4   .word   0f981H,30,081dcH,0      ;what a shot
+      77 00000140     f981  scrs5   .word   0f981H,30,081dfH,0      ;hooks it in
+      78 00000180     f981  scrs6   .word   0f981H,30,081a0H,0      ;finger rolls it in
+      79 000001c0     f981  scrs7   .word   0f981H,98,081eaH,0      ;oh my!
+      80 00000200     f981  scrs8   .word   0f981H,30,081f5H,0      ;spectacular dunk
+      81 00000240     f981  scrs9   .word   0f981H,60,0819dH,0      ;sweet touch
+      82 00000280     f1a0  scrs10  .word   0f1a0H,39,081e1H,0      ;IT IS....
+      83 000002c0     f9a1  scrs11  .word   0f9a1H,51,081e2H,0      ;GOOOOD!!!
+      84 00000300     f981  scrs12  .word   0f981H,47,0819bH,0      ;scores
+      85 00000340     f981  scrs13  .word   0f981H,87,08184H,0      ;gets a lucky bounce
+      86 00000380     f990  scrs14  .word   0f990H,100,081d6H,0     ;the nail in the coffin!
+      87 000003c0     f981  scrs15  .word   0f981H,30,081afH,0      ;lays it up
+      88 00000400     f981  scrs16  .word   0f981H,70,0819cH,0      ;boom shakalaka
+      89 00000440     f981  scrs17  .word   0f981H,86,081a8H,0      ;razzle dazzle (incredible dunk)
+      90 00000480     f981  scrs18  .word   0f981H,60,081adH,0      ;is it the shoes?
+      91 000004c0     f981  scrs19  .word   0f981H,51,081aeH,0      ;kaboom
+      92 00000500     f981  scrs20  .word   0f981H,90,081b2H,0      ;monster jam
+      93 00000540     f981  scrs22  .word   0f981H,59,081bbH,0      ;slams it
+      94 00000580     f981  scrs23  .word   0f981H,49,081bcH,0      ;stuffs it
+      95 000005c0     f981  scrs24  .word   0f981H,73,0812dH,0      ;the easy jam
+      96 00000600     f981  scrs25  .word   0f981H,76,0812fH,0      ;fancy move
+      97 00000640     f981  scrsrz  .word   0f981H,76,081a8H,0      ;razzle dazzle
+      98 00000680     f981  scrs26  .word   0f981H,76,0812BH,0      ;FANTASTIC!
+      99                    
+     100 000006c0     f981  jamsit  .word   0f981H,74,081a4H,0      ;jams it in
+     101                    
+     102 00000700     f981  twopts  .word   0f981H,50,081caH,0      ;gets two (two points)
+     103 00000740     f981  bookit  .word   0f981H,42,081a6H,0      ;book it
+     104 00000780     f981  uncon   .word   0f981H,86,0816fH,0      ;he's unconscious
+     105 000007c0     f981  cantbuy .word   0f981H,73,08175H,0      ;can't buy a bucket
+     106 00000800     f981  baddec  .word   0f981H,72,081b7H,0      ;bad decision           <--change!
+     107                    
+     108                    
+     109 00000840           blowout_snd
+     110 00000840     f990          .word   0f990H,25,081feH,1      ;silence
+     111 00000880     f990          .word   0f990H,67,08172H,0      ;it's a blowout
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE    3
+
+     112 000008c0           blowout2_snd
+     113 000008c0     f990          .word   0f990H,25,081feH,1      ;silence
+     114 00000900     f990          .word   0f990H,87,081abH,0      ;Whoomp, there it is
+     115 00000940           swish_snd
+     116 00000940     f981          .word   0f981H,5,081feH,1               ;silence
+     117 00000980     f981          .word   0f981H,43,081e8H,0      ;SWISH!
+     118 000009c0           allnet_snd
+     119 000009c0     f981          .word   0f981H,5,081feH,1               ;silence
+     120 00000a00     f981          .word   0f981H,72,08195H,0      ;nothing but net
+     121                    
+     122 00000a40     f180  shts0   .word   0f180H,95,0818aH,0      ;from the 3 point line
+     123 00000a80     f180  shts1   .word   0f180H,53,081e6H,0      ;shoots for 3
+     124 00000ac0     f180  shts2   .word   0f180H,98,0818eH,0      ;from down town
+     125 00000b00     f180  shts3   .word   0f180H,99,08190H,0      ;he shoots from the outside
+     126 00000b40     f180  shtsrb  .word   0f180H,99,081f0H,0      ;rainbow
+     127 00000b80     f980  shts4   .word   0f980H,67,081c1H,0      ;wild shot
+     128 00000bc0     f180  shts5   .word   0f180H,81,0818bH,0      ;from long range
+     129 00000c00     f980  shts6   .word   0f980H,70,081e3H,0      ;out of range (launches a shot)
+     130 00000c40     f9a0  shts7   .word   0f9a0H,70,08183H,0      ;at the buzzer
+     131 00000c80     f180  shts8   .word   0f180H,53,081a3H,0      ;for two
+     132 00000cc0     f990  hooksht .word   0f990H,60,081bdH,0      ;takes the hook shot    <----check this
+     133                    
+     134 00000d00     f990  getout  .word   0f990H,86,0815dH,0      ;get that outta here
+     135 00000d40     f981  yes     .word   0f981H,46,081c2H,0      ;YES!
+     136 00000d80     f981  greatsht .word  0f981H,62,081d8H,0      ;great shot!
+     137 00000dc0     f981  wideopen .word  0f981H,66,081ddH,0      ;wide open
+     138 00000e00     f990  gottasht .word  0f990H,51,081d7H,0      ;they've gotta shoot it
+     139 00000e40     f981  nogood  .word   0f981H,58,081f1H,0      ;NO GOOD!
+     140 00000e80     f981  hescores .word  0f981H,63,081f6H,0      ;he scores
+     141                    
+     142 00000ec0           ugly0
+     143 00000ec0     f980          .word   0f980H,25,081feH,1      ;silence
+     144 00000f00     f980          .word   0f980H,63,081d9H,0      ;ugly shot!
+     145                    
+     146 00000f40           ugly1
+     147 00000f40     f980          .word   0f980H,25,081feH,1      ;silence
+     148 00000f80     f980          .word   0f980H,64,08198H,0      ;puts up a brick
+     149                    
+     150 00000fc0           ugly2
+     151 00000fc0     f980          .word   0f980H,25,081feH,1      ;silence
+     152 00001000     f980          .word   0f980H,66,0819fH,0      ;terrible shot!
+     153                    
+     154                    
+     155                    
+     156 00001040     f9ff  matchup .word   0f9ffH,66,081deH,0      ;tonight's matchup
+     157 00001080     f9ff  versus  .word   0f9ffH,42,0802fH,0      ;versus
+     158                    
+     159 000010c0     f9ff  ovrtme .word    0f9ffH,69,08180H,0      ;overtime!
+     160 00001100     f9ff  wingame .word   0f9ffH,75,08173H,0      ;win the game
+     161 00001140     f9ff  arewinrs .word  0f9ffH,69,08174H,0      ;are the winners
+     162                    
+     163                    
+     164 00001180     f990  munged  .word   0f990H,49,0812eH,0      ;munged
+     165 000011c0     f990  ambushed .word  0f990H,47,081c4H,0      ;ugly knockdown (ambushed)
+     166 00001200     f990  takethat .word  0f990H,46,08189H,0      ;take that!
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE    4
+
+     167 00001240     f990  flagrant .word  0f990H,50,08178H,0      ;flagrant
+     168 00001280     f990  tofloor .word   0f990H,81,081ceH,0      ;knocked to the floor
+     169 000012c0     f990  hello   .word   0f990H,47,081c8H,0      ;hello!
+     170 00001300     f990  excuse  .word   0f990H,57,081c0H,0      ;excuse me!
+     171                    
+     172 00001340     f990  reject  .word   0f990H,79,081b6H,0      ;rejected!
+     173 00001380     f990  rejects .word   0f990H,93,081f2H,0      ;rejects the shot
+     174 000013c0     f990  greatd  .word   0f990H,70,08188H,0      ;great defense
+     175 00001400     f990  noway   .word   0f990H,68,081b4H,0      ;no way!
+     176 00001440     f990  grabreb .word   0f990H,84,081efH,0      ;grabs the rebound
+     177 00001480     f990  intrcpt .word   0f990H,59,081a9H,0      ;intercepted!
+     178 000014c0     f990  turnovr .word   0f990H,51,081bfH,0      ;the turnover!
+     179 00001500     f990  stolen  .word   0f990H,47,081f3H,0      ;steals the ball
+     180                    
+     181 00001540     f990  downby  .word   0f990H,41,081cdH,0      ;down by
+     182 00001580     f990  upby    .word   0f990H,34,081cfH,0      ;up by
+     183 000015c0     f990  scrtied .word   0f990H,83,081baH,0      ;the score is tied
+     184                    
+     185 00001600     f990  snd_1   .word   0f990H,45,081d0H,0      ;
+     186 00001640     f990  snd_2   .word   0f990H,42,081d1H,0      ;
+     187 00001680     f990  snd_3   .word   0f990H,46,081d2H,0      ;
+     188 000016c0     f990  snd_4   .word   0f990H,44,081d3H,0      ;
+     189 00001700     f990  snd_5   .word   0f990H,41,081d4H,0      ;
+     190 00001740     f990  snd_6   .word   0f990H,38,081d5H,0      ;
+     191 00001780     f990  snd_7   .word   0f990H,47,081f7H,0      ;
+     192 000017c0     f990  snd_8   .word   0f990H,38,081f8H,0      ;
+     193 00001800     f990  snd_9   .word   0f990H,46,081f9H,0      ;
+     194 00001840     f990  snd_10  .word   0f990H,43,081faH,0      ;
+     195 00001880     f990  snd_15  .word   0f990H,57,081fbH,0      ;
+     196 000018c0     f990  snd_20  .word   0f990H,50,081fcH,0      ;
+     197                    
+     198                    
+     199 00001900     f9f1  heatup_snd      .word   0f9f1H,60,08168H,0      ;He's heating up
+     200 00001940     f9a1  onfire_snd      .word   0f9a1H,83,08169H,0      ;He's on fire
+     201 00001980     f990  hothand         .word   0f990H,87,081fdH,0      ;He's got a hot hand
+     202 000019c0     f3ff  organ1_snd      .word   0f3ffH,08H,080aeH,0
+     203 00001a00     f3ff  organ2_snd      .word   0f3ffH,08H,080afH,0
+     204                    
+     205 00001a40     f981  needshot        .word   0f981H,55,081feH,1      ;silence
+     206 00001a80     f998                  .word   0f998H,71,081e9H,0      ;They need a shot here
+     207                    
+     208 00001ac0     f981  silence55       .word   0f981H,55,081feH,1      ;silence
+     209                    
+     210 00001b00     f990  runout          .word   0f990H,8,081feH,1               ;silence
+     211 00001b40     f990                  .word   0f990H,90,08186H,0      ;running out of time
+     212                    
+     213                            .def    pass_speech
+     214                    
+     215 00001b80           pass_speech
+     216                    
+     217 00001b80     f980   .word  0f980H,32,08050H,0      ;TO MANNING
+     218 00001bc0     f980   .word  0f980H,31,080efH,0      ;TO AUGMON      ( ATLANTA )
+     219 00001c00     f980   .word  0f980H,40,08162H,0      ;TO WILLIS
+     220                    
+     221 00001c40     f980   .word  0f980H,43,080f8H,0      ;TO BROWN       ( BOSTON )
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE    5
+
+     222 00001c80     f980   .word  0f980H,28,080f7H,0      ;TO MCDAN
+     223 00001cc0     f980   .word  0f980H,30,08145H,0      ;TO GAMBLE
+     224                    
+     225 00001d00     f980   .word  0f980H,50,080e9H,0      ;TO JOHNSN_L    ( CHARLOTTE )
+     226 00001d40     f980   .word  0f980H,43,08061H,0      ;TO HAWKINS
+     227 00001d80     f980   .word  0f980H,45,08121H,0      ;TO MOURNING
+     228                    
+     229 00001dc0     f980   .word  0f980H,29,080e7H,0      ;TO PIPPEN
+     230 00001e00     f980   .word  0f980H,49,08130H,0      ;TO ARMSTRNG
+     231 00001e40     f980   .word  0f980H,40,0817cH,0      ;TO KUKOC
+     232 00001e80     f980   .word  0f980H,34,080e6H,0      ;TO GRANT_HC    ( CHICAGO )
+     233                    
+     234 00001ec0     f980   .word  0f980H,33,08055H,0      ;TO PRICE
+     235 00001f00     f980   .word  0f980H,34,08056H,0      ;TO DAUGHRTY    ( CLEVELAND )
+     236 00001f40     f980   .word  0f980H,34,08122H,0      ;TO NANCE
+     237                    
+     238 00001f80     f980   .word  0f980H,34,0817bH,0      ;TO JACKSON
+     239 00001fc0     f980   .word  0f980H,34,0817dH,0      ;TO MASHBURN
+     240                    
+     241 00002000     f980   .word  0f980H,46,08059H,0      ;TO MUTUMBO
+     242 00002040     f980   .word  0f980H,29,0805aH,0      ;TO ELLIS       ( DENVER )
+     243 00002080     f980   .word  0f980H,34,08137H,0      ;TO ROGERS
+     244                    
+     245 000020c0     f980   .word  0f980H,42,080feH,0      ;TO THOMAS
+     246 00002100     f980   .word  0f980H,34,08141H,0      ;TO DUMARS
+     247 00002140     f980   .word  0f980H,37,080f6H,0      ;TO ELLIOT
+     248 00002180     f980   .word  0f980H,34,08147H,0      ;TO HUNTER
+     249                    
+     250 000021c0     f980   .word  0f980H,37,080fbH,0      ;TO HARDAWAY
+     251 00002200     f980   .word  0f980H,30,080fcH,0      ;TO MULLIN      ( GOLDEN STATE )
+     252 00002240     f980   .word  0f980H,34,08161H,0      ;TO WEBBER
+     253                    
+     254 00002280     f980   .word  0f980H,43,08058H,0      ;TO OLAJUWON
+     255 000022c0     f980   .word  0f980H,34,0817fH,0      ;TO MAXWELL
+     256 00002300     f980   .word  0f980H,34,08146H,0      ;TO HORRY
+     257 00002340     f980   .word  0f980H,25,08057H,0      ;TO SMITH       ( HOUSTON )
+     258                    
+     259 00002380     f980   .word  0f980H,22,0804dH,0      ;TO MILLER
+     260 000023c0     f980   .word  0f980H,34,08149H,0      ;TO SEALY
+     261 00002400     f980   .word  0f980H,34,0814fH,0      ;TO SMITS
+     262                    
+     263 00002440     f980   .word  0f980H,37,080f0H,0      ;TO WILKINS
+     264 00002480     f980   .word  0f980H,28,08051H,0      ;TO HARPER_R    ( L.A. CLIPPERS )
+     265 000024c0     f980   .word  0f980H,40,0802bH,0      ;TO ROBERTS
+     266                    
+     267 00002500     f980   .word  0f980H,34,08125H,0      ;TO PEELER
+     268 00002540     f980   .word  0f980H,37,0804eH,0      ;TO DIVAC       ( L.A. LAKERS )
+     269 00002580     f980   .word  0f980H,34,0813eH,0      ;TO CAMPBELL
+     270 000025c0     f980   .word  0f980H,31,0804fH,0      ;TO WORTHY
+     271                    
+     272 00002600     f980   .word  0f980H,27,08054H,0      ;TO RICE
+     273 00002640     f980   .word  0f980H,33,08053H,0      ;TO SEIKALY     ( MIAMI )
+     274 00002680     f980   .word  0f980H,34,0811cH,0      ;TO MINER
+     275                    
+     276 000026c0     f980   .word  0f980H,34,08131H,0      ;TO BAKER
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE    6
+
+     277 00002700     f980   .word  0f980H,29,0804bH,0      ;TO EDWARDS     ( MILWAUKEE )
+     278 00002740     f980   .word  0f980H,34,08140H,0      ;TO DAY
+     279 00002780     f980   .word  0f980H,32,080ffH,0      ;TO LOHAUS
+     280                    
+     281 000027c0     f980   .word  0f980H,37,0805eH,0      ;TO LAETNER
+     282 00002800     f980   .word  0f980H,30,0805dH,0      ;TO PERSON      ( MINNESOTTA )
+     283 00002840     f980   .word  0f980H,34,0812aH,0      ;TO RIDER
+     284                    
+     285 00002880     f980   .word  0f980H,31,08060H,0      ;TO COLEMAN
+     286 000028c0     f980   .word  0f980H,50,0805fH,0      ;TO KANDERSON   ( NEW JERSEY )
+     287 00002900     f980   .word  0f980H,34,0811eH,0      ;TO CMORRIS
+     288 00002940     f980   .word  0f980H,40,080f2H,0      ;TO BENJAMIN    ( SEATTLE )
+     289                    
+     290 00002980     f980   .word  0f980H,37,080eeH,0      ;TO EWING
+     291 000029c0     f980   .word  0f980H,34,0817eH,0      ;TO MASON
+     292 00002a00     f980   .word  0f980H,34,08151H,0      ;TO STARKS
+     293 00002a40     f980   .word  0f980H,38,080edH,0      ;TO OAKLEY      ( NEW YORK )
+     294 00002a80     f980   .word  0f980H,28,08051H,0      ;TO HARPER_D
+     295                    
+     296                    
+     297 00002ac0     f980   .word  0f980H,37,080fbH,0      ;TO AHARDAWAY
+     298 00002b00     f980   .word  0f980H,50,0805fH,0      ;TO NANDERSON
+     299 00002b40     f980   .word  0f980H,40,080e4H,0      ;TO SKILES      ( ORLANDO )
+     300                    
+     301 00002b80     f980   .word  0f980H,34,08152H,0      ;TO WEATHERSPOON
+     302 00002bc0     f980   .word  0f980H,34,08133H,0      ;TO BRADLEY
+     303                    
+     304 00002c00     f980   .word  0f980H,36,080ecH,0      ;TO BARKLEY
+     305 00002c40     f980   .word  0f980H,38,080ebH,0      ;TO MAJERLE     ( PHOENIX )
+     306 00002c80     f980   .word  0f980H,50,080e9H,0      ;TO KJOHNSON
+     307                    
+     308 00002cc0     f980   .word  0f980H,33,080f4H,0      ;TO DREXLER
+     309 00002d00     f980   .word  0f980H,24,080f3H,0      ;TO PORTER      ( PORTLAND )
+     310 00002d40     f980   .word  0f980H,46,080f5H,0      ;TO CROBINSON
+     311 00002d80     f980   .word  0f980H,34,080e6H,0      ;TO GRANT_HV
+     312                    
+     313 00002dc0     f980   .word  0f980H,34,0814cH,0      ;TO SIMMONS
+     314 00002e00     f980   .word  0f980H,34,0817aH,0      ;TO HURLEY
+     315 00002e40     f980   .word  0f980H,34,08127H,0      ;TO RICHMOND
+     316 00002e80     f980   .word  0f980H,43,0805bH,0      ;TO TISDALE
+     317 00002ec0     f980   .word  0f980H,46,0805cH,0      ;TO WEBB        ( SACRAMENTO )
+     318                    
+     319 00002f00     f980   .word  0f980H,46,080f5H,0      ;TO ROBINSON    ( SAN ANTONIO )
+     320 00002f40     f980   .word  0f980H,34,08135H,0      ;TO RODMAN
+     321 00002f80     f980   .word  0f980H,29,0805aH,0      ;TO DELLIS 
+     322                    
+     323 00002fc0     f980   .word  0f980H,31,080f1H,0      ;TO KEMP
+     324 00003000     f980   .word  0f980H,40,08126H,0      ;TO PAYTON      ( SEATTLE )
+     325 00003040     f980   .word  0f980H,28,080eaH,0      ;TO GILL
+     326 00003080     f980   .word  0f980H,26,0804cH,0      ;TO SCHREMPF    ( INDIANA )
+     327                    
+     328 000030c0     f980   .word  0f980H,37,080faH,0      ;TO MALONE_K
+     329 00003100     f980   .word  0f980H,31,080f9H,0      ;TO STOCKTON    ( UTAH )
+     330 00003140     f980   .word  0f980H,40,08132H,0      ;TO BENOIT
+     331 00003180     f980   .word  0f980H,36,08062H,0      ;TO HORNACEK    ( PHILADELPHIA )
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE    7
+
+     332                    
+     333 000031c0     f980   .word  0f980H,36,080e8H,0      ;TO GUGLIOTA    ( WASHINGTON )
+     334 00003200     f980   .word  0f980H,40,08142H,0      ;TO ELLISON
+     335 00003240     f980   .word  0f980H,40,0813fH,0      ;TO CHEANEY
+     336                    
+     337 00003280     f980   .word  0f980H,37,080faH,0      ;TO MALONE_K
+     338 000032c0     f980   .word  0f980H,31,080f1H,0      ;TO KEMP
+     339 00003300     f980   .word  0f980H,46,080f5H,0      ;TO ROBINSON    ( SAN ANTONIO )
+     340 00003340     f980   .word  0f980H,36,080ecH,0      ;TO barkley
+     341 00003380     f980   .word  0f980H,33,080f4H,0      ;TO DREXLER
+     342 000033c0     f980   .word  0f980H,37,080fbH,0      ;TO AHARDAWAY
+     343 00003400     f980   .word  0f980H,37,080eeH,0      ;TO EWING
+     344 00003440     f980   .word  0f980H,50,0805fH,0      ;TO KANDERSON   ( NEW JERSEY )
+     345 00003480     f980   .word  0f980H,31,08060H,0      ;TO COLEMAN
+     346 000034c0     f980   .word  0f980H,50,0805fH,0      ;TO NANDERSON
+     347 00003500     f980   .word  0f980H,31,080f9H,0      ;TO STOCKTON    ( UTAH )
+     348 00003540     f980   .word  0f980H,50,080e9H,0      ;TO KJOHNSON
+     349 00003580     f980   .word  0f980H,28,080eaH,0      ;TO GILL
+     350 000035c0     f980   .word  0f980H,34,08127H,0      ;TO RICHMOND
+     351 00003600     f980   .word  0f980H,34,08133H,0      ;TO BRADLEY
+     352 00003640     f980   .word  0f980H,46,0805cH,0      ;TO WEBB        ( SACRAMENTO )
+     353 00003680     f980   .word  0f980H,34,08141H,0      ;TO DUMARS
+     354 000036c0     f980   .word  0f980H,34,08151H,0      ;TO STARKS
+     355 00003700     f980   .word  0f980H,46,08059H,0      ;TO MUTUMBO
+     356 00003740     f980   .word  0f980H,37,080f0H,0      ;TO WILKINS
+     357 00003780     f980   .word  0f980H,28,08051H,0      ;TO HARPER_R    ( L.A. CLIPPERS )
+     358 000037c0     f980   .word  0f980H,34,0812aH,0      ;TO RIDER
+     359 00003800     f980   .word  0f980H,22,0804dH,0      ;TO MILLER
+     360 00003840     f980   .word  0f980H,50,080e9H,0      ;TO JOHNSN_L    ( CHARLOTTE )
+     361 00003880     f980   .word  0f980H,43,08058H,0      ;TO OLAJUWON
+     362 000038c0     f980   .word  0f980H,34,08131H,0      ;TO BAKER
+     363 00003900     f980   .word  0f980H,49,08130H,0      ;TO ARMSTRNG
+     364 00003940     f980   .word  0f980H,45,08121H,0      ;TO MOURNING
+     365 00003980     f980   .word  0f980H,27,08054H,0      ;TO RICE
+     366 000039c0     f980   .word  0f980H,37,080fbH,0      ;TO HARDAWAY
+     367 00003a00     f980   .word  0f980H,34,0817bH,0      ;TO JACKSON
+     368 00003a40     f980   .word  0f980H,29,080e7H,0      ;TO PIPPEN
+     369 00003a80     f980   .word  0f980H,34,0811cH,0      ;TO MINER
+     370 00003ac0     f980   .word  0f980H,42,080feH,0      ;TO THOMAS
+     371 00003b00     f980   .word  0f980H,34,08161H,0      ;TO WEBBER
+     372 00003b40     f980   .word  0f980H,34,0817dH,0      ;TO MASHBURN
+     373 00003b80     f980   .word  0f980H,31,0804fH,0      ;TO WORTHY
+     374 00003bc0     f980   .word  0f980H,30,080fcH,0      ;TO MULLIN      ( GOLDEN STATE )
+     375 00003c00     f980   .word  0f980H,32,08050H,0      ;TO MANNING
+     376                    
+     377                    
+     378                    
+     379 00003c40     f990   .word  0f990H,8,081feH,1               ;silence
+     380 00003c80     f990   .word  0f990H,8,081feH,1               ;silence
+     381 00003cc0     f990   .word  0f990H,8,081feH,1               ;silence
+     382 00003d00     f990   .word  0f990H,8,081feH,1               ;silence
+     383 00003d40     f990   .word  0f990H,8,081feH,1               ;silence
+     384                    
+     385                    
+     386                            .def    name_speech
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE    8
+
+     387                    
+     388 00003d80           name_speech
+     389                    
+     390                    
+     391 00003d80     f980   .word  0f980H,32,080d2H,0      ;MANNING        ( L.A. CLIPPERS )
+     392 00003dc0     f980   .word  0f980H,31,080bcH,0      ;AUGMON
+     393 00003e00     f980   .word  0f980H,35,0806aH,0      ;WILLIS
+     394                    
+     395 00003e40     f980   .word  0f980H,43,080c3H,0      ;BROWN          ( BOSTON )
+     396 00003e80     f980   .word  0f980H,28,080c4H,0      ;MCDAN
+     397 00003ec0     f980   .word  0f980H,40,08019H,0      ;GAMBLE
+     398                    
+     399 00003f00     f980   .word  0f980H,50,080b6H,0      ;JOHNSN_L       ( CHARLOTTE )
+     400 00003f40     f980   .word  0f980H,43,080e3H,0      ;HAWKINS
+     401 00003f80     f980   .word  0f980H,43,08025H,0      ;MOURNING
+     402                    
+     403 00003fc0     f980   .word  0f980H,29,080b2H,0      ;PIPPEN         ( CHICAGO )
+     404 00004000     f980   .word  0f980H,40,08010H,0      ;ARMSTRNG
+     405 00004040     f980   .word  0f980H,35,0801eH,0      ;KUKOC
+     406 00004080     f980   .word  0f980H,34,080b3H,0      ;GRANT_HC
+     407                    
+     408 000040c0     f980   .word  0f980H,33,080d7H,0      ;PRICE          ( CLEVELAND )
+     409 00004100     f980   .word  0f980H,34,080d6H,0      ;DAUGHRTY
+     410 00004140     f980   .word  0f980H,34,08026H,0      ;NANCE
+     411                    
+     412 00004180     f980   .word  0f980H,34,0801dH,0      ;JACKSON
+     413 000041c0     f980   .word  0f980H,44,0801fH,0      ;MASHBURN
+     414                    
+     415 00004200     f980   .word  0f980H,46,080dbH,0      ;MUTUMBO        ( DENVER )
+     416 00004240     f980   .word  0f980H,29,080daH,0      ;ELLIS
+     417 00004280     f980   .word  0f980H,34,08063H,0      ;ROGERS
+     418                    
+     419 000042c0     f980   .word  0f980H,42,080c9H,0      ;THOMAS         ( DETROIT )
+     420 00004300     f980   .word  0f980H,40,08017H,0      ;DUMARS
+     421 00004340     f980   .word  0f980H,37,080c1H,0      ;ELLIOT
+     422 00004380     f980   .word  0f980H,40,0801bH,0      ;HUNTER
+     423                    
+     424 000043c0     f980   .word  0f980H,37,080c8H,0      ;HARDAWAY       ( GOLDEN STATE )
+     425 00004400     f980   .word  0f980H,30,080c7H,0      ;MULLIN
+     426 00004440     f980   .word  0f980H,40,08069H,0      ;WEBBER
+     427                    
+     428 00004480     f980   .word  0f980H,43,080d8H,0      ;OLAJUWON       ( HOUSTON )
+     429 000044c0     f980   .word  0f980H,40,08021H,0      ;MAXWELL
+     430 00004500     f980   .word  0f980H,34,0801aH,0      ;HORRY
+     431 00004540     f980   .word  0f980H,25,080d9H,0      ;SMITH
+     432                    
+     433 00004580     f980   .word  0f980H,22,080cdH,0      ;MILLER         ( INDIANA )
+     434 000045c0     f980   .word  0f980H,34,08064H,0      ;SEALY
+     435 00004600     f980   .word  0f980H,34,08066H,0      ;SMITS
+     436                    
+     437 00004640     f980   .word  0f980H,37,080bbH,0      ;WILKINS        ( ATLANTA )
+     438 00004680     f980   .word  0f980H,28,080d1H,0      ;HARPER_R
+     439 000046c0     f980   .word  0f980H,34,0802bH,0      ;ROBERTS
+     440                    
+     441 00004700     f980   .word  0f980H,34,08027H,0      ;PEELER
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE    9
+
+     442 00004740     f980   .word  0f980H,37,080d0H,0      ;DIVAC
+     443 00004780     f980   .word  0f980H,45,08014H,0      ;CAMPBELL
+     444 000047c0     f980   .word  0f980H,31,080cfH,0      ;WORTHY         ( L.A. LAKERS )
+     445                    
+     446 00004800     f980   .word  0f980H,27,080d4H,0      ;RICE           ( MIAMI )
+     447 00004840     f980   .word  0f980H,33,080d5H,0      ;SEIKALY
+     448 00004880     f980   .word  0f980H,34,08023H,0      ;MINER
+     449                    
+     450 000048c0     f980   .word  0f980H,37,08011H,0      ;BAKER
+     451 00004900     f980   .word  0f980H,29,080cbH,0      ;EDWARDS
+     452 00004940     f980   .word  0f980H,34,08016H,0      ;DAY
+     453 00004980     f980   .word  0f980H,32,080ccH,0      ;LOHAUS         ( MILWAUKEE )
+     454                    
+     455 000049c0     f980   .word  0f980H,37,080deH,0      ;LAETNER        ( MINNESOTTA )
+     456 00004a00     f980   .word  0f980H,30,080dfH,0      ;PERSON
+     457 00004a40     f980   .word  0f980H,34,0802aH,0      ;RIDER
+     458                    
+     459 00004a80     f980   .word  0f980H,31,080e0H,0      ;COLEMAN        ( NEW JERSEY )
+     460 00004ac0     f980   .word  0f980H,45,080e1H,0      ;KANDERSON
+     461 00004b00     f980   .word  0f980H,34,08024H,0      ;CMORRIS
+     462 00004b40     f980   .word  0f980H,40,080bdH,0      ;BENJAMIN
+     463                    
+     464 00004b80     f980   .word  0f980H,37,080b9H,0      ;EWING          ( NEW YORK )
+     465 00004bc0     f980   .word  0f980H,34,08020H,0      ;MASON
+     466 00004c00     f980   .word  0f980H,34,08067H,0      ;STARKS
+     467 00004c40     f980   .word  0f980H,38,080baH,0      ;OAKLEY
+     468 00004c80     f980   .word  0f980H,28,080d1H,0      ;HARPER_D       ( DALLAS )
+     469                    
+     470 00004cc0     f980   .word  0f980H,37,080c8H,0      ;AHARDAWAY
+     471 00004d00     f980   .word  0f980H,45,080e1H,0      ;NANDERSON
+     472 00004d40     f980   .word  0f980H,40,080b1H,0      ;SKILES
+     473                    
+     474 00004d80     f980   .word  0f980H,44,08068H,0      ;WEATHERSPOON   ( PHILADELPHIA )
+     475 00004dc0     f980   .word  0f980H,40,08013H,0      ;BRADLEY
+     476                    
+     477 00004e00     f980   .word  0f980H,36,080b7H,0      ;BARKLEY        ( PHOENIX )
+     478 00004e40     f980   .word  0f980H,38,080b8H,0      ;MAJERLE
+     479 00004e80     f980   .word  0f980H,50,080b6H,0      ;KJOHNSON
+     480                    
+     481 00004ec0     f980   .word  0f980H,33,080bfH,0      ;DREXLER        ( PORTLAND )
+     482 00004f00     f980   .word  0f980H,24,080c0H,0      ;PORTER
+     483 00004f40     f980   .word  0f980H,46,080c2H,0      ;CROBINSON
+     484 00004f80     f980   .word  0f980H,34,080b3H,0      ;GRANT_HV
+     485                    
+     486 00004fc0     f980   .word  0f980H,34,08065H,0      ;SIMMONS
+     487 00005000     f980   .word  0f980H,34,0801cH,0      ;HURLEY
+     488 00005040     f980   .word  0f980H,43,08029H,0      ;RICHMOND
+     489 00005080     f980   .word  0f980H,43,080ddH,0      ;TISDALE        ( SACRAMENTO )
+     490 000050c0     f980   .word  0f980H,46,080dcH,0      ;WEBB
+     491                    
+     492 00005100     f980   .word  0f980H,46,080c2H,0      ;ROBINSON       ( SAN ANTONIO )
+     493 00005140     f980   .word  0f980H,34,0802cH,0      ;RODMAN
+     494 00005180     f980   .word  0f980H,29,080daH,0      ;DELLIS 
+     495                    
+     496 000051c0     f980   .word  0f980H,31,080beH,0      ;KEMP           ( SEATTLE )
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   10
+
+     497 00005200     f980   .word  0f980H,40,08028H,0      ;PAYTON
+     498 00005240     f980   .word  0f980H,28,080eaH,0      ;GILL
+     499 00005280     f980   .word  0f980H,26,080ceH,0      ;SCHREMPF
+     500                    
+     501 000052c0     f980   .word  0f980H,37,080c5H,0      ;MALONE_K       ( UTAH )
+     502 00005300     f980   .word  0f980H,31,080c6H,0      ;STOCKTON
+     503 00005340     f980   .word  0f980H,40,08012H,0      ;BENOIT
+     504 00005380     f980   .word  0f980H,36,080e2H,0      ;HORNACEK
+     505                    
+     506 000053c0     f980   .word  0f980H,36,080b4H,0      ;GUGLIOTTA      ( WASHINGTON )
+     507 00005400     f980   .word  0f980H,47,08018H,0      ;ELLISON
+     508 00005440     f980   .word  0f980H,40,08015H,0      ;CHEANEY
+     509                    
+     510 00005480     f980   .word  0f980H,37,080c5H,0      ;MALONE_K       ( UTAH )
+     511 000054c0     f980   .word  0f980H,31,080beH,0      ;KEMP           ( SEATTLE )
+     512 00005500     f980   .word  0f980H,46,080c2H,0      ;ROBINSON       ( SAN ANTONIO )
+     513 00005540     f980   .word  0f980H,36,080b7H,0      ;Barkley
+     514 00005580     f980   .word  0f980H,33,080bfH,0      ;DREXLER        ( PORTLAND )
+     515 000055c0     f980   .word  0f980H,37,080c8H,0      ;AHARDAWAY
+     516 00005600     f980   .word  0f980H,37,080b9H,0      ;EWING          ( NEW YORK )
+     517 00005640     f980   .word  0f980H,45,080e1H,0      ;KANDERSON
+     518 00005680     f980   .word  0f980H,31,080e0H,0      ;COLEMAN        ( NEW JERSEY )
+     519 000056c0     f980   .word  0f980H,45,080e1H,0      ;NANDERSON
+     520 00005700     f980   .word  0f980H,31,080c6H,0      ;STOCKTON
+     521 00005740     f980   .word  0f980H,50,080b6H,0      ;KJOHNSON
+     522 00005780     f980   .word  0f980H,28,080eaH,0      ;GILL
+     523 000057c0     f980   .word  0f980H,43,08029H,0      ;RICHMOND
+     524 00005800     f980   .word  0f980H,40,08013H,0      ;BRADLEY
+     525 00005840     f980   .word  0f980H,46,080dcH,0      ;WEBB
+     526 00005880     f980   .word  0f980H,40,08017H,0      ;DUMARS
+     527 000058c0     f980   .word  0f980H,34,08067H,0      ;STARKS
+     528 00005900     f980   .word  0f980H,46,080dbH,0      ;MUTUMBO        ( DENVER )
+     529 00005940     f980   .word  0f980H,37,080bbH,0      ;WILKINS        ( ATLANTA )
+     530 00005980     f980   .word  0f980H,28,080d1H,0      ;HARPER_R
+     531 000059c0     f980   .word  0f980H,34,0802aH,0      ;RIDER
+     532 00005a00     f980   .word  0f980H,22,080cdH,0      ;MILLER         ( INDIANA )
+     533 00005a40     f980   .word  0f980H,50,080b6H,0      ;JOHNSN_L       ( CHARLOTTE )
+     534 00005a80     f980   .word  0f980H,43,080d8H,0      ;OLAJUWON       ( HOUSTON )
+     535 00005ac0     f980   .word  0f980H,37,08011H,0      ;BAKER
+     536 00005b00     f980   .word  0f980H,40,08010H,0      ;ARMSTRNG
+     537 00005b40     f980   .word  0f980H,40,08021H,0      ;MAXWELL
+     538 00005b80     f980   .word  0f980H,43,08025H,0      ;MOURNING
+     539 00005bc0     f980   .word  0f980H,27,080d4H,0      ;RICE           ( MIAMI )
+     540 00005c00     f980   .word  0f980H,37,080c8H,0      ;HARDAWAY       ( GOLDEN STATE )
+     541 00005c40     f980   .word  0f980H,34,0801dH,0      ;JACKSON
+     542 00005c80     f980   .word  0f980H,29,080b2H,0      ;PIPPEN         ( CHICAGO )
+     543 00005cc0     f980   .word  0f980H,34,08023H,0      ;MINER
+     544 00005d00     f980   .word  0f980H,42,080c9H,0      ;THOMAS         ( DETROIT )
+     545 00005d40     f980   .word  0f980H,40,08069H,0      ;WEBBER
+     546 00005d80     f980   .word  0f980H,44,0801fH,0      ;MASHBURN
+     547 00005dc0     f980   .word  0f980H,31,080cfH,0      ;WORTHY         ( L.A. LAKERS )
+     548 00005e00     f980   .word  0f980H,30,080c7H,0      ;MULLIN
+     549 00005e40     f980   .word  0f980H,32,080d2H,0      ;MANNING        ( L.A. CLIPPERS )
+     550                    
+     551                    
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   11
+
+     552                    
+     553 00005e80     f990   .word  0f990H,8,081feH,1               ;silence
+     554 00005ec0     f990   .word  0f990H,8,081feH,1               ;silence
+     555 00005f00     f990   .word  0f990H,8,081feH,1               ;silence
+     556                    
+     557 00005f40           name_blank
+     558 00005f40           pass_blank
+     559 00005f40     f980   .word  0f980H,1,081feH,0               ;blank
+     560                    
+     561                    
+     562 00005f80           special_name_speech
+     563                    
+     564 00005f80     f980          .word   0f980H,1,081feH,0               ;0  GOSKIE      
+     565 00005fc0     f980          .word   0f980H,1,081feH,0               ;1  RIVETT              
+     566 00006000     f980          .word   0f980H,1,081feH,0               ;2  CARLTON
+     567 00006040     f980          .word   0f980H,1,081feH,0               ;3  DIVITA
+     568 00006080     f980          .word   0f980H,1,081feH,0               ;4  LIPTAK
+     569 000060c0     f980          .word   0f980H,1,081feH,0               ;5  TURMELL
+     570 00006100     f980          .word   0f980H,1,081feH,0               ;6  HEY
+     571 00006140     f980          .word   0f980H,1,081feH,0               ;7  PETRO
+     572 00006180     f980          .word   0f980H,1,081feH,0               ;8  NEWCOMER
+     573 000061c0     f980          .word   0f980H,1,081feH,0               ;9  OURSLER
+     574 00006200     f980          .word   0f980H,1,081feH,0               ;10 LASCO
+     575 00006240     f980          .word   0f980H,1,081feH,0               ;11 MORRIS
+     576 00006280     f980          .word   0f980H,1,081feH,0               ;12 MEDNICK
+     577 000062c0     f980          .word   0f980H,1,081feH,0               ;13 FORDEN      
+     578 00006300     f980          .word   0f980H,1,081feH,0               ;14 KINKEAD
+     579 00006340     f980          .word   0f980H,1,081feH,0               ;15 JARVIS      
+     580                    
+     581                    
+     582 00006380     f980          .word   0f980H,1,081feH,0               ;17 HAEGER      
+     583 000063c0     f980          .word   0f980H,1,081feH,0               ;18 SIMPSON
+     584 00006400     f980          .word   0f980H,1,081feH,0               ;19 GREEN       
+     585 00006440     f980          .word   0f980H,1,081feH,0               ;20 GENTILE
+     586 00006480     f980          .word   0f980H,1,081feH,0               ;21 DILLON      
+     587 000064c0     f980          .word   0f980H,1,081feH,0               ;22 LOWES       
+     588 00006500     f980          .word   0f980H,1,081feH,0               ;23 VOGEL       
+     589 00006540     f980          .word   0f980H,1,081feH,0               ;24 TSUI        
+     590 00006580     f980          .word   0f980H,1,081feH,0               ;25 KAM         
+     591 000065c0     f980          .word   0f980H,1,081feH,0               ;26 DEAL                
+     592 00006600     f980          .word   0f980H,1,081feH,0               ;27 BOOTY               
+     593 00006640     f980          .word   0f980H,1,081feH,0               ;28 LOFFRE              
+     594 00006680     f980          .word   0f980H,1,081feH,0               ;29 PENACHO     
+     595 000066c0     f980          .word   0f980H,1,081feH,0               ;30 BARKER              
+     596 00006700     f980          .word   0f980H,1,081feH,0               ;31 COX
+     597                                            
+     598                    
+     599 00006740     f980          .word   0f980H,1,081feH,0               ;34 MACIKA              
+     600 00006780     f980          .word   0f980H,1,081feH,0               ;35 SHARPE              
+     601 000067c0     f980          .word   0f980H,1,081feH,0               ;36 BERAN               
+     602                    
+     603                    
+     604 00006800     f980          .word   0f980H,1,081feH,0               ;39 PONTAREL    
+     605                    
+     606                    
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   12
+
+     607 00006840     f980          .word   0f980H,1,081feH,0               ;41 DAVIS               
+     608 00006880     f980          .word   0f980H,1,081feH,0               ;42 BOON                
+     609 000068c0     f980          .word   0f980H,1,081feH,0               ;43 TOBIAS              
+     610 00006900     f980          .word   0f980H,1,081feH,0               ;44 HEITSCH     
+     611 00006940     f980          .word   0f980H,1,081feH,0               ;45 DABEL               
+     612 00006980     f980          .word   0f980H,1,081feH,0               ;46 MARTINEZ    
+     613 000069c0     f980          .word   0f980H,1,081feH,0               ;47 DAVIES              
+     614 00006a00     f980          .word   0f980H,1,081feH,0               ;48 HOSK                
+     615 00006a40     f980          .word   0f980H,1,081feH,0               ;49 OLIV                
+     616                    
+     617                                    
+     618 00006a80     f980          .word   0f980H,1,081feH,0               ;52 GRANNER
+     619 00006ac0     f980          .word   0f980H,40,080b1H,0              ;53 GAY
+     620 00006b00     f980          .word   0f980H,1,081feH,0               ;54 SKILES
+     621 00006b40     f980          .word   0f980H,1,081feH,0               ;55 LINHOFF
+     622                    
+     623                    
+     624 00006b80     f980          .word   0f980H,37,080bbH,0      ;56 WILKINS
+     625 00006bc0     f980          .word   0f980H,43,080c3H,0      ;57 BROWN
+     626 00006c00     f980          .word   0f980H,43,08025H,0      ;58 MOURNING
+     627 00006c40     f980          .word   0f980H,29,080b2H,0      ;59 PIPPEN  
+     628 00006c80     f980          .word   0f980H,42,080c9H,0      ;60 I. THOMAS
+     629 00006cc0     f980          .word   0f980H,40,08069H,0      ;61 WEBBER
+     630 00006d00     f980          .word   0f980H,43,080d8H,0      ;62 OLAJUWON
+     631 00006d40     f980          .word   0f980H,31,080e0H,0      ;63 COLEMAN
+     632 00006d80     f980          .word   0f980H,37,080b9H,0      ;64 EWING
+     633 00006dc0     f980          .word   0f980H,36,080b7H,0      ;65 BARKLEY
+     634 00006e00     f980          .word   0f980H,46,080c2H,0      ;66 ROBINSON
+     635 00006e40     f980          .word   0f980H,31,080beH,0      ;67 KEMP
+     636 00006e80     f980          .word   0f980H,37,080c5H,0      ;68 MALONE
+     637                    
+     638                    
+     639 00006ec0           special_pass_speech
+     640                    
+     641 00006ec0     f980          .word   0f980H,1,081feH,0               ;0  GOSKIE      
+     642 00006f00     f980          .word   0f980H,1,081feH,0               ;1  RIVETT              
+     643 00006f40     f980          .word   0f980H,1,081feH,0               ;2  CARLTON
+     644 00006f80     f980          .word   0f980H,1,081feH,0               ;3  DIVITA
+     645 00006fc0     f980          .word   0f980H,1,081feH,0               ;4  LIPTAK
+     646 00007000     f980          .word   0f980H,1,081feH,0               ;5  TURMELL
+     647 00007040     f980          .word   0f980H,1,081feH,0               ;6  HEY
+     648 00007080     f980          .word   0f980H,1,081feH,0               ;7  PETRO
+     649 000070c0     f980          .word   0f980H,1,081feH,0               ;8  NEWCOMER
+     650 00007100     f980          .word   0f980H,1,081feH,0               ;9  OURSLER
+     651 00007140     f980          .word   0f980H,1,081feH,0               ;10 LASCO
+     652 00007180     f980          .word   0f980H,1,081feH,0               ;11 MORRIS
+     653 000071c0     f980          .word   0f980H,1,081feH,0               ;12 MEDNICK
+     654 00007200     f980          .word   0f980H,1,081feH,0               ;13 FORDEN      
+     655 00007240     f980          .word   0f980H,1,081feH,0               ;14 KINKEAD
+     656 00007280     f980          .word   0f980H,1,081feH,0               ;15 JARVIS      
+     657                    
+     658                    
+     659 000072c0     f980          .word   0f980H,1,081feH,0               ;17 HAEGER      
+     660 00007300     f980          .word   0f980H,1,081feH,0               ;18 SIMPSON
+     661 00007340     f980          .word   0f980H,1,081feH,0               ;19 GREEN       
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   13
+
+     662 00007380     f980          .word   0f980H,1,081feH,0               ;20 GENTILE
+     663 000073c0     f980          .word   0f980H,1,081feH,0               ;21 DILLON      
+     664 00007400     f980          .word   0f980H,1,081feH,0               ;22 LOWES       
+     665 00007440     f980          .word   0f980H,1,081feH,0               ;23 VOGEL       
+     666 00007480     f980          .word   0f980H,1,081feH,0               ;24 TSUI        
+     667 000074c0     f980          .word   0f980H,1,081feH,0               ;25 KAM         
+     668 00007500     f980          .word   0f980H,1,081feH,0               ;26 DEAL                
+     669 00007540     f980          .word   0f980H,1,081feH,0               ;27 BOOTY               
+     670 00007580     f980          .word   0f980H,1,081feH,0               ;28 LOFFRE              
+     671 000075c0     f980          .word   0f980H,1,081feH,0               ;29 PENACHO     
+     672 00007600     f980          .word   0f980H,1,081feH,0               ;30 BARKER              
+     673 00007640     f980          .word   0f980H,1,081feH,0               ;31 COX                 
+     674                    
+     675                    
+     676 00007680     f980          .word   0f980H,1,081feH,0               ;34 MACIKA              
+     677 000076c0     f980          .word   0f980H,1,081feH,0               ;35 SHARPE              
+     678 00007700     f980          .word   0f980H,1,081feH,0               ;36 BERAN 
+     679                                    
+     680                    
+     681 00007740     f980          .word   0f980H,1,081feH,0               ;39 PONTAREL    
+     682                    
+     683                    
+     684 00007780     f980          .word   0f980H,1,081feH,0               ;41 DAVIS               
+     685 000077c0     f980          .word   0f980H,1,081feH,0               ;42 BOON                
+     686 00007800     f980          .word   0f980H,1,081feH,0               ;43 TOBIAS              
+     687 00007840     f980          .word   0f980H,1,081feH,0               ;44 HEITSCH     
+     688 00007880     f980          .word   0f980H,1,081feH,0               ;45 DABEL               
+     689 000078c0     f980          .word   0f980H,1,081feH,0               ;46 MARTINEZ    
+     690 00007900     f980          .word   0f980H,1,081feH,0               ;47 DAVIES              
+     691 00007940     f980          .word   0f980H,1,081feH,0               ;48 HOSK                
+     692 00007980     f980          .word   0f980H,1,081feH,0               ;49 OLIV                
+     693                    
+     694                    
+     695 000079c0     f980          .word   0f980H,1,081feH,0               ;52 GRANNER
+     696 00007a00     f980          .word   0f980H,1,081feH,0               ;53 GAY
+     697 00007a40     f980          .word   0f980H,40,080e4H,0      ;54 SKILES
+     698 00007a80     f980          .word   0f980H,1,081feH,0               ;55 LINHOFF
+     699                    
+     700                    
+     701                    
+     702 00007ac0     f980          .word   0f980H,37,080f0H,0      ;56 TO WILKINS
+     703 00007b00     f980          .word   0f980H,43,080f8H,0      ;57 TO BROWN
+     704 00007b40     f980          .word   0f980H,45,08121H,0      ;58 TO MOURNING
+     705 00007b80     f980          .word   0f980H,29,080e7H,0      ;59 TO PIPPEN  
+     706 00007bc0     f980          .word   0f980H,42,080feH,0      ;60 TO I. THOMAS
+     707 00007c00     f980          .word   0f980H,45,08161H,0      ;61 TO WEBBER
+     708 00007c40     f980          .word   0f980H,43,08058H,0      ;62 TO OLAJUWON
+     709 00007c80     f980          .word   0f980H,40,08060H,0      ;63 TO COLEMAN
+     710 00007cc0     f980          .word   0f980H,40,080eeH,0      ;64 TO EWING
+     711 00007d00     f980          .word   0f980H,40,080ecH,0      ;65 TO BARKLEY
+     712 00007d40     f980          .word   0f980H,40,080f5H,0      ;66 TO ROBINSON
+     713 00007d80     f980          .word   0f980H,40,080f1H,0      ;67 TO KEMP
+     714 00007dc0     f980          .word   0f980H,40,080faH,0      ;68 TO MALONE
+     715                    
+     716                    
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   14
+
+     717                    
+     718 00007e00           team_speech
+     719 00007e00     f981   .word  0f981H,50,08035H,0      ;00 ATLANTA             "Hawks"
+     720 00007e40     f981   .word  0f981H,55,08033H,0      ;01 BOSTON              "Celtics"
+     721 00007e80     f981   .word  0f981H,37,08036H,0      ;02 CHARLOTTE           "Hornets"
+     722 00007ec0     f981   .word  0f981H,43,08031H,0      ;03 CHICAGO             "Bulls"
+     723 00007f00     f981   .word  0f981H,65,08032H,0      ;04 CLEVELAND           "Cavaliers"
+     724 00007f40     f981   .word  0f981H,45,0803cH,0      ;05 DALLAS              "Maverick"
+     725 00007f80     f981   .word  0f981H,40,0803eH,0      ;06 DENVER              "Nuggets"
+     726 00007fc0     f981   .word  0f981H,40,08040H,0      ;07 DETROIT             "Pistons"
+     727 00008000     f981   .word  0f981H,48,08048H,0      ;08 GOLDEN STATE        "Warriors"
+     728 00008040     f981   .word  0f981H,43,08041H,0      ;09 HOUSTON             "Rockets"
+     729 00008080     f981   .word  0f981H,46,0803fH,0      ;10 INDIANA             "Pacers"
+     730 000080c0     f981   .word  0f981H,43,08034H,0      ;11 L.A. CLIPPERS       "Clippers"
+     731 00008100     f981   .word  0f981H,42,0803aH,0      ;12 L.A. LAKERS         "Lakers"
+     732 00008140     f981   .word  0f981H,37,08046H,0      ;13 MIAMI               "Heat"
+     733 00008180     f981   .word  0f981H,26,0804aH,0      ;14 MILWAUKEE           "Bucks"
+     734 000081c0     f981   .word  0f981H,51,08047H,0      ;15 MINNESOTTA          "Timberwolves"
+     735 00008200     f981   .word  0f981H,40,0803dH,0      ;16 NEW JERSEY          "Nets"
+     736 00008240     f981   .word  0f981H,43,08039H,0      ;17 NEW YORK            "Knicks"
+     737 00008280     f981   .word  0f981H,38,0803bH,0      ;18 ORLANDO             "Magic"
+     738 000082c0     f981   .word  0f981H,47,08042H,0      ;19 PHILADELPHIA        "Sixers"
+     739 00008300     f981   .word  0f981H,42,08044H,0      ;20 PHOENIX             "Suns"
+     740 00008340     f981   .word  0f981H,48,08049H,0      ;21 PORTLAND            "Blazers"
+     741 00008380     f981   .word  0f981H,49,08038H,0      ;22 SACRAMENTO          "Kings"
+     742 000083c0     f981   .word  0f981H,46,08043H,0      ;23 SAN ANTONIO         "Spurs"
+     743 00008400     f981   .word  0f981H,59,08045H,0      ;24 SEATTLE             "Supersonics"
+     744 00008440     f981   .word  0f981H,42,08037H,0      ;25 UTAH                "Jazz"
+     745 00008480     f981   .word  0f981H,39,08030H,0      ;26 WASHINGTON          "Bullets"
+     746 000084c0     f981   .word  0f981H,51,081e2H,0      ;GOOOOD!!!
+     747                    
+     748                    
+     749                    
+     750 00008500           STAB_END
+     751                    
+     752                    
+     753                    
+     754 00008500            SUBRP  speech_play
+     755                    
+     756 00008500     0d5f          calla   snd_play1
+         00008510 00000000! 
+     757 00008530     0960          rets
+     758                    
+     759                    
+     760 00008540            SUBR   speech_playovrp
+     761                    
+     762 00008540     0d5f          calla   snd_play1ovrp
+         00008550 00000000! 
+     763 00008570     0960          rets
+     764                    
+     765                    
+     766                    
+     767 00008580            SUBR   shoots_speech
+     768                    
+     769 00008580                   PUSH    a1,a2
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   15
+
+     770                    
+     771 000085a0     0580          move    a0,@plyr_shot
+         000085b0 00000030- 
+     772 000085d0     0d3f          callr   calc_score_diff
+         000085e0     0411  
+     773                    
+     774 000085f0     5600          clr     a0
+     775 00008600     0580          move    a0,@ugly_stat           ;not ugly
+         00008610 00000060- 
+     776 00008630     0580          move    a0,@freakout            ;no freakout on score
+         00008640 000000a0- 
+     777                    
+     778 00008660     0d3f          callr   at_buzzer
+         00008670     0346  
+     779 00008680     c909          jrnc    xafzxshtspeech
+     780                    
+     781 00008690     05a0          move    @shot_type,a0
+         000086a0 00000020- 
+     782 000086c0     24a0          sll     5,a0                    ;x 32 bits
+     783 000086d0     0b20          addi    xafzshoots_table,a0
+         000086e0 00008750' 
+     784 00008700     8600          move    *a0,a0,L
+     785 00008710     0920          call    a0
+     786                    
+     787 00008720           xafzxshtspeech
+     788 00008720                   PULL    a1,a2
+     789 00008740     0960          rets
+     790                    
+     791 00008750           xafzshoots_table
+     792 00008750 00008890'         .long   xafzdesperation
+     793 00008770 000089d0'         .long   xafzlong_range
+     794 00008790 00008af0'         .long   xafz2_points
+     795 000087b0 00008c80'         .long   xafz3_points
+     796 000087d0 00008f50'         .long   xafzhook_shot
+     797 000087f0 000091f0'         .long   xafzlay_up
+     798 00008810 00009260'         .long   xafzfinger_roll
+     799 00008830 000092c0'         .long   xafzdunk_short
+     800 00008850 00009320'         .long   xafzdunk_med
+     801 00008870 00009380'         .long   xafzdunk_long
+     802                    
+     803 00008890           xafzdesperation
+     804                    
+     805 00008890     09c0          movi    2,a0
+         000088a0     0002  
+     806 000088b0     0d5f          calla   rndrng0
+         000088c0 00000000! 
+     807 000088e0     24a0          sll     5,a0            ;x 32 bits
+     808 000088f0     0b20          addi    xafzdesptab,a0
+         00008900 00008970' 
+     809 00008920     8600          move    *a0,a0,L
+     810 00008930     0d5f          calla   speech_play
+         00008940 00008500' 
+     811 00008960     0960          rets
+     812                    
+     813 00008970           xafzdesptab
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   16
+
+     814 00008970 00000bc0'         .long   shts5   ;from long range
+     815 00008990 00000c00'         .long   shts6   ;launches a shot
+     816 000089b0 00000b80'         .long   shts4   ;wild shot
+     817                    
+     818 000089d0           xafzlong_range
+     819                    
+     820 000089d0     09c0          movi    1,a0
+         000089e0     0001  
+     821 000089f0     0d5f          calla   rndrng0
+         00008a00 00000000! 
+     822 00008a20     24a0          sll     5,a0            ;x 32 bits
+     823 00008a30     0b20          addi    xafzlongtab,a0
+         00008a40 00008ab0' 
+     824 00008a60     8600          move    *a0,a0,L
+     825 00008a70     0d5f          calla   speech_play
+         00008a80 00008500' 
+     826 00008aa0     0960          rets
+     827                    
+     828 00008ab0           xafzlongtab
+     829 00008ab0 00000bc0'         .long   shts5   ;from long range
+     830 00008ad0 00000c00'         .long   shts6   ;launches a shot
+     831                    
+     832 00008af0           xafz2_points
+     833                    
+     834 00008af0     0d3f          callr   ugly_shot
+         00008b00     0355  
+     835 00008b10     c915          jrnc    xafzugly_2pts
+     836                    
+     837 00008b20     0d3f          callr   wideopen_speech
+         00008b30     0631  
+     838 00008b40     c912          jrnc    xafzx2pts
+     839                    
+     840 00008b50     09c0          movi    100,a0                  ;call for two 10% time
+         00008b60     0064  
+     841 00008b70     0d5f          calla   RNDPER
+         00008b80 00000000! 
+     842 00008ba0     c306          jrhi    xafzdo_for2
+     843                    
+     844 00008bb0     05a0          move    @plyr_shot,a0
+         00008bc0 00000030- 
+     845 00008be0     0d3f          callr   call_player_name
+         00008bf0     0203  
+     846 00008c00     c906          jrnc    xafzx2pts                       ;nc = name called
+     847                    
+     848 00008c10           xafzdo_for2
+     849 00008c10     09e0          movi    shts8,a0        ;for two
+         00008c20 00000c80' 
+     850 00008c40     0d5f          calla   speech_play
+         00008c50 00008500' 
+     851 00008c70           xafzx2pts
+     852 00008c70           xafzugly_2pts
+     853 00008c70     0960          rets
+     854                    
+     855                    
+     856 00008c80           xafz3_points
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   17
+
+     857                    
+     858 00008c80     0d3f          callr   ugly_shot
+         00008c90     033c  
+     859 00008ca0     c91d          jrnc    xafzx3pts
+     860                    
+     861 00008cb0     0d3f          callr   wideopen_speech
+         00008cc0     0618  
+     862 00008cd0     c91a          jrnc    xafzx3pts
+     863                    
+     864 00008ce0     09c0          movi    300,a0                  ;call name 30% time
+         00008cf0     012c  
+     865 00008d00     0d5f          calla   RNDPER
+         00008d10 00000000! 
+     866 00008d30     c206          jrls    xafzno_name3p
+     867                    
+     868 00008d40     05a0          move    @plyr_shot,a0
+         00008d50 00000030- 
+     869 00008d70     0d3f          callr   call_player_name
+         00008d80     01ea  
+     870 00008d90     c90e          jrnc    xafzx3pts                       ;nc = name called
+     871                    
+     872 00008da0           xafzno_name3p
+     873 00008da0     09c0          movi    4,a0
+         00008db0     0004  
+     874 00008dc0     0d5f          calla   rndrng0
+         00008dd0 00000000! 
+     875 00008df0     24a0          sll     5,a0    ;x 32 bits
+     876 00008e00     0b20          addi    xafz3ptab,a0
+         00008e10 00008e90' 
+     877 00008e30     8600          move    *a0,a0,L
+     878 00008e40     ca03          jrz     xafzx3pts
+     879 00008e50     0d5f          calla   speech_play
+         00008e60 00008500' 
+     880 00008e80           xafzx3pts
+     881 00008e80     0960          rets
+     882                    
+     883 00008e90           xafz3ptab
+     884 00008e90 00000a40'         .long   shts0           ;from the 3 point line
+     885 00008eb0 00000a80'         .long   shts1           ;shoots for 3
+     886 00008ed0 00000a80'         .long   shts1           ;shoots for 3
+     887 00008ef0 00000ac0'         .long   shts2           ;from down town
+     888 00008f10 00000b00'         .long   shts3           ;he shoots from the outside
+     889 00008f30 00000b40'         .long   shtsrb          ;rainbow
+     890                    
+     891 00008f50           xafzhook_shot
+     892                    
+     893 00008f50     5600          clr     a0
+     894 00008f60     0580          move    a0,@skycalled
+         00008f70 000002d0- 
+     895                    
+     896 00008f90     0d3f          callr   ugly_shot
+         00008fa0     030b  
+     897 00008fb0     c91e          jrnc    xafzxhook
+     898                    
+     899 00008fc0     05a0          move    @shot_distance,a0       ;distance from hoop
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   18
+
+         00008fd0 00000050- 
+     900 00008ff0     0b40          cmpi    130,a0
+         00009000     ff7d  
+     901 00009010     c413          jrlt    xafztoo_close
+     902                    
+     903 00009020     09c0          movi    1,a0
+         00009030     0001  
+     904 00009040     0d5f          calla   rndrng0
+         00009050 00000000! 
+     905 00009070     24a0          sll     5,a0            ;x 32 bits
+     906 00009080     0b20          addi    xafzhooktab,a0
+         00009090 000091b0' 
+     907 000090b0     8600          move    *a0,a0,L
+     908 000090c0     0d5f          calla   speech_play
+         000090d0 00008500' 
+     909 000090f0     c805          jrc     xafzfailed
+     910                    
+     911 00009100     1820          movk    1,a0
+     912 00009110     0580          move    a0,@skycalled
+         00009120 000002d0- 
+     913 00009140     0960          rets
+     914                    
+     915 00009150           xafzfailed
+     916 00009150           xafztoo_close
+     917 00009150     05a0          move    @plyr_shot,a0
+         00009160 00000030- 
+     918 00009180     0d3f          callr   call_player_name
+         00009190     01a9  
+     919                    
+     920 000091a0           xafzxhook
+     921 000091a0     0960          rets
+     922                    
+     923 000091b0           xafzhooktab
+     924 000091b0 00000cc0'         .long   hooksht         ;1 takes the hook shot
+     925 000091d0 00000cc0'         .long   hooksht         ;1 takes the hook shot
+     926                    
+     927 000091f0           xafzlay_up
+     928                    
+     929 000091f0     0960          rets
+     930                    
+     931 00009200     05a0          move    @plyr_shot,a0
+         00009210 00000030- 
+     932 00009230     0d3f          callr   call_player_name
+         00009240     019e  
+     933                    
+     934 00009250           xafzxlay
+     935 00009250     0960          rets
+     936                    
+     937 00009260           xafzfinger_roll
+     938                    
+     939 00009260     05a0          move    @plyr_shot,a0
+         00009270 00000030- 
+     940 00009290     0d3f          callr   call_player_name
+         000092a0     0198  
+     941                    
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   19
+
+     942 000092b0           xafzxfing
+     943 000092b0     0960          rets
+     944                    
+     945 000092c0           xafzdunk_short
+     946                    
+     947 000092c0     05a0          move    @plyr_shot,a0
+         000092d0 00000030- 
+     948 000092f0     0d3f          callr   call_player_name
+         00009300     0192  
+     949                    
+     950 00009310     0960          rets
+     951                    
+     952 00009320           xafzdunk_med
+     953                    
+     954 00009320     05a0          move    @plyr_shot,a0
+         00009330 00000030- 
+     955 00009350     0d3f          callr   call_player_name
+         00009360     018c  
+     956                    
+     957 00009370     0960          rets
+     958                    
+     959 00009380           xafzdunk_long
+     960                    
+     961 00009380     09c0          movi    400,a0                  ;call name 40% time
+         00009390     0190  
+     962 000093a0     0d5f          calla   RNDPER
+         000093b0 00000000! 
+     963 000093d0     c206          jrls    xafznoname_dnkl
+     964                    
+     965 000093e0     05a0          move    @plyr_shot,a0
+         000093f0 00000030- 
+     966 00009410     0d3f          callr   call_player_name
+         00009420     0180  
+     967 00009430     c90e          jrnc    xafzxdnkl                       ;nc = name called
+     968                    
+     969 00009440           xafznoname_dnkl
+     970 00009440     09c0          movi    1,a0
+         00009450     0001  
+     971 00009460     0d5f          calla   rndrng0
+         00009470 00000000! 
+     972 00009490     24a0          sll     5,a0    ;x 32 bits
+     973 000094a0     0b20          addi    xafzdnktab,a0
+         000094b0 00009530' 
+     974 000094d0     8600          move    *a0,a0,L
+     975 000094e0     ca03          jrz     xafzxdnkl
+     976 000094f0     0d5f          calla   speech_play
+         00009500 00008500' 
+     977 00009520           xafzxdnkl
+     978 00009520     0960          rets
+     979                    
+     980 00009530           xafzdnktab
+     981 00009530 000001c0'         .long   scrs7           ;oh my!
+     982 00009550 00000200'         .long   scrs8           ;spectacular dunk
+     983                    
+     984                    
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   20
+
+     985 00009570            SUBR   scored_speech
+     986                    
+     987 00009570                   PUSH    a1,a2
+     988                    
+     989 00009590     0d3f          callr   blowout
+         000095a0     01ac  
+     990 000095b0     c90f          jrnc    faapxscrdspeech
+     991                    
+     992 000095c0     0d3f          callr   onfire_speech
+         000095d0     0549  
+     993 000095e0     c90c          jrnc    faapxscrdspeech
+     994                    
+     995 000095f0     0d3f          callr   lucky_bounce
+         00009600     0290  
+     996 00009610     c909          jrnc    faapxscrdspeech
+     997                    
+     998 00009620     05a0          move    @shot_type,a0
+         00009630 00000020- 
+     999 00009650     24a0          sll     5,a0                    ;x 32 bits
+    1000 00009660     0b20          addi    faapscored_table,a0
+         00009670 000096e0' 
+    1001 00009690     8600          move    *a0,a0,L
+    1002 000096a0     0920          call    a0
+    1003                    
+    1004 000096b0           faapxscrdspeech
+    1005 000096b0                   PULL    a1,a2
+    1006 000096d0     0960          rets
+    1007                    
+    1008                    
+    1009 000096e0           faapscored_table
+    1010 000096e0 00009820'         .long   faapdesperation
+    1011 00009700 000099f0'         .long   faaplong_range
+    1012 00009720 00009b80'         .long   faap2_points
+    1013 00009740 00009df0'         .long   faap3_points
+    1014 00009760 0000a040'         .long   faaphook_shot
+    1015 00009780 0000a170'         .long   faaplay_up
+    1016 000097a0 0000a2c0'         .long   faapfinger_roll
+    1017 000097c0 0000a460'         .long   faapdunk_short
+    1018 000097e0 0000a460'         .long   faapdunk_med
+    1019 00009800 0000a460'         .long   faapdunk_long
+    1020                    
+    1021 00009820           faapdesperation
+    1022 00009820           hotscored
+    1023                    
+    1024 00009820     0d3f          callr   itsgood
+         00009830     03d6  
+    1025 00009840     c90d          jrnc    faapxdesp
+    1026                    
+    1027 00009850     09c0          movi    5,a0
+         00009860     0005  
+    1028 00009870     0d5f          calla   rndrng0
+         00009880 00000000! 
+    1029 000098a0     24a0          sll     5,a0            ;x 32 bits
+    1030 000098b0     0b20          addi    faapdesptab,a0
+         000098c0 00009930' 
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   21
+
+    1031 000098e0     8600          move    *a0,a0,L
+    1032 000098f0     0d5f          calla   speech_play
+         00009900 00008500' 
+    1033 00009920           faapxdesp
+    1034 00009920     0960          rets
+    1035                    
+    1036 00009930           faapdesptab
+    1037 00009930 000001c0'         .long   scrs7           ;0 oh my!
+    1038 00009950 000001c0'         .long   scrs7           ;1 oh my!
+    1039 00009970 000001c0'         .long   scrs7           ;2 oh my!
+    1040 00009990 000001c0'         .long   scrs7           ;3 oh my!
+    1041 000099b0 00001200'         .long   takethat        ;4 take that!
+    1042 000099d0 000012c0'         .long   hello           ;5 hello!
+    1043                    
+    1044 000099f0           faaplong_range
+    1045                    
+    1046 000099f0     0d3f          callr   itsgood
+         00009a00     03b9  
+    1047 00009a10     c90d          jrnc    faapxlong
+    1048                    
+    1049 00009a20     09c0          movi    3,a0
+         00009a30     0003  
+    1050 00009a40     0d5f          calla   rndrng0
+         00009a50 00000000! 
+    1051 00009a70     24a0          sll     5,a0            ;x 32 bits
+    1052 00009a80     0b20          addi    faaplongtab,a0
+         00009a90 00009b00' 
+    1053 00009ab0     8600          move    *a0,a0,L
+    1054 00009ac0     0d5f          calla   speech_play
+         00009ad0 00008500' 
+    1055 00009af0           faapxlong
+    1056 00009af0     0960          rets
+    1057                    
+    1058 00009b00           faaplongtab
+    1059 00009b00 00000100'         .long   scrs4           ;0 what a shot
+    1060 00009b20 00000000'         .long   scrs0           ;1 and it's good
+    1061 00009b40 00000d80'         .long   greatsht        ;2 great shot!
+    1062 00009b60 00000e80'         .long   hescores        ;4 he scores
+    1063                    
+    1064 00009b80           faap2_points
+    1065                    
+    1066 00009b80     09c0          movi    500,a0          ;call 50% swishes
+         00009b90     01f4  
+    1067 00009ba0     0d3f          callr   swish_speech
+         00009bb0     03b9  
+    1068 00009bc0     c913          jrnc    faapx2pts
+    1069                    
+    1070 00009bd0     09c0          movi    300,a0          ;call scores 20% time
+         00009be0     012c  
+    1071 00009bf0     0d5f          calla   RNDPER
+         00009c00 00000000! 
+    1072 00009c20     c20d          jrls    faapx2pts
+    1073                    
+    1074 00009c30     09c0          movi    6,a0
+         00009c40     0006  
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   22
+
+    1075 00009c50     0d5f          calla   rndrng0
+         00009c60 00000000! 
+    1076 00009c80     24a0          sll     5,a0            ;x 32 bits
+    1077 00009c90     0b20          addi    faap2tab,a0
+         00009ca0 00009d10' 
+    1078 00009cc0     8600          move    *a0,a0,L
+    1079 00009cd0     0d5f          calla   speech_play
+         00009ce0 00008500' 
+    1080 00009d00           faapx2pts
+    1081                    
+    1082 00009d00     0960          rets
+    1083                    
+    1084 00009d10           faap2tab
+    1085 00009d10 00000300'         .long   scrs12          ;0 count it (scores)
+    1086 00009d30 00000300'         .long   scrs12          ;1 count it (scores)
+    1087 00009d50 00000e80'         .long   hescores        ;2 he scores
+    1088 00009d70 00000e80'         .long   hescores        ;3 he scores
+    1089 00009d90 00000e80'         .long   hescores        ;5 he scores
+    1090 00009db0 00000700'         .long   twopts          ;6 two points
+    1091 00009dd0 00000700'         .long   twopts          ;7 two points
+    1092                    
+    1093                    
+    1094                    
+    1095 00009df0           faap3_points
+    1096                    
+    1097 00009df0     0d3f          callr   itsgood
+         00009e00     0379  
+    1098 00009e10     c913          jrnc    faapx3p
+    1099                    
+    1100 00009e20     09c0          movi    350,a0          ;call 35% swishes
+         00009e30     015e  
+    1101 00009e40     0d3f          callr   swish_speech
+         00009e50     038f  
+    1102 00009e60     c90e          jrnc    faapx3p
+    1103                    
+    1104 00009e70     09c0          movi    6,a0
+         00009e80     0006  
+    1105 00009e90     0d5f          calla   rndrng0
+         00009ea0 00000000! 
+    1106 00009ec0     24a0          sll     5,a0    ;x 32 bits
+    1107 00009ed0     0b20          addi    faap3ptab,a0
+         00009ee0 00009f60' 
+    1108 00009f00     8600          move    *a0,a0,L
+    1109 00009f10     ca03          jrz     faapx3p
+    1110 00009f20     0d5f          calla   speech_play
+         00009f30 00008500' 
+    1111 00009f50           faapx3p
+    1112 00009f50     0960          rets
+    1113                    
+    1114 00009f60           faap3ptab
+    1115 00009f60 00000000'         .long   scrs0           ;0 and it's good
+    1116 00009f80 00000000'         .long   scrs0           ;1 and it's good
+    1117 00009fa0 00000080'         .long   scrs2           ;2 got it!
+    1118 00009fc0 00000100'         .long   scrs4           ;3 what a shot
+    1119 00009fe0 00000d80'         .long   greatsht        ;4 great shot!
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   23
+
+    1120 0000a000 00000d40'         .long   yes             ;5 yes!
+    1121 0000a020 00000e80'         .long   hescores        ;6 he scores
+    1122                    
+    1123                    
+    1124 0000a040           faaphook_shot
+    1125                    
+    1126 0000a040     0d3f          callr   itsgood
+         0000a050     0354  
+    1127 0000a060     c90f          jrnc    faapxhook
+    1128                    
+    1129 0000a070     05a0          move    @skycalled,a0   ;sky hook called?
+         0000a080 000002d0- 
+    1130 0000a0a0     ca05          jrz     faapnosky
+    1131                    
+    1132 0000a0b0     c0ac          jruc    faap2_points    ;call like regular 2 pointer
+    1133 0000a0c0     0d5f          calla   speech_play
+         0000a0d0 00008500' 
+    1134 0000a0f0     0960          rets
+    1135                    
+    1136 0000a100           faapnosky
+    1137 0000a100     09e0          movi    scrs5,a0        ;hooks it in
+         0000a110 00000140' 
+    1138 0000a130     0d5f          calla   speech_play
+         0000a140 00008500' 
+    1139                    
+    1140 0000a160           faapxhook
+    1141 0000a160     0960          rets
+    1142                    
+    1143                    
+    1144 0000a170           faaplay_up
+    1145                    
+    1146 0000a170     1860          movk    3,a0
+    1147 0000a180     0d5f          calla   rndrng0
+         0000a190 00000000! 
+    1148 0000a1b0     24a0          sll     5,a0            ;x 32 bits
+    1149 0000a1c0     0b20          addi    faaplaytab,a0
+         0000a1d0 0000a240' 
+    1150 0000a1f0     8600          move    *a0,a0,L
+    1151 0000a200     0d5f          calla   speech_play
+         0000a210 00008500' 
+    1152 0000a230     0960          rets
+    1153                    
+    1154 0000a240           faaplaytab
+    1155 0000a240 00000240'         .long   scrs9   ;0 sweet touch
+    1156 0000a260 00000600'         .long   scrs25  ;1 fancy move
+    1157 0000a280 00000640'         .long   scrsrz  ;2 razzle dazzle
+    1158 0000a2a0 00000680'         .long   scrs26  ;3 fantastic
+    1159                    
+    1160 0000a2c0           faapfinger_roll
+    1161                    
+    1162 0000a2c0     09c0          movi    5,a0
+         0000a2d0     0005  
+    1163 0000a2e0     0d5f          calla   rndrng0
+         0000a2f0 00000000! 
+    1164 0000a310     24a0          sll     5,a0            ;x 32 bits
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   24
+
+    1165 0000a320     0b20          addi    faapfingtab,a0
+         0000a330 0000a3a0' 
+    1166 0000a350     8600          move    *a0,a0,L
+    1167 0000a360     0d5f          calla   speech_play
+         0000a370 00008500' 
+    1168 0000a390     0960          rets
+    1169                    
+    1170 0000a3a0           faapfingtab
+    1171 0000a3a0 00000240'         .long   scrs9   ;0 sweet touch
+    1172 0000a3c0 000000c0'         .long   scrs3   ;1 finds the hole
+    1173 0000a3e0 00000180'         .long   scrs6   ;2 finger rolls it in
+    1174 0000a400 00000600'         .long   scrs25  ;3 fancy move
+    1175 0000a420 00000640'         .long   scrsrz  ;4 razzle dazzle
+    1176 0000a440 00000680'         .long   scrs26  ;5 fantastic
+    1177                    
+    1178                    
+    1179 0000a460           faapdunk_short
+    1180 0000a460           faapdunk_med
+    1181 0000a460           faapdunk_long
+    1182                    
+    1183                    
+    1184 0000a460     05a0          move    @jam_speech,a0          ;speech type to call when jammed
+         0000a470 000000b0- 
+    1185 0000a490     ca06          jrz     faapno_speech
+    1186 0000a4a0     24a0          sll     5,a0                    ;x 32 bits
+    1187 0000a4b0     0b20          addi    faapjam_jump,a0
+         0000a4c0 0000a510' 
+    1188 0000a4e0     8600          move    *a0,a0,L
+    1189 0000a4f0     0920          call    a0
+    1190 0000a500           faapno_speech
+    1191 0000a500     0960          rets
+    1192                    
+    1193                    
+    1194 0000a510           faapjam_jump
+    1195 0000a510 00000000          .long   0
+    1196 0000a530 0000a5b0'         .long   faapeasy_jam
+    1197 0000a550 0000a750'         .long   faapmed_jam
+    1198 0000a570 0000a910'         .long   faapgood_jam
+    1199 0000a590 0000aa50'         .long   faapgreat_jam
+    1200                    
+    1201 0000a5b0           faapeasy_jam
+    1202                    
+    1203 0000a5b0     09c0          movi    5,a0
+         0000a5c0     0005  
+    1204 0000a5d0     0d5f          calla   rndrng0
+         0000a5e0 00000000! 
+    1205 0000a600     24a0          sll     5,a0            ;x 32 bits
+    1206 0000a610     0b20          addi    faapeasy_tab,a0
+         0000a620 0000a690' 
+    1207 0000a640     8600          move    *a0,a0,L
+    1208 0000a650     0d5f          calla   speech_play
+         0000a660 00008500' 
+    1209 0000a680     0960          rets
+    1210                    
+    1211 0000a690           faapeasy_tab
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   25
+
+    1212 0000a690 000004c0'         .long   scrs19  ;0 kaboom
+    1213 0000a6b0 00000540'         .long   scrs22  ;1 slams it
+    1214 0000a6d0 00000580'         .long   scrs23  ;2 stuffs it
+    1215 0000a6f0 000005c0'         .long   scrs24  ;3 the easy jam
+    1216 0000a710 000006c0'         .long   jamsit  ;4 jams it in
+    1217 0000a730 00000680'         .long   scrs26  ;5 fantastic
+    1218                    
+    1219                    
+    1220 0000a750           faapmed_jam
+    1221                    
+    1222 0000a750     09c0          movi    6,a0
+         0000a760     0006  
+    1223 0000a770     0d5f          calla   rndrng0
+         0000a780 00000000! 
+    1224 0000a7a0     24a0          sll     5,a0            ;x 32 bits
+    1225 0000a7b0     0b20          addi    faapmed_tab,a0
+         0000a7c0 0000a830' 
+    1226 0000a7e0     8600          move    *a0,a0,L
+    1227 0000a7f0     0d5f          calla   speech_play
+         0000a800 00008500' 
+    1228 0000a820     0960          rets
+    1229                    
+    1230 0000a830           faapmed_tab
+    1231 0000a830 00000400'         .long   scrs16          ;0 boom shakalaka
+    1232 0000a850 000004c0'         .long   scrs19          ;1 kaboom
+    1233 0000a870 00000500'         .long   scrs20          ;2 monster jam
+    1234 0000a890 000006c0'         .long   jamsit          ;3 jams it in
+    1235 0000a8b0 00000540'         .long   scrs22          ;4 slams it
+    1236 0000a8d0 00000580'         .long   scrs23          ;5 stuffs it
+    1237 0000a8f0 00000680'         .long   scrs26          ;6 fantastic
+    1238                    
+    1239                    
+    1240 0000a910           faapgood_jam
+    1241                    
+    1242 0000a910     09c0          movi    2,a0
+         0000a920     0002  
+    1243 0000a930     0d5f          calla   rndrng0
+         0000a940 00000000! 
+    1244 0000a960     24a0          sll     5,a0            ;x 32 bits
+    1245 0000a970     0b20          addi    faapgood_tab,a0
+         0000a980 0000a9f0' 
+    1246 0000a9a0     8600          move    *a0,a0,L
+    1247 0000a9b0     0d5f          calla   speech_play
+         0000a9c0 00008500' 
+    1248 0000a9e0     0960          rets
+    1249                    
+    1250 0000a9f0           faapgood_tab
+    1251 0000a9f0 00000400'         .long   scrs16  ;0 boom shakalaka
+    1252 0000aa10 000004c0'         .long   scrs19  ;1 kaboom
+    1253 0000aa30 000006c0'         .long   jamsit  ;2 jams it in
+    1254                    
+    1255                    
+    1256 0000aa50           faapgreat_jam
+    1257                    
+    1258 0000aa50     18a0          movk    5,a0
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   26
+
+    1259 0000aa60     0d5f          calla   rndrng0
+         0000aa70 00000000! 
+    1260 0000aa90     24a0          sll     5,a0            ;x 32 bits
+    1261 0000aaa0     0b20          addi    faapgreat_tab,a0
+         0000aab0 0000ab20' 
+    1262 0000aad0     8600          move    *a0,a0,L
+    1263 0000aae0     0d5f          calla   speech_play
+         0000aaf0 00008500' 
+    1264 0000ab10     0960          rets
+    1265                    
+    1266 0000ab20           faapgreat_tab
+    1267 0000ab20 00000200'         .long   scrs8           ;0 spectacular dunk
+    1268 0000ab40 00000400'         .long   scrs16          ;1 boom shakalaka
+    1269 0000ab60 00000440'         .long   scrs17          ;2 razzle dazzle
+    1270 0000ab80 000004c0'         .long   scrs19          ;4 kaboom
+    1271 0000aba0 00000500'         .long   scrs20          ;5 monster jam
+    1272 0000abc0 00001200'         .long   takethat        ;6 take that
+    1273                    
+    1274                    
+    1275 0000abe0            SUBR   seq_call_name
+    1276                    
+    1277 0000abe0     b5a0          move    *a13(plyr_num),a0       ;(0-3)
+         0000abf0     0100  
+    1278 0000ac00     0d3f          callr   call_player_name
+         0000ac10     0001  
+    1279 0000ac20     0960          rets
+    1280                    
+    1281                    
+    1282                    
+    1283 0000ac30            SUBRP  call_player_name
+    1284                    
+    1285                    
+    1286                    
+    1287 0000ac30     05a1          move    @last_name_time,a1      ;# ticks since name called
+         0000ac40 00000010- 
+    1288 0000ac60     0b41          cmpi    TSEC*2,a1
+         0000ac70     ff95  
+    1289 0000ac80     c905          jrhs    fqtmplayit
+    1290                    
+    1291 0000ac90     05a1          move    @last_name,a1           ;if name called in last 3 secs
+         0000aca0 00000000- 
+    1292 0000acc0     4801          cmp     a0,a1                   ;then don't call it again
+    1293 0000acd0     ca15          jreq    fqtmsnd_fail
+    1294                    
+    1295 0000ace0           fqtmplayit
+    1296 0000ace0                   PUSH    a0
+    1297                    
+    1298 0000acf0     4c01          move    a0,a1
+    1299 0000ad00     24a1          sll     5,a1
+    1300 0000ad10     0b21          addi    spch_name_ram,a1
+         0000ad20 000002e0- 
+    1301 0000ad40     8620          move    *a1,a0,L
+    1302                    
+    1303                    
+    1304                    
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   27
+
+    1305 0000ad50     0d5f          calla   speech_play
+         0000ad60 00008500' 
+    1306 0000ad80                   PULL    a0
+    1307 0000ad90     c809          jrc     fqtmsnd_fail
+    1308 0000ada0     0580          move    a0,@last_name           ;last player name called
+         0000adb0 00000000- 
+    1309 0000add0     5600          clr     a0
+    1310 0000ade0     0580          move    a0,@last_name_time      ;# ticks since name called
+         0000adf0 00000010- 
+    1311 0000ae10     0320          clrc
+    1312 0000ae20     0960          rets
+    1313                    
+    1314 0000ae30           fqtmsnd_fail
+    1315 0000ae30     0de0          setc
+    1316 0000ae40     0960          rets
+    1317                    
+    1318                    
+    1319                    
+    1320 0000ae50            SUBR   pass_to_speech
+    1321                    
+    1322 0000ae50     05a0          move    @last_name_time,a0      ;# ticks since name called
+         0000ae60 00000010- 
+    1323 0000ae80     0b40          cmpi    TSEC*3,a0
+         0000ae90     ff60  
+    1324 0000aea0     c21a          jrls    nodgsnd_fail
+    1325                    
+    1326                    
+    1327 0000aeb0     4c20          move    a1,a0
+    1328                    
+    1329 0000aec0                   PUSH    a1
+    1330                    
+    1331 0000aed0     4c01          move    a0,a1
+    1332 0000aee0     24a1          sll     5,a1
+    1333 0000aef0     0b21          addi    spch_pass_ram,a1
+         0000af00 00000360- 
+    1334 0000af20     8620          move    *a1,a0,L
+    1335                    
+    1336                    
+    1337                    
+    1338                    
+    1339 0000af30     0d5f          calla   speech_play
+         0000af40 00008500' 
+    1340 0000af60                   PULL    a1
+    1341 0000af70     c80d          jrc     nodgsnd_fail
+    1342 0000af80     4c20          move    a1,a0
+    1343 0000af90     0bc0          xori    1,a0
+         0000afa0 00000001  
+    1344 0000afc0     0580          move    a0,@last_name           ;last player name called
+         0000afd0 00000000- 
+    1345 0000aff0     5600          clr     a0
+    1346 0000b000     0580          move    a0,@last_name_time      ;# ticks since name called
+         0000b010 00000010- 
+    1347 0000b030     0320          clrc
+    1348 0000b040     0960          rets
+    1349                    
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   28
+
+    1350 0000b050           nodgsnd_fail
+    1351 0000b050     0de0          setc
+    1352 0000b060     0960          rets
+    1353                    
+    1354                    
+    1355                            .asg    040500h,MAX_TIME        ;45 seconds
+    1356                            .asg    020500h,MAX_TIME2       ;25 seconds
+    1357                            .asg    000200h,MIN_TIME        ;2 seconds
+    1358                    
+    1359 0000b070            SUBRP  blowout
+    1360                    
+    1361 0000b070     05a1          move    @freakout,a1            ;no freakout on score
+         0000b080 000000a0- 
+    1362 0000b0a0     ca15          jrz     kyqsno_freakout
+    1363                    
+    1364 0000b0b0     09e0          movi    scrs1,a0                ;it's good (excited)
+         0000b0c0 00000040' 
+    1365 0000b0e0     1421          dec     a1
+    1366 0000b0f0     cb0b          jrnz    kyqsok
+    1367 0000b100     07a0          move    @game_time,a0,L
+         0000b110 00000000! 
+    1368 0000b130     0b60          cmpi    MAX_TIME,a0
+         0000b140 fffbfaff  
+    1369 0000b160     c300          jrhi    kyqssnd_fail
+         0000b170     0094  
+    1370 0000b180     09e0          movi    scrs11,a0               ;GOOOOD!!!
+         0000b190 000002c0' 
+    1371 0000b1b0           kyqsok
+    1372 0000b1b0     0d3f          callr   speech_playovrp
+         0000b1c0     fd37  
+    1373 0000b1d0     c800          jrc     kyqssnd_fail
+         0000b1e0     008d  
+    1374 0000b1f0     0960          rets
+    1375                    
+    1376                    
+    1377 0000b200           kyqsno_freakout
+    1378 0000b200     05a0          move    @gmqrtr,a0
+         0000b210 00000000! 
+    1379 0000b230     0b40          cmpi    3,a0
+         0000b240     fffc  
+    1380 0000b250     c47f          jrlt    kyqsnot_last_qtr
+    1381                    
+    1382 0000b260     07a0          move    @game_time,a0,L
+         0000b270 00000000! 
+    1383 0000b290     0b60          cmpi    MAX_TIME,a0
+         0000b2a0 fffbfaff  
+    1384 0000b2c0     c37f          jrhi    kyqssnd_fail
+    1385 0000b2d0     0b40          cmpi    MIN_TIME,a0
+         0000b2e0     fdff  
+    1386 0000b2f0     c87c          jrlo    kyqssnd_fail
+    1387                    
+    1388 0000b300     05a0          move    @blowout_called,a0
+         0000b310 00000080- 
+    1389 0000b330     cb78          jrnz    kyqssnd_fail
+    1390                    
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   29
+
+    1391 0000b340     05a0          move    @ballpnumscored,a0      ;Last plyr who scored (0-3) or neg
+         0000b350 00000000! 
+    1392 0000b370     0d3f          callr   calc_score_diff
+         0000b380     0137  
+    1393                    
+    1394 0000b390     05a1          move    @score_diff,a1
+         0000b3a0 00000070- 
+    1395 0000b3c0     0b41          cmpi    6,a1
+         0000b3d0     fff9  
+    1396 0000b3e0     c54b          jrge    kyqsisblow
+    1397                    
+    1398 0000b3f0     0b41          cmpi    3,a1
+         0000b400     fffc  
+    1399 0000b410     c46a          jrlt    kyqssnd_fail
+    1400                    
+    1401 0000b420     05a0          move    @needshot_called,a0
+         0000b430 00000090- 
+    1402 0000b450     cb66          jrnz    kyqssnd_fail
+    1403                    
+    1404 0000b460     07a0          move    @game_time,a0,L
+         0000b470 00000000! 
+    1405 0000b490     0b60          cmpi    MAX_TIME2,a0
+         0000b4a0 fffdfaff  
+    1406 0000b4c0     c35f          jrhi    kyqssnd_fail
+    1407                    
+    1408                    
+    1409 0000b4d0     09c0          movi    1,a0
+         0000b4e0     0001  
+    1410 0000b4f0     0d5f          calla   rndrng0
+         0000b500 00000000! 
+    1411 0000b520     4c00          move    a0,a0
+    1412 0000b530     ca2a          jrz     kyqsdo_needshot
+    1413                    
+    1414                    
+    1415 0000b540     05a0          move    @ballpnumscored,a0      ;Last plyr who scored (0-3) or neg
+         0000b550 00000000! 
+    1416 0000b570     ce26          jrn     kyqserror
+    1417                    
+    1418 0000b580     09e2          movi    silence55,a2
+         0000b590 00001ac0' 
+    1419 0000b5b0     09e4          movi    sound_ram2,a4
+         0000b5c0 000001d0- 
+    1420 0000b5e0     9a44          move    *a2+,*a4+,L
+    1421 0000b5f0     9a44          move    *a2+,*a4+,L
+    1422                    
+    1423 0000b600     05a2          move    @team1,a2
+         0000b610 00000000! 
+    1424 0000b630     2fe0          srl     1,a0                    ;0-1
+    1425 0000b640     cb03          jrnz    kyqstm1_scored
+    1426 0000b650     05a2          move    @team2,a2
+         0000b660 00000000! 
+    1427 0000b680           kyqstm1_scored
+    1428 0000b680     24c2          sll     6,a2                    ;x 16bits x 4
+    1429 0000b690     0b22          addi    team_speech,a2
+         0000b6a0 00007e00' 
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   30
+
+    1430 0000b6c0     9a44          move    *a2+,*a4+,L
+    1431 0000b6d0     9a44          move    *a2+,*a4+,L
+    1432 0000b6e0     1820          movk    1,a0
+    1433 0000b6f0     0580          move    a0,@sound_ram2+40h+30h
+         0000b700 00000240- 
+    1434                    
+    1435 0000b720     09e2          movi    runout,a2
+         0000b730 00001b00' 
+    1436 0000b750     9a44          move    *a2+,*a4+,L
+    1437 0000b760     9a44          move    *a2+,*a4+,L
+    1438 0000b770     9a44          move    *a2+,*a4+,L
+    1439 0000b780     9a44          move    *a2+,*a4+,L
+    1440                    
+    1441 0000b790     09e0          movi    sound_ram2,a0
+         0000b7a0 000001d0- 
+    1442 0000b7c0     c004          jruc    kyqsplayit
+    1443 0000b7d0     0960          rets
+    1444                    
+    1445 0000b7e0           kyqserror
+    1446 0000b7e0           kyqsdo_needshot
+    1447 0000b7e0     09e0          movi    needshot,a0             ;They need a shot here
+         0000b7f0 00001a40' 
+    1448 0000b810           kyqsplayit
+    1449 0000b810     0d5f          calla   speech_play
+         0000b820 00008500' 
+    1450 0000b840     c827          jrc     kyqssnd_fail
+    1451 0000b850     1820          movk    1,a0
+    1452 0000b860     0580          move    a0,@needshot_called
+         0000b870 00000090- 
+    1453 0000b890     0960          rets
+    1454                    
+    1455                    
+    1456 0000b8a0           kyqsisblow
+    1457 0000b8a0     09e0          movi    blowout_snd,a0          ;it's a blowout
+         0000b8b0 00000840' 
+    1458 0000b8d0     0b41          cmpi    9,a1
+         0000b8e0     fff6  
+    1459 0000b8f0     c50b          jrge    kyqsblowout
+    1460                    
+    1461 0000b900     09e0          movi    blowout2_snd,a0         ;Whoomp
+         0000b910 000008c0' 
+    1462 0000b930     05ae          move    @HCOUNT,a14
+         0000b940 c00001c0  
+    1463 0000b960     1fee          btst    0,a14
+    1464 0000b970     ca03          jrz     kyqswhoomp
+    1465 0000b980     09e0          movi    scrs14,a0               ;the nail in the coffin!
+         0000b990 00000380' 
+    1466 0000b9b0           kyqswhoomp
+    1467 0000b9b0           kyqsblowout
+    1468 0000b9b0     0d5f          calla   speech_play
+         0000b9c0 00008500' 
+    1469 0000b9e0     c80d          jrc     kyqssnd_fail
+    1470                    
+    1471 0000b9f0     1820          movk    1,a0
+    1472 0000ba00     0580          move    a0,@blowout_called
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   31
+
+         0000ba10 00000080- 
+    1473                    
+    1474 0000ba30     0320          clrc
+    1475 0000ba40     0960          rets
+    1476                    
+    1477                    
+    1478 0000ba50           kyqsnot_last_qtr
+    1479 0000ba50     5600          clr     a0
+    1480 0000ba60     0580          move    a0,@blowout_called
+         0000ba70 00000080- 
+    1481 0000ba90     0580          move    a0,@needshot_called
+         0000baa0 00000090- 
+    1482                    
+    1483 0000bac0           kyqssnd_fail
+    1484 0000bac0     0de0          setc
+    1485 0000bad0     0960          rets
+    1486                    
+    1487                    
+    1488 0000bae0            SUBRP  at_buzzer
+    1489                    
+    1490 0000bae0     05a0          move    @shot_type,a0           ;don't call on dunks
+         0000baf0 00000020- 
+    1491 0000bb10     0b40          cmpi    DUNK_SHORT,a0
+         0000bb20     fff8  
+    1492 0000bb30     c92e          jrhs    icqgcheck_buzzer
+    1493                    
+    1494 0000bb40     07a0          move    @game_time,a0,L
+         0000bb50 00000000! 
+    1495 0000bb70     0b40          cmpi    400h,a0                 ;less than 4 seconds left
+         0000bb80     fbff  
+    1496 0000bb90     c735          jrgt    icqgsnd_fail
+    1497                    
+    1498 0000bba0     05a0          move    @gmqrtr,a0
+         0000bbb0 00000000! 
+    1499 0000bbd0     0b40          cmpi    3,a0                    ;last quarter?
+         0000bbe0     fffc  
+    1500 0000bbf0     c422          jrlt    icqgnot_last_qtr
+    1501                    
+    1502 0000bc00     05a0          move    @score_diff,a0
+         0000bc10 00000070- 
+    1503 0000bc30     c11e          jrp     icqgin_front            ;already in front
+    1504 0000bc40     05a1          move    @ballptsforshot,a1      ;Point value for current shot (1-3)
+         0000bc50 00000000! 
+    1505 0000bc70     4020          add     a1,a0
+    1506 0000bc80     ca0d          jrz     icqgties_it
+    1507 0000bc90     ce18          jrn     icqgbehind
+    1508 0000bca0           icqgwins_it
+    1509 0000bca0     09e0          movi    scrs10,a0               ;IT IS....
+         0000bcb0 00000280' 
+    1510 0000bcd0     0d5f          calla   speech_play
+         0000bce0 00008500' 
+    1511 0000bd00     c81e          jrc     icqgsnd_fail
+    1512 0000bd10     1820          movk    1,a0
+    1513 0000bd20     0580          move    a0,@freakout            ;freak out if it scores
+         0000bd30 000000a0- 
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   32
+
+    1514 0000bd50     0960          rets
+    1515                    
+    1516 0000bd60           icqgties_it
+    1517 0000bd60     09e0          movi    shts6,a0                ;launches a shot
+         0000bd70 00000c00' 
+    1518 0000bd90     0d5f          calla   speech_play
+         0000bda0 00008500' 
+    1519 0000bdc0     c812          jrc     icqgsnd_fail
+    1520                    
+    1521 0000bdd0     1840          movk    2,a0
+    1522 0000bde0     0580          move    a0,@freakout            ;freak out if it scores
+         0000bdf0 000000a0- 
+    1523 0000be10     0960          rets
+    1524                    
+    1525                    
+    1526 0000be20           icqgbehind
+    1527 0000be20           icqgin_front
+    1528 0000be20           icqgnot_last_qtr
+    1529 0000be20           icqgcheck_buzzer
+    1530 0000be20     07a0          move    @game_time,a0,L
+         0000be30 00000000! 
+    1531 0000be50     0b40          cmpi    200h,a0
+         0000be60     fdff  
+    1532 0000be70     c707          jrgt    icqgsnd_fail
+    1533                    
+    1534 0000be80     09e0          movi    shts7,a0                ;at the buzzer
+         0000be90 00000c40' 
+    1535 0000beb0     0d3f          callr   speech_playovrp
+         0000bec0     fc67  
+    1536 0000bed0     c801          jrc     icqgsnd_fail
+    1537 0000bee0     0960          rets
+    1538                    
+    1539 0000bef0           icqgsnd_fail
+    1540 0000bef0     0de0          setc
+    1541 0000bf00     0960          rets
+    1542                    
+    1543                    
+    1544 0000bf10            SUBRP  lucky_bounce
+    1545                    
+    1546 0000bf10     05a0          move    @shot_type,a0
+         0000bf20 00000020- 
+    1547 0000bf40     0b40          cmpi    DUNK_SHORT,a0           ;no lucky bounce on dunks!
+         0000bf50     fff8  
+    1548 0000bf60     c50d          jrge    xyfosnd_fail
+    1549                    
+    1550 0000bf70     05a0          move    @ugly_stat,a0
+         0000bf80 00000060- 
+    1551 0000bfa0     ca09          jrz     xyfosnd_fail            ;ugly not called
+    1552                    
+    1553 0000bfb0     09e0          movi    scrs13,a0               ;gets a lucky bounce
+         0000bfc0 00000340' 
+    1554 0000bfe0     0d5f          calla   speech_play
+         0000bff0 00008500' 
+    1555 0000c010     c802          jrc     xyfosnd_fail
+    1556 0000c020     0320          clrc
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   33
+
+    1557 0000c030     0960          rets
+    1558                    
+    1559 0000c040           xyfosnd_fail
+    1560 0000c040     0de0          setc
+    1561 0000c050     0960          rets
+    1562                    
+    1563                    
+    1564 0000c060            SUBRP  ugly_shot
+    1565                    
+    1566 0000c060     05a0          move    @shot_percentage,a0     ;0=ugly, 1=ok
+         0000c070 00000040- 
+    1567 0000c090     ce07          jrn     zpofdoit
+    1568 0000c0a0     cb1a          jrnz    zpofsnd_fail
+    1569                    
+    1570 0000c0b0     09c0          movi    100,a0                  ;call ugly 20% time
+         0000c0c0     0064  
+    1571 0000c0d0     0d5f          calla   RNDPER
+         0000c0e0 00000000! 
+    1572 0000c100     c214          jrls    zpofsnd_fail
+    1573                    
+    1574 0000c110           zpofdoit
+    1575 0000c110     09c0          movi    2,a0
+         0000c120     0002  
+    1576 0000c130     0d5f          calla   rndrng0
+         0000c140 00000000! 
+    1577 0000c160     24a0          sll     5,a0            ;x 32 bits
+    1578 0000c170     0b20          addi    zpofuglytab,a0
+         0000c180 0000c270' 
+    1579 0000c1a0     8600          move    *a0,a0,L
+    1580 0000c1b0     0d5f          calla   speech_play
+         0000c1c0 00008500' 
+    1581 0000c1e0     c806          jrc     zpofsnd_fail
+    1582                    
+    1583 0000c1f0     1820          movk    1,a0
+    1584 0000c200     0580          move    a0,@ugly_stat           ;ugly called
+         0000c210 00000060- 
+    1585                    
+    1586 0000c230     0320          clrc
+    1587 0000c240     0960          rets
+    1588                    
+    1589 0000c250           zpofsnd_fail
+    1590 0000c250     0de0          setc
+    1591 0000c260     0960          rets
+    1592                    
+    1593 0000c270           zpofuglytab
+    1594 0000c270 00000ec0'         .long   ugly0   ;ugly shot!
+    1595 0000c290 00000f40'         .long   ugly1   ;puts up a brick
+    1596 0000c2b0 00000fc0'         .long   ugly2   ;terrible shot!
+    1597                    
+    1598                    
+    1599                    
+    1600 0000c2d0            SUBR   call_team_name
+    1601                    
+    1602 0000c2d0     24c0          sll     6,a0                    ;x 16bits x 4
+    1603 0000c2e0     0b20          addi    team_speech,a0
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   34
+
+         0000c2f0 00007e00' 
+    1604 0000c310     0d5f          calla   speech_play
+         0000c320 00008500' 
+    1605 0000c340     0960          rets
+    1606                    
+    1607                    
+    1608                    
+    1609 0000c350            SUBR   call_matchup
+    1610                    
+    1611 0000c350                   SLEEP   20
+    1612                    
+    1613 0000c3a0     09e0          movi    matchup,a0
+         0000c3b0 00001040' 
+    1614 0000c3d0     0d5f          calla   snd_play1
+         0000c3e0 00000000! 
+    1615                    
+    1616 0000c400                   SLEEP   1*TSEC+20
+    1617                    
+    1618 0000c450     05a2          move    @team1,a2
+         0000c460 00000000! 
+    1619 0000c480     24c2          sll     6,a2                    ;x 16bits x 4
+    1620 0000c490     0b22          addi    team_speech,a2
+         0000c4a0 00007e00' 
+    1621 0000c4c0     09e4          movi    sound_ram,a4
+         0000c4d0 000000d0- 
+    1622 0000c4f0     9a44          move    *a2+,*a4+,L
+    1623 0000c500     9a44          move    *a2+,*a4+,L
+    1624 0000c510     1820          movk    1,a0
+    1625 0000c520     0580          move    a0,@sound_ram+30h
+         0000c530 00000100- 
+    1626                    
+    1627 0000c550     09e2          movi    versus,a2
+         0000c560 00001080' 
+    1628 0000c580     9a44          move    *a2+,*a4+,L
+    1629 0000c590     9a44          move    *a2+,*a4+,L
+    1630 0000c5a0     1820          movk    1,a0
+    1631 0000c5b0     0580          move    a0,@sound_ram+40h+30h
+         0000c5c0 00000140- 
+    1632                    
+    1633 0000c5e0     05a2          move    @team2,a2
+         0000c5f0 00000000! 
+    1634 0000c610     24c2          sll     6,a2                    ;x 16bits x 4
+    1635 0000c620     0b22          addi    team_speech,a2
+         0000c630 00007e00' 
+    1636 0000c650     9a44          move    *a2+,*a4+,L
+    1637 0000c660     9a44          move    *a2+,*a4+,L
+    1638                    
+    1639 0000c670     09e0          movi    sound_ram,a0
+         0000c680 000000d0- 
+    1640 0000c6a0     0d5f          calla   snd_play1
+         0000c6b0 00000000! 
+    1641                    
+    1642 0000c6d0                   DIE
+    1643                    
+    1644                    
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   35
+
+    1645                    
+    1646 0000c700           calc_score_diff
+    1647                    
+    1648 0000c700                   PUSH    a0,a1,a2
+    1649                    
+    1650 0000c720     05a1          move    @scores,a1
+         0000c730 00000000! 
+    1651 0000c750     05a2          move    @scores+10h,a2
+         0000c760 00000010! 
+    1652 0000c780     4441          sub     a2,a1
+    1653 0000c790     2fe0          srl     1,a0
+    1654 0000c7a0     ca01          jrz     mpakteam1
+    1655 0000c7b0     03a1          neg     a1                      ;team2, so negate
+    1656 0000c7c0           mpakteam1
+    1657 0000c7c0     0581          move    a1,@score_diff
+         0000c7d0 00000070- 
+    1658 0000c7f0                   PULL    a0,a1,a2
+    1659 0000c810     0960          rets
+    1660                    
+    1661                    
+    1662 0000c820            SUBR   pushed_speech
+    1663                    
+    1664 0000c820     09c0          movi    4,a0
+         0000c830     0004  
+    1665 0000c840     0d5f          calla   rndrng0
+         0000c850 00000000! 
+    1666 0000c870     24a0          sll     5,a0            ;x 32 bits
+    1667 0000c880     0b20          addi    yzmypushtab,a0
+         0000c890 0000c920' 
+    1668 0000c8b0     8600          move    *a0,a0,L
+    1669 0000c8c0     ca03          jrz     yzmysnd_fail
+    1670 0000c8d0     0d5f          calla   speech_play
+         0000c8e0 00008500' 
+    1671                    
+    1672 0000c900           yzmysnd_fail
+    1673 0000c900     0de0          setc
+    1674 0000c910     0960          rets
+    1675                    
+    1676 0000c920           yzmypushtab
+    1677 0000c920 00001180'         .long   munged          ;0 munged
+    1678 0000c940 000011c0'         .long   ambushed        ;1 ambushed
+    1679 0000c960 00001300'         .long   excuse          ;2 excuse me
+    1680 0000c980 00001280'         .long   tofloor         ;3 knocked to the floor
+    1681 0000c9a0 00001200'         .long   takethat        ;4 take that
+    1682                    
+    1683                    
+    1684 0000c9c0            SUBR   rejected_speech
+    1685                    
+    1686 0000c9c0     07a1          move    @ballobj_p,a1,L
+         0000c9d0 00000000! 
+    1687 0000c9f0     b420          move    *a1(OYPOS),a0
+         0000ca00     00b0  
+    1688 0000ca10     0b40          cmpi    -28,a0
+         0000ca20     001b  
+    1689 0000ca30     c70c          jrgt    ixocyes         ;Br=near ground
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   36
+
+    1690                    
+    1691 0000ca40     18e0          movk    7,a0
+    1692 0000ca50     0d5f          calla   rndrng0
+         0000ca60 00000000! 
+    1693 0000ca80     24a0          sll     5,a0            ;x 32 bits
+    1694 0000ca90     0b20          addi    ixocregtab,a0
+         0000caa0 0000cb10' 
+    1695 0000cac0     8600          move    *a0,a0,L
+    1696 0000cad0     0d5f          calla   speech_playovrp
+         0000cae0 00008540' 
+    1697 0000cb00           ixocyes
+    1698 0000cb00     0960          rets
+    1699                    
+    1700 0000cb10           ixocregtab
+    1701 0000cb10 00001340'         .long   reject          ;0 rejected!
+    1702 0000cb30 00001340'         .long   reject          ;1 rejected!
+    1703 0000cb50 00001380'         .long   rejects         ;2 rejects the shot
+    1704 0000cb70 000013c0'         .long   greatd          ;3 great defense
+    1705 0000cb90 000013c0'         .long   greatd          ;4 great defense
+    1706 0000cbb0 00001400'         .long   noway           ;5 no way!
+    1707 0000cbd0 00000d00'         .long   getout          ;6 get that outta here!
+    1708 0000cbf0 00000d00'         .long   getout          ;8 get that outta here!
+    1709                    
+    1710                    
+    1711 0000cc10            SUBR   rejected_dnk_speech
+    1712                    
+    1713 0000cc10     07a1          move    @ballobj_p,a1,L
+         0000cc20 00000000! 
+    1714 0000cc40     b420          move    *a1(OYPOS),a0
+         0000cc50     00b0  
+    1715 0000cc60     0b40          cmpi    -28,a0
+         0000cc70     001b  
+    1716 0000cc80     c70c          jrgt    cclnyes         ;Br=near ground
+    1717                    
+    1718 0000cc90     1860          movk    3,a0
+    1719 0000cca0     0d5f          calla   rndrng0
+         0000ccb0 00000000! 
+    1720 0000ccd0     24a0          sll     5,a0            ;x 32 bits
+    1721 0000cce0     0b20          addi    cclnregdnktab,a0
+         0000ccf0 0000cd60' 
+    1722 0000cd10     8600          move    *a0,a0,L
+    1723 0000cd20     0d5f          calla   speech_playovrp
+         0000cd30 00008540' 
+    1724 0000cd50           cclnyes
+    1725 0000cd50     0960          rets
+    1726                    
+    1727 0000cd60           cclnregdnktab
+    1728 0000cd60 00001340'         .long   reject          ;0 rejected!
+    1729 0000cd80 00001340'         .long   reject          ;1 rejected!
+    1730 0000cda0 00001400'         .long   noway           ;2 no way!
+    1731 0000cdc0 00000d00'         .long   getout          ;3 get that outta here!
+    1732                    
+    1733                    
+    1734 0000cde0            SUBR   rebound_speech
+    1735                    
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   37
+
+    1736 0000cde0                   PUSH    a1,a2
+    1737                    
+    1738 0000ce00     07a0          move    @game_time,a0,L ;don't call if clock run down
+         0000ce10 00000000! 
+    1739 0000ce30     ca4a          jrz     drvesnd_fail
+    1740                    
+    1741 0000ce40     09c0          movi    1,a0
+         0000ce50     0001  
+    1742 0000ce60     0d5f          calla   rndrng0
+         0000ce70 00000000! 
+    1743 0000ce90     24a0          sll     5,a0            ;x 32 bits
+    1744 0000cea0     0b20          addi    drverebtab,a0
+         0000ceb0 0000d320' 
+    1745 0000ced0     8600          move    *a0,a0,L
+    1746                    
+    1747 0000cee0     05a1          move    @ballpnum,a1
+         0000cef0 00000000! 
+    1748 0000cf10     ce3c          jrn     drvesnd_fail
+    1749                    
+    1750 0000cf20     2481          sll     4,a1                    ;x16
+    1751 0000cf30     0b21          addi    special_heads,a1        ;-1 = normal player head
+         0000cf40 00000000! 
+    1752 0000cf60     8421          move    *a1,a1
+    1753                    
+    1754 0000cf70     05a2          move    @last_name,a2
+         0000cf80 00000000- 
+    1755 0000cfa0     4822          cmp     a1,a2
+    1756 0000cfb0     cb07          jrne    drvecall_name
+    1757                    
+    1758 0000cfc0           drveno_name
+    1759 0000cfc0     0d5f          calla   speech_play
+         0000cfd0 00008500' 
+    1760 0000cff0     c82e          jrc     drvesnd_fail
+    1761 0000d000                   PULL    a1,a2
+    1762 0000d020     0960          rets
+    1763                    
+    1764 0000d030           drvecall_name
+    1765 0000d030     09e2          movi    sound_ram+40h,a2
+         0000d040 00000110- 
+    1766 0000d060     9a02          move    *a0+,*a2+,L
+    1767 0000d070     9a02          move    *a0+,*a2+,L
+    1768                    
+    1769 0000d080     05a0          move    @ballpnum,a0
+         0000d090 00000000! 
+    1770                    
+    1771                    
+    1772                    
+    1773 0000d0b0     4c01          move    a0,a1
+    1774 0000d0c0     24a1          sll     5,a1
+    1775 0000d0d0     0b21          addi    spch_name_ram,a1
+         0000d0e0 000002e0- 
+    1776 0000d100     8620          move    *a1,a0,L
+    1777                    
+    1778                    
+    1779                     
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   38
+
+    1780                    
+    1781 0000d110     09e2          movi    sound_ram,a2
+         0000d120 000000d0- 
+    1782 0000d140     9a02          move    *a0+,*a2+,L
+    1783 0000d150     9a02          move    *a0+,*a2+,L
+    1784 0000d160     1820          movk    1,a0
+    1785 0000d170     0580          move    a0,@sound_ram+30h
+         0000d180 00000100- 
+    1786 0000d1a0     09e0          movi    sound_ram,a0
+         0000d1b0 000000d0- 
+    1787 0000d1d0     0d5f          calla   speech_play
+         0000d1e0 00008500' 
+    1788 0000d200     c80d          jrc     drvesnd_fail
+    1789                    
+    1790 0000d210     05a0          move    @ballpnum,a0
+         0000d220 00000000! 
+    1791 0000d240     0580          move    a0,@last_name           ;last player name called
+         0000d250 00000000- 
+    1792 0000d270     5600          clr     a0
+    1793 0000d280     0580          move    a0,@last_name_time      ;# ticks since name called
+         0000d290 00000010- 
+    1794                    
+    1795 0000d2b0                   PULL    a1,a2
+    1796 0000d2d0     0960          rets
+    1797                    
+    1798                    
+    1799 0000d2e0           drvesnd_fail
+    1800 0000d2e0     0de0          setc
+    1801 0000d2f0                   PULL    a1,a2
+    1802 0000d310     0960          rets
+    1803                    
+    1804 0000d320           drverebtab
+    1805 0000d320 00001440'         .long   grabreb         ;0 grabs the rebound
+    1806 0000d340 00001440'         .long   grabreb         ;0 grabs the rebound
+    1807                    
+    1808                    
+    1809                    
+    1810 0000d360            SUBR   intercepted_speech
+    1811                    
+    1812 0000d360     09c0          movi    1,a0
+         0000d370     0001  
+    1813 0000d380     0d5f          calla   rndrng0
+         0000d390 00000000! 
+    1814 0000d3b0     24a0          sll     5,a0            ;x 32 bits
+    1815 0000d3c0     0b20          addi    knvqintcptab,a0
+         0000d3d0 0000d440' 
+    1816 0000d3f0     8600          move    *a0,a0,L
+    1817 0000d400     0d5f          calla   speech_playovrp
+         0000d410 00008540' 
+    1818 0000d430     0960          rets
+    1819                    
+    1820 0000d440           knvqintcptab
+    1821 0000d440 00001480'         .long   intrcpt         ;intercepted!
+    1822 0000d460 000014c0'         .long   turnovr         ;the turnover!
+    1823                    
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   39
+
+    1824                    
+    1825 0000d480            SUBR   stolen_speech
+    1826                    
+    1827 0000d480     09c0          movi    1,a0
+         0000d490     0001  
+    1828 0000d4a0     0d5f          calla   rndrng0
+         0000d4b0 00000000! 
+    1829 0000d4d0     24a0          sll     5,a0            ;x 32 bits
+    1830 0000d4e0     0b20          addi    srxjstealstab,a0
+         0000d4f0 0000d560' 
+    1831 0000d510     8600          move    *a0,a0,L
+    1832 0000d520     0d5f          calla   speech_playovrp
+         0000d530 00008540' 
+    1833 0000d550     0960          rets
+    1834                    
+    1835 0000d560           srxjstealstab
+    1836 0000d560 000014c0'         .long   turnovr         ;the turnover!
+    1837 0000d580 00001500'         .long   stolen          ;stolen!
+    1838                    
+    1839                    
+    1840                    
+    1841 0000d5a0            SUBRP  itsgood
+    1842                    
+    1843 0000d5a0     07a0          move    @game_time,a0,L
+         0000d5b0 00000000! 
+    1844 0000d5d0     cb08          jrnz    aqlysnd_fail
+    1845                    
+    1846 0000d5e0     09e0          movi    scrs1,a0        ;it's good (excited)
+         0000d5f0 00000040' 
+    1847 0000d610     0d5f          calla   speech_play
+         0000d620 00008500' 
+    1848 0000d640     c801          jrc     aqlysnd_fail
+    1849 0000d650     0960          rets
+    1850                    
+    1851 0000d660           aqlysnd_fail
+    1852 0000d660     0de0          setc
+    1853 0000d670     0960          rets
+    1854                    
+    1855                    
+    1856                    
+    1857 0000d680            SUBR   seq_lay_up_start
+    1858                    
+    1859 0000d680     09e0          movi    scrs15,a0       ;lays it up
+         0000d690 000003c0' 
+    1860 0000d6b0     0d5f          calla   speech_play
+         0000d6c0 00008500' 
+    1861 0000d6e0     0960          rets
+    1862                    
+    1863                    
+    1864 0000d6f0            SUBR   seq_jam_speech
+    1865                    
+    1866 0000d6f0     9490          move    *b4+,b0
+    1867 0000d700     4e10          move    b0,a0           ;jam speech type
+    1868 0000d710     0580          move    a0,@jam_speech  ;speech type to call when jammed
+         0000d720 000000b0- 
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   40
+
+    1869 0000d740     0960          rets
+    1870                    
+    1871                    
+    1872 0000d750            SUBRP  swish_speech
+    1873                    
+    1874 0000d750     05a1          move    @ballrimhitcnt,a1
+         0000d760 00000000! 
+    1875 0000d780     cb18          jrnz    iaqwnoswish
+    1876                    
+    1877 0000d790     05a1          move    @ballbbhitcnt,a1
+         0000d7a0 00000000! 
+    1878 0000d7c0     cb12          jrnz    iaqwsnd_fail
+    1879                    
+    1880 0000d7d0     0d5f          calla   RNDPER
+         0000d7e0 00000000! 
+    1881 0000d800     c20e          jrls    iaqwsnd_fail
+    1882                    
+    1883 0000d810           iaqwdoit
+    1884 0000d810     09c0          movi    2,a0
+         0000d820     0002  
+    1885 0000d830     0d5f          calla   rndrng0
+         0000d840 00000000! 
+    1886 0000d860     24a0          sll     5,a0            ;x 32 bits
+    1887 0000d870     0b20          addi    iaqwswishtab,a0
+         0000d880 0000d9b0' 
+    1888 0000d8a0     8600          move    *a0,a0,L
+    1889 0000d8b0     0d5f          calla   speech_play
+         0000d8c0 00008500' 
+    1890 0000d8e0     0960          rets
+    1891 0000d8f0           iaqwsnd_fail
+    1892 0000d8f0     0de0          setc
+    1893 0000d900     0960          rets
+    1894                    
+    1895 0000d910           iaqwnoswish
+    1896 0000d910     0b41          cmpi    9,a1
+         0000d920     fff6  
+    1897 0000d930     c4fb          jrlt    iaqwsnd_fail
+    1898                    
+    1899 0000d940     09e0          movi    scrs13,a0       ;gets a lucky bounce
+         0000d950 00000340' 
+    1900 0000d970     0d5f          calla   speech_play
+         0000d980 00008500' 
+    1901                    
+    1902 0000d9a0     0960          rets
+    1903                    
+    1904                    
+    1905 0000d9b0           iaqwswishtab
+    1906 0000d9b0 00000940'         .long   swish_snd       ;0 SWISH!
+    1907 0000d9d0 000009c0'         .long   allnet_snd      ;1 nothing but net
+    1908 0000d9f0 00000940'         .long   swish_snd       ;2 SWISH!
+    1909                    
+    1910                    
+    1911                    
+    1912 0000da10            SUBR   call_scores
+    1913                    
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   41
+
+    1914 0000da10                   PUSH    a0,a1,a7,a14
+    1915 0000da30                   PUSH    b0,b1
+    1916                    
+    1917 0000da50     07a0          move    @game_time,a0,L
+         0000da60 00000000! 
+    1918 0000da80     ca14          jrz     fnelno_call0
+    1919                    
+    1920 0000da90     0b60          cmpi    010000h,a0              ;10 seconds
+         0000daa0 fffeffff  
+    1921 0000dac0     c410          jrlt    fnelno_call0
+    1922                    
+    1923                    
+    1924 0000dad0           fnelnot_last_qtr
+    1925                    
+    1926 0000dad0     05a0          move    @next_call,a0
+         0000dae0 000000c0- 
+    1927 0000db00     ca05          jrz     fneldo_call
+    1928 0000db10     1420          dec     a0
+    1929 0000db20     0580          move    a0,@next_call
+         0000db30 000000c0- 
+    1930 0000db50     c007          jruc    fnelno_call0
+    1931                    
+    1932 0000db60           fneldo_call
+    1933 0000db60                   CREATE0 call_scores_proc
+    1934                    
+    1935 0000dbd0           fnelno_call0
+    1936 0000dbd0                   PULL    b0,b1
+    1937 0000dbf0                   PULL    a0,a1,a7,a14
+    1938 0000dc10     0960          rets
+    1939                    
+    1940                    
+    1941 0000dc20            SUBRP  call_scores_proc
+    1942                    
+    1943 0000dc20                   SLEEP   TSEC+30
+    1944                    
+    1945 0000dc70     07a0          move    @game_time,a0,L
+         0000dc80 00000000! 
+    1946 0000dca0     ca50          jrz     fnelno_call
+    1947                    
+    1948 0000dcb0     05a1          move    @scores,a1
+         0000dcc0 00000000! 
+    1949 0000dce0     05a0          move    @scores+10h,a0
+         0000dcf0 00000010! 
+    1950 0000dd10     4401          sub     a0,a1
+    1951                    
+    1952 0000dd20     4d6b          move    a11,a11
+    1953 0000dd30     cb05          jrnz    fneltm1_scored
+    1954 0000dd40           fneltm2_scored
+    1955 0000dd40     05a2          move    @team2,a2
+         0000dd50 00000000! 
+    1956 0000dd70     03a1          neg     a1
+    1957 0000dd80     c003          jruc    fnelcnt
+    1958                    
+    1959 0000dd90           fneltm1_scored
+    1960 0000dd90     05a2          move    @team1,a2
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   42
+
+         0000dda0 00000000! 
+    1961 0000ddc0           fnelcnt
+    1962 0000ddc0     24c2          sll     6,a2                    ;x 16bits x 4
+    1963 0000ddd0     0b22          addi    team_speech,a2
+         0000dde0 00007e00' 
+    1964 0000de00     09e4          movi    sound_ram,a4
+         0000de10 000000d0- 
+    1965 0000de30     9a44          move    *a2+,*a4+,L
+    1966 0000de40     9a44          move    *a2+,*a4+,L
+    1967 0000de50     1820          movk    1,a0
+    1968 0000de60     0580          move    a0,@sound_ram+30h
+         0000de70 00000100- 
+    1969                    
+    1970 0000de90     09e2          movi    upby,a2
+         0000dea0 00001580' 
+    1971 0000dec0     4c21          move    a1,a1
+    1972 0000ded0     ca30          jrz     fneltied
+    1973 0000dee0     c104          jrp     fnelpos
+    1974                    
+    1975 0000def0     09e2          movi    downby,a2
+         0000df00 00001540' 
+    1976 0000df20     03a1          neg     a1
+    1977 0000df30           fnelpos
+    1978 0000df30     0b41          cmpi    20,a1
+         0000df40     ffeb  
+    1979 0000df50     ca06          jreq    fnelok
+    1980 0000df60     0b41          cmpi    15,a1
+         0000df70     fff0  
+    1981 0000df80     ca03          jreq    fnelok
+    1982 0000df90     0b41          cmpi    10,a1
+         0000dfa0     fff5  
+    1983 0000dfb0     c71f          jrgt    fneloutrange
+    1984                    
+    1985                    
+    1986 0000dfc0           fnelok
+    1987 0000dfc0     09e4          movi    sound_ram+40h,a4
+         0000dfd0 00000110- 
+    1988 0000dff0     9a44          move    *a2+,*a4+,L
+    1989 0000e000     9a44          move    *a2+,*a4+,L
+    1990 0000e010     1820          movk    1,a0
+    1991 0000e020     0580          move    a0,@sound_ram+40h+30h
+         0000e030 00000140- 
+    1992                    
+    1993 0000e050     24a1          sll     5,a1                    ;x 32 bits
+    1994 0000e060     0b21          addi    fnelnumtab-20h,a1
+         0000e070 0000e4d0' 
+    1995 0000e090     8622          move    *a1,a2,L
+    1996 0000e0a0     09e4          movi    sound_ram+80h,a4
+         0000e0b0 00000150- 
+    1997 0000e0d0     9a44          move    *a2+,*a4+,L
+    1998 0000e0e0     9a44          move    *a2+,*a4+,L
+    1999                    
+    2000 0000e0f0     09e0          movi    sound_ram,a0
+         0000e100 000000d0- 
+    2001 0000e120     0d5f          calla   speech_play
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   43
+
+         0000e130 00008500' 
+    2002 0000e150     c805          jrc     fnelsnd_fail            ;so try again
+    2003                    
+    2004 0000e160     09c0          movi    2,a0
+         0000e170     0002  
+    2005 0000e180     0580          move    a0,@next_call
+         0000e190 000000c0- 
+    2006                    
+    2007 0000e1b0           fnelsnd_fail
+    2008 0000e1b0           fneloutrange
+    2009 0000e1b0           fnelno_call
+    2010 0000e1b0                   DIE
+    2011                    
+    2012                    
+    2013 0000e1e0           fneltied
+    2014 0000e1e0     09e0          movi    scrtied,a0              ;the score is tied
+         0000e1f0 000015c0' 
+    2015 0000e210     0d5f          calla   speech_play
+         0000e220 00008500' 
+    2016 0000e240     c8f6          jrc     fnelsnd_fail            ;so try again
+    2017                    
+    2018 0000e250     09c0          movi    2,a0
+         0000e260     0002  
+    2019 0000e270     0580          move    a0,@next_call
+         0000e280 000000c0- 
+    2020                    
+    2021 0000e2a0     05a0          move    @gmqrtr,a0
+         0000e2b0 00000000! 
+    2022 0000e2d0     ca1e          jrz     fnelnoorg
+    2023 0000e2e0     09c0          movi    150,a0
+         0000e2f0     0096  
+    2024 0000e300     0d5f          calla   RNDPER
+         0000e310 00000000! 
+    2025 0000e330     c218          jrls    fnelnoorg
+    2026                    
+    2027 0000e340     07a1          move    @game_time,a1,L
+         0000e350 00000000! 
+    2028 0000e370     0b61          cmpi    020000h,a1
+         0000e380 fffdffff  
+    2029 0000e3a0     c411          jrlt    fnelnoorg
+    2030                    
+    2031 0000e3b0                   SLEEP   3*60
+    2032                    
+    2033 0000e400     09e1          movi    organ1_snd,a1
+         0000e410 000019c0' 
+    2034 0000e430     1fe0          btst    0,a0
+    2035 0000e440     ca03          jrz     fnelorg1
+    2036 0000e450     09e1          movi    organ2_snd,a1
+         0000e460 00001a00' 
+    2037 0000e480     4c20  fnelorg1        move    a1,a0
+    2038 0000e490     0d5f          calla   snd_play1ovr
+         0000e4a0 00000000! 
+    2039                    
+    2040 0000e4c0           fnelnoorg
+    2041                    
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   44
+
+    2042 0000e4c0                   DIE
+    2043                    
+    2044 0000e4f0           fnelnumtab
+    2045 0000e4f0 00001600'         .long   snd_1
+    2046 0000e510 00001640'         .long   snd_2
+    2047 0000e530 00001680'         .long   snd_3
+    2048 0000e550 000016c0'         .long   snd_4
+    2049 0000e570 00001700'         .long   snd_5
+    2050 0000e590 00001740'         .long   snd_6
+    2051 0000e5b0 00001780'         .long   snd_7
+    2052 0000e5d0 000017c0'         .long   snd_8
+    2053 0000e5f0 00001800'         .long   snd_9
+    2054 0000e610 00001840'         .long   snd_10
+    2055 0000e630 00000000          .long   0,0,0,0
+    2056 0000e6b0 00001880'         .long   snd_15
+    2057 0000e6d0 00000000          .long   0,0,0,0
+    2058 0000e750 000018c0'         .long   snd_20
+    2059                    
+    2060                    
+    2061 0000e770     09e0          movi    needshot,a0             ;They need a shot here
+         0000e780 00001a40' 
+    2062                    
+    2063                    
+    2064                    
+    2065 0000e7a0            SUBR   name_call
+    2066                    
+    2067 0000e7a0           cjznrestart
+    2068 0000e7a0     09ca          movi    TSEC*2,a10
+         0000e7b0     006a  
+    2069 0000e7c0           cjznloop
+    2070 0000e7c0                   SLEEPK  1
+    2071                    
+    2072 0000e800     07a0          move    @game_time,a0,L
+         0000e810 00000000! 
+    2073 0000e830     caf6          jrz     cjznrestart
+    2074                    
+    2075 0000e840     05a0          move    @inbound,a0
+         0000e850 00000000! 
+    2076 0000e870     cff2          jrnn    cjznrestart
+    2077                    
+    2078 0000e880     05a0          move    @ballpnum,a0
+         0000e890 00000000! 
+    2079 0000e8b0     ceee          jrn     cjznrestart             ;ball free
+    2080                    
+    2081                    
+    2082 0000e8c0     4c01          move    a0,a1
+    2083 0000e8d0     24a1          sll     5,a1                    ;*32
+    2084 0000e8e0     0b21          addi    plyrproc_t,a1
+         0000e8f0 00000000! 
+    2085 0000e910     8621          move    *a1,a1,L
+    2086 0000e920     b421          move    *a1(plyr_seqflgs),a1
+         0000e930     0180  
+    2087 0000e940     1fc1          btst    DUNK_B,a1
+    2088 0000e950     cbe4          jrnz    cjznrestart
+    2089                    
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   45
+
+    2090 0000e960     3f6a          dsj     a10,cjznloop
+    2091                    
+    2092 0000e970     05a1          move    @last_name,a1           ;if name called in last 3 secs
+         0000e980 00000000- 
+    2093 0000e9a0     4801          cmp     a0,a1
+    2094 0000e9b0     cb06          jrne    cjzndiff_name
+    2095                    
+    2096 0000e9c0     05a1          move    @last_name_time,a1      ;# ticks since name called
+         0000e9d0 00000010- 
+    2097 0000e9f0     0b41          cmpi    TSEC*2,a1
+         0000ea00     ff95  
+    2098 0000ea10     c4d8          jrlt    cjznrestart
+    2099                    
+    2100 0000ea20           cjzndiff_name
+    2101 0000ea20     0d3f          callr   call_player_name
+         0000ea30     fc1f  
+    2102                    
+    2103 0000ea40     09ca          movi    TSEC*4,a10
+         0000ea50     00d4  
+    2104 0000ea60     c0d5          jruc    cjznloop
+    2105                    
+    2106                    
+    2107                    
+    2108 0000ea70            SUBRP  onfire_speech
+    2109                    
+    2110 0000ea70     07a0          move    @game_time,a0,L
+         0000ea80 00000000! 
+    2111 0000eaa0     ca30          jrz     lpgvsnd_fail
+    2112                    
+    2113                    
+    2114 0000eab0     05a0          move    @ballpnumscored,a0      ;Last plyr who scored (0-3) or neg
+         0000eac0 00000000! 
+    2115                    
+    2116 0000eae0     05a0          move    @ballnumscored,a0       ;# times last plyr scored
+         0000eaf0 00000000! 
+    2117 0000eb10     0b40          cmpi    3,a0
+         0000eb20     fffc  
+    2118 0000eb30     c507          jrge    lpgvonfire
+    2119 0000eb40     0b40          cmpi    2,a0
+         0000eb50     fffd  
+    2120 0000eb60     cb24          jrne    lpgvsnd_fail            ;is cold
+    2121                    
+    2122 0000eb70     09e0          movi    heatup_snd,a0
+         0000eb80 00001900' 
+    2123 0000eba0     c01d          jruc    lpgvheatup
+    2124                    
+    2125 0000ebb0           lpgvonfire
+    2126 0000ebb0     05a0          move    @plyrnumonfire,a0       ;plyr who is on fire
+         0000ebc0 00000000! 
+    2127 0000ebe0     05a1          move    @ballpnumscored,a1      ;Last plyr who scored (0-3) or neg
+         0000ebf0 00000000! 
+    2128 0000ec10     4801          cmp     a0,a1
+    2129 0000ec20     cb18          jrne    lpgvwas_teammate
+    2130                    
+    2131 0000ec30     05a0          move    @shot_type,a0
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   46
+
+         0000ec40 00000020- 
+    2132 0000ec60     cb07          jrnz    lpgvnot_desp
+    2133                    
+    2134 0000ec70     09c0          movi    400,a0                  ;call desp speech 40% time
+         0000ec80     0190  
+    2135 0000ec90     0d5f          calla   RNDPER
+         0000eca0 00000000! 
+    2136 0000ecc0     c300          jrhi    hotscored
+         0000ecd0     fab4  
+    2137                    
+    2138 0000ece0           lpgvnot_desp
+    2139 0000ece0     09c0          movi    3,a0
+         0000ecf0     0003  
+    2140 0000ed00     0d5f          calla   rndrng0
+         0000ed10 00000000! 
+    2141 0000ed30     24a0          sll     5,a0            ;x 32 bits
+    2142 0000ed40     0b20          addi    lpgvonfiretab,a0
+         0000ed50 0000edd0' 
+    2143 0000ed70     8600          move    *a0,a0,L
+    2144 0000ed80           lpgvheatup
+    2145 0000ed80     0d3f          callr   speech_playovrp
+         0000ed90     f97a  
+    2146 0000eda0     0960          rets
+    2147                    
+    2148 0000edb0           lpgvwas_teammate
+    2149 0000edb0           lpgvsnd_fail
+    2150 0000edb0     0de0          setc
+    2151 0000edc0     0960          rets
+    2152                    
+    2153 0000edd0           lpgvonfiretab
+    2154 0000edd0 00001940'         .long   onfire_snd              ;0 he's on fire
+    2155 0000edf0 00001980'         .long   hothand                 ;1 he's got a hot hand
+    2156 0000ee10 00001200'         .long   takethat                ;2 take that!
+    2157 0000ee30 00000780'         .long   uncon                   ;3 he's unconscious
+    2158                    
+    2159                    
+    2160                            .asg    140,RANGE
+    2161                    
+    2162 0000ee50            SUBRP   wideopen_speech
+    2163                    
+    2164 0000ee50     05a0          move    @plyr_shot,a0           ;player who shot last (0-3)
+         0000ee60 00000030- 
+    2165 0000ee80     24a0          sll     5,a0                    ;*32
+    2166 0000ee90     0b20          addi    plyrproc_t,a0
+         0000eea0 00000000! 
+    2167 0000eec0     8600          move    *a0,a0,L
+    2168 0000eed0     b401          move    *a0(plyr_o1dist),a1     ;opponent 1 dist
+         0000eee0     0310  
+    2169 0000eef0     0b41          cmpi    RANGE,a1
+         0000ef00     ff73  
+    2170 0000ef10     c40c          jrlt    gizpnot_open
+    2171 0000ef20     b401          move    *a0(plyr_o2dist),a1     ;opponent 2 dist
+         0000ef30     0330  
+    2172 0000ef40     0b41          cmpi    RANGE,a1
+         0000ef50     ff73  
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   47
+
+    2173 0000ef60     c407          jrlt    gizpnot_open
+    2174                    
+    2175 0000ef70     09e0          movi    wideopen,a0
+         0000ef80 00000dc0' 
+    2176 0000efa0     0d5f          calla   speech_play
+         0000efb0 00008500' 
+    2177                    
+    2178 0000efd0     0960          rets
+    2179                    
+    2180 0000efe0           gizpnot_open
+    2181 0000efe0     0de0          setc
+    2182 0000eff0     0960          rets
+    2183                    
+    2184                    
+    2185                    
+    2186                            .asg    3,BRICK_MAX
+    2187                    
+    2188 0000f000            SUBR   nogood_speech
+    2189                    
+    2190 0000f000                   PUSH    a10
+    2191                    
+    2192 0000f010     05aa          move    @ballpnumshot,a10
+         0000f020 00000000! 
+    2193 0000f040     248a          sll     4,a10                   ;x 16
+    2194 0000f050     0b2a          addi    brick_count,a10
+         0000f060 00000000! 
+    2195 0000f080     8541          move    *a10,a1                 ;brick_count
+    2196 0000f090     0b41          cmpi    BRICK_MAX,a1
+         0000f0a0     fffc  
+    2197 0000f0b0     c408          jrlt    odiyno_good
+    2198 0000f0c0     09e0          movi    cantbuy,a0              ;can't buy a bucket
+         0000f0d0 000007c0' 
+    2199 0000f0f0     0d3f          callr   speech_play
+         0000f100     f93f  
+    2200 0000f110     c811          jrc     odiyfailed
+    2201 0000f120     5600          clr     a0
+    2202 0000f130     800a          move    a0,*a10                 ;played, now clear it
+    2203                    
+    2204 0000f140           odiyno_good
+    2205 0000f140     07a0          move    @game_time,a0,L         ;always call if clock at zero
+         0000f150 00000000! 
+    2206 0000f170     ca06          jrz     odiydoit_baby
+    2207                    
+    2208 0000f180     09c0          movi    400,a0                  ;don't call 40% of no goods
+         0000f190     0190  
+    2209 0000f1a0     0d5f          calla   RNDPER
+         0000f1b0 00000000! 
+    2210 0000f1d0     c205          jrls    odiyfailed
+    2211                    
+    2212 0000f1e0           odiydoit_baby
+    2213 0000f1e0     09e0          movi    nogood,a0               ;NO GOOD!
+         0000f1f0 00000e40' 
+    2214 0000f210     0d3f          callr   speech_play
+         0000f220     f92d  
+    2215                    
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   48
+
+    2216 0000f230           odiyfailed
+    2217 0000f230                   PULL    a10
+    2218 0000f240     0960          rets
+    2219                    
+    2220                    
+    2221 0000f250            SUBR   victory_speech
+    2222                    
+    2223 0000f250     05a0          move    @team1,a0
+         0000f260 00000000! 
+    2224 0000f280     05a1          move    @scores,a1
+         0000f290 00000000! 
+    2225 0000f2b0     05a2          move    @scores+10h,a2
+         0000f2c0 00000010! 
+    2226 0000f2e0     4822          cmp     a1,a2
+    2227 0000f2f0     c403          jrlt    svmgt1_wins
+    2228 0000f300     05a0          move    @team2,a0
+         0000f310 00000000! 
+    2229 0000f330           svmgt1_wins
+    2230 0000f330     24c0          sll     6,a0                    ;x 16bits x 4
+    2231 0000f340     0b20          addi    team_speech,a0
+         0000f350 00007e00' 
+    2232                    
+    2233 0000f370     09e4          movi    sound_ram2,a4
+         0000f380 000001d0- 
+    2234 0000f3a0     9a04          move    *a0+,*a4+,L
+    2235 0000f3b0     9a04          move    *a0+,*a4+,L
+    2236 0000f3c0     1820          movk    1,a0
+    2237 0000f3d0     0580          move    a0,@sound_ram2+30h
+         0000f3e0 00000200- 
+    2238                    
+    2239 0000f400     09e0          movi    wingame,a0
+         0000f410 00001100' 
+    2240 0000f430     9a04          move    *a0+,*a4+,L
+    2241 0000f440     9a04          move    *a0+,*a4+,L
+    2242                    
+    2243 0000f450     09e0          movi    sound_ram2,a0
+         0000f460 000001d0- 
+    2244 0000f480     0d3f          callr   speech_play
+         0000f490     f906  
+    2245                    
+    2246 0000f4a0     0960          rets
+    2247                    
+    2248                    
+    2249                    
+    2250                            .ref    player_names,tm1set,tm2set,name_sort
+    2251                    
+    2252 0000f4b0            SUBR   setup_speech
+    2253                    
+    2254 0000f4b0     09ea          movi    player_names,a10
+         0000f4c0 00000000! 
+    2255 0000f4e0     05a2          move    @team1,a2
+         0000f4f0 00000000! 
+    2256                    
+    2257                    
+    2258 0000f510     0b42  udrelp3 cmpi    0,a2
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   49
+
+         0000f520     ffff  
+    2259 0000f530     ca04          jrz     udreout3
+    2260 0000f540     0b0a          addi    20*64,a10
+         0000f550     0500  
+    2261 0000f560     1422          dec     a2
+    2262 0000f570     c0f9          jruc    udrelp3
+    2263 0000f580           udreout3
+    2264 0000f580     05a0          move    @team1,a0
+         0000f590 00000000! 
+    2265 0000f5b0     2480          sll     4,a0
+    2266 0000f5c0     0b20          addi    tm1set,a0
+         0000f5d0 00000000! 
+    2267 0000f5f0     840e          move    *a0,a14
+    2268 0000f600     24ce          sll     6,a14
+    2269 0000f610     41ca          add     a14,a10
+    2270                    
+    2271 0000f620     8740          move    *a10,a0,L
+    2272 0000f630     09ee          movi    name_sort,a14
+         0000f640 00000000! 
+    2273 0000f660     09ca          movi    -1,a10
+         0000f670     ffff  
+    2274 0000f680           udrelp4
+    2275 0000f680     102a          inc     a10
+    2276 0000f690     97c1          move    *a14+,a1,L
+    2277 0000f6a0     4820          cmp     a1,a0
+    2278 0000f6b0     cbfc          jrnz    udrelp4
+    2279                    
+    2280 0000f6c0     24ca          sll     6,a10
+    2281 0000f6d0     4d40          move    a10,a0
+    2282 0000f6e0     0b2a          addi    name_speech,a10
+         0000f6f0 00003d80' 
+    2283 0000f710     0b20          addi    pass_speech,a0
+         0000f720 00001b80' 
+    2284                    
+    2285 0000f740     05ae          move    @special_heads,a14
+         0000f750 00000000! 
+    2286 0000f770     ce05          jrn     udretag1
+    2287 0000f780     24ce          sll     6,a14
+    2288 0000f790     0b2e          addi    special_name_speech,a14
+         0000f7a0 00005f80' 
+    2289 0000f7c0     4dca          move    a14,a10
+    2290 0000f7d0           udretag1
+    2291 0000f7d0     05ae          move    @special_heads,a14
+         0000f7e0 00000000! 
+    2292 0000f800     ce05          jrn     udretag2
+    2293 0000f810     24ce          sll     6,a14
+    2294 0000f820     0b2e          addi    special_pass_speech,a14
+         0000f830 00006ec0' 
+    2295 0000f850     4dc0          move    a14,a0
+    2296 0000f860           udretag2
+    2297                    
+    2298 0000f860     078a          move    a10,@spch_name_ram,L
+         0000f870 000002e0- 
+    2299 0000f890     0780          move    a0,@spch_pass_ram+32,L
+         0000f8a0 00000380- 
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   50
+
+    2300                    
+    2301                    
+    2302                    
+    2303 0000f8c0     09ea          movi    player_names,a10
+         0000f8d0 00000000! 
+    2304 0000f8f0     05a2          move    @team1,a2
+         0000f900 00000000! 
+    2305                    
+    2306                    
+    2307                    
+    2308                    
+    2309                    
+    2310                    
+    2311 0000f920     0b42  yduplp3 cmpi    0,a2
+         0000f930     ffff  
+    2312 0000f940     ca04          jrz     ydupout3
+    2313 0000f950     0b0a          addi    20*64,a10
+         0000f960     0500  
+    2314 0000f970     1422          dec     a2
+    2315 0000f980     c0f9          jruc    yduplp3
+    2316 0000f990           ydupout3
+    2317 0000f990     05a0          move    @team1,a0
+         0000f9a0 00000000! 
+    2318 0000f9c0     2480          sll     4,a0
+    2319 0000f9d0     0b20          addi    tm1set,a0
+         0000f9e0 00000000! 
+    2320 0000fa00     840e          move    *a0,a14
+    2321 0000fa10     24ce          sll     6,a14
+    2322 0000fa20     41ca          add     a14,a10
+    2323                    
+    2324 0000fa30     100a          addk    32,a10
+    2325                    
+    2326 0000fa40     8740          move    *a10,a0,L
+    2327 0000fa50     09ee          movi    name_sort,a14
+         0000fa60 00000000! 
+    2328 0000fa80     09ca          movi    -1,a10
+         0000fa90     ffff  
+    2329 0000faa0           yduplp4
+    2330 0000faa0     102a          inc     a10
+    2331 0000fab0     97c1          move    *a14+,a1,L
+    2332 0000fac0     4820          cmp     a1,a0
+    2333 0000fad0     cbfc          jrnz    yduplp4
+    2334                    
+    2335 0000fae0     24ca          sll     6,a10
+    2336 0000faf0     4d40          move    a10,a0
+    2337 0000fb00     0b2a          addi    name_speech,a10
+         0000fb10 00003d80' 
+    2338 0000fb30     0b20          addi    pass_speech,a0
+         0000fb40 00001b80' 
+    2339                    
+    2340 0000fb60     05ae          move    @special_heads+10h,a14
+         0000fb70 00000010! 
+    2341 0000fb90     ce05          jrn     yduptag1a
+    2342 0000fba0     24ce          sll     6,a14
+    2343 0000fbb0     0b2e          addi    special_name_speech,a14
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   51
+
+         0000fbc0 00005f80' 
+    2344 0000fbe0     4dca          move    a14,a10
+    2345 0000fbf0           yduptag1a
+    2346 0000fbf0     05ae          move    @special_heads+10h,a14
+         0000fc00 00000010! 
+    2347 0000fc20     ce05          jrn     yduptag2a
+    2348 0000fc30     24ce          sll     6,a14
+    2349 0000fc40     0b2e          addi    special_pass_speech,a14
+         0000fc50 00006ec0' 
+    2350 0000fc70     4dc0          move    a14,a0
+    2351 0000fc80           yduptag2a
+    2352                    
+    2353                    
+    2354 0000fc80     078a          move    a10,@spch_name_ram+32,L
+         0000fc90 00000300- 
+    2355 0000fcb0     0780          move    a0,@spch_pass_ram,L
+         0000fcc0 00000360- 
+    2356                    
+    2357                    
+    2358                    
+    2359 0000fce0     09ea          movi    player_names,a10
+         0000fcf0 00000000! 
+    2360 0000fd10     05a2          move    @team2,a2
+         0000fd20 00000000! 
+    2361 0000fd40     0b42  nnsplp3 cmpi    0,a2
+         0000fd50     ffff  
+    2362 0000fd60     ca04          jrz     nnspout3
+    2363 0000fd70     0b0a          addi    20*64,a10
+         0000fd80     0500  
+    2364 0000fd90     1422          dec     a2
+    2365 0000fda0     c0f9          jruc    nnsplp3
+    2366 0000fdb0           nnspout3
+    2367 0000fdb0     05a0          move    @team2,a0
+         0000fdc0 00000000! 
+    2368 0000fde0     2480          sll     4,a0
+    2369 0000fdf0     0b20          addi    tm2set,a0
+         0000fe00 00000000! 
+    2370 0000fe20     840e          move    *a0,a14
+    2371 0000fe30     24ce          sll     6,a14
+    2372 0000fe40     41ca          add     a14,a10
+    2373                    
+    2374 0000fe50     8740          move    *a10,a0,L
+    2375 0000fe60     09ee          movi    name_sort,a14
+         0000fe70 00000000! 
+    2376 0000fe90     09ca          movi    -1,a10
+         0000fea0     ffff  
+    2377 0000feb0           nnsplp4
+    2378 0000feb0     102a          inc     a10
+    2379 0000fec0     97c1          move    *a14+,a1,L
+    2380 0000fed0     4820          cmp     a1,a0
+    2381 0000fee0     cbfc          jrnz    nnsplp4
+    2382                    
+    2383 0000fef0     24ca          sll     6,a10
+    2384 0000ff00     4d40          move    a10,a0
+    2385 0000ff10     0b2a          addi    name_speech,a10
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   52
+
+         0000ff20 00003d80' 
+    2386 0000ff40     0b20          addi    pass_speech,a0
+         0000ff50 00001b80' 
+    2387                    
+    2388 0000ff70     05ae          move    @special_heads+20h,a14
+         0000ff80 00000020! 
+    2389 0000ffa0     ce05          jrn     nnsptag1b
+    2390 0000ffb0     24ce          sll     6,a14
+    2391 0000ffc0     0b2e          addi    special_name_speech,a14
+         0000ffd0 00005f80' 
+    2392 0000fff0     4dca          move    a14,a10
+    2393 00010000           nnsptag1b
+    2394 00010000     05ae          move    @special_heads+20h,a14
+         00010010 00000020! 
+    2395 00010030     ce05          jrn     nnsptag2b
+    2396 00010040     24ce          sll     6,a14
+    2397 00010050     0b2e          addi    special_pass_speech,a14
+         00010060 00006ec0' 
+    2398 00010080     4dc0          move    a14,a0
+    2399 00010090           nnsptag2b
+    2400                    
+    2401 00010090     078a          move    a10,@spch_name_ram+64,L
+         000100a0 00000320- 
+    2402 000100c0     0780          move    a0,@spch_pass_ram+96,L
+         000100d0 000003c0- 
+    2403                    
+    2404                    
+    2405                    
+    2406 000100f0     09ea          movi    player_names,a10
+         00010100 00000000! 
+    2407 00010120     05a2          move    @team2,a2
+         00010130 00000000! 
+    2408 00010150     0b42  gyillp3 cmpi    0,a2
+         00010160     ffff  
+    2409 00010170     ca04          jrz     gyilout3
+    2410 00010180     0b0a          addi    20*64,a10
+         00010190     0500  
+    2411 000101a0     1422          dec     a2
+    2412 000101b0     c0f9          jruc    gyillp3
+    2413 000101c0           gyilout3
+    2414 000101c0     05a0          move    @team2,a0
+         000101d0 00000000! 
+    2415 000101f0     2480          sll     4,a0
+    2416 00010200     0b20          addi    tm2set,a0
+         00010210 00000000! 
+    2417 00010230     840e          move    *a0,a14
+    2418 00010240     24ce          sll     6,a14
+    2419 00010250     41ca          add     a14,a10
+    2420                    
+    2421 00010260     100a          addk    32,a10
+    2422                    
+    2423 00010270     8740          move    *a10,a0,L
+    2424 00010280     09ee          movi    name_sort,a14
+         00010290 00000000! 
+    2425 000102b0     09ca          movi    -1,a10
+TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:05 2023
+ Copyright (c) 1985-1991  Texas Instruments Incorporated 
+
+announcer speech etc...                                              PAGE   53
+
+         000102c0     ffff  
+    2426 000102d0           gyillp4
+    2427 000102d0     102a          inc     a10
+    2428 000102e0     97c1          move    *a14+,a1,L
+    2429 000102f0     4820          cmp     a1,a0
+    2430 00010300     cbfc          jrnz    gyillp4
+    2431                    
+    2432 00010310     24ca          sll     6,a10
+    2433 00010320     4d40          move    a10,a0
+    2434 00010330     0b2a          addi    name_speech,a10
+         00010340 00003d80' 
+    2435 00010360     0b20          addi    pass_speech,a0
+         00010370 00001b80' 
+    2436                    
+    2437 00010390     05ae          move    @special_heads+30h,a14
+         000103a0 00000030! 
+    2438 000103c0     ce05          jrn     gyiltag1c
+    2439 000103d0     24ce          sll     6,a14
+    2440 000103e0     0b2e          addi    special_name_speech,a14
+         000103f0 00005f80' 
+    2441 00010410     4dca          move    a14,a10
+    2442 00010420           gyiltag1c
+    2443 00010420     05ae          move    @special_heads+30h,a14
+         00010430 00000030! 
+    2444 00010450     ce05          jrn     gyiltag2c
+    2445 00010460     24ce          sll     6,a14
+    2446 00010470     0b2e          addi    special_pass_speech,a14
+         00010480 00006ec0' 
+    2447 000104a0     4dc0          move    a14,a0
+    2448 000104b0           gyiltag2c
+    2449                    
+    2450 000104b0     078a          move    a10,@spch_name_ram+96,L
+         000104c0 00000340- 
+    2451 000104e0     0780          move    a0,@spch_pass_ram+64,L
+         000104f0 000003a0- 
+    2452                    
+    2453 00010510     0960          rets
+    2454                    
+    2455                            .end
+
+ No Errors,  No Warnings

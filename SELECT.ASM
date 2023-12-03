@@ -153,24 +153,24 @@
 ;sounds
 
 	.ref	cntdown_snd
-win_snd		.word	>f3ff,>8,>80a5,0	;Winner snd/Suckup credits
-tune1end_snd	.word	>f3fe,1,>8004,0		;End team select tune
-tune1_snd	.word	>f3fe,10,>8001,0	;team select screen
-cursor_snd1	.word	>f3f7,>8,>8080,0	;cursor movement
-cursor_snd2	.word	>f3f7,>8,>8081,0	;
-cursor_snd3	.word	>f3f7,>8,>8082,0	;
-cursor_snd4	.word	>f3f7,>8,>8083,0	;
-select_snd1	.word	>f3f7,>8,>8084,0	;select option sound
-select_snd2	.word	>f3f7,>8,>8085,0	;
-select_snd3	.word	>f3f7,>8,>8086,0	;
-select_snd4	.word	>f3f7,>8,>8087,0	;
-fullgame_snd1	.word	>f3f7,>8,>8088,0	;fullgame purchase
-fullgame_snd2	.word	>f3f7,>8,>8089,0	;
-fullgame_snd3	.word	>f3f7,>8,>808a,0	;
-fullgame_snd4	.word	>f3f7,>8,>808b,0	;
-scroll_snd	.word	>f3ff,>8,>8097,0	;Scroll snd
-welcm_snd	.word	>f990,40,>81cb,0	;Welcome
-baddec_snd	.word	>f990,72,>81b7,0	;bad decision		<--change!
+win_snd		.word	0f3ffH,08H,080a5H,0	;Winner snd/Suckup credits
+tune1end_snd	.word	0f3feH,1,08004H,0		;End team select tune
+tune1_snd	.word	0f3feH,10,08001H,0	;team select screen
+cursor_snd1	.word	0f3f7H,08H,08080H,0	;cursor movement
+cursor_snd2	.word	0f3f7H,08H,08081H,0	;
+cursor_snd3	.word	0f3f7H,08H,08082H,0	;
+cursor_snd4	.word	0f3f7H,08H,08083H,0	;
+select_snd1	.word	0f3f7H,08H,08084H,0	;select option sound
+select_snd2	.word	0f3f7H,08H,08085H,0	;
+select_snd3	.word	0f3f7H,08H,08086H,0	;
+select_snd4	.word	0f3f7H,08H,08087H,0	;
+fullgame_snd1	.word	0f3f7H,08H,08088H,0	;fullgame purchase
+fullgame_snd2	.word	0f3f7H,08H,08089H,0	;
+fullgame_snd3	.word	0f3f7H,08H,0808aH,0	;
+fullgame_snd4	.word	0f3f7H,08H,0808bH,0	;
+scroll_snd	.word	0f3ffH,08H,08097H,0	;Scroll snd
+welcm_snd	.word	0f990H,40,081cbH,0	;Welcome
+baddec_snd	.word	0f990H,72,081b7H,0	;bad decision		<--change!
 
 cursor_sounds
 	.long	cursor_snd1,cursor_snd2
@@ -307,8 +307,8 @@ TEAMSEL_PAGE	equ	0*256
 NAMENT_PAGE	equ	1*256
 YESNO_PAGE	equ	2*256
 
-XTRA_CRTIME	equ	>7fff		;20*60
-MAX_CRTIME	equ	>7fff		;30*60
+XTRA_CRTIME	equ	07fffH		;20*60
+MAX_CRTIME	equ	07fffH		;30*60
 
 _ATL	equ 0
 _BOS	equ 1
@@ -666,7 +666,7 @@ SCROLL_SPEED	equ	8
 	RETP
 
 strt_snd	
-	SLEEP	>d8
+	SLEEP	0d8H
 	movi	welcm_snd,a0
 	calla	snd_play1
 	DIE
@@ -702,11 +702,11 @@ strt_snd
 	.string	"record keeping?",0
 
 
-cheer_snd	.word	>f898,10,>8144,0	;Quick cheer
-cheer1_snd	.word	>fd84,80,>8111,0	;Long cheer
-cheer2_snd	.word	>f894,80,>8144,0	;Long cheer
-cheer3_snd	.word	>fc84,120,>814e,0	;Long cheer
-boo1_snd	.word	>f884,120,>814a,0	;Boo
+cheer_snd	.word	0f898H,10,08144H,0	;Quick cheer
+cheer1_snd	.word	0fd84H,80,08111H,0	;Long cheer
+cheer2_snd	.word	0f894H,80,08144H,0	;Long cheer
+cheer3_snd	.word	0fc84H,120,0814eH,0	;Long cheer
+boo1_snd	.word	0f884H,120,0814aH,0	;Boo
 	.even
 
 
@@ -1772,8 +1772,8 @@ bump_down
 #stxy2	.word	186			;Y
 	.word	24,154-1,242,371-1
 
-#stxy3	.word	>1c1
-	.word	>13-4,>bd-4,>d6-4,>180-4
+#stxy3	.word	01c1H
+	.word	013H-4,0bdH-4,0d6H-4,0180H-4
 
 
 ;RAD_MK2:
@@ -1861,10 +1861,10 @@ bump_down
 	move	a14,a0
 
 	move	*a8(OFLAGS),A1
-	ori	>7000,a1		;DMA flags
+	ori	07000H,a1		;DMA flags
 	move	a1,*a8(OFLAGS)
 	move	*a8(OCTRL),a1
-	ori	>7000,a1		;DMA flags
+	ori	07000H,a1		;DMA flags
 	move	a1,*a8(OCTRL)
 	jruc	#notmkcx
 #on	
@@ -1876,10 +1876,10 @@ bump_down
 	jruc	#notmkcx
 #notmkc
 	move	*a8(OFLAGS),A1
-	andi	>80ff,a1		;DMA flags
+	andi	080ffH,a1		;DMA flags
 	move	a1,*a8(OFLAGS)
 	move	*a8(OCTRL),a1
-	andi	>80ff,a1		;DMA flags
+	andi	080ffH,a1		;DMA flags
 	move	a1,*a8(OCTRL)
 	
 #notmkcx
@@ -1925,10 +1925,10 @@ bump_down
 	move	a14,a0
 
 	move	*a8(OFLAGS),A1
-	ori	>7010,a1		;DMA flags
+	ori	07010H,a1		;DMA flags
 	move	a1,*a8(OFLAGS)
 	move	*a8(OCTRL),a1
-	ori	>7010,a1		;DMA flags
+	ori	07010H,a1		;DMA flags
 	move	a1,*a8(OCTRL)
 	jruc	#notmkxb
 #onxb
@@ -1940,10 +1940,10 @@ bump_down
 	jruc	#notmkxb
 #notmkb
 	move	*a8(OFLAGS),A1
-	andi	>80ff,a1		;DMA flags
+	andi	080ffH,a1		;DMA flags
 	move	a1,*a8(OFLAGS)
 	move	*a8(OCTRL),a1
-	andi	>80ff,a1		;DMA flags
+	andi	080ffH,a1		;DMA flags
 	move	a1,*a8(OCTRL)
 	
 #notmkxb
@@ -2025,10 +2025,10 @@ bump_down
 	move	a14,a0
 
 	move	*a8(OFLAGS),A1
-	ori	>7000,a1		;DMA flags
+	ori	07000H,a1		;DMA flags
 	move	a1,*a8(OFLAGS)
 	move	*a8(OCTRL),a1
-	ori	>7000,a1		;DMA flags
+	ori	07000H,a1		;DMA flags
 	move	a1,*a8(OCTRL)
 	jruc	#notmkx2
 #onx2
@@ -2040,10 +2040,10 @@ bump_down
 	jruc	#notmkx2
 #notmka
 	move	*a8(OFLAGS),A1
-	andi	>80ff,a1		;DMA flags
+	andi	080ffH,a1		;DMA flags
 	move	a1,*a8(OFLAGS)
 	move	*a8(OCTRL),a1
-	andi	>80ff,a1		;DMA flags
+	andi	080ffH,a1		;DMA flags
 	move	a1,*a8(OCTRL)
 	
 #notmkx2
@@ -2089,10 +2089,10 @@ bump_down
 	move	a14,a0
 
 	move	*a8(OFLAGS),a1
-	ori	>7010,a1		;DMA flags
+	ori	07010H,a1		;DMA flags
 	move	a1,*a8(OFLAGS)
 	move	*a8(OCTRL),a1
-	ori	>7010,a1		;DMA flags
+	ori	07010H,a1		;DMA flags
 	move	a1,*a8(OCTRL)
 	jruc	#notmkx
 #onx
@@ -2104,10 +2104,10 @@ bump_down
 	jruc	#notmkx
 #notmk
 	move	*a8(OFLAGS),A1
-	andi	>80ff,a1		;DMA flags
+	andi	080ffH,a1		;DMA flags
 	move	a1,*a8(OFLAGS)
 	move	*a8(OCTRL),a1
-	andi	>80ff,a1		;DMA flags
+	andi	080ffH,a1		;DMA flags
 	move	a1,*a8(OCTRL)
 	
 #notmkx
@@ -2514,8 +2514,8 @@ flash_player_name
 #stxy2	.long	80<<16			;Y
 	.word	80,200+80
 
-#stxy3	.long	>1a0<<16
-	.word	>68-4,>12d-4
+#stxy3	.long	01a0H<<16
+	.word	068H-4,012dH-4
 
 #*****************************************************************************
 
@@ -3275,7 +3275,7 @@ JOY_RIGHT	equ	8
        	jruc	#yesf
 
 #notfat
-	cmpi	>f,a1
+	cmpi	0fH,a1
 	jrnz	#notap
 ;Yes!  Powerup this particular roster
 	move	@team1,a0
@@ -3758,7 +3758,7 @@ plaque_xs
        	jruc	#yesf1
 
 #notfat
-	cmpi	>f,a1
+	cmpi	0fH,a1
 	jrnz	#notap
 ;Yes!  Powerup this particular roster
 	move	@team2,a0
@@ -4512,7 +4512,7 @@ MESSAGE_Y	equ	216<<16
 	jrnz	#wait
 	jruc	#ex2
 
-bounce_snd	.word	>fc80,10,>8129,0	;Ball bounce
+bounce_snd	.word	0fc80H,10,08129H,0	;Ball bounce
 
 #exit1
 ;Do a snd when whacking through

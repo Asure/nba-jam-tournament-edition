@@ -1,0 +1,1667 @@
+	.file	"plyrseq.asm"
+	.title	"basketball plyr sequence code"
+	.width	132
+	.option	b,d,l,t
+	.mnolist
+
+
+	.include	"mproc.equ"
+	.include	"disp.equ"
+	.include	"sys.equ"
+	.include	"imgtbl.glo"
+	.include	"imgtbl2.glo"
+	.include	"game.equ"
+	.include	"shawn.hdr"
+	.asg		1,SEQT
+	.include	"plyr.equ"
+	.include	"plyrseq.tbl"
+
+
+
+
+swipe_snd	.word	0f584H,04H,08119H,0	;swipe at ball
+
+
+	.ref	plyr_pass,plyr_shoot
+	.ref	seq_newdir
+	.ref	seq_slamball
+	.ref	seq_strtdunk
+	.ref	seq_jump
+	.ref	seq_jump2
+	.ref	seq_resetseq
+	.ref	seq_stand
+	.ref	seq_stealstand
+	.ref	seq_block,seq_push,seq_rebounda
+	.ref	seq_run
+	.ref	seq_snd
+	.ref	clr_autorbnd
+
+
+
+	.def	w3run1
+	.def	w3desp1
+	.def	w1blok3,w2blok3,w4blok3,w5blok3
+	.def	w1blok2,w2blok2,w4blok2,w5blok2
+
+
+
+
+
+M_YF	.equ	08000H	;Y free (OFLAGS)
+
+
+	.text
+
+
+
+
+	.asg	M_WRNONZ,F
+	.asg	M_WRNONZ|M_FLIPH,FF
+
+
+stnd2_t	.word	EASYSTAG_M
+	.long	0
+	.long	tbgss1_l,tbgss2_l,tbgss3_l,tbgss4_l
+	.long	tbgss5_l,tbgss4_l,tbgss3_l,tbgss2_l
+tbgss1_l
+	WLW	10,w1stand,F
+	W0
+tbgss2_l
+	WLW	10,w2stand,F
+	W0
+tbgss3_l
+	WLW	10,w3stand,F
+	W0
+tbgss4_l
+	WLW	10,w4stand,F
+	W0
+tbgss5_l
+	WLW	10,w5stand,F
+	W0
+
+
+
+stnddef_t
+	.word	EASYSTAG_M
+	.long	0
+	.long	tbgssdef1_l,tbgssdef2_l,tbgssdef3_l,tbgssdef4_l
+	.long	tbgssdef5_l,tbgssdef4_l,tbgssdef3_l,tbgssdef2_l
+
+
+tbgssdef1_l
+	WLW	10,w1dfcr1,F
+	W0
+tbgssdef2_l
+	WLW	10,w2dfcr1,F
+	W0
+tbgssdef3_l
+	WLW	10,w3dfcr1,F
+	W0
+tbgssdef4_l
+	WLW	10,w4dfcr1,F
+	W0
+tbgssdef5_l
+	WLW	10,w5dfcr1,F
+	W0
+
+
+stndwb_t
+	.word	EASYSTAG_M|NOMV_M
+	.long	0
+	.long	tbgsstndwb1_l,tbgsstndwb2_l,tbgsstndwb3_l,tbgsstndwb4_l
+	.long	tbgsstndwb5_l,tbgsstndwb4_l,tbgsstndwb3_l,tbgsstndwb2_l
+
+tbgsstndwb1_l
+	WLW	10,w1ohp1,F
+	W0
+tbgsstndwb2_l
+	WLW	10,w2stwbl,F
+	W0
+tbgsstndwb3_l
+	WLW	10,w3stwbl,F
+	W0
+tbgsstndwb4_l
+	WLW	10,w4stwbl,F
+	W0
+tbgsstndwb5_l
+	WLW	10,w5stwbl,F
+	W0
+
+
+stnddrib_t
+	.word	EASYSTAG_M|DRIBBLE_M
+	.long	0
+	.long	tbgsstndd1_l,tbgsstndd2_l,tbgsstndd3_l,tbgsstndd4_l
+	.long	tbgsstndd5_l,tbgsstndd4_l,tbgsstndd3_l,tbgsstndd2_l
+
+tbgsstndd1_l
+	WLW	1,w1dst1,F
+	WLW	4,w1dst1,F|M_YF
+	WLW	5,w1dst2,F
+	WLW	5,w1dst3,F
+	WLW	5,w1dst4,F
+	WLW	5,w1dst5,F
+	WLW	5,w1dst6,F
+	W0
+tbgsstndd2_l
+	WLW	1,w2stand,F
+	WLW	29,w2stand,F|M_YF
+	W0
+tbgsstndd3_l
+	WLW	1,w3dst1,F
+	WLW	4,w3dst1,F|M_YF
+	WLW	5,w3dst2,F
+	WLW	5,w3dst3,F
+	WLW	5,w3dst4,F
+	WLW	5,w3dst5,F
+	WLW	5,w3dst6,F
+	W0
+tbgsstndd4_l
+	WLW	1,w4dst1,F
+	WLW	4,w4dst1,F|M_YF
+	WLW	5,w4dst2,F
+	WLW	5,w4dst3,F
+	WLW	5,w4dst4,F
+	WLW	5,w4dst5,F
+	WLW	5,w4dst6,F
+	W0
+tbgsstndd5_l
+	WLW	1,w5dst1,F
+	WLW	4,w5dst1,F|M_YF
+	WLW	5,w5dst2,F
+	WLW	5,w5dst3,F
+	WLW	5,w5dst4,F
+	WLW	5,w5dst5,F
+	WLW	5,w5dst6,F
+	W0
+
+stnddrib2_t
+	.word	EASYSTAG_M|DRIBBLE_M
+	.long	0
+	.long	tbgsstndd21_l,tbgsstndd22_l,tbgsstndd23_l,tbgsstndd24_l
+	.long	tbgsstndd25_l,tbgsstndd24_l,tbgsstndd23_l,tbgsstndd22_l
+
+tbgsstndd21_l
+tbgsstndd22_l
+	WLW	1,w1drcr1,F
+	WLW	4,w1drcr1,F|M_YF
+	WLW	5,w1drcr2,F
+	WLW	5,w1drcr3,F
+	WLW	5,w1drcr4,F
+	WLW	5,w1drcr5,F
+	WLW	5,w1drcr6,F
+	W0
+tbgsstndd23_l
+	WLW	1,w3drcr1,F
+	WLW	4,w3drcr1,F|M_YF
+	WLW	5,w3drcr2,F
+	WLW	5,w3drcr3,F
+	WLW	5,w3drcr4,F
+	W0
+tbgsstndd24_l
+tbgsstndd25_l
+	WLW	1,w4drcr1,F
+	WLW	4,w4drcr1,F|M_YF
+	WLW	5,w4drcr2,F
+	WLW	5,w4drcr3,F
+	WLW	5,w4drcr4,F
+	WLW	5,w4drcr5,F
+	W0
+
+
+stnddribdef_t
+	.word	EASYSTAG_M|DRIBBLE_M
+	.long	0
+	.long	tbgssdd1_l,tbgssdd1_l,tbgssdd3_l,tbgssdd4_l
+	.long	tbgssdd5_l,tbgssdd4_l,tbgssdd3_l,tbgssdd1_l
+tbgssdd1_l
+	WLW	1,w1drcr1,F
+	WLW	2,w1drcr1,F|M_YF
+	WLW	3,w1drcr2,F
+	WLW	3,w1drcr3,F
+	WLW	3,w1drcr4,F
+	WLW	3,w1drcr5,F
+	WLW	3,w1drcr6,F
+	W0
+tbgssdd3_l
+	WLW	1,w3drcr1,F
+	WLW	4,w3drcr1,F|M_YF
+	WLW	5,w3drcr2,F
+	WLW	4,w3drcr3,F
+	WLW	4,w3drcr4,F
+	W0
+tbgssdd4_l
+	WLW	1,w4drcr1,F
+	WLW	3,w4drcr1,F|M_YF
+	WLW	4,w4drcr2,F
+	WLW	4,w4drcr3,F
+	WLW	3,w4drcr4,F
+	WLW	3,w4drcr5,F
+	W0
+tbgssdd5_l
+	WLW	1,w5drcr1,F
+	WLW	2,w5drcr1,F|M_YF
+	WLW	3,w5drcr2,F
+	WLW	3,w5drcr3,F
+	WLW	3,w5drcr4,F
+	WLW	3,w5drcr5,F
+	WLW	3,w5drcr6,F
+	W0
+
+run_t
+	.word	0
+	.long	0
+	.long	ombg1,ombg2,ombg3,ombg4,ombg5,ombg4,ombg3,ombg2
+	.asg	4,N
+ombg1
+	WLW	N,w1run1,F
+	WLW	N,w1run2,F
+	WLW	N,w1run3,F
+	WLW	N,w1run4,F
+	WLW	N,w1run5,F
+	WLW	N,w1run6,F
+	WLW	N,w1run7,F
+	WLW	N,w1run8,F
+	W0
+ombg2
+	WLW	N,w2run1,F
+	WLW	N,w2run2,F
+	WLW	N,w2run3,F
+	WLW	N,w2run4,F
+	WLW	N,w2run5,F
+	WLW	N,w2run6,F
+	WLW	N,w2run7,F
+	WLW	N,w2run8,F
+	W0
+ombg3
+	WL	-1,seq_run
+	WLW	N,w3run0,F
+	WLW	N,w3run1,F
+	WLW	N,w3run2,F
+	WLW	N,w3run3,F
+	WLW	N,w3run4,F
+	WLW	N,w3run5,F
+	WLW	N,w3run6,F
+	WLW	N,w3run7,F
+	WLW	N,w3run8,F
+	W0
+ombg4
+	WLW	N,w4run1,F
+	WLW	N,w4run2,F
+	WLW	N,w4run3,F
+	WLW	N,w4run4,F
+	WLW	N,w4run5,F
+	WLW	N,w4run6,F
+	WLW	N,w4run7,F
+	WLW	N,w4run8,F
+	W0
+ombg5
+	WLW	N,w5run1,F
+	WLW	N,w5run2,F
+	WLW	N,w5run3,F
+	WLW	N,w5run4,F
+	WLW	N,w5run5,F
+	WLW	N,w5run6,F
+	WLW	N,w5run7,F
+	WLW	N,w5run8,F
+	W0
+runturb_t
+	.word	0
+	.long	0
+	.long	hihq1,hihq2,hihq3,hihq4,hihq5,hihq4,hihq3,hihq2
+	.asg	3,N
+hihq1
+	WLW	N,w1run1,F
+	WLW	N,w1run2,F
+	WLW	N,w1run3,F
+	WLW	N,w1run4,F
+	WLW	N,w1run5,F
+	WLW	N,w1run6,F
+	WLW	N,w1run7,F
+	WLW	N,w1run8,F
+	W0
+hihq2
+	WLW	N,w2run1,F
+	WLW	N,w2run2,F
+	WLW	N,w2run3,F
+	WLW	N,w2run4,F
+	WLW	N,w2run5,F
+	WLW	N,w2run6,F
+	WLW	N,w2run7,F
+	WLW	N,w2run8,F
+	W0
+hihq3
+	WLW	N,w3run1,F
+	WLW	N,w3run2,F
+	WLW	N,w3run3,F
+	WLW	N,w3run4,F
+	WLW	N,w3run5,F
+	WLW	N,w3run6,F
+	WLW	N,w3run7,F
+	WLW	N,w3run8,F
+	W0
+hihq4
+	WLW	N,w4run1,F
+	WLW	N,w4run2,F
+	WLW	N,w4run3,F
+	WLW	N,w4run4,F
+	WLW	N,w4run5,F
+	WLW	N,w4run6,F
+	WLW	N,w4run7,F
+	WLW	N,w4run8,F
+	W0
+hihq5
+	WLW	N,w5run1,F
+	WLW	N,w5run2,F
+	WLW	N,w5run3,F
+	WLW	N,w5run4,F
+	WLW	N,w5run5,F
+	WLW	N,w5run6,F
+	WLW	N,w5run7,F
+	WLW	N,w5run8,F
+	W0
+
+rundrib_t
+	.word	DRIBBLE_M
+	.long	0
+	.long	jaji1,jaji2,jaji3,jaji4,jaji5,jaji4,jaji3,jaji2
+	.asg	4,N
+jaji1
+	WLW	1,w1drun1,F
+	WLW	N-1,w1drun1,F|M_YF
+	WLW	N,w1drun2,F
+	WLW	N,w1drun3,F
+	WLW	N,w1drun4,F
+	WLW	N,w1drun5,F
+	WLW	N,w1drun6,F
+	WLW	N,w1drun7,F
+	WLW	N,w1drun8,F
+	W0
+jaji2
+	WLW	1,w2drun1,F
+	WLW	N-1,w2drun1,F|M_YF
+	WLW	N,w2drun2,F
+	WLW	N,w2drun3,F
+	WLW	N,w2drun4,F
+	WLW	N,w2drun5,F
+	WLW	N,w2drun6,F
+	WLW	N,w2drun7,F
+	WLW	N,w2drun8,F
+	W0
+jaji3
+	WLW	1,w3drun1,F
+	WLW	N-1,w3drun1,F|M_YF
+	WLW	N,w3drun2,F
+	WLW	N,w3drun3,F
+	WLW	N,w3drun4,F
+	WLW	N,w3drun5,F
+	WLW	N,w3drun6,F
+	WLW	N,w3drun7,F
+	WLW	N,w3drun8,F
+	W0
+jaji4
+	WLW	1,w4drun1,F
+	WLW	N-1,w4drun1,F|M_YF
+	WLW	N,w4drun2,F
+	WLW	N,w4drun3,F
+	WLW	N,w4drun4,F
+	WLW	N,w4drun5,F
+	WLW	N,w4drun6,F
+	WLW	N,w4drun7,F
+	WLW	N,w4drun8,F
+	W0
+jaji5
+	WLW	1,w5drun1,F
+	WLW	N-1,w5drun1,F|M_YF
+	WLW	N,w5drun2,F
+	WLW	N,w5drun3,F
+	WLW	N,w5drun4,F
+	WLW	N,w5drun5,F
+	WLW	N,w5drun6,F
+	WLW	N,w5drun7,F
+	WLW	N,w5drun8,F
+	W0
+rundribturb_t
+	.word	DRIBBLE_M
+	.long	0
+	.long	xfac1,xfac2,xfac3,xfac4,xfac5,xfac4,xfac3,xfac2
+	.asg	3,N
+xfac1
+	WLW	1,w1drun1,F
+	WLW	N-1,w1drun1,F|M_YF
+	WLW	N,w1drun2,F
+	WLW	N,w1drun3,F
+	WLW	N,w1drun4,F
+	WLW	N,w1drun5,F
+	WLW	N,w1drun6,F
+	WLW	N,w1drun7,F
+	WLW	N,w1drun8,F
+	W0
+xfac2
+	WLW	1,w2drun1,F
+	WLW	N-1,w2drun1,F|M_YF
+	WLW	N,w2drun2,F
+	WLW	N,w2drun3,F
+	WLW	N,w2drun4,F
+	WLW	N,w2drun5,F
+	WLW	N,w2drun6,F
+	WLW	N,w2drun7,F
+	WLW	N,w2drun8,F
+	W0
+xfac3
+	WLW	1,w3drun1,F
+	WLW	N-1,w3drun1,F|M_YF
+	WLW	N,w3drun2,F
+	WLW	N,w3drun3,F
+	WLW	N,w3drun4,F
+	WLW	N,w3drun5,F
+	WLW	N,w3drun6,F
+	WLW	N,w3drun7,F
+	WLW	N,w3drun8,F
+	W0
+xfac4
+	WLW	1,w4drun1,F
+	WLW	N-1,w4drun1,F|M_YF
+	WLW	N,w4drun2,F
+	WLW	N,w4drun3,F
+	WLW	N,w4drun4,F
+	WLW	N,w4drun5,F
+	WLW	N,w4drun6,F
+	WLW	N,w4drun7,F
+	WLW	N,w4drun8,F
+	W0
+xfac5
+	WLW	1,w5drun1,F
+	WLW	N-1,w5drun1,F|M_YF
+	WLW	N,w5drun2,F
+	WLW	N,w5drun3,F
+	WLW	N,w5drun4,F
+	WLW	N,w5drun5,F
+	WLW	N,w5drun6,F
+	WLW	N,w5drun7,F
+	WLW	N,w5drun8,F
+	W0
+
+
+walkfdef_t
+	.word	WALK_M
+	.long	seq_resetseq
+	.long	xfacwfdef1_l,xfacwfdef2_l,xfacwfdef3_l,xfacwfdef4_l
+	.long	xfacwfdef5_l,xfacwfdef4_l,xfacwfdef3_l,xfacwfdef2_l
+
+xfacwfdef1_l
+	WLW	4,w1defwd1,F
+	WLW	4,w1defwd6,F
+	WLW	4,w1defwd5,F
+	WLW	4,w1defwd4,F
+	WLW	4,w1defwd3,F
+	WLW	4,w1defwd2,F
+	W0
+xfacwfdef2_l
+	WLW	4,w2defwd1,F
+	WLW	4,w2defwd6,F
+	WLW	4,w2defwd5,F
+	WLW	4,w2defwd4,F
+	WLW	4,w2defwd3,F
+	WLW	4,w2defwd2,F
+	W0
+xfacwfdef3_l
+	WLW	4,w3defwd1,F
+	WLW	4,w3defwd6,F
+	WLW	4,w3defwd5,F
+	WLW	4,w3defwd4,F
+	WLW	4,w3defwd3,F
+	WLW	4,w3defwd2,F
+	W0
+xfacwfdef4_l
+	WLW	4,w4defwd1,F
+	WLW	4,w4defwd6,F
+	WLW	4,w4defwd5,F
+	WLW	4,w4defwd4,F
+	WLW	4,w4defwd3,F
+	WLW	4,w4defwd2,F
+	W0
+xfacwfdef5_l
+	WLW	4,w5defwd1,F
+	WLW	4,w5defwd6,F
+	WLW	4,w5defwd5,F
+	WLW	4,w5defwd4,F
+	WLW	4,w5defwd3,F
+	WLW	4,w5defwd2,F
+	W0
+
+
+walkbdef_t
+	.word	WALK_M
+	.long	seq_resetseq
+	.long	xfacwbdef1_l,xfacwbdef2_l,xfacwbdef3_l,xfacwbdef4_l
+	.long	xfacwbdef5_l,xfacwbdef4_l,xfacwbdef3_l,xfacwbdef2_l
+
+xfacwbdef1_l
+	WLW	4,w1defwd1,F
+	WLW	4,w1defwd2,F
+	WLW	4,w1defwd3,F
+	WLW	4,w1defwd4,F
+	WLW	4,w1defwd5,F
+	WLW	4,w1defwd6,F
+	W0
+xfacwbdef2_l
+	WLW	4,w2defwd1,F
+	WLW	4,w2defwd2,F
+	WLW	4,w2defwd3,F
+	WLW	4,w2defwd4,F
+	WLW	4,w2defwd5,F
+	WLW	4,w2defwd6,F
+	W0
+xfacwbdef3_l
+	WLW	4,w3defwd1,F
+	WLW	4,w3defwd2,F
+	WLW	4,w3defwd3,F
+	WLW	4,w3defwd4,F
+	WLW	4,w3defwd5,F
+	WLW	4,w3defwd6,F
+	W0
+xfacwbdef4_l
+	WLW	4,w4defwd1,F
+	WLW	4,w4defwd2,F
+	WLW	4,w4defwd3,F
+	WLW	4,w4defwd4,F
+	WLW	4,w4defwd5,F
+	WLW	4,w4defwd6,F
+	W0
+xfacwbdef5_l
+	WLW	4,w5defwd1,F
+	WLW	4,w5defwd2,F
+	WLW	4,w5defwd3,F
+	WLW	4,w5defwd4,F
+	WLW	4,w5defwd5,F
+	WLW	4,w5defwd6,F
+	W0
+
+
+walkldef_t
+	.word	WALK_M
+	.long	seq_resetseq
+	.long	xfacwldef1_l,xfacwldef2_l,xfacwldef3_l,xfacwldef4_l
+	.long	xfacwldef5_l,xfacwldef4_l,xfacwldef3_l,xfacwldef2_l
+
+xfacwldef1_l
+	WLW	4,w1dfcr1,F
+	WLW	4,w1dfcr2,F
+	WLW	4,w1dfcr3,F
+	WLW	4,w1dfcr4,F
+	WLW	4,w1dfcr5,F
+	WLW	4,w1dfcr6,F
+	W0
+xfacwldef2_l
+	WLW	4,w2dfcr1,F
+	WLW	4,w2dfcr5,F
+	WLW	4,w2dfcr4,F
+	WLW	4,w2dfcr3,F
+	WLW	4,w2dfcr2,F
+	W0
+xfacwldef3_l
+	WLW	4,w3dfcr1,F
+	WLW	4,w3dfcr6,F
+	WLW	4,w3dfcr5,F
+	WLW	4,w3dfcr4,F
+	WLW	4,w3dfcr3,F
+	WLW	4,w3dfcr2,F
+	W0
+xfacwldef4_l
+	WLW	4,w4dfcr1,F
+	WLW	4,w4dfcr6,F
+	WLW	4,w4dfcr5,F
+	WLW	4,w4dfcr4,F
+	WLW	4,w4dfcr3,F
+	WLW	4,w4dfcr2,F
+	W0
+xfacwldef5_l
+	WLW	4,w5dfcr1,F
+	WLW	4,w5dfcr6,F
+	WLW	4,w5dfcr5,F
+	WLW	4,w5dfcr4,F
+	WLW	4,w5dfcr3,F
+	WLW	4,w5dfcr2,F
+	W0
+
+walkrdef_t
+	.word	WALK_M
+	.long	seq_resetseq
+	.long	xfacwrdef1_l,xfacwrdef2_l,xfacwrdef3_l,xfacwrdef4_l
+	.long	xfacwrdef5_l,xfacwrdef4_l,xfacwrdef3_l,xfacwrdef2_l
+
+xfacwrdef1_l
+	WLW	4,w1dfcr1,F
+	WLW	4,w1dfcr6,F
+	WLW	4,w1dfcr5,F
+	WLW	4,w1dfcr4,F
+	WLW	4,w1dfcr3,F
+	WLW	4,w1dfcr2,F
+	W0
+xfacwrdef2_l
+	WLW	4,w2dfcr1,F
+	WLW	4,w2dfcr2,F
+	WLW	4,w2dfcr3,F
+	WLW	4,w2dfcr4,F
+	WLW	4,w2dfcr5,F
+	W0
+xfacwrdef3_l
+	WLW	4,w3dfcr1,F
+	WLW	4,w3dfcr2,F
+	WLW	4,w3dfcr3,F
+	WLW	4,w3dfcr4,F
+	WLW	4,w3dfcr5,F
+	WLW	4,w3dfcr6,F
+	W0
+xfacwrdef4_l
+	WLW	4,w4dfcr1,F
+	WLW	4,w4dfcr2,F
+	WLW	4,w4dfcr3,F
+	WLW	4,w4dfcr4,F
+	WLW	4,w4dfcr5,F
+	WLW	4,w4dfcr6,F
+	W0
+xfacwrdef5_l
+	WLW	4,w5dfcr1,F
+	WLW	4,w5dfcr2,F
+	WLW	4,w5dfcr3,F
+	WLW	4,w5dfcr4,F
+	WLW	4,w5dfcr5,F
+	WLW	4,w5dfcr6,F
+	W0
+
+block_t
+	.word	NOJUMP_M|DRIFT_M|BLOCKREB_M|NOJOY_M
+	.long	seq_stand
+	.long	twko1,twko2,twko3,twko4,twko5,twko4,twko3,twko2
+
+twko1
+	WLW	3,w1blok1,F
+	WLW	3,w1blok2,F
+	WLL	-1,seq_block,w1blok3
+	WLW	99,w1blok3,F
+	W0
+twko2
+	WLW	3,w2blok1,F
+	WLW	3,w2blok2,F
+	WLL	-1,seq_block,w2blok3
+	WLW	99,w2blok3,F
+	W0
+twko3
+	WLW	3,w3blok1,F
+	WLW	3,w3blok2,F
+	WLL	-1,seq_block,w3blok3
+	WLW	99,w3blok3,F
+	W0
+twko4
+	WLW	3,w4blok1,F
+	WLW	3,w4blok2,F
+	WLL	-1,seq_block,w4blok3
+	WLW	99,w4blok3,F
+	W0
+twko5
+	WLW	3,w5blok1,F
+	WLW	3,w5blok2,F
+	WLL	-1,seq_block,w5blok3
+	WLW	99,w5blok3,F
+	W0
+nospear_t
+	.word	NOJUMP_M|DRIFT_M|BLOCKREB_M|NOJOY_M
+	.long	seq_stand
+	.long	zpcx1,zpcx2,zpcx3,zpcx4,zpcx5,zpcx4,zpcx3,zpcx2
+
+zpcx1
+	WLW	1,w1blok3,F
+	WLW	3,w1reb2,FF
+	WLW	99,w1reb3,FF
+	WLW	4,w1reb4,FF
+	WLW	4,w1reb5,FF
+	W0
+zpcx2
+zpcx3
+	WLW	1,w2blok3,F
+	WLW	4,w2reb3,F
+	WLW	99,w2reb5,F
+	WLW	4,w2reb6,F
+	WLW	4,w2reb7,F
+	W0
+zpcx4
+	WLW	1,w4blok3,F
+	WLW	4,w4reb2,F
+	WLW	99,w4reb4,F
+	WLW	4,w4reb5,F
+	WLW	4,w4reb6,F
+	W0
+zpcx5
+	WLW	1,w5blok3,F
+	WLW	4,w4reb2,F
+	WLW	99,w4reb4,F
+	WLW	4,w4reb5,F
+	WLW	4,w4reb6,F
+	W0
+blockrej_t
+	.word	NOJUMP_M|DRIFT_M|BLOCKREB_M|NOJOY_M
+	.long	seq_stand
+	.long	evdf2,evdf2,evdf3,evdf3,evdf3,evdf3,evdf3,evdf2
+evdf2
+	WLW	2,w2rej1,F
+	WLW	2,w2rej2,F
+	WLW	2,w2rej3,F
+	WLL	-1,seq_block,w2rej6
+	WLW	20,w2rej4,F
+	WLL	-1,seq_snd,swipe_snd
+	WLW	6,w2rej5,F
+	WLW	8,w2rej6,F
+	WLW	4,w2rej7,F
+	WLW	77,w2rej8,F
+	WLW	3,w2rej9,F		;Land
+	W0
+evdf3
+	WLW	5,w3rej1,F
+	WLL	-1,seq_block,w3rej4
+	WLW	20,w3rej2,F
+	WLL	-1,seq_snd,swipe_snd
+	WLW	6,w3rej3,F
+	WLW	8,w3rej4,F
+	WLW	3,w3rej5,F
+	WLW	3,w3rej6,F
+	WLW	77,w3rej7,F
+	WLW	3,w3rej8,F
+	WLW	3,w3rej9,F
+	W0
+
+fastblockrej_t
+	.word	NOJUMP_M|DRIFT_M|BLOCKREB_M|NOJOY_M
+	.long	seq_stand
+	.long	lcwi2,lcwi2,lcwi3,lcwi3,lcwi3,lcwi3,lcwi3,lcwi2
+lcwi2
+	WLW	2,w2rej1,F
+	WLW	2,w2rej2,F
+	WLW	2,w2rej3,F
+	WLL	-1,seq_block,w2rej6
+	WLW	20,w2rej4,F		;20
+	WLL	-1,seq_snd,swipe_snd
+	WLW	4,w2rej5,F		;6
+	WLW	4,w2rej6,F		;8
+	WLW	4,w2rej7,F		;4
+	WLW	83,w2rej8,F		;77
+	WLW	3,w2rej9,F		;Land
+	W0
+lcwi3
+	WLW	3,w3rej1,F		;5
+	WLL	-1,seq_block,w3rej4
+	WLW	20,w3rej2,F
+	WLL	-1,seq_snd,swipe_snd
+	WLW	3,w3rej3,F		;6
+	WLW	3,w3rej4,F		;8
+	WLW	3,w3rej5,F		;3
+	WLW	3,w3rej6,F		;3
+	WLW	85,w3rej7,F		;77
+	WLW	3,w3rej8,F
+	WLW	3,w3rej9,F
+	W0
+
+rebound_t
+	.word	NOJUMP_M|DRIFT_M|BLOCKREB_M|NOSTEAL_M|NOJOY_M
+	.long	seq_stand
+	.long	lpjm1,lpjm2,lpjm3,lpjm4,lpjm4,lpjm4,lpjm3,lpjm2
+lpjm1
+	WLW	6,w1blok1,F
+	WLL	-1,seq_block,w1reb3
+	WLW	3,w1reb1,F
+	WLW	27,w1reb2,F
+	WLW	77,w1reb3,F
+	WLW	3,w1reb4,F		;Land
+	WLW	3,w1reb5,F
+	W0
+lpjm2
+	WLW	2,w2blok1,F
+	WLW	2,w2reb1,F
+	WLW	2,w2reb2,F
+	WLL	-1,seq_block,w2reb5
+	WLW	27,w2reb3,F
+	WLW	3,w2reb4,F
+	WLW	77,w2reb5,F
+	WLW	3,w2reb6,F
+	WLW	3,w2reb7,F
+	W0
+lpjm3
+	WLW	3,w3blok1,F
+	WLW	3,w3reb1,F
+	WLL	-1,seq_block,w3reb4
+	WLW	27,w3reb2,F
+	WLW	3,w3reb3,F
+	WLW	77,w3reb4,F
+	WLW	3,w3reb5,F
+	W0
+lpjm4
+	WLW	3,w4blok1,F
+	WLW	3,w4reb1,F
+	WLL	-1,seq_block,w4reb4
+	WLW	27,w4reb2,F
+	WLW	3,w4reb3,F
+	WLW	77,w4reb4,F
+	WLW	3,w4reb5,F
+	WLW	3,w4reb6,F
+	W0
+rebounda_t
+	.word	NOJUMP_M|DRIFT_M|BLOCKREB_M|NOSTEAL_M|NOJOY_M|NOCOLLP_M
+	.long	seq_stand
+	.long	tgrh1,tgrh2,tgrh3,tgrh4,tgrh4,tgrh4,tgrh3,tgrh2
+tgrh1
+	WLW	5,w1blok1,F
+	WLL	-1,seq_rebounda,w1reb3
+	WLW	5,w1reb1,F
+	WLW	14,w1reb2,F
+	WLW	77,w1reb3,F
+	WLW	3,w1reb4,F		;Land
+	WLW	3,w1reb5,F
+	WL	-1,clr_autorbnd
+	W0
+tgrh2
+	WLW	1,w2blok1,F
+	WLW	2,w2reb1,F
+	WLW	2,w2reb2,F
+	WLL	-1,seq_rebounda,w2reb5
+	WLW	16,w2reb3,F
+	WLW	3,w2reb4,F
+	WLW	77,w2reb5,F
+	WLW	3,w2reb6,F
+	WLW	3,w2reb7,F
+	WL	-1,clr_autorbnd
+	W0
+tgrh3
+	WLW	2,w3blok1,F
+	WLW	3,w3reb1,F
+	WLL	-1,seq_rebounda,w3reb4
+	WLW	16,w3reb2,F
+	WLW	3,w3reb3,F
+	WLW	77,w3reb4,F
+	WLW	3,w3reb5,F
+	WL	-1,clr_autorbnd
+	W0
+tgrh4
+	WLW	2,w4blok1,F
+	WLW	3,w4reb1,F
+	WLL	-1,seq_rebounda,w4reb4
+	WLW	16,w4reb2,F
+	WLW	3,w4reb3,F
+	WLW	77,w4reb4,F
+	WLW	3,w4reb5,F
+	WLW	3,w4reb6,F
+	WL	-1,clr_autorbnd
+	W0
+
+shoot_t
+	.word	NOJUMP_M|SHOOT_M|NOJOY_M
+	.long	seq_stand
+	.long	fuet1,fuet2,fuet3,fuet4,fuet5,fuet4,fuet3,fuet2
+
+	.asg	3,N
+fuet1
+	WLW	N,w1js1,F
+	WLW	N,w1js2,F
+	WLW	N,w1js3,F
+	WL	-1,seq_jump
+	WLW	77,w1js4,F
+	WLW	77,w1js5,F
+	WLW	4,w1js2,F
+	WLW	3,w1js1,F
+	W0
+fuet2
+	WLW	N,w2js1,F
+	WLW	N,w2js2,F
+	WLW	N,w2js3,F
+	WL	-1,seq_jump
+	WLW	77,w2js4,F
+	WLW	77,w2js5,F
+	WLW	3,w2js4,F
+	WLW	3,w2js3,F
+	WLW	3,w2js2,F
+	WLW	2,w2js1,F
+	W0
+fuet3
+	WLW	N,w3js1,F
+	WLW	N,w3js2,F
+	WLW	N,w3js3,F
+	WL	-1,seq_jump
+	WLW	77,w3js4,F
+	WLW	3,w3js4,F
+	WLW	77,w3js5,F
+	WLW	3,w3js4,F
+	WLW	3,w3js3,F
+	WLW	3,w3js2,F
+	WLW	2,w3js1,F
+	W0
+fuet4
+	WLW	N,w4js1,F
+	WLW	N,w4js2,F
+	WLW	N,w4js3,F
+	WL	-1,seq_jump
+	WLW	77,w4js4,F
+	WLW	3,w4js4,F
+	WLW	77,w4js5,F
+	WLW	3,w4js4,F
+	WLW	3,w4js3,F
+	WLW	3,w4js2,F
+	WLW	2,w4js1,F
+	W0
+fuet5
+	WLW	N,w5js1,F
+	WLW	N,w5js2,F
+	WLW	N,w5js3,F
+	WL	-1,seq_jump
+	WLW	77,w5js4,F
+	WLW	77,w5js5,F
+	WLW	3,w5js4,F
+	WLW	3,w5js3,F
+	WLW	3,w5js2,F
+	WLW	2,w5js1,F
+	W0
+qshoot_t
+	.word	NOJUMP_M|SHOOT_M|NOJOY_M
+	.long	seq_stand
+	.long	tadm1,tadm2,tadm3,tadm4,tadm5,tadm4,tadm3,tadm2
+
+	.asg	4,N
+tadm1
+	WLW	N-1,w1js1,F
+	WLW	N,w1js2,F
+	WLW	N,w1js3,F
+	WL	-1,seq_jump2
+	WLW	77,w1js4,F
+	WLW	77,w1js5,F
+	WLW	4,w1js2,F
+	WLW	3,w1js1,F
+	W0
+tadm2
+	WLW	N-1,w2js1,F
+	WLW	N,w2js2,F
+	WLW	N,w2js3,F
+	WL	-1,seq_jump2
+	WLW	77,w2js4,F
+	WLW	77,w2js5,F
+	WLW	3,w2js4,F
+	WLW	3,w2js3,F
+	WLW	3,w2js2,F
+	WLW	2,w2js1,F
+	W0
+tadm3
+	WLW	N-1,w3js1,F
+	WLW	N,w3js2,F
+	WLW	N,w3js3,F
+	WL	-1,seq_jump2
+	WLW	77,w3js4,F
+	WLW	3,w3js4,F
+	WLW	77,w3js5,F
+	WLW	3,w3js4,F
+	WLW	3,w3js3,F
+	WLW	3,w3js2,F
+	WLW	2,w3js1,F
+	W0
+tadm4
+	WLW	N-1,w4js1,F
+	WLW	N,w4js2,F
+	WLW	N,w4js3,F
+	WL	-1,seq_jump2
+	WLW	77,w4js4,F
+	WLW	3,w4js4,F
+	WLW	77,w4js5,F
+	WLW	3,w4js4,F
+	WLW	3,w4js3,F
+	WLW	3,w4js2,F
+	WLW	2,w4js1,F
+	W0
+tadm5
+	WLW	N-1,w5js1,F
+	WLW	N,w5js2,F
+	WLW	N,w5js3,F
+	WL	-1,seq_jump2
+	WLW	77,w5js4,F
+	WLW	77,w5js5,F
+	WLW	3,w5js4,F
+	WLW	3,w5js3,F
+	WLW	3,w5js2,F
+	WLW	2,w5js1,F
+	W0
+
+shootdesp_t
+	.word	NOJUMP_M|SHOOT_M|NOJOY_M
+	.long	seq_stand
+	.long	hvrt3,hvrt3,hvrt3,hvrt3,hvrt3,hvrt3,hvrt3,hvrt3
+hvrt3
+	WLW	4,w3desp1,F
+	WL	-1,seq_jump
+	WLW	50,w3desp2,F
+	WLW	50,w3desp3,F
+	WLW	3,w3desp3,F	;Land
+	WLW	3,w3desp4,F
+	WLW	3,w3desp5,F
+	WLW	3,w3desp6,F
+	W0
+
+shootdesp2_t
+	.word	NOJUMP_M|SHOOT_M|NOJOY_M
+	.long	seq_stand
+	.long	zqej3,zqej3,zqej3,zqej3,zqej3,zqej3,zqej3,zqej3
+zqej3
+	WLW	3,T1DESP1,F
+	WLW	3,T1DESP2,F
+	WLW	3,T1DESP3,F
+	WLW	3,T1DESP4,F
+	WL	-1,seq_jump
+	WLW	3,T1DESP5,F
+	WL	-1,plyr_shoot
+	WLW	4,T1DESP6,F
+	WLW	66,T1DESP7,F
+	WLW	4,T1DESP8,F
+	WLW	4,T1DESP9,F
+	W0
+
+shootdesp3_t
+	.word	NOJUMP_M|SHOOT_M|NOJOY_M
+	.long	seq_stand
+	.long	xuav3,xuav3,xuav3,xuav3,xuav3,xuav3,xuav3,xuav3
+xuav3
+	WLW	4,T2DESP1,F
+	WLW	4,T2DESP2,F
+	WL	-1,seq_jump
+	WLW	12h,T2DESP3,F
+	WLW	62h,T2DESP4,F
+	WLW	28,T2DESP5,F
+	WLW	4,T2DESP6,F
+	W0
+
+
+passs_t
+	.word	PASS_M|NOJOY_M
+	.long	seq_stand
+	.long	wigf1,wigf2,wigf3,wigf4,wigf5,wigf4,wigf3,wigf2
+	.asg	3,N
+wigf1
+	WLW	N,w1cp1,F
+	WLW	N,w1cp2,F
+	WL	-1,plyr_pass
+	WLW	4,w1cp1,F
+	W0
+wigf2
+	WLW	N,w2cp1,F
+	WLW	N,w2cp2,F
+	WL	-1,plyr_pass
+	WLW	4,w2cp1,F
+	W0
+wigf3
+	WLW	N,w3cp1,F
+	WLW	N,w3cp2,F
+	WL	-1,plyr_pass
+	WLW	4,w3cp1,F
+	W0
+wigf4
+	WLW	N,w4cp1,F
+	WLW	N,w4cp2,F
+	WL	-1,plyr_pass
+	WLW	4,w4cp1,F
+	W0
+wigf5
+	WLW	N,w5cp1,F
+	WLW	N,w5cp2,F
+	WL	-1,plyr_pass
+	WLW	4,w5cp1,F
+	W0
+
+passc_t
+	.word	PASS_M|NOJOY_M
+	.long	seq_stand
+	.long	wigfpassc1_l,wigfpassc2_l,wigfpassc3_l,wigfpassc4_l
+	.long	wigfpassc5_l,wigfpassc4_l,wigfpassc3_l,wigfpassc2_l
+	.asg	4,N
+wigfpassc1_l
+	WLW	N,w1cp1,F
+	WLW	N,w1cp2,F
+	WLW	N,w1cp3,F
+	WL	-1,plyr_pass
+	WLW	N,w1cp4,F
+	WLW	4,w1cp3,F
+	WLW	4,w1cp1,F
+	W0
+wigfpassc2_l
+	WLW	N,w2cp1,F
+	WLW	N,w2cp2,F
+	WLW	N,w2cp3,F
+	WL	-1,plyr_pass
+	WLW	N,w2cp4,F
+	WLW	4,w2cp3,F
+	WLW	4,w2cp1,F
+	W0
+wigfpassc3_l
+	WLW	N,w3cp1,F
+	WLW	N,w3cp2,F
+	WLW	N,w3cp3,F
+	WL	-1,plyr_pass
+	WLW	N,w3cp4,F
+	WLW	4,w3cp3,F
+	WLW	4,w3cp1,F
+	W0
+wigfpassc4_l
+	WLW	N,w4cp1,F
+	WLW	N,w4cp2,F
+	WLW	N,w4cp3,F
+	WL	-1,plyr_pass
+	WLW	N,w4cp4,F
+	WLW	4,w4cp3,F
+	WLW	4,w4cp1,F
+	W0
+wigfpassc5_l
+	WLW	N,w5cp1,F
+	WLW	N,w5cp2,F
+	WLW	N,w5cp3,F
+	WL	-1,plyr_pass
+	WLW	N,w5cp4,F
+	WLW	4,w5cp3,F
+	WLW	4,w5cp1,F
+	W0
+
+fastpassc_t
+	.word	PASS_M|NOJOY_M
+	.long	seq_stand
+	.long	xjcupassc1_l,xjcupassc2_l,xjcupassc3_l,xjcupassc4_l
+	.long	xjcupassc5_l,xjcupassc4_l,xjcupassc3_l,xjcupassc2_l
+	.asg	3,N
+xjcupassc1_l
+	WLW	N,w1cp1,F
+	WLW	N,w1cp2,F
+	WLW	N,w1cp3,F
+	WL	-1,plyr_pass
+	WLW	N,w1cp4,F
+	WLW	N,w1cp3,F
+	WLW	N,w1cp1,F
+	W0
+xjcupassc2_l
+	WLW	N,w2cp1,F
+	WLW	N,w2cp2,F
+	WLW	N,w2cp3,F
+	WL	-1,plyr_pass
+	WLW	N,w2cp4,F
+	WLW	N,w2cp3,F
+	WLW	N,w2cp1,F
+	W0
+xjcupassc3_l
+	WLW	N,w3cp1,F
+	WLW	N,w3cp2,F
+	WLW	N,w3cp3,F
+	WL	-1,plyr_pass
+	WLW	N,w3cp4,F
+	WLW	N,w3cp3,F
+	WLW	N,w3cp1,F
+	W0
+xjcupassc4_l
+	WLW	N,w4cp1,F
+	WLW	N,w4cp2,F
+	WLW	N,w4cp3,F
+	WL	-1,plyr_pass
+	WLW	N,w4cp4,F
+	WLW	N,w4cp3,F
+	WLW	N,w4cp1,F
+	W0
+xjcupassc5_l
+	WLW	N,w5cp1,F
+	WLW	N,w5cp2,F
+	WLW	N,w5cp3,F
+	WL	-1,plyr_pass
+	WLW	N,w5cp4,F
+	WLW	N,w5cp3,F
+	WLW	N,w5cp1,F
+	W0
+
+
+passnewoh_t
+	.word	PASS_M|NOJOY_M
+	.long	seq_stand
+	.long	xjcupassnoh1_l,xjcupassnoh2_l,xjcupassnoh3_l,xjcupassnoh4_l
+	.long	xjcupassnoh5_l,xjcupassnoh4_l,xjcupassnoh3_l,xjcupassnoh2_l
+
+	.asg	3,N
+xjcupassnoh1_l
+	WLW	N,w1ohp1,F
+	WLW	N,w1ohp2,F
+	WLW	N,w1ohp3,F
+	WLW	N,w1ohp4,F
+	WLW	N,w1ohp5,F
+	WL	-1,plyr_pass
+	WLW	N,w1ohp6,F
+	WLW	N,w1ohp5,F
+	WLW	N,w1ohp4,F
+	W0
+xjcupassnoh2_l
+	WLW	N,w2ohp1,F
+	WLW	N,w2ohp2,F
+	WLW	N,w2ohp3,F
+	WLW	N,w2ohp4,F
+	WL	-1,plyr_pass
+	WLW	N,w2ohp5,F
+	WLW	N,w2ohp4,F
+	WLW	N,w2ohp3,F
+	W0
+xjcupassnoh3_l
+	WLW	N,w3ohp1,F
+	WLW	N,w3ohp2,F
+	WLW	N,w3ohp3,F
+	WLW	N,w3ohp4,F
+	WLW	1,w3ohp5,F
+	WL	-1,plyr_pass
+	WLW	N-1,w3ohp5,F
+	WLW	N,w3ohp4,F
+	WLW	N,w3ohp3,F
+	W0
+xjcupassnoh4_l
+	WLW	N,w4ohp1,F
+	WLW	N,w4ohp2,F
+	WLW	N,w4ohp3,F
+	WLW	N,w4ohp4,F
+	WL	-1,plyr_pass
+	WLW	N,w4ohp5,F
+	WLW	N,w4ohp4,F
+	WLW	N,w4ohp3,F
+	W0
+xjcupassnoh5_l
+	WLW	N,w5ohp1,F
+	WLW	N,w5ohp2,F
+	WLW	N,w5ohp3,F
+	WLW	N,w5ohp4,F
+	WL	-1,plyr_pass
+	WLW	N,w5ohp5,F
+	WLW	N,w5ohp4,F
+	WLW	N,w5ohp3,F
+	W0
+
+fastpassnewoh_t
+	.word	PASS_M|NOJOY_M
+	.long	seq_stand
+	.long	gibhpassnoh1_l,gibhpassnoh2_l,gibhpassnoh3_l,gibhpassnoh4_l
+	.long	gibhpassnoh5_l,gibhpassnoh4_l,gibhpassnoh3_l,gibhpassnoh2_l
+
+	.asg	2,N
+gibhpassnoh1_l
+	WLW	N,w1ohp1,F
+	WLW	N,w1ohp2,F
+	WLW	N,w1ohp3,F
+	WLW	N,w1ohp4,F
+	WLW	N,w1ohp5,F
+	WL	-1,plyr_pass
+	WLW	N,w1ohp6,F
+	WLW	N,w1ohp5,F
+	WLW	N,w1ohp4,F
+	W0
+gibhpassnoh2_l
+	WLW	N,w2ohp1,F
+	WLW	N,w2ohp2,F
+	WLW	N,w2ohp3,F
+	WLW	N,w2ohp4,F
+	WL	-1,plyr_pass
+	WLW	N,w2ohp5,F
+	WLW	N,w2ohp4,F
+	WLW	N,w2ohp3,F
+	W0
+gibhpassnoh3_l
+	WLW	N,w3ohp1,F
+	WLW	N,w3ohp2,F
+	WLW	N,w3ohp3,F
+	WLW	N,w3ohp4,F
+	WLW	1,w3ohp5,F
+	WL	-1,plyr_pass
+	WLW	N-1,w3ohp5,F
+	WLW	N,w3ohp4,F
+	WLW	N,w3ohp3,F
+	W0
+gibhpassnoh4_l
+	WLW	N,w4ohp1,F
+	WLW	N,w4ohp2,F
+	WLW	N,w4ohp3,F
+	WLW	N,w4ohp4,F
+	WL	-1,plyr_pass
+	WLW	N,w4ohp5,F
+	WLW	N,w4ohp4,F
+	WLW	N,w4ohp3,F
+	W0
+gibhpassnoh5_l
+	WLW	N,w5ohp1,F
+	WLW	N,w5ohp2,F
+	WLW	N,w5ohp3,F
+	WLW	N,w5ohp4,F
+	WL	-1,plyr_pass
+	WLW	N,w5ohp5,F
+	WLW	N,w5ohp4,F
+	WLW	N,w5ohp3,F
+	W0
+
+
+	.if	0
+passoh_t
+
+	.word	PASS_M|NOJOY_M
+	.long	seq_stand
+	.long	gibhpassoh1_l,gibhpassoh2_l,gibhpassoh3_l,gibhpassoh4_l
+	.long	gibhpassoh5_l,gibhpassoh4_l,gibhpassoh3_l,gibhpassoh2_l
+
+	.asg	4,N
+gibhpassoh1_l
+	WLW	N,w1ohp1,F
+	WLW	N,w1ohp2,F
+	WLW	N,w1ohp3,F
+	WLW	N,w1ohp4,F
+	WLW	N,w1ohp5,F
+	WL	-1,plyr_pass
+	WLW	N,w1ohp6,F
+	W0
+gibhpassoh2_l
+	WLW	N,w2ohp1,F
+	WLW	N,w2ohp2,F
+	WLW	N,w2ohp3,F
+	WLW	N,w2ohp4,F
+	WL	-1,plyr_pass
+	WLW	N,w2ohp5,F
+	W0
+gibhpassoh3_l
+	WLW	N,w3ohp1,F
+	WLW	N,w3ohp2,F
+	WLW	N,w3ohp3,F
+	WLW	N,w3ohp4,F
+	WL	-1,plyr_pass
+	WLW	N,w3ohp5,F
+	W0
+gibhpassoh4_l
+	WLW	N,w4ohp1,F
+	WLW	N,w4ohp2,F
+	WLW	N,w4ohp3,F
+	WLW	N,w4ohp4,F
+	WL	-1,plyr_pass
+	WLW	N,w4ohp5,F
+	W0
+gibhpassoh5_l
+	WLW	N,w5ohp1,F
+	WLW	N,w5ohp2,F
+	WLW	N,w5ohp3,F
+	WLW	N,w5ohp4,F
+	WL	-1,plyr_pass
+	WLW	N,w5ohp5,F
+	W0
+
+	.endif
+
+passdo_t
+	.word	PASS_M|NOJUMP_M|NOJOY_M
+	.long	seq_stand
+	.long	gibhpassdo1_l,gibhpassdo2_l,gibhpassdo3_l,gibhpassdo4_l
+	.long	gibhpassdo5_l,gibhpassdo4_l,gibhpassdo3_l,gibhpassdo2_l
+
+gibhpassdo1_l
+	WLW	1,w1jupa,F
+	WL	-1,plyr_pass
+	WLW	4,w1jupa,F
+	WLW	77,w1js4,F
+	WLW	4,w1js2,F
+	WLW	3,w1js1,F
+	W0
+gibhpassdo2_l
+	WLW	1,w2jupa,F
+	WL	-1,plyr_pass
+	WLW	4,w2jupa,F
+	WLW	77,w2js4,F
+	WLW	3,w2js3,F
+	WLW	3,w2js2,F
+	WLW	2,w2js1,F
+	W0
+gibhpassdo3_l
+	WLW	1,w3jupa,F
+	WL	-1,plyr_pass
+	WLW	4,w3jupa,F
+	WLW	77,w3js5,F
+	WLW	3,w3js4,F
+	WLW	3,w3js3,F
+	WLW	3,w3js2,F
+	WLW	2,w3js1,F
+	W0
+gibhpassdo4_l
+	WLW	1,w4jupa,F
+	WL	-1,plyr_pass
+	WLW	4,w4jupa,F
+	WLW	77,w4js5,F
+	WLW	3,w4js4,F
+	WLW	3,w4js3,F
+	WLW	3,w4js2,F
+	WLW	2,w4js1,F
+	W0
+gibhpassdo5_l
+	WLW	1,w5jupa,F
+	WL	-1,plyr_pass
+	WLW	4,w5jupa,F
+	WLW	77,w5js4,F
+	WLW	3,w5js3,F
+	WLW	3,w5js2,F
+	WLW	2,w5js1,F
+	W0
+
+passdo2_t
+	.word	PASS_M|NOJUMP_M|NOJOY_M
+	.long	seq_stand
+	.long	gibhpassdo21_l,gibhpassdo22_l,gibhpassdo23_l,gibhpassdo24_l
+	.long	gibhpassdo25_l,gibhpassdo24_l,gibhpassdo23_l,gibhpassdo22_l
+
+gibhpassdo21_l
+	WLW	1,w1js4,F
+	WL	-1,plyr_pass
+	WLW	77,w1js4,F
+	WLW	4,w1js2,F
+	WLW	3,w1js1,F
+	W0
+gibhpassdo22_l
+	WLW	1,w2js4,F
+	WL	-1,plyr_pass
+	WLW	77,w2js4,F
+	WLW	3,w2js3,F
+	WLW	3,w2js2,F
+	WLW	2,w2js1,F
+	W0
+gibhpassdo23_l
+	WLW	1,w3js5,F
+	WL	-1,plyr_pass
+	WLW	77,w3js5,F
+	WLW	3,w3js4,F
+	WLW	3,w3js3,F
+	WLW	3,w3js2,F
+	WLW	2,w3js1,F
+	W0
+gibhpassdo24_l
+	WLW	1,w4js5,F
+	WL	-1,plyr_pass
+	WLW	77,w4js5,F
+	WLW	3,w4js4,F
+	WLW	3,w4js3,F
+	WLW	3,w4js2,F
+	WLW	2,w4js1,F
+	W0
+gibhpassdo25_l
+	WLW	1,w5js4,F
+	WL	-1,plyr_pass
+	WLW	77,w5js4,F
+	WLW	3,w5js3,F
+	WLW	3,w5js2,F
+	WLW	2,w5js1,F
+	W0
+
+
+passbh_t
+	.word	PASS_M|NOJOY_M
+	.long	seq_stand
+	.long	bcmc1,bcmc2,bcmc3,bcmc4,bcmc5,bcmc4,bcmc3,bcmc2
+
+	.asg	3,N
+bcmc1
+bcmc2
+	WLW	N,T2HIND1,F
+	WLW	N,T2HIND2,F
+	WLW	N,T2HIND3,F
+	WLW	N,T2HIND4,F
+	WLW	2,T2HIND5,F
+	WL	-1,plyr_pass
+	WLW	3,T2HIND5,F
+	WLW	3,T2HIND6,F
+	W0
+bcmc3
+bcmc4
+bcmc5
+	WLW	N,T4HIND1,F
+	WLW	N,T4HIND2,F
+	WLW	N,T4HIND3,F
+	WLW	N,T4HIND4,F
+	WLW	N,T4HIND5,F
+	WLW	2,T4HIND6,F
+	WL	-1,plyr_pass
+	WLW	3,T4HIND6,F
+	WLW	3,T4HIND7,F
+	WLW	3,T4HIND8,F
+	W0
+
+steal_t
+	.word	NOMV_M|NOSTEAL_M|NOJUMP_M|NOJOY_M
+	.long	seq_stealstand
+	.long	kjls1,kjls2,kjls3,kjls4,kjls5,kjls4,kjls3,kjls2
+kjls1
+	WLW	2,T1SWPE1,F
+	WLL	-1,seq_snd,swipe_snd
+	WLW	2,T1SWPE2,F
+	WLW	3,T1SWPE3,F
+	WLW	2,T1SWPE4,F
+	WL	-1,seq_stealstand
+	WLW	2,T1SWPE5,F
+	WLW	3,T1SWPE6,F
+	WLW	2,T1SWPE5,F
+	WL	-1,seq_stealstand
+	WLW	2,T1SWPE4,F
+	WLW	3,T1SWPE3,F
+	WLW	2,T1SWPE2,F
+	WLW	2,T1SWPE1,F
+	W0
+kjls2
+	WLW	2,T2SWPE1,F
+	WLL	-1,seq_snd,swipe_snd
+	WLW	2,T2SWPE2,F
+	WLW	2,T2SWPE3,F
+	WLW	2,T2SWPE4,F
+	WLW	2,T2SWPE5,F
+	WL	-1,seq_stealstand
+	WLW	2,T2SWPE6,F
+	WLW	2,T2SWPE7,F
+	WLW	2,T2SWPE6,F
+	WLW	2,T2SWPE5,F
+	WL	-1,seq_stealstand
+	WLW	2,T2SWPE4,F
+	WLW	2,T2SWPE3,F
+	WLW	2,T2SWPE2,F
+	WLW	2,T2SWPE1,F
+	W0
+kjls3
+	WLW	2,T3SWPE1,F
+	WLL	-1,seq_snd,swipe_snd
+	WLW	2,T3SWPE2,F
+	WLW	2,T3SWPE3,F
+	WLW	2,T3SWPE4,F
+	WLW	2,T3SWPE5,F
+	WL	-1,seq_stealstand
+	WLW	2,T3SWPE6,F
+	WLW	2,T3SWPE7,F
+	WLW	2,T3SWPE6,F
+	WLW	2,T3SWPE5,F
+	WL	-1,seq_stealstand
+	WLW	2,T3SWPE4,F
+	WLW	2,T3SWPE3,F
+	WLW	2,T3SWPE2,F
+	WLW	2,T3SWPE1,F
+	W0
+kjls4
+	WLW	2,T4SWPE1,F
+	WLL	-1,seq_snd,swipe_snd
+	WLW	2,T4SWPE2,F
+	WLW	3,T4SWPE3,F
+	WLW	2,T4SWPE4,F
+	WL	-1,seq_stealstand
+	WLW	2,T4SWPE5,F
+	WLW	3,T4SWPE6,F
+	WLW	2,T4SWPE5,F
+	WL	-1,seq_stealstand
+	WLW	2,T4SWPE4,F
+	WLW	3,T4SWPE3,F
+	WLW	2,T4SWPE2,F
+	WLW	2,T4SWPE1,F
+	W0
+kjls5
+	WLW	2,T5SWPE1,F
+	WLL	-1,seq_snd,swipe_snd
+	WLW	2,T5SWPE2,F
+	WLW	3,T5SWPE3,F
+	WLW	2,T5SWPE4,F
+	WL	-1,seq_stealstand
+	WLW	2,T5SWPE5,F
+	WLW	3,T5SWPE6,F
+	WLW	3,T5SWPE5,F
+	WL	-1,seq_stealstand
+	WLW	2,T5SWPE4,F
+	WLW	3,T5SWPE3,F
+	WLW	2,T5SWPE2,F
+	WLW	2,T5SWPE1,F
+	W0
+
+push_t
+	.word	NOMV_M|NOJUMP_M|NOJOY_M
+	.long	seq_stand
+	.long	fsaq1,fsaq2,fsaq3,fsaq4,fsaq5,fsaq4,fsaq3,fsaq2
+fsaq1
+	WLW	4,w1cp1,F
+	WLW	4,w1cp2,F
+	WLW	4,w1cp3,F
+	WL	-1,seq_push
+	WLW	4,w1cp4,F
+	WLW	4,w1cp3,F
+	WLW	4,w1cp1,F
+	W0
+fsaq2
+	WLW	4,w2push2,F
+	WLW	4,w2push3,F
+	WL	-1,seq_push
+	WLW	4,w2push4,F
+	WLW	4,w2push3,F
+	WLW	4,w2push2,F
+	W0
+fsaq3
+	WLW	4,w3cp1,F
+	WLW	4,w3cp2,F
+	WLW	4,w3cp3,F
+	WL	-1,seq_push
+	WLW	4,w3cp4,F
+	WLW	4,w3cp3,F
+	WLW	4,w3cp1,F
+	W0
+fsaq4
+	WLW	4,w4push1,F
+	WLW	4,w4push2,F
+	WL	-1,seq_push
+	WLW	4,w4push3,F
+	WLW	4,w4push2,F
+	WLW	4,w4push1,F
+	W0
+fsaq5
+	WLW	4,w5cp1,F
+	WLW	4,w5cp2,F
+	WLW	4,w5cp3,F
+	WL	-1,seq_push
+	WLW	4,w5cp4,F
+	WLW	4,w5cp3,F
+	WLW	4,w5cp1,F
+	W0
+
+
+
+
+	.end
+

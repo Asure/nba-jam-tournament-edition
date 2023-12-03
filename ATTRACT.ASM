@@ -1,4 +1,4 @@
-****************************************************************
+#****************************************************************
 *
 * Software:	?
 * Initiated:	?
@@ -34,12 +34,12 @@
 
 	.ref	musicoff_snd,ALLOFF,QSNDRST
 
-;logosnd	.word	>f420,1,>8047,0		;Logo spins
-;exp1snd	.word	>fc80,10,>803f,0	;Explosion
-;ttlgun		.word	>fca0,4,>8031,0		;Title guy shoots gun
-bounce_snd	.word	>fc80,10,>8129,0	;Ball bounce
-tuneend_snd	.word	>f3ff,8,>8009,0		;End game time tune
-tuneend1_snd	.word	>f3ff,>8,>800a,0	;End quarter 1 tune
+;logosnd	.word	0f420H,1,08047H,0		;Logo spins
+;exp1snd	.word	0fc80H,10,0803fH,0	;Explosion
+;ttlgun		.word	0fca0H,4,08031H,0		;Title guy shoots gun
+bounce_snd	.word	0fc80H,10,08129H,0	;Ball bounce
+tuneend_snd	.word	0f3ffH,8,08009H,0		;End game time tune
+tuneend1_snd	.word	0f3ffH,08H,0800aH,0	;End quarter 1 tune
 
 
 ;symbols defined in this file
@@ -409,19 +409,19 @@ show_title
 	clr	a7
 	calla	BEGINOBJ2
 
-	movi	[>400,>400],a10
+	movi	[0400H,0400H],a10
 #uplp
 	callr	ttl_setscl
 	SLEEPK	1
-	subi	[>20,>20],a10
-	cmpi	[>a0,>a0],a10
+	subi	[020H,020H],a10
+	cmpi	[0a0H,0a0H],a10
 	jrgt	#uplp
 
 #dnlp
 	callr	ttl_setscl
 	SLEEPK	1
-	addi	[>10,>10],a10
-	cmpi	[>110,>110],a10
+	addi	[010H,010H],a10
+	cmpi	[0110H,0110H],a10
 	jrlt	#dnlp
      	
 	.endif
@@ -449,13 +449,13 @@ show_title
 
 ttl_t
 	.long	trnedBMOD
-	.word	-37,>3b1
+	.word	-37,03b1H
 	.long	0
 
 
 ttl_setscl
 	move	*a8(OIMG),a2,L
-	movi	[>100,0],a3
+	movi	[0100H,0],a3
 	clr	a14
 	movx	a10,a14
 	divu	a14,a3
@@ -581,7 +581,7 @@ startcyc
 
 
 	calla	ADJ_PAGE
-	movk	CMESS_LINES,a2		;>Check for a message
+	movk	CMESS_LINES,a2		;0CHheck for a message
 	movi	CUSTOM_MESSAGE,a7
 #cmlp
 	calla	RC_BYTEI
@@ -610,7 +610,7 @@ startcyc
 	CREATE0	showdt_scl
 
 
-	movk	CMESS_LINES,a2		;>Check for a message
+	movk	CMESS_LINES,a2		;0CHheck for a message
 	movi	CUSTOM_MESSAGE,a7
 	movi	[50,200],a9
 #prtlp
@@ -646,7 +646,7 @@ startcyc
 	jrz	#oend
 	move	*a14(ODATA_p),a0,L
 	jrnz	#olp
-	movi	[>320,>320],a1
+	movi	[0320H,0320H],a1
 	move	a1,*a14(ODATA_p),L
 	jruc	#olp
 #oend
@@ -990,22 +990,22 @@ startcyc
 	WL	-1,GOLD
 	.word	-2,60,37
 	.byte	"MARK TURMELL",0
-	LWW	MRK_TURM,>b2,>32
+	LWW	MRK_TURM,0b2H,032H
 	.byte	"SHAWN LIPTAK",0
-	LWW	SHA_LIPM,>f0,>1d
+	LWW	SHA_LIPM,0f0H,01dH
 	WL	-1,AQUAPAL
 	.byte	"TONY GOSKIE",0			;-6
-	LWW	TON_GOSM,185,>1f
+	LWW	TON_GOSM,185,01fH
 	.byte	"JOHN CARLTON",0
-	LWW	JON_CARM,>ff92,>20
+	LWW	JON_CARM,0ff92H,020H
 	.byte	"SAL DIVITA",0
-	LWW	SAL_DIVM,>ffa3,>20
+	LWW	SAL_DIVM,0ffa3H,020H
 	WL	-1,GREENPAL
 	.byte	"JON HEY",0
-	LWW	JON_HEYM,>ffbf,>1c
+	LWW	JON_HEYM,0ffbfH,01cH
 	WL	-1,GOLD
 	.byte	"JAMIE RIVETT",0
-	LWW	JAM_RIVM,>a0,>18
+	LWW	JAM_RIVM,0a0H,018H
 	.word	0
 
 thanx_t
@@ -1212,7 +1212,7 @@ thanx1_t
 	cmpi	-1,a0
 	jrne	#nopal
 
-	move	*a8+,a0,L	;>Change pal
+	move	*a8+,a0,L	;0CHhange pal
 	calla	pal_getf
 	move	a0,a6
 	jruc	#nxt
@@ -1276,7 +1276,7 @@ thanx1_t
 	jrz	#oend
 	move	*a14(ODATA_p),a0,L
 	jrnz	#olp
-	movi	[>320,>320],a1
+	movi	[0320H,0320H],a1
 	move	a1,*a14(ODATA_p),L
 	jruc	#olp
 #oend
@@ -1300,7 +1300,7 @@ thanx1_t
 	cmpi	-1,a0
 	jrne	#nopal
 
-	move	*a8+,a0,L	;>Change pal
+	move	*a8+,a0,L	;0CHhange pal
 	calla	pal_getf
 	move	a0,a6
 	jruc	#nxt
@@ -1353,7 +1353,7 @@ thanx1_t
 ;	jrz	#oend
 ;	move	*a14(ODATA_p),a0,L
 ;	jrnz	#olp
-;	movi	[>320,>320],a1
+;	movi	[0320H,0320H],a1
 ;	move	a1,*a14(ODATA_p),L
 ;	jruc	#olp
 ;#oend
@@ -1424,7 +1424,7 @@ ck_octopus2
 
 	move	@SWITCH,a0
 	zext	a0
-	cmpi	>ffff,a0
+	cmpi	0ffffH,a0
 	jrnz	#tag1
 	clr	a11
 	jruc	#lp
@@ -1454,8 +1454,8 @@ butn_lst
 ;p1turbo,p1turbo,p2shoot,p2shoot,p2shoot,p2pass,p2pass,p1shoot,p1pass,p2turbo
 ;p2turbo
 
-	.word	>ffbf,>ffbf,>efff,>efff,>efff,>dfff,>dfff
-	.word	>ffef,>ffdf,>bfff,>bfff,0
+	.word	0ffbfH,0ffbfH,0efffH,0efffH,0efffH,0dfffH,0dfffH
+	.word	0ffefH,0ffdfH,0bfffH,0bfffH,0
 
 
 #*******************************
@@ -1467,9 +1467,9 @@ showdt_scl
 #olp	move	*a14,a14,L	;A14=*Next
 	jrz	#oend
 	move	*a14(ODATA_p),a0,L
-	cmpi	[>100,>100],a0
+	cmpi	[0100H,0100H],a0
 	jrle	#olp
-	subi	[>10,>10],a0
+	subi	[010H,010H],a0
 	move	a0,*a14(ODATA_p),L
 	jruc	#olp
 #oend
@@ -1747,7 +1747,7 @@ coinin_mod
 
 	CREATE0	drwnbalogoUP
 
-	movi	>772-4,a10
+	movi	0772H-4,a10
 #lp	SLEEPK	1
 	move	@WORLDTLY,a0,L
 	subi	[2,8000h],a0
@@ -1836,7 +1836,7 @@ logo_drift
 
 	move	a11,a0
 	movi	[248+48,0],a1
-	movi	>7591,a3				;Z
+	movi	07591H,a3				;Z
 	movi	DMAWNZ|M_NOCOLL,a4
 	move	a9,a2
 	movi	CLSDEAD,a5
@@ -1952,7 +1952,7 @@ drw_teams
 
 #ladder_mod
 	.long	dabullBMOD
-	.word	>ff4b+5,>ffa1+3
+	.word	0ff4bH+5,0ffa1H+3
 	.long	ladderBMOD
 	.word	0+5,-92+360
 	.long	ladderBMOD
@@ -2165,10 +2165,10 @@ sndstrt	SLEEP	3*60
 
 tunes_t	.long	tuneq2_snd,tuneq3_snd,tuneq4_snd,tuneot_snd
 
-tuneq2_snd	.word	>f3ff,>8,>8006,0	;Quarter 2 tune
-tuneq3_snd	.word	>f3ff,>8,>8007,0	;Quarter 3 tune
-tuneq4_snd	.word	>f3ff,>8,>8008,0	;Quarter 4 tune
-tuneot_snd	.word	>f3ff,>8,>800b,0	;Quarter o.t. tune
+tuneq2_snd	.word	0f3ffH,08H,08006H,0	;Quarter 2 tune
+tuneq3_snd	.word	0f3ffH,08H,08007H,0	;Quarter 3 tune
+tuneq4_snd	.word	0f3ffH,08H,08008H,0	;Quarter 4 tune
+tuneot_snd	.word	0f3ffH,08H,0800bH,0	;Quarter o.t. tune
 
 
 #*******************************
@@ -2258,7 +2258,7 @@ ERRORLOG
 ********************************
 * Get an audit
 * A4=Audit #
-* >A4=Audit
+* 0A4H=Audit
 
 GETAUD4
 	mmtm	sp,a0,a1
@@ -2858,7 +2858,7 @@ LN1_setup
 	callr	#txt
 
 	movi	[30,0],a0		;x val
-	movi	[>63,0],a1		;y val
+	movi	[063H,0],a1		;y val
 	movi	ball11,a2
 	movk	1,a3			;z pos
 	movi	DMAWNZ,a4		;DMA flags
@@ -2880,7 +2880,7 @@ LN1_setup
 
 
 	movi	[30,0],a0		;x val
-	movi	[>8d,0],a1		;y val
+	movi	[08dH,0],a1		;y val
 	movi	ball11,a2
 	movk	1,a3			;z pos
 	movi	DMAWNZ,a4		;DMA flags
@@ -2900,7 +2900,7 @@ LN1_setup
 	callr	#txt
 
 	movi	[30,0],a0		;x val
-	movi	[>b7,0],a1		;y val
+	movi	[0b7H,0],a1		;y val
 	movi	ball11,a2
 	movk	1,a3			;z pos
 	movi	DMAWNZ,a4		;DMA flags
@@ -2920,7 +2920,7 @@ LN1_setup
 	callr	#txt
 
 	movi	[30,0],a0		;x val
-	movi	[>e1,0],a1		;y val
+	movi	[0e1H,0],a1		;y val
 	movi	ball11,a2
 	movk	1,a3			;z pos
 	movi	DMAWNZ,a4		;DMA flags
@@ -2958,7 +2958,7 @@ LN1_setup
 	callr	#txt
 
 	movi	[30,0],a0		;x val
-	movi	[>63,0],a1		;y val
+	movi	[063H,0],a1		;y val
 	movi	ball11,a2
 	movk	1,a3			;z pos
 	movi	DMAWNZ,a4		;DMA flags
@@ -2980,7 +2980,7 @@ LN1_setup
 
 
 	movi	[30,0],a0		;x val
-	movi	[>8d,0],a1		;y val
+	movi	[08dH,0],a1		;y val
 	movi	ball11,a2
 	movk	1,a3			;z pos
 	movi	DMAWNZ,a4		;DMA flags
@@ -3000,7 +3000,7 @@ LN1_setup
 	callr	#txt
 
 	movi	[30,0],a0		;x val
-	movi	[>b7,0],a1		;y val
+	movi	[0b7H,0],a1		;y val
 	movi	ball11,a2
 	movk	1,a3			;z pos
 	movi	DMAWNZ,a4		;DMA flags
@@ -3017,7 +3017,7 @@ LN1_setup
 	SLEEPK	7
 
 	movi	[30,0],a0		;x val
-	movi	[>e1,0],a1		;y val
+	movi	[0e1H,0],a1		;y val
 	movi	ball11,a2
 	movk	1,a3			;z pos
 	movi	DMAWNZ,a4		;DMA flags
@@ -3099,7 +3099,7 @@ time_delay
 
 #NONO1	rets
 
-ting_snd	.word	>f3ff,>8,>80a6,0	;Scroll snd
+ting_snd	.word	0f3ffH,08H,080a6H,0	;Scroll snd
 
 
 #newpage_mod
@@ -3540,7 +3540,7 @@ COLTABRED
 	.long	subsBMOD		;substitute players page
 	.word	-4,256
 	.long	namebox3BMOD		;stats box map
-	.word	13-4,>1c1
+	.word	13-4,01c1H
 	.long	0
 
 
@@ -3550,7 +3550,7 @@ COLTABRED
 	.long	subsBMOD		;substitute players page
 	.word	-4,256
 	.long	namebox4BMOD		;stats box map
-	.word	13-4,>1c1
+	.word	13-4,01c1H
 	.long	0
 
 #heading_setup

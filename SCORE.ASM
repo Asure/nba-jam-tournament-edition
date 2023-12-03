@@ -38,25 +38,25 @@
 	.ref	musicoff_snd
 	.ref	horn_snd
 
-showtm		.word	>fca1,73,>812c,0	;showtime
-;tuneend_snd	.word	>f3ff,>8,>800a,0	;End quarter 1 tune
-tuneq2_snd	.word	>f3ff,>8,>8006,0	;Quarter 2 tune
-tuneq3_snd	.word	>f3ff,>8,>8007,0	;Quarter 3 tune
-tuneq4_snd	.word	>f3ff,>8,>8008,0	;Quarter 4 tune
-tuneot_snd	.word	>f3ff,>8,>800b,0	;Quarter o.t. tune
-intoot_snd	.word	>f990,40,>8180,0	;Into o.t.
-tick_snd	.word	>f3f7,>18,>8090,0	;Tick snd
-tock_snd	.word	>f3f7,>18,>8091,0	;Tock snd
+showtm		.word	0fca1H,73,0812cH,0	;showtime
+;tuneend_snd	.word	0f3ffH,08H,0800aH,0	;End quarter 1 tune
+tuneq2_snd	.word	0f3ffH,08H,08006H,0	;Quarter 2 tune
+tuneq3_snd	.word	0f3ffH,08H,08007H,0	;Quarter 3 tune
+tuneq4_snd	.word	0f3ffH,08H,08008H,0	;Quarter 4 tune
+tuneot_snd	.word	0f3ffH,08H,0800bH,0	;Quarter o.t. tune
+intoot_snd	.word	0f990H,40,08180H,0	;Into o.t.
+tick_snd	.word	0f3f7H,018H,08090H,0	;Tick snd
+tock_snd	.word	0f3f7H,018H,08091H,0	;Tock snd
 
 minute_snd
 ;RJR
-	.word	>f97f,1,>81fe,1		;silence
-	.word	>f9f0,80,>8193,0	;One minute speech call
+	.word	0f97fH,1,081feH,1		;silence
+	.word	0f9f0H,80,08193H,0	;One minute speech call
 
-alert_snd	.word	>f3f7,>8,>8092,0	;Alert snd
-warn_snd	.word	>fbf7,>18,>80a0,0	;Warning on shot clock
-infoex_snd	.word	>f3ff,>8,>8097,0	;Info box exit
-whstle_snd	.word	>f9f5,>30,>8148,0	;Ref whistle at game start
+alert_snd	.word	0f3f7H,08H,08092H,0	;Alert snd
+warn_snd	.word	0fbf7H,018H,080a0H,0	;Warning on shot clock
+infoex_snd	.word	0f3ffH,08H,08097H,0	;Info box exit
+whstle_snd	.word	0f9f5H,030H,08148H,0	;Ref whistle at game start
 
 ;symbols externally defined
 
@@ -170,16 +170,16 @@ whstle_snd	.word	>f9f5,>30,>8148,0	;Ref whistle at game start
 
 BUYTICK	.EQU	110		;60
 SCRNTOP .EQU	100
-BRGHT	.EQU	>2c2c		;GREEN IN SCOREPAL
-COLORS	.EQU	>0909		;WHITE IN SCOREPAL
-COLORA	.EQU	>3E3E		;COLOR CYCLE IN SCOREPAL
+BRGHT	.EQU	02c2cH		;GREEN IN SCOREPAL
+COLORS	.EQU	00909H		;WHITE IN SCOREPAL
+COLORA	.EQU	03E3EH		;COLOR CYCLE IN SCOREPAL
 
 
 GND_Y		.equ	116-40
 GZBASE		.equ	894
 
-LEDOCTRL	.equ	DMAWNZ|>3000	;3 bits per pixel (In BB.asm)
-MSGOCTRL	.equ	DMAWNZ|>6000
+LEDOCTRL	.equ	DMAWNZ|03000H	;3 bits per pixel (In BB.asm)
+MSGOCTRL	.equ	DMAWNZ|06000H
 
 
 	.text
@@ -788,7 +788,7 @@ arwon
 	move	a9,a0
 	calla	OBJOFF
 
-#arwait	SLEEP	60				;>7fff
+#arwait	SLEEP	60				;07fffH
 	move	a9,a0
 	calla	OBJOFF
 	jruc	#arwait
@@ -1289,7 +1289,7 @@ mlp103	addi	PDSIZE,a0
 	move	*a2(ply_meter_imgs),a0,L
 	calla	OBJOFF
 
-	move	*a2(ply_meter_imgs+>20),a8,L
+	move	*a2(ply_meter_imgs+020H),a8,L
 	move	a10,a0
 	movi	MSGOCTRL,a1
 	calla	obj_aniq_cnoff
@@ -1297,7 +1297,7 @@ mlp103	addi	PDSIZE,a0
 	movk	07h,a0 			;5
 	move	a0,*a8(OYPOS)
 	
-	move	*a2(ply_meter_imgs+>40),a0,L
+	move	*a2(ply_meter_imgs+040H),a0,L
 	calla	OBJOFF
 
 	dsj	a3,#lp
@@ -1318,7 +1318,7 @@ mlp105
 	move	*a2(ply_meter_imgs),a0,L
 	calla	OBJON
 
-	move	*a2(ply_meter_imgs+>20),a8,L
+	move	*a2(ply_meter_imgs+020H),a8,L
 	move	a3,a0
 	sll	5,a0
 	addi	meters_t,a0
@@ -1332,7 +1332,7 @@ mlp105
 	movk	17,a0			;11
 	move	a0,*a8(OYPOS)
 
-	move	*a2(ply_meter_imgs+>40),a0,L
+	move	*a2(ply_meter_imgs+040H),a0,L
 	calla	OBJON
 
 	dsj	a3,#lp2
@@ -1511,7 +1511,7 @@ tv4	movi	tvid,a0			;Delete big clock at botm of scrn
 #tag
 ;now check to see if player is under 10 seconds and message has flopped
 ;into his meter img
-	move	@P1DATA+ply_meter_imgs+>20,a8,L
+	move	@P1DATA+ply_meter_imgs+020H,a8,L
 	jrz	#tag0
 	move	*a8(OIMG),a1,L
 ;	cmpi	METERr,a1
@@ -1544,7 +1544,7 @@ tv4	movi	tvid,a0			;Delete big clock at botm of scrn
 	calla	obj_aniq_cnoff
 	jruc	#tag1a
 #tag1
-	move	@P2DATA+ply_meter_imgs+>20,a8,L
+	move	@P2DATA+ply_meter_imgs+020H,a8,L
 	jrz	#tag1a
 	move	*a8(OIMG),a1,L
 
@@ -1577,7 +1577,7 @@ tv4	movi	tvid,a0			;Delete big clock at botm of scrn
 	calla	obj_aniq_cnoff
 	jruc	#tag2a
 #tag3
-	move	@P3DATA+ply_meter_imgs+>20,a8,L
+	move	@P3DATA+ply_meter_imgs+020H,a8,L
 	jrz	#tag2a
 	move	*a8(OIMG),a1,L
 
@@ -1623,7 +1623,7 @@ tv4	movi	tvid,a0			;Delete big clock at botm of scrn
 	calla	obj_aniq_cnoff
 	jruc	xo
 #tag4
-	move	@P4DATA+ply_meter_imgs+>20,a8,L
+	move	@P4DATA+ply_meter_imgs+020H,a8,L
 	jrz	xo
 	move	*a8(OIMG),a1,L
 
@@ -1636,7 +1636,8 @@ tv4	movi	tvid,a0			;Delete big clock at botm of scrn
 	movi	MSGOCTRL,a1
 	calla	obj_aniq_cnoff
 xo	PULL	a8,a11
-	rets
+	rets
+
 #****************************************************************
 * Print credits or free play message in top score board
 *
@@ -1657,7 +1658,7 @@ xo	PULL	a8,a11
 	srl	32-4-5,a0		;*32
 	addi	#numbs,a0
 	move	*a0,a2,L
-	movi	>d7,a0
+	movi	0d7H,a0
 	movk	3,a1
 	sll	16,a0
 	sll	16,a1
@@ -1673,7 +1674,7 @@ xo	PULL	a8,a11
 	srl	32-4-5,a9		;*32
 	addi	#numbs,a9
 	move	*a9,a2,L
-	movi	>d7-5,a0
+	movi	0d7H-5,a0
 	movk	3,a1
 	sll	16,a0
 	sll	16,a1
@@ -1685,7 +1686,7 @@ xo	PULL	a8,a11
 freep
 	movi	freeply,a2
 free1	movk	3,a1			;Y
-	movi	>b3,a0
+	movi	0b3H,a0
 	sll	16,a0
 	sll	16,a1
 	movi	949,a3			;Z
@@ -1762,13 +1763,13 @@ free1	movk	3,a1			;Y
 	addi	timer_table-10h,a0
 	move	*a0,a1
 	move	@PSTATUS,a0
-	cmpi	>f,a0
+	cmpi	0fH,a0
 	jrnz	#not4
 ;In a 4 plyr game, make clock go faster!
 	addi	200h,a1			;100h
 #not4
 
-;	movi	>ffff,a1
+;	movi	0ffffH,a1
 
 	move	@clock_speed,a0
 	add	a1,a0
@@ -1821,20 +1822,20 @@ free1	movk	3,a1			;Y
 
 ;rearrange top clock to allow tenths of seconds
 
-     	move	@clock_imgs+>20,a0,L
+     	move	@clock_imgs+020H,a0,L
 	movi	186,a1
 	move	a1,*a0(OXPOS)
 	
-     	move	@clock_imgs+>40,a0,L
+     	move	@clock_imgs+040H,a0,L
 	movi	194,a1
 	move	a1,*a0(OXPOS)
 
-     	move	@clock_imgs+>60,a0,L
-	movi	>cb,a1
+     	move	@clock_imgs+060H,a0,L
+	movi	0cbH,a1
 	move	a1,*a0(OXPOS)
 
-     	move	@clock_imgs+>0,a0,L
-	movi	>d4,a1
+     	move	@clock_imgs+00H,a0,L
+	movi	0d4H,a1
 	move	a1,*a0(OXPOS)
 
 ;Possibly rearrange bottom clock piece also!
@@ -1870,13 +1871,13 @@ free1	movk	3,a1			;Y
 	move	*a8(OCTRL),a1
 	calla	obj_aniq
 	move	@bclok_imgs+32,a1,L
-	movi	>136,a0
+	movi	0136H,a0
 	move	a0,*a1(OXPOS)
 	move	@bclok_imgs+64,a1,L
-	movi	>116,a0
+	movi	0116H,a0
 	move	a0,*a1(OXPOS)
 	move	@bclok_imgs+96,a1,L
-	movi	>120,a0
+	movi	0120H,a0
 	move	a0,*a1(OXPOS)
 	jruc	#lp1
 
@@ -1884,20 +1885,20 @@ free1	movk	3,a1			;Y
 #tag3
 ;Rearrange clock imgs so they are correct
 
-     	move	@clock_imgs+>20,a0,L
-	movi	>c8,a1
+     	move	@clock_imgs+020H,a0,L
+	movi	0c8H,a1
 	move	a1,*a0(OXPOS)
 	
-     	move	@clock_imgs+>40,a0,L
-	movi	>d0,a1
+     	move	@clock_imgs+040H,a0,L
+	movi	0d0H,a1
 	move	a1,*a0(OXPOS)
  
-     	move	@clock_imgs+>60,a0,L
-	movi	>c4,a1
+     	move	@clock_imgs+060H,a0,L
+	movi	0c4H,a1
 	move	a1,*a0(OXPOS)
 
-     	move	@clock_imgs+>0,a0,L
-	movi	>bb,a1
+     	move	@clock_imgs+00H,a0,L
+	movi	0bbH,a1
 	move	a1,*a0(OXPOS)
 
 	move	@tvpanelon,a0,L
@@ -1922,7 +1923,7 @@ free1	movk	3,a1			;Y
 	move	@_4plyrsingame,a0
 	jrnz	#skip
 	move	@PSTATUS,a0
-	cmpi	>f,a0
+	cmpi	0fH,a0
 	jrz	#skip
 	movk	1,a0
 	move	a0,@_4plyrsingame
@@ -2095,8 +2096,8 @@ qrtrt1	.long	qrtr1,qrtr2,qrtr3,qrtr4,qrtr4,qrtr4,qrtr4
 prt_qrtr
 	movi	CLSDEAD|qrtrid,a0
 	calla	obj_del1c		;kill credit/qrtr imgs
-	movi	[>b9,0],a0
-	movi	[>68,0],a1
+	movi	[0b9H,0],a0
+	movi	[068H,0],a1
 	movi	987,a3
 	movi	DMAWNZ|M_NOCOLL|M_3DQ,a4
 	move	@gmqrtr,a2
@@ -2162,7 +2163,7 @@ prt_qrtr
 	move	*a11(ply_meter_imgs+40h),a2,L	;LITUP img 
 	clr	a1
 	move	a1,*a2(OFSET)
-	movi	>2f,a2	;2f	 		;OSIZEX of litup meter img
+	movi	02fH,a2	;2f	 		;OSIZEX of litup meter img
 	move	a2,*a11(ply_turbo)		;max out turbo meter
 	movk	1,a2
 	move	a2,*a11(ply_turbo_dl)		;turbo cnt delay
@@ -2288,9 +2289,9 @@ flsh_bgnd
 
 threepnts_drw
 	movi	[19,0],a1			;18
-	movi	[>c8,0],a0
+	movi	[0c8H,0],a0
 	movi	threepnts,a2
-	movi	>7590,a3
+	movi	07590H,a3
 	movi	DMAWNZ|M_NOCOLL|M_SCRNREL,a4
 	movi	CLSDEAD,a5
 	clr	a6
@@ -2315,7 +2316,7 @@ tmodex	.long	[20,0],[6ch,0],[0d7h,0],[12eh,0]
 
 	movi	[202,0],a1			;18
 	movi	nosecrets,a2
-	movi	>7590,a3
+	movi	07590H,a3
 	movi	DMAWNZ|M_NOCOLL|M_SCRNREL,a4
 	movi	CLSDEAD,a5
 	clr	a6
@@ -2387,7 +2388,7 @@ tmodex	.long	[20,0],[6ch,0],[0d7h,0],[12eh,0]
 	sll	5,a0
 	addi	leds,a0
 	move	*a0,a0,L
-	move	@clock_imgs+>20,a8,L
+	move	@clock_imgs+020H,a8,L
 	move	*a8(OCTRL),a1
 	calla	obj_aniq
 
@@ -2395,7 +2396,7 @@ tmodex	.long	[20,0],[6ch,0],[0d7h,0],[12eh,0]
 	sll	5,a0
 	addi	leds,a0
 	move	*a0,a0,L
-	move	@clock_imgs+>40,a8,L
+	move	@clock_imgs+040H,a8,L
 	move	*a8(OCTRL),a1
 	calla	obj_aniq
 
@@ -2875,7 +2876,7 @@ reg	movi	#init_t,a11
 #tag4	sll	5,a0
 	addi	numbs,a0
 	move	*a0,a0,L
-	move	@bclok_imgs+>20,a8,L
+	move	@bclok_imgs+020H,a8,L
 	move	*a8(OCTRL),a1
 	calla	obj_aniq
 
@@ -2883,7 +2884,7 @@ reg	movi	#init_t,a11
 	sll	5,a0
 	addi	numbs,a0
 	move	*a0,a0,L
-	move	@bclok_imgs+>40,a8,L
+	move	@bclok_imgs+040H,a8,L
 	move	*a8(OCTRL),a1
 	calla	obj_aniq
 
@@ -2891,7 +2892,7 @@ reg	movi	#init_t,a11
 	sll	5,a0
 	addi	numbs,a0
 	move	*a0,a0,L
-	move	@bclok_imgs+>60,a8,L
+	move	@bclok_imgs+060H,a8,L
 	move	*a8(OCTRL),a1
 	calla	obj_aniq
 	rets
@@ -2911,11 +2912,11 @@ reg	movi	#init_t,a11
 #init_t2
 	.word	9,185,5000
 	.long	clock2
-	.word	>130,230,5000
+	.word	0130H,230,5000
 	.long	font90
-	.word	>116,230,5000
+	.word	0116H,230,5000
 	.long	font90
-	.word	>120,230,5000
+	.word	0120H,230,5000
 	.long	font90
 
 	.word	4000
@@ -3159,21 +3160,21 @@ bnumbs
 
 
 #init_t
-	.word	>13d,>e0,5000
+	.word	013dH,0e0H,5000
 	.long	shotclok
-	.word	>13d+9,>d9,5000
+	.word	013dH+9,0d9H,5000
 	.long	BigLED_0		;font90r
-	.word	>13d+>1c,>d9,5000
+	.word	013dH+01cH,0d9H,5000
 	.long	BigLED_0		;font90r
 
 	.word	4000
 
 #init_t2
-	.word	>1c,>e0,5000
+	.word	01cH,0e0H,5000
 	.long	shotclok
-	.word	>24,>d9,5000
+	.word	024H,0d9H,5000
 	.long	BigLED_0		;font90r
-	.word	>37,>d9,5000
+	.word	037H,0d9H,5000
 	.long	BigLED_0		;font90r
 
 	.word	4000
@@ -3440,7 +3441,7 @@ do_drop
 	jrnz	#tag01
 	movi	init_t1a,a11
 	movi	P1DATA+ply_messages,a9
-	movk	>0e,a4
+	movk	00eH,a4
 	clr	a5
 	jruc	#tago
 
@@ -3448,7 +3449,7 @@ do_drop
 	jrnz	#tag02
 	movi	init_t2a,a11
 	movi	P2DATA+ply_messages,a9
-	movk	>0d,a4
+	movk	00dH,a4
 	movk	1,a5
 	jruc	#tago
 
@@ -3456,14 +3457,14 @@ do_drop
 	jrnz	#tag03
 	movi	init_t3a,a11
 	movi	P3DATA+ply_messages,a9
-	movk	>0b,a4
+	movk	00bH,a4
 	movk	2,a5
 	jruc	#tago
 
 #tag03
 	movi	init_t4a,a11
 	movi	P4DATA+ply_messages,a9
-	movk	>07,a4
+	movk	007H,a4
 	movk	3,a5
 
 #tago	move	a7,a3
@@ -3477,11 +3478,11 @@ do_drop
 	move	*a3(ply_meter_imgs),a0,L
 ;	calla	DELOBJ
 	calla	OBJOFF
-	move	*a3(ply_meter_imgs+>20),a0,L
+	move	*a3(ply_meter_imgs+020H),a0,L
 	calla	OBJOFF
-	move	a2,*a3(ply_meter_imgs+>20),L
+	move	a2,*a3(ply_meter_imgs+020H),L
 ;	calla	DELOBJ
-	move	*a3(ply_meter_imgs+>40),a0,L
+	move	*a3(ply_meter_imgs+040H),a0,L
 	calla	OBJOFF
 ;	calla	DELOBJ
 
@@ -3506,7 +3507,7 @@ do_drop
 	move	*a13(PDATA),a1
 	or	a0,a1
 	move	a1,*a13(PDATA)
-	cmpi	>f,a1
+	cmpi	0fH,a1
 	jrnz	#lp
 	move	a9,a0
 	sll	4,a0
@@ -3793,16 +3794,16 @@ do_drop
 
 	DIE
 
-win_snd		.word	>f3ff,>8,>80a5,0	;Winner snd/Suckup credits
+win_snd		.word	0f3ffH,08H,080a5H,0	;Winner snd/Suckup credits
 
 flshme
 ;flash player white to alert him
 	move	*a8(OPLINK),a0,L
 	move	*a0(plyr_headobj_p),a9,L
 
-	movi	>f8f8,a2
+	movi	0f8f8H,a2
 	move	a2,*a8(OCONST)
-	movi	>3f3f,a2
+	movi	03f3fH,a2
 	move	a2,*a9(OCONST)
 
 	movk	7,a10
@@ -4116,7 +4117,7 @@ flshme
 	movk	3,a3
 	cmpi	2,a0
 	jrz	#tag1
-	movk	>c,a3
+	movk	0cH,a3
 #tag1	move	@plyr_maxpower,a0
 	or	a3,a0
 	move	a0,@plyr_maxpower
@@ -4267,7 +4268,7 @@ flshme
 	movk	3,a3
 	cmpi	2,a0
 	jrz	#tag1
-	movk	>c,a3
+	movk	0cH,a3
 #tag1	move	@stlpower,a0
 	or	a3,a0
 	move	a0,@stlpower
@@ -4379,13 +4380,13 @@ ck_baby
 #lp	SLEEPK	1
 	move	a9,a0
 	calla	get_stick_val_cur
-	cmpi	>a,a0			;down/right
+	cmpi	0aH,a0			;down/right
 	jrnz	#lp
 	move	a9,a0
 	calla	get_but_val_cur
 ;	move	@SWITCH,a0
 ;	zext	a0
-;	cmpi	>ffff,a0
+;	cmpi	0ffffH,a0
 	jrnz	#tag1
 	clr	a11
 	jruc	#lp

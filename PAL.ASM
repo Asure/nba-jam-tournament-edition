@@ -122,7 +122,7 @@ morfpal11	equ	FADERAM+10*16*64
 
 ;Turmell
 	movi	NUMPAL-1,a3		;Chk all pals
-	movi	>0101,a4		;2nd PAL #
+	movi	00101H,a4		;2nd PAL #
 
 #lp	move	@OBJLST,a0,L
 	jrz	cp30			;No objs, chk backgnd
@@ -156,11 +156,11 @@ cp60
 cp70	clr	a0			;Palette not used, free it
 	move	a0,*a2,L
 
-cp80	addi	>0101,a4		;Next pal
+cp80	addi	00101H,a4		;Next pal
 	.if	PAL64
 	btst	4,a4
 	jrz	cp90
-	addi	>3030,a4
+	addi	03030H,a4
 	sext	a4			;For compare
 	.endif
 
@@ -174,7 +174,7 @@ cp90	addk	PALRSIZ,a2
 #*******************************
 * Find the color map # to which the given palette is assigned
 * A0=*Pallette
-* >A0=PAL # (DMA format) or 0 (Z)
+* 0A0H=PAL # (DMA format) or 0 (Z)
 * Trashes scratch
 
  SUBR	pal_find
@@ -196,7 +196,7 @@ cp90	addk	PALRSIZ,a2
 	move	b0,a1
 
 	.if	PAL64
-	movk	>f,a14
+	movk	0fH,a14
 	and	a1,a14		;A14=4 low bits
 	srl	4,a1		;Move B4/B5 to B6/B7
 	sll	6,a1
@@ -223,7 +223,7 @@ cp90	addk	PALRSIZ,a2
 
 	PUSH	a2,a3
 
-	movi	PALRAM,a1	;>Check if palette already exists
+	movi	PALRAM,a1	;0CHheck if palette already exists
 ;Turmell
 	movi	NUMPAL,a3
 gfp4	move	*a1+,a2,L	;Get *palette
@@ -231,7 +231,7 @@ gfp4	move	*a1+,a2,L	;Get *palette
 	jreq	getpn		;Already in color ram?
 	dsj	a3,gfp4
 
-	movi	PALFRAM,a1	;>Check for a spare palette
+	movi	PALFRAM,a1	;0CHheck for a spare palette
 ;Turmell
 	movi	NMFPAL,a3
 gfp8	move	*a1+,a2,L
@@ -244,7 +244,7 @@ gfp8	move	*a1+,a2,L
 	.endif
 	callr	pal_clean
 
-	movi	PALFRAM,a1	;>Check for a spare palette
+	movi	PALFRAM,a1	;0CHheck for a spare palette
 ;Turmell
 	movi	NMFPAL,a3
 gfp20	move	*a1+,a2,L
@@ -270,7 +270,7 @@ gfp20	move	*a1+,a2,L
 
 	PUSH	a2,a3
 
-	movi	PALRAM,a1	;>Check if palette already exists
+	movi	PALRAM,a1	;0CHheck if palette already exists
 ;Turmell
 	movi	NUMPAL,a3
 gbp4	move	*a1+,a2,L	;Get *palette
@@ -278,7 +278,7 @@ gbp4	move	*a1+,a2,L	;Get *palette
 	jreq	getpn		;Already in color ram?
 	dsj	a3,gbp4
 
-	movi	PALBRAM,a1	;>Check for a spare palette
+	movi	PALBRAM,a1	;0CHheck for a spare palette
 	movk	NMBPAL,a3
 gbp8	move	*a1+,a2,L
 	jrz	gbp30		;Palette empty? Grab it
@@ -290,7 +290,7 @@ gbp8	move	*a1+,a2,L
 	.endif
 	callr	pal_clean
 
-	movi	PALBRAM,a1	;>Check for a spare palette
+	movi	PALBRAM,a1	;0CHheck for a spare palette
 	movk	NMBPAL,a3
 gbp10	move	*a1+,a2,L
 	jrz	gbp30		;Palette empty? Grab it
@@ -313,7 +313,7 @@ gbp30	PUSH	a0,a1
 	neg	a1
 
 	.if	PAL64
-	movk	>f,a2
+	movk	0fH,a2
 	and	a1,a2		;A2=4 low bits
 	srl	4,a1		;Move B4/B5 to B6/B7
 	sll	6,a1
@@ -332,7 +332,7 @@ getpn	subi	NUMPAL,a3	;Compute palette #
 	neg	a3
 
 	.if	PAL64
-	movk	>f,a1
+	movk	0fH,a1
 	and	a3,a1		;A2=4 low bits
 	srl	4,a3		;Move B4/B5 to B6/B7
 	sll	6,a3
@@ -514,9 +514,9 @@ getpn	subi	NUMPAL,a3	;Compute palette #
 ;	move	a14,*a0+
 ;	SLL	23,A14		;TOP BITS OF FIELD ARE FLAGS
 ;	SRL	23,A14		;ONLY 9 BITS NEEDED FOR # COLORS
-;	MOVI	>7C00,A4	;A4 - PRE MULT MASK FOR 5 BITS OF RED
-;;	MOVI	>03E0,A6	;A6 - PRE MULT MASK FOR 5 BITS OF GREEN
-;;	MOVI	>001F,A8	;A8 - PRE MULT MASK FOR 5 BITS OF BLUE
+;	MOVI	07C00H,A4	;A4 - PRE MULT MASK FOR 5 BITS OF RED
+;;	MOVI	003E0H,A6	;A6 - PRE MULT MASK FOR 5 BITS OF GREEN
+;;	MOVI	0001FH,A8	;A8 - PRE MULT MASK FOR 5 BITS OF BLUE
 ;	MOVE	A4,A9
 ;;	MOVE	A6,A10
 ;;	MOVE	A8,A11
@@ -750,13 +750,13 @@ fo800	DIE
 	sll	32-9,a14	;Remove any flags
 	srl	32-9,a14	;9 bits needed for # colors
 
-pf1c	movk	>1f,a8		;A8=5 bit color mask
+pf1c	movk	01fH,a8		;A8=5 bit color mask
 
 pf100	move	*a1+,a3
-	movk	>1f,a7
+	movk	01fH,a7
 	and	a3,a7		;A7=Blue
 	srl	5,a3
-	movk	>1f,a5
+	movk	01fH,a5
 	and	a3,a5		;A5=Green
 	srl	5,a3		;A3=Red
 
@@ -849,7 +849,7 @@ fbfx	PULL	a2,a6,a7,a8,a9,a10
 fadeonep
 
 	.if	PAL64
-	movk	>f,a2
+	movk	0fH,a2
 	and	a9,a2		;A2=4 low bits
 	srl	4,a9		;Move B4/B5 to B6/B7
 	sll	6,a9
@@ -948,7 +948,7 @@ ptwx	PULL	a2,a6,a7,a8,a9,a10
 
 brightenonep
 	.if	PAL64
-	movk	>f,a2
+	movk	0fH,a2
 	and	a9,a2		;A2=4 low bits
 	srl	4,a9		;Move B4/B5 to B6/B7
 	sll	6,a9
@@ -1038,13 +1038,13 @@ abaex	DIE
 	sll	23,a14		;Remove any flags
 	srl	23,a14		;9 bits needed for # colors
 
-pb1c	movk	>1f,a8		;A8=Mask for 5 bits of color
+pb1c	movk	01fH,a8		;A8=Mask for 5 bits of color
 
 pb100	move	*a1+,a3
-	movk	>1f,a7
+	movk	01fH,a7
 	and	a3,a7		;A7=Blue
 	srl	5,a3
-	movk	>1f,a5
+	movk	01fH,a5
 	and	a3,a5		;A5=Green
 	srl	5,a3		;A3=Red
 
@@ -1169,10 +1169,10 @@ pbbok	sll	10,a3
 #fade_loop
 
 	move	@irqskyeo,a11
-	movk	>1f,a7
+	movk	01fH,a7
 	and	a11,a7		;A7  = Blue
 	srl	5,a11
-	movk	>1f,a9
+	movk	01fH,a9
 	and	a11,a9		;A9  = Green
 	srl	5,a11		;A11 = Red
 
@@ -1217,10 +1217,10 @@ pbbok	sll	10,a3
 
 #copy_loop
 	move	*a2+,a11
-	movk	>1f,a7
+	movk	01fH,a7
 	and	a11,a7		;A7  = Blue
 	srl	5,a11
-	movk	>1f,a9
+	movk	01fH,a9
 	and	a11,a9		;A9  = Green
 	srl	5,a11		;A11 = Red
 

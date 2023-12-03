@@ -1,4 +1,4 @@
-**************************************************************
+#**************************************************************
 * GSP MULTI-PROCESSING SYSTEM
 *
 * Software:	Eugene P Jarvis, Shawn Liptak
@@ -55,7 +55,7 @@ FREE	.long	0
 
 ********************************
 * Process list initialize
-* >A13=*Process active list
+* 0A13H=*Process active list
 * Trashes scratch
 
  SUBR	process_init
@@ -129,7 +129,7 @@ PRCLSP	move	a13,a1
 	move	a0,-*a1			;sleep
 
 
-;D3PTS	.equ	>120		;UHL *Points array (Cnt, XYZ,XYZ..)
+;D3PTS	.equ	0120H		;UHL *Points array (Cnt, XYZ,XYZ..)
 ;	.ref	d3vis_p
 ;
 ;	PUSH	a0,a1			;DEBUG
@@ -164,8 +164,8 @@ prcd1
 	jrgt	prcd1			;Not ready?
 
 
-	move	a13,a1			;>Dispatch
-	addi	>40,a1
+	move	a13,a1			;0DHispatch
+	addi	040H,a1
 	mmfm	a1,a7,a8,a9,a10,a11,a12	;*Wake, regs, *stack
 	jump	a7			;Do process
 
@@ -306,7 +306,7 @@ killerr
 * Create a process
 * A1=PID, A7=PC, A8,A9,A10,A11 Passed parameters
 * A13=*Current process
-* >A0=*Created process (Flags invalid!)
+* 0A0H=*Created process (Flags invalid!)
 * Trashes A14,B0-B1
 
 GETPRC
@@ -419,7 +419,7 @@ KILALLN
 	move	a2,b0
 	move	a3,b1
 
-	zext	a1		;Won't kill PIDS >8000+
+	zext	a1		;Won't kill PIDS 08000H+
 	andn	a1,a0		;Form match
 	movi	ACTIVE,a2
 

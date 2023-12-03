@@ -1,4 +1,4 @@
-**************************************************************
+#**************************************************************
 *
 * Software:		Shawn Liptak, Mark Turmell
 * Initiated:		7/17/90
@@ -41,12 +41,12 @@
 	.ref	SOUNDSUP
 	.ref	QSNDRST
 
-tip_snd		.word	>f9fe,175,>818d,0	;Here's the tip
-;tuneq1_snd	.word	>f3ff,>8,>8008,0	;Quarter 1 tune
-tuneq1_snd	.word	>f3ff,>8,>8002,0	;Quarter 1 tune
-eat_snd		.word	>f31f,>10,>80a7,0	;Suck up credit snd
-organ1_snd	.word	>f3ff,>8,>80ae,0
-organ2_snd	.word	>f3ff,>8,>80af,0
+tip_snd		.word	0f9feH,175,0818dH,0	;Here's the tip
+;tuneq1_snd	.word	0f3ffH,08H,08008H,0	;Quarter 1 tune
+tuneq1_snd	.word	0f3ffH,08H,08002H,0	;Quarter 1 tune
+eat_snd		.word	0f31fH,010H,080a7H,0	;Suck up credit snd
+organ1_snd	.word	0f3ffH,08H,080aeH,0
+organ2_snd	.word	0f3ffH,08H,080afH,0
 
 
 ;symbols externally defined
@@ -284,7 +284,7 @@ GND_Y		.equ	116-40	;Master in NDSP1
 	movi	STCKST,sp		;Top of stack
 
 	.if	DEBUG
-	move	a0,@>1e00000		;Clr FPGA rom protect
+	move	a0,@01e00000H		;Clr FPGA rom protect
 	.endif
 
 					;>Manual sound board reset
@@ -324,7 +324,7 @@ GND_Y		.equ	116-40	;Master in NDSP1
 
 ;MJT
 ;	move	@clipsrunning,a0,L	;>Restore game if clips crashed
-;	cmpi	>12345678,a0
+;	cmpi	012345678H,a0
 ;	jrne	#notclip		;Not a clip reset?
 ;
 ;	calla	io_init			;Initialize the I/O regs
@@ -378,7 +378,7 @@ PCMOSRET
 	calla	INIT_TAB		;Reset todays high score table
 
 ;	movk	1,a0
-;	move	a0,@>fff80000,L
+;	move	a0,@0fff80000H,L
 
 	.if	DEBUG
 	callr	testcode
@@ -1260,8 +1260,8 @@ paidcreds_add
 * Set the messages to the in game state
 * A11=*PxDATA
 
-LEDOCTRL	.equ	DMAWNZ|>3000	;3 bits per pixel (In BB.asm)
-MSGOCTRL	.equ	DMAWNZ|>6000
+LEDOCTRL	.equ	DMAWNZ|03000H	;3 bits per pixel (In BB.asm)
+MSGOCTRL	.equ	DMAWNZ|06000H
 
  SUBRP	plyr_setmsgsingame
 
@@ -1316,7 +1316,7 @@ add_plyr_time
 	move	*a11(ply_meter_imgs),a0,L
 	jrz	#nxt
 
-	move	*a11(ply_meter_imgs+>20),a0,L
+	move	*a11(ply_meter_imgs+020H),a0,L
 	move	*a0(OIMG),a1,L
 	cmpi	start,a1
 	jrnz	#nxt
@@ -1508,7 +1508,7 @@ paid_t	.long	P1DATA+crds_paid,P2DATA+crds_paid,P3DATA+crds_paid
 
 	JSRP	scrn_scaleininit	;Hide display
 
-	movi	security_chk->1df60,a8
+	movi	security_chk-01df60H,a8
 
 	movk	1,a0
 	move	a0,@dpageflip		;ON
@@ -1541,10 +1541,10 @@ paid_t	.long	P1DATA+crds_paid,P2DATA+crds_paid,P3DATA+crds_paid
 ;-----------
 ;This is checksummed!
 seccall1
-	move	a8,a1			;>Check security
-	addi	>1df60,a1
+	move	a8,a1			;0CHheck security
+	addi	01df60H,a1
 	getpc	a7
-	addi	>40,a7
+	addi	040H,a7
 	move	a7,-*sp,L
 	jump	a1			;Rets: A0=0 if OK!
 seccall1end
@@ -1708,7 +1708,7 @@ seccall1end
 	callr	start_arws
 
 ;	move	@SWITCH,a0
-;	andi	>7072,a0
+;	andi	07072H,a0
 ;	jrnz	#no3d
 ;
 ;	move	@GAMSTATE,a0
@@ -1825,7 +1825,7 @@ crt_pals_z
 ;	movi	ARWPID,a0
 ;	calla	obj_del1c
 
-	movk	3,a8			;>Do init stuff for humans
+	movk	3,a8			;0DHo init stuff for humans
 #psilp
 	movi	PDSIZE,a11
 	mpyu	a8,a11
@@ -2063,10 +2063,10 @@ scream_snd
 
 	.def	scrm1_snd,scrm2_snd,scrm3_snd,scrm4_snd
 
-scrm1_snd	.word	>f540,10,>813d,0
-scrm2_snd	.word	>f040,10,>814b,0
-scrm3_snd	.word	>f440,10,>815e,0
-scrm4_snd	.word	>f540,10,>815f,0	;<--- check channel on this
+scrm1_snd	.word	0f540H,10,0813dH,0
+scrm2_snd	.word	0f040H,10,0814bH,0
+scrm3_snd	.word	0f440H,10,0815eH,0
+scrm4_snd	.word	0f540H,10,0815fH,0	;<--- check channel on this
 
 #*******************************
 * Initialize the game objs
@@ -2112,7 +2112,7 @@ scrm4_snd	.word	>f540,10,>815f,0	;<--- check channel on this
 
 	btst	B_3DQ,a4
 	jrz	#next
-					;>Convert 3D to 3DQ
+					;0CHonvert 3D to 3DQ
 	add	a9,a3
 	subi	GZBASE,a3
 	move	a3,a6
@@ -2135,7 +2135,7 @@ scrm4_snd	.word	>f540,10,>815f,0	;<--- check channel on this
 
 
 	move	*a8(OXVAL),a7,L		;X
-	subi	[>2000,0],a7
+	subi	[02000H,0],a7
 	move	*a8(OXANI),a5,L
 	add	a5,a7
 	sra	16-5,a7			;/2048 (leave 5 bits frac)
@@ -2178,37 +2178,37 @@ scrm4_snd	.word	>f540,10,>815f,0	;<--- check channel on this
 	.asg	CZMID,Z
 
 #init_t
-	.word	>ff4a+3,>ff49+Y-5,Z-18,18,F
+	.word	0ff4aH+3,0ff49H+Y-5,Z-18,18,F
 	.long	hooptop
-	.word	>ff58+3,>ff46-7+Y,Z+1,0,F
+	.word	0ff58H+3,0ff46H-7+Y,Z+1,0,F
 	.long	hoopbot
-	.word	>ff27+3,>ff4b+2+Y,Z-17,17,F
+	.word	0ff27H+3,0ff4bH+2+Y,Z-17,17,F
 	.long	back2
 	WL	4001,backboard_ani
-	.word	>ff75+3,>ff7a+2+Y-1,Z,0,F
+	.word	0ff75H+3,0ff7aH+2+Y-1,Z,0,F
 	.long	rimbase
-	.word	>ff78+3,>ff7d+2+Y,Z-10,0,F
+	.word	0ff78H+3,0ff7dH+2+Y,Z-10,0,F
 	.long	rim1b
 	WL	4002,rimlb
-	.word	>ff7a+3,>ff7a+2+Y,Z+10,0,F
+	.word	0ff7aH+3,0ff7aH+2+Y,Z+10,0,F
 	.long	rim1f
 	WL	4002,rimlf
 
 	.asg	2,X
 
-	.word	X+>241,>ff49+Y-5,Z-18,18,FF
+	.word	X+0241H,0ff49H+Y-5,Z-18,18,FF
 	.long	hooptop
-	.word	X+>234,>ff46-7+Y,Z,0,FF
+	.word	X+0234H,0ff46H-7+Y,Z,0,FF
 	.long	hoopbot
-	.word	X+>267,>ff4b+2+Y,Z-17,17,FF
+	.word	X+0267H,0ff4bH+2+Y,Z-17,17,FF
 	.long	back2
 	WL	4001,backboard_svrptr
-	.word	X+>215+2,>ff7a+2+Y-1,Z,0,FF
+	.word	X+0215H+2,0ff7aH+2+Y-1,Z,0,FF
 	.long	rimbase
-	.word	X+>212,>ff7d+2+Y,Z-10,0,FF
+	.word	X+0212H,0ff7dH+2+Y,Z-10,0,FF
 	.long	rim1b
 	WL	4002,rimrb
-	.word	X+>210,>ff7a+2+Y,Z+10,0,FF
+	.word	X+0210H,0ff7aH+2+Y,Z+10,0,FF
 	.long	rim1f
 	WL	4002,rimrf
 
@@ -2245,19 +2245,19 @@ scrm4_snd	.word	>f540,10,>815f,0	;<--- check channel on this
 	.asg	100,X
 	.asg	-12,Y
 
-	.word	>fec8,Y-95,200,0,0
+	.word	0fec8H,Y-95,200,0,0
 	.long	topcrwd
-	.word	>fec8,Y,200,0,0
+	.word	0fec8H,Y,200,0,0
 	.long	crowd40
 	WL	4002,bigcrwd1_ptr
-	.word	>54,Y-95,200,0,0
+	.word	054H,Y-95,200,0,0
 	.long	topcrwd
-	.word	>54,Y,200,0,0
+	.word	054H,Y,200,0,0
 	.long	crowd40
 	WL	4002,bigcrwd2_ptr
-	.word	>36a,Y-95,200,0,M_FLIPH
+	.word	036aH,Y-95,200,0,M_FLIPH
 	.long	topcrwd
-	.word	>36a,Y,200,0,M_FLIPH
+	.word	036aH,Y,200,0,M_FLIPH
 	.long	crowd40
 	WL	4002,bigcrwd3_ptr
 
@@ -2268,40 +2268,40 @@ scrm4_snd	.word	>f540,10,>815f,0	;<--- check channel on this
 	.word	X-245,Y,Z,0,F
 	.long	crowd3
 	WL	4002,crwd5_ptr
-	.word	>2a,Y,Z,0,F
+	.word	02aH,Y,Z,0,F
 	.long	newtbl3
-	.word	>1ef,Y,Z,0,FF
+	.word	01efH,Y,Z,0,FF
 	.long	crowd3
 	WL	4002,crwd6_ptr
 
 	.asg	200-63,X
 	.asg	-48,Y
 	.asg	947,Z
-	.word	>fed9,>ffcc,Z+8,0,F
+	.word	0fed9H,0ffccH,Z+8,0,F
 	.long	usher
-	.word	>ffa4+12-20,>ffc0,Z,0,F
+	.word	0ffa4H+12-20,0ffc0H,Z,0,F
 	.long	usher
-	.word	>35,>ffc6,Z,0,FF
+	.word	035H,0ffc6H,Z,0,FF
 	.long	usher
-	.word	>16a,>ffd6-12,Z,0,FF
+	.word	016aH,0ffd6H-12,Z,0,FF
 	.long	usher
-	.word	>1ef,>ffc0-0,Z,0,FF
+	.word	01efH,0ffc0H-0,Z,0,FF
 	.long	usher
-	.word	>2b4,>ffcf,Z+5,0,FF
+	.word	02b4H,0ffcfH,Z+5,0,FF
 	.long	usher
 	.word	X-256-177+1,Y+2,Z,0,F
 	.long	crowd2b
 
-	.word	>ff85,>ffd0,Z,0,F
+	.word	0ff85H,0ffd0H,Z,0,F
 	.long	crowd2a
 	WL	4002,crwd3_ptr
 
-	.word	>ff83,>ffcf,Z,0,F
+	.word	0ff83H,0ffcfH,Z,0,F
 	.long	newtbl2
 
-	.word	>7f,>ffcf,Z,0,F
+	.word	07fH,0ffcfH,Z,0,F
 	.long	table2
-	.word	>203,>ffd0,Z,0,FF
+	.word	0203H,0ffd0H,Z,0,FF
 	.long	crowd2a
 	WL	4002,crwd4_ptr
 
@@ -2313,10 +2313,10 @@ scrm4_snd	.word	>f540,10,>815f,0	;<--- check channel on this
 	.asg	985,Z
 	.word	X-438,Y-3,Z,0,F
 	.long	crowd1b
-	.word	>ffb0,>ffd9,Z,0,F
+	.word	0ffb0H,0ffd9H,Z,0,F
 	.long	crowd1a
 	WL	4002,crwd1_ptr
-	.word	>ff98,>ffd9,Z,0,F
+	.word	0ff98H,0ffd9H,Z,0,F
 	.long	newtbl1
 
 
@@ -2324,12 +2324,12 @@ scrm4_snd	.word	>f540,10,>815f,0	;<--- check channel on this
 ************************************************************************
 
 ;Advertisement on left side of scrn
-	.word	>ffa5,>ffd9,Z,0,F
+	.word	0ffa5H,0ffd9H,Z,0,F
 	.long	ad1				;ad at left
 	WL	4002,ad1_ptr
 
 ;Advertisement on rgt side of scrn
-	.word	>dd,>ffd3,Z,0,F
+	.word	0ddH,0ffd3H,Z,0,F
 	.long	ad2				;ad at left
 	WL	4002,ad2_ptr
 
@@ -2345,7 +2345,7 @@ scrm4_snd	.word	>f540,10,>815f,0	;<--- check channel on this
 
 
 
-	.word	>1db,>ffd9,Z,0,FF		;for animating top crowd
+	.word	01dbH,0ffd9H,Z,0,FF		;for animating top crowd
 	.long	crowd1a
 	WL	4002,crwd2_ptr
 
@@ -2356,7 +2356,7 @@ scrm4_snd	.word	>f540,10,>815f,0	;<--- check channel on this
 	.long	cdre0
 
 
-	.word	>18b,7,Z-50,50,FF	;flipped camera guy reflections
+	.word	018bH,7,Z-50,50,FF	;flipped camera guy reflections
 	.long	cdre0
 
 
@@ -2364,37 +2364,37 @@ scrm4_snd	.word	>f540,10,>815f,0	;<--- check channel on this
 	.asg	985,Z
 
 ;Fill in crowd 8 - Duplicate!
-;	.word	>FEc0,>FFDE,Z,0,F
+;	.word	0FEc0H,0FFDEH,Z,0,F
 ;	.long	sdcrwd8
 
 
-	.word	>Ff00,>FFDE,Z,0,F
+	.word	0Ff00H,0FFDEH,Z,0,F
 	.long	sdcrwd8
 	WL	4002,sl8_ptr
-	.word	>FEFa,>FFDB,Z+28,0,F
+	.word	0FEFaH,0FFDBH,Z+28,0,F
 	.long	sdcrwd7
 	WL	4002,sl7_ptr
-	.word	>FEF8,>FFD4,Z+70,0,F
+	.word	0FEF8H,0FFD4H,Z+70,0,F
 	.long	sdcrwd6
 	WL	4002,sl6_ptr
-	.word	>FEED,>FFCE,Z+98,0,F
+	.word	0FEEDH,0FFCEH,Z+98,0,F
 	.long	sdcrwd5
 	WL	4002,sl5_ptr
 
 ;Fill in crowd 4 - Duplicate!
-;	.word	>FEB5,>FFBC,Z+152,0,F
+;	.word	0FEB5H,0FFBCH,Z+152,0,F
 ;	.long	sdcrwd4
 
 
 
 
-	.word	>Ff54,>FFe9,>3ef,42h,F
+	.word	0Ff54H,0FFe9H,03efH,42h,F
 	.long	cheer1
 	WL	4002,cheer1_ptr
-	.word	>Ff5b,>FFe7,>3e0,39h,F
+	.word	0Ff5bH,0FFe7H,03e0H,39h,F
 	.long	cary1
 	WL	4002,cheer2_ptr
-;	.word	>ffff,>FFe7,>3e0,39h,F
+;	.word	0ffffH,0FFe7H,03e0H,39h,F
 ;	.long	cheer1
 ;	WL	4002,cheer3_ptr
 
@@ -2402,43 +2402,43 @@ scrm4_snd	.word	>f540,10,>815f,0	;<--- check channel on this
 
 
 
-	.word	>FEEC-1,>FFB0,Z+152,0,F
+	.word	0FEECH-1,0FFB0H,Z+152,0,F
 	.long	sdcrwd4
 	WL	4002,sl4_ptr
-	.word	>FF00,>FFB7,Z+240,0,F
+	.word	0FF00H,0FFB7H,Z+240,0,F
 	.long	sdcrwd3
 	WL	4002,sl3_ptr
-	.word	>FF06,>FFC3,Z+284,0,F
+	.word	0FF06H,0FFC3H,Z+284,0,F
 	.long	sdcrwd2
 	WL	4002,sl2_ptr
-	.word	>FF00-8,>FFB0,Z+379,0,F
+	.word	0FF00H-8,0FFB0H,Z+379,0,F
 	.long	sdcrwd1
 	WL	4002,sl1_ptr
 
 	.asg	200+450,X
 
-	.word	>292,>ffdb,Z,0,FF
+	.word	0292H,0ffdbH,Z,0,FF
 	.long	sdcrwd8
 	WL	4002,sr8_ptr
-	.word	>297+6,>ffd8,Z+28,0,FF
+	.word	0297H+6,0ffd8H,Z+28,0,FF
 	.long	sdcrwd7
 	WL	4002,sr7_ptr
-	.word	>299,>ffd1,Z+70,0,FF
+	.word	0299H,0ffd1H,Z+70,0,FF
 	.long	sdcrwd6
 	WL	4002,sr6_ptr
-	.word	>2a6,>ffcc,Z+98,0,FF
+	.word	02a6H,0ffccH,Z+98,0,FF
 	.long	sdcrwd5
 	WL	4002,sr5_ptr
-	.word	>244,>ffaa,Z+152,0,F
+	.word	0244H,0ffaaH,Z+152,0,F
 	.long	nsdcrwd4a
 	WL	4002,sr4_ptr
-	.word	>240,>ffb3,Z+240,0,F
+	.word	0240H,0ffb3H,Z+240,0,F
 	.long	nsdcrwd3a
 	WL	4002,sr3_ptr
-	.word	>242,>ffb2,Z+284,0,F
+	.word	0242H,0ffb2H,Z+284,0,F
 	.long	nsdcrwd2a
 	WL	4002,sr2_ptr
-	.word	>23d+5,>ffa7+2,Z+379,0,F
+	.word	023dH+5,0ffa7H+2,Z+379,0,F
 	.long	nsdcrwd1a
 	WL	4002,sr1_ptr
 
@@ -3456,17 +3456,17 @@ net6_l
 
 
 
-	movi	seccall1+>3df2,a0	;>Chksum security call code
+	movi	seccall1+03df2H,a0	;0CHhksum security call code
 	movk	(seccall1end-seccall1)/16,b0
-	movi	->259e0d-2,a8		;1st value
-#csumlp	move	*a0(->3df2),a1
+	movi	-0259e0dH-2,a8		;1st value
+#csumlp	move	*a0(-03df2H),a1
 	add	a1,a8
 	addk	16,a0
 	dsj	b0,#csumlp
-					;>Chksum security_chk code
-	movi	security_chk+>4bbb,a0
+					;0CHhksum security_chk code
+	movi	security_chk+04bbbH,a0
 	movi	68+128*2,b0		;#Words
-#csmlp	move	*a0(->4bbb),a1
+#csmlp	move	*a0(-04bbbH),a1
 	add	a1,a8
 	addk	16,a0
 	dsj	b0,#csmlp
@@ -3514,7 +3514,7 @@ net6_l
 #z	.equ	300
 
 #init_t
-	.word	>af,#y-2,948
+	.word	0afH,#y-2,948
 	.long	crplate			;top credit plate
 
 	.word	4000
@@ -3722,7 +3722,7 @@ COLRPRC
 * A8 =Window size
 * A10=Center point of window (screen relative)
 *
-* >A8 = *Window object or 0 (Z)
+* 0A8H = *Window object or 0 (Z)
 * Trashes A9-A11
 
 OWINDOW
@@ -3746,7 +3746,7 @@ OWINDOW
 	move	a10,a0
 
 	srl	1,a11			;XY/2
-	andi	>7fff7fff,a11
+	andi	07fff7fffH,a11
 
 	subxy	a11,a10
 	addxy	a0,a11
@@ -3904,7 +3904,7 @@ fixa3xy
 ********************************
 * Get random # with mask
 * A0=Mask
-* >A0=Rnd # (Pass CC)
+* 0A0H=Rnd # (Pass CC)
 * Trashes scratch
 
  SUBRP	rnd
@@ -3982,8 +3982,8 @@ gottime
 	move	a0,@DMACTRL
 	move	a0,@DMACTRL
 
-	clr	a1			;>Clr screen mem
-	movi	>200000/32,b0
+	clr	a1			;0CHlr screen mem
+	movi	0200000H/32,b0
 #clrscr	move	a0,*a1+,L
 	dsj	b0,#clrscr
 
@@ -3993,23 +3993,23 @@ gottime
 	movi	0,a0
 	move	a0,@DMAOFFST
 
-	movk	>10,a1
+	movk	010H,a1
 	move	a1,@DMACONF
 	movi	[350+56,50+56],a1	;L/R
 	move	a1,@DMAWINDOW,L
 
-	movi	>30,a1
+	movi	030H,a1
 	move	a1,@DMACONF		;Top/Bottom
 	movi	[200,50],a1
 	move	a1,@DMAWINDOW,L
 
 
-	movi	[>100,>100],a3		;Y:X scale
+	movi	[0100H,0100H],a3		;Y:X scale
 	clr	a4
 	movi	[100,100+56],a8		;Y:X
 	movi	[100,200],a7		;V:H size
-	movi	>2000000,a10		;SAG
-	movi	>900c0000,a11		;CTRL:OFSET
+	movi	02000000H,a10		;SAG
+	movi	0900c0000H,a11		;CTRL:OFSET
 
 	movi	20000,b2
 #lp	rl	16,a4
@@ -4024,7 +4024,7 @@ gottime
 	rl	16,a4
 
 #xok	addk	1,a4			;Color+1
-	andi	>ff,a4
+	andi	0ffH,a4
 	move	a4,a0
 	sll	8,a0
 	or	a0,a4
@@ -4050,8 +4050,8 @@ gottime
 	move	a0,@DMACTRL
 	move	a0,@DMACTRL
 
-	clr	a1			;>Clr screen mem
-	movi	>200000/32,b0
+	clr	a1			;0CHlr screen mem
+	movi	0200000H/32,b0
 #clrscr	move	a0,*a1+,L
 	dsj	b0,#clrscr
 
@@ -4061,25 +4061,25 @@ gottime
 	movi	0,a0
 	move	a0,@DMAOFFST
 
-	movk	>10,a1
+	movk	010H,a1
 	move	a1,@DMACONF
 	movi	[350,50],a1		;L/R
 	movi	[399,0],a1		;L/R
 	move	a1,@DMAWINDOW,L
 
-	movi	>30,a1
+	movi	030H,a1
 	move	a1,@DMACONF		;Top/Bottom
 	movi	[200,50],a1
 	movi	[253,0],a1
 	move	a1,@DMAWINDOW,L
 
 
-	movi	[>100,>100],a3		;Y:X scale
+	movi	[0100H,0100H],a3		;Y:X scale
 	clr	a4
 	clr	a8			;Y:X
-	movi	>10001,a7		;V:H size
-	movi	>2000000,a10		;SAG
-	movi	>900c0000,a11		;CTRL:OFSET
+	movi	010001H,a7		;V:H size
+	movi	02000000H,a10		;SAG
+	movi	0900c0000H,a11		;CTRL:OFSET
 
 #lp	rl	16,a4
 
@@ -4095,14 +4095,14 @@ gottime
 	addk	1,a8
 	btst	9,a8
 	jrz	#xok
-	addi	>10000,a8		;+1 Y
+	addi	010000H,a8		;+1 Y
 	btst	8+16,a8
 	jrz	#yok
 	addk	4,a4
-#yok	andi	>ff01ff,a8
+#yok	andi	0ff01ffH,a8
 
 #xok	addk	1,a4
-	andi	>ff,a4
+	andi	0ffH,a4
 	move	a4,a0
 	sll	8,a0
 	or	a0,a4
@@ -4124,13 +4124,13 @@ gottime
 ;	.if	1
 
 	dint
-	movi	>2c,a0			;Enable cache
-	movi	>802c,a0		;Disable cache
+	movi	02cH,a0			;Enable cache
+	movi	0802cH,a0		;Disable cache
 	move	a0,@CONTROL
-	movi	>f010,a0
+	movi	0f010H,a0
 	move	a0,@DPYCTL
 	move	@HSTCTLH,a0
-	andi	>bfff,a0
+	andi	0bfffH,a0
 	move	a0,@HSTCTLH
 
 
@@ -4173,7 +4173,7 @@ gottime
 ;#2
 ;	movi	100,a0
 ;	nop
-;	movi	>11111111,a0
+;	movi	011111111H,a0
 ;	move	@SCRATCH,a0
 ;	move	*a2(0),*a2(0)
 ;	move	*a2,a0
@@ -4187,8 +4187,8 @@ gottime
 ;	move	a0,@SCRATCH,L
 ;	move	@SCRATCH,a0,L
 ;	move	@SCRATCH,a0,L
-	movi	SCRATCH+>1000,a0
-	movi	SCRATCH+>1000,a1
+	movi	SCRATCH+01000H,a0
+	movi	SCRATCH+01000H,a1
 ;	move	-*a0,-*a1,L
 ;	move	-*a0,-*a1,L
 ;	move	-*a0,-*a1,L
