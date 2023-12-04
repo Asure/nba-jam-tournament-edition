@@ -1,97 +1,97 @@
 	.DATA
 arrow1l:
 	.word   28,16,0,0
-	.long   033c97dfH
+	.long   053c97dfH
 	.word   05000H
 	.long   arw4p
 arrow1r:
 	.word   28,16,0,0
-	.long   033ca09fH
+	.long   053ca09fH
 	.word   05000H
 	.long   arw4p
 arrow2l:
 	.word   28,16,0,0
-	.long   033ca95fH
+	.long   053ca95fH
 	.word   05000H
 	.long   arw3p
 arrow2r:
 	.word   28,16,0,0
-	.long   033cb21fH
+	.long   053cb21fH
 	.word   05000H
 	.long   arw3p
 arrow3l:
 	.word   28,16,0,0
-	.long   033cbadfH
+	.long   053cbadfH
 	.word   05000H
 	.long   arw2p
 arrow3r:
 	.word   28,16,0,0
-	.long   033cc39fH
+	.long   053cc39fH
 	.word   05000H
 	.long   arw2p
 arrow4l:
 	.word   28,16,0,0
-	.long   033ccc5fH
+	.long   053ccc5fH
 	.word   05000H
 	.long   arw1p
 arrow4r:
 	.word   28,16,0,0
-	.long   033cd51fH
+	.long   053cd51fH
 	.word   05000H
 	.long   arw1p
 arrow1t:
 	.word   16,26,7,24
-	.long   033cdddfH
+	.long   053cdddfH
 	.word   05000H
 	.long   arw4p
 arrow2t:
 	.word   16,26,7,24
-	.long   033ce5ffH
+	.long   053ce5ffH
 	.word   05000H
 	.long   arw3p
 arrow3t:
 	.word   16,26,7,24
-	.long   033cee1fH
+	.long   053cee1fH
 	.word   05000H
 	.long   arw2p
 arrow4t:
 	.word   16,26,7,24
-	.long   033cf63fH
+	.long   053cf63fH
 	.word   05000H
 	.long   arw1p
 arrow1t2:
 	.word   16,26,7,24
-	.long   033cdddfH
+	.long   053cdddfH
 	.word   05000H
 	.long   arwbp
 arrow1l2p:
 	.word   28,16,0,0
-	.long   033c97dfH
+	.long   053c97dfH
 	.word   05000H
 	.long   arw4p
 arrow1r2p:
 	.word   28,16,0,0
-	.long   033ca09fH
+	.long   053ca09fH
 	.word   05000H
 	.long   arw4p
 arrow2l2p:
 	.word   28,16,0,0
-	.long   033ca95fH
+	.long   053ca95fH
 	.word   05000H
 	.long   arw1p
 arrow2r2p:
 	.word   28,16,0,0
-	.long   033cb21fH
+	.long   053cb21fH
 	.word   05000H
 	.long   arw1p
 arrow1t2p:
 	.word   16,26,7,24
-	.long   033cdddfH
+	.long   053cdddfH
 	.word   05000H
 	.long   arw4p
 arrow2t2p:
 	.word   16,26,7,24
-	.long   033ce5ffH
+	.long   053ce5ffH
 	.word   05000H
 	.long   arw1p
 	.TEXT

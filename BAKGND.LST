@@ -1,4 +1,4 @@
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:55 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    1
@@ -58,7 +58,7 @@ TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:50 2023
       54                                                    ; MAP_HDR SET TO 0FFFFH IF BLOCK IS NOT ALLOCATED
       55              0040  BLOCK_SIZE      .SET    64      ;Uses shifts!
       56                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:55 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 background handlers                                                  PAGE    2
@@ -118,7 +118,7 @@ background handlers                                                  PAGE    2
      103 00000290     ee83          MOVY    A4,A3
      104 000002a0     4c6a          MOVE    A3,A10
      105                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:55 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 background handlers                                                  PAGE    3
@@ -178,7 +178,7 @@ background handlers                                                  PAGE    3
      156                    
      157 00000500           lsrch
      158                            ;* FINISH WITH A LINEAR SEARCH OF BLOCK TABLE FROM LOW TO HIGH
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:55 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 background handlers                                                  PAGE    4
@@ -238,7 +238,7 @@ background handlers                                                  PAGE    4
      206                    
      207 00000730     09e0          movi    DISP_PAD,a0     ;XY border pad
          00000740 00200020  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:55 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 background handlers                                                  PAGE    5
@@ -298,7 +298,7 @@ background handlers                                                  PAGE    5
      254 000009f0     e324          subxy   a9,a4
      255 00000a00     0d3f          callr   bgnd_addmod
          00000a10     0006  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:55 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 background handlers                                                  PAGE    6
@@ -358,7 +358,7 @@ background handlers                                                  PAGE    6
      303 00000c70     2e0e          srl     32-12-4,a14     ;*16
      304 00000c80     4dc0          move    a14,a0          ;>*5
      305 00000c90     2440          sll     2,a0
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:55 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 background handlers                                                  PAGE    7
@@ -418,7 +418,7 @@ background handlers                                                  PAGE    7
      353 00000f10     40ae          add     a5,a14          ;A14=*Img hdr
      354                    
      355 00000f20     b5c0          move    *a14(MAP_H),a0
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:55 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 background handlers                                                  PAGE    8
@@ -478,7 +478,7 @@ background handlers                                                  PAGE    8
      397 000011c0     84e4          move    *a7,a4          ;A4=map_z,8:map_flags,4:map_pal,4
      398 000011d0     4c83          move    a4,a3
      399 000011e0     0523          zext    a3
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:55 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 background handlers                                                  PAGE    9
@@ -538,7 +538,7 @@ background handlers                                                  PAGE    9
      445 000014b0     2cc3  hcyztrans       srl     26,a3                   ;Line up flip bits
      446 000014c0     5464          or      a3,a4
      447                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:55 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 background handlers                                                  PAGE   10
@@ -598,7 +598,7 @@ background handlers                                                  PAGE   10
      485 000017d0     0960          rets
      486                    
      487 000017e0     0de0  hcyzx   setc                            ;failure to get object
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:55 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 background handlers                                                  PAGE   11
@@ -658,7 +658,7 @@ background handlers                                                  PAGE   11
      536 00001ed0     e460          CMPXY   A3,A0
      537 00001ee0                   JRYGE   lukrlp                  ;JUMP IF TL Y <= BLOCK Y+H
      538                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:55 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 background handlers                                                  PAGE   12

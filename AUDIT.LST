@@ -1,4 +1,4 @@
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    1
@@ -58,7 +58,7 @@ TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
       54                            .def    FORM_ADC
       55                            .def    F_ADC_S
       56                            .def    GET_CREDITS
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE    2
@@ -118,7 +118,7 @@ audits and ajustments handling                                       PAGE    2
      109                            .REF            RC_LONGI
      110                            .REF            WC_BYTE
      111                            .REF            WC_BYTEI
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE    3
@@ -178,7 +178,7 @@ audits and ajustments handling                                       PAGE    3
      164 00000000     05a0          move    @GAMSTATE,a0
          00000010 00000000! 
      165 00000030     ce27          jrn     douptime                ;In diagnostics?
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE    4
@@ -238,7 +238,7 @@ audits and ajustments handling                                       PAGE    4
      205 00000320     c6ee          jrle    audup                   ;Under 5 seconds?
      206 00000330     0580          move    a0,@playtimer
          00000340 00000010- 
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE    5
@@ -298,12 +298,12 @@ audits and ajustments handling                                       PAGE    5
          00000630     0774  
      246                    
      247 00000640     0d3f          callr   getcoin
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE    6
 
-         00000650     0a49  
+         00000650     0a4e  
      248                    
      249 00000660     1940          movk    10,a0
      250 00000670     0580          move    a0,@BTIME               ;Restuff buyin timer
@@ -358,7 +358,7 @@ audits and ajustments handling                                       PAGE    6
      285 00000940     09cb          MOVI    AUDXCOIN,A11
          00000950     0004  
      286 00000960     0300          JRUC    VALID_COIN
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE    7
@@ -409,7 +409,7 @@ audits and ajustments handling                                       PAGE    7
          00000b80 00000000! 
      324                    
      325 00000ba0     0d3f          callr   getcoin
-         00000bb0     09f3  
+         00000bb0     09f8  
      326                    
      327 00000bc0     1a80          MOVK    20,A0
      328 00000bd0     0580          MOVE    A0,@BTIME               ;RESTUFF BUYIN TIMER
@@ -418,7 +418,7 @@ audits and ajustments handling                                       PAGE    7
          00000c10     0055  
      330                    
      331 00000c20     09c0          MOVI    15*40H/8,A0             ;DON'T WIPE ON GAME OVER IF ITS WITHIN
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE    8
@@ -478,7 +478,7 @@ audits and ajustments handling                                       PAGE    8
      374 00000f30     0b4b          CMPI    AUDLCOIN,A11
          00000f40     fffe  
      375 00000f50     ca04          JREQ    MECH3A
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE    9
@@ -538,7 +538,7 @@ audits and ajustments handling                                       PAGE    9
      419 00001210     3ca3          dsj     a3,ctslp
      420                    
      421 00001220                   PULL    a2,a3
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   10
@@ -598,7 +598,7 @@ audits and ajustments handling                                       PAGE   10
      461 000014e0           CR_STX1
      462 000014e0     09af          MMFM    SP,A0,A1
          000014f0     0003  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   11
@@ -658,7 +658,7 @@ audits and ajustments handling                                       PAGE   11
      498 00001820     09af          MMFM    SP,A0,A1
          00001830     0003  
      499 00001840     0960          RETS
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   12
@@ -718,7 +718,7 @@ audits and ajustments handling                                       PAGE   12
      538                    
      539                    
      540 00001ae0     0d3f          CALLR   ADD_TO_CUNITS   ;ADD TO OUR CUNITS
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   13
@@ -778,7 +778,7 @@ audits and ajustments handling                                       PAGE   13
      583 00001dc0     4c09          MOVE    A0,A9
      584                    
      585 00001dd0     4c42          MOVE    A2,A2           ;DON'T DIVIDE BY ZERO.
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   14
@@ -838,7 +838,7 @@ audits and ajustments handling                                       PAGE   14
      624 000020a0           GET_MAX
      625 000020a0                   PUSH    a0
      626 000020b0     1a20          MOVK    ADJMAXC,A0
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   15
@@ -898,7 +898,7 @@ audits and ajustments handling                                       PAGE   15
      662 000023d0           CRED_P
      663 000023d0     0d3f          CALLR   CCCC            ;CHECK TO SEE IF DATA IS OK.
          000023e0     04de  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   16
@@ -958,7 +958,7 @@ audits and ajustments handling                                       PAGE   16
          000026d0 00000000! 
      701 000026f0     09af          MMFM    SP,A7
          00002700     0080  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   17
@@ -1018,7 +1018,7 @@ audits and ajustments handling                                       PAGE   17
      739 00002a10     0780          move    a0,@WORLDTLY,L
          00002a20 00000000! 
      740                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   18
@@ -1078,7 +1078,7 @@ audits and ajustments handling                                       PAGE   18
          00002de0 c0000010  
      780                    
      781                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   19
@@ -1138,7 +1138,7 @@ audits and ajustments handling                                       PAGE   19
      827 00003260     0000          .word   0,0
      828 00003280 00000000          .long   0
      829                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   20
@@ -1168,7 +1168,7 @@ audits and ajustments handling                                       PAGE   20
      846                    
      847                    
      848 000033d0     09e2          MOVI    dollar_mes,a2           ;Dollar bill message
-         000033e0 0000b890' 
+         000033e0 0000b8e0' 
      849 00003400     0d5f          calla   print_message
          00003410 00000000! 
      850 00003430           dkfunotfair
@@ -1198,7 +1198,7 @@ audits and ajustments handling                                       PAGE   20
      873          000d00c8  CM_Y_ADDGAP     EQU     [CM_Y_GAP,200]
      874                    
      875                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   21
@@ -1258,7 +1258,7 @@ audits and ajustments handling                                       PAGE   21
      912 000037f0     09c0          movi    ADJFULLG,a0
          00003800     0014  
      913 00003810     0d5f          calla   GET_ADJ                 ;# credits for full game
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   22
@@ -1318,7 +1318,7 @@ audits and ajustments handling                                       PAGE   22
          00003af0 000048c0' 
      955 00003b10     0d5f          calla   setup_message
          00003b20 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   23
@@ -1378,7 +1378,7 @@ audits and ajustments handling                                       PAGE   23
          00003e80 00000000! 
      993 00003ea0     ca0e          JRZ     ujwydone
      994                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   24
@@ -1438,7 +1438,7 @@ audits and ajustments handling                                       PAGE   24
     1032 000041c0     05a0          move    @mess_cursy,a0
          000041d0 00000000! 
     1033 000041f0     0b00          addi    YSPACE0,a0
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   25
@@ -1498,7 +1498,7 @@ audits and ajustments handling                                       PAGE   25
          00004540     fffd  
     1070 00004550     c807          jrlo    ujwynot_max
     1071 00004560     09c3          movi    1,a3
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   26
@@ -1558,7 +1558,7 @@ audits and ajustments handling                                       PAGE   26
     1113 00004aa0                   .even
     1114 00004aa0           LN3x_setup
     1115 00004aa0                   RJR_STR lgmd_ascii,10,2,200,LN3x,LGMDGLD,0
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   27
@@ -1618,7 +1618,7 @@ audits and ajustments handling                                       PAGE   27
     1168                            MOVI    VALID_CUSTOM,A7
     1169                            CALLA   RC_WORD
     1170                            CMPI    VALID_VALUE,A0          ; CHECK TO SEE IF MESSAGE IS VALID
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   28
@@ -1678,7 +1678,7 @@ audits and ajustments handling                                       PAGE   28
          000056e0 00008180' 
     1219 00005700     cb00          jrnz    hirgfreeply
          00005710     00a1  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   29
@@ -1738,7 +1738,7 @@ audits and ajustments handling                                       PAGE   29
          00005af0     0008  
     1251 00005b00     0582          move    a2,@mess_cursy
          00005b10 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   30
@@ -1798,7 +1798,7 @@ audits and ajustments handling                                       PAGE   30
     1286 00005f80                   SLEEPK  1
     1287                            .ref    get_all_buttons_down
     1288 00005fc0     0d5f          calla   get_all_buttons_down
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   31
@@ -1858,7 +1858,7 @@ audits and ajustments handling                                       PAGE   31
     1336                            .LONG    LINE_THREE_PLUS        ;4
     1337                            .LONG    LINE_ONE_PLUS_2        ;5 USE 1ST LINE 2/ 2 CREDITS PER PLAYER
     1338                            .LONG    LINE_TWO_PLUS_2        ;6
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   32
@@ -1918,7 +1918,7 @@ audits and ajustments handling                                       PAGE   32
     1391                            MOVI    CM_LINE1,A10
     1392                            MOVI    SETUP_1_OF_3,A8
     1393                            JRUC    SET_THEN_STRNGRAM
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   33
@@ -1978,7 +1978,7 @@ audits and ajustments handling                                       PAGE   33
     1436 000066e0     0d5f          CALLA   RC_BYTEI                ;FETCH A BYTE
          000066f0 00000000! 
     1437 00006710     8c02          MOVB    A0,*A2                  ;STORE
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   34
@@ -2001,7 +2001,7 @@ audits and ajustments handling                                       PAGE   34
     1450 000067d0     8702          MOVE    *A8,A2,L                ;GET LINE 1
     1451 000067e0           LOP_1
     1452 000067e0     09e8          MOVI    SETUP_1_OF_3,A8
-         000067f0 0000b4d0' 
+         000067f0 0000b520' 
     1453 00006810     0d3f          CALLR   LM_SETUP
          00006820     027d  
     1454 00006830     4c48          MOVE    A2,A8                   ;SWAP IN TEXT POINTER
@@ -2031,14 +2031,14 @@ audits and ajustments handling                                       PAGE   34
     1472 000069d0     8702          MOVE    *A8,A2,L                ;GET LINE 1
     1473 000069e0           LOP_12
     1474 000069e0     09e8          MOVI    SETUP_1_OF_2,A8
-         000069f0 0000b6b0' 
+         000069f0 0000b700' 
     1475 00006a10     0d3f          CALLR   LM_SETUP
          00006a20     025d  
     1476 00006a30     4c48          MOVE    A2,A8                   ;SWAP IN TEXT POINTER
     1477 00006a40                   JSRP    LM_FINIS                ;PRINT IT
     1478                    
     1479 00006ab0           LOP_22
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   35
@@ -2065,14 +2065,14 @@ audits and ajustments handling                                       PAGE   35
     1493 00006bd0           SELECT_SETUP
     1494 00006bd0                   PUSH    a0
     1495 00006be0     09e8          MOVI    MESS_CNUM,A8              ;ASSUME NO EXTRA PROMPT
-         00006bf0 0000a040' 
+         00006bf0 0000a090' 
     1496                    
     1497 00006c10     0d5f          CALLA   CKPROMPT                  ;IS THERE ONE?
          00006c20 00000000! 
     1498 00006c40     ca03          JRZ     NO_EXTRA
     1499                    
     1500 00006c50     09e8          MOVI    MESS_LOWNUM,A8
-         00006c60 0000a0e0' 
+         00006c60 0000a130' 
     1501 00006c80           NO_EXTRA
     1502 00006c80     09af          MMFM    SP,A0                   
          00006c90     0001  
@@ -2098,7 +2098,7 @@ audits and ajustments handling                                       PAGE   35
          00006d90     0001  
     1519 00006da0     0960          RETS
     1520                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   36
@@ -2158,7 +2158,7 @@ audits and ajustments handling                                       PAGE   36
          00007100     c100  
     1558 00007110     0d3f          CALLR   FORM_COIN_CKSUM
          00007120     ffe0  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   37
@@ -2218,7 +2218,7 @@ audits and ajustments handling                                       PAGE   37
     1597 000073e0     1470          subk    3,b0
     1598 000073f0     cb01          jrne    aanp50          ;Only 1?
     1599 00007400     1841          movk    2,a1            ;2 plyrs
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   38
@@ -2278,7 +2278,7 @@ audits and ajustments handling                                       PAGE   38
     1636 00007700     09af          MMFM    SP,A0,A4,A7               ;Z BIT RETURNS COMPARE
          00007710     0091  
     1637 00007720     0960          RETS                              ;A1 RETURNS CKSUM
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   39
@@ -2338,7 +2338,7 @@ audits and ajustments handling                                       PAGE   39
     1673 00007a10           STORE_AUDIT
     1674                            
     1675 00007a10     098f          MMTM    SP,A0,A7
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   40
@@ -2398,7 +2398,7 @@ audits and ajustments handling                                       PAGE   40
     1713 00007d10     0d3f          CALLR   STORE_AUDIT             ;STORE IT BACK
          00007d20     ffce  
     1714 00007d30     0d3f          CALLR   DEF_PAGE                ;SWITCH PAGE AWAY FROM THE DATA!
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   41
@@ -2458,7 +2458,7 @@ audits and ajustments handling                                       PAGE   41
     1752 00007fe0     03e1          NOT     A1                      ;COMPLEMENT THE SUM
     1753 00007ff0     0521          ZEXT    A1
     1754 00008000     09e7          MOVI    ADJ_CKSUM,A7
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   42
@@ -2518,7 +2518,7 @@ audits and ajustments handling                                       PAGE   42
     1790 00008360     5e07          MPYU    A0,A7                   ;TIMES ADJUSTMENT REQUESTED.
     1791 00008370     0b27          ADDI    ADJUSTORG,A7            ;ADD TO BASE
          00008380 01404000  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   43
@@ -2578,7 +2578,7 @@ audits and ajustments handling                                       PAGE   43
     1832                    
     1833 00008650           DEF_PAGE
     1834                     .if 0
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   44
@@ -2615,7 +2615,7 @@ audits and ajustments handling                                       PAGE   44
          00008740     ffe7  
     1861                    
     1862 00008750     09e1          MOVI    FACTORY_TABLE,A1        ;ROM
-         00008760 00009e20' 
+         00008760 00009e70' 
     1863 00008780     09e7          MOVI    ADJUSTORG,A7            ;CMOS
          00008790 01404000  
     1864 000087b0     09c2          MOVI    N_ADJUSTS,A2            ;NUMBER OF ADJUSTMENTS ALLOCATED
@@ -2638,7 +2638,7 @@ audits and ajustments handling                                       PAGE   44
     1877 00008880     1420          subk    1,a0
     1878 00008890     ca10          jreq    fsx                     ;Only coinage?
     1879                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   45
@@ -2698,7 +2698,7 @@ audits and ajustments handling                                       PAGE   45
     1926 00008a20     09c0          movi    ADJLMULT,a0
          00008a30     0002  
     1927 00008a40     94c1          move    *a6+,a1
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   46
@@ -2758,7 +2758,7 @@ audits and ajustments handling                                       PAGE   46
          00008d90     0009  
     1963 00008da0     94c1          move    *a6+,a1
     1964 00008db0     0d5f          calla   PUT_ADJ
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   47
@@ -2818,14 +2818,14 @@ audits and ajustments handling                                       PAGE   47
     2008 00009060     0d5f          CALLA   GET_ADJ
          00009070 00008180' 
     2009 00009090     ca04          JRZ     NOT_FREE
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   48
 
     2010                    
     2011 000090a0     09e8          MOVI    MESS_FREEP,A8           ;RETURN POINTING AT FREE PLAY MESSAGE
-         000090b0 0000a180' 
+         000090b0 0000a1d0' 
     2012 000090d0     c049          JRUC    GET_CX
     2013                    
     2014 000090e0           NOT_FREE
@@ -2834,9 +2834,9 @@ audits and ajustments handling                                       PAGE   48
     2016 00009110     c847          JRC     NO_SOBJ                 ;NONE TO USE!
     2017                            
     2018 00009120     09e8          MOVI    MESS_CREDITS,A8         ;POINT AT TEXT PART
-         00009130 00009ff0' 
+         00009130 0000a040' 
     2019 00009150     0d5f          CALLA   STRCAT                  ;BUILD THIS IN.
-         00009160 0000b170' 
+         00009160 0000b1c0' 
     2020 00009180     0d3f          CALLR   CRED_P
          00009190     f923  
     2021 000091a0     4c0a          MOVE    A0,A10                  ;SAVE CREDITS
@@ -2875,10 +2875,10 @@ audits and ajustments handling                                       PAGE   48
     2048                    
     2049 00009360           NZM
     2050 00009360     09e8          MOVI    MESS_2SPACE,A8          ;SPACE BET. MANTISSA AND DENMO
-         00009370 0000b4b0' 
+         00009370 0000b500' 
     2051 00009390     0d5f          CALLA   STRCAT
-         000093a0 0000b170' 
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+         000093a0 0000b1c0' 
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   49
@@ -2889,9 +2889,9 @@ audits and ajustments handling                                       PAGE   49
          000093d0     0020  
     2055                    
     2056 000093e0     09e8          MOVI    MESS_SLASH,A8
-         000093f0 0000b4a0' 
+         000093f0 0000b4f0' 
     2057 00009410     0d5f          CALLA   STRCAT                  ;ADD SLASH
-         00009420 0000b170' 
+         00009420 0000b1c0' 
     2058                    
     2059 00009440     18c0          MOVK    ADJCUNIT,A0             ;UNITS REQUIRED FOR CREDIT
     2060 00009450     0d5f          CALLA   GET_ADJ
@@ -2906,7 +2906,7 @@ audits and ajustments handling                                       PAGE   49
     2066 000094e0     5600          CLR     A0
     2067 000094f0     8c07          MOVB    A0,*A7                  ;STRINGRAM IS NULL
     2068 00009500     0d5f          CALLA   STRCAT                  ;COPY THE STRING OUT OF OBJECT BLOCK
-         00009510 0000b170' 
+         00009510 0000b1c0' 
     2069 00009530     4ce8          MOVE    A7,A8
     2070 00009540     0d5f          CALLA   STR_FREE                ;AND FREE UP THE OBJECT BLOCK
          00009550 00000000! 
@@ -2917,7 +2917,7 @@ audits and ajustments handling                                       PAGE   49
     2075 00009580     0960          RETS
     2076 00009590           NO_SOBJ
     2077 00009590     09e8          MOVI    MESS_NULL,A8
-         000095a0 0000b4c0' 
+         000095a0 0000b510' 
     2078 000095c0     0de0          SETC
     2079 000095d0     c0fa          JRUC    GET_CXX                 ;RETURN BLANK STRING!
     2080                    
@@ -2927,7 +2927,7 @@ audits and ajustments handling                                       PAGE   49
     2084 00009600     0d5f          CALLA   HEXTOASC                ;STRING
          00009610 00000000! 
     2085 00009630     0d5f          CALLA   STRCAT                  ;NOW WE HAVE WHOLE NUMBER.
-         00009640 0000b170' 
+         00009640 0000b1c0' 
     2086 00009660     09af          MMFM    SP,A8
          00009670     0100  
     2087 00009680     0960          RETS
@@ -2938,7 +2938,7 @@ audits and ajustments handling                                       PAGE   49
     2091 000096c0     0d5f          CALLA   P_FORK                  ;START UP ANOTHER W/ SAME ID TO FLASH!
          000096d0 00000000! 
     2092 000096f0                   RETP
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   50
@@ -2976,34 +2976,34 @@ audits and ajustments handling                                       PAGE   50
     2120                    
     2121 000098d0           rf4
     2122 000098d0     09e1          MOVI    MESS_READY_4,A1
-         000098e0 0000a630' 
+         000098e0 0000a680' 
     2123 00009900     c010          JRUC    RED_1
     2124 00009910           rf3
     2125 00009910     09e1          MOVI    MESS_READY_3,A1
-         00009920 0000a4b0' 
+         00009920 0000a500' 
     2126 00009940     c00c          JRUC    RED_1
     2127 00009950           RF2
     2128 00009950     09e1          MOVI    MESS_READY_2,A1
-         00009960 0000a330' 
+         00009960 0000a380' 
     2129 00009980     c008          JRUC    RED_1
     2130                    
     2131 00009990           PP1
     2132 00009990     09e0          MOVI    MESS_INS_COIN,A0
-         000099a0 0000a7b0' 
+         000099a0 0000a800' 
     2133 000099c0     5621          CLR     A1
     2134 000099d0     c006          JRUC    RED_2
     2135                    
     2136 000099e0           PP2
     2137 000099e0     09e1          MOVI    MESS_READY_1,A1
-         000099f0 0000a1e0' 
+         000099f0 0000a230' 
     2138 00009a10           RED_1
     2139 00009a10     09e0          MOVI    MESS_PRESS_START,A0
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   51
 
-         00009a20 0000a8c0' 
+         00009a20 0000a910' 
     2140 00009a40           RED_2
     2141 00009a40     b20d          MOVE    A0,*A13(PDATA),L                ;HOLD MESSAGES
          00009a50     0100  
@@ -3035,484 +3035,485 @@ audits and ajustments handling                                       PAGE   51
     2162 00009cf0     c0d8          JRUC    BLINK_LOOP
     2163                    
     2164 00009d00           ROM_NAME
-    2165 00009d00       54          .byte   "TOURNAMENT EDITION REV 4.0 3/23/94",0
-    2166 00009e20                   .even
-    2167                    
-    2168 00009e20           FACTORY_TABLE
-    2169                    
-    2170 00009e20     0000          .word   0       ;ADJNULL        0
-    2171 00009e30     0001          .word   1       ;ADJPRICE       1       ;MASTER PRICING
-    2172 00009e40     0001          .word   1       ;ADJLMULT       2
-    2173 00009e50     0004          .word   4       ;ADJCMULT       3
-    2174 00009e60     0001          .word   1       ;ADJRMULT       4
-    2175 00009e70     0000          .word   0       ;ADJXMULT       5
-    2176 00009e80     0001          .word   1       ;ADJCUNIT       6
-    2177 00009e90     0000          .word   0       ;ADJBUNIT       7
-    2178 00009ea0     0000          .word   0       ;ADJMUNIT       8
-    2179 00009eb0     0004          .word   4       ;ADJCDIV        9
-    2180 00009ec0     0001          .word   1       ;ADJFRAC        10      ;NON ZERO SAYS SHOW HALF CREDITS
-    2181 00009ed0     0002          .word   2       ;ADJCSTRT       11      ;CREDITS REQUIRED TO START
-    2182 00009ee0     0002          .word   2       ;ADJCCONT       12      ;CREDITS REQUIRED TO CONTINUE
-    2183                    
-    2184 00009ef0     0003          .word   3       ;ADJDIFF        13      ;Difficulty
-    2185                    
-    2186 00009f00     0000          .word   0       ;               14
-    2187 00009f10     0000          .word   0       ;               15
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+    2165                    ;       .byte   "TOURNAMENT EDITION REV 4.0 3/23/94",0
+    2166 00009d00       54          .byte   "TOURNAMENT EDITION REV 4.0 SRC BLD 12/3/2023",0
+    2167 00009e70                   .even
+    2168                    
+    2169 00009e70           FACTORY_TABLE
+    2170                    
+    2171 00009e70     0000          .word   0       ;ADJNULL        0
+    2172 00009e80     0001          .word   1       ;ADJPRICE       1       ;MASTER PRICING
+    2173 00009e90     0001          .word   1       ;ADJLMULT       2
+    2174 00009ea0     0004          .word   4       ;ADJCMULT       3
+    2175 00009eb0     0001          .word   1       ;ADJRMULT       4
+    2176 00009ec0     0000          .word   0       ;ADJXMULT       5
+    2177 00009ed0     0001          .word   1       ;ADJCUNIT       6
+    2178 00009ee0     0000          .word   0       ;ADJBUNIT       7
+    2179 00009ef0     0000          .word   0       ;ADJMUNIT       8
+    2180 00009f00     0004          .word   4       ;ADJCDIV        9
+    2181 00009f10     0001          .word   1       ;ADJFRAC        10      ;NON ZERO SAYS SHOW HALF CREDITS
+    2182 00009f20     0002          .word   2       ;ADJCSTRT       11      ;CREDITS REQUIRED TO START
+    2183 00009f30     0002          .word   2       ;ADJCCONT       12      ;CREDITS REQUIRED TO CONTINUE
+    2184                    
+    2185 00009f40     0003          .word   3       ;ADJDIFF        13      ;Difficulty
+    2186                    
+    2187 00009f50     0000          .word   0       ;               14
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   52
 
-    2188 00009f20     0001          .word   1       ;ADJMUSIC       16      ;attract mode music = off
-    2189 00009f30     0032          .word   50      ;ADJMAXC        17      ;MAXIMUM CREDITS
-    2190 00009f40     0000          .word   0       ;ADJFREPL       18      ;NON-ZERO MEANS FREE PLAY
-    2191 00009f50     0001          .word   1       ;ADJVIRGIN      19      ;NON-ZERO MEANS 1ST 8 OF COIN ADJUST BLOCK UNTOUCHED
-    2192 00009f60     0008          .word   8       ;ADJFULLG       20      ;credits needed to purchase full game (4-16)
-    2193 00009f70     0001          .word   1       ;ADJ1ST6        21      ;NON-ZERO MEANS 1ST 6 UNTOUCHED.
-    2194 00009f80     0000          .word   0       ;ADJNOCPAG      22
-    2195 00009f90     0001          .word   1       ;ADJCNTR        23      ;COIN COUNTER MODE
-    2196 00009fa0     0003          .word   3       ;ADJSPEED       24      ;game timer speed (1-5)
-    2197 00009fb0     0001          .word   1       ;ADJHEADSZ      25      ;player head sizes (1-2)
-    2198 00009fc0     0001          .word   1       ;ADJWINMODE     26      ;(winner stays free)
-    2199 00009fd0     0001          .word   1       ;ADJCOMPASS     27      ;computer assistance (0=on)
-    2200 00009fe0     0001          .word   1       ;ADJTOURNEY     28      ;Tournament mode (0=on)
-    2201                    
-    2202                            .if 0
-    2203                            .word   0       ;ADJ_UNUSED             0
-    2204                            .word   2       ;ADJ_PRICING            1  ;MASTER PRICING
-    2205                            .word   1       ;ADJ_LEFT_MULT          2
-    2206                            .word   1       ;ADJ_RIGHT_MULT         4
-    2207                            .word   4       ;ADJ_CENTER_MULT        3
-    2208                            .word   0       ;ADJ_EXTRA_MULT         5
-    2209                            .word   1       ;ADJ_UNITS_CREDIT       6
-    2210                            .word   0       ;ADJ_UNITS_BONUS        7
-    2211                            .word   0       ;ADJ_MIN_UNITS          8
-    2212                            .word   4       ;ADJCDIV                9  ;COINS PER DOLLAR
-    2213                            .word   1       ;SHOW FRACTIONS         10
-    2214                            .word   1       ;ADJ_START_CRED         11 ;CREDITS REQUIRED TO START
-    2215                            .word   1       ;ADJ_CONT_CRED          12 ;CREDITS REQUIRED TO CONTINUE
-    2216                            .word   3       ;ADJ_DIFFICULTY         13
-    2217                            .word   5000    ;ADJ_HSRESET            14
-    2218                            .word   3       ;ADJ_LIVES              15
-    2219                            .word   0       ;ADJ_AMODE_MUSIC        16
-    2220                            .word   50      ;MAXIMUM CREDITS        17
-    2221                            .word   0       ;FREE PLAY              18
-    2222                            .word   1       ;NON-ZERO MEANS COIN BLOCK (1ST 8) UNTOUCHED 19
-    2223                            .word   0       ;ZERO MEANS NORMAL GORE ... 1 = SOFTEN IT  20
-    2224                            .word   1       ;NON-ZERO MEANS 1ST 6 UNTOUCHED.                21
-    2225                            .word   0       ;NON-ZERO MEANS NO COIN-SPECIFIC MESSAGE ON COIN PAGE  21
-    2226                            .word   1       ;ADJCNTR  23   ADJUST MECH COIN COUNTER
-    2227                            .endif
-    2228                    
+    2188 00009f60     0000          .word   0       ;               15
+    2189 00009f70     0001          .word   1       ;ADJMUSIC       16      ;attract mode music = off
+    2190 00009f80     0032          .word   50      ;ADJMAXC        17      ;MAXIMUM CREDITS
+    2191 00009f90     0000          .word   0       ;ADJFREPL       18      ;NON-ZERO MEANS FREE PLAY
+    2192 00009fa0     0001          .word   1       ;ADJVIRGIN      19      ;NON-ZERO MEANS 1ST 8 OF COIN ADJUST BLOCK UNTOUCHED
+    2193 00009fb0     0008          .word   8       ;ADJFULLG       20      ;credits needed to purchase full game (4-16)
+    2194 00009fc0     0001          .word   1       ;ADJ1ST6        21      ;NON-ZERO MEANS 1ST 6 UNTOUCHED.
+    2195 00009fd0     0000          .word   0       ;ADJNOCPAG      22
+    2196 00009fe0     0001          .word   1       ;ADJCNTR        23      ;COIN COUNTER MODE
+    2197 00009ff0     0003          .word   3       ;ADJSPEED       24      ;game timer speed (1-5)
+    2198 0000a000     0001          .word   1       ;ADJHEADSZ      25      ;player head sizes (1-2)
+    2199 0000a010     0001          .word   1       ;ADJWINMODE     26      ;(winner stays free)
+    2200 0000a020     0001          .word   1       ;ADJCOMPASS     27      ;computer assistance (0=on)
+    2201 0000a030     0001          .word   1       ;ADJTOURNEY     28      ;Tournament mode (0=on)
+    2202                    
+    2203                            .if 0
+    2204                            .word   0       ;ADJ_UNUSED             0
+    2205                            .word   2       ;ADJ_PRICING            1  ;MASTER PRICING
+    2206                            .word   1       ;ADJ_LEFT_MULT          2
+    2207                            .word   1       ;ADJ_RIGHT_MULT         4
+    2208                            .word   4       ;ADJ_CENTER_MULT        3
+    2209                            .word   0       ;ADJ_EXTRA_MULT         5
+    2210                            .word   1       ;ADJ_UNITS_CREDIT       6
+    2211                            .word   0       ;ADJ_UNITS_BONUS        7
+    2212                            .word   0       ;ADJ_MIN_UNITS          8
+    2213                            .word   4       ;ADJCDIV                9  ;COINS PER DOLLAR
+    2214                            .word   1       ;SHOW FRACTIONS         10
+    2215                            .word   1       ;ADJ_START_CRED         11 ;CREDITS REQUIRED TO START
+    2216                            .word   1       ;ADJ_CONT_CRED          12 ;CREDITS REQUIRED TO CONTINUE
+    2217                            .word   3       ;ADJ_DIFFICULTY         13
+    2218                            .word   5000    ;ADJ_HSRESET            14
+    2219                            .word   3       ;ADJ_LIVES              15
+    2220                            .word   0       ;ADJ_AMODE_MUSIC        16
+    2221                            .word   50      ;MAXIMUM CREDITS        17
+    2222                            .word   0       ;FREE PLAY              18
+    2223                            .word   1       ;NON-ZERO MEANS COIN BLOCK (1ST 8) UNTOUCHED 19
+    2224                            .word   0       ;ZERO MEANS NORMAL GORE ... 1 = SOFTEN IT  20
+    2225                            .word   1       ;NON-ZERO MEANS 1ST 6 UNTOUCHED.                21
+    2226                            .word   0       ;NON-ZERO MEANS NO COIN-SPECIFIC MESSAGE ON COIN PAGE  21
+    2227                            .word   1       ;ADJCNTR  23   ADJUST MECH COIN COUNTER
+    2228                            .endif
     2229                    
-    2230 00009ff0           MESS_CREDITS
-    2231 00009ff0       43          .byte   "CREDITS: ",0
-    2232 0000a040                   .even
-    2233                    
-    2234 0000a040           MESS_CNUM
-    2235 0000a040                   MESS_MAC  RD15FONT,SPACING20,CP_CX,135,ROBO_LF,STRCNRM,0
-    2236 0000a0e0           MESS_LOWNUM
-    2237 0000a0e0                   MESS_MAC  RD15FONT,SPACING20,CP_CX,135,ROBO_LF,STRCNRM,0
-    2238                    
-    2239 0000a180           MESS_FREEP
-    2240 0000a180       46          .byte   "FREE  PLAY",0,0
-    2241 0000a1e0                   .even
-    2242                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+    2230                    
+    2231 0000a040           MESS_CREDITS
+    2232 0000a040       43          .byte   "CREDITS: ",0
+    2233 0000a090                   .even
+    2234                    
+    2235 0000a090           MESS_CNUM
+    2236 0000a090                   MESS_MAC  RD15FONT,SPACING20,CP_CX,135,ROBO_LF,STRCNRM,0
+    2237 0000a130           MESS_LOWNUM
+    2238 0000a130                   MESS_MAC  RD15FONT,SPACING20,CP_CX,135,ROBO_LF,STRCNRM,0
+    2239                    
+    2240 0000a1d0           MESS_FREEP
+    2241 0000a1d0       46          .byte   "FREE  PLAY",0,0
+    2242 0000a230                   .even
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   53
 
-    2243 0000a1e0           MESS_READY_1
-    2244 0000a1e0                   MESS_MAC  RD15FONT,SPACING20,CP_CX,155,ROBO_YELLOW,STRCNRM,0
-    2245 0000a280       52          .byte   "READY FOR  1  PLAYER",0,0
-    2246 0000a330                   .even
-    2247                    
-    2248 0000a330           MESS_READY_2
-    2249 0000a330                   MESS_MAC  RD15FONT,SPACING20,CP_CX,155,ROBO_YELLOW,STRCNRM,0
-    2250 0000a3d0       52          .byte   "READY FOR  1 - 2  PLAYERS",0,0
-    2251 0000a4b0                   .even
-    2252                    
-    2253 0000a4b0           MESS_READY_3
-    2254 0000a4b0                   MESS_MAC  RD15FONT,SPACING20,CP_CX,155,ROBO_YELLOW,STRCNRM,0
-    2255 0000a550       52          .byte   "READY FOR  1 - 3  PLAYERS",0,0
-    2256 0000a630                   .even
-    2257                    
-    2258 0000a630           MESS_READY_4
-    2259 0000a630                   MESS_MAC  RD15FONT,SPACING20,CP_CX,155,ROBO_YELLOW,STRCNRM,0
-    2260 0000a6d0       52          .byte   "READY FOR  1 - 4  PLAYERS",0,0
-    2261 0000a7b0                   .even
-    2262                    
-    2263 0000a7b0           MESS_INS_COIN
-    2264 0000a7b0                    MESS_MAC  RD15FONT,SPACING20,CP_CX,175,ROBO_YELLOW,STRCNRM,0
-    2265                    
+    2243                    
+    2244 0000a230           MESS_READY_1
+    2245 0000a230                   MESS_MAC  RD15FONT,SPACING20,CP_CX,155,ROBO_YELLOW,STRCNRM,0
+    2246 0000a2d0       52          .byte   "READY FOR  1  PLAYER",0,0
+    2247 0000a380                   .even
+    2248                    
+    2249 0000a380           MESS_READY_2
+    2250 0000a380                   MESS_MAC  RD15FONT,SPACING20,CP_CX,155,ROBO_YELLOW,STRCNRM,0
+    2251 0000a420       52          .byte   "READY FOR  1 - 2  PLAYERS",0,0
+    2252 0000a500                   .even
+    2253                    
+    2254 0000a500           MESS_READY_3
+    2255 0000a500                   MESS_MAC  RD15FONT,SPACING20,CP_CX,155,ROBO_YELLOW,STRCNRM,0
+    2256 0000a5a0       52          .byte   "READY FOR  1 - 3  PLAYERS",0,0
+    2257 0000a680                   .even
+    2258                    
+    2259 0000a680           MESS_READY_4
+    2260 0000a680                   MESS_MAC  RD15FONT,SPACING20,CP_CX,155,ROBO_YELLOW,STRCNRM,0
+    2261 0000a720       52          .byte   "READY FOR  1 - 4  PLAYERS",0,0
+    2262 0000a800                   .even
+    2263                    
+    2264 0000a800           MESS_INS_COIN
+    2265 0000a800                    MESS_MAC  RD15FONT,SPACING20,CP_CX,175,ROBO_YELLOW,STRCNRM,0
     2266                    
-    2267 0000a850       49          .byte   "INSERT COINS",0,0
-    2268                    
+    2267                    
+    2268 0000a8a0       49          .byte   "INSERT COINS",0,0
     2269                    
-    2270 0000a8c0                   .even
-    2271                    
-    2272 0000a8c0           MESS_PRESS_START
-    2273 0000a8c0                   MESS_MAC RD15FONT,SPACING20,CP_CX,175,ROBO_YELLOW,STRCNRM,0
-    2274 0000a960       50          .byte   "PRESS START",0,0
-    2275 0000a9d0                   .even
-    2276                    
-    2277                     .if 0
-    2278                    
-    2279                    DUMP_FS
-    2280                            CALLR   DUMP_PAGE
-    2281                            CLR     A0
-    2282                            MOVI    DUMP_PTR,A7
-    2283                            CALLA   WC_WORD                 ;SET NUMBER OF DUMPS TO ZERO
-    2284                            RETS
-    2285                    
-    2286                    DUMP_SIZE        .equ    10*C_LONG_SIZE         ;9 LONG WORDS.
-    2287                    DUMP_LAST        .equ    CMOS+08000H-DUMP_SIZE  ;Let em use the whole page!
-    2288                    MAX_DUMP         .equ    8                      ;DON'T HOLD MORE THAN 12/PAGE
-    2289                    
-    2290                    ADD_DUMP
-    2291                            MMTM    SP,B0,B1,B2
-    2292                            MMTM    SP,A0,A1,A7
-    2293                            CALLR   DUMP_PAGE               ;SET CMOS PAGE CORRECTLY.
-    2294                            MOVE    A0,B0
-    2295                            MOVE    A7,B2                   ;SAVE THESE!
-    2296                            MOVE    A1,B1
-    2297                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+    2270                    
+    2271 0000a910                   .even
+    2272                    
+    2273 0000a910           MESS_PRESS_START
+    2274 0000a910                   MESS_MAC RD15FONT,SPACING20,CP_CX,175,ROBO_YELLOW,STRCNRM,0
+    2275 0000a9b0       50          .byte   "PRESS START",0,0
+    2276 0000aa20                   .even
+    2277                    
+    2278                     .if 0
+    2279                    
+    2280                    DUMP_FS
+    2281                            CALLR   DUMP_PAGE
+    2282                            CLR     A0
+    2283                            MOVI    DUMP_PTR,A7
+    2284                            CALLA   WC_WORD                 ;SET NUMBER OF DUMPS TO ZERO
+    2285                            RETS
+    2286                    
+    2287                    DUMP_SIZE        .equ    10*C_LONG_SIZE         ;9 LONG WORDS.
+    2288                    DUMP_LAST        .equ    CMOS+08000H-DUMP_SIZE  ;Let em use the whole page!
+    2289                    MAX_DUMP         .equ    8                      ;DON'T HOLD MORE THAN 12/PAGE
+    2290                    
+    2291                    ADD_DUMP
+    2292                            MMTM    SP,B0,B1,B2
+    2293                            MMTM    SP,A0,A1,A7
+    2294                            CALLR   DUMP_PAGE               ;SET CMOS PAGE CORRECTLY.
+    2295                            MOVE    A0,B0
+    2296                            MOVE    A7,B2                   ;SAVE THESE!
+    2297                            MOVE    A1,B1
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   54
 
-    2298                            MOVI    DUMP_PTR,A7
-    2299                            CALLA   RC_WORD                 ;GET THE INDICATOR OF HOW MANY.
-    2300                            MOVI    DUMP_SIZE,A1
-    2301                            MPYU    A0,A1                   ;THIS IS OFFSET INTO CMOS FOR THIS ENTRY!
-    2302                    
-    2303                            ADDI    DUMP_DATA,A1            ;NOW A1 POINTS WHERE WE'RE PUTTING THE DATA!
-    2304                            CMPI    DUMP_LAST,A1            ;ARE WE TOO FAR FOR ANOTHER?
-    2305                            JRHS    NO_DUMP                 ;YEP....SKIP IT
-    2306                    
-    2307                            INC     A0                      ;1 MORE OUT THERE!
-    2308                            CALLA   WC_WORD                 ;CHALK IT!
-    2309                    
-    2310                            MOVE    A1,A7                   ;THIS IS POINTER TO STORE DATA.
-    2311                            MOVE    B0,A0                   ;THIS IS A0
-    2312                            CALLA   WC_LONGI
-    2313                            MOVE    B1,A0                   ;THIS IS A1
-    2314                            CALLA   WC_LONGI
-    2315                            MOVE    A2,A0                   ;THIS IS A2
-    2316                            CALLA   WC_LONGI
-    2317                            MOVE    A3,A0                   ;THIS IS A3
-    2318                            CALLA   WC_LONGI
-    2319                            MOVE    A4,A0                   ;THIS IS A4
-    2320                            CALLA   WC_LONGI
-    2321                            MOVE    A5,A0                   ;THIS IS A5
-    2322                            CALLA   WC_LONGI
-    2323                            MOVE    A6,A0                   ;THIS IS A6
-    2324                            CALLA   WC_LONGI
-    2325                            MOVE    B2,A0                   ;THIS IS A7
-    2326                            CALLA   WC_LONGI
-    2327                            MOVE    A8,A0                   ;THIS IS A8
-    2328                            CALLA   WC_LONGI
-    2329                            MOVE    A9,A0                   ;THIS IS A9
-    2330                            CALLA   WC_LONGI
-    2331                    NO_DUMP
-    2332                            MMFM    SP,A0,A1,A7
-    2333                            MMFM    SP,B0,B1,B2
-    2334                            RETS
-    2335                    
-    2336                    DUMP_PAGE
-    2337                            PUSH    a1
-    2338                            MOVI    DUMP_SELECT,A1          ;THIS IS DUMP PAGE
-    2339                            CALLA   SET_PAGE                ;SET IT PLEASE
-    2340                            MMFM    SP,A1
-    2341                            RETS
-    2342                    
-    2343                    DISPDUMP
-    2344                            CALLR   DUMP_PAGE
-    2345                            MOVI    DUMP_PTR,A7
-    2346                            CALLA   RC_WORD                 ;GET THE INDICATOR OF HOW MANY.
-    2347                            JRZ     NOTHIN_TO_DUMP
-    2348                    
-    2349                            CLR     A9                      ;THIS IS CURRENT ONE
-    2350                            MOVE    A0,A8                   ;THIS IS THE LAST ONE TO DO
-    2351                    
-    2352                    DO_ANOTHER_DPAGE
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+    2298                    
+    2299                            MOVI    DUMP_PTR,A7
+    2300                            CALLA   RC_WORD                 ;GET THE INDICATOR OF HOW MANY.
+    2301                            MOVI    DUMP_SIZE,A1
+    2302                            MPYU    A0,A1                   ;THIS IS OFFSET INTO CMOS FOR THIS ENTRY!
+    2303                    
+    2304                            ADDI    DUMP_DATA,A1            ;NOW A1 POINTS WHERE WE'RE PUTTING THE DATA!
+    2305                            CMPI    DUMP_LAST,A1            ;ARE WE TOO FAR FOR ANOTHER?
+    2306                            JRHS    NO_DUMP                 ;YEP....SKIP IT
+    2307                    
+    2308                            INC     A0                      ;1 MORE OUT THERE!
+    2309                            CALLA   WC_WORD                 ;CHALK IT!
+    2310                    
+    2311                            MOVE    A1,A7                   ;THIS IS POINTER TO STORE DATA.
+    2312                            MOVE    B0,A0                   ;THIS IS A0
+    2313                            CALLA   WC_LONGI
+    2314                            MOVE    B1,A0                   ;THIS IS A1
+    2315                            CALLA   WC_LONGI
+    2316                            MOVE    A2,A0                   ;THIS IS A2
+    2317                            CALLA   WC_LONGI
+    2318                            MOVE    A3,A0                   ;THIS IS A3
+    2319                            CALLA   WC_LONGI
+    2320                            MOVE    A4,A0                   ;THIS IS A4
+    2321                            CALLA   WC_LONGI
+    2322                            MOVE    A5,A0                   ;THIS IS A5
+    2323                            CALLA   WC_LONGI
+    2324                            MOVE    A6,A0                   ;THIS IS A6
+    2325                            CALLA   WC_LONGI
+    2326                            MOVE    B2,A0                   ;THIS IS A7
+    2327                            CALLA   WC_LONGI
+    2328                            MOVE    A8,A0                   ;THIS IS A8
+    2329                            CALLA   WC_LONGI
+    2330                            MOVE    A9,A0                   ;THIS IS A9
+    2331                            CALLA   WC_LONGI
+    2332                    NO_DUMP
+    2333                            MMFM    SP,A0,A1,A7
+    2334                            MMFM    SP,B0,B1,B2
+    2335                            RETS
+    2336                    
+    2337                    DUMP_PAGE
+    2338                            PUSH    a1
+    2339                            MOVI    DUMP_SELECT,A1          ;THIS IS DUMP PAGE
+    2340                            CALLA   SET_PAGE                ;SET IT PLEASE
+    2341                            MMFM    SP,A1
+    2342                            RETS
+    2343                    
+    2344                    DISPDUMP
+    2345                            CALLR   DUMP_PAGE
+    2346                            MOVI    DUMP_PTR,A7
+    2347                            CALLA   RC_WORD                 ;GET THE INDICATOR OF HOW MANY.
+    2348                            JRZ     NOTHIN_TO_DUMP
+    2349                    
+    2350                            CLR     A9                      ;THIS IS CURRENT ONE
+    2351                            MOVE    A0,A8                   ;THIS IS THE LAST ONE TO DO
+    2352                    
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   55
 
-    2353                            CALLA   CLR_SCRN                ;CLEAR SCREEN
-    2354                            CALLR   DUMP_PAGE
-    2355                            movk    20,a10                  ;This is y coordiante of current one!
-    2356                            MOVI    MAX_DUMP,A11            ;THIS IS MAX NUMBER PER PAGE.
-    2357                    
-    2358                    DO_ANOTHER_DUMP
-    2359                            JSRP    DO_DUMP
-    2360                            addk    30,a10                  ;Kick y up
-    2361                            INC     A9                      ;KICK TO NEXT DUMP
-    2362                            CMP     A8,A9                   ;UNTIL THEY'RE ALL DONE!
-    2363                            JRHS    DUMP_DONE               ;WE'RE NOT ALL DONE YET!
-    2364                    
-    2365                            DSJS    A11,DO_ANOTHER_DUMP     ;NOT FOR THIS PAGE EITHER!
-    2366                    
-    2367                            JSRP    WAIT_MUT                ;WATCH FOR STICKS!
-    2368                            JRUC    DO_ANOTHER_DPAGE
-    2369                    
-    2370                     .endif
-    2371                    
-    2372 0000a9d0           WAIT_MUT
-    2373 0000a9d0     0d5f          CALLA   FORM_SWS        ;1ST STATE DOESN'T COUNT
-         0000a9e0 00000000! 
-    2374 0000aa00           WB1
-    2375 0000aa00                   SLEEPK  1
-    2376                    
-    2377 0000aa40     0d5f          CALLA   FORM_SWS
-         0000aa50 00000000! 
-    2378 0000aa70     4c02          MOVE    A0,A2           
-    2379 0000aa80     0b82          ANDI    2002H,A2
-         0000aa90 ffffdffd  
-    2380 0000aab0     0b42          CMPI    2002H,A2
-         0000aac0     dffd  
-    2381 0000aad0     cb07          JRNZ    WB2                     ;NOT "CLEAR"
-    2382                    
+    2353                    DO_ANOTHER_DPAGE
+    2354                            CALLA   CLR_SCRN                ;CLEAR SCREEN
+    2355                            CALLR   DUMP_PAGE
+    2356                            movk    20,a10                  ;This is y coordiante of current one!
+    2357                            MOVI    MAX_DUMP,A11            ;THIS IS MAX NUMBER PER PAGE.
+    2358                    
+    2359                    DO_ANOTHER_DUMP
+    2360                            JSRP    DO_DUMP
+    2361                            addk    30,a10                  ;Kick y up
+    2362                            INC     A9                      ;KICK TO NEXT DUMP
+    2363                            CMP     A8,A9                   ;UNTIL THEY'RE ALL DONE!
+    2364                            JRHS    DUMP_DONE               ;WE'RE NOT ALL DONE YET!
+    2365                    
+    2366                            DSJS    A11,DO_ANOTHER_DUMP     ;NOT FOR THIS PAGE EITHER!
+    2367                    
+    2368                            JSRP    WAIT_MUT                ;WATCH FOR STICKS!
+    2369                            JRUC    DO_ANOTHER_DPAGE
+    2370                    
+    2371                     .endif
+    2372                    
+    2373 0000aa20           WAIT_MUT
+    2374 0000aa20     0d5f          CALLA   FORM_SWS        ;1ST STATE DOESN'T COUNT
+         0000aa30 00000000! 
+    2375 0000aa50           WB1
+    2376 0000aa50                   SLEEPK  1
+    2377                    
+    2378 0000aa90     0d5f          CALLA   FORM_SWS
+         0000aaa0 00000000! 
+    2379 0000aac0     4c02          MOVE    A0,A2           
+    2380 0000aad0     0b82          ANDI    2002H,A2
+         0000aae0 ffffdffd  
+    2381 0000ab00     0b42          CMPI    2002H,A2
+         0000ab10     dffd  
+    2382 0000ab20     cb07          JRNZ    WB2                     ;NOT "CLEAR"
     2383                    
     2384                    
     2385                    
-    2386 0000aae0     c0f1          JRUC    WB1
-    2387                    
-    2388 0000aaf0           getcoin
-    2389 0000aaf0     09e0          movi    coin_snd,a0
-         0000ab00 00000000! 
-    2390 0000ab20     c080          jauc    snd_play1ovr
-         0000ab30 00000000! 
-    2391                    
+    2386                    
+    2387 0000ab30     c0f1          JRUC    WB1
+    2388                    
+    2389 0000ab40           getcoin
+    2390 0000ab40     09e0          movi    coin_snd,a0
+         0000ab50 00000000! 
+    2391 0000ab70     c080          jauc    snd_play1ovr
+         0000ab80 00000000! 
     2392                    
-    2393 0000ab50     03e1  WB2     NOT     A1                      ;LAST = 0 AND NOW = 1 MEANS EDGE!
-    2394 0000ab60     5020          AND     A1,A0                   ;1'S WHERE WE HAVE POSITIVE EDGE.
-    2395 0000ab70     0b80          ANDI    BUTTONS,A0              ;IS IT A BUTTON?
-         0000ab80 ffff0f0f  
-    2396 0000aba0     cae5          JRZ     WB1
-    2397                    
+    2393                    
+    2394 0000aba0     03e1  WB2     NOT     A1                      ;LAST = 0 AND NOW = 1 MEANS EDGE!
+    2395 0000abb0     5020          AND     A1,A0                   ;1'S WHERE WE HAVE POSITIVE EDGE.
+    2396 0000abc0     0b80          ANDI    BUTTONS,A0              ;IS IT A BUTTON?
+         0000abd0 ffff0f0f  
+    2397 0000abf0     cae5          JRZ     WB1
     2398                    
-    2399 0000abb0                   SOUND1  beep2_snd
-    2400 0000ac10                   RETP
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+    2399                    
+    2400 0000ac00                   SOUND1  beep2_snd
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   56
 
-    2401                    
+    2401 0000ac60                   RETP
     2402                    
-    2403 0000ac40           DUMP_DONE
-    2404 0000ac40                   RETP                            ;AND RETURN TO CALLER!
-    2405                    
-    2406 0000ac70           NOTHIN_TO_DUMP
-    2407 0000ac70     0d5f          CALLA   CLR_SCRN                ;PRINT SOMETHING PLEASE
-         0000ac80 00000000! 
-    2408 0000aca0     09e8          MOVI    MESS_NODUMP,A8
-         0000acb0 0000b300' 
-    2409 0000acd0                   JSRP    L_MESS
-    2410 0000ad40                   RETP
-    2411                    
+    2403                    
+    2404 0000ac90           DUMP_DONE
+    2405 0000ac90                   RETP                            ;AND RETURN TO CALLER!
+    2406                    
+    2407 0000acc0           NOTHIN_TO_DUMP
+    2408 0000acc0     0d5f          CALLA   CLR_SCRN                ;PRINT SOMETHING PLEASE
+         0000acd0 00000000! 
+    2409 0000acf0     09e8          MOVI    MESS_NODUMP,A8
+         0000ad00 0000b350' 
+    2410 0000ad20                   JSRP    L_MESS
+    2411 0000ad90                   RETP
     2412                    
-    2413                     .if 0
-    2414                    DO_DUMP
-    2415                            MMTM    A12,A8,A9,A10,A11
-    2416                    
-    2417                            MOVI    DUMP_SIZE,A7
-    2418                            MPYU    A9,A7                   ;THIS IS OFFSET INTO CMOS FOR THIS ENTRY!
-    2419                    
-    2420                            ADDI    DUMP_DATA,A7            ;NOW A1 POINTS WHERE WE'RE PUTTING THE DATA!
-    2421                            MOVE    A10,A3                  ;Y IN A3
-    2422                            MOVK    30,A2                   ;STORE X IN A2
-    2423                            MOVK    10,A5                   ;NUMBER OF WORDS TO DUMP
-    2424                    NEXT_ELE
-    2425                            CALLA   RC_LONGI                ;GET A WORD
-    2426                            MOVE    A0,A4                   ;HEX IN A4
-    2427                    
-    2428                            MOVE    A7,*A13(PDATA),L
-    2429                            MOVE    A2,*A13(PDATA+LONG_SIZE),L
-    2430                            MOVE    A3,*A13(PDATA+(2*LONG_SIZE)),L
-    2431                            MOVE    A5,*A13(PDATA+(3*LONG_SIZE)),L
-    2432                    
-    2433                            JSRP    WRITE_HEX               ;WRITE IT OUT.....A0 = DATA
-    2434                            MOVE    *A13(PDATA),A7,L
-    2435                            MOVE    *A13(PDATA+LONG_SIZE),A2,L
-    2436                            MOVE    *A13(PDATA+(2*LONG_SIZE)),A3,L
-    2437                            MOVE    *A13(PDATA+(3*LONG_SIZE)),A5,L
-    2438                    
-    2439                            ADDI    48H,A2
-    2440                    
-    2441                            CMPI    6,A5                    ;WHEN WE'RE DOWN TO 4 SKIP TO NEXT LINE
-    2442                            JRNZ    NO_SKIP_NOW
-    2443                    
-    2444                            ADDK    12,A3                   ;PUSH TO 2ND LINE
-    2445                            MOVI    33,A2                   ;RE-MARGIN OVER. (30)
-    2446                    
-    2447                    NO_SKIP_NOW
-    2448                            DSJ     A5,NEXT_ELE
-    2449                    
-    2450                            MMFM    A12,A8,A9,A10,A11
-    2451                            RETP
-    2452                    
-    2453                     .endif
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+    2413                    
+    2414                     .if 0
+    2415                    DO_DUMP
+    2416                            MMTM    A12,A8,A9,A10,A11
+    2417                    
+    2418                            MOVI    DUMP_SIZE,A7
+    2419                            MPYU    A9,A7                   ;THIS IS OFFSET INTO CMOS FOR THIS ENTRY!
+    2420                    
+    2421                            ADDI    DUMP_DATA,A7            ;NOW A1 POINTS WHERE WE'RE PUTTING THE DATA!
+    2422                            MOVE    A10,A3                  ;Y IN A3
+    2423                            MOVK    30,A2                   ;STORE X IN A2
+    2424                            MOVK    10,A5                   ;NUMBER OF WORDS TO DUMP
+    2425                    NEXT_ELE
+    2426                            CALLA   RC_LONGI                ;GET A WORD
+    2427                            MOVE    A0,A4                   ;HEX IN A4
+    2428                    
+    2429                            MOVE    A7,*A13(PDATA),L
+    2430                            MOVE    A2,*A13(PDATA+LONG_SIZE),L
+    2431                            MOVE    A3,*A13(PDATA+(2*LONG_SIZE)),L
+    2432                            MOVE    A5,*A13(PDATA+(3*LONG_SIZE)),L
+    2433                    
+    2434                            JSRP    WRITE_HEX               ;WRITE IT OUT.....A0 = DATA
+    2435                            MOVE    *A13(PDATA),A7,L
+    2436                            MOVE    *A13(PDATA+LONG_SIZE),A2,L
+    2437                            MOVE    *A13(PDATA+(2*LONG_SIZE)),A3,L
+    2438                            MOVE    *A13(PDATA+(3*LONG_SIZE)),A5,L
+    2439                    
+    2440                            ADDI    48H,A2
+    2441                    
+    2442                            CMPI    6,A5                    ;WHEN WE'RE DOWN TO 4 SKIP TO NEXT LINE
+    2443                            JRNZ    NO_SKIP_NOW
+    2444                    
+    2445                            ADDK    12,A3                   ;PUSH TO 2ND LINE
+    2446                            MOVI    33,A2                   ;RE-MARGIN OVER. (30)
+    2447                    
+    2448                    NO_SKIP_NOW
+    2449                            DSJ     A5,NEXT_ELE
+    2450                    
+    2451                            MMFM    A12,A8,A9,A10,A11
+    2452                            RETP
+    2453                    
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   57
 
-    2454                    
-    2455 0000ad70           WRITE_HEX
-    2456 0000ad70     09e8          MOVI    MESS_DUMP,A8
-         0000ad80 0000b260' 
-    2457 0000ada0     0d3f          CALLR   LM_SETUP                ;SETUP FOR A DUMP!
-         0000adb0     fe24  
-    2458 0000adc0     4c69          MOVE    A3,A9                   ;MOVE Y DOWN
-    2459 0000add0     2609          SLL     16,A9                   ;SHIFT Y INTO PLACE
-    2460 0000ade0     4049          ADD     A2,A9                   ;ADD IN X
-    2461                    
-    2462 0000adf0     4c88          MOVE    A4,A8
-    2463 0000ae00     5663          CLR     A3                      ;NO COMMAS!
-    2464 0000ae10     0d3f          CALLR   HTOHXASC                ;CONVERT PLEASE!
-         0000ae20     000a  
-    2465 0000ae30                   JSRP    LM_FINIS
-    2466 0000aea0                   RETP
-    2467                    
+    2454                     .endif
+    2455                    
+    2456 0000adc0           WRITE_HEX
+    2457 0000adc0     09e8          MOVI    MESS_DUMP,A8
+         0000add0 0000b2b0' 
+    2458 0000adf0     0d3f          CALLR   LM_SETUP                ;SETUP FOR A DUMP!
+         0000ae00     fe1f  
+    2459 0000ae10     4c69          MOVE    A3,A9                   ;MOVE Y DOWN
+    2460 0000ae20     2609          SLL     16,A9                   ;SHIFT Y INTO PLACE
+    2461 0000ae30     4049          ADD     A2,A9                   ;ADD IN X
+    2462                    
+    2463 0000ae40     4c88          MOVE    A4,A8
+    2464 0000ae50     5663          CLR     A3                      ;NO COMMAS!
+    2465 0000ae60     0d3f          CALLR   HTOHXASC                ;CONVERT PLEASE!
+         0000ae70     000a  
+    2466 0000ae80                   JSRP    LM_FINIS
+    2467 0000aef0                   RETP
     2468                    
-    2469 0000aed0           HTOHXASC
-    2470 0000aed0     098f          MMTM    SP,A1,A2,A9
-         0000aee0     6040  
-    2471 0000aef0     5621          CLR     A1
-    2472 0000af00     5642          CLR     A2                      ;COMMA COUNT
-    2473 0000af10     a02f          MOVE    A1,-*SP                 ;HERE'S THE NULL TERMINATOR
-    2474 0000af20     1a01          MOVK    16,A1                   ;DIVISOR FOR HEX
-    2475 0000af30     4d09          MOVE    A8,A9
-    2476 0000af40           HEXTASC2
-    2477 0000af40     5708          CLR     A8
-    2478 0000af50     5a28          DIVU    A1,A8
-    2479 0000af60     0b09          ADDI    '0',A9                  ;MAKE THE REMAINDER ASCII
-         0000af70     0030  
-    2480 0000af80     0b49          CMPI    '9',A9                  ;IS IT IN A-F RANGE?
-         0000af90     ffc6  
-    2481 0000afa0     c202          JRLS    HHH1
-    2482 0000afb0     0b09          ADDI    7,A9                    ;MAKE ALPHA!
-         0000afc0     0007  
-    2483 0000afd0           HHH1
-    2484 0000afd0     a12f          MOVE    A9,-*SP                 ;SAVE HERE
-    2485 0000afe0     4d09          MOVE    A8,A9
-    2486 0000aff0     ca0b          JRZ     HEXTASC3                ;BR = DONE!
-    2487 0000b000     1022          INC     A2
-    2488 0000b010     0b42          CMPI    3,A2                    ;COMMA CHECK    
-         0000b020     fffc  
-    2489 0000b030     c8f0          JRLO    HEXTASC2                ;BR = NO COMMA
-    2490 0000b040     4c63          MOVE    A3,A3                   ;COMMAS?
-    2491 0000b050     caee          JRZ     HEXTASC2                ;NOPE....IGNORE!
-    2492                    
-    2493 0000b060     09c2          MOVI    ',',A2
-         0000b070     002c  
-    2494 0000b080     a04f          MOVE    A2,-*SP                 ;STUFF A COMMA
-    2495 0000b090     5642          CLR     A2
-    2496 0000b0a0     c0e9          JRUC    HEXTASC2
-    2497 0000b0b0           HEXTASC3
-    2498 0000b0b0     09e1          MOVI    STRNGRAM,A1             ;STORE HERE FOR BLOW OUT        
-         0000b0c0 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+    2469                    
+    2470 0000af20           HTOHXASC
+    2471 0000af20     098f          MMTM    SP,A1,A2,A9
+         0000af30     6040  
+    2472 0000af40     5621          CLR     A1
+    2473 0000af50     5642          CLR     A2                      ;COMMA COUNT
+    2474 0000af60     a02f          MOVE    A1,-*SP                 ;HERE'S THE NULL TERMINATOR
+    2475 0000af70     1a01          MOVK    16,A1                   ;DIVISOR FOR HEX
+    2476 0000af80     4d09          MOVE    A8,A9
+    2477 0000af90           HEXTASC2
+    2478 0000af90     5708          CLR     A8
+    2479 0000afa0     5a28          DIVU    A1,A8
+    2480 0000afb0     0b09          ADDI    '0',A9                  ;MAKE THE REMAINDER ASCII
+         0000afc0     0030  
+    2481 0000afd0     0b49          CMPI    '9',A9                  ;IS IT IN A-F RANGE?
+         0000afe0     ffc6  
+    2482 0000aff0     c202          JRLS    HHH1
+    2483 0000b000     0b09          ADDI    7,A9                    ;MAKE ALPHA!
+         0000b010     0007  
+    2484 0000b020           HHH1
+    2485 0000b020     a12f          MOVE    A9,-*SP                 ;SAVE HERE
+    2486 0000b030     4d09          MOVE    A8,A9
+    2487 0000b040     ca0b          JRZ     HEXTASC3                ;BR = DONE!
+    2488 0000b050     1022          INC     A2
+    2489 0000b060     0b42          CMPI    3,A2                    ;COMMA CHECK    
+         0000b070     fffc  
+    2490 0000b080     c8f0          JRLO    HEXTASC2                ;BR = NO COMMA
+    2491 0000b090     4c63          MOVE    A3,A3                   ;COMMAS?
+    2492 0000b0a0     caee          JRZ     HEXTASC2                ;NOPE....IGNORE!
+    2493                    
+    2494 0000b0b0     09c2          MOVI    ',',A2
+         0000b0c0     002c  
+    2495 0000b0d0     a04f          MOVE    A2,-*SP                 ;STUFF A COMMA
+    2496 0000b0e0     5642          CLR     A2
+    2497 0000b0f0     c0e9          JRUC    HEXTASC2
+    2498 0000b100           HEXTASC3
+    2499 0000b100     09e1          MOVI    STRNGRAM,A1             ;STORE HERE FOR BLOW OUT        
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   58
 
-    2499 0000b0e0     4c28          MOVE    A1,A8
-    2500                    
-    2501 0000b0f0           HEXTASC4
-    2502 0000b0f0     95e9          MOVE    *SP+,A9
-    2503 0000b100     8d21          MOVB    A9,*A1
-    2504 0000b110     1101          ADDK    8,A1
-    2505 0000b120     4d29          MOVE    A9,A9
-    2506 0000b130     cbfb          JRNZ    HEXTASC4
-    2507 0000b140     09af          MMFM    SP,A1,A2,A9
-         0000b150     0206  
-    2508 0000b160     0960          RETS
-    2509                    
+         0000b110 00000000! 
+    2500 0000b130     4c28          MOVE    A1,A8
+    2501                    
+    2502 0000b140           HEXTASC4
+    2503 0000b140     95e9          MOVE    *SP+,A9
+    2504 0000b150     8d21          MOVB    A9,*A1
+    2505 0000b160     1101          ADDK    8,A1
+    2506 0000b170     4d29          MOVE    A9,A9
+    2507 0000b180     cbfb          JRNZ    HEXTASC4
+    2508 0000b190     09af          MMFM    SP,A1,A2,A9
+         0000b1a0     0206  
+    2509 0000b1b0     0960          RETS
     2510                    
-    2511 0000b170           STRCAT
-    2512 0000b170     098f          MMTM    SP,A7,A0,A8
-         0000b180     8180  
-    2513 0000b190           STRC2
-    2514 0000b190     8ee0          MOVB    *A7,A0          ;WALK DOWN A7 TO ITS ZERO.
-    2515 0000b1a0     ca02          JRZ     STRC1           ;WE'RE THERE!
-    2516                    
-    2517 0000b1b0     1107          ADDK    BYTE_SIZE,A7    ;KICK TO NEXT BYTE
-    2518 0000b1c0     c0fc          JRUC    STRC2
-    2519 0000b1d0           STRC1
-    2520 0000b1d0     8f00          MOVB    *A8,A0          ;GET A BYTE FROM 2ND STRING
-    2521 0000b1e0     8c07          MOVB    A0,*A7          ;ADD THIS TO 1ST STRING
-    2522 0000b1f0     1107          ADDK    BYTE_SIZE,A7
-    2523 0000b200     1108          ADDK    BYTE_SIZE,A8
-    2524 0000b210     4c00          MOVE    A0,A0           ;DID WE JUST MOVE TERMINATOR?
-    2525 0000b220     cbfa          JRNZ    STRC1           ;NOPE...MOVE ANOTHER
-    2526                    
-    2527 0000b230     09af          MMFM    SP,A7,A0,A8
-         0000b240     0181  
-    2528 0000b250     0960          RETS
-    2529                    
-    2530 0000b260           MESS_DUMP
-    2531 0000b260                   MESS_MAC RD7FONT,SPACING07,23,227,ROBO_WHITE,STRLNRM,0
-    2532                    
-    2533 0000b300           MESS_NODUMP
-    2534 0000b300                   MESS_MAC RD15FONT,SPACING20,200,128,ROBO_ORANGE,STRCNRM,0
-    2535 0000b3a0       4e          .byte   "NOTHING HERE....PRESS ADVANCE!",0,0
-    2536 0000b4a0                   .even
-    2537                    
-    2538 0000b4a0           MESS_SLASH
-    2539 0000b4a0       2f          .byte   "/",0
-    2540 0000b4b0                   .even
-    2541                    
-    2542 0000b4b0       20  MESS_2SPACE     .byte   "  "
-    2543 0000b4c0       00  MESS_NULL       .byte   0
-    2544 0000b4d0                           .even
-    2545                    
-    2546 0000b4d0           SETUP_1_OF_3
-    2547 0000b4d0                    MESS_MAC  RD15FONT,SPACING20,CP_CX,CP_13,ROBO_LASER,STRCNRM,0
-    2548 0000b570           SETUP_2_OF_3
-    2549 0000b570                    MESS_MAC  RD15FONT,SPACING20,CP_CX,CP_23,ROBO_LASER,STRCNRM,0
-    2550 0000b610           SETUP_3_OF_3
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:06 2023
+    2511                    
+    2512 0000b1c0           STRCAT
+    2513 0000b1c0     098f          MMTM    SP,A7,A0,A8
+         0000b1d0     8180  
+    2514 0000b1e0           STRC2
+    2515 0000b1e0     8ee0          MOVB    *A7,A0          ;WALK DOWN A7 TO ITS ZERO.
+    2516 0000b1f0     ca02          JRZ     STRC1           ;WE'RE THERE!
+    2517                    
+    2518 0000b200     1107          ADDK    BYTE_SIZE,A7    ;KICK TO NEXT BYTE
+    2519 0000b210     c0fc          JRUC    STRC2
+    2520 0000b220           STRC1
+    2521 0000b220     8f00          MOVB    *A8,A0          ;GET A BYTE FROM 2ND STRING
+    2522 0000b230     8c07          MOVB    A0,*A7          ;ADD THIS TO 1ST STRING
+    2523 0000b240     1107          ADDK    BYTE_SIZE,A7
+    2524 0000b250     1108          ADDK    BYTE_SIZE,A8
+    2525 0000b260     4c00          MOVE    A0,A0           ;DID WE JUST MOVE TERMINATOR?
+    2526 0000b270     cbfa          JRNZ    STRC1           ;NOPE...MOVE ANOTHER
+    2527                    
+    2528 0000b280     09af          MMFM    SP,A7,A0,A8
+         0000b290     0181  
+    2529 0000b2a0     0960          RETS
+    2530                    
+    2531 0000b2b0           MESS_DUMP
+    2532 0000b2b0                   MESS_MAC RD7FONT,SPACING07,23,227,ROBO_WHITE,STRLNRM,0
+    2533                    
+    2534 0000b350           MESS_NODUMP
+    2535 0000b350                   MESS_MAC RD15FONT,SPACING20,200,128,ROBO_ORANGE,STRCNRM,0
+    2536 0000b3f0       4e          .byte   "NOTHING HERE....PRESS ADVANCE!",0,0
+    2537 0000b4f0                   .even
+    2538                    
+    2539 0000b4f0           MESS_SLASH
+    2540 0000b4f0       2f          .byte   "/",0
+    2541 0000b500                   .even
+    2542                    
+    2543 0000b500       20  MESS_2SPACE     .byte   "  "
+    2544 0000b510       00  MESS_NULL       .byte   0
+    2545 0000b520                           .even
+    2546                    
+    2547 0000b520           SETUP_1_OF_3
+    2548 0000b520                    MESS_MAC  RD15FONT,SPACING20,CP_CX,CP_13,ROBO_LASER,STRCNRM,0
+    2549 0000b5c0           SETUP_2_OF_3
+    2550 0000b5c0                    MESS_MAC  RD15FONT,SPACING20,CP_CX,CP_23,ROBO_LASER,STRCNRM,0
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:11 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 audits and ajustments handling                                       PAGE   59
 
-    2551 0000b610                    MESS_MAC  RD15FONT,SPACING20,CP_CX,CP_33,ROBO_LASER,STRCNRM,0
-    2552                    
-    2553 0000b6b0           SETUP_1_OF_2
-    2554 0000b6b0                    MESS_MAC  RD15FONT,SPACING20,CP_CX,CP_12,ROBO_LASER,STRCNRM,0
-    2555                    
-    2556 0000b750           SETUP_2_OF_2
-    2557 0000b750                    MESS_MAC  RD15FONT,SPACING20,CP_CX,CP_22,ROBO_LASER,STRCNRM,0
-    2558                    
-    2559 0000b7f0           SETUP_1_OF_1
-    2560 0000b7f0                    MESS_MAC  RD15FONT,SPACING20,CP_CX,CP_11,ROBO_LASER,STRCNRM,0
-    2561                    
-    2562 0000b890           dollar_mes
-    2563 0000b890                   RJR_STR ogmd10_ascii,5,0,200,53,SGMD8RED,print_string_C2
-    2564 0000b930       54          .byte   "THIS GAME ACCEPTS DOLLAR BILLS",0,0
-    2565 0000ba30                   .even
-    2566                    
-    2567 0000ba30           CPYR_MES
-    2568 0000ba30                   RJR_STR sgmd8_ascii,5,0,200,240,SGMD8YEL,print_string_C2
-    2569 0000bad0       20          .byte   " COPYRIGHT 1993 MIDWAY MANUFACTURING COMPANY",0,0
-    2570 0000bc40                   .even
-    2571                    
-    2572 0000bc40                   MESS_MAC RD7FONT,SPACING07,CP_CX,240,ROBO_WHITE,STRCNRM,0
-    2573 0000bce0       20          .byte   " COPYRIGHT 1993 MIDWAY MANUFACTURING COMPANY",0,0
-    2574 0000be50                   .even
-    2575                    
+    2551 0000b660           SETUP_3_OF_3
+    2552 0000b660                    MESS_MAC  RD15FONT,SPACING20,CP_CX,CP_33,ROBO_LASER,STRCNRM,0
+    2553                    
+    2554 0000b700           SETUP_1_OF_2
+    2555 0000b700                    MESS_MAC  RD15FONT,SPACING20,CP_CX,CP_12,ROBO_LASER,STRCNRM,0
+    2556                    
+    2557 0000b7a0           SETUP_2_OF_2
+    2558 0000b7a0                    MESS_MAC  RD15FONT,SPACING20,CP_CX,CP_22,ROBO_LASER,STRCNRM,0
+    2559                    
+    2560 0000b840           SETUP_1_OF_1
+    2561 0000b840                    MESS_MAC  RD15FONT,SPACING20,CP_CX,CP_11,ROBO_LASER,STRCNRM,0
+    2562                    
+    2563 0000b8e0           dollar_mes
+    2564 0000b8e0                   RJR_STR ogmd10_ascii,5,0,200,53,SGMD8RED,print_string_C2
+    2565 0000b980       54          .byte   "THIS GAME ACCEPTS DOLLAR BILLS",0,0
+    2566 0000ba80                   .even
+    2567                    
+    2568 0000ba80           CPYR_MES
+    2569 0000ba80                   RJR_STR sgmd8_ascii,5,0,200,240,SGMD8YEL,print_string_C2
+    2570 0000bb20       20          .byte   " COPYRIGHT 1993 MIDWAY MANUFACTURING COMPANY",0,0
+    2571 0000bc90                   .even
+    2572                    
+    2573 0000bc90                   MESS_MAC RD7FONT,SPACING07,CP_CX,240,ROBO_WHITE,STRCNRM,0
+    2574 0000bd30       20          .byte   " COPYRIGHT 1993 MIDWAY MANUFACTURING COMPANY",0,0
+    2575 0000bea0                   .even
     2576                    
     2577                    
     2578                    
     2579                    
     2580                    
-    2581                            .end
+    2581                    
+    2582                            .end
 
  No Errors,  No Warnings

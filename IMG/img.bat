@@ -1,2 +1,2 @@
-load2 BB    /e /di /fi /t=c:\tmp\jamte /x /v
+load2 BB /di /fi /t=c:\tmp\jamte\bb /x /v
 rem mainimg.glo source?

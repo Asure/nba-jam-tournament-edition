@@ -1,0 +1,379 @@
+	.DATA
+ballshad1:
+	.word   19,5,9,2
+	.long   01d020b8H
+	.word   01000H
+ballshad2:
+	.word   17,5,8,2
+	.long   01d02117H
+	.word   01000H
+ballshad3:
+	.word   16,5,7,2
+	.long   01d0216cH
+	.word   01000H
+ballshad4:
+	.word   15,5,7,2
+	.long   01d021bcH
+	.word   01000H
+ballshad6:
+	.word   13,3,6,2
+	.long   01d02207H
+	.word   01000H
+ballshad7:
+	.word   11,3,5,2
+	.long   01d0222eH
+	.word   01000H
+ballshad8:
+	.word   10,2,5,0
+	.long   01d0224fH
+	.word   01000H
+ballshad9:
+	.word   8,2,4,0
+	.long   01d02263H
+	.word   01000H
+ballshad10:
+	.word   6,2,3,0
+	.long   01d02273H
+	.word   01000H
+ballshad11:
+	.word   5,2,2,-1
+	.long   01d0227fH
+	.word   01000H
+ballshad12:
+	.word   3,2,0,0
+	.long   01d02289H
+	.word   01000H
+ball12:
+	.word   11,11,5,10
+	.long   01d0228fH
+	.word   04000H
+ball13:
+	.word   11,11,5,10
+	.long   01d02473H
+	.word   04000H
+ball21:
+	.word   12,12,5,10
+	.long   01d02657H
+	.word   04000H
+ball22:
+	.word   12,12,5,10
+	.long   01d02897H
+	.word   04000H
+ball23:
+	.word   12,12,5,10
+	.long   01d02ad7H
+	.word   04000H
+ball31:
+	.word   13,13,6,11
+	.long   01d02d17H
+	.word   04000H
+ball32:
+	.word   13,13,6,11
+	.long   01d02fbbH
+	.word   04000H
+ball33:
+	.word   13,13,6,11
+	.long   01d0325fH
+	.word   04000H
+ball41:
+	.word   14,14,6,12
+	.long   01d03503H
+	.word   04000H
+ball42:
+	.word   14,14,6,12
+	.long   01d03813H
+	.word   04000H
+ball43:
+	.word   14,14,6,12
+	.long   01d03b23H
+	.word   04000H
+ball51:
+	.word   15,15,7,13
+	.long   01d03e33H
+	.word   04000H
+ball52:
+	.word   15,15,7,13
+	.long   01d041b7H
+	.word   04000H
+ball53:
+	.word   15,15,7,13
+	.long   01d0453bH
+	.word   04000H
+ball61:
+	.word   16,16,8,14
+	.long   01d048bfH
+	.word   04000H
+ball62:
+	.word   16,16,8,14
+	.long   01d04cbfH
+	.word   04000H
+ball63:
+	.word   16,16,8,14
+	.long   01d050bfH
+	.word   04000H
+ball71:
+	.word   17,17,8,15
+	.long   01d054bfH
+	.word   04000H
+ball72:
+	.word   17,17,8,15
+	.long   01d05943H
+	.word   04000H
+ball73:
+	.word   17,17,8,15
+	.long   01d05dc7H
+	.word   04000H
+ball81:
+	.word   18,18,9,15
+	.long   01d0624bH
+	.word   04000H
+ball82:
+	.word   18,18,9,15
+	.long   01d0675bH
+	.word   04000H
+ball83:
+	.word   18,18,9,15
+	.long   01d06c6bH
+	.word   04000H
+ball91:
+	.word   19,19,10,16
+	.long   01d0717bH
+	.word   04000H
+ball92:
+	.word   19,19,10,16
+	.long   01d0771fH
+	.word   04000H
+ball93:
+	.word   19,19,10,16
+	.long   01d07cc3H
+	.word   04000H
+ball101:
+	.word   20,21,9,19
+	.long   01d08267H
+	.word   04000H
+ball102:
+	.word   20,21,9,19
+	.long   01d088f7H
+	.word   04000H
+ball103:
+	.word   20,21,9,19
+	.long   01d08f87H
+	.word   04000H
+ballf11:
+	.word   11,11,5,10
+	.long   01d09617H
+	.word   06000H
+ballf12:
+	.word   11,11,5,10
+	.long   01d098edH
+	.word   06000H
+ballf13:
+	.word   11,11,5,10
+	.long   01d09bc3H
+	.word   06000H
+ballf14:
+	.word   11,11,5,10
+	.long   01d09e99H
+	.word   07000H
+ballf15:
+	.word   11,11,5,10
+	.long   01d0a1e8H
+	.word   07000H
+ballf16:
+	.word   11,11,5,10
+	.long   01d0a537H
+	.word   07000H
+ballf21:
+	.word   12,12,5,10
+	.long   01d0a886H
+	.word   06000H
+ballf22:
+	.word   12,12,5,10
+	.long   01d0abe6H
+	.word   06000H
+ballf23:
+	.word   12,12,5,10
+	.long   01d0af46H
+	.word   07000H
+ballf24:
+	.word   12,12,5,10
+	.long   01d0b336H
+	.word   07000H
+ballf25:
+	.word   12,12,5,10
+	.long   01d0b726H
+	.word   07000H
+ballf26:
+	.word   12,12,5,10
+	.long   01d0bb16H
+	.word   07000H
+ballf31:
+	.word   13,13,6,12
+	.long   01d0bf06H
+	.word   06000H
+ballf32:
+	.word   13,13,6,12
+	.long   01d0c2fcH
+	.word   07000H
+ballf33:
+	.word   13,13,6,12
+	.long   01d0c79bH
+	.word   07000H
+ballf34:
+	.word   13,13,6,12
+	.long   01d0cc3aH
+	.word   07000H
+ballf35:
+	.word   13,13,6,12
+	.long   01d0d0d9H
+	.word   07000H
+ballf36:
+	.word   13,13,6,12
+	.long   01d0d578H
+	.word   07000H
+ballf41:
+	.word   14,14,6,12
+	.long   01d0da17H
+	.word   07000H
+ballf42:
+	.word   14,14,6,12
+	.long   01d0df73H
+	.word   07000H
+ballf43:
+	.word   14,14,6,12
+	.long   01d0e4cfH
+	.word   07000H
+ballf44:
+	.word   14,14,6,12
+	.long   01d0ea2bH
+	.word   07000H
+ballf45:
+	.word   14,14,6,12
+	.long   01d0ef87H
+	.word   07000H
+ballf46:
+	.word   14,14,6,12
+	.long   01d0f4e3H
+	.word   07000H
+ballf51:
+	.word   15,15,7,13
+	.long   01d0fa3fH
+	.word   07000H
+ballf52:
+	.word   15,15,7,13
+	.long   01d10066H
+	.word   07000H
+ballf53:
+	.word   15,15,7,13
+	.long   01d1068dH
+	.word   07000H
+ballf54:
+	.word   15,15,7,13
+	.long   01d10cb4H
+	.word   07000H
+ballf55:
+	.word   15,15,7,13
+	.long   01d112dbH
+	.word   07000H
+ballf56:
+	.word   15,15,7,13
+	.long   01d11902H
+	.word   07000H
+ballf61:
+	.word   16,16,8,14
+	.long   01d11f29H
+	.word   07000H
+ballf62:
+	.word   16,16,8,14
+	.long   01d12629H
+	.word   07000H
+ballf63:
+	.word   16,16,8,14
+	.long   01d12d29H
+	.word   07000H
+ballf64:
+	.word   16,16,8,14
+	.long   01d13429H
+	.word   07000H
+ballf65:
+	.word   16,16,8,14
+	.long   01d13b29H
+	.word   07000H
+ballf66:
+	.word   16,16,8,14
+	.long   01d14229H
+	.word   07000H
+ballf71:
+	.word   17,17,8,15
+	.long   01d14929H
+	.word   07000H
+ballf72:
+	.word   17,17,8,15
+	.long   01d15110H
+	.word   07000H
+ballf73:
+	.word   17,17,8,15
+	.long   01d158f7H
+	.word   07000H
+ballf74:
+	.word   17,17,8,15
+	.long   01d160deH
+	.word   07000H
+ballf75:
+	.word   17,17,8,15
+	.long   01d168c5H
+	.word   07000H
+ballf76:
+	.word   17,17,8,15
+	.long   01d170acH
+	.word   07000H
+ballf81:
+	.word   18,18,9,15
+	.long   01d17893H
+	.word   07000H
+ballf82:
+	.word   18,18,9,15
+	.long   01d1816fH
+	.word   07000H
+ballf83:
+	.word   18,18,9,15
+	.long   01d18a4bH
+	.word   07000H
+ballf84:
+	.word   18,18,9,15
+	.long   01d19327H
+	.word   07000H
+ballf85:
+	.word   18,18,9,15
+	.long   01d19c03H
+	.word   07000H
+ballf86:
+	.word   18,18,9,15
+	.long   01d1a4dfH
+	.word   07000H
+ballf91:
+	.word   20,19,10,16
+	.long   01d1adbbH
+	.word   07000H
+ballf92:
+	.word   19,19,10,16
+	.long   01d1b81fH
+	.word   07000H
+ballf93:
+	.word   19,19,10,16
+	.long   01d1c1feH
+	.word   07000H
+ballf94:
+	.word   19,19,10,16
+	.long   01d1cbddH
+	.word   07000H
+ballf95:
+	.word   19,19,10,16
+	.long   01d1d5bcH
+	.word   07000H
+ballf96:
+	.word   19,19,10,16
+	.long   01d1df9bH
+	.word   07000H
+	.TEXT
+

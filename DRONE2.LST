@@ -1,4 +1,4 @@
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    1
@@ -58,7 +58,7 @@ TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
       54                    
       55 00000000     05ae          move    @ballpnum,a14
          00000010 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE    2
@@ -118,7 +118,7 @@ basketball drone code                                                PAGE    2
       96 000002c0     b5ae          move    *a13(plyr_d_mode),a14
          000002d0     0450  
       97 000002e0     144e          subk    2,a14
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE    3
@@ -178,7 +178,7 @@ basketball drone code                                                PAGE    3
      136 00000560     b5ae          move    *a13(plyr_num),a14      ;0CHhk for breakaway
          00000570     0100  
      137 00000580     2fee          srl     1,a14
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE    4
@@ -238,7 +238,7 @@ basketball drone code                                                PAGE    4
          000008c0     0139  
      174 000008d0     cb00          jrnz    kqnvshoot2                      ;Need a 3?
          000008e0     00c2  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE    5
@@ -298,7 +298,7 @@ basketball drone code                                                PAGE    5
      206 00000bf0     1441          subk    2,a1
      207 00000c00     c400          jrlt    kqnvshoot2                      ;Less than 2 secs?
          00000c10     008f  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE    6
@@ -358,7 +358,7 @@ basketball drone code                                                PAGE    6
      247 00000f40           kqnvgoaround                            ;>Opponent in my way
      248 00000f40     b5a0          move    *a13(plyr_tmdist),a0
          00000f50     02f0  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE    7
@@ -418,7 +418,7 @@ basketball drone code                                                PAGE    7
      288 00001200     0b4e          cmpi    65,a14
          00001210     ffbe  
      289 00001220     c4da          jrlt    kqnvgoa                 ;He's too close?
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE    8
@@ -478,7 +478,7 @@ basketball drone code                                                PAGE    8
      327                    
      328 00001510     8560  kqnvshoot2      move    *a11,a0                 ;>Shoot
      329 00001520     0ba0          ori     BUT1_M|BUT3_M,a0
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE    9
@@ -538,7 +538,7 @@ basketball drone code                                                PAGE    9
      370 00001850           kqnvtmdrn
      371 00001850     b460          move    *a3(plyr_seqflgs),a0
          00001860     0180  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   10
@@ -598,7 +598,7 @@ basketball drone code                                                PAGE   10
      417 00001b40       00          .byte   0,0,0,0
      418                    
      419 00001b60       00          .byte   0,JOYD_M|JOYL_M,JOYU_M|JOYR_M,0         ;135~ clkwise
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   11
@@ -658,7 +658,7 @@ basketball drone code                                                PAGE   11
          00001ec0     0310  
      463 00001ed0     0b4e          cmpi    70,a14
          00001ee0     ffb9  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   12
@@ -718,7 +718,7 @@ basketball drone code                                                PAGE   12
      505                    
      506 00002150     b5ae          move    *a13(plyr_o1dist),a14
          00002160     0310  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   13
@@ -778,7 +778,7 @@ basketball drone code                                                PAGE   13
      545 00002480     0b2e          addi    aavcp_t,a14
          00002490 00002a50' 
      546 000024b0     85c1          move    *a14,a1
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   14
@@ -838,7 +838,7 @@ basketball drone code                                                PAGE   14
      587 00002760     0d3f          callr   rndrng0
          00002770     0559  
      588 00002780     1340          addk    TSEC/2,a0
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   15
@@ -898,7 +898,7 @@ basketball drone code                                                PAGE   15
      637 00002e00     feca          .word   -310,Z-10, -300,Z, -310,Z+10
      638                    
      639                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   16
@@ -958,7 +958,7 @@ basketball drone code                                                PAGE   16
      679 00003130     0381          abs     a1
      680 00003140     1601  oedxdsml2       subk    16,a1
      681 00003150     c40c          jrlt    oedxinway
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   17
@@ -1018,7 +1018,7 @@ basketball drone code                                                PAGE   17
      723                    
      724                    
      725 000033d0     5600          clr     a0
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   18
@@ -1078,7 +1078,7 @@ basketball drone code                                                PAGE   18
          000036b0 00000010! 
      766 000036d0     cb05          jrnz    qjcdscok
      767 000036e0     05ae          move    @shotimer,a14           ;Ones
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   19
@@ -1138,7 +1138,7 @@ basketball drone code                                                PAGE   19
          000039c0     0180  
      808 000039d0     1fc0          btst    DUNK_B,a0
      809 000039e0     cb23          jrnz    qjcdgbc                 ;He's dunking?
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   20
@@ -1198,7 +1198,7 @@ basketball drone code                                                PAGE   20
      847                    
      848 00003cc0     b64e          move    *a2(OXVEL),a14,L
          00003cd0     0020  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   21
@@ -1258,7 +1258,7 @@ basketball drone code                                                PAGE   21
      891                    
      892 00003fa0     b00d  qjcdseek        move    a0,*a13(plyr_d_seekcnt)
          00003fb0     0480  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   22
@@ -1318,7 +1318,7 @@ basketball drone code                                                PAGE   22
      933 00004260     0d3f          callr   rndrng0
          00004270     03a9  
      934                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   23
@@ -1378,7 +1378,7 @@ basketball drone code                                                PAGE   23
          00004520 00004fa0' 
      977 00004540     85c1          move    *a14,a1
      978 00004550     4820          cmp     a1,a0
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   24
@@ -1438,7 +1438,7 @@ basketball drone code                                                PAGE   24
     1031 00004ea0     0006          .word   6
     1032 00004eb0     0006          .word   6,6,8,10,13
     1033 00004f00     000f          .word   15,17,18,20,30
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   25
@@ -1498,7 +1498,7 @@ basketball drone code                                                PAGE   25
     1076 000053b0     144e          subk    2,a14
     1077 000053c0     c401          jrlt    rqdylft
     1078 000053d0     03a1          neg     a1
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   26
@@ -1558,7 +1558,7 @@ basketball drone code                                                PAGE   26
     1119                    
     1120                            .asg    CZMID,Z
     1121 00005650           rqdyseek_t
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   27
@@ -1618,7 +1618,7 @@ basketball drone code                                                PAGE   27
     1163 00005b20     c501          jrge    kxhcdnok
     1164 00005b30     57ce          clr     a14
     1165 00005b40     248e  kxhcdnok        sll     4,a14
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   28
@@ -1678,7 +1678,7 @@ basketball drone code                                                PAGE   28
          00005e20     0020  
     1203 00005e30     2a6e          sra     16-3,a14                ;8 ticks from now
     1204 00005e40     41c0          add     a14,a0
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   29
@@ -1738,7 +1738,7 @@ basketball drone code                                                PAGE   29
     1243 00006100     4820          cmp     a1,a0
     1244 00006110     c41e          jrlt    kxhcnojmp
     1245                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   30
@@ -1798,7 +1798,7 @@ basketball drone code                                                PAGE   30
     1291                    
     1292                    
     1293 000066f0            SUBRP  drone_seek
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   31
@@ -1858,7 +1858,7 @@ basketball drone code                                                PAGE   31
     1341 00006920            SUBRP  drone_getcurskillo
     1342                    
     1343 00006920     b5a0          move    *a13(plyr_ptsdown),a0
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   32
@@ -1918,7 +1918,7 @@ basketball drone code                                                PAGE   32
     1388                    
     1389 00006be0     b46e          move    *a3(plyr_ptsdown),a14
          00006bf0     0440  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   33
@@ -1978,7 +1978,7 @@ basketball drone code                                                PAGE   33
          00006f60     0460  
     1433                    
     1434 00006f70     0d90          dsj     b0,twrolp
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   34
@@ -2038,7 +2038,7 @@ basketball drone code                                                PAGE   34
     1486                    
     1487 00007c30     07a1          move    @RAND,a1,L
          00007c40 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:59 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball drone code                                                PAGE   35

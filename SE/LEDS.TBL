@@ -1,0 +1,330 @@
+	.DATA
+LED_00:
+	.word   27,11,14,3
+	.long   00H
+	.word   03000H
+	.long   LED_P
+LED_MAX:
+	.long   037bH
+LED_0:
+	.long   00H
+LED_1:
+	.long   05cdH
+LED_2:
+	.long   0948H
+LED_3:
+	.long   0cc3H
+LED_4:
+	.long   0103eH
+LED_5:
+	.long   013b9H
+LED_6:
+	.long   01734H
+LED_7:
+	.long   01aafH
+LED_8:
+	.long   01e2aH
+LED_9:
+	.long   021a5H
+LED_10:
+	.long   02520H
+LED_11:
+	.long   0289bH
+LED_12:
+	.long   02c16H
+LED_13:
+	.long   02f91H
+LED_14:
+	.long   0330cH
+LED_15:
+	.long   03687H
+LED_16:
+	.long   03a02H
+LED_17:
+	.long   03d7dH
+LED_18:
+	.long   040f8H
+LED_19:
+	.long   04473H
+LED_20:
+	.long   047eeH
+LED_21:
+	.long   04b69H
+LED_22:
+	.long   04ee4H
+LED_23:
+	.long   0525fH
+LED_24:
+	.long   055daH
+LED_25:
+	.long   05955H
+LED_26:
+	.long   05cd0H
+LED_27:
+	.long   0604bH
+LED_28:
+	.long   063c6H
+LED_29:
+	.long   06741H
+LED_30:
+	.long   06abcH
+LED_31:
+	.long   06e37H
+LED_32:
+	.long   071b2H
+LED_33:
+	.long   0752dH
+LED_34:
+	.long   078a8H
+LED_35:
+	.long   07c23H
+LED_36:
+	.long   07f9eH
+LED_37:
+	.long   08319H
+LED_38:
+	.long   08694H
+LED_39:
+	.long   08a0fH
+LED_40:
+	.long   08d8aH
+LED_41:
+	.long   09105H
+LED_42:
+	.long   09480H
+LED_43:
+	.long   097fbH
+LED_44:
+	.long   09b76H
+LED_45:
+	.long   09ef1H
+LED_46:
+	.long   0a26cH
+LED_47:
+	.long   0a5e7H
+LED_48:
+	.long   0a962H
+LED_49:
+	.long   0acddH
+LED_50:
+	.long   0b058H
+LED_51:
+	.long   0b3d3H
+LED_52:
+	.long   0b74eH
+LED_53:
+	.long   0bac9H
+LED_54:
+	.long   0be44H
+LED_55:
+	.long   0c1bfH
+LED_56:
+	.long   0c53aH
+LED_57:
+	.long   0c8b5H
+LED_58:
+	.long   0cc30H
+LED_59:
+	.long   0cfabH
+LED_60:
+	.long   0d326H
+LED_61:
+	.long   0d6a1H
+LED_62:
+	.long   0da1cH
+LED_63:
+	.long   0dd97H
+LED_64:
+	.long   0e112H
+LED_65:
+	.long   0e48dH
+LED_66:
+	.long   0e808H
+LED_67:
+	.long   0eb83H
+LED_68:
+	.long   0eefeH
+LED_69:
+	.long   0f279H
+LED_70:
+	.long   0f5f4H
+LED_71:
+	.long   0f96fH
+LED_72:
+	.long   0fceaH
+LED_73:
+	.long   010065H
+LED_74:
+	.long   0103e0H
+LED_75:
+	.long   01075bH
+LED_76:
+	.long   010ad6H
+LED_77:
+	.long   010e51H
+LED_78:
+	.long   0111ccH
+LED_79:
+	.long   011547H
+LED_80:
+	.long   0118c2H
+LED_81:
+	.long   011c3dH
+LED_82:
+	.long   011fb8H
+LED_83:
+	.long   012333H
+LED_84:
+	.long   0126aeH
+LED_85:
+	.long   012a29H
+LED_86:
+	.long   012da4H
+LED_87:
+	.long   01311fH
+LED_88:
+	.long   01349aH
+LED_89:
+	.long   013815H
+LED_90:
+	.long   013b90H
+LED_91:
+	.long   013f0bH
+LED_92:
+	.long   014286H
+LED_93:
+	.long   014601H
+LED_94:
+	.long   01497cH
+LED_95:
+	.long   014cf7H
+LED_96:
+	.long   015072H
+LED_97:
+	.long   0153edH
+LED_98:
+	.long   015768H
+LED_99:
+	.long   015ae3H
+LED_100:
+	.long   015e5eH
+LED_101:
+	.long   0161d9H
+LED_102:
+	.long   016554H
+LED_103:
+	.long   0168cfH
+LED_104:
+	.long   016c4aH
+LED_105:
+	.long   016fc5H
+LED_106:
+	.long   017340H
+LED_107:
+	.long   0176bbH
+LED_108:
+	.long   017a36H
+LED_109:
+	.long   017db1H
+LED_110:
+	.long   01812cH
+LED_111:
+	.long   0184a7H
+LED_112:
+	.long   018822H
+LED_113:
+	.long   018b9dH
+LED_114:
+	.long   018f18H
+LED_115:
+	.long   019293H
+LED_116:
+	.long   01960eH
+LED_117:
+	.long   019989H
+LED_118:
+	.long   019d04H
+LED_119:
+	.long   01a07fH
+LED_120:
+	.long   01a3faH
+LED_121:
+	.long   01a775H
+LED_122:
+	.long   01aaf0H
+LED_123:
+	.long   01ae6bH
+LED_124:
+	.long   01b1e6H
+LED_125:
+	.long   01b561H
+LED_126:
+	.long   01b8dcH
+LED_127:
+	.long   01bc57H
+LED_128:
+	.long   01bfd2H
+LED_129:
+	.long   01c34dH
+LED_130:
+	.long   01c6c8H
+LED_131:
+	.long   01ca43H
+LED_132:
+	.long   01cdbeH
+LED_133:
+	.long   01d139H
+LED_134:
+	.long   01d4b4H
+LED_135:
+	.long   01d82fH
+LED_136:
+	.long   01dbaaH
+LED_137:
+	.long   01df25H
+LED_138:
+	.long   01e2a0H
+LED_139:
+	.long   01e61bH
+LED_140:
+	.long   01e996H
+LED_141:
+	.long   01ed11H
+LED_142:
+	.long   01f08cH
+LED_143:
+	.long   01f407H
+LED_144:
+	.long   01f782H
+LED_145:
+	.long   01fafdH
+LED_146:
+	.long   01fe78H
+LED_147:
+	.long   0201f3H
+LED_148:
+	.long   02056eH
+LED_149:
+	.long   0208e9H
+LED_150:
+	.long   020c64H
+LED_151:
+	.long   020fdfH
+LED_152:
+	.long   02135aH
+LED_153:
+	.long   0216d5H
+LED_154:
+	.long   021a50H
+LED_155:
+	.long   021dcbH
+LED_156:
+	.long   022146H
+LED_157:
+	.long   0224c1H
+LED_158:
+	.long   02283cH
+LED_159:
+	.long   022bb7H
+	.TEXT
+

@@ -1,0 +1,60 @@
+===========================================================
+This is where we look at MK2 and NBA JAM TE
+
+IMGTBL.ASM -  	.include imgtbl.glo , 	.include bgndtbl.glo, that's all.
+
+IMGTBL.GLO - 235 globals.
+IMGTBL2 - IMGTBL7.GLO, loose files. All the content is together in IMGTBL.GLO. Nothing references these .glo files at any point.
+
+IMGPAL2.ASM - IMGPAL7.ASM, loose files. All .include IMGTBL.GLO
+
+MK2:
+NO IMAGES ARE IN IMGTBL.GLO
+ONLY PALs are in IMGTBL.GLO
+
+BB.AXX
+
+	.include	"imgtbl.glo"  ? Was included in src. Probably from BB.LOD?
+	.include	"imgtblp.glo" ? from bbpal.lod
+	.include	"imgtbl2.glo" ? from bb2.lod (uncertain)
+	.include	"imgpalp.asm" ? from bbpal.lod
+	.include	"imgpal2.asm" ? from bb2.lod (certain)
+
+PLYR.AXX 
+	.include	"imgtbl.glo"
+	.include	"imgtbl2.glo" ? from bb2.lod (uncertain)
+
+PLYRAT.AXX
+	.include	"imgpalp.asm" ? from bbpal.lod
+	.include	"imgpal3.asm" ? from bb3.lod (guess! YES)
+	.include	"imgtbl4.glo" ? from bb3.lod
+	.include	"plyrhd4.tbl" ? from bb3.lod
+
+PLYR3.AXX
+	.include	"imgtbl.glo"
+	.include	"imgtbl2.glo"
+	.include	"bgndtbl.glo"
+
+	.include	"plyrhd2.tbl"
+	.include	"imgtblm.glo" ? from BBMUG?
+	.include	"imgtbl3.glo" ? from BBMUG?
+	.include	"plyrhd3.tbl"
+
+---
+obj's compiled, symbol ref errors.
+Easy first. DIAGP in TEST.OBJ
+	.include	"imgtbl.glo" does it have DIAGP? Why not?
+- it does not have DIAGP
+- DIAGP: not in BB.LOD. it is in IMGPAL.ASM from BB2.LOD
+- IMGPAL2.ASM is not build as OBJ. Lets do that. And include imgtbl2.glo.
+This solves TEST.OBJ!
+---
+Harder second. SELECT2.OBJ lots. Focus on.. BUTT_P - in IMGTcBL.GLO from BB.LOD and in IMGTBL.ASM.
+Needed to replace mostly blank IMGTBL.ASM, see .bak
+lots of bmod. BGNDTBL.ASM was fudged from the start for some reason.
+---
+score.obj
+arwbp
+IMGPAL.ASM from BB.LOD used.
+clean broke BGNDPAL
+replace from BB.LOD

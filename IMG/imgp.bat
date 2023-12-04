@@ -1,1 +1,1 @@
-load2 BBPAL    /e /di /fi /t=c:\tmp\jamte /x /v
+load2 BBPAL /di /fi /t=c:\tmp\jamte\bbpal /x /v

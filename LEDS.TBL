@@ -1,330 +1,330 @@
 	.DATA
 LED_00:
 	.word   27,11,14,3
-	.long   00H
+	.long   02000000H
 	.word   03000H
 	.long   LED_P
 LED_MAX:
-	.long   037bH
+	.long   0200037bH
 LED_0:
-	.long   00H
+	.long   02000000H
 LED_1:
-	.long   05cdH
+	.long   020005cdH
 LED_2:
-	.long   0948H
+	.long   02000948H
 LED_3:
-	.long   0cc3H
+	.long   02000cc3H
 LED_4:
-	.long   0103eH
+	.long   0200103eH
 LED_5:
-	.long   013b9H
+	.long   020013b9H
 LED_6:
-	.long   01734H
+	.long   02001734H
 LED_7:
-	.long   01aafH
+	.long   02001aafH
 LED_8:
-	.long   01e2aH
+	.long   02001e2aH
 LED_9:
-	.long   021a5H
+	.long   020021a5H
 LED_10:
-	.long   02520H
+	.long   02002520H
 LED_11:
-	.long   0289bH
+	.long   0200289bH
 LED_12:
-	.long   02c16H
+	.long   02002c16H
 LED_13:
-	.long   02f91H
+	.long   02002f91H
 LED_14:
-	.long   0330cH
+	.long   0200330cH
 LED_15:
-	.long   03687H
+	.long   02003687H
 LED_16:
-	.long   03a02H
+	.long   02003a02H
 LED_17:
-	.long   03d7dH
+	.long   02003d7dH
 LED_18:
-	.long   040f8H
+	.long   020040f8H
 LED_19:
-	.long   04473H
+	.long   02004473H
 LED_20:
-	.long   047eeH
+	.long   020047eeH
 LED_21:
-	.long   04b69H
+	.long   02004b69H
 LED_22:
-	.long   04ee4H
+	.long   02004ee4H
 LED_23:
-	.long   0525fH
+	.long   0200525fH
 LED_24:
-	.long   055daH
+	.long   020055daH
 LED_25:
-	.long   05955H
+	.long   02005955H
 LED_26:
-	.long   05cd0H
+	.long   02005cd0H
 LED_27:
-	.long   0604bH
+	.long   0200604bH
 LED_28:
-	.long   063c6H
+	.long   020063c6H
 LED_29:
-	.long   06741H
+	.long   02006741H
 LED_30:
-	.long   06abcH
+	.long   02006abcH
 LED_31:
-	.long   06e37H
+	.long   02006e37H
 LED_32:
-	.long   071b2H
+	.long   020071b2H
 LED_33:
-	.long   0752dH
+	.long   0200752dH
 LED_34:
-	.long   078a8H
+	.long   020078a8H
 LED_35:
-	.long   07c23H
+	.long   02007c23H
 LED_36:
-	.long   07f9eH
+	.long   02007f9eH
 LED_37:
-	.long   08319H
+	.long   02008319H
 LED_38:
-	.long   08694H
+	.long   02008694H
 LED_39:
-	.long   08a0fH
+	.long   02008a0fH
 LED_40:
-	.long   08d8aH
+	.long   02008d8aH
 LED_41:
-	.long   09105H
+	.long   02009105H
 LED_42:
-	.long   09480H
+	.long   02009480H
 LED_43:
-	.long   097fbH
+	.long   020097fbH
 LED_44:
-	.long   09b76H
+	.long   02009b76H
 LED_45:
-	.long   09ef1H
+	.long   02009ef1H
 LED_46:
-	.long   0a26cH
+	.long   0200a26cH
 LED_47:
-	.long   0a5e7H
+	.long   0200a5e7H
 LED_48:
-	.long   0a962H
+	.long   0200a962H
 LED_49:
-	.long   0acddH
+	.long   0200acddH
 LED_50:
-	.long   0b058H
+	.long   0200b058H
 LED_51:
-	.long   0b3d3H
+	.long   0200b3d3H
 LED_52:
-	.long   0b74eH
+	.long   0200b74eH
 LED_53:
-	.long   0bac9H
+	.long   0200bac9H
 LED_54:
-	.long   0be44H
+	.long   0200be44H
 LED_55:
-	.long   0c1bfH
+	.long   0200c1bfH
 LED_56:
-	.long   0c53aH
+	.long   0200c53aH
 LED_57:
-	.long   0c8b5H
+	.long   0200c8b5H
 LED_58:
-	.long   0cc30H
+	.long   0200cc30H
 LED_59:
-	.long   0cfabH
+	.long   0200cfabH
 LED_60:
-	.long   0d326H
+	.long   0200d326H
 LED_61:
-	.long   0d6a1H
+	.long   0200d6a1H
 LED_62:
-	.long   0da1cH
+	.long   0200da1cH
 LED_63:
-	.long   0dd97H
+	.long   0200dd97H
 LED_64:
-	.long   0e112H
+	.long   0200e112H
 LED_65:
-	.long   0e48dH
+	.long   0200e48dH
 LED_66:
-	.long   0e808H
+	.long   0200e808H
 LED_67:
-	.long   0eb83H
+	.long   0200eb83H
 LED_68:
-	.long   0eefeH
+	.long   0200eefeH
 LED_69:
-	.long   0f279H
+	.long   0200f279H
 LED_70:
-	.long   0f5f4H
+	.long   0200f5f4H
 LED_71:
-	.long   0f96fH
+	.long   0200f96fH
 LED_72:
-	.long   0fceaH
+	.long   0200fceaH
 LED_73:
-	.long   010065H
+	.long   02010065H
 LED_74:
-	.long   0103e0H
+	.long   020103e0H
 LED_75:
-	.long   01075bH
+	.long   0201075bH
 LED_76:
-	.long   010ad6H
+	.long   02010ad6H
 LED_77:
-	.long   010e51H
+	.long   02010e51H
 LED_78:
-	.long   0111ccH
+	.long   020111ccH
 LED_79:
-	.long   011547H
+	.long   02011547H
 LED_80:
-	.long   0118c2H
+	.long   020118c2H
 LED_81:
-	.long   011c3dH
+	.long   02011c3dH
 LED_82:
-	.long   011fb8H
+	.long   02011fb8H
 LED_83:
-	.long   012333H
+	.long   02012333H
 LED_84:
-	.long   0126aeH
+	.long   020126aeH
 LED_85:
-	.long   012a29H
+	.long   02012a29H
 LED_86:
-	.long   012da4H
+	.long   02012da4H
 LED_87:
-	.long   01311fH
+	.long   0201311fH
 LED_88:
-	.long   01349aH
+	.long   0201349aH
 LED_89:
-	.long   013815H
+	.long   02013815H
 LED_90:
-	.long   013b90H
+	.long   02013b90H
 LED_91:
-	.long   013f0bH
+	.long   02013f0bH
 LED_92:
-	.long   014286H
+	.long   02014286H
 LED_93:
-	.long   014601H
+	.long   02014601H
 LED_94:
-	.long   01497cH
+	.long   0201497cH
 LED_95:
-	.long   014cf7H
+	.long   02014cf7H
 LED_96:
-	.long   015072H
+	.long   02015072H
 LED_97:
-	.long   0153edH
+	.long   020153edH
 LED_98:
-	.long   015768H
+	.long   02015768H
 LED_99:
-	.long   015ae3H
+	.long   02015ae3H
 LED_100:
-	.long   015e5eH
+	.long   02015e5eH
 LED_101:
-	.long   0161d9H
+	.long   020161d9H
 LED_102:
-	.long   016554H
+	.long   02016554H
 LED_103:
-	.long   0168cfH
+	.long   020168cfH
 LED_104:
-	.long   016c4aH
+	.long   02016c4aH
 LED_105:
-	.long   016fc5H
+	.long   02016fc5H
 LED_106:
-	.long   017340H
+	.long   02017340H
 LED_107:
-	.long   0176bbH
+	.long   020176bbH
 LED_108:
-	.long   017a36H
+	.long   02017a36H
 LED_109:
-	.long   017db1H
+	.long   02017db1H
 LED_110:
-	.long   01812cH
+	.long   0201812cH
 LED_111:
-	.long   0184a7H
+	.long   020184a7H
 LED_112:
-	.long   018822H
+	.long   02018822H
 LED_113:
-	.long   018b9dH
+	.long   02018b9dH
 LED_114:
-	.long   018f18H
+	.long   02018f18H
 LED_115:
-	.long   019293H
+	.long   02019293H
 LED_116:
-	.long   01960eH
+	.long   0201960eH
 LED_117:
-	.long   019989H
+	.long   02019989H
 LED_118:
-	.long   019d04H
+	.long   02019d04H
 LED_119:
-	.long   01a07fH
+	.long   0201a07fH
 LED_120:
-	.long   01a3faH
+	.long   0201a3faH
 LED_121:
-	.long   01a775H
+	.long   0201a775H
 LED_122:
-	.long   01aaf0H
+	.long   0201aaf0H
 LED_123:
-	.long   01ae6bH
+	.long   0201ae6bH
 LED_124:
-	.long   01b1e6H
+	.long   0201b1e6H
 LED_125:
-	.long   01b561H
+	.long   0201b561H
 LED_126:
-	.long   01b8dcH
+	.long   0201b8dcH
 LED_127:
-	.long   01bc57H
+	.long   0201bc57H
 LED_128:
-	.long   01bfd2H
+	.long   0201bfd2H
 LED_129:
-	.long   01c34dH
+	.long   0201c34dH
 LED_130:
-	.long   01c6c8H
+	.long   0201c6c8H
 LED_131:
-	.long   01ca43H
+	.long   0201ca43H
 LED_132:
-	.long   01cdbeH
+	.long   0201cdbeH
 LED_133:
-	.long   01d139H
+	.long   0201d139H
 LED_134:
-	.long   01d4b4H
+	.long   0201d4b4H
 LED_135:
-	.long   01d82fH
+	.long   0201d82fH
 LED_136:
-	.long   01dbaaH
+	.long   0201dbaaH
 LED_137:
-	.long   01df25H
+	.long   0201df25H
 LED_138:
-	.long   01e2a0H
+	.long   0201e2a0H
 LED_139:
-	.long   01e61bH
+	.long   0201e61bH
 LED_140:
-	.long   01e996H
+	.long   0201e996H
 LED_141:
-	.long   01ed11H
+	.long   0201ed11H
 LED_142:
-	.long   01f08cH
+	.long   0201f08cH
 LED_143:
-	.long   01f407H
+	.long   0201f407H
 LED_144:
-	.long   01f782H
+	.long   0201f782H
 LED_145:
-	.long   01fafdH
+	.long   0201fafdH
 LED_146:
-	.long   01fe78H
+	.long   0201fe78H
 LED_147:
-	.long   0201f3H
+	.long   020201f3H
 LED_148:
-	.long   02056eH
+	.long   0202056eH
 LED_149:
-	.long   0208e9H
+	.long   020208e9H
 LED_150:
-	.long   020c64H
+	.long   02020c64H
 LED_151:
-	.long   020fdfH
+	.long   02020fdfH
 LED_152:
-	.long   02135aH
+	.long   0202135aH
 LED_153:
-	.long   0216d5H
+	.long   020216d5H
 LED_154:
-	.long   021a50H
+	.long   02021a50H
 LED_155:
-	.long   021dcbH
+	.long   02021dcbH
 LED_156:
-	.long   022146H
+	.long   02022146H
 LED_157:
-	.long   0224c1H
+	.long   020224c1H
 LED_158:
-	.long   02283cH
+	.long   0202283cH
 LED_159:
-	.long   022bb7H
+	.long   02022bb7H
 	.TEXT
 

@@ -1,4 +1,4 @@
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    1
@@ -58,7 +58,7 @@ TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
       54                    
       55 00000000                    .TEXT
       56                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE    2
@@ -118,7 +118,7 @@ robo high-score-to-date management                                   PAGE    2
          000001c0     0028  
      100 000001d0     0b40          CMPI    HS_MIN,A0       ;IS IT TOO LOW
          000001e0     fd11  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE    3
@@ -178,7 +178,7 @@ robo high-score-to-date management                                   PAGE    3
          000004d0     0378  
      135 000004e0     4c01          MOVE    A0,A1                   ;STASH IT
      136 000004f0     0d3f          CALLR   RC_LONG                 ;READ VERIFIER
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE    4
@@ -238,7 +238,7 @@ robo high-score-to-date management                                   PAGE    4
      179                            movi    TODAYS_ORIGIN+HS_SCORE+HS_SIZE,a8
      180                            JSRP    HSNUMDSP
      181                     .endif
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE    5
@@ -298,7 +298,7 @@ robo high-score-to-date management                                   PAGE    5
          000009c0 00000160! 
      227 000009e0     8621          move    *a1,a1,L
      228 000009f0     4c6a          move    a3,a10
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE    6
@@ -358,7 +358,7 @@ robo high-score-to-date management                                   PAGE    6
          00000d00     0040  
      268 00000d10     b425          move    *a1(ICTRL),a5
          00000d20     0060  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE    7
@@ -418,7 +418,7 @@ robo high-score-to-date management                                   PAGE    7
      309 00001030     1207          addk    16,a7                   ;Step to next initial
      310 00001040     0d3f          callr   initout                 ;Output initial
          00001050     0011  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE    8
@@ -478,7 +478,7 @@ robo high-score-to-date management                                   PAGE    8
      353 00001360     0ba5          ori     DMACNZ,a5
          00001370 00008008  
      354 00001390     0d5f  inolp   calla   QDMAN
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE    9
@@ -538,7 +538,7 @@ robo high-score-to-date management                                   PAGE    9
      395                    
      396 000016e0                   PULL    a2,a4,a5,a14
      397 00001700     0960          rets
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE   10
@@ -598,7 +598,7 @@ robo high-score-to-date management                                   PAGE   10
      450 00000020                   .BSS    GET2FLG,16
      451                    
      452 00001710           INITTIM
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE   11
@@ -658,7 +658,7 @@ robo high-score-to-date management                                   PAGE   11
      492                    
      493                    
      494 00001bd0           DONCK
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE   12
@@ -718,7 +718,7 @@ robo high-score-to-date management                                   PAGE   12
      544                    GTL0    MOVE    *A13(PDATA+060H),A0,L           ;GET MOVE SWITCH ADDRESS
      545                            MOVE    *A0,A1,W
      546                            NOT     A1
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE   13
@@ -778,7 +778,7 @@ robo high-score-to-date management                                   PAGE   13
      599                            SLL     3,A4
      600                            ADD     A13,A4
      601                            ADDI    PDATA+020H,A4
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE   14
@@ -838,7 +838,7 @@ robo high-score-to-date management                                   PAGE   14
      654                            ADDK    016H,A3                         ;INC SCREEN COORD
      655                            ADDK    8,A2                            ;INC DISPLAY ADDRESS
      656                            DSJS    A1,GTL5L
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE   15
@@ -898,7 +898,7 @@ robo high-score-to-date management                                   PAGE   15
      708 00001ea0     07a0          MOVE    @P1DATA,A0,L            ;FIX!
          00001eb0 00000000! 
      709 00001ed0     4840          CMP     A2,A0
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE   16
@@ -958,7 +958,7 @@ robo high-score-to-date management                                   PAGE   16
      751 00002170     0960          RETS
      752                    
      753 00002180           ADD_ENTRY:
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE   17
@@ -1018,7 +1018,7 @@ robo high-score-to-date management                                   PAGE   17
      792                    
      793 00002430           DIDNT_MAKE_IT
      794 00002430     09af          MMFM    SP,A0,A1,A2,A3,A4,A7,A9,A10
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE   18
@@ -1078,7 +1078,7 @@ robo high-score-to-date management                                   PAGE   18
      834 000026b0     0b07          ADDI    HS_SCORE,A7             ;INDEX SCORE PART.
          000026c0     0000  
      835 000026d0     4c80          MOVE    A4,A0                   ;MOVE SCORE TO A0
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE   19
@@ -1138,7 +1138,7 @@ robo high-score-to-date management                                   PAGE   19
      870 000029c0     4940          CMP     A10,A0                  ;A10 IS MAX VALUE
      871 000029d0     c202          JRLS    POINTER_IN_RANGE
      872                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE   20
@@ -1198,7 +1198,7 @@ robo high-score-to-date management                                   PAGE   20
      912                            MMTM    SP,A8,A0
      913                    
      914                            MOVI    TOD_TAB,A8
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE   21
@@ -1258,7 +1258,7 @@ robo high-score-to-date management                                   PAGE   21
      964 00002d00     4ce6          MOVE    A7,A6                   ;A6 = SOURCE POINTER
      965 00002d10     4c60          MOVE    A3,A0
      966 00002d20     0d3f          CALLR   PT_ENTRY                ;A5 = DESTINATION
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE   22
@@ -1318,7 +1318,7 @@ robo high-score-to-date management                                   PAGE   22
          00002fe0     00fb  
     1006 00002ff0     0960          RETS
     1007 00003000           VT_1:   
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE   23
@@ -1378,7 +1378,7 @@ robo high-score-to-date management                                   PAGE   23
     1049 00003290           NEXT_LETTER:
     1050 00003290     0d3f          CALLR   RC_BYTEI                ;FETCH A BYTE
          000032a0     006b  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE   24
@@ -1438,7 +1438,7 @@ robo high-score-to-date management                                   PAGE   24
     1093 000034e0           VERIFY_FAIL:
     1094 000034e0     0de0          SETC
     1095 000034f0     0960          RETS
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE   25
@@ -1498,7 +1498,7 @@ robo high-score-to-date management                                   PAGE   25
     1138                    
     1139 00003720     05a0          move    @SYSCOPY,a0
          00003730 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE   26
@@ -1558,7 +1558,7 @@ robo high-score-to-date management                                   PAGE   26
     1185                            .ENDIF
     1186                    
     1187 00003950     0960          rets
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE   27
@@ -1618,7 +1618,7 @@ robo high-score-to-date management                                   PAGE   27
     1224                    
     1225 00003c60           RC_LONGI:
     1226 00003c60     0d3f          CALLR   RC_LONG
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE   28
@@ -1678,7 +1678,7 @@ robo high-score-to-date management                                   PAGE   28
          00003f10     0040  
     1264 00003f20     0960          RETS
     1265                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:36:08 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:13 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 robo high-score-to-date management                                   PAGE   29

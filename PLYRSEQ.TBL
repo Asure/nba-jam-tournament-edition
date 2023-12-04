@@ -1,2473 +1,2473 @@
 	.DATA
 T1SWPE1:
 	.word   83,70,32,67
-	.long   09e183H
+	.long   0209e183H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-16384,40,6,-1,6,0
 T1SWPE2:
 	.word   77,82,36,79
-	.long   0a9713H
+	.long   020a9713H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-16384,42,17,-1,6,0
 T1SWPE3:
 	.word   59,86,29,83
-	.long   0b5c63H
+	.long   020b5c63H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-16384,34,21,-1,6,0
 T1SWPE4:
 	.word   67,84,37,82
-	.long   0bfaf3H
+	.long   020bfaf3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-16384,41,19,-1,6,0
 T1SWPE5:
 	.word   57,79,28,76
-	.long   0caad3H
+	.long   020caad3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-16384,29,14,-1,6,0
 T1SWPE6:
 	.word   65,74,35,71
-	.long   0d378bH
+	.long   020d378bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-16384,35,10,-1,6,0
 T1SWPE7:
 	.word   73,66,43,63
-	.long   0dcddbH
+	.long   020dcddbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-16384,43,4,-1,6,0
 T1SWPE8:
 	.word   73,63,43,60
-	.long   0e646bH
+	.long   020e646bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,44,2,-1,1,0
 T1SWPE9:
 	.word   79,61,29,58
-	.long   0ef423H
+	.long   020ef423H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,31,0,-1,1,0
 T2SWPE1:
 	.word   95,66,43,62
-	.long   0f8abbH
+	.long   020f8abbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,53,2,-1,2,0
 T2SWPE2:
 	.word   78,65,28,61
-	.long   0104eabH
+	.long   02104eabH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,39,1,-1,2,0
 T2SWPE3:
 	.word   60,65,20,61
-	.long   010ed1bH
+	.long   0210ed1bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,30,3,-1,7,0
 T2SWPE4:
 	.word   57,64,19,60
-	.long   01166fbH
+	.long   021166fbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,35,6,-1,7,0
 T2SWPE5:
 	.word   78,62,19,58
-	.long   011d8fbH
+	.long   0211d8fbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,40,6,-1,3,0
 T2SWPE6:
 	.word   71,65,18,61
-	.long   012701bH
+	.long   0212701bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,40,12,1,3,0
 T2SWPE7:
 	.word   61,68,18,64
-	.long   0130053H
+	.long   02130053H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,39,14,1,3,0
 T3SWPE1:
 	.word   72,65,25,59
-	.long   01381f3H
+	.long   021381f3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,39,4,-1,8,0
 T3SWPE2:
 	.word   60,69,17,63
-	.long   0141433H
+	.long   02141433H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,32,7,-1,8,0
 T3SWPE3:
 	.word   48,69,17,64
-	.long   0149593H
+	.long   02149593H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,34,10,-1,8,0
 T3SWPE4:
 	.word   62,61,18,56
-	.long   014fd13H
+	.long   0214fd13H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,35,5,-1,8,0
 T3SWPE5:
 	.word   78,61,18,56
-	.long   0157343H
+	.long   02157343H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,36,6,1,8,0
 T3SWPE6:
 	.word   55,62,19,57
-	.long   01607f3H
+	.long   021607f3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,36,8,1,9,0
 T3SWPE7:
 	.word   50,66,24,61
-	.long   0167283H
+	.long   02167283H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,38,15,1,9,0
 T4SWPE1:
 	.word   54,59,23,53
-	.long   016d9a3H
+	.long   0216d9a3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,36,6,-1,9,0
 T4SWPE2:
 	.word   75,57,24,51
-	.long   0173d33H
+	.long   02173d33H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,35,4,1,9,0
 T4SWPE3:
 	.word   88,60,28,53
-	.long   017c2cbH
+	.long   0217c2cbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,36,7,1,9,0
 T4SWPE4:
 	.word   72,61,38,55
-	.long   01867cbH
+	.long   021867cbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,42,7,1,9,0
 T4SWPE5:
 	.word   66,67,41,62
-	.long   018f10bH
+	.long   0218f10bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,40,12,1,10,0
 T4SWPE6:
 	.word   61,76,34,70
-	.long   0197b3bH
+	.long   02197b3bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,32,19,1,10,0
 T5SWPE1:
 	.word   94,55,55,53
-	.long   01a0c1bH
+	.long   021a0c1bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,49,7,1,10,0
 T5SWPE2:
 	.word   106,58,60,56
-	.long   01aadabH
+	.long   021aadabH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,59,9,1,10,0
 T5SWPE3:
 	.word   84,65,42,63
-	.long   01b6dcbH
+	.long   021b6dcbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,45,14,1,10,0
 T5SWPE4:
 	.word   67,68,32,66
-	.long   01c186bH
+	.long   021c186bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,37,15,1,10,0
 T5SWPE5:
 	.word   81,66,32,64
-	.long   01ca6cbH
+	.long   021ca6cbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,38,14,1,9,0
 T5SWPE6:
 	.word   65,63,32,62
-	.long   01d4ddbH
+	.long   021d4ddbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,40,11,1,9,0
 T2DESP1:
 	.word   39,65,17,62
-	.long   01dcdd3H
+	.long   021dcdd3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,36,4,-1,8,0
 T2DESP2:
 	.word   61,81,18,79
-	.long   01e1d0bH
+	.long   021e1d0bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,40,11,1,3,0
 T2DESP3:
 	.word   63,110,15,107
-	.long   01eb773H
+	.long   021eb773H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,38,29,1,13,0
 T2DESP4:
 	.word   70,116,25,112
-	.long   01f9003H
+	.long   021f9003H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,45,34,1,13,0
 T2DESP5:
 	.word   74,99,35,100
-	.long   0208dc3H
+	.long   02208dc3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,51,25,1,3,0
 T2DESP6:
 	.word   60,74,21,75
-	.long   02172b3H
+	.long   022172b3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,36,3,1,3,0
 T1DESP1:
 	.word   65,64,34,61
-	.long   021fd73H
+	.long   0221fd73H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,25,2,1,4,0
 T1DESP2:
 	.word   78,70,37,67
-	.long   0227f73H
+	.long   02227f73H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,37,7,1,9,0
 T1DESP3:
 	.word   52,72,34,67
-	.long   0232a13H
+	.long   02232a13H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,42,2,1,3,0
 T1DESP4:
 	.word   30,81,11,76
-	.long   0239f13H
+	.long   02239f13H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,15,1,1,3,0
 T1DESP5:
 	.word   57,97,9,92
-	.long   023eb03H
+	.long   0223eb03H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,12,11,-1,13,0
 T1DESP6:
 	.word   62,119,19,112
-	.long   02497cbH
+	.long   022497cbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,17,31,-1,12,0
 T1DESP7:
 	.word   60,115,36,109
-	.long   0257e5bH
+	.long   02257e5bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,36,28,-1,12,0
 T1DESP8:
 	.word   57,78,24,76
-	.long   02655fbH
+	.long   022655fbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,28,0,-1,2,0
 T1DESP9:
 	.word   46,80,21,78
-	.long   026e0ebH
+	.long   0226e0ebH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,25,0,-1,2,0
 T2HIND1:
 	.word   48,81,18,78
-	.long   02753ebH
+	.long   022753ebH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,22,2,-1,2,0
 T2HIND2:
 	.word   56,81,29,78
-	.long   027cd6bH
+	.long   0227cd6bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,33,2,-1,2,0
 T2HIND3:
 	.word   77,81,49,78
-	.long   0285b2bH
+	.long   02285b2bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,53,2,-1,1,0
 T2HIND4:
 	.word   53,82,25,78
-	.long   0291e13H
+	.long   02291e13H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-16384,26,1,-1,2,0
 T2HIND5:
 	.word   47,81,18,77
-	.long   029a5e3H
+	.long   0229a5e3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-16384,17,2,-1,2,0
 T2HIND6:
 	.word   55,82,29,79
-	.long   02a1cdbH
+	.long   022a1cdbH
 	.word   00H
 	.long   NEWILPAL2
 	.word   -1,-1,-1,-32768,34,1,-1,1,0
 T4HIND1:
 	.word   54,80,18,76
-	.long   02aa9cbH
+	.long   022aa9cbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,4,1,4,0
 T4HIND2:
 	.word   47,81,25,77
-	.long   02b30cbH
+	.long   022b30cbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,30,3,1,4,0
 T4HIND3:
 	.word   79,82,55,77
-	.long   02ba7c3H
+	.long   022ba7c3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,60,2,1,4,0
 T4HIND4:
 	.word   72,82,47,78
-	.long   02c7233H
+	.long   022c7233H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,52,3,1,4,0
 T4HIND5:
 	.word   45,82,20,77
-	.long   02d2ab3H
+	.long   022d2ab3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,22,3,1,5,0
 T4HIND6:
 	.word   42,82,18,77
-	.long   02d9e03H
+	.long   022d9e03H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,19,2,1,5,0
 T4HIND7:
 	.word   55,83,31,79
-	.long   02e09a3H
+	.long   022e09a3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,34,2,1,4,0
 T4HIND8:
 	.word   49,83,26,79
-	.long   02e984bH
+	.long   022e984bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,31,2,1,4,0
 w1cp1:
 	.word   44,86,19,84
-	.long   02f1763H
+	.long   022f1763H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,25,1,-1,1,0
 w1cp2:
 	.word   43,85,20,83
-	.long   02f8da3H
+	.long   022f8da3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,1,-1,1,0
 w1cp3:
 	.word   49,80,27,78
-	.long   02fffdbH
+	.long   022fffdbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,25,1,-1,1,0
 w1cp4:
 	.word   33,78,18,76
-	.long   0307a5bH
+	.long   02307a5bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,16,1,-1,1,0
 w1drun1:
 	.word   44,89,20,87
-	.long   030cacbH
+	.long   0230cacbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,18,0,-1,1,0
 w1drun2:
 	.word   45,92,21,88
-	.long   031452bH
+	.long   0231452bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,20,1,-1,1,0
 w1drun3:
 	.word   44,94,21,89
-	.long   031c68bH
+	.long   0231c68bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,22,1,-1,1,0
 w1drun4:
 	.word   44,89,21,88
-	.long   03247cbH
+	.long   023247cbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,21,1,-1,1,0
 w1drun5:
 	.word   39,88,18,86
-	.long   032c22bH
+	.long   0232c22bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,20,1,-1,1,0
 w1drun6:
 	.word   34,90,17,87
-	.long   0332d6bH
+	.long   02332d6bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,18,1,-1,1,0
 w1drun7:
 	.word   34,92,18,88
-	.long   0338d0bH
+	.long   02338d0bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,16,1,-1,1,0
 w1drun8:
 	.word   37,88,20,87
-	.long   033eecbH
+	.long   0233eecbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,18,1,-1,1,0
 w1dst1:
 	.word   57,90,25,88
-	.long   034548bH
+	.long   0234548bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,0,-1,1,0
 w1dst2:
 	.word   52,90,25,88
-	.long   034f4dbH
+	.long   0234f4dbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,0,-1,1,0
 w1dst3:
 	.word   47,90,25,88
-	.long   035871bH
+	.long   0235871bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,0,-1,1,0
 w1dst4:
 	.word   51,90,25,88
-	.long   0360b4bH
+	.long   02360b4bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,0,-1,1,0
 w1dst5:
 	.word   55,90,25,88
-	.long   0369abbH
+	.long   02369abbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,0,-1,1,0
 w1dst6:
 	.word   57,90,25,88
-	.long   037356bH
+	.long   0237356bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,0,-1,1,0
 w1js1:
 	.word   50,87,31,81
-	.long   037d5bbH
+	.long   0237d5bbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,25,0,1,1,0
 w1js2:
 	.word   47,109,28,104
-	.long   0385dabH
+	.long   02385dabH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,20,1,1,0
 w1run8:
 	.word   44,90,26,90
-	.long   038fdc3H
+	.long   0238fdc3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,25,0,-1,1,0
 w1js3:
 	.word   47,124,27,120
-	.long   0397983H
+	.long   02397983H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,29,1,1,0
 w1js4:
 	.word   39,141,23,138
-	.long   03a2fa3H
+	.long   023a2fa3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,21,44,1,1,0
 w1js5:
 	.word   38,134,23,133
-	.long   03adb7bH
+	.long   023adb7bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,21,37,1,1,0
 w1jupa:
 	.word   41,113,23,111
-	.long   03b7a9bH
+	.long   023b7a9bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,18,18,-1,1,0
 w1run1:
 	.word   43,90,20,91
-	.long   03c0b63H
+	.long   023c0b63H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,17,1,-1,1,0
 w1run2:
 	.word   45,95,19,92
-	.long   03c8453H
+	.long   023c8453H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,18,2,-1,1,0
 w1run3:
 	.word   47,97,22,89
-	.long   03d09ebH
+	.long   023d09ebH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,20,0,-1,1,0
 w1run4:
 	.word   47,91,22,89
-	.long   03d9863H
+	.long   023d9863H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,21,1,-1,1,0
 w1run5:
 	.word   45,83,21,89
-	.long   03e1e0bH
+	.long   023e1e0bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,21,1,-1,1,0
 w1run6:
 	.word   47,87,27,90
-	.long   03e92c3H
+	.long   023e92c3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,27,2,-1,1,0
 w1run7:
 	.word   42,92,25,90
-	.long   03f128bH
+	.long   023f128bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,1,-1,1,0
 w1stand:
 	.word   45,89,24,86
-	.long   03f8b4bH
+	.long   023f8b4bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,25,0,-1,1,0
 w2cp1:
 	.word   44,88,16,86
-	.long   0400873H
+	.long   02400873H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,25,0,-1,2,0
 w2cp2:
 	.word   56,87,18,85
-	.long   0408173H
+	.long   02408173H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,33,0,-1,2,0
 w2cp3:
 	.word   71,82,16,82
-	.long   04119b3H
+	.long   024119b3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,41,0,-1,2,0
 w2cp4:
 	.word   90,84,16,85
-	.long   041cfa3H
+	.long   0241cfa3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,48,4,-1,2,0
 w2drun1:
 	.word   39,88,16,86
-	.long   042bbe3H
+	.long   0242bbe3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,25,1,-1,2,0
 w2drun2:
 	.word   57,93,30,85
-	.long   0432723H
+	.long   02432723H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,43,1,-1,2,0
 w2drun3:
 	.word   73,90,36,86
-	.long   043cccbH
+	.long   0243cccbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,49,1,-1,2,0
 w2drun4:
 	.word   57,89,31,86
-	.long   0449a1bH
+	.long   02449a1bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,41,1,-1,2,0
 w2drun5:
 	.word   55,89,25,86
-	.long   04538a3H
+	.long   024538a3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,34,0,-1,2,0
 w2drun6:
 	.word   60,93,35,85
-	.long   045d19bH
+	.long   0245d19bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,43,1,-1,2,0
 w2drun7:
 	.word   65,90,36,86
-	.long   0467ffbH
+	.long   02467ffbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,45,1,-1,2,0
 w2drun8:
 	.word   36,86,14,85
-	.long   04736cbH
+	.long   024736cbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,21,1,-1,2,0
 w2js1:
 	.word   54,88,19,86
-	.long   047978bH
+	.long   0247978bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,33,6,-1,7,0
 w2js2:
 	.word   52,99,17,97
-	.long   0482c0bH
+	.long   02482c0bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,26,15,-1,2,0
 w2js3:
 	.word   49,108,14,106
-	.long   048ccebH
+	.long   0248ccebH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,22,20,1,2,0
 w2js4:
 	.word   43,127,13,127
-	.long   049724bH
+	.long   0249724bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,17,29,1,2,0
 w2js5:
 	.word   37,133,7,134
-	.long   04a1cf3H
+	.long   024a1cf3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,13,34,1,2,0
 w2jupa:
 	.word   67,103,10,103
-	.long   04ab6bbH
+	.long   024ab6bbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,25,8,-1,2,0
 w2run1:
 	.word   61,90,29,79
-	.long   04b8e63H
+	.long   024b8e63H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,41,0,-1,2,0
 w2run2:
 	.word   62,86,33,80
-	.long   04c39f3H
+	.long   024c39f3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,46,0,-1,2,0
 w2run3:
 	.word   56,84,29,81
-	.long   04ce093H
+	.long   024ce093H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,41,1,-1,2,0
 w2run4:
 	.word   39,85,14,81
-	.long   04d7393H
+	.long   024d7393H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,29,1,-1,2,0
 w2run5:
 	.word   52,91,29,81
-	.long   04ddb2bH
+	.long   024ddb2bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,42,1,-1,2,0
 w2run6:
 	.word   67,85,38,82
-	.long   04e6f0bH
+	.long   024e6f0bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,49,1,-1,2,0
 w2run7:
 	.word   52,85,29,82
-	.long   04f2103H
+	.long   024f2103H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,38,1,-1,2,0
 w2run8:
 	.word   43,89,18,83
-	.long   04fab23H
+	.long   024fab23H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,28,1,-1,2,0
 w2stand:
 	.word   51,90,19,86
-	.long   05022bbH
+	.long   025022bbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,26,0,-1,2,0
 w3cp1:
 	.word   47,80,8,81
-	.long   050b22bH
+	.long   0250b22bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,35,2,-1,3,0
 w3cp2:
 	.word   45,81,9,82
-	.long   05127abH
+	.long   025127abH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,41,2,-1,3,0
 w3cp3:
 	.word   85,79,5,79
-	.long   0519993H
+	.long   02519993H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,57,0,-1,3,0
 w3cp4:
 	.word   116,79,3,79
-	.long   0526b6bH
+	.long   02526b6bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,61,2,-1,3,0
 w3drun1:
 	.word   68,88,30,85
-	.long   05389cbH
+	.long   025389cbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,47,1,-1,3,0
 w3drun2:
 	.word   76,85,38,83
-	.long   05444cbH
+	.long   025444cbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,59,1,-1,3,0
 w3drun3:
 	.word   91,85,49,82
-	.long   0550eabH
+	.long   02550eabH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,71,1,-1,3,0
 w3drun4:
 	.word   87,82,43,79
-	.long   0560063H
+	.long   02560063H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,62,1,-1,3,0
 w3drun5:
 	.word   56,84,20,80
-	.long   056df53H
+	.long   0256df53H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,42,2,-1,3,0
 w3drun6:
 	.word   76,88,41,85
-	.long   0577253H
+	.long   02577253H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,63,2,-1,3,0
 w3drun7:
 	.word   90,87,48,84
-	.long   0584353H
+	.long   02584353H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,69,2,-1,3,0
 w3drun8:
 	.word   57,84,33,81
-	.long   0593803H
+	.long   02593803H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,50,1,-1,3,0
 w3dst1:
 	.word   43,87,11,85
-	.long   059cda3H
+	.long   0259cda3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,15,0,-1,3,0
 w3dst2:
 	.word   34,87,11,85
-	.long   05a428bH
+	.long   025a428bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,15,0,-1,3,0
 w3dst3:
 	.word   35,87,11,85
-	.long   05a9efbH
+	.long   025a9efbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,15,0,-1,3,0
 w3dst4:
 	.word   37,87,11,85
-	.long   05afe23H
+	.long   025afe23H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,15,0,-1,3,0
 w3dst5:
 	.word   43,87,11,85
-	.long   05b62bbH
+	.long   025b62bbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,15,0,-1,3,0
 w3dst6:
 	.word   40,87,11,85
-	.long   05bd7a3H
+	.long   025bd7a3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,15,0,-1,3,0
 w3js1:
 	.word   50,69,16,67
-	.long   05c4463H
+	.long   025c4463H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,26,2,1,8,0
 w3js2:
 	.word   40,80,15,77
-	.long   05cb033H
+	.long   025cb033H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,19,12,1,3,0
 w3js3:
 	.word   32,92,10,89
-	.long   05d1433H
+	.long   025d1433H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,12,17,-1,3,0
 w3js4:
 	.word   29,99,9,97
-	.long   05d7033H
+	.long   025d7033H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,12,21,-1,3,0
 w3js5:
 	.word   33,109,9,109
-	.long   05dc9ebH
+	.long   025dc9ebH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,8,27,-1,3,0
 w3jupa:
 	.word   79,79,9,78
-	.long   05e3a53H
+	.long   025e3a53H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,31,2,-1,3,0
 w3run1:
 	.word   64,85,18,82
-	.long   05efd5bH
+	.long   025efd5bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,49,1,-1,3,0
 w3run2:
 	.word   81,85,35,84
-	.long   05fa75bH
+	.long   025fa75bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,66,2,-1,3,0
 w3run3:
 	.word   96,87,43,86
-	.long   0607e83H
+	.long   02607e83H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,74,2,-1,3,0
 w3run4:
 	.word   62,85,29,83
-	.long   0618383H
+	.long   02618383H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,58,2,-1,3,0
 w3run5:
 	.word   69,88,20,85
-	.long   0622833H
+	.long   02622833H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,46,2,-1,3,0
 w3run6:
 	.word   88,91,39,88
-	.long   062e5f3H
+	.long   0262e5f3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,65,2,-1,3,0
 w3run7:
 	.word   94,87,50,87
-	.long   063e033H
+	.long   0263e033H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,70,1,-1,3,0
 w3run8:
 	.word   66,85,30,85
-	.long   064dfc3H
+	.long   0264dfc3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,56,2,-1,3,0
 w3stand:
 	.word   23,88,12,85
-	.long   0658f13H
+	.long   02658f13H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,14,1,-1,3,0
 w4cp1:
 	.word   40,79,18,79
-	.long   065ce53H
+	.long   0265ce53H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,30,5,1,4,0
 w4cp2:
 	.word   43,89,16,78
-	.long   0663113H
+	.long   02663113H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,35,4,1,4,0
 w4cp3:
 	.word   61,83,16,73
-	.long   066a8abH
+	.long   0266a8abH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,34,3,1,4,0
 w4cp4:
 	.word   94,79,16,69
-	.long   06746e3H
+	.long   026746e3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,41,3,-1,4,0
 w4drun1:
 	.word   45,83,22,81
-	.long   0682ef3H
+	.long   02682ef3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,33,2,1,4,0
 w4drun2:
 	.word   56,89,33,81
-	.long   068a3abH
+	.long   0268a3abH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,43,2,1,4,0
 w4drun3:
 	.word   59,88,34,82
-	.long   0693f6bH
+	.long   02693f6bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,42,2,1,4,0
 w4drun4:
 	.word   43,83,19,81
-	.long   069e1abH
+	.long   0269e1abH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,30,2,1,4,0
 w4drun5:
 	.word   41,84,22,81
-	.long   06a5133H
+	.long   026a5133H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,32,2,1,4,0
 w4drun6:
 	.word   61,86,33,79
-	.long   06abcd3H
+	.long   026abcd3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,42,2,1,4,0
 w4drun7:
 	.word   71,90,45,82
-	.long   06b60c3H
+	.long   026b60c3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,57,2,1,4,0
 w4drun8:
 	.word   55,83,35,81
-	.long   06c2873H
+	.long   026c2873H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,47,2,1,4,0
 w4dst1:
 	.word   56,90,22,85
-	.long   06cb71bH
+	.long   026cb71bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,0,1,4,0
 w4dst2:
 	.word   58,90,22,85
-	.long   06d549bH
+	.long   026d549bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,0,1,4,0
 w4dst3:
 	.word   57,90,22,85
-	.long   06df7bbH
+	.long   026df7bbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,0,1,4,0
 w4dst4:
 	.word   56,90,22,85
-	.long   06e980bH
+	.long   026e980bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,0,1,4,0
 w4dst5:
 	.word   57,90,22,85
-	.long   06f358bH
+	.long   026f358bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,0,1,4,0
 w4dst6:
 	.word   49,90,22,85
-	.long   06fd5dbH
+	.long   026fd5dbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,0,1,4,0
 w4js1:
 	.word   33,71,14,68
-	.long   0705fabH
+	.long   02705fabH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,14,7,1,9,0
 w4js2:
 	.word   36,85,13,81
-	.long   070a8e3H
+	.long   0270a8e3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,12,18,-1,4,0
 w4js3:
 	.word   35,96,13,91
-	.long   0710883H
+	.long   02710883H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,12,20,-1,4,0
 w4js4:
 	.word   31,111,15,107
-	.long   0717183H
+	.long   02717183H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,12,29,-1,4,0
 w4js5:
 	.word   31,116,14,118
-	.long   071dd0bH
+	.long   0271dd0bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,13,36,1,4,0
 w4jupa:
 	.word   66,82,14,80
-	.long   0724d6bH
+	.long   02724d6bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,28,3,-1,4,0
 w4run1:
 	.word   52,84,26,81
-	.long   072f68bH
+	.long   0272f68bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,39,4,1,4,0
 w4run2:
 	.word   61,89,35,81
-	.long   0737f0bH
+	.long   02737f0bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,48,4,1,4,0
 w4run3:
 	.word   59,89,33,81
-	.long   07428b3H
+	.long   027428b3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,46,3,1,4,0
 w4run4:
 	.word   44,84,21,81
-	.long   074cccbH
+	.long   0274cccbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,33,3,1,4,0
 w4run5:
 	.word   38,84,16,80
-	.long   075404bH
+	.long   0275404bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,27,3,1,4,0
 w4run6:
 	.word   62,90,34,80
-	.long   075a40bH
+	.long   0275a40bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,48,4,1,4,0
 w4run7:
 	.word   67,89,38,80
-	.long   076526bH
+	.long   0276526bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,50,3,1,4,0
 w4run8:
 	.word   55,88,35,82
-	.long   0770cc3H
+	.long   02770cc3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,47,4,1,4,0
 w4stand:
 	.word   42,90,21,85
-	.long   077a403H
+	.long   0277a403H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,0,1,4,0
 w5cp1:
 	.word   46,73,23,71
-	.long   0781a23H
+	.long   02781a23H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,21,2,1,5,0
 w5cp2:
 	.word   55,77,27,73
-	.long   0788313H
+	.long   02788313H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,25,3,1,5,0
 w5cp3:
 	.word   62,80,31,71
-	.long   079076bH
+	.long   0279076bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,30,3,1,5,0
 w5cp4:
 	.word   38,76,17,65
-	.long   079a26bH
+	.long   0279a26bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,18,5,1,5,0
 w5drun1:
 	.word   43,88,16,85
-	.long   079fcabH
+	.long   0279fcabH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,22,2,1,5,0
 w5drun2:
 	.word   42,89,15,85
-	.long   07a72ebH
+	.long   027a72ebH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,21,3,1,5,0
 w5drun3:
 	.word   39,87,14,84
-	.long   07ae7bbH
+	.long   027ae7bbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,20,2,1,5,0
 w5drun4:
 	.word   37,87,15,84
-	.long   07b51c3H
+	.long   027b51c3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,21,2,1,5,0
 w5drun5:
 	.word   36,87,16,83
-	.long   07bb65bH
+	.long   027bb65bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,23,3,1,5,0
 w5drun6:
 	.word   38,89,18,84
-	.long   07c183bH
+	.long   027c183bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,3,1,5,0
 w5drun7:
 	.word   43,89,19,84
-	.long   07c81ebH
+	.long   027c81ebH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,25,3,1,5,0
 w5drun8:
 	.word   44,87,17,83
-	.long   07cf983H
+	.long   027cf983H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,3,1,5,0
 w5dst1:
 	.word   49,90,26,88
-	.long   07d7123H
+	.long   027d7123H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,29,0,1,5,0
 w5dst2:
 	.word   47,90,24,88
-	.long   07dfaf3H
+	.long   027dfaf3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,27,0,1,5,0
 w5dst3:
 	.word   45,90,22,88
-	.long   07e7f23H
+	.long   027e7f23H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,25,0,1,5,0
 w5dst4:
 	.word   50,90,27,88
-	.long   07efdb3H
+	.long   027efdb3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,30,0,1,5,0
 w5dst5:
 	.word   47,90,24,88
-	.long   07f8a53H
+	.long   027f8a53H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,27,0,1,5,0
 w5dst6:
 	.word   47,90,24,88
-	.long   0800e83H
+	.long   02800e83H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,27,0,1,5,0
 w5js1:
 	.word   40,76,14,72
-	.long   08092b3H
+	.long   028092b3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,19,9,-1,10,0
 w5js2:
 	.word   40,86,15,82
-	.long   080f1b3H
+	.long   0280f1b3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,20,15,-1,5,0
 w5js3:
 	.word   39,102,14,98
-	.long   0815d33H
+	.long   02815d33H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,19,23,-1,5,0
 w5js4:
 	.word   35,124,15,122
-	.long   081d983H
+	.long   0281d983H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,18,41,-1,5,0
 w5js5:
 	.word   36,113,14,112
-	.long   0826123H
+	.long   02826123H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,19,33,-1,5,0
 w5jupa:
 	.word   33,85,13,84
-	.long   082e043H
+	.long   0282e043H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,16,5,1,5,0
 w5run1:
 	.word   45,85,24,84
-	.long   08337ebH
+	.long   028337ebH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,27,1,1,5,0
 w5run2:
 	.word   44,90,21,86
-	.long   083af73H
+	.long   0283af73H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,21,1,1,5,0
 w5run3:
 	.word   41,89,19,86
-	.long   0842b33H
+	.long   02842b33H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,19,1,1,5,0
 w5run4:
 	.word   41,86,20,84
-	.long   0849d3bH
+	.long   02849d3bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,18,0,1,5,0
 w5run5:
 	.word   38,86,18,84
-	.long   0850b6bH
+	.long   02850b6bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,17,0,1,5,0
 w5run6:
 	.word   37,88,18,87
-	.long   085718bH
+	.long   0285718bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,18,1,1,5,0
 w5run7:
 	.word   38,89,21,86
-	.long   085d74bH
+	.long   0285d74bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,21,0,1,5,0
 w5run8:
 	.word   40,86,21,84
-	.long   08640fbH
+	.long   028640fbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,23,1,1,5,0
 w5stand:
 	.word   45,90,21,88
-	.long   086ac7bH
+	.long   0286ac7bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,0,1,5,0
 w1ohp1:
 	.word   50,93,23,92
-	.long   0872b0bH
+	.long   02872b0bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,0,-1,1,0
 w1ohp2:
 	.word   54,96,23,97
-	.long   087bc5bH
+	.long   0287bc5bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,26,2,-1,1,0
 w1ohp3:
 	.word   52,121,21,119
-	.long   0885e5bH
+	.long   02885e5bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,25,26,-1,1,0
 w1ohp4:
 	.word   55,106,24,105
-	.long   08922fbH
+	.long   028922fbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,29,13,-1,1,0
 w1ohp5:
 	.word   40,118,21,117
-	.long   089d92bH
+	.long   0289d92bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,22,26,-1,1,0
 w1ohp6:
 	.word   38,108,21,107
-	.long   08a6cabH
+	.long   028a6cabH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,19,18,-1,1,0
 w2ohp1:
 	.word   57,97,20,97
-	.long   08aecebH
+	.long   028aecebH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,23,8,-1,2,0
 w2ohp2:
 	.word   52,115,18,115
-	.long   08b99b3H
+	.long   028b99b3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,22,23,1,2,0
 w2ohp3:
 	.word   54,101,19,102
-	.long   08c5493H
+	.long   028c5493H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,26,13,-1,2,0
 w2ohp4:
 	.word   67,114,19,114
-	.long   08cff03H
+	.long   028cff03H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,40,26,1,2,0
 w2ohp5:
 	.word   83,107,19,106
-	.long   08dedb3H
+	.long   028dedb3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,44,20,1,2,0
 w5ohp5:
 	.word   37,98,14,88
-	.long   08f033bH
+	.long   028f033bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,19,17,0,5,0
 w3ohp5:
 	.word   115,102,15,97
-	.long   08f748bH
+	.long   028f748bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,67,22,-1,3,0
 w4ohp5:
 	.word   89,104,18,95
-	.long   090e31bH
+	.long   0290e31bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,39,22,-1,4,0
 w3ohp1:
 	.word   77,80,20,79
-	.long   092045bH
+	.long   0292045bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,31,2,-1,3,0
 w3ohp2:
 	.word   46,104,13,103
-	.long   092c4dbH
+	.long   0292c4dbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,26,22,-1,3,0
 w3ohp3:
 	.word   63,96,14,94
-	.long   0935a5bH
+	.long   02935a5bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,29,11,-1,3,0
 w3ohp4:
 	.word   77,105,16,100
-	.long   094175bH
+	.long   0294175bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,52,22,-1,3,0
 w4ohp1:
 	.word   53,80,18,79
-	.long   0951403H
+	.long   02951403H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,21,4,1,4,0
 w4ohp2:
 	.word   46,113,15,106
-	.long   0959883H
+	.long   02959883H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,19,24,1,4,0
 w4ohp3:
 	.word   49,107,17,95
-	.long   0963af3H
+	.long   02963af3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,27,13,1,4,0
 w4ohp4:
 	.word   66,114,17,104
-	.long   096decbH
+	.long   0296decbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,31,25,-1,4,0
 w5ohp1:
 	.word   56,83,27,81
-	.long   097c9ebH
+	.long   0297c9ebH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,28,2,1,5,0
 w5ohp2:
 	.word   51,106,24,102
-	.long   0985b2bH
+	.long   02985b2bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,25,25,-1,5,0
 w5ohp3:
 	.word   51,101,22,94
-	.long   099041bH
+	.long   0299041bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,16,1,5,0
 w5ohp4:
 	.word   38,111,14,101
-	.long   099a513H
+	.long   0299a513H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,18,29,1,5,0
 w3dfcr1:
 	.word   41,79,14,73
-	.long   0132b753H
+	.long   0332b753H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,38,3,-1,3,0
 w3dfcr2:
 	.word   37,82,15,76
-	.long   01331c8bH
+	.long   03331c8bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,35,2,-1,3,0
 w3dfcr3:
 	.word   37,85,14,79
-	.long   01337b5bH
+	.long   03337b5bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,33,3,-1,3,0
 w3dfcr4:
 	.word   41,85,16,80
-	.long   0133dda3H
+	.long   0333dda3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,33,3,-1,3,0
 w3dfcr5:
 	.word   46,79,16,77
-	.long   01344a8bH
+	.long   03344a8bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,33,4,-1,3,0
 w3dfcr6:
 	.word   39,80,14,74
-	.long   0134bc1bH
+	.long   0334bc1bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,37,3,-1,3,0
 w3defwd1:
 	.word   68,84,27,80
-	.long   01351d9bH
+	.long   03351d9bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,44,2,-1,3,0
 w3defwd2:
 	.word   74,82,29,79
-	.long   0135d01bH
+	.long   0335d01bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,49,2,-1,3,0
 w3defwd3:
 	.word   60,83,14,78
-	.long   01368dbbH
+	.long   03368dbbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,42,3,-1,3,0
 w3defwd4:
 	.word   81,80,28,75
-	.long   0137295bH
+	.long   0337295bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,55,2,-1,3,0
 w3defwd5:
 	.word   70,85,23,77
-	.long   0137f3dbH
+	.long   0337f3dbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,48,2,-1,3,0
 w3defwd6:
 	.word   56,84,8,79
-	.long   0138adcbH
+	.long   0338adcbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,28,1,-1,3,0
 w1blok1:
 	.word   53,78,25,80
-	.long   013940cbH
+	.long   033940cbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,28,1,-1,1,0
 w1blok2:
 	.word   54,109,26,111
-	.long   0139c1fbH
+	.long   0339c1fbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,29,25,-1,1,0
 w1blok3:
 	.word   44,135,20,136
-	.long   013a79ebH
+	.long   033a79ebH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,28,44,-1,1,0
 w2blok1:
 	.word   64,87,21,85
-	.long   013b338bH
+	.long   033b338bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,27,6,-1,2,0
 w2blok2:
 	.word   52,127,23,125
-	.long   013be18bH
+	.long   033be18bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,26,34,1,2,0
 w2blok3:
 	.word   43,138,19,135
-	.long   013cafebH
+	.long   033cafebH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,23,43,1,2,0
 w4blok1:
 	.word   66,82,20,77
-	.long   013d695bH
+	.long   033d695bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,31,4,1,4,0
 w4blok2:
 	.word   72,122,32,119
-	.long   013e127bH
+	.long   033e127bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,40,32,1,4,0
 w4blok3:
 	.word   48,138,26,137
-	.long   013f24fbH
+	.long   033f24fbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,29,48,1,4,0
 w1defwd1:
 	.word   84,64,40,61
-	.long   013ff3fbH
+	.long   033ff3fbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,48,0,-1,1,0
 w1defwd2:
 	.word   86,67,33,63
-	.long   01409bfbH
+	.long   03409bfbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,42,0,-1,1,0
 w1defwd3:
 	.word   76,67,31,63
-	.long   0141500bH
+	.long   0341500bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,38,0,-1,1,0
 w1defwd4:
 	.word   81,69,37,65
-	.long   0141ef2bH
+	.long   0341ef2bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,41,0,-1,1,0
 w1defwd5:
 	.word   80,66,41,63
-	.long   01429dd3H
+	.long   03429dd3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,43,0,-1,1,0
 w1defwd6:
 	.word   71,68,38,64
-	.long   014342d3H
+	.long   034342d3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,38,0,-1,1,0
 w1dfcr1:
 	.word   101,65,48,63
-	.long   0143d9b3H
+	.long   0343d9b3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,50,1,-1,1,0
 w1dfcr2:
 	.word   98,68,46,65
-	.long   0144a6dbH
+	.long   0344a6dbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,49,1,-1,1,0
 w1dfcr3:
 	.word   97,72,47,68
-	.long   0145771bH
+	.long   0345771bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,48,0,-1,1,0
 w1dfcr4:
 	.word   96,73,44,68
-	.long   0146515bH
+	.long   0346515bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,50,0,-1,1,0
 w1dfcr5:
 	.word   100,64,43,62
-	.long   01472c5bH
+	.long   03472c5bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,49,0,-1,1,0
 w1dfcr6:
 	.word   99,63,47,62
-	.long   0147f45bH
+	.long   0347f45bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,48,0,-1,1,0
 w1drcr1:
 	.word   63,74,22,68
-	.long   0148b743H
+	.long   0348b743H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,31,0,-1,1,0
 w1drcr2:
 	.word   63,74,21,69
-	.long   014948f3H
+	.long   034948f3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,29,0,-1,1,0
 w1drcr3:
 	.word   61,73,17,69
-	.long   0149daa3H
+	.long   0349daa3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,30,0,-1,1,0
 w1drcr4:
 	.word   58,74,16,68
-	.long   014a65cbH
+	.long   034a65cbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,30,1,-1,1,0
 w1drcr5:
 	.word   61,73,17,68
-	.long   014aebebH
+	.long   034aebebH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,30,0,-1,1,0
 w1drcr6:
 	.word   59,74,20,68
-	.long   014b7713H
+	.long   034b7713H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,31,0,-1,1,0
 w2defwd1:
 	.word   65,74,19,69
-	.long   014bff83H
+	.long   034bff83H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,32,0,-1,2,0
 w2defwd2:
 	.word   81,70,39,70
-	.long   014c95d3H
+	.long   034c95d3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,54,1,-1,2,0
 w2defwd3:
 	.word   72,69,28,68
-	.long   014d4703H
+	.long   034d4703H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,44,0,-1,2,0
 w2defwd4:
 	.word   65,73,26,68
-	.long   014de243H
+	.long   034de243H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,33,0,-1,2,0
 w2defwd5:
 	.word   75,72,32,69
-	.long   014e768bH
+	.long   034e768bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,40,0,-1,2,0
 w2defwd6:
 	.word   72,74,27,70
-	.long   014f1f4bH
+	.long   034f1f4bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,38,0,-1,2,0
 w2dfcr1:
 	.word   74,67,30,66
-	.long   014fc5cbH
+	.long   034fc5cbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,38,0,-1,2,0
 w2dfcr2:
 	.word   83,68,32,65
-	.long   015060bbH
+	.long   035060bbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,42,0,-1,2,0
 w2dfcr3:
 	.word   75,69,24,67
-	.long   0151111bH
+	.long   0351111bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,34,0,-1,2,0
 w2dfcr4:
 	.word   73,72,29,69
-	.long   0151b2d3H
+	.long   0351b2d3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,36,0,-1,2,0
 w2dfcr5:
 	.word   72,66,30,65
-	.long   01525713H
+	.long   03525713H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,35,0,-1,2,0
 w2drcr1:
 	.word   52,74,24,71
-	.long   0152eb93H
+	.long   0352eb93H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,0,-1,2,0
 w2drcr2:
 	.word   52,75,24,71
-	.long   015363d3H
+	.long   035363d3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,26,0,-1,2,0
 w2drcr3:
 	.word   52,75,24,71
-	.long   0153ddb3H
+	.long   0353ddb3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,32,0,-1,2,0
 w2drcr4:
 	.word   53,75,24,71
-	.long   01545793H
+	.long   03545793H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,35,0,-1,2,0
 w2drcr5:
 	.word   54,74,24,70
-	.long   0154d3cbH
+	.long   0354d3cbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,36,0,-1,2,0
 w3blok1:
 	.word   66,79,11,76
-	.long   015550abH
+	.long   035550abH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,27,3,-1,3,0
 w3blok2:
 	.word   58,111,7,108
-	.long   0155f39bH
+	.long   0355f39bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,19,25,1,3,0
 w3blok3:
 	.word   53,133,14,130
-	.long   0156bccbH
+	.long   0356bccbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,25,42,1,13,0
 w4defwd1:
 	.word   88,77,48,76
-	.long   01579913H
+	.long   03579913H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,59,4,1,4,0
 w4defwd2:
 	.word   74,79,30,79
-	.long   01586cd3H
+	.long   03586cd3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,42,5,1,4,0
 w4defwd3:
 	.word   70,79,21,77
-	.long   01592383H
+	.long   03592383H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,33,3,1,4,0
 w4defwd4:
 	.word   73,80,27,76
-	.long   0159d053H
+	.long   0359d053H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,36,3,1,4,0
 w4defwd5:
 	.word   75,81,24,80
-	.long   015a86d3H
+	.long   035a86d3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,39,4,1,4,0
 w4defwd6:
 	.word   84,75,40,77
-	.long   015b44abH
+	.long   035b44abH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,56,3,1,4,0
 w4dfcr1:
 	.word   81,82,30,78
-	.long   015c098bH
+	.long   035c098bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,43,5,1,4,0
 w4dfcr2:
 	.word   77,85,25,79
-	.long   015cd91bH
+	.long   035cd91bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,40,3,1,4,0
 w4dfcr3:
 	.word   78,86,25,81
-	.long   015da5a3H
+	.long   035da5a3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,41,3,1,4,0
 w4dfcr4:
 	.word   79,82,18,79
-	.long   015e7743H
+	.long   035e7743H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,41,3,1,4,0
 w4dfcr5:
 	.word   83,77,23,75
-	.long   015f41b3H
+	.long   035f41b3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,48,4,1,4,0
 w4dfcr6:
 	.word   91,75,33,74
-	.long   0160096bH
+	.long   0360096bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,57,3,1,4,0
 w4stel1:
 	.word   74,78,27,70
-	.long   0160deb3H
+	.long   0360deb3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,44,7,1,4,0
 w4stel2:
 	.word   75,68,34,62
-	.long   01619313H
+	.long   03619313H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,61,7,1,9,0
 w4stel3:
 	.word   79,69,26,62
-	.long   01623273H
+	.long   03623273H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,54,11,1,8,0
 w4stel4:
 	.word   71,73,25,65
-	.long   0162dccbH
+	.long   0362dccbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,52,6,1,9,0
 w5blok1:
 	.word   63,92,36,92
-	.long   01637ec3H
+	.long   03637ec3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,32,10,-1,15,0
 w5blok2:
 	.word   57,110,31,110
-	.long   016433e3H
+	.long   036433e3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,26,30,-1,15,0
 w5blok3:
 	.word   40,142,21,144
-	.long   0164f7d3H
+	.long   0364f7d3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,17,51,-1,15,0
 w5defwd1:
 	.word   82,77,43,76
-	.long   0165a953H
+	.long   0365a953H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,40,4,1,5,0
 w5defwd2:
 	.word   90,77,48,74
-	.long   01666ea3H
+	.long   03666ea3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,47,4,1,5,0
 w5defwd3:
 	.word   89,82,56,78
-	.long   01674733H
+	.long   03674733H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,49,4,1,5,0
 w5defwd4:
 	.word   87,79,54,75
-	.long   01682b43H
+	.long   03682b43H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,44,4,1,5,0
 w5defwd5:
 	.word   84,79,47,76
-	.long   0169020bH
+	.long   0369020bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,42,4,1,5,0
 w5defwd6:
 	.word   77,81,41,77
-	.long   0169d16bH
+	.long   0369d16bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,38,5,1,5,0
 w5dfcr1:
 	.word   101,73,51,74
-	.long   016a9453H
+	.long   036a9453H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,52,4,1,5,0
 w5dfcr2:
 	.word   95,77,50,75
-	.long   016b7abbH
+	.long   036b7abbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,48,5,1,5,0
 w5dfcr3:
 	.word   92,79,50,76
-	.long   016c5f53H
+	.long   036c5f53H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,47,4,1,5,0
 w5dfcr4:
 	.word   93,79,47,75
-	.long   016d4273H
+	.long   036d4273H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,48,4,1,5,0
 w5dfcr5:
 	.word   93,78,47,75
-	.long   016e280bH
+	.long   036e280bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,47,5,1,5,0
 w5dfcr6:
 	.word   98,76,52,74
-	.long   016f0abbH
+	.long   036f0abbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,52,4,1,5,0
 w5drcr1:
 	.word   64,68,32,66
-	.long   016ff37bH
+	.long   036ff37bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,22,4,1,5,0
 w5drcr2:
 	.word   62,68,31,66
-	.long   01707b7bH
+	.long   03707b7bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,26,4,1,5,0
 w5drcr3:
 	.word   65,67,32,65
-	.long   0170ff3bH
+	.long   0370ff3bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,32,4,1,5,0
 w5drcr4:
 	.word   60,62,28,60
-	.long   01718753H
+	.long   03718753H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,30,5,1,5,0
 w5drcr5:
 	.word   60,63,28,61
-	.long   0171fb93H
+	.long   0371fb93H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,25,6,1,5,0
 w5drcr6:
 	.word   61,63,28,61
-	.long   017271b3H
+	.long   037271b3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,22,4,1,5,0
 w3drcr1:
 	.word   59,76,20,70
-	.long   0172e9cbH
+	.long   0372e9cbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,37,3,-1,3,0
 w3drcr2:
 	.word   51,77,20,71
-	.long   017375ebH
+	.long   037375ebH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,37,3,-1,3,0
 w3drcr3:
 	.word   54,77,21,71
-	.long   0173f0a3H
+	.long   0373f0a3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,37,2,-1,3,0
 w3drcr4:
 	.word   54,78,21,72
-	.long   01747293H
+	.long   03747293H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,36,2,-1,3,0
 w4drcr1:
 	.word   53,72,15,67
-	.long   0174f633H
+	.long   0374f633H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,33,5,1,4,0
 w4drcr2:
 	.word   65,73,16,68
-	.long   01756d73H
+	.long   03756d73H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,35,4,1,4,0
 w4drcr3:
 	.word   59,75,16,70
-	.long   017601bbH
+	.long   037601bbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,34,4,1,4,0
 w4drcr4:
 	.word   61,74,16,70
-	.long   01768c03H
+	.long   03768c03H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,34,3,1,4,0
 w4drcr5:
 	.word   57,74,15,70
-	.long   01771913H
+	.long   03771913H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,34,4,1,4,0
 w2push1:
 	.word   46,84,14,79
-	.long   018537d3H
+	.long   038537d3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,37,1,-1,2,0
 w2push2:
 	.word   41,85,6,81
-	.long   0185b093H
+	.long   0385b093H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,32,1,-1,2,0
 w2push3:
 	.word   60,82,-1,79
-	.long   01861d7bH
+	.long   03861d7bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,29,0,-1,2,0
 w2push4:
 	.word   71,83,-1,79
-	.long   0186b73bH
+	.long   0386b73bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,33,9,-1,2,0
 w4push1:
 	.word   51,85,28,82
-	.long   01876f63H
+	.long   03876f63H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,33,1,1,4,0
 w4push2:
 	.word   65,78,22,75
-	.long   0187f6dbH
+	.long   0387f6dbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,34,1,1,4,0
 w4push3:
 	.word   94,77,20,74
-	.long   0188954bH
+	.long   0388954bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,42,6,-1,4,0
 w1reb2:
 	.word   41,112,24,110
-	.long   0189777bH
+	.long   0389777bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,23,34,-1,1,0
 w1reb1:
 	.word   64,106,37,103
-	.long   018a06fbH
+	.long   038a06fbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,33,29,-1,1,0
 w1reb3:
 	.word   33,107,18,106
-	.long   018adafbH
+	.long   038adafbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,14,31,-1,1,0
 w1reb4:
 	.word   38,81,22,80
-	.long   018b4953H
+	.long   038b4953H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,20,16,1,1,0
 w1reb5:
 	.word   41,65,23,62
-	.long   018ba983H
+	.long   038ba983H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,20,1,-1,1,0
 w2reb1:
 	.word   48,86,14,84
-	.long   01b0ca7bH
+	.long   03b0ca7bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,21,17,-1,2,0
 w2reb2:
 	.word   50,102,14,100
-	.long   01b14b7bH
+	.long   03b14b7bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,20,24,1,12,0
 w2reb3:
 	.word   55,119,16,119
-	.long   01b1eadbH
+	.long   03b1eadbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,21,36,1,2,0
 w2reb4:
 	.word   61,112,17,113
-	.long   01b2b763H
+	.long   03b2b763H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,21,30,1,2,0
 w2reb5:
 	.word   33,119,15,120
-	.long   01b38ce3H
+	.long   03b38ce3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,15,36,1,12,0
 w2reb6:
 	.word   39,93,14,91
-	.long   01b4079bH
+	.long   03b4079bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,15,14,-1,2,0
 w2reb7:
 	.word   38,62,18,61
-	.long   01b478f3H
+	.long   03b478f3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,27,0,-1,2,0
 w3reb1:
 	.word   40,91,13,87
-	.long   01b4c293H
+	.long   03b4c293H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,19,20,-1,3,0
 w3reb2:
 	.word   43,115,12,112
-	.long   01b53453H
+	.long   03b53453H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,15,31,-1,13,0
 w3reb3:
 	.word   49,115,12,113
-	.long   01b5cedbH
+	.long   03b5cedbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,17,35,-1,13,0
 w3reb4:
 	.word   30,118,10,115
-	.long   01b67ef3H
+	.long   03b67ef3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,16,36,-1,13,0
 w3reb5:
 	.word   37,64,15,59
-	.long   01b6ed93H
+	.long   03b6ed93H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,23,1,-1,3,0
 w4reb1:
 	.word   44,86,15,84
-	.long   01b73793H
+	.long   03b73793H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,19,17,-1,14,0
 w4reb2:
 	.word   40,122,13,122
-	.long   01b7add3H
+	.long   03b7add3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,20,38,-1,14,0
 w4reb3:
 	.word   50,114,16,115
-	.long   01b84653H
+	.long   03b84653H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,22,32,-1,14,0
 w4reb4:
 	.word   41,117,15,119
-	.long   01b8f873H
+	.long   03b8f873H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,23,36,-1,14,0
 w4reb5:
 	.word   52,90,16,89
-	.long   01b98e5bH
+	.long   03b98e5bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,26,13,-1,14,0
 w4reb6:
 	.word   39,69,16,68
-	.long   01ba209bH
+	.long   03ba209bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,24,0,-1,14,0
 w2stwbl:
 	.word   42,92,19,88
-	.long   01ba74b3H
+	.long   03ba74b3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,19,1,-1,2,0
 w3desp1:
 	.word   46,70,25,70
-	.long   01baed73H
+	.long   03baed73H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,14,0,-1,13,0
 w3desp2:
 	.word   54,85,21,86
-	.long   01bb5213H
+	.long   03bb5213H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,10,6,-1,13,0
 w3desp3:
 	.word   61,105,27,106
-	.long   01bbe183H
+	.long   03bbe183H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,6,27,-1,13,0
 w3desp4:
 	.word   70,101,21,102
-	.long   01bca9abH
+	.long   03bca9abH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,5,30,-1,13,0
 w3desp5:
 	.word   71,99,33,99
-	.long   01bd869bH
+	.long   03bd869bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,21,32,-1,13,0
 w3desp6:
 	.word   52,70,23,69
-	.long   01be6243H
+	.long   03be6243H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,0,17,0,-1,13,0
 w3stwbl:
 	.word   35,92,11,89
-	.long   01bed403H
+	.long   03bed403H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,12,1,-1,3,0
 w4stwbl:
 	.word   44,91,20,88
-	.long   01bf38a3H
+	.long   03bf38a3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,23,0,1,4,0
 w5stwbl:
 	.word   45,90,23,87
-	.long   01bfb5c3H
+	.long   03bfb5c3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,25,1,1,5,0
 w3rej1:
 	.word   67,77,22,74
-	.long   01c03453H
+	.long   03c03453H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,27,2,1,14,0
 w3rej2:
 	.word   80,126,24,125
-	.long   01c0d58bH
+	.long   03c0d58bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,35,32,1,14,0
 w3rej3:
 	.word   91,112,34,111
-	.long   01c2108bH
+	.long   03c2108bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,45,25,1,14,0
 w3rej4:
 	.word   73,122,21,116
-	.long   01c34f0bH
+	.long   03c34f0bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,32,35,-1,3,0
 w3rej5:
 	.word   71,86,20,86
-	.long   01c4655bH
+	.long   03c4655bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,27,7,-1,3,0
 w3rej6:
 	.word   73,87,22,86
-	.long   01c5242bH
+	.long   03c5242bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,26,7,-1,4,0
 w3rej7:
 	.word   70,106,23,106
-	.long   01c5eaa3H
+	.long   03c5eaa3H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,25,20,-1,4,0
 w3rej8:
 	.word   59,89,20,89
-	.long   01c6d283H
+	.long   03c6d283H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,25,12,-1,4,0
 w3rej9:
 	.word   61,76,33,75
-	.long   01c7769bH
+	.long   03c7769bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,39,4,-1,3,0
 w2rej1:
 	.word   43,68,20,66
-	.long   01c8077bH
+	.long   03c8077bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,30,2,-1,2,0
 w2rej2:
 	.word   68,74,19,72
-	.long   01c862dbH
+	.long   03c862dbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,24,2,-1,2,0
 w2rej3:
 	.word   69,116,20,112
-	.long   01c9001bH
+	.long   03c9001bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,29,30,-1,12,0
 w2rej4:
 	.word   61,129,18,128
-	.long   01c9fa3bH
+	.long   03c9fa3bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,34,38,-1,12,0
 w2rej5:
 	.word   70,124,27,124
-	.long   01caf023H
+	.long   03caf023H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,41,35,-1,13,0
 w2rej6:
 	.word   51,127,20,126
-	.long   01cbff63H
+	.long   03cbff63H
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,30,38,-1,12,0
 w2rej7:
 	.word   44,92,11,96
-	.long   01ccc9cbH
+	.long   03ccc9cbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,8,15,-1,2,0
 w2rej8:
 	.word   42,87,18,88
-	.long   01cd484bH
+	.long   03cd484bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,5,8,-1,6,0
 w2rej9:
 	.word   43,80,21,79
-	.long   01cdba7bH
+	.long   03cdba7bH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,7,6,-1,6,0
 w3run0:
 	.word   42,87,15,85
-	.long   01ce25fbH
+	.long   03ce25fbH
 	.word   00H
 	.long   NEWILPAL
 	.word   -1,-1,-1,-32768,30,2,-1,3,0

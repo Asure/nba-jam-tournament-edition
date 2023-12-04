@@ -1,1 +1,1 @@
-load2 BB3    /e /di /fi /t=c:\tmp\jamte /x /v
+load2 BB3 /di /fi /t=c:\tmp\jamte\bb3 /x /v

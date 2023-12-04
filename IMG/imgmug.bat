@@ -1,1 +1,1 @@
-load2 BBMUG    /e /di /fi /t=c:\tmp\jamte /x /v
+load2 BBMUG /di /fi /t=c:\tmp\jamte\bbmug /x /v

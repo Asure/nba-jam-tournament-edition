@@ -1,4 +1,4 @@
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    1
@@ -58,7 +58,7 @@ TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
       54                            .ref    player_names
       55                            .ref    CYCLE_TABLE
       56                            .ref    pleasewt
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE    2
@@ -118,7 +118,7 @@ NBA JAM Basketball game program                                      PAGE    2
      109                            .ref    AUD,AUD1,aud_addnumplyrs
      110                            .ref    prt_cr_timers
      111                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE    3
@@ -178,7 +178,7 @@ NBA JAM Basketball game program                                      PAGE    3
      164 00000140                   BSSX    PSTATUS2        ,16     ;Player has started game bits (0-3)
      165                                                            ;used to decide if this player must
      166                                                            ;pay 2 credits or just 1 credit to
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE    4
@@ -238,7 +238,7 @@ NBA JAM Basketball game program                                      PAGE    4
      219 00000140                   BSSX    msg_ram         ,32*4   ;temp ram for flopping message/meters
      220 00000140                   BSSX    name_cnt        ,16     ;Cntr for flopping to player names
      221 00000140                   BSSX    name_flop       ,16     ;Flop name/buyin message 0 or 1
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE    5
@@ -298,7 +298,7 @@ NBA JAM Basketball game program                                      PAGE    5
      267                    
      268 000002a0     07a0          move    @WDOGRAM,a0,L
          000002b0 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE    6
@@ -358,7 +358,7 @@ NBA JAM Basketball game program                                      PAGE    6
      312 00000520     0570          setf    16,1,0                  ;Field0 = Word sign extend
      313 00000530     0740          setf    32,0,1                  ;Field1 = Long word
      314 00000540     09ef          movi    STCKST,sp               ;Top of stack
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE    7
@@ -418,7 +418,7 @@ NBA JAM Basketball game program                                      PAGE    7
      358 00000900     0d5f          calla   cr_cntrs_update         ;And blink the top messages
          00000910 00000000! 
      359 00000930     0d3f          callr   switch_unstack
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE    8
@@ -478,7 +478,7 @@ NBA JAM Basketball game program                                      PAGE    8
      397                    
      398                    
      399                            .if     DEBUG
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE    9
@@ -538,7 +538,7 @@ NBA JAM Basketball game program                                      PAGE    9
      445                            move    *a2+,a1
      446                            jrz     kabtlp                  ;No PID?
      447                            move    *a2+,a7,L               ;*Code
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   10
@@ -598,7 +598,7 @@ NBA JAM Basketball game program                                      PAGE   10
      493 00001140                   WL      0,0                     ;S1
      494 00001170                   WL      0,0                     ;S2
      495 000011a0                   WL      0,0                     ;S3
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   11
@@ -658,7 +658,7 @@ NBA JAM Basketball game program                                      PAGE   11
      548                            WL      RC_PID,RCOIN            ;S17 - RIGHT COIN (2)
      549                            WL      PSWPID,plyr_strtb1      ;S18 - START 1
      550                            WL      SLAM_PID,SLAM_SW        ;S19 - SLAM TILT
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   12
@@ -718,7 +718,7 @@ NBA JAM Basketball game program                                      PAGE   12
      596 000018d0     05a0          move    @TWOPLAYERS,a0          ;0 = NO, 1 = YES 2 players
          000018e0 00000000! 
      597 00001900     cb00          jrnz    psbx
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   13
@@ -778,7 +778,7 @@ NBA JAM Basketball game program                                      PAGE   13
      636                    
      637                    
      638 00001be0     05a1          move    @GAMSTATE,a1
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   14
@@ -838,7 +838,7 @@ NBA JAM Basketball game program                                      PAGE   14
      674 00001f40                   DIE
      675                    
      676                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   15
@@ -898,7 +898,7 @@ NBA JAM Basketball game program                                      PAGE   15
          00002280 00000000! 
      713                    
      714 000022a0           kabtpsb300
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   16
@@ -958,7 +958,7 @@ NBA JAM Basketball game program                                      PAGE   16
      754 00002600     0d5f          calla   P_START                 ;Take credits
          00002610 00000000! 
      755                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   17
@@ -1018,7 +1018,7 @@ NBA JAM Basketball game program                                      PAGE   17
          00002950 00000000! 
      800 00002970     c004          jruc    kabtfix1
      801 00002980           kabtfrmstrt
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   18
@@ -1078,7 +1078,7 @@ NBA JAM Basketball game program                                      PAGE   18
      842                    
      843                    
      844 00002c30                   PUSH    a0
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   19
@@ -1138,7 +1138,7 @@ NBA JAM Basketball game program                                      PAGE   19
      886 00002ee0     4b01          btst    a8,a1
      887 00002ef0     ca05          jrz     kabtfrmstrt3
      888                            
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   20
@@ -1198,7 +1198,7 @@ NBA JAM Basketball game program                                      PAGE   20
      929 000031e0           kabtskp1a
      930 000031e0     b760          move    *a11(ply_messages),a0,L
          000031f0     0000  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   21
@@ -1258,7 +1258,7 @@ NBA JAM Basketball game program                                      PAGE   21
      971                    
      972                    
      973 000034e0                   PULLP   A11
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   22
@@ -1318,7 +1318,7 @@ NBA JAM Basketball game program                                      PAGE   22
     1016 00003990     18a9          movk    5,a9
     1017 000039a0           start1
     1018 000039a0     1429          dec     a9
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   23
@@ -1378,7 +1378,7 @@ NBA JAM Basketball game program                                      PAGE   23
     1066 00003cf0     4422          sub     a1,a2
     1067 00003d00     484e          cmp     a2,a14
     1068 00003d10     c41b          jrlt    kabtno
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   24
@@ -1438,7 +1438,7 @@ NBA JAM Basketball game program                                      PAGE   24
          00003fc0 00000000! 
     1110                    
     1111 00003fe0     b760          move    *a11(ply_meter_imgs),a0,L
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   25
@@ -1498,7 +1498,7 @@ NBA JAM Basketball game program                                      PAGE   25
     1151                    
     1152 00004280     b760          move    *a11(ply_meter_imgs+020H),a0,L
          00004290     00a0  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   26
@@ -1558,7 +1558,7 @@ NBA JAM Basketball game program                                      PAGE   26
     1194 00004580     ca02          jrz     sqixtag
     1195                    
     1196                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   27
@@ -1618,7 +1618,7 @@ NBA JAM Basketball game program                                      PAGE   27
     1233 000048c0     0d3f          callr   paidcreds_add
          000048d0     ff20  
     1234                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   28
@@ -1678,7 +1678,7 @@ NBA JAM Basketball game program                                      PAGE   28
     1272 00004c50     05a1          move    @winningteam,a1
          00004c60 00000000! 
     1273 00004c80     cf13          jrnn    sqixskip
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   29
@@ -1738,7 +1738,7 @@ NBA JAM Basketball game program                                      PAGE   29
     1315 00005080                   JSRP    scrn_scaleininit
     1316                    
     1317 000050f0     0d5f          calla   WIPEOUT                 ;CLEAN SYSTEM OUT
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   30
@@ -1798,7 +1798,7 @@ NBA JAM Basketball game program                                      PAGE   30
     1357 00005470     0b07          addi    040H,a7
          00005480     0040  
     1358 00005490     a2ef          move    a7,-*sp,L
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   31
@@ -1858,7 +1858,7 @@ NBA JAM Basketball game program                                      PAGE   31
          00005880 00000000! 
     1391 000058a0     0580          move    a0,@cntl_team_last
          000058b0 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   32
@@ -1918,7 +1918,7 @@ NBA JAM Basketball game program                                      PAGE   32
          00005be0 00000000! 
     1429                    
     1430 00005c00     1820          movk    1,a0
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   33
@@ -1978,7 +1978,7 @@ NBA JAM Basketball game program                                      PAGE   33
     1476                    
     1477                            .ref    name_call
     1478 00006050                   CREATE0 name_call
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   34
@@ -2038,7 +2038,7 @@ NBA JAM Basketball game program                                      PAGE   34
     1520 00006780     139c          .WORD   139CH,239CH,339CH,539CH,739CH,7390H,7380H,6380H,4380H
     1521 00006810     0380          .WORD   0380H,1380H,2380H,3380H,4380H,5380H,6380H,7380H,7300H
     1522 000068a0     7280          .WORD   7280H,7200H,7180H,7080H,7008H,7008H,7010H,7010H,701CH
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   35
@@ -2098,7 +2098,7 @@ NBA JAM Basketball game program                                      PAGE   35
     1569                    
     1570                            .ref    stick_cpu
     1571 00007530     576b          clr     a11
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   36
@@ -2158,7 +2158,7 @@ NBA JAM Basketball game program                                      PAGE   36
          00007ba0     0150  
     1612 00007bb0     b600          move    *a0(PAT_HEADT_p),a0,L
          00007bc0     0120  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   37
@@ -2218,7 +2218,7 @@ NBA JAM Basketball game program                                      PAGE   37
     1649                    
     1650                    
     1651 00008130     186b  sqixdoit4       movk    3,a11
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   38
@@ -2278,7 +2278,7 @@ NBA JAM Basketball game program                                      PAGE   38
     1692 00008570     4840          cmp     a2,a0
     1693 00008580     c703          jrgt    xgbwckx
     1694 00008590     1861          movk    3,a1
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   39
@@ -2338,7 +2338,7 @@ NBA JAM Basketball game program                                      PAGE   39
          00008950 00000000! 
     1738                    
     1739 00008970     09e0          movi    tip_snd,a0
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   40
@@ -2398,7 +2398,7 @@ NBA JAM Basketball game program                                      PAGE   40
     1780 00008e60     0d5f          calla   GETPRC                  ;Pass last obj in A8
          00008e70 00000000! 
     1781 00008e90     c056          jruc    ipxhnext
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   41
@@ -2458,7 +2458,7 @@ NBA JAM Basketball game program                                      PAGE   41
     1824 000091a0     4466          sub     a3,a6                   ;=Z/2.667
     1825                    
     1826 000091b0     0b06          addi    GND_Y,a6
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   42
@@ -2518,7 +2518,7 @@ NBA JAM Basketball game program                                      PAGE   42
          000094b0     0663  
     1865 000094c0     0960          rets
     1866                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   43
@@ -2578,7 +2578,7 @@ NBA JAM Basketball game program                                      PAGE   43
     1919 00009d10     0036          .word   200-146,0,718,500,F
     1920 00009d60 000280c0"         .long   reflc4
     1921                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   44
@@ -2638,7 +2638,7 @@ NBA JAM Basketball game program                                      PAGE   44
     1974 0000a580     ff9c          .word   0ffa4H+12-20,0ffc0H,Z,0,F
     1975 0000a5d0 00028660"         .long   usher
     1976 0000a5f0     0035          .word   035H,0ffc6H,Z,0,FF
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   45
@@ -2698,7 +2698,7 @@ NBA JAM Basketball game program                                      PAGE   45
     2029 0000ae60 000276a0"         .long   ad2ref                          ;rgt reflection
     2030 0000ae80                   WL      4002,ad2ref_ptr
     2031                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   46
@@ -2758,7 +2758,7 @@ NBA JAM Basketball game program                                      PAGE   46
     2084 0000b4b0 00028f60"         .long   sdcrwd4
     2085 0000b4d0                   WL      4002,sl4_ptr
     2086 0000b500     ff00          .word   0FF00H,0FFB7H,Z+240,0,F
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   47
@@ -2818,7 +2818,7 @@ NBA JAM Basketball game program                                      PAGE   47
     2136                    
     2137                            .ref    bbshatter
     2138                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   48
@@ -2878,7 +2878,7 @@ NBA JAM Basketball game program                                      PAGE   48
     2181 0000c1b0 00000000!         .long   bbord_10,bbord_10,bbord_10,bbord_10
     2182                    
     2183                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   49
@@ -2938,7 +2938,7 @@ NBA JAM Basketball game program                                      PAGE   49
     2219                    
     2220 0000c6d0     07a8          move    @crwd5_ptr,a8,L
          0000c6e0 000008c0- 
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   50
@@ -2998,7 +2998,7 @@ NBA JAM Basketball game program                                      PAGE   50
          0000cc60 0000ed30' 
     2253 0000cc80                   CREATE0 crwd_ani
     2254 0000ccf0     b300          move    a8,*a0(PDATA),L
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   51
@@ -3058,7 +3058,7 @@ NBA JAM Basketball game program                                      PAGE   51
          0000d1b0 0000f860' 
     2288 0000d1d0                   CREATE0 crwd_ani
     2289 0000d240     b300          move    a8,*a0(PDATA),L
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   52
@@ -3118,7 +3118,7 @@ NBA JAM Basketball game program                                      PAGE   52
     2322 0000d790     b300          move    a8,*a0(PDATA),L
          0000d7a0     0100  
     2323 0000d7b0     b340          move    a10,*a0(PDATA+32),L
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   53
@@ -3178,7 +3178,7 @@ NBA JAM Basketball game program                                      PAGE   53
     2355                    
     2356 0000dd20     07a8          move    @sr6_ptr,a8,L
          0000dd30 00000aa0- 
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   54
@@ -3238,7 +3238,7 @@ NBA JAM Basketball game program                                      PAGE   54
          0000e1f0     0100  
     2395 0000e200     b7aa          move    *a13(PDATA+32),a10,L
          0000e210     0120  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   55
@@ -3298,7 +3298,7 @@ NBA JAM Basketball game program                                      PAGE   55
     2434                    
     2435 0000e560           crwd1_lst
     2436 0000e560                   LW      crowd1a2,4
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   56
@@ -3358,7 +3358,7 @@ NBA JAM Basketball game program                                      PAGE   56
     2489 0000ed90                   LW      sdcrwd5b,6
     2490 0000edc0                   LWL0    sdcrwd5,6
     2491                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   57
@@ -3418,7 +3418,7 @@ NBA JAM Basketball game program                                      PAGE   57
     2544 0000f5a0                   LW      cheer5,6
     2545 0000f5d0                   LW      cheer6,6
     2546 0000f600                   LW      cheer7,6
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   58
@@ -3478,7 +3478,7 @@ NBA JAM Basketball game program                                      PAGE   58
          0000fc30 00000b00- 
     2594 0000fc50     b228          move    a1,*a8(OIMG),L
          0000fc60     0170  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   59
@@ -3538,7 +3538,7 @@ NBA JAM Basketball game program                                      PAGE   59
     2631 00010070     b248          move    a2,*a8(OSIZE),L
          00010080     0130  
     2632 00010090     ba28          move    *a1(ISAG),*a8(OSAG),L
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   60
@@ -3598,7 +3598,7 @@ NBA JAM Basketball game program                                      PAGE   60
     2671                    
     2672 000103a0 00027cd0" ad2_t   .long   adnba2,adjam2
     2673 000103e0 00027190"         .long   admid2,adblue2
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   61
@@ -3658,7 +3658,7 @@ NBA JAM Basketball game program                                      PAGE   61
          00010990     0110  
     2716                    
     2717 000109a0                   SLEEP   120
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   62
@@ -3718,7 +3718,7 @@ NBA JAM Basketball game program                                      PAGE   62
     2758                    
     2759                    
     2760 00010d60 00010fb0' fsixnet_t       .long   net0_l  ;Shot swish/bank in
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   63
@@ -3778,7 +3778,7 @@ NBA JAM Basketball game program                                      PAGE   63
     2808 000113d0 00000000!         .long   swish1f,swish1b
     2809 00011410 00000000!         .long   rim1f,rim1b,0
     2810 00011470           net2_l
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   64
@@ -3838,7 +3838,7 @@ NBA JAM Basketball game program                                      PAGE   64
     2863 000120f0 00000000!         .long   firimF_11,firimB_11,0
     2864                    
     2865                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   65
@@ -3898,7 +3898,7 @@ NBA JAM Basketball game program                                      PAGE   65
          000124b0 00013920' 
     2901 000124d0     09e9          movi    P1DATA+ply_messages,a9
          000124e0 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   66
@@ -3958,7 +3958,7 @@ NBA JAM Basketball game program                                      PAGE   66
     2936                    
     2937 00012860     c029          jruc    xraxtag3
     2938 00012870           xraxtag2
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   67
@@ -4018,7 +4018,7 @@ NBA JAM Basketball game program                                      PAGE   67
     2974 00012bb0     09eb          movi    init_t3kit,a11
          00012bc0 00013ce0' 
     2975                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   68
@@ -4078,7 +4078,7 @@ NBA JAM Basketball game program                                      PAGE   68
          00012ec0 00000000! 
     3013 00012ee0     07a0          move    @P3DATA+ply_meter_imgs+40h,a0,L
          00012ef0 000000c0! 
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   69
@@ -4138,7 +4138,7 @@ NBA JAM Basketball game program                                      PAGE   69
          000132e0 00000000! 
     3046                    
     3047 00013300     0d5f          calla   prt_top_scores          ;Update scores at scrn top
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   70
@@ -4198,7 +4198,7 @@ NBA JAM Basketball game program                                      PAGE   70
     3088 000136a0     9563          move    *a11+,a3                ;Z
     3089 000136b0     09e4          movi    DMAWNZ|M_NOCOLL|M_SCRNREL,a4
          000136c0 0000a802  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   71
@@ -4258,7 +4258,7 @@ NBA JAM Basketball game program                                      PAGE   71
     3139 00013a50 00000000!         .long   LITUPg
     3140                    
     3141 00013a70     0fa0          .word   4000
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   72
@@ -4318,7 +4318,7 @@ NBA JAM Basketball game program                                      PAGE   72
     3194                    
     3195 00013f30     0fa0          .word   4000
     3196                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   73
@@ -4378,7 +4378,7 @@ NBA JAM Basketball game program                                      PAGE   73
     3239                    
     3240                    
     3241                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   74
@@ -4438,7 +4438,7 @@ NBA JAM Basketball game program                                      PAGE   74
     3283                    
     3284 000145f0     b50a          move    *a8(OXPOS),a10
          00014600     0090  
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   75
@@ -4498,7 +4498,7 @@ NBA JAM Basketball game program                                      PAGE   75
     3326 000149f0     c080          jauc    DELOBJ
          00014a00 00000000! 
     3327                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   76
@@ -4558,7 +4558,7 @@ NBA JAM Basketball game program                                      PAGE   76
     3374 00014d00     03a5          NEG     A5
     3375 00014d10     4ca9          MOVE    A5,A9
     3376 00014d20     4c05          MOVE    A0,A5
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   77
@@ -4618,7 +4618,7 @@ NBA JAM Basketball game program                                      PAGE   77
     3419 00015050     0500          sext    a0
     3420 00015060     c702          jrgt    utzcxok
     3421 00015070     1820          movk    1,a0
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   78
@@ -4678,7 +4678,7 @@ NBA JAM Basketball game program                                      PAGE   78
     3471                            move    @CPUAVG,a1
     3472                            move    a1,a2
     3473                            srl     4,a2                    ;/16
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   79
@@ -4738,7 +4738,7 @@ NBA JAM Basketball game program                                      PAGE   79
     3526                    
     3527                            movi    20000,b2
     3528                    wpuxlp  rl      16,a4
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   80
@@ -4798,7 +4798,7 @@ NBA JAM Basketball game program                                      PAGE   80
     3581                            movi    030H,a1
     3582                            move    a1,@DMACONF             ;Top/Bottom
     3583                            movi    [200,50],a1
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   81
@@ -4858,7 +4858,7 @@ NBA JAM Basketball game program                                      PAGE   81
     3636                            movi    0802cH,a0               ;Disable cache
     3637                            move    a0,@CONTROL
     3638                            movi    0f010H,a0
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   82
@@ -4918,7 +4918,7 @@ NBA JAM Basketball game program                                      PAGE   82
     3691                            dsj     a2,kdealp8              ;2,5
     3692                            jruc    kdealp5
     3693                    
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   83
@@ -4978,7 +4978,7 @@ NBA JAM Basketball game program                                      PAGE   83
          00015400 00000010! 
     3736 00015420     ce05          jrn     kdeanot_spec2
     3737 00015430     24ae          sll     5,a14                           ;x 32 bits
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   84
@@ -5038,7 +5038,7 @@ NBA JAM Basketball game program                                      PAGE   84
     3776 000157a0           kdeanot_spec4
     3777 000157a0     0782          move    a2,@names+96,L
          000157b0 00000ce0- 
-TMS340 COFF Macro Assembler Version 6.10     Sun Dec 03 01:35:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:56 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 NBA JAM Basketball game program                                      PAGE   85
