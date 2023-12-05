@@ -1,4 +1,4 @@
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    1
@@ -58,7 +58,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
       54                    
       55                    
       56              8000  M_YF    .equ    08000H  ;Y free (OFLAGS)
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE    2
@@ -118,7 +118,7 @@ basketball plyr sequence code                                        PAGE    2
      109                                                                    ;Last cnt is total hang cnt
      110 00000800                   WLW     5,w3spdu7,F                     
      111 00000840                   WLW     5,w3spdu8,F
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE    3
@@ -178,7 +178,7 @@ basketball plyr sequence code                                        PAGE    3
      164 00001120                   WLW     N-8,w1stdu5,F
      165 00001160                   WLW     1,w1stdu6,F
      166                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE    4
@@ -238,7 +238,7 @@ basketball plyr sequence code                                        PAGE    4
      219 00001ad0                   WLW     N-8,w1stdu5,F
      220 00001b10                   WLW     1,w1stdu6,F
      221                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE    5
@@ -298,7 +298,7 @@ basketball plyr sequence code                                        PAGE    5
      274 000024c0                   WLW     1,w1stdu6,F
      275                    
      276 00002500                   WLW     -1,seq_slamball,3
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE    6
@@ -358,7 +358,7 @@ basketball plyr sequence code                                        PAGE    6
      329 00002eb0                   WLW     4,w4modu5,F
      330 00002ef0                   WLW     30,w4modu6,F
      331 00002f30                   WLW     6,w4modu7,F
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE    7
@@ -418,7 +418,7 @@ basketball plyr sequence code                                        PAGE    7
      384                    
      385                            .asg    6,N
      386 000038d0                   WLW     -1,seq_slamball,8
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE    8
@@ -478,7 +478,7 @@ basketball plyr sequence code                                        PAGE    8
      439 00004230                   WLW     6,w3twdu6,F
      440 00004270                   WLW     1,w3twdu7,F
      441                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE    9
@@ -538,7 +538,7 @@ basketball plyr sequence code                                        PAGE    9
      494 00004b20                   WLW     3,w4stdu3,F
      495 00004b60                   WLLW    -1,seq_strtdunk,w4stdu8,N*4+6-2
      496 00004bc0                   WLW     -1,seq_jam_speech,JAM_MED       ;RJR
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   10
@@ -598,7 +598,7 @@ basketball plyr sequence code                                        PAGE   10
      549 000054c0                   WLW     1,w2swdu1,F
      550 00005500                   WLLW    -1,seq_strtdunk,w2swdu7,03eH+4+2
      551 00005560                   WLW     -1,seq_jam_speech,JAM_MED       ;RJR
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   11
@@ -658,7 +658,7 @@ basketball plyr sequence code                                        PAGE   11
      604 00005ec0 00000000!         .long   seq_stand
      605 00005ee0 00005fe0'         .long   zglsdj2_l,zglsdj2_l,zglsDD,zglsDD
      606 00005f60 00000900'         .long   zglsDD,zglsDD,zglsDD,zglsdj2_l
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   12
@@ -718,7 +718,7 @@ basketball plyr sequence code                                        PAGE   12
      659 00006990                   WLW     1,w2swdu1,F
      660 000069d0                   WLLW    -1,seq_strtdunk,w2swdu8,03eH+8  ;N*5-11
      661 00006a30                   WLW     -1,seq_jam_speech,JAM_MED       ;RJR
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   13
@@ -778,7 +778,7 @@ basketball plyr sequence code                                        PAGE   13
      714                    
      715 00007470           zglsdk4_l
      716 00007470                   WLW     3,w1stdu1,F
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   14
@@ -838,7 +838,7 @@ basketball plyr sequence code                                        PAGE   14
      769 00007e30 00000000!         .long   seq_stand
      770 00007e50 00000900'         .long   zglsDD,zglsDD,zglsdl4_l,zglsDD
      771 00007ed0 00000900'         .long   zglsDD,zglsDD,zglsdl4_l,zglsDD
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   15
@@ -898,7 +898,7 @@ basketball plyr sequence code                                        PAGE   15
      824 000088b0                   WLW     6,w3flydu9,F
      825 000088f0                   WLW     -1,seq_newdir,2*16
      826 00008930                   W0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   16
@@ -958,7 +958,7 @@ basketball plyr sequence code                                        PAGE   16
      879 000091f0                   WLW     -1,seq_slamball,8h
      880 00009230                   WLW     N,w5stdu5,F
      881 00009270                   WLW     N,w5stdu6,F
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   17
@@ -1018,7 +1018,7 @@ basketball plyr sequence code                                        PAGE   17
      934 00009c70                   WLW     N,w1spdu7,F
      935 00009cb0                   WLW     N,w1spdu8,F
      936 00009cf0                   WLW     N,w1spdu8,FF
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   18
@@ -1078,7 +1078,7 @@ basketball plyr sequence code                                        PAGE   18
      989 0000a720                   WLW     1,w1spdu9,F
      990                    
      991                            .asg    6,N
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   19
@@ -1138,7 +1138,7 @@ basketball plyr sequence code                                        PAGE   19
     1044 0000b140                   WLW     4,w3twdu3,F
     1045                    
     1046 0000b180                   WLW     4,w3jmdu4,F
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   20
@@ -1198,7 +1198,7 @@ basketball plyr sequence code                                        PAGE   20
     1099                    
     1100                    
     1101                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   21
@@ -1258,7 +1258,7 @@ basketball plyr sequence code                                        PAGE   21
     1154                    
     1155                    
     1156 0000c660           dunkq2_t        ;3 direction
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   22
@@ -1318,7 +1318,7 @@ basketball plyr sequence code                                        PAGE   22
     1209                    
     1210 0000d100           dunkr_t         ;2 and 3,4 directions
     1211 0000d100     3006          .word   DFLGS
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   23
@@ -1378,7 +1378,7 @@ basketball plyr sequence code                                        PAGE   23
     1264 0000dc10                   W0
     1265                    
     1266                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   24
@@ -1438,7 +1438,7 @@ basketball plyr sequence code                                        PAGE   24
     1319 0000e730                   WLW     -1,seq_newdir,1*16
     1320 0000e770                   W0
     1321                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   25
@@ -1498,7 +1498,7 @@ basketball plyr sequence code                                        PAGE   25
     1374 0000f1b0                   WLW     3,w3sp2du7,F
     1375 0000f1f0                   WLW     3,w3sp2du8,F
     1376 0000f230                   WLW     -1,seq_jam_speech,JAM_GOOD      ;RJR
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   26
@@ -1558,7 +1558,7 @@ basketball plyr sequence code                                        PAGE   26
     1429 0000fd60                   WLW     2,w3sp2duC,F
     1430 0000fda0                   WLW     2,w3sp2duD,F
     1431 0000fde0                   WLW     2,w3sp2duE,F
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   27
@@ -1618,7 +1618,7 @@ basketball plyr sequence code                                        PAGE   27
     1484 000108d0                   WLW     N,w3sp2du8,F
     1485 00010910                   WLW     N,w3sp2du9,F
     1486 00010950                   WLW     -1,seq_jam_speech,JAM_GREAT     ;RJR
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   28
@@ -1678,7 +1678,7 @@ basketball plyr sequence code                                        PAGE   28
     1539 00011410                   WLW     N,w3sp2duA,F
     1540 00011450                   WLW     N,w3sp2duB,F
     1541 00011490                   WLW     N,w3sp2duC,F
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   29
@@ -1738,7 +1738,7 @@ basketball plyr sequence code                                        PAGE   29
     1594 00011ec0                   WLW     -1,seq_jam_speech,JAM_GOOD      ;RJR
     1595 00011f00                   WLW     02eH-4,w3wmdu3,F
     1596                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   30
@@ -1798,7 +1798,7 @@ basketball plyr sequence code                                        PAGE   30
     1649                    
     1650 00012960                   WLW     4,w3wmdu3,F
     1651 000129a0                   WLL     -1,seq_snd,yell                 ;RJR
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   31
@@ -1858,7 +1858,7 @@ basketball plyr sequence code                                        PAGE   31
     1704 00013400                   WLW     2,w3wmduA,F
     1705 00013440                   WLW     2,w3wmduB,F
     1706 00013480                   WLW     2,w3wmduC,F
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   32
@@ -1918,7 +1918,7 @@ basketball plyr sequence code                                        PAGE   32
     1759 00013ec0                   W0
     1760                    
     1761 00013ed0           dunku6_t
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   33
@@ -1978,7 +1978,7 @@ basketball plyr sequence code                                        PAGE   33
     1814 000148a0                   WLW     -1,seq_slamball,03H
     1815 000148e0                   WLW     16,w1dpdu10,F
     1816 00014920                   WLW     6,w1spdu10,F
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   34
@@ -2038,7 +2038,7 @@ basketball plyr sequence code                                        PAGE   34
     1869 00015340                   WLW     5,w2wmdu4,F
     1870 00015380                   WLW     5,w2wmdu5,F
     1871 000153c0                   WLW     5,w2wmdu6,F
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   35
@@ -2098,7 +2098,7 @@ basketball plyr sequence code                                        PAGE   35
     1924 00015df0                   WLW     5,w2wmdu5,F
     1925 00015e30                   WLW     -1,seq_jam_speech,JAM_GOOD      ;RJR
     1926 00015e70                   WLW     02aH-3,w2wmdu6,F
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   36
@@ -2158,7 +2158,7 @@ basketball plyr sequence code                                        PAGE   36
     1979 00016920                   WLW     -1,seq_slamball,25
     1980                    
     1981 00016960                   WLW     2,thangdu5,F
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   37
@@ -2218,7 +2218,7 @@ basketball plyr sequence code                                        PAGE   37
     2034                    
     2035 000173a0           dunkz3_t                ;2,3 directions
     2036 000173a0     3006          .word   DFLGS
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   38
@@ -2278,7 +2278,7 @@ basketball plyr sequence code                                        PAGE   38
     2089                    
     2090                    
     2091 00017d40           zglsdzaa_l
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   39
@@ -2338,7 +2338,7 @@ basketball plyr sequence code                                        PAGE   39
     2144 000186d0 00018b80'         .long   qplbDD,qplbdzaa_l,qplbdzaa_l,qplbDD
     2145                    
     2146 00018750           qplbdzaa_l
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   40
@@ -2398,7 +2398,7 @@ basketball plyr sequence code                                        PAGE   40
     2199 000190b0     3006          .word   DFLGS
     2200 000190c0 00000000!         .long   seq_stand
     2201 000190e0 00019610'         .long   rffmDD,rffmDD,rffmdzaa_l,rffmdzaa_l
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   41
@@ -2458,7 +2458,7 @@ basketball plyr sequence code                                        PAGE   41
     2254 00019c00                   WLW     3,w3ndc08,F
     2255 00019c40                   WLW     1,w3ndc09,F
     2256                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   42
@@ -2518,7 +2518,7 @@ basketball plyr sequence code                                        PAGE   42
     2309                    
     2310 0001a670           ptukdy3a_l
     2311 0001a670                   WLW     4,w3ndd01,F
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   43
@@ -2578,7 +2578,7 @@ basketball plyr sequence code                                        PAGE   43
     2364 0001b010                   WLW     N,w5hks1,F
     2365 0001b050                   WL      -1,seq_jump
     2366 0001b080                   WLW     N,w4hks1,F
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   44
@@ -2638,7 +2638,7 @@ basketball plyr sequence code                                        PAGE   44
     2419                    
     2420 0001bb00           dunklay3_t
     2421 0001bb00     b006          .word   DFLGS|LAYUP_M
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   45
@@ -2698,7 +2698,7 @@ basketball plyr sequence code                                        PAGE   45
     2474                    
     2475 0001c4d0           dunklay4_t
     2476 0001c4d0     b006          .word   DFLGS|LAYUP_M
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:00 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:39 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE   46

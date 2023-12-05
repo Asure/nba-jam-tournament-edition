@@ -15,6 +15,7 @@ rem loadr bb2.bin,0,0,:gfxrom  (0-3bf10f)
 rem loadr bbmug.bin,3C1400,0,:gfxrom  
 rem loadr bb.bin,4CE7BD,0,:gfxrom  
 rem loadr bb3.bin,718600,0,:gfxrom  
+rem loadr bb2.bin,0,0,:gfxrom; loadr bbmug.bin,3C1400,0,:gfxrom ; loadr bb.bin,4CE7BD,0,:gfxrom ;loadr bb3.bin,718600,0,:gfxrom  
 
 rem extend the files to 2MByte size:
 rem on unix use trunc command..  (truncate -s 5MB 0.bin and so on.)

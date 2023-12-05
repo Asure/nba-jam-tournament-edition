@@ -1,4 +1,4 @@
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    1
@@ -58,7 +58,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
       54                            .ref    gndstat
       55                            .ref    FRANIMQ
       56                            .ref    GAMSTATE,HALT,KILBGND
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE    2
@@ -118,7 +118,7 @@ attract mode                                                         PAGE    2
      109                    
      110                    
      111 00000020                   .bss    cycram          ,8*2*16 ;Palette cycle mem
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE    3
@@ -178,7 +178,7 @@ attract mode                                                         PAGE    3
      157                    
      158 000002b0     09c0          movi    AMODE_PID,a0
          000002c0     0100  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE    4
@@ -238,7 +238,7 @@ attract mode                                                         PAGE    4
          000005d0     0020  
      195                    
      196                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE    5
@@ -298,7 +298,7 @@ attract mode                                                         PAGE    5
          00000fd0 00000000! 
      234 00000ff0                   JSRP    drw_chicks
      235 00001060                   JSRP    drw_ladder
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE    6
@@ -358,7 +358,7 @@ attract mode                                                         PAGE    6
      273 00001480                   JSRP    scrn_scaleininit
      274 000014f0                   SLEEPK  2
      275                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE    7
@@ -418,7 +418,7 @@ attract mode                                                         PAGE    7
          00001b40 00310037  
      311 00001b60     184b          movk    2,a11                   ;Rate
      312 00001b70                   CREATE  CYCPID,COLCYC
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE    8
@@ -478,7 +478,7 @@ attract mode                                                         PAGE    8
      359 00001e60                   SOUND1  bounce_snd
      360 00001ec0     1820          movk    1,a0
      361                            .ref    SOUNDSUP
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE    9
@@ -538,7 +538,7 @@ attract mode                                                         PAGE    9
      403                    
      404                     SUBRP  show_title2
      405                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   10
@@ -598,7 +598,7 @@ attract mode                                                         PAGE   10
      458                    
      459                            clr     a10
      460                            movk    8,a11
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   11
@@ -658,7 +658,7 @@ attract mode                                                         PAGE   11
      507 00002330     0d5f          calla   WIPEOUT
          00002340 00000000! 
      508                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   12
@@ -718,7 +718,7 @@ attract mode                                                         PAGE   12
      547 00002740     4da8          move    a13,a8
      548 00002750     0b08          addi    som_string,a8
          00002760     0100  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   13
@@ -778,7 +778,7 @@ attract mode                                                         PAGE   13
          00002b50 00000000! 
      592 00002b70     0d5f          calla   WIPEOUT
          00002b80 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   14
@@ -838,7 +838,7 @@ attract mode                                                         PAGE   14
      630                    
      631 00003020     5600          clr     a0
      632 00003030     09e8          movi    wwualn3,a8
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   15
@@ -898,7 +898,7 @@ attract mode                                                         PAGE   15
      668 00003620     09e2          movi    TSMLOGO,a2                      ;* image
          00003630 00000000! 
      669 00003650     09c3          movi    20000,a3
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   16
@@ -958,7 +958,7 @@ attract mode                                                         PAGE   16
      712 00003f08       55  wwualn4 .string "USED UNDER LICENSE FROM NBA PROPERTIES, INC.",0
      713 00004070       4e  wwualn5 .string "NBA JAM SESSION IS TRADEMARKED AND",0
      714 00004188       4f  wwualn6 .string "OWNED BY NBA PROPERTIES, INC.",0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   17
@@ -1018,7 +1018,7 @@ attract mode                                                         PAGE   17
          00004700     0020  
      757 00004710     0b40          cmpi    DIAG_PID,a0
          00004720     ff7d  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   18
@@ -1078,7 +1078,7 @@ attract mode                                                         PAGE   18
      795 00004c60     09e8          movi    omtfthanx3_t,a8
          00004c70 00006c80' 
      796 00004c90                   JSRP    prt_dt
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   19
@@ -1138,7 +1138,7 @@ attract mode                                                         PAGE   19
      834 000051e0     1940          movk    10,a0
      835 000051f0     0580          move    a0,@WORLDTLX+16
          00005200 00000010! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   20
@@ -1198,7 +1198,7 @@ attract mode                                                         PAGE   20
      875 00005770                   WL      -1,GOLD
      876 000057a0     fffe          .word   -2,60,37
      877 000057d0       4d          .byte   "MARK TURMELL",0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   21
@@ -1258,7 +1258,7 @@ attract mode                                                         PAGE   21
      930 00006530 00000000          .long   0
      931 00006550       53          .byte   "SHERIDAN OURSLER",0
      932 000065e0 00000000          .long   0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   22
@@ -1318,7 +1318,7 @@ attract mode                                                         PAGE   22
      985 00007170 00000000          .long   0
      986 00007190     0000          .word   0
      987                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   23
@@ -1378,7 +1378,7 @@ attract mode                                                         PAGE   23
     1040 00007d30 00000000          .long   0
     1041 00007d50       57          .byte   "WILLIAM HENDERSON",0
     1042 00007de0 00000000          .long   0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   24
@@ -1438,7 +1438,7 @@ attract mode                                                         PAGE   24
     1095 000089a0     0b40          cmpi    -1,a0
          000089b0     0000  
     1096 000089c0     cb06          jrne    kneynopal
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   25
@@ -1498,7 +1498,7 @@ attract mode                                                         PAGE   25
     1143 00008d40     09c5          movi    CLSDEAD,a5
          00008d50     2000  
     1144 00008d60     56c6          clr     a6
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   26
@@ -1558,7 +1558,7 @@ attract mode                                                         PAGE   26
     1187 00009080     c037          jruc    ytcnnxt
     1188                    
     1189 00009090           ytcnnopal
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   27
@@ -1618,7 +1618,7 @@ attract mode                                                         PAGE   27
     1235 00009400     9500          move    *a8+,a0
     1236 00009410     cbbe          jrnz    ytcnprtlp
     1237 00009420                   RETP
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   28
@@ -1678,7 +1678,7 @@ attract mode                                                         PAGE   28
     1289                    
     1290 0000a4d0           nojklp  SLEEPK  1
     1291                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   29
@@ -1738,7 +1738,7 @@ attract mode                                                         PAGE   29
     1336 0000a8a0     b20e          move    a0,*a14(ODATA_p),L
          0000a8b0     01c0  
     1337 0000a8c0     c0f2          jruc    vlurolp
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   30
@@ -1798,7 +1798,7 @@ attract mode                                                         PAGE   30
     1390                            SOUND1  bounce_snd
     1391                            movk    1,a0
     1392                            move    a0,@SOUNDSUP            ;turn all sounds off
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   31
@@ -1858,7 +1858,7 @@ attract mode                                                         PAGE   31
     1445                            movk    16,a11
     1446                            CREATE0 fade_up
     1447                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   32
@@ -1918,7 +1918,7 @@ attract mode                                                         PAGE   32
     1495 0000aa30     0780          move    a0,@SCRNLR,L
          0000aa40 00000000! 
     1496                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   33
@@ -1978,7 +1978,7 @@ attract mode                                                         PAGE   33
     1537                    
     1538 0000af20     574a          clr     a10
     1539 0000af30     190b          movk    8,a11
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   34
@@ -2038,7 +2038,7 @@ attract mode                                                         PAGE   34
     1579                    
     1580 0000b370     09e0          movi    unfeladder_mod,a0
          0000b380 0000cd30' 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   35
@@ -2098,7 +2098,7 @@ attract mode                                                         PAGE   35
          0000b980     ffdb  
     1621                    
     1622 0000b990                   SLEEP   4*64
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   36
@@ -2158,7 +2158,7 @@ attract mode                                                         PAGE   36
     1666                    
     1667 0000bd40           drwnbalogoUP
     1668                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   37
@@ -2218,7 +2218,7 @@ attract mode                                                         PAGE   37
     1706                            .ref    ladder_imgs5,ladder_imgs6
     1707                    
     1708 0000c300     09e9          movi    ladder_imgs0,a9
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   38
@@ -2278,7 +2278,7 @@ attract mode                                                         PAGE   38
     1742 0000c830     2601          sll     16,a1
     1743 0000c840     09c3          movi    20000,a3
          0000c850     4e20  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   39
@@ -2338,7 +2338,7 @@ attract mode                                                         PAGE   39
     1782 0000cbc0     2601          sll     16,a1
     1783 0000cbd0     09c3          movi    20000,a3
          0000cbe0     4e20  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   40
@@ -2398,7 +2398,7 @@ attract mode                                                         PAGE   40
     1830 0000d070 00000000!         .long   ladderBMOD
     1831 0000d090     0005          .word   0+5,-92+360*13
     1832 0000d0b0 00000000          .long   0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   41
@@ -2458,7 +2458,7 @@ attract mode                                                         PAGE   41
     1871                    
     1872 0000d480     09ca          movi    3*TSEC,a10
          0000d490     009f  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   42
@@ -2518,7 +2518,7 @@ attract mode                                                         PAGE   42
     1916 0000d8b0     0580          move    a0,@assistance_off
          0000d8c0 00000000! 
     1917                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   43
@@ -2578,7 +2578,7 @@ attract mode                                                         PAGE   43
     1957 0000ddd0     ca0f          jrz     npvrnob
     1958 0000dde0     5600          clr     a0
     1959 0000ddf0     0580          move    a0,@SOUNDSUP            ;turn all sounds on
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   44
@@ -2638,7 +2638,7 @@ attract mode                                                         PAGE   44
     1999 0000e260     0d5f          calla   snd_play1ovr
          0000e270 00000000! 
     2000 0000e290                   DIE
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   45
@@ -2698,7 +2698,7 @@ attract mode                                                         PAGE   45
     2043                    
     2044                    
     2045 0000e6f0           ERRORLOG
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   46
@@ -2758,7 +2758,7 @@ attract mode                                                         PAGE   46
          0000e9d0 00000000! 
     2087                    
     2088 0000e9f0     1820          movk    1,a0                    ;page flipping on
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   47
@@ -2818,7 +2818,7 @@ attract mode                                                         PAGE   47
          0000ed90 00000000! 
     2127 0000edb0     05aa          move    @team1,a10
          0000edc0 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   48
@@ -2878,7 +2878,7 @@ attract mode                                                         PAGE   48
          0000f1a0 00000000! 
     2163                    
     2164                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   49
@@ -2938,7 +2938,7 @@ attract mode                                                         PAGE   49
     2200                    
     2201 0000f580                   SLEEP   TSEC*2
     2202                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   50
@@ -2998,7 +2998,7 @@ attract mode                                                         PAGE   50
     2243                    
     2244 0000fa00           kill_tvpanel
     2245 0000fa00     09c0          movi    CLSDEAD|tvid,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   51
@@ -3058,7 +3058,7 @@ attract mode                                                         PAGE   51
     2282 0000fde0           heading2_setup
     2283 0000fde0                   RJR_STR ogmd10_ascii,8,0,200,LN0+50,SGMD8BLU,0
     2284 0000fe80           LN1_setup
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   52
@@ -3118,7 +3118,7 @@ attract mode                                                         PAGE   52
     2337 00011388           lbonstr_h3a
     2338 00011388       50          .string "Press and hold the shoot button,",1
     2339 00011490       74          .string "then press the pass button.  This",1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   53
@@ -3178,7 +3178,7 @@ attract mode                                                         PAGE   53
     2392                    
     2393 00013210           lbonstr_h10
     2394 00013210       44          .string "Dunk pass:",0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   54
@@ -3238,7 +3238,7 @@ attract mode                                                         PAGE   54
     2447 00014fe0       6b          .string "knock him down and steal the ball!",0
     2448                    
     2449 000150f8           lbonstr_h16
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   55
@@ -3298,7 +3298,7 @@ attract mode                                                         PAGE   55
     2502 00016e00       53          .string "Steal attribute:",0
     2503 00016e88           lbonstr_h22a
     2504 00016e88       54          .string "The greater a player's steal rating,",1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   56
@@ -3358,7 +3358,7 @@ attract mode                                                         PAGE   56
     2557 00018de0       68          .string "hoop, and small guys outside.",1
     2558 00018ed0       20          .string " ",1
     2559 00018ee0       42          .string "Big guys are poor 3 point shooters!",0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   57
@@ -3418,7 +3418,7 @@ attract mode                                                         PAGE   57
     2597 00019340     184b          movk    2,a11                   ;RATE OF CYCLE IN TICKS
     2598 00019350                   CREATE  CYCPID,CYCLE_TABLE      ;START PROCESS TO DO CYCLE
     2599                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   58
@@ -3478,7 +3478,7 @@ attract mode                                                         PAGE   58
     2634 000197e0     09e0          movi    ball101,a0
          000197f0 00000000! 
     2635 00019810     b501          move    *a8(OFLAGS),a1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   59
@@ -3538,7 +3538,7 @@ attract mode                                                         PAGE   59
     2670 00019cb0     1823          movk    1,a3                    ;z pos
     2671 00019cc0     09e4          movi    DMAWNZ,a4               ;DMA flags
          00019cd0 00008002  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   60
@@ -3598,7 +3598,7 @@ attract mode                                                         PAGE   60
     2706 0001a170     cb01          jrnz    zhwxexit
     2707 0001a180     3d2a          dsj     a10,zhwxwhopper_with_cheese
     2708 0001a190           zhwxexit
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   61
@@ -3658,7 +3658,7 @@ attract mode                                                         PAGE   61
     2743 0001a590     18a9          movk    5,a9
     2744 0001a5a0     0d3f          callr   zhwxtxt
          0001a5b0     00af  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   62
@@ -3718,7 +3718,7 @@ attract mode                                                         PAGE   62
     2778 0001aa10     0d5f          calla   obj_aniq
          0001aa20 00000000! 
     2779                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   63
@@ -3778,7 +3778,7 @@ attract mode                                                         PAGE   63
          0001aec0 00000000! 
     2816                    
     2817 0001aee0     574a          clr     a10
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   64
@@ -3838,7 +3838,7 @@ attract mode                                                         PAGE   64
          0001b340 0001b3e0' 
     2861 0001b360     0d5f          calla   snd_play1ovr
          0001b370 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   65
@@ -3898,7 +3898,7 @@ attract mode                                                         PAGE   65
     2913 0001bee8       74          .string "to solve matchup problems.",0
     2914 0001bfc0       20          .string " ",0
     2915                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   66
@@ -3958,7 +3958,7 @@ attract mode                                                         PAGE   66
     2968                            .asg    128,STARTX1
     2969                            .asg    39+1-5,STARTY1
     2970                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   67
@@ -4018,7 +4018,7 @@ attract mode                                                         PAGE   67
          0001cf20 00000000! 
     3012 0001cf40     0780          move    a0,@WORLDTLY,L
          0001cf50 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   68
@@ -4078,7 +4078,7 @@ attract mode                                                         PAGE   68
     3049 0001d410     0d5f          calla   print_string_C2
          0001d420 00000000! 
     3050                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   69
@@ -4138,7 +4138,7 @@ attract mode                                                         PAGE   69
     3087 0001d850     0d5f          calla   BEGINOBJ2
          0001d860 00000000! 
     3088                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   70
@@ -4198,7 +4198,7 @@ attract mode                                                         PAGE   70
     3119 0001dc00     b00d          move    a0,*a13(HTS_STARTX)
          0001dc10     0100  
     3120                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   71
@@ -4258,7 +4258,7 @@ attract mode                                                         PAGE   71
     3151 0001df90     09e0          movi    player_stats + 3*PS_SIZE*10h,a0
          0001dfa0 000002a0! 
     3152 0001dfc0     b20d          move    a0,*a13(HTS_STATSADDR),L
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   72
@@ -4318,7 +4318,7 @@ attract mode                                                         PAGE   72
          0001e420 00000000! 
     3192 0001e440                   SLEEPK  2
     3193                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   73
@@ -4378,7 +4378,7 @@ attract mode                                                         PAGE   73
     3236                            .word   (:R:<<10) | (:G:<<5) | :B:
     3237                            .endm
     3238                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   74
@@ -4438,7 +4438,7 @@ attract mode                                                         PAGE   74
     3291 0001f530                   RJR_STR osgemd_ascii,8,0,200,4,WHITEPAL,0
     3292 0001f5d0           bljsstr_heading1
     3293 0001f5d0       31          .string "1st half stats:",0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   75
@@ -4498,7 +4498,7 @@ attract mode                                                         PAGE   75
     3330 0001fa50            SUBRP  highlight_best
     3331                    
     3332                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   76
@@ -4558,7 +4558,7 @@ attract mode                                                         PAGE   76
     3370 0001fd50     c807          jrlo    swkynot_best2
     3371 0001fd60     b4a1          move    *a5(PS_3PTS_MADE*10h),a1
          0001fd70     0030  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   77
@@ -4618,7 +4618,7 @@ attract mode                                                         PAGE   77
     3413                    
     3414 00020050     09e6          movi    SGMD8WHT,a6
          00020060 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   78
@@ -4678,7 +4678,7 @@ attract mode                                                         PAGE   78
     3452                    
     3453                    
     3454 00020380     09e6          movi    SGMD8YEL,a6
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   79
@@ -4738,7 +4738,7 @@ attract mode                                                         PAGE   79
          000206c0     0080  
     3491 000206d0     40e0          add     a7,a0
     3492 000206e0     ca18          jrz     swkynot_best9
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   80
@@ -4798,7 +4798,7 @@ attract mode                                                         PAGE   80
     3530                    
     3531 00020a00     0960          rets
     3532                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   81
@@ -4858,7 +4858,7 @@ attract mode                                                         PAGE   81
     3573 00020d00     0d5f          calla   BEGINOBJ2
          00020d10 00000000! 
     3574 00020d30     0d3f          callr   eobmclippit
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   82
@@ -4918,7 +4918,7 @@ attract mode                                                         PAGE   82
     3611                    
     3612                    
     3613 000210a0     8742          move    *a10,a2,L               ;image addr
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   83
@@ -4978,7 +4978,7 @@ attract mode                                                         PAGE   83
     3649                    
     3650 00021450     0960          rets
     3651                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   84
@@ -5038,7 +5038,7 @@ attract mode                                                         PAGE   84
     3689 00021730     09e4          movi    player1_data+PR_INIT1,a4
          00021740 00000040! 
     3690 00021760     0d5f          calla   get_initials_string
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   85
@@ -5098,7 +5098,7 @@ attract mode                                                         PAGE   85
     3723 00021b10     1fa0          btst    2,a0
     3724 00021b20     cb07          jrnz    jbhdok3
     3725 00021b30     09e4          movi    jbhdstr_cpu,a4
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   86
@@ -5158,7 +5158,7 @@ attract mode                                                         PAGE   86
     3761                            .ref    tm1set,tm2set
     3762                    
     3763                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   87
@@ -5218,7 +5218,7 @@ attract mode                                                         PAGE   87
     3801 000222c0     ce05          jrn     prgjnot_spec2
     3802 000222d0     24a0          sll     5,a0                            ;x 32 bits
     3803 000222e0     0b20          addi    our_names,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   88
@@ -5278,7 +5278,7 @@ attract mode                                                         PAGE   88
     3842 00022640           prgjnot_spec3
     3843                    
     3844 00022640     09e0          movi    [X2,0],a0                       ;x val
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   89
@@ -5338,7 +5338,7 @@ attract mode                                                         PAGE   89
          00022930 004f0000  
     3884 00022950     09e1          movi    [STARTY1-SHADYOFF,0],a1 ;y val
          00022960 00220000  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   90
@@ -5398,7 +5398,7 @@ attract mode                                                         PAGE   90
     3917 00022d70     09e1          movi    [STARTY2-SHADYOFF,0],a1 ;y val
          00022d80 008d0000  
     3918 00022da0     09e2          movi    stshad1,a2              ;* image
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   91
@@ -5458,7 +5458,7 @@ attract mode                                                         PAGE   91
     3954                    
     3955 00023100           qvvbshadows
     3956 00023100 00000000!         .long   stshad1,stshad2
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   92
@@ -5518,7 +5518,7 @@ attract mode                                                         PAGE   92
     3990 00023460     0d5f          calla   print_string_R
          00023470 00000000! 
     3991                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   93
@@ -5578,7 +5578,7 @@ attract mode                                                         PAGE   93
          00023800     0020  
     4023 00023810     4020          add     a1,a0
     4024 00023820     ca02          jrz     eoayzippo1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   94
@@ -5638,7 +5638,7 @@ attract mode                                                         PAGE   94
          00023bb0 00000000! 
     4056 00023bd0     0d5f          calla   copy_string
          00023be0 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   95
@@ -5698,7 +5698,7 @@ attract mode                                                         PAGE   95
     4088 00023f50     b540          move    *a10(PS_3PTS_TRY*10h),a0
          00023f60     0020  
     4089 00023f70     ca02          jrz     eoayzippo2
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   96
@@ -5758,7 +5758,7 @@ attract mode                                                         PAGE   96
     4136                            move    *a10(PS_FREE_TRY*10h),a0
     4137                            movi    99,a1                   ;max value
     4138                            calla   dec_to_asc
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   97
@@ -5818,7 +5818,7 @@ attract mode                                                         PAGE   97
     4180 00024260     0580          move    a0,@mess_cursx
          00024270 00000000! 
     4181                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   98
@@ -5878,7 +5878,7 @@ attract mode                                                         PAGE   98
     4214 000245f0     b7aa          move    *a13(HTS_STATSADDR),a10,L
          00024600     0120  
     4215 00024610     b540          move    *a10(PS_DUNKS_MADE*10h),a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE   99
@@ -5938,7 +5938,7 @@ attract mode                                                         PAGE   99
     4245                    
     4246                    
     4247                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE  100
@@ -5998,7 +5998,7 @@ attract mode                                                         PAGE  100
          00024d00     0042  
     4279 00024d10     0580          move    a0,@mess_cursy
          00024d20 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE  101
@@ -6058,7 +6058,7 @@ attract mode                                                         PAGE  101
     4310 000250c0     b5a0          move    *a13(HTS_STARTX),a0
          000250d0     0100  
     4311 000250e0     0b00          addi    COLOFF1,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE  102
@@ -6118,7 +6118,7 @@ attract mode                                                         PAGE  102
     4340 000254a0     0780          move    a0,@message_palette,L
          000254b0 00000000! 
     4341                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE  103
@@ -6178,7 +6178,7 @@ attract mode                                                         PAGE  103
     4378 00025840       0b          .string 0bh,0
     4379 00025850           eoaystr_dunks
     4380 00025850       0c          .string 0ch,0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE  104
@@ -6238,7 +6238,7 @@ attract mode                                                         PAGE  104
     4428 00025a90     05a0          move    @player3_data+PR_INIT1,a0
          00025aa0 00000040! 
     4429 00025ac0     cf0c          jrnn    pauihave_initials
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE  105
@@ -6298,7 +6298,7 @@ attract mode                                                         PAGE  105
     4467 00025e70     0780          move    a0,@BAKMODS,L
          00025e80 00000000! 
     4468 00025ea0     0d5f          calla   BGND_UD1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE  106
@@ -6358,7 +6358,7 @@ attract mode                                                         PAGE  106
     4507 000262d0     3d2a          dsj     a10,pauiwhopper_with_cheese
     4508 000262e0           pauiexit
     4509 000262e0                   SLEEPK  1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE  107
@@ -6418,7 +6418,7 @@ attract mode                                                         PAGE  107
     4562 000268f0           pauistr_heading
     4563 000268f0       4e          .string "New Player Stats:",0
     4564 00026980           pauistr_abc
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE  108
@@ -6478,7 +6478,7 @@ attract mode                                                         PAGE  108
     4617 00026e40     0157          .word   343,339,0,0             ;player 4
     4618                    
     4619                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE  109
@@ -6538,7 +6538,7 @@ attract mode                                                         PAGE  109
     4655                    
     4656 000271e0     09e2          movi    pauirank_setup1,a2
          000271f0 000265d0' 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE  110
@@ -6598,7 +6598,7 @@ attract mode                                                         PAGE  110
     4692 000275e0     0781          move    a1,@message_palette,L
          000275f0 00000000! 
     4693 00027610           pauinotten
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE  111
@@ -6658,7 +6658,7 @@ attract mode                                                         PAGE  111
     4723 00027970     0d3f          callr   concat_string
          00027980     d867! 
     4724 00027990     09e4          movi    pauistr_l,a4
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE  112
@@ -6718,7 +6718,7 @@ attract mode                                                         PAGE  112
          00027cd0 00000000! 
     4758                    
     4759 00027cf0     b560          move    *a11(PR_WINSTREAK),a0   ;no. consecutive wins
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE  113
@@ -6778,7 +6778,7 @@ attract mode                                                         PAGE  113
     4792                    
     4793                    
     4794 00028060     09e0          movi    SGMD8PLY,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE  114
@@ -6838,7 +6838,7 @@ attract mode                                                         PAGE  114
          000283d0 00000000! 
     4826                    
     4827 000283f0     09c0          movi    HAVDEFY3,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE  115
@@ -6898,7 +6898,7 @@ attract mode                                                         PAGE  115
     4858                    
     4859 00028770     b761          move    *a11(PR_TEAMSDEF),a1,L
          00028780     0160  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE  116
@@ -6958,7 +6958,7 @@ attract mode                                                         PAGE  116
     4904 00028980     0b21          addi    [260,0],a1
          00028990 01040000  
     4905 000289b0     2e01          srl     16,a1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE  117
@@ -7018,7 +7018,7 @@ attract mode                                                         PAGE  117
          00028d00 00000000! 
     4945 00028d20     05a1          move    @scores+16,a1
          00028d30 00000010! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE  118
@@ -7078,7 +7078,7 @@ attract mode                                                         PAGE  118
     4990 000295e8       43  nslbs4  .string "CHICAGO BULLS",1
     4991 00029658       57          .string "WIN!",0
     4992 00029680       54  nslbs5  .string "THE CAVALIERS",1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:06 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:44 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 attract mode                                                         PAGE  119

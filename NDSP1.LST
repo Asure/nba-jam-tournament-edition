@@ -1,4 +1,4 @@
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    1
@@ -58,7 +58,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
       54              004c  GND_Y           .equ    116-40
       55              0074  GNDI_Y          .equ    116
       56              04fd  GNDI_W          .equ    1277
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE    2
@@ -118,7 +118,7 @@ GSP display processor V 4.3                                          PAGE    2
      108 000000a0     0940          reti
      109                    
      110 000000b0           dmaint1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE    3
@@ -178,7 +178,7 @@ GSP display processor V 4.3                                          PAGE    3
      157                    
      158                    
      159                                                    ;0CaHlc top,bot,lft,rgt clips
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE    4
@@ -238,7 +238,7 @@ GSP display processor V 4.3                                          PAGE    4
      212                    
      213                    
      214 00000630     1f4c  scnxnofh        btst    B_FLIPV,a12
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE    5
@@ -298,7 +298,7 @@ GSP display processor V 4.3                                          PAGE    5
      266 00000880           dma_objlst
      267 00000880     8600          move    *a0,a0,L                ;Get next link
      268 00000890     cb96          jrnz    scnxlp                  ;More?
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE    6
@@ -358,7 +358,7 @@ GSP display processor V 4.3                                          PAGE    6
      313                    
      314 00000b60     1e61          btst    B_NOSCALE,a1
      315 00000b70     cb84          jrnz    scnxnoscl                       ;Scale off?
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE    7
@@ -418,7 +418,7 @@ GSP display processor V 4.3                                          PAGE    7
      364                            .endif
      365 00000dc0     c0ab          jruc    scnxnxt
      366                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE    8
@@ -478,7 +478,7 @@ GSP display processor V 4.3                                          PAGE    8
      419 00003fd0                   SCLT    537,537,34,34
      420 00004c50                   SCLT    360,360,20,20
      421 000058d0           scale61f_t
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE    9
@@ -538,7 +538,7 @@ GSP display processor V 4.3                                          PAGE    9
      474 0001dc50                   SCLT    657,597,41,37
      475 0001e8d0                   SCLT    360,360,20,20
      476 0001f550           scale610_t
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   10
@@ -598,7 +598,7 @@ GSP display processor V 4.3                                          PAGE   10
          00036c90     0084  
      528                    
      529                            .align
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   11
@@ -658,7 +658,7 @@ GSP display processor V 4.3                                          PAGE   11
      579 00037040     ca28          jrz     hfignoclip              ;Zero clip?
      580                    
      581                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   12
@@ -718,7 +718,7 @@ GSP display processor V 4.3                                          PAGE   12
      634 00037270     cb01          jrnz    hfignot8
      635 00037280     1901          movk    8,a1
      636 00037290     5c23  hfignot8        mpys    a1,a3           ;# of bits to skip
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   13
@@ -778,7 +778,7 @@ GSP display processor V 4.3                                          PAGE   13
      687 00037500     0960          rets
      688                    
      689                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   14
@@ -838,7 +838,7 @@ GSP display processor V 4.3                                          PAGE   14
      738 000377d0           xhpg30  JRXLT   xhpg35
      739 000377e0     ece3          movx    a7,a3           ;Left clip size
      740 000377f0     edca          movx    a14,a10         ;Adjust start position to window edge
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   15
@@ -898,7 +898,7 @@ GSP display processor V 4.3                                          PAGE   15
      793 00037a10     cb01          jrnz    xhpgnot8
      794 00037a20     1901          movk    8,a1
      795 00037a30     5c23  xhpgnot8        mpys    a1,a3           ;# of bits to skip
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   16
@@ -958,7 +958,7 @@ GSP display processor V 4.3                                          PAGE   16
      846 00037ca0     0960          rets
      847                    
      848                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   17
@@ -1018,7 +1018,7 @@ GSP display processor V 4.3                                          PAGE   17
      889                    
      890 00037f90     09d5          movi    OFLAGS,b5               ;B5=Obj data offset
          00037fa0     00e0  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   18
@@ -1078,7 +1078,7 @@ GSP display processor V 4.3                                          PAGE   18
      932 000381f0     07a0          move    @dcode_p,a0,L
          00038200 00000100- 
      933 00038220     cf02          jrnn    joto3dgame                      ;No special code?
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   19
@@ -1138,7 +1138,7 @@ GSP display processor V 4.3                                          PAGE   19
      980 00038470     ce07          jrn     jotonoman                       ;DMA int done?
      981                    
      982 00038480     0541          setf    1,0,0                   ;0EHnable DMA int
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   20
@@ -1198,7 +1198,7 @@ GSP display processor V 4.3                                          PAGE   20
     1030                    
     1031                    
     1032                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   21
@@ -1258,7 +1258,7 @@ GSP display processor V 4.3                                          PAGE   21
     1071 00038a90     09e3          movi    [1,0],a3                ;Const: Next Y
          00038aa0 00010000  
     1072                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   22
@@ -1318,7 +1318,7 @@ GSP display processor V 4.3                                          PAGE   22
     1123                    D3XPTS  .equ    0140H           ;UHL *Xformed points array (Cnt, XYZ,XYZ..)
     1124                    
     1125                     SUBRP  _3d_draw        ;B1 Free (B14)
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   23
@@ -1378,7 +1378,7 @@ GSP display processor V 4.3                                          PAGE   23
     1178                            move    a2,a8                   ;New low
     1179                    xtyuxbig        cmp     a9,a2
     1180                            jrle    xtyuxsml                        ;Smaller X?
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   24
@@ -1438,7 +1438,7 @@ GSP display processor V 4.3                                          PAGE   24
     1233                            cmp     a4,a6
     1234                            jrlo    dd550                   ;!Past end
     1235                            move    a14,a6                  ;Put at start
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   25
@@ -1498,7 +1498,7 @@ GSP display processor V 4.3                                          PAGE   25
     1288                            jrn     xtyunextf                       ;Neg Y?
     1289                            srl     16,a1
     1290                            jrz     dd800                   ;Different Y?
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   26
@@ -1558,7 +1558,7 @@ GSP display processor V 4.3                                          PAGE   26
     1343                    
     1344                    xtyunextl
     1345                            add     a8,a10                  ;Next Y
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   27
@@ -1618,7 +1618,7 @@ GSP display processor V 4.3                                          PAGE   27
     1389 00038eb0     0960          rets
     1390                    
     1391 00038ec0           clcudrawcode
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   28
@@ -1678,7 +1678,7 @@ GSP display processor V 4.3                                          PAGE   28
     1431 00039130     05a6          move    @starcolor,a6
          00039140 0006d370- 
     1432 00039160     4006          add     a0,a6
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   29
@@ -1738,7 +1738,7 @@ GSP display processor V 4.3                                          PAGE   29
     1471 00039480     09e0          movi    nisustar_p,a0           ;>Update stars
          00039490 000399c0' 
     1472 000394b0     0d5f          calla   pal_getf
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   30
@@ -1798,7 +1798,7 @@ GSP display processor V 4.3                                          PAGE   30
     1509                    
     1510 00039810     4c20          move    a1,a0
     1511 00039820     2720          sll     32-5-CFRAC,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   31
@@ -1858,7 +1858,7 @@ GSP display processor V 4.3                                          PAGE   31
     1558 00039f90                   COLORW  29,00,00, 30,00,00, 31,00,00, 31,00,00
     1559 00039fd0                   COLORW  00,01,00, 00,02,00, 00,03,00, 00,04,00  ;Green
     1560 0003a010                   COLORW  00,05,00, 00,06,00, 00,07,00, 00,08,00
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   32
@@ -1918,7 +1918,7 @@ GSP display processor V 4.3                                          PAGE   32
     1610                    
     1611 0003aa90     5020          and     a1,a0
     1612 0003aaa0     0960          rets
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   33
@@ -1978,7 +1978,7 @@ GSP display processor V 4.3                                          PAGE   33
     1658 0003ad70     4c40          move    a2,a0                   ;A0=*Current obj
     1659 0003ad80     4cc1          move    a6,a1                   ;A1=Current Z
     1660 0003ad90     4ce5          move    a7,a5                   ;A5=Current Y
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   34
@@ -2038,7 +2038,7 @@ GSP display processor V 4.3                                          PAGE   34
     1702 0003b040     09c0  scrtf_r movi    2,a0
          0003b050     0002  
     1703 0003b060     09af          mmfm    sp,a1,a2,a3
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   35
@@ -2098,7 +2098,7 @@ GSP display processor V 4.3                                          PAGE   35
     1737 0003b3e0     0781          move    a1,@DMASCALEX,L
          0003b3f0 01a800a0  
     1738                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   36
@@ -2158,7 +2158,7 @@ GSP display processor V 4.3                                          PAGE   36
     1772                    
     1773 0003b7c0     09e1          movi    OBJSTR,a1,L             ;>Init free list
          0003b7d0 00000140- 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   37
@@ -2218,7 +2218,7 @@ GSP display processor V 4.3                                          PAGE   37
          0003bac0 00000020+ 
     1818 0003bae0     0960          rets
     1819                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   38
@@ -2278,7 +2278,7 @@ GSP display processor V 4.3                                          PAGE   38
     1865 0003bd00     c004          jruc    bfrglp
     1866                    
     1867                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   39
@@ -2338,7 +2338,7 @@ GSP display processor V 4.3                                          PAGE   39
     1915 0003bfc0     4dc1  kqfilp  move    a14,a1          ;A1=*Prev
     1916 0003bfd0     87ce          move    *a14,a14,L      ;A14=*Next
     1917 0003bfe0     ca10          jrz     doderr
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   40
@@ -2398,7 +2398,7 @@ GSP display processor V 4.3                                          PAGE   40
     1964                    
     1965 0003c2b0     8bc3          move    *a14,*a3,L      ;Unlink from obj list
     1966                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   41
@@ -2458,7 +2458,7 @@ GSP display processor V 4.3                                          PAGE   41
     2014                    
     2015 0003c510     5600  lreux   clr     a0              ;Set Z
     2016 0003c520     0960          rets
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   42
@@ -2518,7 +2518,7 @@ GSP display processor V 4.3                                          PAGE   42
     2056 0003c7e0                   PULL    a5
     2057 0003c7f0     0960          RETS
     2058                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   43
@@ -2578,7 +2578,7 @@ GSP display processor V 4.3                                          PAGE   43
     2097 0003cb00     0960          rets
     2098                    
     2099                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   44
@@ -2638,7 +2638,7 @@ GSP display processor V 4.3                                          PAGE   44
     2137 0003cdf0     4c41          move    a2,a1                   ;*Img
     2138 0003ce00     8622          move    *a1,a2,L                ;ISIZE
     2139 0003ce10     0d3f          callr   GANIOF                  ;Adjust animation offset
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   45
@@ -2698,7 +2698,7 @@ GSP display processor V 4.3                                          PAGE   45
          0003d0e0 00000000+ 
     2179 0003d100                   PULL    a2,a3,a4,a6,a7,a9,a10
     2180 0003d120     0960          rets
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   46
@@ -2758,7 +2758,7 @@ GSP display processor V 4.3                                          PAGE   46
          0003d3f0     0040  
     2220                    
     2221 0003d400     4c41          move    a2,a1                   ;*Img
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   47
@@ -2818,7 +2818,7 @@ GSP display processor V 4.3                                          PAGE   47
     2261 0003d650     0b61          cmpi    ROM,a1
          0003d660 007fffff  
     2262 0003d680     c82f          jrlo    anierr
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   48
@@ -2878,7 +2878,7 @@ GSP display processor V 4.3                                          PAGE   48
     2305                    
     2306 0003d980           anierr
     2307                            .if     DEBUG
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   49
@@ -2938,7 +2938,7 @@ GSP display processor V 4.3                                          PAGE   49
          0003dc60     0080  
     2349 0003dc70     860e          move    *a0,a14,L               ;New OXVAL
     2350 0003dc80     404e          add     a2,a14
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   50
@@ -2998,7 +2998,7 @@ GSP display processor V 4.3                                          PAGE   50
     2399                    
     2400 0003df00     4e40          move    a2,b0
     2401                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   51
@@ -3058,7 +3058,7 @@ GSP display processor V 4.3                                          PAGE   51
     2441 0003e170     c822          jrlo    oxunanierr
     2442                    
     2443 0003e180     4c02          move    a0,a2
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   52
@@ -3118,7 +3118,7 @@ GSP display processor V 4.3                                          PAGE   52
     2486                    
     2487 0003e460           GETANIXY
     2488 0003e460                   PUSH    a4,a6,a7
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   53
@@ -3178,7 +3178,7 @@ GSP display processor V 4.3                                          PAGE   53
     2533                    
     2534                    
     2535                            .asg    SCRATCH+8*256*1024,SCRNBUF
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   54
@@ -3238,7 +3238,7 @@ GSP display processor V 4.3                                          PAGE   54
          0003ea80 00000100- 
     2575                    
     2576 0003eaa0                   PULLP   a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   55
@@ -3298,7 +3298,7 @@ GSP display processor V 4.3                                          PAGE   55
     2617 0003ee00     05a0          move    @gndstat,a0
          0003ee10 0006c800- 
     2618 0003ee30                   PUSHP   a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   56
@@ -3358,7 +3358,7 @@ GSP display processor V 4.3                                          PAGE   56
          0003f190 00000000! 
     2658                    
     2659                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   57
@@ -3418,7 +3418,7 @@ GSP display processor V 4.3                                          PAGE   57
     2699                            .if     DEBUG
     2700                            andni   1000000b,a0
     2701                            .endif
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   58
@@ -3478,7 +3478,7 @@ GSP display processor V 4.3                                          PAGE   58
     2743 0003f770     09e6          movi    DMACMAP,a6
          0003f780 01a80080  
     2744 0003f7a0     56e7          clr     a7                      ;Y line 8:8
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   59
@@ -3538,7 +3538,7 @@ GSP display processor V 4.3                                          PAGE   59
     2792                    
     2793 0003fa20     09c5          movi    0180H,a5
          0003fa30     0180  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   60
@@ -3598,7 +3598,7 @@ GSP display processor V 4.3                                          PAGE   60
     2838 0003fce0            SUBRP  scrn_scaledison
     2839                    
     2840 0003fce0     09c0          movi    HEBLNKINIT,a0           ;Display on
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   61
@@ -3658,7 +3658,7 @@ GSP display processor V 4.3                                          PAGE   61
     2880 0003fff0     4d21          move    a9,a1
     2881 00040000     0b22          addi    SCRNBUF,a2
          00040010 01200000  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:12:51 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:30 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 GSP display processor V 4.3                                          PAGE   62

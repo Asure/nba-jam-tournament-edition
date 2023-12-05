@@ -1,4 +1,4 @@
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    1
@@ -58,7 +58,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
       54                            .ref    lighten7
       55                    
       56                            .ref    strongmen
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE    2
@@ -118,7 +118,7 @@ score stuff                                                          PAGE    2
      109                            
      110                    
      111                            .def    LED_00,last_score,tvpanelon,LED_MAX
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE    3
@@ -178,7 +178,7 @@ score stuff                                                          PAGE    3
      164                    
      165 00000380                   .text
      166                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE    4
@@ -238,7 +238,7 @@ score stuff                                                          PAGE    4
      209                    
      210 000006a0     0d3f          callr   maybe_replenish
          000006b0     0024  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE    5
@@ -298,7 +298,7 @@ score stuff                                                          PAGE    5
      250 000009b0     b600          move    *a0(plyr_PDATA_p),a0,L
          000009c0     0130  
      251 000009d0     b402          move    *a0(used_turbo),a2
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE    6
@@ -358,7 +358,7 @@ score stuff                                                          PAGE    6
      294                    
      295 00000c60     05a7          move    @WORLDTLX+16,a7
          00000c70 00000010! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE    7
@@ -418,7 +418,7 @@ score stuff                                                          PAGE    7
      332 00000f60     05ae          move    @PSTATUS,a14
          00000f70 00000000! 
      333 00000f90     4a4e          btst    a2,a14
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE    8
@@ -478,7 +478,7 @@ score stuff                                                          PAGE    8
      373 00001280     1822          movk    1,a2
      374 00001290     b043          move    a2,*a3(plyr_offscrn)    ;Player is offscrn, spd him up
          000012a0     04f0  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE    9
@@ -538,7 +538,7 @@ score stuff                                                          PAGE    9
          00001520 00000100- 
      416 00001540     cb14          jrnz    gdulnohelp1
      417                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   10
@@ -598,7 +598,7 @@ score stuff                                                          PAGE   10
      458 000017f0     c60f          jrle    gduloffo
      459                    
      460 00001800     b521          move    *a9(OXPOS),a1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   11
@@ -658,7 +658,7 @@ score stuff                                                          PAGE   11
      500 00001af0     05a0          move    @HALT,a0
          00001b00 00000000! 
      501 00001b20     cbf8          jrnz    gdulzo
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   12
@@ -718,7 +718,7 @@ score stuff                                                          PAGE   12
          000020c0     0087  
      545 000020d0     0d5f          calla   XFERPROC
          000020e0 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   13
@@ -778,7 +778,7 @@ score stuff                                                          PAGE   13
          00002310 ff9c0000  
      589 00002330     09eb          movi    plyrobj_t,a11
          00002340 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   14
@@ -838,7 +838,7 @@ score stuff                                                          PAGE   14
          000026b0     0120  
      626 000026c0     0b6a          cmpi    P3DATA,a10
          000026d0 ffffffff! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   15
@@ -898,7 +898,7 @@ score stuff                                                          PAGE   15
      665 000029c0     05a0          move    @PSTATUS,a0
          000029d0 00000000! 
      666 000029f0     b5a1          move    *a13(PDATA+64),a1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   16
@@ -958,7 +958,7 @@ score stuff                                                          PAGE   16
      704 00002ce0           qihrarwait      SLEEP   60                              ;07fffH
      705 00002d30     4d20          move    a9,a0
      706 00002d40     0d5f          calla   OBJOFF
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   17
@@ -1018,7 +1018,7 @@ score stuff                                                          PAGE   17
          00003070     00d0  
      744 00003080     1062          addk    3,a2
      745 00003090     b049          move    a2,*a9(OZPOS)
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   18
@@ -1078,7 +1078,7 @@ score stuff                                                          PAGE   18
      780 000033f0     09e2          movi    lighten1,a2
          00003400 00000000! 
      781 00003420     5663          clr     a3
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   19
@@ -1138,7 +1138,7 @@ score stuff                                                          PAGE   19
          00003790     00e0  
      819 000037a0     0d5f          calla   obj_aniq
          000037b0 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   20
@@ -1198,7 +1198,7 @@ score stuff                                                          PAGE   20
      858 00003b20                   LWW     lighten3,-5,37
      859 00003b60                   LWW     lighten4,2,44
      860 00003ba0                   LWW     lighten5,4,56
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   21
@@ -1258,7 +1258,7 @@ score stuff                                                          PAGE   21
      897 00003fb0           usnwmetop
      898                    
      899 00003fb0     b5a0          move    *a13(PDATA),a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   22
@@ -1318,7 +1318,7 @@ score stuff                                                          PAGE   22
      936 000042f0     0b02          addi    44h,a2
          00004300     0044  
      937 00004310     b5a0          move    *a13(PDATA+32),a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   23
@@ -1378,7 +1378,7 @@ score stuff                                                          PAGE   23
          00004610 00000000! 
      977 00004630     1460          subk    INGAME,a0               ;If not ingame, don't change messages
      978 00004640     cb00          jrne    main0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   24
@@ -1438,7 +1438,7 @@ score stuff                                                          PAGE   24
     1016 00004990     05a7          move    @TWOPLAYERS,a7                  ;0 = NO, 1 = YES 2 players
          000049a0 00000000! 
     1017 000049c0     ca08          jrz     sktfnot2
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   25
@@ -1498,7 +1498,7 @@ score stuff                                                          PAGE   25
     1056                    
     1057 00004cb0     09e0          movi    scorep,a0
          00004cc0 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   26
@@ -1558,7 +1558,7 @@ score stuff                                                          PAGE   26
     1095 00004fe0     0b43          cmpi    2,a3
          00004ff0     fffd  
     1096 00005000     ca05          jrz     mgqrnot2p
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   27
@@ -1618,7 +1618,7 @@ score stuff                                                          PAGE   27
          000052d0 00000000! 
     1136 000052f0     0780          move    a0,@msg_ram+32,L
          00005300 00000020! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   28
@@ -1678,7 +1678,7 @@ score stuff                                                          PAGE   28
     1173 00005690     b648          move    *a2(ply_meter_imgs+020H),a8,L
          000056a0     00a0  
     1174 000056b0     4d40          move    a10,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   29
@@ -1738,7 +1738,7 @@ score stuff                                                          PAGE   29
          00005a30     00c0  
     1214 00005a40     0d5f          calla   OBJON
          00005a50 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   30
@@ -1798,7 +1798,7 @@ score stuff                                                          PAGE   30
     1255                    
     1256 00005d00     07a0          move    @tvpanelon,a0,L
          00005d10 00000270- 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   31
@@ -1858,7 +1858,7 @@ score stuff                                                          PAGE   31
          000060b0     2087  
     1296 000060c0     0d5f          calla   obj_del1c
          000060d0 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   32
@@ -1918,7 +1918,7 @@ score stuff                                                          PAGE   32
     1336 000063b0     09ea          movi    start,a10
          000063c0 00000000! 
     1337 000063e0     09e3          movi    insert,a3
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   33
@@ -1978,7 +1978,7 @@ score stuff                                                          PAGE   33
     1375 00006770     b701          move    *a8(OIMG),a1,L
          00006780     0170  
     1376 00006790     0b61          cmpi    METERb,a1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   34
@@ -2038,7 +2038,7 @@ score stuff                                                          PAGE   34
     1415 00006b20     0d5f          calla   obj_aniq_cnoff
          00006b30 00000000! 
     1416                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   35
@@ -2098,7 +2098,7 @@ score stuff                                                          PAGE   35
          00006e70 00000000! 
     1457                    
     1458                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   36
@@ -2158,7 +2158,7 @@ score stuff                                                          PAGE   36
     1499                    
     1500 000071f0     0d5f          calla   CRED_P
          00007200 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   37
@@ -2218,7 +2218,7 @@ score stuff                                                          PAGE   37
          00007590     03b5  
     1540 000075a0     09e4          movi    DMAWNZ|M_NOCOLL|M_SCRNREL,a4
          000075b0 0000a802  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   38
@@ -2278,7 +2278,7 @@ score stuff                                                          PAGE   38
     1580                    
     1581 00007a20     9560  hrelstatus      move    *a11+,a0                ;X
     1582 00007a30     0b40          cmpi    4000,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   39
@@ -2338,7 +2338,7 @@ score stuff                                                          PAGE   39
     1621 00007d70     ca07          jrz     hreltag
     1622 00007d80     1420          dec     a0
     1623 00007d90     8c0a          movb    a0,*a10
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   40
@@ -2398,7 +2398,7 @@ score stuff                                                          PAGE   40
          00008050 000001b0- 
     1664 00008070     09c1          movi    186,a1
          00008080     00ba  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   41
@@ -2458,7 +2458,7 @@ score stuff                                                          PAGE   41
          000084d0 00000000! 
     1701 000084f0     b501          move    *a8(OCTRL),a1
          00008500     00f0  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   42
@@ -2518,7 +2518,7 @@ score stuff                                                          PAGE   42
          00008860     0090  
     1732                    
     1733 00008870     07a0          move    @tvpanelon,a0,L
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   43
@@ -2578,7 +2578,7 @@ score stuff                                                          PAGE   43
          00008c00 00000100- 
     1771 00008c20     1481          subk    4,a1
     1772 00008c30     c46b          jrlt    hrelnotot
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   44
@@ -2638,7 +2638,7 @@ score stuff                                                          PAGE   44
     1806 00009080     05a0          move    @gmqrtr,a0
          00009090 00000100- 
     1807 000090b0     0b40          cmpi    2,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   45
@@ -2698,7 +2698,7 @@ score stuff                                                          PAGE   45
     1844 00009500     05a0          move    @gmqrtr,a0
          00009510 00000100- 
     1845 00009530     24a0          sll     5,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   46
@@ -2758,7 +2758,7 @@ score stuff                                                          PAGE   46
     1886 00009b10     c0e0          jruc    hreltick
     1887                    
     1888                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   47
@@ -2818,7 +2818,7 @@ score stuff                                                          PAGE   47
     1929 0000a230     0fa0          .word   4000
     1930                    
     1931                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   48
@@ -2878,7 +2878,7 @@ score stuff                                                          PAGE   48
     1971                    
     1972                    
     1973                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   49
@@ -2938,7 +2938,7 @@ score stuff                                                          PAGE   49
     2015 0000a8d0     0960          rets
     2016                    
     2017 0000a8e0           flsh_bgnd
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   50
@@ -2998,7 +2998,7 @@ score stuff                                                          PAGE   50
     2057 0000ad10           hrelfout
     2058 0000ad10     4d00          move    a8,a0
     2059 0000ad20     0d5f          calla   DELOBJ
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   51
@@ -3058,7 +3058,7 @@ score stuff                                                          PAGE   51
          0000b1f0 0000a802  
     2098 0000b210     09c5          movi    CLSDEAD,a5
          0000b220     2000  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   52
@@ -3118,7 +3118,7 @@ score stuff                                                          PAGE   52
     2138 0000b670           hrelfrlp        SLEEPK  3
     2139                    
     2140 0000b6b0     05a0          move    @ballpnum,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   53
@@ -3178,7 +3178,7 @@ score stuff                                                          PAGE   53
          0000baa0     00f0  
     2177 0000bab0     0d5f          calla   obj_aniq
          0000bac0 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   54
@@ -3238,7 +3238,7 @@ score stuff                                                          PAGE   54
     2219 0000bec0     0b4b          cmpi    4,a11
          0000bed0     fffb  
     2220 0000bee0     cbdc          jrnz    prt05
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   55
@@ -3298,7 +3298,7 @@ score stuff                                                          PAGE   55
     2261                    
     2262 0000c220     4c00          move    a0,a0
     2263 0000c230     cb08          jrnz    tv4x                            ;br=clock already on scrn
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   56
@@ -3358,7 +3358,7 @@ score stuff                                                          PAGE   56
          0000c680 00090000  
     2298 0000c6a0     8642          move    *a2,a2,L
     2299 0000c6b0     09e4          movi    DMAWNZ|M_NOCOLL|M_SCRNREL,a4
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   57
@@ -3418,7 +3418,7 @@ score stuff                                                          PAGE   57
     2332 0000cab0     09e2          movi    OSGEMD_A,a2
          0000cac0 00000000! 
     2333 0000cae0     09f0          movi    GREENPAL,b0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   58
@@ -3478,7 +3478,7 @@ score stuff                                                          PAGE   58
     2364 0000cf30     09e0          movi    [5bh,0],a0
          0000cf40 005b0000  
     2365 0000cf60     09e1          movi    [185+18,0],a1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   59
@@ -3538,7 +3538,7 @@ score stuff                                                          PAGE   59
     2407                    
     2408                    
     2409 0000d5c0           flash_red
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   60
@@ -3598,7 +3598,7 @@ score stuff                                                          PAGE   60
     2442 0000d9e0     0780          move    a0,@last_score,L
          0000d9f0 00000380- 
     2443 0000da10                   DIE
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   61
@@ -3658,7 +3658,7 @@ score stuff                                                          PAGE   61
     2485 0000dd10     0d5f          calla   BEGINOBJ2
          0000dd20 00000000! 
     2486 0000dd40     830a          move    a8,*a10,L
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   62
@@ -3718,7 +3718,7 @@ score stuff                                                          PAGE   62
     2528 0000e080     8602          move    *a0,a2,L
     2529                    
     2530 0000e090     09e0          movi    [309-16,0],a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   63
@@ -3778,7 +3778,7 @@ score stuff                                                          PAGE   63
     2572                    
     2573 0000e4f0            SUBRP  scr_clock
     2574                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   64
@@ -3838,7 +3838,7 @@ score stuff                                                          PAGE   64
     2614 0000e850     b020          move    a1,*a0(PTIME)                   ;get in sync with top clock
          0000e860     0030  
     2615 0000e870                   SLEEPK  3
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   65
@@ -3898,7 +3898,7 @@ score stuff                                                          PAGE   65
     2651                    
     2652 0000ec70           ogouinit_t
     2653 0000ec70     0009          .word   9,185,5000
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   66
@@ -3958,7 +3958,7 @@ score stuff                                                          PAGE   66
          0000f540 00010000  
     2701 0000f560     0780          move    a0,@shotimer,L
          0000f570 000000a0- 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   67
@@ -4018,7 +4018,7 @@ score stuff                                                          PAGE   67
          0000f8a0 00000000! 
     2745 0000f8c0     c7f4          jrgt    dujplp0
     2746 0000f8d0     05a0          move    @ballpnum,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   68
@@ -4078,7 +4078,7 @@ score stuff                                                          PAGE   68
     2787 0000fc50           dujplp3
     2788 0000fc50     07a0          move    @tvpanelon,a0,L
          0000fc60 00000270- 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   69
@@ -4138,7 +4138,7 @@ score stuff                                                          PAGE   69
     2825                    
     2826 00010050     c0bf          jruc    dujplp3
     2827 00010060     05a0  dujptag move    @shotimer+16,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   70
@@ -4198,7 +4198,7 @@ score stuff                                                          PAGE   70
     2866 00010490     0d3f          callr   stick_number
          000104a0     f1c8  
     2867 000104b0     09ea          movi    P4DATA,a10
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   71
@@ -4258,7 +4258,7 @@ score stuff                                                          PAGE   71
     2910 00010b20 00000000!         .long   shotclok
     2911 00010b40     0024          .word   024H,0d9H,5000
     2912 00010b70 00000000!         .long   BigLED_0                ;font90r
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   72
@@ -4318,7 +4318,7 @@ score stuff                                                          PAGE   72
     2951 00010fb0     0d5f          calla   obj_del1c               ;delete text
          00010fc0 00000000! 
     2952                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   73
@@ -4378,7 +4378,7 @@ score stuff                                                          PAGE   73
          00011410     0046  
     2995 00011420     0581          move    a1,@mess_cursy
          00011430 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   74
@@ -4438,7 +4438,7 @@ score stuff                                                          PAGE   74
     3039 00011ab8           ksitstr_shtclk1b
     3040 00011ab8       54          .string "TRIPLE",0
     3041 00011af0           ksitstr_shtclk1c
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   75
@@ -4498,7 +4498,7 @@ score stuff                                                          PAGE   75
     3082 00011e60     4d40          move    a10,a0
     3083 00011e70     05a4          move    @PSTATUS2,a4
          00011e80 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   76
@@ -4558,7 +4558,7 @@ score stuff                                                          PAGE   76
     3121 00012230     cb07          jrnz    oeeynx4
     3122 00012240     4d60          move    a11,a0
     3123 00012250     09e1          movi    MSGOCTRL,a1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   77
@@ -4618,7 +4618,7 @@ score stuff                                                          PAGE   77
     3160 00012620     09e0          movi    P4DATA,a0
          00012630 00000000! 
     3161 00012650     0d3f          callr   do_drop
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   78
@@ -4678,7 +4678,7 @@ score stuff                                                          PAGE   78
     3201 000129c0     ca03          jrz     oeeytr
     3202 000129d0     0d5f          calla   DELOBJ
          000129e0 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   79
@@ -4738,7 +4738,7 @@ score stuff                                                          PAGE   79
     3239 00012d60     c4e2          jrlt    bnjplp
     3240                    
     3241 00012d70     1820          movk    1,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   80
@@ -4798,7 +4798,7 @@ score stuff                                                          PAGE   80
          00013450 00000000! 
     3282 00013470     ca07          jrz     bqcgn2
     3283 00013480     05a0          move    @p2taps,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   81
@@ -4858,7 +4858,7 @@ score stuff                                                          PAGE   81
     3321 00013840     0b40          cmpi    7,a0
          00013850     fff8  
     3322 00013860     cb08          jrnz    bqcgz2a
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   82
@@ -4918,7 +4918,7 @@ score stuff                                                          PAGE   82
     3361 00013be0     5600          clr     a0
     3362 00013bf0     0d5f          calla   get_but_val_cur
          00013c00 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   83
@@ -4978,7 +4978,7 @@ score stuff                                                          PAGE   83
     3399 00013fa0     09c0          movi    -1,a0
          00013fb0     ffff  
     3400 00013fc0     0780          move    a0,@special_heads,L     ;-1 = normal player head
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   84
@@ -5038,7 +5038,7 @@ score stuff                                                          PAGE   84
          000146c0 000003e0- 
     3443 000146e0     0b40          cmpi    24,a0
          000146f0     ffe7  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   85
@@ -5098,7 +5098,7 @@ score stuff                                                          PAGE   85
     3483 00014bb0     cb06          jrnz    bqcgt4f
     3484 00014bc0     05a0          move    @p4taps,a0
          00014bd0 00000410- 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   86
@@ -5158,7 +5158,7 @@ score stuff                                                          PAGE   86
     3523 00014fb0     b049          move    a2,*a9(OCONST)
          00014fc0     0160  
     3524                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   87
@@ -5218,7 +5218,7 @@ score stuff                                                          PAGE   87
     3566 00015340     0960          rets
     3567                    
     3568                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   88
@@ -5278,7 +5278,7 @@ score stuff                                                          PAGE   88
     3605 000156c0     09c0          movi    CLSDEAD|123,a0
          000156d0     207b  
     3606 000156e0     0580          move    a0,@mess_objid
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   89
@@ -5338,7 +5338,7 @@ score stuff                                                          PAGE   89
     3642 00015a90     0580          move    a0,@mess_objid
          00015aa0 00000000! 
     3643                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   90
@@ -5398,7 +5398,7 @@ score stuff                                                          PAGE   90
          00016130 00000000! 
     3688                    
     3689                            
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   91
@@ -5458,7 +5458,7 @@ score stuff                                                          PAGE   91
     3729 000165f0     0580          move    a0,@mess_objid
          00016600 00000000! 
     3730                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   92
@@ -5518,7 +5518,7 @@ score stuff                                                          PAGE   92
     3773 00016a70     09c0          movi    CLSDEAD|124,a0
          00016a80     207c  
     3774 00016a90     0580          move    a0,@mess_objid
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   93
@@ -5559,411 +5559,414 @@ score stuff                                                          PAGE   93
     3802 00016ed0                   RJR_STR sgmd8_ascii,3,0,350,238,SGMD8WHT,0
     3803                    
     3804 00016f70           qzfyln1
-    3805 00016f70       50          .string "POWERUP G.T.",0                ;More goaltends allowed
-    3806 00016fe0                   .even
-    3807                    
-    3808                    
-    3809 00016fe0            SUBRP  secret_power
+    3805                    ;AM: This causes misalignment with prod.
+    3806                    ;copied the data from prod here
+    3807 00016f70       50          .string "POWERUP G.T.",0                ;More goaltends allowed
+    3808                    ;       .even
+    3809                    
     3810                    
-    3811 00016fe0     0d3f          callr   tournament_on
+    3811 00016fd8            SUBRP  secret_power
+    3812                    
+    3813 00016fe0     0d3f          callr   tournament_on
          00016ff0     fe18  
-    3812 00017000     c880          jac     SUCIDE
+    3814 00017000     c880          jac     SUCIDE
          00017010 00000000! 
-    3813                    
-    3814 00017030     05a0          move    @strongmen,a0
+    3815                    
+    3816 00017030     05a0          move    @strongmen,a0
          00017040 00000000! 
-    3815 00017060     ca0c          jrz     oqyonotst
-    3816 00017070     1863          movk    3,a3
-    3817 00017080     0b40          cmpi    2,a0
+    3817 00017060     ca0c          jrz     oqyonotst
+    3818 00017070     1863          movk    3,a3
+    3819 00017080     0b40          cmpi    2,a0
          00017090     fffd  
-    3818 000170a0     ca01          jrz     oqyotag1
-    3819 000170b0     1983          movk    0cH,a3
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   94
 
-    3820 000170c0     05a0  oqyotag1        move    @plyr_maxpower,a0
+    3820 000170a0     ca01          jrz     oqyotag1
+    3821 000170b0     1983          movk    0cH,a3
+    3822 000170c0     05a0  oqyotag1        move    @plyr_maxpower,a0
          000170d0 00000450- 
-    3821 000170f0     5460          or      a3,a0
-    3822 00017100     0580          move    a0,@plyr_maxpower
+    3823 000170f0     5460          or      a3,a0
+    3824 00017100     0580          move    a0,@plyr_maxpower
          00017110 00000450- 
-    3823 00017130           oqyonotst
-    3824 00017130     5729          clr     a9
-    3825 00017140           oqyolp
-    3826 00017140     05a0          move    @plyr_maxpower,a0
+    3825 00017130           oqyonotst
+    3826 00017130     5729          clr     a9
+    3827 00017140           oqyolp
+    3828 00017140     05a0          move    @plyr_maxpower,a0
          00017150 00000450- 
-    3827 00017170     4b20          btst    a9,a0
-    3828 00017180     ca1a          jrz     oqyonxt
-    3829                    
-    3830 00017190     09e0          movi    win_snd,a0
+    3829 00017170     4b20          btst    a9,a0
+    3830 00017180     ca1a          jrz     oqyonxt
+    3831                    
+    3832 00017190     09e0          movi    win_snd,a0
          000171a0 00014ec0' 
-    3831 000171c0     0d5f          calla   snd_play1ovrp
+    3833 000171c0     0d5f          calla   snd_play1ovrp
          000171d0 00000000! 
-    3832                    
-    3833 000171f0     4d20          move    a9,a0
-    3834 00017200     24a0          sll     5,a0
-    3835 00017210     0b20          addi    oqyomsgs_t,a0
+    3834                    
+    3835 000171f0     4d20          move    a9,a0
+    3836 00017200     24a0          sll     5,a0
+    3837 00017210     0b20          addi    oqyomsgs_t,a0
          00017220 00017480' 
-    3836 00017240     8602          move    *a0,a2,L
-    3837                    
-    3838 00017250     0d5f          calla   setup_message
-         00017260 00000000! 
+    3838 00017240     8602          move    *a0,a2,L
     3839                    
-    3840 00017280     09c0          movi    CLSDEAD|124,a0
+    3840 00017250     0d5f          calla   setup_message
+         00017260 00000000! 
+    3841                    
+    3842 00017280     09c0          movi    CLSDEAD|124,a0
          00017290     207c  
-    3841 000172a0     0580          move    a0,@mess_objid
+    3843 000172a0     0580          move    a0,@mess_objid
          000172b0 00000000! 
-    3842                    
-    3843 000172d0     09e4          movi    oqyoln1,a4
+    3844                    
+    3845 000172d0     09e4          movi    oqyoln1,a4
          000172e0 00017780' 
-    3844 00017300     0d5f          calla   print_string_C2
+    3846 00017300     0d5f          calla   print_string_C2
          00017310 00000000! 
-    3845                    
-    3846 00017330           oqyonxt SLEEPK  1
     3847                    
-    3848 00017370     1029          inc     a9
-    3849 00017380     0b49          cmpi    4,a9
+    3848 00017330           oqyonxt SLEEPK  1
+    3849                    
+    3850 00017370     1029          inc     a9
+    3851 00017380     0b49          cmpi    4,a9
          00017390     fffb  
-    3850 000173a0     cbd9          jrnz    oqyolp
-    3851                    
-    3852 000173b0                   SLEEP   TSEC*4
+    3852 000173a0     cbd9          jrnz    oqyolp
     3853                    
-    3854 00017400     09c0          movi    CLSDEAD|124,a0
+    3854 000173b0                   SLEEP   TSEC*4
+    3855                    
+    3856 00017400     09c0          movi    CLSDEAD|124,a0
          00017410     207c  
-    3855 00017420     0d5f          calla   obj_del1c               ;delete text
+    3857 00017420     0d5f          calla   obj_del1c               ;delete text
          00017430 00000000! 
-    3856                    
-    3857 00017450                   DIE
-    3858                            
-    3859                            
-    3860 00017480 00017500' oqyomsgs_t      .long   oqyoln1_setup,oqyoln2_setup,oqyoln3_setup,oqyoln4_setup
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+    3858                    
+    3859 00017450                   DIE
+    3860                            
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   95
 
-    3861                    
-    3862 00017500           oqyoln1_setup
-    3863 00017500                   RJR_STR sgmd8_ascii,3,0,50,210,SGMD8WHT,0
-    3864 000175a0           oqyoln2_setup
-    3865 000175a0                   RJR_STR sgmd8_ascii,3,0,150,210,SGMD8WHT,0
-    3866 00017640           oqyoln3_setup
-    3867 00017640                   RJR_STR sgmd8_ascii,3,0,250,210,SGMD8WHT,0
-    3868 000176e0           oqyoln4_setup
-    3869 000176e0                   RJR_STR sgmd8_ascii,3,0,350,210,SGMD8WHT,0
-    3870                    
-    3871 00017780           oqyoln1
-    3872 00017780       4d          .string "MAX POWER",0           ;Can't be knocked down
-    3873 000177d0                   .even
-    3874                    
-    3875                    
-    3876 000177d0            SUBRP  secret_2
+    3861                            
+    3862 00017480 00017500' oqyomsgs_t      .long   oqyoln1_setup,oqyoln2_setup,oqyoln3_setup,oqyoln4_setup
+    3863                    
+    3864 00017500           oqyoln1_setup
+    3865 00017500                   RJR_STR sgmd8_ascii,3,0,50,210,SGMD8WHT,0
+    3866 000175a0           oqyoln2_setup
+    3867 000175a0                   RJR_STR sgmd8_ascii,3,0,150,210,SGMD8WHT,0
+    3868 00017640           oqyoln3_setup
+    3869 00017640                   RJR_STR sgmd8_ascii,3,0,250,210,SGMD8WHT,0
+    3870 000176e0           oqyoln4_setup
+    3871 000176e0                   RJR_STR sgmd8_ascii,3,0,350,210,SGMD8WHT,0
+    3872                    
+    3873 00017780           oqyoln1
+    3874 00017780       4d          .string "MAX POWER",0           ;Can't be knocked down
+    3875 000177d0                   .even
+    3876                    
     3877                    
-    3878 000177d0     5729          clr     a9
-    3879 000177e0           qznvlp
-    3880                            .ref    plyrbighead
-    3881                    
-    3882 000177e0     05a0          move    @plyrbighead,a0
+    3878 000177d0            SUBRP  secret_2
+    3879                    
+    3880 000177d0     5729          clr     a9
+    3881 000177e0           qznvlp
+    3882                            .ref    plyrbighead
+    3883                    
+    3884 000177e0     05a0          move    @plyrbighead,a0
          000177f0 00000000! 
-    3883 00017810     4b20          btst    a9,a0
-    3884 00017820     ca26          jrz     qznvnxt
-    3885                    
-    3886 00017830     09e0          movi    win_snd,a0
+    3885 00017810     4b20          btst    a9,a0
+    3886 00017820     ca26          jrz     qznvnxt
+    3887                    
+    3888 00017830     09e0          movi    win_snd,a0
          00017840 00014ec0' 
-    3887 00017860     0d5f          calla   snd_play1ovrp
+    3889 00017860     0d5f          calla   snd_play1ovrp
          00017870 00000000! 
-    3888                    
-    3889 00017890     4d20          move    a9,a0
-    3890 000178a0     24a0          sll     5,a0
-    3891 000178b0     0b20          addi    qznvmsgs_t,a0
+    3890                    
+    3891 00017890     4d20          move    a9,a0
+    3892 000178a0     24a0          sll     5,a0
+    3893 000178b0     0b20          addi    qznvmsgs_t,a0
          000178c0 00017be0' 
-    3892 000178e0     8602          move    *a0,a2,L
-    3893                    
-    3894 000178f0     0d5f          calla   setup_message
-         00017900 00000000! 
+    3894 000178e0     8602          move    *a0,a2,L
     3895                    
-    3896 00017920     09c0          movi    CLSDEAD|125,a0
+    3896 000178f0     0d5f          calla   setup_message
+         00017900 00000000! 
+    3897                    
+    3898 00017920     09c0          movi    CLSDEAD|125,a0
          00017930     207d  
-    3897 00017940     0580          move    a0,@mess_objid
+    3899 00017940     0580          move    a0,@mess_objid
          00017950 00000000! 
-    3898                    
-    3899 00017970     09e4          movi    qznvln1,a4
-         00017980 00017ee0' 
     3900                    
-    3901                    
+    3901 00017970     09e4          movi    qznvln1,a4
+         00017980 00017ee0' 
     3902                    
     3903                    
     3904                    
     3905                    
-    3906 000179a0     4d21          move    a9,a1
-    3907 000179b0     2481          sll     4,a1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+    3906                    
+    3907                    
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   96
 
-    3908 000179c0     0b21          addi    p1taps,a1
+    3908 000179a0     4d21          move    a9,a1
+    3909 000179b0     2481          sll     4,a1
+    3910 000179c0     0b21          addi    p1taps,a1
          000179d0 000003e0- 
-    3909 000179f0     8420          move    *a1,a0
-    3910 00017a00     0b40          cmpi    6,a0
+    3911 000179f0     8420          move    *a1,a0
+    3912 00017a00     0b40          cmpi    6,a0
          00017a10     fff9  
-    3911 00017a20     cb03          jrnz    qznvno
-    3912 00017a30     09e4          movi    qznvln1a,a4
-         00017a40 00017f58' 
-    3913 00017a60           qznvno
-    3914                    
-    3915                    
+    3913 00017a20     cb03          jrnz    qznvno
+    3914 00017a30     09e4          movi    qznvln1a,a4
+         00017a40 00017f40' 
+    3915 00017a60           qznvno
     3916                    
     3917                    
     3918                    
     3919                    
     3920                    
     3921                    
-    3922 00017a60     0d5f          calla   print_string_C2
-         00017a70 00000000! 
+    3922                    
     3923                    
-    3924 00017a90           qznvnxt SLEEPK  1
+    3924 00017a60     0d5f          calla   print_string_C2
+         00017a70 00000000! 
     3925                    
-    3926 00017ad0     1029          inc     a9
-    3927 00017ae0     0b49          cmpi    4,a9
+    3926 00017a90           qznvnxt SLEEPK  1
+    3927                    
+    3928 00017ad0     1029          inc     a9
+    3929 00017ae0     0b49          cmpi    4,a9
          00017af0     fffb  
-    3928 00017b00     cbcd          jrnz    qznvlp
-    3929                    
-    3930 00017b10                   SLEEP   TSEC*4
+    3930 00017b00     cbcd          jrnz    qznvlp
     3931                    
-    3932 00017b60     09c0          movi    CLSDEAD|125,a0
+    3932 00017b10                   SLEEP   TSEC*4
+    3933                    
+    3934 00017b60     09c0          movi    CLSDEAD|125,a0
          00017b70     207d  
-    3933 00017b80     0d5f          calla   obj_del1c               ;delete text
+    3935 00017b80     0d5f          calla   obj_del1c               ;delete text
          00017b90 00000000! 
-    3934                    
-    3935 00017bb0                   DIE
     3936                    
-    3937 00017be0 00017c60' qznvmsgs_t      .long   qznvln1_setup,qznvln2_setup,qznvln3_setup,qznvln4_setup
+    3937 00017bb0                   DIE
     3938                    
-    3939 00017c60           qznvln1_setup
-    3940 00017c60                   RJR_STR sgmd8_ascii,3,0,50,196,SGMD8WHT,0
-    3941 00017d00           qznvln2_setup
-    3942 00017d00                   RJR_STR sgmd8_ascii,3,0,150,196,SGMD8WHT,0
-    3943 00017da0           qznvln3_setup
-    3944 00017da0                   RJR_STR sgmd8_ascii,3,0,250,196,SGMD8WHT,0
-    3945 00017e40           qznvln4_setup
-    3946 00017e40                   RJR_STR sgmd8_ascii,3,0,350,196,SGMD8WHT,0
-    3947                    
-    3948 00017ee0           qznvln1
-    3949 00017ee0       42          .string "BIG HEAD qznv1",0
-    3950 00017f58           qznvln1a
-    3951 00017f58       48          .string "HUGE HEAD",0
-    3952 00017fb0                   .even
-    3953                    
-    3954                    
-    3955 00017fb0            SUBRP  secret_3
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+    3939 00017be0 00017c60' qznvmsgs_t      .long   qznvln1_setup,qznvln2_setup,qznvln3_setup,qznvln4_setup
+    3940                    
+    3941 00017c60           qznvln1_setup
+    3942 00017c60                   RJR_STR sgmd8_ascii,3,0,50,196,SGMD8WHT,0
+    3943 00017d00           qznvln2_setup
+    3944 00017d00                   RJR_STR sgmd8_ascii,3,0,150,196,SGMD8WHT,0
+    3945 00017da0           qznvln3_setup
+    3946 00017da0                   RJR_STR sgmd8_ascii,3,0,250,196,SGMD8WHT,0
+    3947 00017e40           qznvln4_setup
+    3948 00017e40                   RJR_STR sgmd8_ascii,3,0,350,196,SGMD8WHT,0
+    3949                    
+    3950 00017ee0           qznvln1
+    3951                    ;       .string "BIG HEAD qznv1",0  ;AM fixer screwed it up
+    3952 00017ee0       42          .string "BIG HEAD #1",0
+    3953 00017f40           qznvln1a
+    3954 00017f40       48          .string "HUGE HEAD",0
+    3955 00017f90                   .even
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   97
 
     3956                    
-    3957 00017fb0     0d3f          callr   tournament_on
-         00017fc0     fd1b  
-    3958 00017fd0     c880          jac     SUCIDE
-         00017fe0 00000000! 
+    3957                    
+    3958 00017f90            SUBRP  secret_3
     3959                    
-    3960 00018000     05a0          move    @strongmen,a0
-         00018010 00000000! 
-    3961 00018030     ca0c          jrz     nevvnotst
-    3962 00018040     1863          movk    3,a3
-    3963 00018050     0b40          cmpi    2,a0
-         00018060     fffd  
-    3964 00018070     ca01          jrz     nevvtag1
-    3965 00018080     1983          movk    0cH,a3
-    3966 00018090     05a0  nevvtag1        move    @stlpower,a0
-         000180a0 00000000! 
-    3967 000180c0     5460          or      a3,a0
-    3968 000180d0     0580          move    a0,@stlpower
-         000180e0 00000000! 
-    3969 00018100           nevvnotst
-    3970                    
-    3971                    
-    3972 00018100     5729          clr     a9
-    3973 00018110           nevvlp
-    3974                            .ref    stlpower
-    3975                    
-    3976 00018110     05a0          move    @stlpower,a0
-         00018120 00000000! 
-    3977 00018140     4b20          btst    a9,a0
-    3978 00018150     ca1a          jrz     nevvnxt
-    3979                    
-    3980 00018160     09e0          movi    win_snd,a0
-         00018170 00014ec0' 
-    3981 00018190     0d5f          calla   snd_play1ovrp
-         000181a0 00000000! 
+    3960 00017f90     0d3f          callr   tournament_on
+         00017fa0     fd1d  
+    3961 00017fb0     c880          jac     SUCIDE
+         00017fc0 00000000! 
+    3962                    
+    3963 00017fe0     05a0          move    @strongmen,a0
+         00017ff0 00000000! 
+    3964 00018010     ca0c          jrz     nevvnotst
+    3965 00018020     1863          movk    3,a3
+    3966 00018030     0b40          cmpi    2,a0
+         00018040     fffd  
+    3967 00018050     ca01          jrz     nevvtag1
+    3968 00018060     1983          movk    0cH,a3
+    3969 00018070     05a0  nevvtag1        move    @stlpower,a0
+         00018080 00000000! 
+    3970 000180a0     5460          or      a3,a0
+    3971 000180b0     0580          move    a0,@stlpower
+         000180c0 00000000! 
+    3972 000180e0           nevvnotst
+    3973                    
+    3974                    
+    3975 000180e0     5729          clr     a9
+    3976 000180f0           nevvlp
+    3977                            .ref    stlpower
+    3978                    
+    3979 000180f0     05a0          move    @stlpower,a0
+         00018100 00000000! 
+    3980 00018120     4b20          btst    a9,a0
+    3981 00018130     ca1a          jrz     nevvnxt
     3982                    
-    3983 000181c0     4d20          move    a9,a0
-    3984 000181d0     24a0          sll     5,a0
-    3985 000181e0     0b20          addi    nevvmsgs_t,a0
-         000181f0 00018450' 
-    3986 00018210     8602          move    *a0,a2,L
-    3987                    
-    3988 00018220     0d5f          calla   setup_message
-         00018230 00000000! 
-    3989                    
-    3990 00018250     09c0          movi    CLSDEAD|125,a0
-         00018260     207d  
-    3991 00018270     0580          move    a0,@mess_objid
-         00018280 00000000! 
+    3983 00018140     09e0          movi    win_snd,a0
+         00018150 00014ec0' 
+    3984 00018170     0d5f          calla   snd_play1ovrp
+         00018180 00000000! 
+    3985                    
+    3986 000181a0     4d20          move    a9,a0
+    3987 000181b0     24a0          sll     5,a0
+    3988 000181c0     0b20          addi    nevvmsgs_t,a0
+         000181d0 00018430' 
+    3989 000181f0     8602          move    *a0,a2,L
+    3990                    
+    3991 00018200     0d5f          calla   setup_message
+         00018210 00000000! 
     3992                    
-    3993 000182a0     09e4          movi    nevvln1,a4
-         000182b0 00018750' 
-    3994 000182d0     0d5f          calla   print_string_C2
-         000182e0 00000000! 
+    3993 00018230     09c0          movi    CLSDEAD|125,a0
+         00018240     207d  
+    3994 00018250     0580          move    a0,@mess_objid
+         00018260 00000000! 
     3995                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+    3996 00018280     09e4          movi    nevvln1,a4
+         00018290 00018730' 
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   98
 
-    3996 00018300           nevvnxt SLEEPK  1
-    3997                    
-    3998 00018340     1029          inc     a9
-    3999 00018350     0b49          cmpi    4,a9
-         00018360     fffb  
-    4000 00018370     cbd9          jrnz    nevvlp
-    4001                    
-    4002 00018380                   SLEEP   TSEC*4
-    4003                    
-    4004 000183d0     09c0          movi    CLSDEAD|125,a0
-         000183e0     207d  
-    4005 000183f0     0d5f          calla   obj_del1c               ;delete text
-         00018400 00000000! 
+    3997 000182b0     0d5f          calla   print_string_C2
+         000182c0 00000000! 
+    3998                    
+    3999 000182e0           nevvnxt SLEEPK  1
+    4000                    
+    4001 00018320     1029          inc     a9
+    4002 00018330     0b49          cmpi    4,a9
+         00018340     fffb  
+    4003 00018350     cbd9          jrnz    nevvlp
+    4004                    
+    4005 00018360                   SLEEP   TSEC*4
     4006                    
-    4007 00018420                   DIE
-    4008                            
-    4009 00018450 000184d0' nevvmsgs_t      .long   nevvln1_setup,nevvln2_setup,nevvln3_setup,nevvln4_setup
-    4010                    
-    4011 000184d0           nevvln1_setup
-    4012 000184d0                   RJR_STR sgmd8_ascii,3,0,50,224,SGMD8WHT,0
-    4013 00018570           nevvln2_setup
-    4014 00018570                   RJR_STR sgmd8_ascii,3,0,150,224,SGMD8WHT,0
-    4015 00018610           nevvln3_setup
-    4016 00018610                   RJR_STR sgmd8_ascii,3,0,250,224,SGMD8WHT,0
-    4017 000186b0           nevvln4_setup
-    4018 000186b0                   RJR_STR sgmd8_ascii,3,0,350,224,SGMD8WHT,0
-    4019                    
-    4020 00018750           nevvln1
-    4021 00018750       51          .string "QUICK HANDS",0                 ;More intercepts
-    4022 000187b0                   .even
-    4023                    
-    4024                    
-    4025                    
-    4026 000187b0            SUBRP  baby_message
+    4007 000183b0     09c0          movi    CLSDEAD|125,a0
+         000183c0     207d  
+    4008 000183d0     0d5f          calla   obj_del1c               ;delete text
+         000183e0 00000000! 
+    4009                    
+    4010 00018400                   DIE
+    4011                            
+    4012 00018430 000184b0' nevvmsgs_t      .long   nevvln1_setup,nevvln2_setup,nevvln3_setup,nevvln4_setup
+    4013                    
+    4014 000184b0           nevvln1_setup
+    4015 000184b0                   RJR_STR sgmd8_ascii,3,0,50,224,SGMD8WHT,0
+    4016 00018550           nevvln2_setup
+    4017 00018550                   RJR_STR sgmd8_ascii,3,0,150,224,SGMD8WHT,0
+    4018 000185f0           nevvln3_setup
+    4019 000185f0                   RJR_STR sgmd8_ascii,3,0,250,224,SGMD8WHT,0
+    4020 00018690           nevvln4_setup
+    4021 00018690                   RJR_STR sgmd8_ascii,3,0,350,224,SGMD8WHT,0
+    4022                    
+    4023 00018730           nevvln1
+    4024 00018730       51          .string "QUICK HANDS",0                 ;More intercepts
+    4025 00018790                   .even
+    4026                    
     4027                    
-    4028 000187b0     0d3f          callr   tournament_on
-         000187c0     fc9b  
-    4029 000187d0     c880          jac     SUCIDE
-         000187e0 00000000! 
+    4028                    
+    4029 00018790            SUBRP  baby_message
     4030                    
-    4031 00018800     05a0          move    @baby_flag,a0
-         00018810 00000000! 
-    4032 00018830     ca80          jaz     SUCIDE
-         00018840 00000000! 
+    4031 00018790     0d3f          callr   tournament_on
+         000187a0     fc9d  
+    4032 000187b0     c880          jac     SUCIDE
+         000187c0 00000000! 
     4033                    
-    4034 00018860     09e0          movi    win_snd,a0
-         00018870 00014ec0' 
-    4035 00018890     0d5f          calla   snd_play1ovrp
-         000188a0 00000000! 
+    4034 000187e0     05a0          move    @baby_flag,a0
+         000187f0 00000000! 
+    4035 00018810     ca80          jaz     SUCIDE
+         00018820 00000000! 
     4036                    
-    4037 000188c0     09e2          movi    dbtmln0_setup,a2
-         000188d0 00018ad0' 
-    4038 000188f0     0d5f          calla   setup_message
-         00018900 00000000! 
+    4037 00018840     09e0          movi    win_snd,a0
+         00018850 00014ec0' 
+    4038 00018870     0d5f          calla   snd_play1ovrp
+         00018880 00000000! 
     4039                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+    4040 000188a0     09e2          movi    dbtmln0_setup,a2
+         000188b0 00018ab0' 
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE   99
 
-    4040 00018920     09c0          movi    CLSDEAD|123,a0
-         00018930     207b  
-    4041 00018940     0580          move    a0,@mess_objid
-         00018950 00000000! 
+    4041 000188d0     0d5f          calla   setup_message
+         000188e0 00000000! 
     4042                    
-    4043 00018970     09e4          movi    dbtmstr_secret1,a4
-         00018980 00018b70' 
-    4044 000189a0     0d5f          calla   print_string_C2
-         000189b0 00000000! 
+    4043 00018900     09c0          movi    CLSDEAD|123,a0
+         00018910     207b  
+    4044 00018920     0580          move    a0,@mess_objid
+         00018930 00000000! 
     4045                    
-    4046 000189d0                   SLEEP   TSEC*6
-    4047                    
-    4048 00018a20     09c0          movi    CLSDEAD|123,a0
-         00018a30     207b  
-    4049 00018a40     0d5f          calla   obj_del1c               ;delete text
-         00018a50 00000000! 
+    4046 00018950     09e4          movi    dbtmstr_secret1,a4
+         00018960 00018b50' 
+    4047 00018980     0d5f          calla   print_string_C2
+         00018990 00000000! 
+    4048                    
+    4049 000189b0                   SLEEP   TSEC*6
     4050                    
-    4051 00018a70     0d5f          calla   pal_clean
-         00018a80 00000000! 
-    4052 00018aa0                   DIE
+    4051 00018a00     09c0          movi    CLSDEAD|123,a0
+         00018a10     207b  
+    4052 00018a20     0d5f          calla   obj_del1c               ;delete text
+         00018a30 00000000! 
     4053                    
-    4054                    
-    4055 00018ad0           dbtmln0_setup
-    4056 00018ad0                   RJR_STR sgmd8_ascii,3,0,200,39+1-10,SGMD8VIO,0
+    4054 00018a50     0d5f          calla   pal_clean
+         00018a60 00000000! 
+    4055 00018a80                   DIE
+    4056                    
     4057                    
-    4058 00018b70           dbtmstr_secret1
-    4059 00018b70       42          .string "BABY SIZE PLAYERS",0
-    4060 00018c00                   .even
-    4061                    
-    4062                    
-    4063 00018c00           ck_baby
+    4058 00018ab0           dbtmln0_setup
+    4059 00018ab0                   RJR_STR sgmd8_ascii,3,0,200,39+1-10,SGMD8VIO,0
+    4060                    
+    4061 00018b50           dbtmstr_secret1
+    4062 00018b50       42          .string "BABY SIZE PLAYERS",0
+    4063 00018be0                   .even
     4064                    
-    4065 00018c00     574a          clr     a10
-    4066 00018c10     09e8          movi    butn_lst,a8
-         00018c20 00018eb0' 
+    4065                    
+    4066 00018be0           ck_baby
     4067                    
-    4068 00018c40           cdfrlp  SLEEPK  1
-    4069 00018c80     4d20          move    a9,a0
-    4070 00018c90     0d5f          calla   get_stick_val_cur
-         00018ca0 00000000! 
-    4071 00018cc0     0b40          cmpi    0aH,a0                  ;down/right
-         00018cd0     fff5  
-    4072 00018ce0     cbf5          jrnz    cdfrlp
-    4073 00018cf0     4d20          move    a9,a0
-    4074 00018d00     0d5f          calla   get_but_val_cur
-         00018d10 00000000! 
-    4075 00018d30     cb02          jrnz    cdfrtag1
-    4076 00018d40     576b          clr     a11
-    4077 00018d50     c0ee          jruc    cdfrlp
-    4078                    
-    4079 00018d60     4d6b  cdfrtag1        move    a11,a11
-    4080 00018d70     cbec          jrnz    cdfrlp
+    4068 00018be0     574a          clr     a10
+    4069 00018bf0     09e8          movi    butn_lst,a8
+         00018c00 00018e90' 
+    4070                    
+    4071 00018c20           cdfrlp  SLEEPK  1
+    4072 00018c60     4d20          move    a9,a0
+    4073 00018c70     0d5f          calla   get_stick_val_cur
+         00018c80 00000000! 
+    4074 00018ca0     0b40          cmpi    0aH,a0                  ;down/right
+         00018cb0     fff5  
+    4075 00018cc0     cbf5          jrnz    cdfrlp
+    4076 00018cd0     4d20          move    a9,a0
+    4077 00018ce0     0d5f          calla   get_but_val_cur
+         00018cf0 00000000! 
+    4078 00018d10     cb02          jrnz    cdfrtag1
+    4079 00018d20     576b          clr     a11
+    4080 00018d30     c0ee          jruc    cdfrlp
     4081                    
-    4082 00018d80     102b          inc     a11
-    4083                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:02 2023
+    4082 00018d40     4d6b  cdfrtag1        move    a11,a11
+    4083 00018d50     cbec          jrnz    cdfrlp
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:40 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 score stuff                                                          PAGE  100
 
-    4084 00018d90     8501          move    *a8,a1,W
-    4085 00018da0     0521          zext    a1
-    4086 00018db0     4801          cmp     a0,a1
-    4087 00018dc0     ca04          jrz     cdfryes
-    4088 00018dd0     09e8          movi    butn_lst,a8
-         00018de0 00018eb0' 
-    4089 00018e00     c0e3          jruc    cdfrlp
-    4090 00018e10     1208  cdfryes addk    16,a8
-    4091 00018e20     8500          move    *a8,a0
-    4092 00018e30     cbe0          jrnz    cdfrlp
-    4093 00018e40     1820          movk    1,a0
-    4094 00018e50     0580          move    a0,@baby_flag
-         00018e60 00000000! 
-    4095                    
-    4096 00018e80                   DIE
-    4097                    
-    4098 00018eb0           butn_lst
-    4099                    
+    4084                    
+    4085 00018d60     102b          inc     a11
+    4086                    
+    4087 00018d70     8501          move    *a8,a1,W
+    4088 00018d80     0521          zext    a1
+    4089 00018d90     4801          cmp     a0,a1
+    4090 00018da0     ca04          jrz     cdfryes
+    4091 00018db0     09e8          movi    butn_lst,a8
+         00018dc0 00018e90' 
+    4092 00018de0     c0e3          jruc    cdfrlp
+    4093 00018df0     1208  cdfryes addk    16,a8
+    4094 00018e00     8500          move    *a8,a0
+    4095 00018e10     cbe0          jrnz    cdfrlp
+    4096 00018e20     1820          movk    1,a0
+    4097 00018e30     0580          move    a0,@baby_flag
+         00018e40 00000000! 
+    4098                    
+    4099 00018e60                   DIE
     4100                    
-    4101 00018eb0     0004          .word   4,1,2,4,1,2,4,1,2,0
+    4101 00018e90           butn_lst
     4102                    
-    4103                            .end
+    4103                    
+    4104 00018e90     0004          .word   4,1,2,4,1,2,4,1,2,0
+    4105                    
+    4106                            .end
 
  No Errors,  No Warnings

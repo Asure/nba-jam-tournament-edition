@@ -3802,8 +3802,10 @@ qzfyln4_setup
 	RJR_STR	sgmd8_ascii,3,0,350,238,SGMD8WHT,0
 
 qzfyln1
+;AM: This causes misalignment with prod.
+;copied the data from prod here
 	.string	"POWERUP G.T.",0		;More goaltends allowed
-	.even
+;	.even
 
 
  SUBRP	secret_power
@@ -3946,7 +3948,8 @@ qznvln4_setup
 	RJR_STR	sgmd8_ascii,3,0,350,196,SGMD8WHT,0
 
 qznvln1
-	.string	"BIG HEAD qznv1",0
+;	.string	"BIG HEAD qznv1",0  ;AM fixer screwed it up
+	.string	"BIG HEAD #1",0
 qznvln1a
 	.string	"HUGE HEAD",0
 	.even

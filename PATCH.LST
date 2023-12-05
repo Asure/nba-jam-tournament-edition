@@ -1,4 +1,4 @@
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:42 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    1
@@ -58,7 +58,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
          00000240 c0000120  
       45 00000260     0b80          andni   X2E|DIE,a0
          00000270 00000404  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:42 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    2
@@ -118,7 +118,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
       96 000005a0     0000          .word   0
       97 000005b0     0000          .word   0
       98 000005c0     0000          .word   0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:04 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:42 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    3

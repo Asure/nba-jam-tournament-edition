@@ -1,4 +1,4 @@
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:07 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:45 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    1
@@ -58,7 +58,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:07 2023
       54 000003a0                   WLW     N,W1ST4,F
       55 000003e0                   WLW     N,W1ST3,F
       56 00000420                   WLW     N,W1ST2,F
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 00:13:07 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:45 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball plyr sequence code                                        PAGE    2
