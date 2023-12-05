@@ -1,4 +1,4 @@
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    1
@@ -58,7 +58,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
       53 00000060                   .BSS    FORCEDIP,16             ; FOR FORCING THE USE OF THE DIP
       54 00000070                   .BSS    CERRORS,32
       55 00000090                   .BSS    CPASSES,32
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    2
@@ -118,7 +118,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
      108                            .endm
      109                    
      110                    DOTMAC  .macro  COLOR,X,Y
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    3
@@ -178,7 +178,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
      163                            .endm
      164                    
      165              0000  RAM_WDTH EQU    000H                ; OFFSETS INTO RAM CHIP RECORD
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    4
@@ -238,7 +238,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
          000000b0 01a80010  
      216 000000d0     058e          move    a14,@DMACTRL
          000000e0 01a80010  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    5
@@ -298,7 +298,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
      255                    
      256 000005a0     182d          MOVK    1,A13                   ; FLAG ERROR
      257 000005b0     0d5f          CALLA   CMOS_VAL                ; TRY AGAIN
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    6
@@ -358,7 +358,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
          00000ab0 fffffeff  
      295 00000ad0     cb14          JRNZ    CMOS3                   ; BR = USING CMOS COINAGE
      296                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    7
@@ -418,7 +418,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
      334 00000f80                   FCALL   STRINGCENTER,B6
      335 00000fc0     0b21          ADDI    [230,0],A1
          00000fd0 00e60000  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    8
@@ -478,7 +478,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
      376 00001540       45          .STRING "ERRORS DETECTED -- ANY BUTTON TO CONTINUE",0
      377 00001690                   .EVEN
      378                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    9
@@ -538,7 +538,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
      421 00001c80     0740          SETF    32,0,1                  ; LONG WORD
      422 00001c90     09ef          MOVI    STCKST,SP,L
          00001ca0 010ffff0  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   10
@@ -598,7 +598,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
      461 000020f0                   FCALL   INITCOLR,B5             ;RELOAD THE COLORS
      462 00002130                   FCALL   DSCRCLR,B6
      463                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   11
@@ -658,7 +658,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
      502 00002600           PROMCK
      503 00002600     09e0          MOVI    ROMCMESS,A0
          00002610 00003510' 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   12
@@ -718,7 +718,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
          00002aa0 00800019  
      542 00002ac0     5642          CLR     A2
      543 00002ad0     09c3          MOVI    COLOR_YELLOW,A3
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   13
@@ -778,7 +778,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
          00002fa0 008c0019  
      581 00002fc0     5642          CLR     A2
      582 00002fd0     09c3          MOVI    COLOR_RED,A3
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   14
@@ -838,7 +838,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
      624 000033a0     c001          JRUC    PCPUREALRET
      625 000033b0           PCPURET
      626 000033b0     1820          MOVK    1,A0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   15
@@ -898,7 +898,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
      678 00003950     09e0          MOVI    BOARDSTRING,A0
          00003960 00003ae0' 
      679 00003980     09e1          MOVI    [25,11],A1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   16
@@ -958,7 +958,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
          00003d80     00d0  
      726 00003d90     c0f6          JRUC    CPPLOTLOOP
      727                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   17
@@ -1018,7 +1018,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
      770 00004150     0b20          ADDI    00010001H,A0
          00004160 00010001  
      771 00004180     b741          MOVE    *A10(CMSIZE),A1,L
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   18
@@ -1078,7 +1078,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
      811                    
      812 00004530     1a0e          MOVK    DMACF4,A14
      813 00004540     058e          MOVE    A14,@DMACONF,W          ;ADJUST WINDOW RIGHT/LEFT BORDER
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   19
@@ -1138,7 +1138,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
          00004950     7fff  
      844 00004960           DMACWAIT
      845 00004960     0580          move    a0,@WATCHDOG            ;Reset
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   20
@@ -1198,7 +1198,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
      884 00004cf0     09ed          MOVI    0FFFCH,A13
          00004d00 0000fffc  
      885 00004d20     058d          MOVE    A13,@SYSCTRL,W
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   21
@@ -1258,7 +1258,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
      929 00005010     09fe          MOVI    DOG_COUNT,B14
          00005020 00008000  
      930                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   22
@@ -1318,7 +1318,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
      977 000052f0     0550          SETF    16,0,0                  ; RESET FIELDS
      978 00005300     0740          SETF    32,0,1
      979 00005310     b5c4          MOVE    *A14(RAM_NMBR),A4,W     ; GET BIT NUMBER TO SET
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   23
@@ -1378,7 +1378,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     1025 000056b0     b7cc          MOVE    *A14(ROM_SADR),A12,L    ; STARTING ADDRESS
          000056c0     0040  
     1026 000056d0     b7cd          MOVE    *A14(ROM_EADR),A13,L    ; ENDING ADDRESS
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   24
@@ -1438,7 +1438,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     1071 000059f0     0b0e          ADDI    ROM_SIZE,A14
          00005a00     00a0  
     1072 00005a10     07ad          MOVE    @SWITCH,A13,L
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   25
@@ -1498,7 +1498,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     1119 00005ec0                   VECMAC  ROBO_WHITE,115,005,115,250
     1120 00005f10                   VECMAC  ROBO_WHITE,170,005,170,250
     1121 00005f60                   VECMAC  ROBO_WHITE,225,005,225,250
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   26
@@ -1558,7 +1558,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     1174 00006990                   DOTMAC  ROBO_WHITE,032,225
     1175 000069c0                   DOTMAC  ROBO_WHITE,087,225
     1176 000069f0                   DOTMAC  ROBO_WHITE,142,225
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   27
@@ -1618,7 +1618,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
          00006fe0 01a80010  
     1226 00007000     058e          MOVE    A14,@DMACTRL,W
          00007010 01a80010  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   28
@@ -1678,7 +1678,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     1273                    
     1274 00007310     7fe0          .WORD 7FE0H                ; YELLOW
     1275 00007320     0840          .WORD 0840H                ; BUMP YELLOW
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   29
@@ -1738,7 +1738,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     1313 00007660                   FCALL   HVLINE,B6               ; DRAW LITTLE WHITE LINE
     1314 000076a0           SDLOOP
     1315 000076a0                   PULL    a12,a13
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   30
@@ -1798,7 +1798,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     1356                    
     1357 00007ac0     09e9          MOVI    BUT_TABLE,A9
          00007ad0 0000acc0' 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   31
@@ -1858,7 +1858,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     1395 00007e00     2482          SLL     4,A2
     1396                    
     1397 00007e10     4041          ADD     A2,A1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   32
@@ -1918,7 +1918,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     1433                    
     1434                    
     1435 00008180           DIPTEST:
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   33
@@ -1978,7 +1978,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     1473 00008510                   SLEEPK  1
     1474 00008550                   PUSH    a12,a13
     1475                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   34
@@ -2038,7 +2038,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     1512 00008920     0b80          ANDI    DPUSECMOS,A0
          00008930 fffffeff  
     1513 00008950     ca04          JRZ     DS1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   35
@@ -2098,7 +2098,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     1553                    
     1554 00008df0     09e0          MOVI    DTOCONTINUE,A0
          00008e00 0000e240' 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   36
@@ -2158,7 +2158,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     1593 00009240     4d47          MOVE    A10,A7
     1594 00009250     0b87          ANDI    DPCOUNTER,A7
          00009260 ffff3fff  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   37
@@ -2218,7 +2218,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     1635 000096c0     ca03          JRZ     DSTS_NOC                ;BR = NO
     1636 000096d0     09e0          MOVI    DNOCLIPS,A0             ;Assume no clips wanted
          000096e0 0000e510' 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   38
@@ -2278,7 +2278,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     1676                    
     1677 00009b20           DIPPLOT:
     1678 00009b20     09e0          MOVI    [33,21],A0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   39
@@ -2338,7 +2338,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     1716 00009ea0     09c4          MOVI    COLOR_WHITE,A4
          00009eb0     0202  
     1717                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   40
@@ -2398,7 +2398,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     1765 0000a390     09af          MMFM    SP,A1,A2,A3
          0000a3a0     000e  
     1766 0000a3b0     0960          RETS
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   41
@@ -2458,7 +2458,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     1815 0000a660     1009          ADDK    32,A9                   
     1816 0000a670     9520          MOVE    *A9+,A0                 ; RADIUS
     1817 0000a680     9726          MOVE    *A9+,A6,L               ; COLOR
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   42
@@ -2518,7 +2518,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     1861                    
     1862 0000aa00           JOY_UPDATE:
     1863 0000aa00     8721          MOVE    *A9,A1,L                ; XY LOC
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   43
@@ -2578,7 +2578,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     1910              00a0  P2BC    .equ    160
     1911              00f0  P3BC    .equ    240
     1912              0140  P4BC    .equ    320
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   44
@@ -2638,7 +2638,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     1965 0000be10                   STR_MAC 94,30,GETOUT1,ROBO_WHITE,0      ;GET OUT MESSAGE 1
     1966                    
     1967 0000be70                   STR_MAC 12,233,LEFTSLOT,COLOR_GREEN,0           ;LEFT COIN
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   45
@@ -2698,7 +2698,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     2020 0000cb40                   VECMAC  COLOR_WHITE,63,54,68,54         ;COINAGE MODE
     2021 0000cb90                   VECMAC  COLOR_WHITE,63,78,68,78
     2022 0000cbe0                   VECMAC  COLOR_WHITE,68,54,68,78
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   46
@@ -2758,7 +2758,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     2075 0000d860                   STR_MAC 217,123,DP_DSN8,COLOR_WHITE,0
     2076                    
     2077 0000d8c0                   STR_MAC 100,150,DP_INS1,COLOR_WHITE,0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   47
@@ -2818,7 +2818,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     2130 0000dc00       4f          .STRING "ONE COIN COUNTER",0
     2131 0000dc90                   .EVEN
     2132 0000dc90           DCOUNTER_0b
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   48
@@ -2878,7 +2878,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     2185 0000e240       54          .STRING "TO CONTINUE",0
     2186 0000e2a0                   .EVEN
     2187                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   49
@@ -2938,7 +2938,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     2240 0000e890           DGCOIN4
     2241 0000e890           DCOUNTRY_3 
     2242 0000e890       55          .STRING "UNUSED",0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   50
@@ -2998,7 +2998,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     2295                            .word   DS1_XPOS+45,DIP_YPOS+3,         DS1_XPOS+48,DIP_YPOS+3
     2296                            .word   DS1_XPOS+45,DIP_YPOS+4+5*14,    DS1_XPOS+48,DIP_YPOS+4+5*14
     2297                            .word   DS1_XPOS+48,DIP_YPOS+3,         DS1_XPOS+48,DIP_YPOS+4+5*14
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   51
@@ -3058,7 +3058,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     2350                    DIP_COIN1       .string "CMOS COINAGE",0
     2351                    DIP_COIN2       .string "DIP COINAGE",0
     2352                    DIP_TESTSW1     .string "TEST MODE",0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   52
@@ -3118,7 +3118,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     2405 0000f000                   .EVEN
     2406                    
     2407 0000f000       4a  J1MESS  .string "JOY1",0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   53
@@ -3178,7 +3178,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     2460 0000f580           INITCOLR
     2461                    
     2462 0000f580     09e0          MOVI    COLRAM,A0,L             ; PALETTE LOCATION
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   54
@@ -3238,7 +3238,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     2506 0000f7e0     0be0          SUBI    SCRXFUDGE,A0
          0000f7f0     ffc7  
     2507                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   55
@@ -3298,7 +3298,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     2555                    
     2556 0000fa20     4e49          move    a2,COLOR1
     2557 0000fa30     09d3          movi    SCRN_PTCH,DPTCH
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   56
@@ -3358,7 +3358,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     2604 0000fd60     c006          jruc    ldx
     2605                    
     2606 0000fd70     ed7c  a_ge_b  movx    b11,b12
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   57
@@ -3418,7 +3418,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     2650 00010050     9485          MOVE    *A4+,A5                 ;CHAR DIMENSIONS
     2651 00010060     4ca6          MOVE    A5,A6                   ;SPLIT UP BYTE
     2652 00010070     2586          SLL     12,A6                   ;SHIFT UP HEIGHT TO Y
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   58
@@ -3478,7 +3478,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     2704 000102e0     2464          SLL     3,A4
     2705 000102f0     0b24          ADDI    SYSFONT,A4,L
          00010300 00014490' 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   59
@@ -3538,7 +3538,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     2750 000105f0           cloop
     2751 000105f0     4862          cmp     a3,a2                ; if x > y, we are done
     2752 00010600     c70f          jrgt    done
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   60
@@ -3598,7 +3598,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     2805 00010880                   FRET    B0
     2806                    
     2807 00010890           fill4:
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   61
@@ -3658,7 +3658,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     2857 00010b90                   VECMAC  COLOR_WHITE,390,15,390,254
     2858 00010be0                   VECMAC  COLOR_WHITE,5,253,390,253
     2859 00010c30                   VECMAC  COLOR_WHITE,5,15,5,100
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   62
@@ -3718,7 +3718,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     2912 000124b0           IROM12  CHIPMAC 12,261,210,20,40,7,3,CNAMEJ18,1,2,2,1   ; IMAGE ROM
     2913                    
     2914 00012580           IROM13  CHIPMAC 13,283,210,20,40,7,3,CNAMEJ19,1,2,2,1   ; IMAGE ROM
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   63
@@ -3778,7 +3778,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     2967 00013240           CNAMEB21
     2968 00013240       55          .STRING "UB21",0
     2969 00013270                   .EVEN
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   64
@@ -3838,7 +3838,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     3022 00013520           CNAMEJ14
     3023 00013520       55          .STRING "UJ14",0
     3024 00013550                   .EVEN
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   65
@@ -3898,7 +3898,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     3077 00013d30           SRAMCHIPS
     3078 00013d30                   RAM_CHIP SRAM4,3, 4, 16, 1000004H, 13FFFF4H     ; UJ7 (  4 - 7  )
     3079 00013dc0                   RAM_CHIP SRAM3,2, 4, 16, 1000000H, 13FFFF0H     ; UJ6 (  0 - 3  )
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   66
@@ -3958,7 +3958,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     3132 00014110     0068     .WORD    068h
     3133 00014120     0300     .WORD    I2_88-CBASE
     3134                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   67
@@ -4018,7 +4018,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     3187 000142d0           T2_MM:
     3188 000142d0     00a8     .WORD    0A8h
     3189 000142e0     0680     .WORD    I2_MM-CBASE
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   68
@@ -4078,7 +4078,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     3242                    
     3243                    
     3244 00014490           SYSFONT
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   69
@@ -4138,7 +4138,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     3297 00014628       20          .BYTE   (T2_SS-T2_SP)/32        ;S
     3298 00014630       21          .BYTE   (T2_TT-T2_SP)/32        ;T
     3299 00014638       22          .BYTE   (T2_UU-T2_SP)/32        ;U
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   70
@@ -4198,7 +4198,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     3352 00014788       33     .byte    033h
     3353 00014790       33     .byte    033h
     3354 00014798       3f     .byte    03Fh
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   71
@@ -4258,7 +4258,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     3407 000148e8           I2_66:
     3408 000148e8       3e     .byte    03Eh
     3409 000148f0       3f     .byte    03Fh
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   72
@@ -4318,7 +4318,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     3462 00014a48       1f     .byte    01Fh
     3463 00014a50       33     .byte    033h
     3464 00014a58       3f     .byte    03Fh
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   73
@@ -4378,7 +4378,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     3517 00014ba8           I2_HH:
     3518 00014ba8       33     .byte    033h
     3519 00014bb0       33     .byte    033h
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   74
@@ -4438,7 +4438,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     3572 00014d28       7b     .byte    07Bh,03h
     3573 00014d38       33     .byte    033h,03h
     3574 00014d48       33     .byte    033h,03h
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   75
@@ -4498,7 +4498,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     3627 00014eb0       33     .byte    033h
     3628                    
     3629 00014eb8           I2_SS:
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   76
@@ -4558,7 +4558,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     3682 00015048       36     .byte    036h
     3683 00015050       1c     .byte    01Ch
     3684 00015058       1c     .byte    01Ch
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   77
@@ -4618,7 +4618,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
     3737 000156e0                   ROM_CHIP IROM14,14, 8,32,  3000018H, 3FFFFF8H, 0c336H   ; UJ20
     3738                    
     3739 00015780                   ROM_CHIP IROM3,  3, 8,32,  4000000H, 4FFFFE0H, 0f400H   ; UG17
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:50 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:32 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   78

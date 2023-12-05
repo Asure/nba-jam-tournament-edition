@@ -1,1 +1,1 @@
-loadw bbnew /di /fi /t=c:\tmp\jamte /x /v
+loadw bb2test /di /fi /t=c:\tmp\jamte /x /v

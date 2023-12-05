@@ -1,4 +1,4 @@
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    1
@@ -58,7 +58,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
       54                            .ref    last_power
       55                            .ref    qtr_purchased
       56                            .ref    call_scores
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE    2
@@ -118,7 +118,7 @@ basketball player code                                               PAGE    2
      109                            .ref    omlgmd_ascii
      110                    
      111                            .ref    pal_clean
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE    3
@@ -178,7 +178,7 @@ basketball player code                                               PAGE    3
      164                    
      165 00000540                   BSSX    P1DATA          ,PDSIZE ;Player 1 data
      166 00000540                   BSSX    P2DATA          ,PDSIZE ;P2
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE    4
@@ -238,7 +238,7 @@ basketball player code                                               PAGE    4
      218                    
      219 00000560     5600          clr     a0
      220 00000570     0580          move    a0,@plyrinautorbnd
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE    5
@@ -298,7 +298,7 @@ basketball player code                                               PAGE    5
      258 00000910     05a0          move    @PSTATUS,a0
          00000920 00000060- 
      259 00000940     0b40          cmpi    1,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE    6
@@ -358,7 +358,7 @@ basketball player code                                               PAGE    6
      301                    
      302 00000ce0            SUBRP  plyr_main
      303                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE    7
@@ -418,7 +418,7 @@ basketball player code                                               PAGE    7
          00001000     ffff  
      345 00001010     b02d          move    a1,*a13(plyr_newdir)
          00001020     03e0  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE    8
@@ -478,7 +478,7 @@ basketball player code                                               PAGE    8
      384 00001310     05a3          move    @gmqrtr,a3
          00001320 00000000! 
      385 00001340     ca02          jrz     plhynot2
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE    9
@@ -538,7 +538,7 @@ basketball player code                                               PAGE    9
      426 00001650     c021          jruc    plhysetskl
      427 00001660           plhytdrn
      428 00001660     184e          movk    2,a14                   ;We are drones
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   10
@@ -598,7 +598,7 @@ basketball player code                                               PAGE   10
      472 000019b0     8e63          movb    *a3,a3
      473 000019c0     ce0b          jrn     plhykeepc                       ;I always keep?
      474 000019d0     8e84          movb    *a4,a4
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   11
@@ -658,7 +658,7 @@ basketball player code                                               PAGE   11
      520 00001ca0     09c0          movi    31<<10+31<<5+31,a0      ;White
          00001cb0     7fff  
      521 00001cc0     9002          move    a0,*a2+
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   12
@@ -718,7 +718,7 @@ basketball player code                                               PAGE   12
      561 00001fc0     0b21          addi    p1taps,a1
          00001fd0 00000000! 
      562 00001ff0     8421          move    *a1,a1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   13
@@ -778,7 +778,7 @@ basketball player code                                               PAGE   13
      600                    
      601 000022c0     248b          sll     4,a11                   ;*16
      602 000022d0     0b2b          addi    P1CTRL,a11              ;A11=*PxCTRL
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   14
@@ -838,7 +838,7 @@ basketball player code                                               PAGE   14
      642                            move    *a13(plyr_num),a0
      643                            cmpi    0,a0
      644                            jrz     plhyyes
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   15
@@ -898,7 +898,7 @@ basketball player code                                               PAGE   15
          00002870     0100  
      684 00002880     05ae          move    @ballpnumlast,a14
          00002890 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   16
@@ -958,7 +958,7 @@ basketball player code                                               PAGE   16
      725                    
      726 00002ba0                   PUSH    a10
      727 00002bb0     4daa          move    a13,a10
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   17
@@ -1018,7 +1018,7 @@ basketball player code                                               PAGE   17
          00002e90 000005b0- 
      770 00002eb0     87c0          move    *a14,a0,L
      771 00002ec0     0d3f          callr   seekdirdist_obob128
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   18
@@ -1078,7 +1078,7 @@ basketball player code                                               PAGE   18
      803 000031e0     0d3f          callr   seekdirdist_obxz128
          000031f0     212c  
      804 00003200     b00d          move    a0,*a13(plyr_ohpdir)
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   19
@@ -1138,7 +1138,7 @@ basketball player code                                               PAGE   19
      841 00003500     0b41          cmpi    90,a1
          00003510     ffa5  
      842 00003520     c405          jrlt    plhydefon
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   20
@@ -1198,7 +1198,7 @@ basketball player code                                               PAGE   20
      880 000037c0     b5a3          move    *a13(plyr_num),a3
          000037d0     0100  
      881 000037e0     2fe3          srl     1,a3
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   21
@@ -1258,7 +1258,7 @@ basketball player code                                               PAGE   21
      918 00003ad0     0382          abs     a2
      919                    
      920 00003ae0     09c0          movi    FLYBACK_SEQ,a0          ;If similar power, always do flyback
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   22
@@ -1318,7 +1318,7 @@ basketball player code                                               PAGE   22
          00003da0     00e8  
      958                    
      959 00003db0           plhynot_rear
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   23
@@ -1378,7 +1378,7 @@ basketball player code                                               PAGE   23
      999 00004080     b5a1          move    *a13(plyr_ptsdown),a1
          00004090     0440  
     1000 000040a0     c60d          jrle    plhyfbnorm                      ;!Losing?
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   24
@@ -1438,7 +1438,7 @@ basketball player code                                               PAGE   24
          00004340     0440  
     1041 00004350     c614          jrle    plhyi5050
     1042                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   25
@@ -1498,7 +1498,7 @@ basketball player code                                               PAGE   25
     1082                    
     1083 000045f0     09c0          movi    FLYBACKWB2_SEQ,a0               ;If similar power, always do flyback
          00004600     0032  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   26
@@ -1558,7 +1558,7 @@ basketball player code                                               PAGE   26
     1125 00004860     c605          jrle    plhywinshortfly                 ;Br= I'm winning!
     1126 00004870     0b20          addi    plhyshortfly_t,a0
          00004880 00009f80' 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   27
@@ -1618,7 +1618,7 @@ basketball player code                                               PAGE   27
     1167 00004b10     4d29          move    a9,a9
     1168 00004b20     ca02          jrz     plhynoflm13
     1169 00004b30     09c0          movi    FFALL_SEQ,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   28
@@ -1678,7 +1678,7 @@ basketball player code                                               PAGE   28
     1209                    
     1210 00004db0     afa0          movb    *a13(plyr_seqflgs+NOJOY_B-7),a0
          00004dc0     0186  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   29
@@ -1738,7 +1738,7 @@ basketball player code                                               PAGE   29
     1250                    
     1251 00005060     0b4e          cmpi    CZMIN+6,a14             ;a0
          00005070     fc11  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   30
@@ -1798,7 +1798,7 @@ basketball player code                                               PAGE   30
     1290 00005320     1880          movk    JOYL_M,a0
     1291 00005330     5206          andn    a0,a6
     1292                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   31
@@ -1858,7 +1858,7 @@ basketball player code                                               PAGE   31
     1333 00005570     5206          andn    a0,a6
     1334                    
     1335                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   32
@@ -1918,7 +1918,7 @@ basketball player code                                               PAGE   32
     1376                    
     1377 00005800     4c01  plhyturn        move    a0,a1                   ;>Turn the shortest way
     1378 00005810     0380          abs     a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   33
@@ -1978,7 +1978,7 @@ basketball player code                                               PAGE   33
     1421 00005b30     5600  plhynodir       clr     a0
     1422 00005b40     c003          jruc    plhysetdt
     1423                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   34
@@ -2038,7 +2038,7 @@ basketball player code                                               PAGE   34
          00005db0     e171  
     1465 00005dc0     c700          jrgt    plhysetvel                      ;OK?
          00005dd0     0099  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   35
@@ -2098,7 +2098,7 @@ basketball player code                                               PAGE   35
     1507 00006060     ca09          jrz     plhynobal
     1508 00006070     0b61          cmpi    [1,0],a1
          00006080 fffeffff  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   36
@@ -2158,7 +2158,7 @@ basketball player code                                               PAGE   36
     1547 00006380     b5a1          move    *a13(plyr_ownball),a1
          00006390     0260  
     1548 000063a0     ca06          jrz     plhychkturb
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   37
@@ -2218,7 +2218,7 @@ basketball player code                                               PAGE   37
     1591 00006670     c70f          jrgt    plhysetvel                      ;In bounds?
     1592 00006680     b5a0          move    *a13(plyr_autoctrl),a0
          00006690     03c0  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   38
@@ -2278,7 +2278,7 @@ basketball player code                                               PAGE   38
     1635 00006930     0b4e          cmpi    RUNDRIB_SEQ,a14
          00006940     fff0  
     1636 00006950     ca02          jreq    plhyok
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   39
@@ -2338,7 +2338,7 @@ basketball player code                                               PAGE   39
          00006c10 00000000! 
     1674 00006c30     4801          cmp     a0,a1
     1675 00006c40     ca20          jrz     plhyturdone
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   40
@@ -2398,7 +2398,7 @@ basketball player code                                               PAGE   40
          00006ef0     02b0  
     1713 00006f00           plhynodly
     1714                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   41
@@ -2458,7 +2458,7 @@ basketball player code                                               PAGE   41
     1753 00007170     8e21          movb    *a1,a1
     1754                    
     1755 00007180     44e1          sub     a7,a1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   42
@@ -2518,7 +2518,7 @@ basketball player code                                               PAGE   42
     1799 00007450     95ce          move    *a14+,a14
     1800 00007460     cb4f          jrnz    plhyanicnt                      ;!At end?
     1801 00007470     c04a          jruc    plhysetseq
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   43
@@ -2578,7 +2578,7 @@ basketball player code                                               PAGE   43
     1843 00007710     b5ae          move    *a13(plyr_ohpdir),a14
          00007720     0380  
     1844 00007730     b1cd          move    a14,*a13(plyr_newdir)
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   44
@@ -2638,7 +2638,7 @@ basketball player code                                               PAGE   44
     1885 000079c0     97c0          move    *a14+,a0,L                      ;*Code
     1886 000079d0     4fc4          move    a14,b4
     1887 000079e0     0920          call    a0                              ;Can trash scratch, A2-A5
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   45
@@ -2698,7 +2698,7 @@ basketball player code                                               PAGE   45
     1925 00007cb0     c401          jrlt    plhyinjmp
     1926 00007cc0     188a          movk    4,a10
     1927 00007cd0           plhyinjmp
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   46
@@ -2758,7 +2758,7 @@ basketball player code                                               PAGE   46
     1962 00007f80     1020          addk    1,a0
     1963 00007f90     b00d          move    a0,*a13(plyr_jmpcnt)
          00007fa0     0400  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   47
@@ -2818,7 +2818,7 @@ basketball player code                                               PAGE   47
          00008270     0090  
     2001 00008280     b50e          move    *a8(OXANI+16),a14
          00008290     01f0  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   48
@@ -2878,7 +2878,7 @@ basketball player code                                               PAGE   48
          000085b0     0400  
     2039 000085c0     1580          subk    12,a0
     2040 000085d0     c400          jrlt    plhypass                        ;Too soon?
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   49
@@ -2938,7 +2938,7 @@ basketball player code                                               PAGE   49
     2081 00008860     b5ae          move    *a13(plyr_ohpdist),a14
          00008870     0390  
     2082 00008880     0b4e          cmpi    150,a14
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   50
@@ -2998,7 +2998,7 @@ basketball player code                                               PAGE   50
     2119 00008b40     ca00          jrz     plhyslp
          00008b50     00e7  
     2120                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   51
@@ -3058,7 +3058,7 @@ basketball player code                                               PAGE   51
     2159                    
     2160 00008e30     1820          movk    1,a0
     2161 00008e40     b5ae          move    *a13(plyr_shtbutn),a14
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   52
@@ -3118,7 +3118,7 @@ basketball player code                                               PAGE   52
     2198 00009100     b5a1          move    *a13(plyr_num),a1
          00009110     0100  
     2199 00009120                   XORK    1,a1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   53
@@ -3178,7 +3178,7 @@ basketball player code                                               PAGE   53
     2239                    
     2240 000093d0     b5a0          move    *a13(plyr_rcvpass),a0
          000093e0     0230  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   54
@@ -3238,7 +3238,7 @@ basketball player code                                               PAGE   54
     2284 00009650     c737          jrgt    plhyslp                 ;Getting pass?
     2285 00009660     b7a1          move    *a13(plyr_tmproc_p),a1,L
          00009670     0110  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   55
@@ -3298,7 +3298,7 @@ basketball player code                                               PAGE   55
          00009950     0100  
     2322                    
     2323 00009960           plhynotingame2
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   56
@@ -3358,7 +3358,7 @@ basketball player code                                               PAGE   56
     2369 00009f80           plhyshortfly_t
     2370 00009f80     008c          .word   140,160,180,200,250,300,400,550,650,650,650
     2371                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   57
@@ -3418,7 +3418,7 @@ basketball player code                                               PAGE   57
     2419 0000a450     b5ae          move    *a13(plyr_dribmode),a14
          0000a460     0210  
     2420 0000a470     ca09          jrz     plhyn
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   58
@@ -3478,7 +3478,7 @@ basketball player code                                               PAGE   58
     2463 0000a6c0            SUBR   joy_read
     2464                    
     2465 0000a6c0     05a0          move    @GAMSTATE,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   59
@@ -3538,7 +3538,7 @@ basketball player code                                               PAGE   59
     2510 0000a9e0     81c1          move    a14,*a1
     2511                    
     2512 0000a9f0     c038          jruc    jnhjx
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   60
@@ -3598,7 +3598,7 @@ basketball player code                                               PAGE   60
     2562 0000acd0     2fe0  jnhjnop3        srl     1,a0                    ;P4
     2563 0000ace0     c909          jrnc    jnhjx
     2564 0000acf0     1201          addk    16,a1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   61
@@ -3658,7 +3658,7 @@ basketball player code                                               PAGE   61
     2617                            sll     8,a14
     2618                            or      a2,a14
     2619                            move    a14,*a1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   62
@@ -3718,7 +3718,7 @@ basketball player code                                               PAGE   62
     2672                    
     2673                    jnhjnop1        addk    16,a1                   ;P2
     2674                            srl     1,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   63
@@ -3778,7 +3778,7 @@ basketball player code                                               PAGE   63
     2727                            srl     32-8,a3
     2728                            or      a3,a14
     2729                            move    a14,*a1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   64
@@ -3838,7 +3838,7 @@ basketball player code                                               PAGE   64
     2782                    
     2783                    
     2784 0000ad90            SUBRP  plyr_chkpcollide
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   65
@@ -3898,7 +3898,7 @@ basketball player code                                               PAGE   65
     2825 0000b070     4163  nzmhtest2       add     a11,a3
     2826 0000b080     4862          cmp     a3,a2
     2827 0000b090     c500          jrge    nzmhnext
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   66
@@ -3958,7 +3958,7 @@ basketball player code                                               PAGE   66
          0000b350     0020  
     2868 0000b360     038e          abs     a14
     2869 0000b370     2e2e          srl     15,a14
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   67
@@ -4018,7 +4018,7 @@ basketball player code                                               PAGE   67
     2911 0000b6a0     0b20          addi    nzmhvel_t,a0
          0000b6b0 0000c6e0' 
     2912                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   68
@@ -4078,7 +4078,7 @@ basketball player code                                               PAGE   68
          0000b9a0     0080  
     2954 0000b9b0           nzmhskipxv
     2955 0000b9b0     b70e          move    *a8(OZVEL),a14,L
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   69
@@ -4138,7 +4138,7 @@ basketball player code                                               PAGE   69
     2995 0000bc90     ca71          jrz     nzmhnopop
     2996 0000bca0     b500          move    *a8(OYPOS),a0
          0000bcb0     00b0  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   70
@@ -4198,7 +4198,7 @@ basketball player code                                               PAGE   70
     3038 0000bf50     4da3          move    a13,a3
     3039 0000bf60     0d5f          calla   def_play_reward         ;Good defensive play reward snds, etc
          0000bf70 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   71
@@ -4258,7 +4258,7 @@ basketball player code                                               PAGE   71
     3076                    
     3077 0000c250     0d5f          calla   ball_convfmprel
          0000c260 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   72
@@ -4318,7 +4318,7 @@ basketball player code                                               PAGE   72
          0000c4f0     feac  
     3118                    
     3119                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   73
@@ -4378,7 +4378,7 @@ basketball player code                                               PAGE   73
          0000c9b0     0c80  
     3162                    
     3163 0000c9c0     05a2          move    @baby_flag,a2
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   74
@@ -4438,7 +4438,7 @@ basketball player code                                               PAGE   74
     3207                    
     3208                    
     3209                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   75
@@ -4498,7 +4498,7 @@ basketball player code                                               PAGE   75
     3247 0000cf30     b5ae          move    *a13(plyr_ohpdir),a14
          0000cf40     0380  
     3248 0000cf50     110e          addk    8,a14                   ;Round off
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   76
@@ -4558,7 +4558,7 @@ basketball player code                                               PAGE   76
     3289 0000d1f0     2fee          srl     1,a14
     3290 0000d200     cb04          jrnz    znhelhoop                       ;Team2?
     3291 0000d210     14a0          subk    5,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   77
@@ -4618,7 +4618,7 @@ basketball player code                                               PAGE   77
     3332                    
     3333 0000d490     b7a0          move    *a13(plyr_attrib_p),a0,L
          0000d4a0     0150  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   78
@@ -4678,7 +4678,7 @@ basketball player code                                               PAGE   78
     3373                    
     3374                    
     3375 0000d7b0     b5ae          move    *a13(plyr_o1dist),a14
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   79
@@ -4738,7 +4738,7 @@ basketball player code                                               PAGE   79
          0000da70     0050  
     3416 0000da80           znhegdd2
     3417 0000da80     2480          sll     4,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   80
@@ -4798,7 +4798,7 @@ basketball player code                                               PAGE   80
          0000dd60 00000000! 
     3459                    
     3460 0000dd80     18e0          movk    DUNK_SHORT,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   81
@@ -4858,7 +4858,7 @@ basketball player code                                               PAGE   81
     3504 0000e070     4c40  znhenosmk       move    a2,a0
     3505                    
     3506                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   82
@@ -4918,7 +4918,7 @@ basketball player code                                               PAGE   82
     3544 0000e510     1840          movk    2,a0
     3545 0000e520     0580          move    a0,@ballptsforshot
          0000e530 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   83
@@ -4978,7 +4978,7 @@ basketball player code                                               PAGE   83
          0000e800     feb5  
     3583 0000e810     c719          jrgt    znhe3ptra
     3584 0000e820     2fc0          srl     2,a0                    ;/4
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   84
@@ -5038,7 +5038,7 @@ basketball player code                                               PAGE   84
     3626 0000eb20     0580          move    a0,@shot_type
          0000eb30 00000000! 
     3627 0000eb50           znhecontxy
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   85
@@ -5098,7 +5098,7 @@ basketball player code                                               PAGE   85
     3665 0000ee30           znheblk
     3666 0000ee30     b5a0          move    *a13(plyr_rcvpass),a0
          0000ee40     0230  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   86
@@ -5158,7 +5158,7 @@ basketball player code                                               PAGE   86
     3703 0000f180     0b20          addi    blktype_t,a0
          0000f190 0000f1d0' 
     3704 0000f1b0     8600          move    *a0,a0,L
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   87
@@ -5218,7 +5218,7 @@ basketball player code                                               PAGE   87
          0000f540 00000000! 
     3745 0000f560     c505          jrge    znhedornd
     3746                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   88
@@ -5278,7 +5278,7 @@ basketball player code                                               PAGE   88
     3787 0000f7f0     00bb          .word   187,175,166,158,153,144,138,130
     3788 0000f870     007d          .word   125,120,115,110,106,102,100,98
     3789 0000f8f0     0060          .word   96,94,92,89,86,84,82,80
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   89
@@ -5338,7 +5338,7 @@ basketball player code                                               PAGE   89
     3830                    
     3831                    
     3832                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   90
@@ -5398,7 +5398,7 @@ basketball player code                                               PAGE   90
     3870 00010220     0be9          subi    240,a9                  ;-24%   ;10%
          00010230     ff0f  
     3871                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   91
@@ -5458,7 +5458,7 @@ basketball player code                                               PAGE   91
     3913 000104e0     0380          abs     a0
     3914 000104f0     1680  fnij2dsml       subk    20,a0
     3915 00010500     c50b          jrge    fnij2far                        ;Not between me and hoop?
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   92
@@ -5518,7 +5518,7 @@ basketball player code                                               PAGE   92
     3958 00010780     c502          jrge    fnijminok
     3959 00010790     09c9          movi    50,a9
          000107a0     0032  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   93
@@ -5578,7 +5578,7 @@ basketball player code                                               PAGE   93
     4000 00010a60           fnijtryhelp
     4001                    
     4002                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   94
@@ -5638,7 +5638,7 @@ basketball player code                                               PAGE   94
     4046 00010d10           fnijlosingbige                          ;Losing by more than 5 points
     4047 00010d10     09c3          movi    300,a3
          00010d20     012c  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   95
@@ -5698,7 +5698,7 @@ basketball player code                                               PAGE   95
     4087 00010fb0     2bee          sra     1,a14                   ;/2
     4088 00010fc0     45c3          sub     a14,a3
     4089 00010fd0     2423          sll     16-(14+1),a3            ;*64k /16k /2
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   96
@@ -5758,7 +5758,7 @@ basketball player code                                               PAGE   96
          00011320 fff80000  
     4124 00011340     c023          jruc    fnijok1
     4125                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   97
@@ -5818,7 +5818,7 @@ basketball player code                                               PAGE   97
          00011640     ffe3  
     4162 00011650     ca06          jreq    fnijly                  ;Layup?
     4163 00011660     0b40          cmpi    DUNKLAY_SEQ,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   98
@@ -5878,7 +5878,7 @@ basketball player code                                               PAGE   98
     4201 00011a00     1e0e          btst    LAYUP_B,a14
     4202 00011a10     ca03          jrz     fnijnoly
     4203 00011a20     0d3f          callr   lay_perc
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE   99
@@ -5938,7 +5938,7 @@ basketball player code                                               PAGE   99
     4245 00011cc0           fnijfixde
     4246                    
     4247 00011cc0     b6ee          move    *a7(OXVAL),a14,L        ;Adjust X
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  100
@@ -5998,7 +5998,7 @@ basketball player code                                               PAGE  100
     4289                    
     4290                    
     4291                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  101
@@ -6058,7 +6058,7 @@ basketball player code                                               PAGE  101
          00012280     01f0  
     4335 00012290     45c1          sub     a14,a1                  ;X delta
     4336 000122a0     0381          abs     a1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  102
@@ -6118,7 +6118,7 @@ basketball player code                                               PAGE  102
     4377 00012540     0b4b          cmpi    0148H,a11
          00012550     feb7  
     4378 00012560     c407          jrlt    fnijnotlng
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  103
@@ -6178,7 +6178,7 @@ basketball player code                                               PAGE  103
     4416 000128b0     4c47          move    a2,a7
     4417                    
     4418 000128c0     1a82          movk    20,a2                   ;0AHir ball ;18
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  104
@@ -6238,7 +6238,7 @@ basketball player code                                               PAGE  104
     4461 00012b60     5c03          mpys    a0,a3
     4462 00012b70     5c05          mpys    a0,a5
     4463 00012b80     4c60          move    a3,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  105
@@ -6298,7 +6298,7 @@ basketball player code                                               PAGE  105
     4507 00012e00     49c4          cmp     a14,a4
     4508 00012e10     c903          jrhs    fnijxbig
     4509 00012e20                   SWAP    a14,a4
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  106
@@ -6358,7 +6358,7 @@ basketball player code                                               PAGE  106
     4552 00013120     1544          subk    10,a4
     4553 00013130           fnijhko
     4554                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  107
@@ -6418,7 +6418,7 @@ basketball player code                                               PAGE  107
     4597                    
     4598                    
     4599 000133c0     b2a7          move    a5,*a7(OZVEL),L
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  108
@@ -6478,7 +6478,7 @@ basketball player code                                               PAGE  108
     4633                                                            ;>Inc try shot stat
     4634                    
     4635 00013720     b5a0          move    *a13(plyr_seqflgs),a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  109
@@ -6538,7 +6538,7 @@ basketball player code                                               PAGE  109
     4678 00013c00     8702          move    *a8,a2,L
     4679 00013c10     09e0          movi    [191,0],a0
          00013c20 00bf0000  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  110
@@ -6598,7 +6598,7 @@ basketball player code                                               PAGE  110
     4713 00014040                   PULLP   a8
     4714                    
     4715                            .if     DEBUG
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  111
@@ -6658,7 +6658,7 @@ basketball player code                                               PAGE  111
          00014440     01a1  
     4759                    
     4760 00014450     b5a0          move    *a13(plyr_keeppal),a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  112
@@ -6718,7 +6718,7 @@ basketball player code                                               PAGE  112
     4798                    
     4799 00014730     b5ae          move    *a13(plyr_tmdist),a14
          00014740     02f0  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  113
@@ -6778,7 +6778,7 @@ basketball player code                                               PAGE  113
     4838 00014a20     b5a7          move    *a13(plyr_dir),a7
          00014a30     03d0  
     4839 00014a40     c000          jruc    vxzubhpas
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  114
@@ -6838,7 +6838,7 @@ basketball player code                                               PAGE  114
          00014ca0 00000000! 
     4878 00014cc0     c253          jrls    vxzunotbh
     4879                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  115
@@ -6898,7 +6898,7 @@ basketball player code                                               PAGE  115
     4918 00014f50     4c0e          move    a0,a14
     4919 00014f60     0b0e          addi    040H,a14
          00014f70     0040  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  116
@@ -6958,7 +6958,7 @@ basketball player code                                               PAGE  116
     4966 00015200           vxzunotbh
     4967                    
     4968                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  117
@@ -7018,7 +7018,7 @@ basketball player code                                               PAGE  117
     5008                    
     5009 00015470           vxzunodnk
     5010                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  118
@@ -7078,7 +7078,7 @@ basketball player code                                               PAGE  118
          000156e0     ffd7  
     5049 000156f0     ca03          jrz     vxzulead_nl
     5050 00015700     0b43          cmpi    PASSNL2_SEQ,a3
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  119
@@ -7138,7 +7138,7 @@ basketball player code                                               PAGE  119
     5093                    
     5094 00015960           vxzunolead_ocls
     5095 00015960     0300          jruc    vxzunolead
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  120
@@ -7198,7 +7198,7 @@ basketball player code                                               PAGE  120
     5136 00015bc0     b44e          move    *a2(OXANI+16),a14
          00015bd0     01f0  
     5137 00015be0     41c6          add     a14,a6
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  121
@@ -7258,7 +7258,7 @@ basketball player code                                               PAGE  121
     5176                    
     5177                    
     5178 00015e90            SUBR   plyr_pass
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  122
@@ -7318,7 +7318,7 @@ basketball player code                                               PAGE  122
     5218                    
     5219                    
     5220 00016190                   PUSH    a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  123
@@ -7378,7 +7378,7 @@ basketball player code                                               PAGE  123
     5261 00016440     5c81          mpys    a4,a1
     5262 00016450     2ac1          sra     10,a1                   ;/1024
     5263 00016460     4c24          move    a1,a4
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  124
@@ -7438,7 +7438,7 @@ basketball player code                                               PAGE  124
     5305                    
     5306 00016710     b401          move    *a0(OXPOS),a1
          00016720     0090  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  125
@@ -7498,7 +7498,7 @@ basketball player code                                               PAGE  125
          000169e0     ffdc  
     5347 000169f0     ca10          jrz     xhqclevel
     5348 00016a00     b5ae          move    *a13(plyr_seqdir),a14
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  126
@@ -7558,7 +7558,7 @@ basketball player code                                               PAGE  126
     5382 00016d70     0d5f          calla   snd_play1
          00016d80 00000000! 
     5383                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  127
@@ -7618,7 +7618,7 @@ basketball player code                                               PAGE  127
     5427 000171b0     0b41          cmpi    40,a1
          000171c0     ffd7  
     5428 000171d0     c710          jrgt    wcgeposok
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  128
@@ -7678,7 +7678,7 @@ basketball player code                                               PAGE  128
     5469 00017460     b6ae          move    *a5(OXANI),a14,L
          00017470     01e0  
     5470 00017480     41c6          add     a14,a6
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  129
@@ -7738,7 +7738,7 @@ basketball player code                                               PAGE  129
          00017760     fec9  
     5513 00017770     c50f          jrge    wcgex                   ;Under rim?
     5514 00017780           wcgeeposok
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  130
@@ -7798,7 +7798,7 @@ basketball player code                                               PAGE  130
     5554 000179e0     41c1          add     a14,a1
     5555 000179f0     b60e          move    *a0(OIMG),a14,L
          00017a00     0170  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  131
@@ -7858,7 +7858,7 @@ basketball player code                                               PAGE  131
     5591 00017d20     b60e          move    *a0(OIMG),a14,L
          00017d30     0170  
     5592 00017d40     b5ce          move    *a14(IANIOFFY),a14
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  132
@@ -7918,7 +7918,7 @@ basketball player code                                               PAGE  132
     5634 00017fe0     8442          move    *a2,a2                  ;ISIZEX
     5635 00017ff0     1422          subk    1,a2
     5636 00018000     2602          sll     16,a2                   ;*64K
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  133
@@ -7978,7 +7978,7 @@ basketball player code                                               PAGE  133
     5681                    
     5682 00018280     8442          move    *a2,a2                  ;ISIZEX
     5683 00018290     1422          subk    1,a2
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  134
@@ -8038,7 +8038,7 @@ basketball player code                                               PAGE  134
     5729 000184e0     1422          subk    1,a2
     5730 000184f0     2602          sll     16,a2                   ;*64K
     5731 00018500     03a0          neg     a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  135
@@ -8098,7 +8098,7 @@ basketball player code                                               PAGE  135
     5770 000187a0     2603          sll     16,a3
     5771 000187b0     b264          move    a3,*a4(OXANI),L
          000187c0     01e0  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  136
@@ -8158,7 +8158,7 @@ basketball player code                                               PAGE  136
     5813 00018d20     2f8e  awngzok srl     4,a14                   ;/16
     5814 00018d30     24ce          sll     6,a14                   ;*64
     5815 00018d40     b6c0          move    *a6(ODATA_p),a0,L
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  137
@@ -8218,7 +8218,7 @@ basketball player code                                               PAGE  137
     5857 00018fe0     4001          add     a0,a1
     5858 00018ff0     45c1          sub     a14,a1
     5859 00019000     b226          move    a1,*a6(OXANI),L
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  138
@@ -8278,7 +8278,7 @@ basketball player code                                               PAGE  138
     5895 00019330                   SLEEPK  5
     5896                    
     5897 00019370     1820          movk    1,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  139
@@ -8338,7 +8338,7 @@ basketball player code                                               PAGE  139
          00019610 00000070- 
     5938 00019630     0580          move    a0,@P4CTRL
          00019640 000000a0- 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  140
@@ -8398,7 +8398,7 @@ basketball player code                                               PAGE  140
     5985 00019c80                   WL      3,refbk1
     5986 00019cb0                   WL      3,refbk2
     5987 00019ce0                   WL      3,refbk3
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  141
@@ -8458,7 +8458,7 @@ basketball player code                                               PAGE  141
     6037 0001a500     09e0          movi    -GRAVB*44,a0
          0001a510 fff97800  
     6038 0001a530     b201          move    a0,*a1(OYVEL),L
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  142
@@ -8518,7 +8518,7 @@ basketball player code                                               PAGE  142
          0001a860     00c0  
     6080                    
     6081 0001a870                   PUSH    a13
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  143
@@ -8578,7 +8578,7 @@ basketball player code                                               PAGE  143
     6123 0001abc0     b565          move    *a11(plyr_num),a5
          0001abd0     0100  
     6124                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  144
@@ -8638,7 +8638,7 @@ basketball player code                                               PAGE  144
          0001af10 00000000! 
     6163                    
     6164 0001af30                   DIE
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  145
@@ -8698,7 +8698,7 @@ basketball player code                                               PAGE  145
          0001b370     0267  
     6201                    
     6202                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  146
@@ -8758,7 +8758,7 @@ basketball player code                                               PAGE  146
          0001b7f0     fffc  
     6241 0001b800     c403          jrlt    afiynobrk2                      ;!Enough dunks?
     6242 0001b810     1441          subk    2,a1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  147
@@ -8818,7 +8818,7 @@ basketball player code                                               PAGE  147
          0001bbd0 00000000! 
     6275 0001bbf0     b700          move    *a8(plyr_shadobj_p),a0,L
          0001bc00     04d0  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  148
@@ -8878,7 +8878,7 @@ basketball player code                                               PAGE  148
     6304 0001c030     09c0          movi    P4_PID,a0
          0001c040     1300  
     6305 0001c050     0d5f          calla   obj_del1c
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  149
@@ -8938,7 +8938,7 @@ basketball player code                                               PAGE  149
     6345 0001c4d0     1409          subk    32,a9
     6346 0001c4e0     3d68          dsj     a8,afiystrtp
     6347                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  150
@@ -8998,7 +8998,7 @@ basketball player code                                               PAGE  150
     6385                    
     6386 0001c8e0     09c0          movi    AUD_4THQUARTR,a0        ;04Hth quarter
          0001c8f0     0059  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  151
@@ -9058,7 +9058,7 @@ basketball player code                                               PAGE  151
     6424                    
     6425 0001cd50     1820          movk    1,a0
     6426 0001cd60                   JSRP    stats_page
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  152
@@ -9118,7 +9118,7 @@ basketball player code                                               PAGE  152
     6460 0001d260     0780          move    a0,@kp_qscrs2+96,L
          0001d270 00004810- 
     6461                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  153
@@ -9178,7 +9178,7 @@ basketball player code                                               PAGE  153
          0001d730 000000b0- 
     6503                    
     6504 0001d750     05a0          move    @game_purchased,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  154
@@ -9238,7 +9238,7 @@ basketball player code                                               PAGE  154
     6542 0001dbc0     cb09          jrnz    afiynot2
     6543 0001dbd0                   CREATE  takepid,plyr_takeoutball
     6544 0001dc50     c007          jruc    afiytob2
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  155
@@ -9298,7 +9298,7 @@ basketball player code                                               PAGE  155
          0001e150 000001e0- 
     6579 0001e170     0d5f          calla   stick_number
          0001e180 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  156
@@ -9358,7 +9358,7 @@ basketball player code                                               PAGE  156
          0001e520     0030  
     6617 0001e530     05a1          move    @scores,a1
          0001e540 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  157
@@ -9418,7 +9418,7 @@ basketball player code                                               PAGE  157
     6650 0001e8f0     cb14          jrnz    hzigteam2_human
     6651 0001e900     05a4          move    @scores+10h,a4          ;CPU SCORE
          0001e910 00000010! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  158
@@ -9478,7 +9478,7 @@ basketball player code                                               PAGE  158
          0001ecd0     005f  
     6685 0001ece0     0d5f          calla   AUD1
          0001ecf0 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  159
@@ -9538,7 +9538,7 @@ basketball player code                                               PAGE  159
     6728                    
     6729 0001ef70     09ca          movi    TSEC*5/2,a10
          0001ef80     0084  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  160
@@ -9598,7 +9598,7 @@ basketball player code                                               PAGE  160
     6769 0001f320     09c0          movi    CLSDEAD|clockid,a0
          0001f330     2084  
     6770 0001f340     0d5f          calla   obj_del1c               ;Delete any 24 second shot clock imgs
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  161
@@ -9658,7 +9658,7 @@ basketball player code                                               PAGE  161
     6808                            .ref    winning_msg
     6809 0001f730                   CREATE0 winning_msg
     6810 0001f7a0     0300          jruc    xhxzfade
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  162
@@ -9718,7 +9718,7 @@ basketball player code                                               PAGE  162
     6859                    
     6860 00020010     b76b          move    *a11(OPLINK),a11,L
          00020020     01a0  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  163
@@ -9778,7 +9778,7 @@ basketball player code                                               PAGE  163
     6898 000203e0           bxuwturnon
     6899 000203e0                   CREATE0 score_showtvpanel
     6900 00020450           bxuwalrdyon
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  164
@@ -9838,7 +9838,7 @@ basketball player code                                               PAGE  164
     6936 00020840     0d5f          calla   print_string_C2
          00020850 00000000! 
     6937                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  165
@@ -9898,7 +9898,7 @@ basketball player code                                               PAGE  165
          00020bf0     02db  
     6982 00020c00     5600          clr     a0
     6983 00020c10     0780          move    a0,@P1CTRL,L                    ;clear p1 & p2
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  166
@@ -9958,7 +9958,7 @@ basketball player code                                               PAGE  166
          00020f70 fffffffe  
     7023 00020f90     ca09          jrz     quvd1st
     7024 00020fa0     c006          jruc    quvd2nd
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  167
@@ -10018,7 +10018,7 @@ basketball player code                                               PAGE  167
          00021290     0400  
     7063 000212a0     cbe0          jrnz    quvdgblp1
     7064 000212b0           quvdatball2
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  168
@@ -10078,7 +10078,7 @@ basketball player code                                               PAGE  168
     7099 000215e0           quvdoutlp
     7100 000215e0                   SLEEPK  1
     7101                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  169
@@ -10138,7 +10138,7 @@ basketball player code                                               PAGE  169
     7139 00021960     09c0          movi    (BUT2_M|BUT3_M)<<8|BUT2_M|BUT3_M,a0
          00021970     6060  
     7140 00021980     800a          move    a0,*a10
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  170
@@ -10198,7 +10198,7 @@ basketball player code                                               PAGE  170
     7179 00021d30     0580          move    a0,@ballflash
          00021d40 00000000! 
     7180 00021d60     0580          move    a0,@pass_off
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  171
@@ -10258,7 +10258,7 @@ basketball player code                                               PAGE  171
     7218 00022030     0780          move    a0,@P3CTRL,L                    ;p3 & p4
          00022040 00000090- 
     7219                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  172
@@ -10318,7 +10318,7 @@ basketball player code                                               PAGE  172
     7255 00022450           ketzinit_loop
     7256 00022450                   PUSH    a14
     7257 00022460     9540          move    *a10+,a0                        ;player (0-3)
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  173
@@ -10378,7 +10378,7 @@ basketball player code                                               PAGE  173
     7298 00022840     0d3f          callr   plyrtob_seekxy
          00022850     014f  
     7299 00022860     cbee          jrnz    ketzruninlp
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  174
@@ -10438,7 +10438,7 @@ basketball player code                                               PAGE  174
     7343                    
     7344 00022c50     b208          move    a0,*a8(OXVEL),L
          00022c60     0020  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  175
@@ -10498,7 +10498,7 @@ basketball player code                                               PAGE  175
     7378 00022f20     1900          movk    8,a0
     7379 00022f30     0580          move    a0,@ballsclastp
          00022f40 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  176
@@ -10558,7 +10558,7 @@ basketball player code                                               PAGE  176
     7420 00023260     c602          jrle    fqis1st                 ;Closer?
     7421 00023270     4ce8          move    a7,a8
     7422 00023280     1022          addk    1,a2                    ;2nd in team
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  177
@@ -10618,7 +10618,7 @@ basketball player code                                               PAGE  177
     7459                    
     7460 000235d0                   SLEEP   60
     7461                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  178
@@ -10678,7 +10678,7 @@ basketball player code                                               PAGE  178
     7501 00023950     1890          movk    4,b0
     7502 00023960     97c1  fqisaclp        move    *a14+,a1,L
     7503 00023970     b001          move    a0,*a1(plyr_autoctrl)
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  179
@@ -10738,7 +10738,7 @@ basketball player code                                               PAGE  179
     7547                    
     7548 00023c00     4c60          move    a3,a0
     7549 00023c10     09c1          movi    CZMID+70,a1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  180
@@ -10798,7 +10798,7 @@ basketball player code                                               PAGE  180
     7592 00023ec0     c604          jrle    fnironx
     7593 00023ed0     4dce          move    a14,a14
     7594 00023ee0     c401          jrlt    fnirnolft
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  181
@@ -10858,7 +10858,7 @@ basketball player code                                               PAGE  181
     7639                            WORD    pft_pball       ;Plyr # (0-3) who gets ball
     7640                            WORD    pft_pball2      ;P# who gets ball passed to him
     7641                            APTR    pft_bbobj       ;*Backboard/crowd object
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  182
@@ -10918,7 +10918,7 @@ basketball player code                                               PAGE  182
     7694                    zpxogblp
     7695                            movi    -1,a0
     7696                            move    a0,@ballpnum
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  183
@@ -10978,7 +10978,7 @@ basketball player code                                               PAGE  183
     7749                    
     7750                            move    *a13(pft_pball),a10     ;>Pass with turbo
     7751                            sll     4,a10                   ;*16
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  184
@@ -11038,7 +11038,7 @@ basketball player code                                               PAGE  184
     7804                            move    *a11+,a3                ;Z
     7805                            addi    300,a3
     7806                            movi    alignimg_t,a2
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  185
@@ -11098,7 +11098,7 @@ basketball player code                                               PAGE  185
     7859                    yeslz2  .equ    1095
     7860                    yeslz3  .equ    1190
     7861                    yeslz4  .equ    1284
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  186
@@ -11158,7 +11158,7 @@ basketball player code                                               PAGE  186
     7914                            add     a14,a0
     7915                            move    *a13(plyr_aligndot_p),a2,L
     7916                            move    a0,*a2(OXVAL),L
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  187
@@ -11218,7 +11218,7 @@ basketball player code                                               PAGE  187
     7966 00024350     402e          add     a1,a14                  ;+1/16
     7967 00024360     480e  rqzw250 cmp     a0,a14
     7968 00024370     c8fc          jrlo    rqzwlp1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  188
@@ -11278,7 +11278,7 @@ basketball player code                                               PAGE  188
     8014                    
     8015 000245c0     1a02  uply100 movk    16,a2                   ;Oct 4-5
     8016 000245d0     44e1          sub     a7,a1                   ;A1=SrcY-DestX
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  189
@@ -11338,7 +11338,7 @@ basketball player code                                               PAGE  189
          00024860 00000000! 
     8068 00024880     6821          rl      a1,a1
     8069 00024890     05ae          move    @HCOUNT,a14
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:35 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 basketball player code                                               PAGE  190

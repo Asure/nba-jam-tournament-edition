@@ -1,4 +1,4 @@
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:32 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    1
@@ -58,7 +58,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:32 2023
       54 00000000                   BSSX    COUNTER_MODE    ,16     ;COIN COUNTER MODE - GNP 1/17/93
       55 00000000                   BSSX    VALIDATOR       ,16     ;VALIDATOR FLAG 0 = NONE, 1 = INSTALLED - GNP 1/22/93
       56                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:32 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 initialization and interrupts                                        PAGE    2
@@ -118,7 +118,7 @@ initialization and interrupts                                        PAGE    2
       93                    
       94 00000320     0d3f          callr   dip_init                ;Initialize the dipswitches
          00000330     0006  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:32 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 initialization and interrupts                                        PAGE    3
@@ -178,7 +178,7 @@ initialization and interrupts                                        PAGE    3
      135                    
      136                    
      137 00000690       04  yqukpnum_t      .byte   4,2
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:32 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 initialization and interrupts                                        PAGE    4
@@ -238,7 +238,7 @@ initialization and interrupts                                        PAGE    4
      186                            move    *a1+,a0
      187                            jrnn    mgpxlp
      188                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:32 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 initialization and interrupts                                        PAGE    5
@@ -298,7 +298,7 @@ initialization and interrupts                                        PAGE    5
      233                    
      234                    
      235 00000a00     05a0          move    @GAMSTATE,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:32 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 initialization and interrupts                                        PAGE    6
@@ -358,7 +358,7 @@ initialization and interrupts                                        PAGE    6
      275                    
      276 00000d20     0360          dint
      277 00000d30     09c1          movi    26000/8,a1              ;>Wait on last DMA
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:32 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 initialization and interrupts                                        PAGE    7
@@ -418,7 +418,7 @@ initialization and interrupts                                        PAGE    7
      318                    
      319 00001050     0580          move    a0,@dirqdraw
          00001060 00000070- 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:32 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 initialization and interrupts                                        PAGE    8
@@ -478,7 +478,7 @@ initialization and interrupts                                        PAGE    8
      365 00001310     09e3          movi    switches_old,a3
          00001320 00000100- 
      366 00001340     09e4          movi    switches_down,a4
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:32 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 initialization and interrupts                                        PAGE    9
@@ -538,7 +538,7 @@ initialization and interrupts                                        PAGE    9
      411 00001630     1821          movk    1,a1
      412 00001640     0581          move    a1,@INTENB+DIP
          00001650 c000011a  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:32 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 initialization and interrupts                                        PAGE   10
@@ -598,7 +598,7 @@ initialization and interrupts                                        PAGE   10
      454 00001940     8c25          movb    a1,*a5
      455 00001950           c_cntr0
      456 00001950     1105          addk    8,a5
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:32 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 initialization and interrupts                                        PAGE   11
@@ -658,7 +658,7 @@ initialization and interrupts                                        PAGE   11
      505                    
      506 00001ae0           wdogbone_t
      507 00001ae0     0000          .word   0,2,0,2,2,-1    ;Watchdog feed table
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:32 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 initialization and interrupts                                        PAGE   12
@@ -718,7 +718,7 @@ initialization and interrupts                                        PAGE   12
      551                    
      552 00001dc0           badtrap31
      553 00001dc0           badtrap30
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:32 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 initialization and interrupts                                        PAGE   13
@@ -778,7 +778,7 @@ initialization and interrupts                                        PAGE   13
      606 00001ef0     0112          .word   274             ;0C0000060H -- VSBLNK   ;254 lines
      607 00001f00     0120          .word   288             ;0C0000070H -- VTOTAL
      608 00001f10     f010          .word   0f010H          ;0C0000080H -- DPYCTL   ENV|NIL|DXV|SRE|010H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:32 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 initialization and interrupts                                        PAGE   14
@@ -838,7 +838,7 @@ initialization and interrupts                                        PAGE   14
      661 00000360 00001dc0'         .long   badtrap4        ;TRAP 4
      662 00000380 00001dc0'         .long   badtrap3        ;TRAP 3
      663 000003a0 00001dc0'         .long   badtrap2        ;TRAP 2         INT2 --- EXTERNAL INTERRUPT 2
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 08:29:32 2023
+TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 initialization and interrupts                                        PAGE   15

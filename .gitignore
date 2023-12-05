@@ -1,7 +1,6 @@
-*.obj
-*.lst
-*.out
-*.map
+*.OBJ
+*.LST
+*.OUT
 *.pyc
 ROM/la*.*
 ROM/ROM*.*
