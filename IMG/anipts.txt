@@ -1,0 +1,3 @@
+Wrong animation points on many of the character sprites.
+It appears our version of load2 doesn't parse the (old?) style .img 
+It also appears imgtool updates the .img when you open it.. :)

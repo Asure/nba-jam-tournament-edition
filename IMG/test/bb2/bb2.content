@@ -1,0 +1,36 @@
+IHDR SIZX:W,SIZY:W,ANIX:W,ANIY:W,SAG:L,CTRL:W,PAL:L
+***> 2000000
+leds1.img		;TODO
+ASM> leds.tbl		;TODO
+diagp.img
+wnlp.img
+ASM> pass.tbl		;Offset fixed. Anipts fixed by imgtool. 	OK
+todd.img
+ASM> plyrseq.tbl	;Offset 0209e6c1. Anipts fixed by imgtool. 	OK
+willie.img
+willie2.img
+ASM> plyrd2seq.tbl	;offset 029a2e21. Anipts fixed by imgtool. 	OK
+todd.img
+ASM> plyrdseq.tbl	;offset 02ac6bb1. Anipts fixed by imgtool. 	OK
+willie2.img
+dunks.img
+ASM> plyrd2seq.tbl	;offset 029a2e21. Anipts fixed by imgtool. 	OK
+ASM> plyrdseq.tbl	;offset 02ac6bb1. Anipts fixed by imgtool. 	OK
+willie3.img
+ASM> plyrseq.tbl	;offset 0209e6c1. Anipts fixed by imgtool. 	OK
+ASM> layup.tbl		;offset 0377a221. Anipts fixed by imgtool. 	OK
+layups.img
+ASM> plyrseq.tbl	;fixed?
+willie4.img
+ASM> plyrseq2.tbl	;offset 038c0209. Anipts fixed by imgtool. 	OK
+ASM> plyrseq.tbl	;sane
+willie5.img
+;ASM> plyrseq.tbl	;sane
+ASM> TEXT.TBL		;fuxed. can't open the img files/upgrade m
+trogf15.img
+trogf7.img
+squadplt.img		; TODO
+ball.img		; TODO
+ASM> ball.tbl		; TODO
+courtz.img		;
+ASM> crowd.tbl		;fixed by hand. If this is OK so is the rest.

@@ -1,0 +1,153 @@
+	.DATA
+W1ST1:
+	.word   57,82,24,79
+	.long   04e97e88H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,28,1,-1,1,0
+W1ST2:
+	.word   57,82,24,79
+	.long   04ea1098H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,28,1,-1,1,0
+W1ST3:
+	.word   57,82,24,79
+	.long   04eaa2a8H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,28,1,-1,1,0
+W1ST4:
+	.word   57,82,24,79
+	.long   04eb34b8H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,27,1,-1,1,0
+W1ST5:
+	.word   57,82,24,79
+	.long   04ebc6c8H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,26,1,-1,1,0
+W2ST1:
+	.word   50,83,15,78
+	.long   04ec58d8H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,33,1,-1,2,0
+W2ST2:
+	.word   52,83,15,78
+	.long   04ecda88H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,33,1,-1,2,0
+W2ST3:
+	.word   56,83,15,78
+	.long   04ed6168H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,33,1,-1,2,0
+W2ST4:
+	.word   58,83,15,78
+	.long   04edf2a8H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,34,1,-1,2,0
+W2ST5:
+	.word   60,83,15,78
+	.long   04ee8918H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,34,1,-1,2,0
+W3ST1:
+	.word   44,81,12,78
+	.long   04ef24b8H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,32,2,-1,3,0
+W3ST2:
+	.word   46,81,13,78
+	.long   04ef9418H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,32,2,-1,3,0
+W3ST3:
+	.word   45,81,13,78
+	.long   04f00888H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,33,2,-1,3,0
+W3ST4:
+	.word   45,81,12,78
+	.long   04f07a70H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,32,2,-1,3,0
+W3ST5:
+	.word   45,81,12,78
+	.long   04f0ec58H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,32,2,-1,3,0
+W4ST1:
+	.word   53,81,18,76
+	.long   04f15e40H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,31,4,1,4,0
+W4ST2:
+	.word   52,81,18,76
+	.long   04f1e468H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,31,4,1,4,0
+W4ST3:
+	.word   54,81,18,76
+	.long   04f26808H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,32,3,1,4,0
+W4ST4:
+	.word   55,81,18,76
+	.long   04f2f0b8H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,32,3,1,4,0
+W4ST5:
+	.word   55,81,18,76
+	.long   04f37bf0H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,33,3,1,4,0
+W5ST1:
+	.word   61,78,32,75
+	.long   04f40728H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,34,2,1,5,0
+W5ST2:
+	.word   61,78,32,75
+	.long   04f49bd8H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,34,2,1,5,0
+W5ST3:
+	.word   61,78,32,75
+	.long   04f53088H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,34,2,1,5,0
+W5ST4:
+	.word   61,78,32,75
+	.long   04f5c538H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,34,2,1,5,0
+W5ST5:
+	.word   61,78,32,75
+	.long   04f659e8H
+	.word   00H
+	.long   EWILPAL
+	.word   -1,-1,-1,-32768,34,2,1,5,0
+	.TEXT
+

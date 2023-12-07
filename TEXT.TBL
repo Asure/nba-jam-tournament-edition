@@ -1,1007 +1,1007 @@
 	.DATA
 FON150:
 	.word   12,15,0,0
-	.long   03ce9d69H
+	.long   03ce9d96H
 	.word   02000H
 	.long   DUXPAL
 FON151:
 	.word   6,15,0,0
-	.long   03ce9ed1H
+	.long   03ce9efeH
 	.word   02000H
 	.long   DUXPAL
 FON152:
 	.word   12,15,0,0
-	.long   03ce9f85H
+	.long   03ce9fb2H
 	.word   02000H
 	.long   DUXPAL
 FON153:
 	.word   12,15,0,0
-	.long   03cea0edH
+	.long   03cea11aH
 	.word   02000H
 	.long   DUXPAL
 FON154:
 	.word   13,15,0,0
-	.long   03cea255H
+	.long   03cea282H
 	.word   02000H
 	.long   DUXPAL
 FON155:
 	.word   12,15,0,0
-	.long   03cea3dbH
+	.long   03cea408H
 	.word   02000H
 	.long   DUXPAL
 FON156:
 	.word   13,15,0,0
-	.long   03cea543H
+	.long   03cea570H
 	.word   02000H
 	.long   DUXPAL
 FON157:
 	.word   13,15,0,0
-	.long   03cea6c9H
+	.long   03cea6f6H
 	.word   02000H
 	.long   DUXPAL
 FON158:
 	.word   12,15,0,0
-	.long   03cea84fH
+	.long   03cea87cH
 	.word   02000H
 	.long   DUXPAL
 FON159:
 	.word   13,15,0,0
-	.long   03cea9b7H
+	.long   03cea9e4H
 	.word   02000H
 	.long   DUXPAL
 FON15A:
 	.word   11,15,0,0
-	.long   03ceab3dH
+	.long   03ceab6aH
 	.word   02000H
 	.long   DUXPAL
 FON15B:
 	.word   11,15,0,0
-	.long   03ceac87H
+	.long   03ceacb4H
 	.word   02000H
 	.long   DUXPAL
 FON15C:
 	.word   11,15,0,0
-	.long   03ceadd1H
+	.long   03ceadfeH
 	.word   02000H
 	.long   DUXPAL
 FON15CR:
 	.word   15,11,0,0
-	.long   03ceaf1bH
+	.long   03ceaf48H
 	.word   02000H
 	.long   DUXPAL
 FON15D:
 	.word   12,15,0,0
-	.long   03ceb065H
+	.long   03ceb092H
 	.word   02000H
 	.long   DUXPAL
 FON15E:
 	.word   11,15,0,0
-	.long   03ceb1cdH
+	.long   03ceb1faH
 	.word   02000H
 	.long   DUXPAL
 FON15F:
 	.word   11,15,0,0
-	.long   03ceb317H
+	.long   03ceb344H
 	.word   02000H
 	.long   DUXPAL
 FON15G:
 	.word   12,15,0,0
-	.long   03ceb461H
+	.long   03ceb48eH
 	.word   02000H
 	.long   DUXPAL
 FON15H:
 	.word   12,15,0,0
-	.long   03ceb5c9H
+	.long   03ceb5f6H
 	.word   02000H
 	.long   DUXPAL
 FON15I:
 	.word   3,15,0,0
-	.long   03ceb731H
+	.long   03ceb75eH
 	.word   02000H
 	.long   DUXPAL
 FON15J:
 	.word   10,15,0,0
-	.long   03ceb78bH
+	.long   03ceb7b8H
 	.word   02000H
 	.long   DUXPAL
 FON15K:
 	.word   12,15,0,0
-	.long   03ceb8b7H
+	.long   03ceb8e4H
 	.word   02000H
 	.long   DUXPAL
 FON15L:
 	.word   10,15,0,0
-	.long   03ceba1fH
+	.long   03ceba4cH
 	.word   02000H
 	.long   DUXPAL
 FON15M:
 	.word   16,15,0,0
-	.long   03cebb4bH
+	.long   03cebb78H
 	.word   02000H
 	.long   DUXPAL
 FON15N:
 	.word   12,15,0,0
-	.long   03cebd2bH
+	.long   03cebd58H
 	.word   02000H
 	.long   DUXPAL
 FON15O:
 	.word   12,15,0,0
-	.long   03cebe93H
+	.long   03cebec0H
 	.word   02000H
 	.long   DUXPAL
 FON15P:
 	.word   11,15,0,0
-	.long   03cebffbH
+	.long   03cec028H
 	.word   02000H
 	.long   DUXPAL
 FON15Q:
 	.word   13,17,0,0
-	.long   03cec145H
+	.long   03cec172H
 	.word   02000H
 	.long   DUXPAL
 FON15R:
 	.word   11,15,0,0
-	.long   03cec2ffH
+	.long   03cec32cH
 	.word   02000H
 	.long   DUXPAL
 FON15S:
 	.word   12,15,0,0
-	.long   03cec449H
+	.long   03cec476H
 	.word   02000H
 	.long   DUXPAL
 FON15T:
 	.word   11,15,0,0
-	.long   03cec5b1H
+	.long   03cec5deH
 	.word   02000H
 	.long   DUXPAL
 FON15U:
 	.word   11,15,0,0
-	.long   03cec6fbH
+	.long   03cec728H
 	.word   02000H
 	.long   DUXPAL
 FON15V:
 	.word   14,15,0,0
-	.long   03cec845H
+	.long   03cec872H
 	.word   02000H
 	.long   DUXPAL
 FON15W:
 	.word   16,15,0,0
-	.long   03cec9e9H
+	.long   03ceca16H
 	.word   02000H
 	.long   DUXPAL
 FON15X:
 	.word   15,15,0,0
-	.long   03cecbc9H
+	.long   03cecbf6H
 	.word   02000H
 	.long   DUXPAL
 FON15Y:
 	.word   13,15,0,0
-	.long   03cecd8bH
+	.long   03cecdb8H
 	.word   02000H
 	.long   DUXPAL
 FON15Z:
 	.word   13,15,0,0
-	.long   03cecf11H
+	.long   03cecf3eH
 	.word   02000H
 	.long   DUXPAL
 FON15and:
 	.word   13,15,0,0
-	.long   03ced097H
+	.long   03ced0c4H
 	.word   02000H
 	.long   DUXPAL
 FON15apos:
 	.word   4,6,0,0
-	.long   03ced21dH
+	.long   03ced24aH
 	.word   02000H
 	.long   DUXPAL
 FON15apos1:
 	.word   4,6,0,0
-	.long   03ced24dH
+	.long   03ced27aH
 	.word   02000H
 	.long   DUXPAL
 FON15ast:
 	.word   7,7,-2,-3
-	.long   03ced27dH
+	.long   03ced2aaH
 	.word   02000H
 	.long   DUXPAL
 FON15backsp:
 	.word   9,15,0,0
-	.long   03ced2dfH
+	.long   03ced30cH
 	.word   02000H
 	.long   DUXPAL
 FON15brackl:
 	.word   5,19,0,0
-	.long   03ced3edH
+	.long   03ced41aH
 	.word   02000H
 	.long   DUXPAL
 FON15brackr:
 	.word   5,19,0,0
-	.long   03ced4abH
+	.long   03ced4d8H
 	.word   02000H
 	.long   DUXPAL
 FON15break:
 	.word   3,15,0,0
-	.long   03ced569H
+	.long   03ced596H
 	.word   02000H
 	.long   DUXPAL
 FON15carr:
 	.word   9,5,0,0
-	.long   03ced5c3H
+	.long   03ced5f0H
 	.word   02000H
 	.long   DUXPAL
 FON15colon:
 	.word   4,11,0,-2
-	.long   03ced61dH
+	.long   03ced64aH
 	.word   02000H
 	.long   DUXPAL
 FON15comma:
 	.word   4,6,0,-10
-	.long   03ced675H
+	.long   03ced6a2H
 	.word   02000H
 	.long   DUXPAL
 FON15dash:
 	.word   7,3,0,-7
-	.long   03ced6a5H
+	.long   03ced6d2H
 	.word   02000H
 	.long   DUXPAL
 FON15doll:
 	.word   11,20,0,2
-	.long   03ced6cfH
+	.long   03ced6fcH
 	.word   02000H
 	.long   DUXPAL
 FON15engPOUN:
 	.word   11,15,0,0
-	.long   03ced887H
+	.long   03ced8b4H
 	.word   02000H
 	.long   DUXPAL
 FON15equal:
 	.word   7,8,-2,-4
-	.long   03ced9d1H
+	.long   03ced9feH
 	.word   02000H
 	.long   DUXPAL
 FON15excla:
 	.word   3,15,0,0
-	.long   03ceda41H
+	.long   03ceda6eH
 	.word   02000H
 	.long   DUXPAL
 FON15forsp:
 	.word   9,15,0,0
-	.long   03ceda9bH
+	.long   03cedac8H
 	.word   02000H
 	.long   DUXPAL
 FON15la:
 	.word   11,10,0,-5
-	.long   03cedba9H
+	.long   03cedbd6H
 	.word   02000H
 	.long   DUXPAL
 FON15lb:
 	.word   10,15,0,0
-	.long   03cedc85H
+	.long   03cedcb2H
 	.word   02000H
 	.long   DUXPAL
 FON15lc:
 	.word   8,10,0,-5
-	.long   03ceddb1H
+	.long   03cedddeH
 	.word   02000H
 	.long   DUXPAL
 FON15ld:
 	.word   11,15,0,0
-	.long   03cede51H
+	.long   03cede7eH
 	.word   02000H
 	.long   DUXPAL
 FON15le:
 	.word   10,10,0,-5
-	.long   03cedf9bH
+	.long   03cedfc8H
 	.word   02000H
 	.long   DUXPAL
 FON15less:
 	.word   6,9,-2,-4
-	.long   03cee063H
+	.long   03cee090H
 	.word   02000H
 	.long   DUXPAL
 FON15lf:
 	.word   7,20,0,1
-	.long   03cee0cfH
+	.long   03cee0fcH
 	.word   02000H
 	.long   DUXPAL
 FON15lg:
 	.word   10,15,0,-5
-	.long   03cee1e7H
+	.long   03cee214H
 	.word   02000H
 	.long   DUXPAL
 FON15lh:
 	.word   12,15,0,0
-	.long   03cee313H
+	.long   03cee340H
 	.word   02000H
 	.long   DUXPAL
 FON15li:
 	.word   3,15,0,0
-	.long   03cee47bH
+	.long   03cee4a8H
 	.word   02000H
 	.long   DUXPAL
 FON15line:
 	.word   11,3,0,-6
-	.long   03cee4d5H
+	.long   03cee502H
 	.word   02000H
 	.long   DUXPAL
 FON15lj:
 	.word   4,20,0,1
-	.long   03cee517H
+	.long   03cee544H
 	.word   02000H
 	.long   DUXPAL
 FON15lk:
 	.word   11,15,0,0
-	.long   03cee5b7H
+	.long   03cee5e4H
 	.word   02000H
 	.long   DUXPAL
 FON15ll:
 	.word   3,15,0,0
-	.long   03cee701H
+	.long   03cee72eH
 	.word   02000H
 	.long   DUXPAL
 FON15lm:
 	.word   14,10,0,-5
-	.long   03cee75bH
+	.long   03cee788H
 	.word   02000H
 	.long   DUXPAL
 FON15ln:
 	.word   11,10,0,-5
-	.long   03cee873H
+	.long   03cee8a0H
 	.word   02000H
 	.long   DUXPAL
 FON15lo:
 	.word   10,10,0,-5
-	.long   03cee94fH
+	.long   03cee97cH
 	.word   02000H
 	.long   DUXPAL
 FON15lp:
 	.word   10,14,0,-5
-	.long   03ceea17H
+	.long   03ceea44H
 	.word   02000H
 	.long   DUXPAL
 FON15lq:
 	.word   11,14,0,-5
-	.long   03ceeb2fH
+	.long   03ceeb5cH
 	.word   02000H
 	.long   DUXPAL
 FON15lr:
 	.word   7,10,0,-5
-	.long   03ceec63H
+	.long   03ceec90H
 	.word   02000H
 	.long   DUXPAL
 FON15ls:
 	.word   10,10,0,-5
-	.long   03ceecefH
+	.long   03ceed1cH
 	.word   02000H
 	.long   DUXPAL
 FON15lt:
 	.word   8,15,0,0
-	.long   03ceedb7H
+	.long   03ceede4H
 	.word   02000H
 	.long   DUXPAL
 FON15lu:
 	.word   11,10,0,-5
-	.long   03ceeea7H
+	.long   03ceeed4H
 	.word   02000H
 	.long   DUXPAL
 FON15lv:
 	.word   12,10,0,-5
-	.long   03ceef83H
+	.long   03ceefb0H
 	.word   02000H
 	.long   DUXPAL
 FON15lw:
 	.word   15,10,0,-5
-	.long   03cef073H
+	.long   03cef0a0H
 	.word   02000H
 	.long   DUXPAL
 FON15lx:
 	.word   11,10,0,-5
-	.long   03cef19fH
+	.long   03cef1ccH
 	.word   02000H
 	.long   DUXPAL
 FON15ly:
 	.word   12,14,0,-5
-	.long   03cef27bH
+	.long   03cef2a8H
 	.word   02000H
 	.long   DUXPAL
 FON15lz:
 	.word   11,10,0,-5
-	.long   03cef3cbH
+	.long   03cef3f8H
 	.word   02000H
 	.long   DUXPAL
 FON15more:
 	.word   6,9,-3,-4
-	.long   03cef4a7H
+	.long   03cef4d4H
 	.word   02000H
 	.long   DUXPAL
 FON15paren2l:
 	.word   7,19,0,2
-	.long   03cef513H
+	.long   03cef540H
 	.word   02000H
 	.long   DUXPAL
 FON15paren2r:
 	.word   7,19,0,2
-	.long   03cef61dH
+	.long   03cef64aH
 	.word   02000H
 	.long   DUXPAL
 FON15parenl:
 	.word   6,17,0,1
-	.long   03cef727H
+	.long   03cef754H
 	.word   02000H
 	.long   DUXPAL
 FON15parenr:
 	.word   6,17,0,1
-	.long   03cef7f3H
+	.long   03cef820H
 	.word   02000H
 	.long   DUXPAL
 FON15perc:
 	.word   13,15,0,0
-	.long   03cef8bfH
+	.long   03cef8ecH
 	.word   02000H
 	.long   DUXPAL
 FON15period:
 	.word   4,4,0,-11
-	.long   03cefa45H
+	.long   03cefa72H
 	.word   02000H
 	.long   DUXPAL
 FON15plus:
 	.word   7,8,-2,-4
-	.long   03cefa65H
+	.long   03cefa92H
 	.word   02000H
 	.long   DUXPAL
 FON15poun:
 	.word   12,10,0,-2
-	.long   03cefad5H
+	.long   03cefb02H
 	.word   02000H
 	.long   DUXPAL
 FON15quest:
 	.word   10,15,0,0
-	.long   03cefbc5H
+	.long   03cefbf2H
 	.word   02000H
 	.long   DUXPAL
 FON15quote:
 	.word   10,6,0,1
-	.long   03cefcf1H
+	.long   03cefd1eH
 	.word   02000H
 	.long   DUXPAL
 FON15rquote:
 	.word   10,6,0,1
-	.long   03cefd69H
+	.long   03cefd96H
 	.word   02000H
 	.long   DUXPAL
 FON15semicol:
 	.word   4,13,0,-2
-	.long   03cefde1H
+	.long   03cefe0eH
 	.word   02000H
 	.long   DUXPAL
 FONT7A:
 	.word   6,8,0,0
-	.long   03cefe49H
+	.long   03cf5eedH
 	.word   01000H
 	.long   DUXPAL
 FONT7B:
 	.word   6,8,0,0
-	.long   03cefe79H
+	.long   03cf5f1dH
 	.word   01000H
 	.long   DUXPAL
 FONT7C:
 	.word   6,8,0,0
-	.long   03cefea9H
+	.long   03cf5f4dH
 	.word   01000H
 	.long   DUXPAL
 FONT7D:
 	.word   6,8,0,0
-	.long   03cefed9H
+	.long   03cf5f7dH
 	.word   01000H
 	.long   DUXPAL
 FONT7E:
 	.word   6,8,0,0
-	.long   03ceff09H
+	.long   03cf5fadH
 	.word   01000H
 	.long   DUXPAL
 FONT7F:
 	.word   6,8,0,0
-	.long   03ceff39H
+	.long   03cf5fddH
 	.word   01000H
 	.long   DUXPAL
 FONT7G:
 	.word   6,8,0,0
-	.long   03ceff69H
+	.long   03cf600dH
 	.word   01000H
 	.long   DUXPAL
 FONT7H:
 	.word   6,8,0,0
-	.long   03ceff99H
+	.long   03cf603dH
 	.word   01000H
 	.long   DUXPAL
 FONT7I:
 	.word   3,8,0,0
-	.long   03ceffc9H
+	.long   03cf606dH
 	.word   01000H
 	.long   DUXPAL
 FONT7J:
 	.word   6,8,0,0
-	.long   03ceffe1H
+	.long   03cf6085H
 	.word   01000H
 	.long   DUXPAL
 FONT7K:
 	.word   6,8,0,0
-	.long   03cf0011H
+	.long   03cf60b5H
 	.word   01000H
 	.long   DUXPAL
 FONT7L:
 	.word   5,8,0,0
-	.long   03cf0041H
+	.long   03cf60e5H
 	.word   01000H
 	.long   DUXPAL
 FONT7M:
 	.word   10,8,0,0
-	.long   03cf0069H
+	.long   03cf610dH
 	.word   01000H
 	.long   DUXPAL
 FONT7N:
 	.word   7,8,0,0
-	.long   03cf00b9H
+	.long   03cf615dH
 	.word   01000H
 	.long   DUXPAL
 FONT7O:
 	.word   7,8,0,0
-	.long   03cf00f1H
+	.long   03cf6195H
 	.word   01000H
 	.long   DUXPAL
 FONT7P:
 	.word   6,8,0,0
-	.long   03cf0129H
+	.long   03cf61cdH
 	.word   01000H
 	.long   DUXPAL
 FONT7Q:
 	.word   7,10,0,0
-	.long   03cf0159H
+	.long   03cf61fdH
 	.word   01000H
 	.long   DUXPAL
 FONT7R:
 	.word   6,8,0,0
-	.long   03cf019fH
+	.long   03cf6243H
 	.word   01000H
 	.long   DUXPAL
 FONT7S:
 	.word   6,8,0,0
-	.long   03cf01cfH
+	.long   03cf6273H
 	.word   01000H
 	.long   DUXPAL
 FONT7T:
 	.word   6,8,0,0
-	.long   03cf01ffH
+	.long   03cf62a3H
 	.word   01000H
 	.long   DUXPAL
 FONT7U:
 	.word   6,8,0,0
-	.long   03cf022fH
+	.long   03cf62d3H
 	.word   01000H
 	.long   DUXPAL
 FONT7V:
 	.word   7,8,0,0
-	.long   03cf025fH
+	.long   03cf6303H
 	.word   01000H
 	.long   DUXPAL
 FONT7W:
 	.word   11,8,0,0
-	.long   03cf0297H
+	.long   03cf633bH
 	.word   01000H
 	.long   DUXPAL
 FONT7X:
 	.word   7,8,0,0
-	.long   03cf02efH
+	.long   03cf6393H
 	.word   01000H
 	.long   DUXPAL
 FONT7Y:
 	.word   6,8,0,0
-	.long   03cf0327H
+	.long   03cf63cbH
 	.word   01000H
 	.long   DUXPAL
 FONT7Z:
 	.word   6,8,0,0
-	.long   03cf0357H
+	.long   03cf63fbH
 	.word   01000H
 	.long   DUXPAL
 FONT7a:
 	.word   7,6,0,-2
-	.long   03cf0387H
+	.long   03cf642bH
 	.word   01000H
 	.long   DUXPAL
 FONT7b:
 	.word   6,8,0,0
-	.long   03cf03b1H
+	.long   03cf6455H
 	.word   01000H
 	.long   DUXPAL
 FONT7c:
 	.word   6,6,0,-2
-	.long   03cf03e1H
+	.long   03cf6485H
 	.word   01000H
 	.long   DUXPAL
 FONT7d:
 	.word   7,8,0,0
-	.long   03cf0405H
+	.long   03cf64a9H
 	.word   01000H
 	.long   DUXPAL
 FONT7e:
 	.word   6,6,0,-2
-	.long   03cf043dH
+	.long   03cf64e1H
 	.word   01000H
 	.long   DUXPAL
 FONT7f:
 	.word   4,10,0,0
-	.long   03cf0461H
+	.long   03cf6505H
 	.word   01000H
 	.long   DUXPAL
 FONT7g:
 	.word   6,8,0,-2
-	.long   03cf0489H
+	.long   03cf652dH
 	.word   01000H
 	.long   DUXPAL
 FONT7h:
 	.word   6,8,0,0
-	.long   03cf04b9H
+	.long   03cf655dH
 	.word   01000H
 	.long   DUXPAL
 FONT7i:
 	.word   3,8,0,0
-	.long   03cf04e9H
+	.long   03cf658dH
 	.word   01000H
 	.long   DUXPAL
 FONT7j:
 	.word   3,10,-28,32
-	.long   03cf0501H
+	.long   03cf65a5H
 	.word   01000H
 	.long   DUXPAL
 FONT7k:
 	.word   7,8,0,0
-	.long   03cf051fH
+	.long   03cf65c3H
 	.word   01000H
 	.long   DUXPAL
 FONT7l:
 	.word   3,8,0,0
-	.long   03cf0557H
+	.long   03cf65fbH
 	.word   01000H
 	.long   DUXPAL
 FONT7m:
 	.word   11,6,0,-2
-	.long   03cf056fH
+	.long   03cf6613H
 	.word   01000H
 	.long   DUXPAL
 FONT7n:
 	.word   7,6,0,-2
-	.long   03cf05b1H
+	.long   03cf6655H
 	.word   01000H
 	.long   DUXPAL
 FONT7o:
 	.word   6,6,0,-2
-	.long   03cf05dbH
+	.long   03cf667fH
 	.word   01000H
 	.long   DUXPAL
 FONT7p:
 	.word   6,8,0,-2
-	.long   03cf05ffH
+	.long   03cf66a3H
 	.word   01000H
 	.long   DUXPAL
 FONT7q:
 	.word   7,8,0,-2
-	.long   03cf062fH
+	.long   03cf66d3H
 	.word   01000H
 	.long   DUXPAL
 FONT7r:
 	.word   5,6,0,-2
-	.long   03cf0667H
+	.long   03cf670bH
 	.word   01000H
 	.long   DUXPAL
 FONT7s:
 	.word   6,6,0,-2
-	.long   03cf0685H
+	.long   03cf6729H
 	.word   01000H
 	.long   DUXPAL
 FONT7t:
 	.word   5,8,0,0
-	.long   03cf06a9H
+	.long   03cf674dH
 	.word   01000H
 	.long   DUXPAL
 FONT7u:
 	.word   7,6,0,-2
-	.long   03cf06d1H
+	.long   03cf6775H
 	.word   01000H
 	.long   DUXPAL
 FONT7v:
 	.word   6,6,0,-2
-	.long   03cf06fbH
+	.long   03cf679fH
 	.word   01000H
 	.long   DUXPAL
 FONT71:
 	.word   4,8,0,0
-	.long   03cf071fH
+	.long   03cf67c3H
 	.word   01000H
 	.long   DUXPAL
 FONT72:
 	.word   6,8,0,0
-	.long   03cf073fH
+	.long   03cf67e3H
 	.word   01000H
 	.long   DUXPAL
 FONT73:
 	.word   6,8,0,0
-	.long   03cf076fH
+	.long   03cf6813H
 	.word   01000H
 	.long   DUXPAL
 FONT74:
 	.word   6,8,0,0
-	.long   03cf079fH
+	.long   03cf6843H
 	.word   01000H
 	.long   DUXPAL
 FONT75:
 	.word   6,8,0,0
-	.long   03cf07cfH
+	.long   03cf6873H
 	.word   01000H
 	.long   DUXPAL
 FONT76:
 	.word   6,8,0,0
-	.long   03cf07ffH
+	.long   03cf68a3H
 	.word   01000H
 	.long   DUXPAL
 FONT77:
 	.word   6,8,0,0
-	.long   03cf082fH
+	.long   03cf68d3H
 	.word   01000H
 	.long   DUXPAL
 FONT78:
 	.word   6,8,0,0
-	.long   03cf085fH
+	.long   03cf6903H
 	.word   01000H
 	.long   DUXPAL
 FONT79:
 	.word   6,8,0,0
-	.long   03cf088fH
+	.long   03cf6933H
 	.word   01000H
 	.long   DUXPAL
 FONT70:
 	.word   6,8,0,0
-	.long   03cf08bfH
+	.long   03cf6963H
 	.word   01000H
 	.long   DUXPAL
 FONT7excla:
 	.word   3,8,0,0
-	.long   03cf08efH
+	.long   03cf6993H
 	.word   01000H
 	.long   DUXPAL
 FONT7pound:
 	.word   10,8,0,0
-	.long   03cf0907H
+	.long   03cf69abH
 	.word   01000H
 	.long   DUXPAL
 FONT7doll:
 	.word   6,9,0,1
-	.long   03cf0957H
+	.long   03cf69fbH
 	.word   01000H
 	.long   DUXPAL
 FONT7percen:
 	.word   11,8,0,0
-	.long   03cf098dH
+	.long   03cf6a31H
 	.word   01000H
 	.long   DUXPAL
 FONT7and:
 	.word   7,8,0,0
-	.long   03cf09e5H
+	.long   03cf6a89H
 	.word   01000H
 	.long   DUXPAL
 FONT7ast:
 	.word   7,8,1,-1
-	.long   03cf0a1dH
+	.long   03cf6ac1H
 	.word   01000H
 	.long   DUXPAL
 FONT7parenl:
 	.word   3,10,0,1
-	.long   03cf0a55H
+	.long   03cf6af9H
 	.word   01000H
 	.long   DUXPAL
 FONT7parenr:
 	.word   3,10,0,1
-	.long   03cf0a73H
+	.long   03cf6b17H
 	.word   01000H
 	.long   DUXPAL
 FONT7dash:
 	.word   5,2,0,-4
-	.long   03cf0a91H
+	.long   03cf6b35H
 	.word   01000H
 	.long   DUXPAL
 FONT7line:
 	.word   6,2,0,-6
-	.long   03cf0a9bH
+	.long   03cf6b3fH
 	.word   01000H
 	.long   DUXPAL
 FONT7equal:
 	.word   5,5,0,-2
-	.long   03cf0aa7H
+	.long   03cf6b4bH
 	.word   01000H
 	.long   DUXPAL
 FONT7plus:
 	.word   6,6,0,-2
-	.long   03cf0ac0H
+	.long   03cf6b64H
 	.word   01000H
 	.long   DUXPAL
 FONT7bracl:
 	.word   3,10,0,0
-	.long   03cf0ae4H
+	.long   03cf6b88H
 	.word   01000H
 	.long   DUXPAL
 FONT7bracr:
 	.word   3,10,0,0
-	.long   03cf0b02H
+	.long   03cf6ba6H
 	.word   01000H
 	.long   DUXPAL
 FONT7backsp:
 	.word   5,8,0,0
-	.long   03cf0b20H
+	.long   03cf6bc4H
 	.word   01000H
 	.long   DUXPAL
 FONT7paren2l:
 	.word   4,10,0,0
-	.long   03cf0b48H
+	.long   03cf6becH
 	.word   01000H
 	.long   DUXPAL
 FONT7paren2r:
 	.word   4,10,0,0
-	.long   03cf0b70H
+	.long   03cf6c14H
 	.word   01000H
 	.long   DUXPAL
 FONT7break:
 	.word   3,8,0,0
-	.long   03cf0b98H
+	.long   03cf6c3cH
 	.word   01000H
 	.long   DUXPAL
 FONT7semicol:
 	.word   3,8,0,0
-	.long   03cf0bb0H
+	.long   03cf6c54H
 	.word   01000H
 	.long   DUXPAL
 FONT7apost:
 	.word   3,4,0,0
-	.long   03cf0bc8H
+	.long   03cf6c6cH
 	.word   01000H
 	.long   DUXPAL
 FONT7colon:
 	.word   3,6,0,-1
-	.long   03cf0bd4H
+	.long   03cf6c78H
 	.word   01000H
 	.long   DUXPAL
 FONT7quote:
 	.word   6,4,0,0
-	.long   03cf0be6H
+	.long   03cf6c8aH
 	.word   01000H
 	.long   DUXPAL
 FONT7comma:
 	.word   3,4,0,-5
-	.long   03cf0bfeH
+	.long   03cf6ca2H
 	.word   01000H
 	.long   DUXPAL
 FONT7period:
 	.word   3,2,0,-6
-	.long   03cf0c0aH
+	.long   03cf6caeH
 	.word   01000H
 	.long   DUXPAL
 FONT7forsp:
 	.word   5,8,0,0
-	.long   03cf0c10H
+	.long   03cf6cb4H
 	.word   01000H
 	.long   DUXPAL
 FONT7less:
 	.word   4,7,0,0
-	.long   03cf0c38H
+	.long   03cf6cdcH
 	.word   01000H
 	.long   DUXPAL
 FONT7more:
 	.word   5,10,0,0
-	.long   03cf0c54H
+	.long   03cf6cf8H
 	.word   01000H
 	.long   DUXPAL
 FONT7quest:
 	.word   6,8,0,0
-	.long   03cf0c86H
+	.long   03cf6d2aH
 	.word   01000H
 	.long   DUXPAL
 SQUD_1:
 	.word   36,20,18,0
-	.long   03cf0cb6H
+	.long   03cf6d5aH
 	.word   05000H
 	.long   SQTR_B_P
 SQUD_2:
 	.word   36,20,18,0
-	.long   03cf1ac6H
+	.long   03cf7b6aH
 	.word   05000H
 	.long   SQTR_R_P
 SQUD_3:
 	.word   36,20,18,0
-	.long   03cf28d6H
+	.long   03cf897aH
 	.word   05000H
 	.long   SQTR_B_P
 SQUD_4:
 	.word   36,20,18,0
-	.long   03cf36e6H
+	.long   03cf978aH
 	.word   05000H
 	.long   SQTR_B_P
 SQUD_5:
 	.word   36,20,18,0
-	.long   03cf44f6H
+	.long   03cfa59aH
 	.word   05000H
 	.long   SQTR_B_P
 SQUD_6:
 	.word   36,20,18,0
-	.long   03cf5306H
+	.long   03cfb3aaH
 	.word   05000H
 	.long   SQTR_B_P
 SQUD_7:
 	.word   36,20,18,0
-	.long   03cf6116H
+	.long   03cfc1baH
 	.word   05000H
 	.long   SQTR_B_P
 SQUD_8:
 	.word   36,20,18,0
-	.long   03cf6f26H
+	.long   03cfcfcaH
 	.word   05000H
 	.long   SQTR_B_P
 SQUD_9:
 	.word   36,20,18,0
-	.long   03cf7d36H
+	.long   03cfdddaH
 	.word   05000H
 	.long   SQTR_B_P
 SQUD_10:
 	.word   36,20,18,0
-	.long   03cf8b46H
+	.long   03cfebeaH
 	.word   05000H
 	.long   SQTR_B_P
 SQUD_11:
 	.word   36,20,18,0
-	.long   03cf9956H
+	.long   03cff9faH
 	.word   05000H
 	.long   SQTR_B_P
 SQUD_12:
 	.word   36,20,18,0
-	.long   03cfa766H
+	.long   03d0080aH
 	.word   05000H
 	.long   SQTR_B_P
 SQUD_13:
 	.word   36,20,18,0
-	.long   03cfb576H
+	.long   03d0161aH
 	.word   05000H
 	.long   SQTR_B_P
 SQUD_14:
 	.word   36,20,18,0
-	.long   03cfc386H
+	.long   03d0242aH
 	.word   05000H
 	.long   SQTR_B_P
 SQUD_15:
 	.word   36,20,18,0
-	.long   03cfd196H
+	.long   03d0323aH
 	.word   05000H
 	.long   SQTR_B_P
 SQUD_16:
 	.word   36,20,18,0
-	.long   03cfdfa6H
+	.long   03d0404aH
 	.word   05000H
 	.long   SQTR_B_P
 SQUD_17:
 	.word   36,20,18,0
-	.long   03cfedb6H
+	.long   03d04e5aH
 	.word   05000H
 	.long   SQTR_B_P
 SQUD_18:
 	.word   36,20,18,0
-	.long   03cffbc6H
+	.long   03d05c6aH
 	.word   05000H
 	.long   SQTR_B_P
 SQUD_19:
 	.word   36,20,18,0
-	.long   03d009d6H
+	.long   03d06a7aH
 	.word   05000H
 	.long   SQTR_B_P
 SQUD_20:
 	.word   36,20,18,0
-	.long   03d017e6H
+	.long   03d0788aH
 	.word   05000H
 	.long   SQTR_B_P
 	.TEXT

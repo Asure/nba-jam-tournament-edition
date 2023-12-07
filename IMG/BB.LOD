@@ -163,6 +163,7 @@ BALL.IMG
 IHDR SIZX:W,SIZY:W,ANIX:W,ANIY:W,SAG:L,CTRL:W,PAL:L,PWRD1:W,PWRD2:W,PWRD3:W,PT0X:W,PT2X:W,PT2Y:W,PT3X:W,PT3Y:W,PT5X:W
 WST.IMG
 ASM> STAND.TBL
+***> 04ea43f0
 ---> W1ST1,W1ST2,W1ST3,W1ST4,W1ST5
 ---> W2ST1,W2ST2,W2ST3,W2ST4,W2ST5
 ---> W3ST1,W3ST2,W3ST3,W3ST4,W3ST5
@@ -172,6 +173,7 @@ ASM> STAND.TBL
 IHDR SIZX:W,SIZY:W,ANIX:W,ANIY:W,SAG:L,CTRL:W,PAL:L,PWRD1:W,PWRD2:W,PWRD3:W,PT0X:W
 ASM> IMGTBL.ASM
 REFTIP.IMG
+***> 04f7b400
 ---> reftip1,reftip10,reftip11,reftip12,reftip13,reftip14,reftip15,reftip16
 ---> reftip2,reftip3,reftip4,reftip5,reftip6,reftip7,reftip8,reftip9,refbk1
 ---> refbk2,refbk3,refbk4,refbk5,refbk6,refbk7,refbk8,refsqt5,refsqt4
@@ -186,6 +188,7 @@ BALLTIME.IMG
 ---> t1111,tx100,tx110,tx111
 ---> txx10,txx11,txxx1
 TVSCORE.IMG
+***> 05033a66
 ---> BERAN,BOON,BOOTY,MARTINEZ,PENACHO
 ---> DABEL,VOGEL
 ---> DAVIS
@@ -213,6 +216,7 @@ TVSCORE.IMG
 ---> TURMELL
 ---> RIVETT
 ---> LIPTAK
+***> 05051ab4
 ---> DoubleOT,TripleOT,endof1,endof3,endof4,halftime
 ---> shotclok,quarter,start,insert,colon,cpu,timerlow
 ---> one,two,three,four,freeply,crplate,crplate2
@@ -253,6 +257,7 @@ COF>
 CON>
 ---> S_LED_0r
 TVSCORE2.IMG
+***> 050aca63
 ---> MCDAN,WILLIS,BROWN,GAMBLE,MOURN,ARMSTR,KUKOC,NANCE,JACK,MASH,ROGERS
 ---> DUMARS,RODMAN,HUNTER,WEBBER,MAXWELL,HORRY,SMITS,SEALY,ROBERTS,PEELER
 ---> CAMPBELL,MINER,BAKER,DAY,RIDER,CMORRIS,MASON,STARKS,WEATH
@@ -269,6 +274,8 @@ SPARKS.IMG
 ASM> IMGTBL.ASM
 ---> spark2,spark3,spark4,spark5,spark1
 HOOP.IMG
+; was old style
+***> 050C38d5
 ---> back2,back3,back4,back5,back6
 ---> rim1f,rim1b,rim2f,rim2b,rim3f,rim3b,rimbase,rim4f,rim4b
 ---> hoopbot,hooptop
@@ -495,6 +502,7 @@ INFOWIN.IMG
 IHDR SIZX:W,SIZY:W,ANIX:W,ANIY:W,SAG:L,CTRL:W,PAL:L
 ARROWS.IMG
 ASM> ARROW.TBL
+***> 540afa4
 ---> arrow1l,arrow1r,arrow2l,arrow2r,arrow3l,arrow3r,arrow4l,arrow4r
 ---> arrow1t,arrow2t,arrow3t,arrow4t
 ---> arrow1t2
@@ -504,6 +512,7 @@ ASM> ARROW.TBL
 ;
 CITNAMES.IMG
 ASM> CITY.TBL
+***> 05411624
 ---> ATL,BOST,CHAR,CHI,CLEV,DAL,DEN,DET,GOLDN,HOU,IND
 ---> LA_CLIP,LA_LAKS
 ---> MIAMI,MILW,MINN,NJ,NY,ORL,PHIL,PHX,PORT,SAC,SANANT,SEA,UTAH,WASH

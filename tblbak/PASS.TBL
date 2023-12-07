@@ -1,0 +1,75 @@
+	.DATA
+W2NLPR1:
+	.word   68,84,15,79
+	.long   0202439bH
+	.word   00H
+	.long   WILPAL
+	.word   -1,-1,-1,-32768,37,1,-1,1,0
+W2NLPR2:
+	.word   78,82,17,77
+	.long   0202f61bH
+	.word   00H
+	.long   WILPAL
+	.word   -1,-1,-1,-32768,37,0,-1,1,0
+W2NLPR3:
+	.word   85,79,16,74
+	.long   0203bdfbH
+	.word   00H
+	.long   WILPAL
+	.word   -1,-1,-1,-32768,38,1,-1,1,0
+W2NLPL1:
+	.word   49,83,15,78
+	.long   02048fd3H
+	.word   00H
+	.long   WILPAL
+	.word   -1,-1,-1,-32768,32,1,-1,4,0
+W2NLPL2:
+	.word   50,81,15,76
+	.long   02050eebH
+	.word   00H
+	.long   WILPAL
+	.word   -1,-1,-1,-32768,30,1,-1,4,0
+W2NLPL3:
+	.word   51,83,15,78
+	.long   02058d7bH
+	.word   00H
+	.long   WILPAL
+	.word   -1,-1,-1,-32768,29,5,-1,4,0
+W4NLPR1:
+	.word   48,85,16,79
+	.long   020611c3H
+	.word   00H
+	.long   WILPAL
+	.word   -1,-1,-1,-32768,32,4,1,2,0
+W4NLPR2:
+	.word   48,83,16,77
+	.long   02069143H
+	.word   00H
+	.long   WILPAL
+	.word   -1,-1,-1,-32768,31,3,1,2,0
+W4NLPR3:
+	.word   47,82,16,76
+	.long   02070dc3H
+	.word   00H
+	.long   WILPAL
+	.word   -1,-1,-1,-32768,29,4,1,2,0
+W4NLPL1:
+	.word   65,81,17,75
+	.long   02078633H
+	.word   00H
+	.long   WILPAL
+	.word   -1,-1,-1,-16384,32,2,1,4,0
+W4NLPL2:
+	.word   76,81,17,75
+	.long   02082abbH
+	.word   00H
+	.long   WILPAL
+	.word   -1,-1,-1,-16384,33,2,1,4,0
+W4NLPL3:
+	.word   95,83,17,77
+	.long   0208eb1bH
+	.word   00H
+	.long   WILPAL
+	.word   -1,-1,-1,-16384,37,7,1,4,0
+	.TEXT
+

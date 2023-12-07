@@ -2209,7 +2209,7 @@ ackkHDRS:
 	.long	055099E7H
 	.word	03000H
 	.word	84,36
-	.long	0585D723H
+	.long	0585e853H
 	.word	05000H
 	.word	8,28
 	.long	0550F19FH

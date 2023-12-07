@@ -1,0 +1,17 @@
+GLO> IMGTBL.GLO
+***> 3e0a000
+;03e01e15H
+PON>
+IHDR SIZX:W,SIZY:W,ANIX:W,ANIY:W,SAG:L,CTRL:W,PAL:L
+;
+ASM> mugshot.tbl		; OK
+nmugs.img
+mugshots.img
+mugshot3.img
+GLO> IMGTBL3.GLO
+ASM> plyrhd3.tbl		; offset ***> 042b09b8 OK
+HDS8.img
+
+
+
+

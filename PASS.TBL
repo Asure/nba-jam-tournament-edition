@@ -1,75 +1,75 @@
 	.DATA
 W2NLPR1:
 	.word   68,84,15,79
-	.long   0202439bH
+	.long   020248d9H
 	.word   00H
 	.long   WILPAL
-	.word   -1,-1,-1,-32768,37,1,-1,1,0
+	.word   64,26,1,-32768,37,1,-1,1,0
 W2NLPR2:
 	.word   78,82,17,77
-	.long   0202f61bH
+	.long   0202fb59H
 	.word   00H
 	.long   WILPAL
-	.word   -1,-1,-1,-32768,37,0,-1,1,0
+	.word   75,22,3,-32768,37,0,-1,1,0
 W2NLPR3:
 	.word   85,79,16,74
-	.long   0203bdfbH
+	.long   0203c339H
 	.word   00H
 	.long   WILPAL
-	.word   -1,-1,-1,-32768,38,1,-1,1,0
+	.word   81,15,6,-32768,38,1,-1,1,0
 W2NLPL1:
 	.word   49,83,15,78
-	.long   02048fd3H
+	.long   02049511H
 	.word   00H
 	.long   WILPAL
-	.word   -1,-1,-1,-32768,32,1,-1,4,0
+	.word   16,17,-1,-32768,32,1,-1,4,0
 W2NLPL2:
 	.word   50,81,15,76
-	.long   02050eebH
+	.long   02051429H
 	.word   00H
 	.long   WILPAL
-	.word   -1,-1,-1,-32768,30,1,-1,4,0
+	.word   16,9,-3,-32768,30,1,-1,4,0
 W2NLPL3:
 	.word   51,83,15,78
-	.long   02058d7bH
+	.long   020592b9H
 	.word   00H
 	.long   WILPAL
-	.word   -1,-1,-1,-32768,29,5,-1,4,0
+	.word   -1,12,-6,-32768,29,5,-1,4,0
 W4NLPR1:
 	.word   48,85,16,79
-	.long   020611c3H
+	.long   02061701H
 	.word   00H
 	.long   WILPAL
-	.word   -1,-1,-1,-32768,32,4,1,2,0
+	.word   27,32,1,-32768,32,4,1,2,0
 W4NLPR2:
 	.word   48,83,16,77
-	.long   02069143H
+	.long   02069681H
 	.word   00H
 	.long   WILPAL
-	.word   -1,-1,-1,-32768,31,3,1,2,0
+	.word   20,25,4,-32768,31,3,1,2,0
 W4NLPR3:
 	.word   47,82,16,76
-	.long   02070dc3H
+	.long   02071301H
 	.word   00H
 	.long   WILPAL
-	.word   -1,-1,-1,-32768,29,4,1,2,0
+	.word   6,17,8,-32768,29,4,1,2,0
 W4NLPL1:
 	.word   65,81,17,75
-	.long   02078633H
+	.long   02078b71H
 	.word   00H
 	.long   WILPAL
-	.word   -1,-1,-1,-16384,32,2,1,4,0
+	.word   62,29,-1,-16384,32,2,1,4,0
 W4NLPL2:
 	.word   76,81,17,75
-	.long   02082abbH
+	.long   02082ff9H
 	.word   00H
 	.long   WILPAL
-	.word   -1,-1,-1,-16384,33,2,1,4,0
+	.word   76,22,-1,-16384,33,2,1,4,0
 W4NLPL3:
 	.word   95,83,17,77
-	.long   0208eb1bH
+	.long   0208f059H
 	.word   00H
 	.long   WILPAL
-	.word   -1,-1,-1,-16384,37,7,1,4,0
+	.word   98,10,-1,-16384,37,7,1,4,0
 	.TEXT
 
