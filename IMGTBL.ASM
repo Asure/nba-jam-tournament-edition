@@ -1688,23 +1688,23 @@ spark1:
 	.long   spark_p
 back2:
 	.word   28,78,-64,3
-	.long   050b88b3H
-	.word   06000H
+	.long   050c38d5H
+	.word   07000H
 	.long   HOOP_p
 back3:
 	.word   27,78,-64,3
-	.long   050bbbe3H
-	.word   06000H
+	.long   050c748dH
+	.word   07000H
 	.long   HOOP_p
 back4:
 	.word   26,78,-64,3
-	.long   050bed3fH
-	.word   06000H
+	.long   050cae23H
+	.word   07000H
 	.long   HOOP_p
 back5:
 	.word   25,78,-64,3
-	.long   050c1cc7H
-	.word   06000H
+	.long   050ce597H
+	.word   07000H
 	.long   HOOP_p
 back6:
 	.word   23,78,-64,3
@@ -1758,13 +1758,13 @@ rim4b:
 	.long   HOOP_p
 hoopbot:
 	.word   33,105,65,-92
-	.long   050cd39cH
+	.long   050dab42H
 	.word   07000H
 	.long   HOOP_p
 hooptop:
 	.word   123,74,61,-13
-	.long   050d325bH
-	.word   06000H
+	.long   050e0a01H
+	.word   07000H
 	.long   HOOP_p
 swish1b:
 	.word   25,18,-1,0
@@ -2753,12 +2753,12 @@ PRESSTURB:
 	.long   TURBO_P
 selectbox:
 	.word   87,40,43,0
-	.long   0516b6cbH
+	.long   05182d13H
 	.word   01000H
 	.long   selpal
 CENTERBAR:
 	.word   6,40,3,0
-	.long   0516c463H
+	.long   05183aabH
 	.word   06000H
 	.long   METLPALC
 TopTenred:

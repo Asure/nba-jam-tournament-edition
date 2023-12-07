@@ -6,3 +6,6 @@ gmake -m
 cd rom
 ff8
 cd ..
+del *.lst
+del *.obj
+del mc*.*
