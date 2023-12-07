@@ -1,4 +1,4 @@
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:25 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:27 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    1
@@ -58,7 +58,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:25 2023
       54                    
       55                    
       56 00000000            SUBR   snd_reset
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:25 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:27 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 sound processor                                                      PAGE    2
@@ -118,7 +118,7 @@ sound processor                                                      PAGE    2
       96 000002c0     cb3f          jrnz    nvosx                   ;Quiet?
       97                    
       98 000002d0     8402          move    *a0,a2                  ;Get priority word
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:25 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:27 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 sound processor                                                      PAGE    3
@@ -178,7 +178,7 @@ sound processor                                                      PAGE    3
      147 00000540     2c62          srl     SR_CHANNEL,a2           ;Extract channel bits
      148 00000550     24e2          sll     7,a2                    ;*SNDSIZ
      149 00000560     0b22          addi    SNDSTR,a2               ;+Base
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:25 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:27 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 sound processor                                                      PAGE    4
@@ -238,7 +238,7 @@ sound processor                                                      PAGE    4
      193 00000830     9443  sud2    move    *a2+,a3                 ;Get next rom table entry
      194 00000840     cb0e          jrnz    sud8                    ;Another snd?
      195                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:25 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:27 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 sound processor                                                      PAGE    5
@@ -298,7 +298,7 @@ sound processor                                                      PAGE    5
      239                    
      240 00000a60     2703          sll     32-8,a3
      241 00000a70     2d03          srl     32-8,a3
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:25 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:27 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 sound processor                                                      PAGE    6
@@ -358,7 +358,7 @@ sound processor                                                      PAGE    6
      286 00000c40     5621          CLR     A1
      287 00000c50     03e1          NOT     A1
      288 00000c60     0d5f          CALLA   KILALL                  ;WASTE ANY OTHER FADERS
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:25 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:27 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 sound processor                                                      PAGE    7
@@ -418,7 +418,7 @@ sound processor                                                      PAGE    7
      339 00001230     f8ff  SOUNDOFF        .WORD   0F0FFH|0800H,001H,08000H,0      ;TURN SOUND SIDE OFF
      340 00001270     fbff  ALLOFF          .WORD   0F3FFH|0800H,001H,08000H,0      ;MUSIC AND EFFECTS OFF
      341 000012b0     fbff  musicoff_snd    .WORD   0F3FFH|0800H,001H,0807EH,0      ;TURN JUST MUSIC OFF
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:25 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:27 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 sound processor                                                      PAGE    8
@@ -478,7 +478,7 @@ sound processor                                                      PAGE    8
      391                    
      392 00001980                   SLEEPK  8
      393                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:25 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:27 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 sound processor                                                      PAGE    9
@@ -538,7 +538,7 @@ sound processor                                                      PAGE    9
          00001bb0 01cfffff  
      439 00001bd0     ce06          jrn     hefeok2
      440                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:25 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:27 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 sound processor                                                      PAGE   10

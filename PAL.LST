@@ -1,4 +1,4 @@
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 palette allocator and fader control                                  PAGE    1
@@ -58,7 +58,7 @@ palette allocator and fader control                                  PAGE    1
       54              3650- morfpal10       equ     FADERAM+9*16*64
       55              3a50- morfpal11       equ     FADERAM+10*16*64
       56                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 palette allocator and fader control                                  PAGE    2
@@ -118,7 +118,7 @@ palette allocator and fader control                                  PAGE    2
      100 00000200     ca0e          jreq    cp80                    ;Used? Chk next
      101 00000210     8600          move    *a0,a0,L
      102 00000220     cbfa          jrnz    cp20
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 palette allocator and fader control                                  PAGE    3
@@ -178,7 +178,7 @@ palette allocator and fader control                                  PAGE    3
      149                    
      150                            .if     PAL64
      151                            movk    0fH,a14
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 palette allocator and fader control                                  PAGE    4
@@ -238,7 +238,7 @@ palette allocator and fader control                                  PAGE    4
      197                    
      198                    
      199                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 palette allocator and fader control                                  PAGE    5
@@ -298,7 +298,7 @@ palette allocator and fader control                                  PAGE    5
      251                            add     a2,a1
      252                            .endif
      253                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 palette allocator and fader control                                  PAGE    6
@@ -358,7 +358,7 @@ palette allocator and fader control                                  PAGE    6
      300 00000900     8023          move    a1,*a3          ;Set PALDEST
      301 00000910     b043          move    a2,*a3(-48)     ;Set PLDCNT (Must set last)
          00000920     ffd0  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 palette allocator and fader control                                  PAGE    7
@@ -418,7 +418,7 @@ palette allocator and fader control                                  PAGE    7
      351 00000b10     9a22          move    *a1+,*a2+,L
      352 00000b20     ca05  lmau3   jrz     lmau5           ;Cnt=0?
      353                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 palette allocator and fader control                                  PAGE    8
@@ -478,7 +478,7 @@ palette allocator and fader control                                  PAGE    8
      401 00000da0           fadein
      402 00000da0     4da6          move    a13,a6
      403 00000db0     0b06          addi    PDATA,a6
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 palette allocator and fader control                                  PAGE    9
@@ -538,7 +538,7 @@ palette allocator and fader control                                  PAGE    9
          000010a0     ff78  
      448 000010b0     0b05  fi230   addi    FPALSZ,a5
          000010c0     1000  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 palette allocator and fader control                                  PAGE   10
@@ -598,7 +598,7 @@ palette allocator and fader control                                  PAGE   10
      494                    
      495 000013c0     09c8  fo70    movi    128,a8                  ;A8=Brightness
          000013d0     0080  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 palette allocator and fader control                                  PAGE   11
@@ -658,7 +658,7 @@ palette allocator and fader control                                  PAGE   11
      539 000016b0     09e0          movi    IRQSKYE,a0
          000016c0 00000000! 
      540 000016e0     09e1          movi    irqskyeo,a1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 palette allocator and fader control                                  PAGE   12
@@ -718,7 +718,7 @@ palette allocator and fader control                                  PAGE   12
      592 00001960                   PULL    a3,a5,a7,a8
      593 00001980     0960          rets
      594                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 palette allocator and fader control                                  PAGE   13
@@ -778,7 +778,7 @@ palette allocator and fader control                                  PAGE   13
      644                            sll     6,a9
      645                            add     a2,a9
      646                            .endif
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 palette allocator and fader control                                  PAGE   14
@@ -838,7 +838,7 @@ palette allocator and fader control                                  PAGE   14
      692 00001ea0     0582          move    a2,@irqskyeo
          00001eb0 00031260- 
      693 00001ed0     182a          movk    1,a10
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 palette allocator and fader control                                  PAGE   15
@@ -898,7 +898,7 @@ palette allocator and fader control                                  PAGE   15
          000021a0     ffe0  
      744 000021b0     c312          jrhi    bopx
      745 000021c0     4d62          move    a11,a2          ;A2=Brightness
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 palette allocator and fader control                                  PAGE   16
@@ -958,7 +958,7 @@ palette allocator and fader control                                  PAGE   16
      791 00002500     182e          movk    1,a14
      792 00002510     c006          jruc    pb1c
      793                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 palette allocator and fader control                                  PAGE   17
@@ -1018,7 +1018,7 @@ palette allocator and fader control                                  PAGE   17
      846 00002750     078a          move    a10,@fade_list,L
          00002760 00000030- 
      847                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 palette allocator and fader control                                  PAGE   18
@@ -1078,7 +1078,7 @@ palette allocator and fader control                                  PAGE   18
      886 00002a40     0580          move    a0,@fade_inc
          00002a50 00000020- 
      887                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 palette allocator and fader control                                  PAGE   19
@@ -1138,7 +1138,7 @@ palette allocator and fader control                                  PAGE   19
      930 00002d20     254b          sll     10,a11          ;red
      931 00002d30     5567          or      a11,a7
      932 00002d40     24a9          sll     5,a9            ;green
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 palette allocator and fader control                                  PAGE   20
@@ -1198,7 +1198,7 @@ palette allocator and fader control                                  PAGE   20
      980 00002fe0     24a9          sll     5,a9            ;green
      981 00002ff0     5527          or      a9,a7
      982                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:15 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:18 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 palette allocator and fader control                                  PAGE   21

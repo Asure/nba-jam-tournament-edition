@@ -1,4 +1,4 @@
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    1
@@ -58,7 +58,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
       54                            .REF    MAIN_RET
       55                            .REF    AREUSURE
       56                            .REF    F_TITLE
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE    2
@@ -118,7 +118,7 @@ test menus                                                           PAGE    2
      109                            .REF    COL_BARS,CROSS_H,BURN_IN,STRNEW1
      110                    
      111                            .REF    RD15FONT,SCRCLR,display_init,STRCNRM,GAMSTATE
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE    3
@@ -178,7 +178,7 @@ test menus                                                           PAGE    3
      156 00000220     cb27          jrnz    RET_NO                  ;Free play?
      157                    
      158 00000230     0d5f          CALLA   CK_MAX                  ;ARE WE AT MAX CREDITS?
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE    4
@@ -238,7 +238,7 @@ test menus                                                           PAGE    4
      201 000004d0     4c00          move    a0,a0                   ;Pass Z
      202 000004e0     0960          rets
      203                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE    5
@@ -298,7 +298,7 @@ test menus                                                           PAGE    5
      246                    
      247 000007a0           GO_DIAG
      248 000007a0     09e8          MOVI    MEN_DIAG,A8     ;PUT UP THE MENU AND GO!
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE    6
@@ -358,7 +358,7 @@ test menus                                                           PAGE    6
          00000d50     0e0e  
      288 00000d60                   JSRP    TOP_BOX         ;PRINT TITLE BOX.
      289                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE    7
@@ -418,7 +418,7 @@ test menus                                                           PAGE    7
      329 00001350     09e0          MOVI    GAME_AUD2b,A0   ;PUT TABLE UP.
          00001360 00008460' 
      330 00001380                   JSRP    PRNT_AUD
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE    8
@@ -478,7 +478,7 @@ test menus                                                           PAGE    8
      367 000017e0           DO_CLAUD
      368 000017e0     09e8          MOVI    MESS_CLAUD,A8           ;CLEAR COIN SUB-TOTALS...ARE YOU SURE
          000017f0 00004b80" 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE    9
@@ -538,7 +538,7 @@ test menus                                                           PAGE    9
      404 00001ba0     09e8           MOVI    MESS_FACSET,A8
          00001bb0 00005020" 
      405 00001bd0     1820           MOVK    1,A0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   10
@@ -598,7 +598,7 @@ test menus                                                           PAGE   10
      443 00002030           NOTABS
      444 00002030                   RETP
      445                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   11
@@ -658,7 +658,7 @@ test menus                                                           PAGE   11
      483 000023f0     c002          JRUC    BS3
      484                    
      485 00002400           BS2
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   12
@@ -718,7 +718,7 @@ test menus                                                           PAGE   12
      528                    
      529 000026c0           GO_CPUTEST
      530 000026c0     c080          JAUC    DIAGCPUTEST
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   13
@@ -778,7 +778,7 @@ test menus                                                           PAGE   13
      567 00002b10     c080          JAUC    B_MENU               ;DO IT....RETURN WHEN PRESSED.
          00002b20 00000000! 
      568                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   14
@@ -838,7 +838,7 @@ test menus                                                           PAGE   14
      609 00002e30     0d5f          CALLA   WDOGDIS
          00002e40 00000000! 
      610 00002e60     09ed          MOVI    3000000,A13
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   15
@@ -898,7 +898,7 @@ test menus                                                           PAGE   15
          00003450     fffe  
      656                    
      657                            .else
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   16
@@ -958,7 +958,7 @@ test menus                                                           PAGE   16
      699                    
      700 000038b0           M_DIGT
      701 000038b0       47          .STRING "GENERAL SOUND TEST",0,0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   17
@@ -1018,7 +1018,7 @@ test menus                                                           PAGE   17
          00004960 00b1005f  
      753 00004980     09e5          movi    [238+16,200+104-1],a5   ;bottom right
          00004990 00fe012f  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   18
@@ -1078,7 +1078,7 @@ test menus                                                           PAGE   18
      791                    
      792 00004d40     0d5f          CALLA   QSNDRST
          00004d50 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   19
@@ -1138,7 +1138,7 @@ test menus                                                           PAGE   19
      831 000051d0     0960          rets
      832 000051e0           MAKE_SOUND
      833 000051e0     2483          SLL     4,A3
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   20
@@ -1198,7 +1198,7 @@ test menus                                                           PAGE   20
      882 00005460     0005          .word   AUD_LM,AUD_RM                   ;LFT/RGT margin X
      883 00005480                   AMAC    M_LCOIN,0,AUDLCOIN,ROBO_YELLOW
      884 000054e0                   AMAC    M_RCOIN,0,AUDRCOIN,ROBO_YELLOW
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   21
@@ -1258,7 +1258,7 @@ test menus                                                           PAGE   21
      937 00006380                   AMAC    str_ply2comp,   prn_comppct,0,  ROBO_GREY
      938 000063e0                   AMAC    str_2ovrtime,   prn_ovtmpct,0,  ROBO_BLUE
      939 00006440                   AMAC    str_snderr,     0,AUD_SNDERR,   ROBO_RED
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   22
@@ -1318,7 +1318,7 @@ test menus                                                           PAGE   22
      992 000079f0           str_cpulos      TXTLINE "GREATEST CPU LOSS MARGIN"
      993 00007ac0           str_scrdiff     TXTLINE "SCORE DIFFERENTIAL AT DROPOUT"
      994 00007bb0           str_humans      TXTLINE "HUMAN VS. HUMAN - GAMES PLAYED"
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   23
@@ -1378,7 +1378,7 @@ test menus                                                           PAGE   23
     1047                    ROBO_RED        EQU     0303H   ;[0E2H-223,0E2H-223]
     1048                    ROBO_ORANGE     EQU     0404H   ;[0E3H-223,0E3H-223]
     1049                    ROBO_YELLOW     EQU     0505H   ;[0E4H-223,0E4H-223]
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   24
@@ -1438,7 +1438,7 @@ test menus                                                           PAGE   24
     1100 00009230     5a01          divu    a0,a1                   ;mins
     1101 00009240     c000          jruc    P_TIME
          00009250     0538  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   25
@@ -1498,7 +1498,7 @@ test menus                                                           PAGE   25
     1139 00009540     0d3f          callr   ROUNDED_A0_INTO_A2      ;DIVIDES A0 INTO A2. RESULT IN A2
          00009550     0466  
     1140 00009560     4c43          move    a2,a3
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   26
@@ -1558,7 +1558,7 @@ test menus                                                           PAGE   26
          00009860 00000000! 
     1177 00009880     4c24          move    a1,a4
     1178                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   27
@@ -1618,7 +1618,7 @@ test menus                                                           PAGE   27
     1214 00009ba0     5e01          mpyu    a0,a1
     1215 00009bb0     4c22          move    a1,a2
     1216 00009bc0     4c80          move    a4,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   28
@@ -1678,7 +1678,7 @@ test menus                                                           PAGE   28
     1253                    
     1254 00009ec0           prn_comppct
     1255 00009ec0     09c0          movi    AUD_TOTPLYS,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   29
@@ -1738,7 +1738,7 @@ test menus                                                           PAGE   29
          0000a1d0     0030  
     1292 0000a1e0     0d5f          calla   GET_AUD
          0000a1f0 00000000! 
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   30
@@ -1798,7 +1798,7 @@ test menus                                                           PAGE   30
          0000a520     0369  
     1331 0000a530     4c43          move    a2,a3
     1332 0000a540     c000          jruc    NUMBER_WORK
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   31
@@ -1858,7 +1858,7 @@ test menus                                                           PAGE   31
     1370 0000a840     c000          jruc    NUMBER_WORK
          0000a850     0215  
     1371                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   32
@@ -1918,7 +1918,7 @@ test menus                                                           PAGE   32
     1410 0000ab00     09c0          movi    AUD_DROPDIFF,a0
          0000ab10     0038  
     1411 0000ab20     0d5f          calla   GET_AUD
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   33
@@ -1978,7 +1978,7 @@ test menus                                                           PAGE   33
     1449 0000ae20     09e8          movi    str_pct,a8
          0000ae30 00007eb0' 
     1450 0000ae50     0d5f          CALLA   STRCAT
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   34
@@ -2038,7 +2038,7 @@ test menus                                                           PAGE   34
     1496                            CALLA   STORE_AUDIT
     1497                    
     1498                            MOVI    ROM_NAME,A2
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   35
@@ -2098,7 +2098,7 @@ test menus                                                           PAGE   35
     1551                            .even
     1552                    
     1553                            .ENDIF
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   36
@@ -2158,7 +2158,7 @@ test menus                                                           PAGE   36
     1594 0000b8b0                   JSRP    WAIT_BUT
     1595                    
     1596                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   37
@@ -2218,7 +2218,7 @@ test menus                                                           PAGE   37
     1638                    
     1639 0000beb0     9401          MOVE    *A0+,A1                 ;GET RIGHT MARGIN
     1640 0000bec0     b02d          MOVE    A1,*A13(AT_RX)          ;STASH IT AWAY
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   38
@@ -2278,7 +2278,7 @@ test menus                                                           PAGE   38
          0000c1c0     0100  
     1678 0000c1d0     b664          MOVE    *A3(AUD_ROUTINE),A4,L
          0000c1e0     0020  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   39
@@ -2338,7 +2338,7 @@ test menus                                                           PAGE   39
     1716 0000c5f0     ca14          JRZ     RFX                    ;NOPE....RETURN
     1717                    
     1718 0000c600     09e8          MOVI    MESS_ERROR,A8
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   40
@@ -2398,7 +2398,7 @@ test menus                                                           PAGE   40
     1754 0000c970     ec69          MOVX    A3,A9             ;PUT THE X IN PLACE
     1755 0000c980     09af          MMFM    SP,A3
          0000c990     0008  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   41
@@ -2458,7 +2458,7 @@ test menus                                                           PAGE   41
     1795 0000cc80           GET_PLAYS
     1796 0000cc80                   PUSH    a0
     1797 0000cc90     1aa0          movk    AUDBEGIN,a0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   42
@@ -2518,7 +2518,7 @@ test menus                                                           PAGE   42
     1834 0000cf80     0d5f          CALLA   GET_ADJ
          0000cf90 00000000! 
     1835 0000cfb0           DIV_BY_1
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   43
@@ -2578,7 +2578,7 @@ test menus                                                           PAGE   43
     1872 0000d330     b7a8          MOVE    *A13(AT_MESS),A8,L      ;SETUP PASSED MESSAGE
          0000d340     0180  
     1873 0000d350     0d5f          CALLA   LM_SETUP
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   44
@@ -2638,7 +2638,7 @@ test menus                                                           PAGE   44
          0000d6b0 00000000! 
     1912                    
     1913 0000d6d0     0b40          CMPI    1,A0                 ;IS DIVISOR ONE??????
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   45
@@ -2698,7 +2698,7 @@ test menus                                                           PAGE   45
     1949 0000daf0     cb02          JRNZ    STR_O1
     1950 0000db00     0de0          SETC    
     1951 0000db10     c007          JRUC    STR_OFAIL
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   46
@@ -2758,7 +2758,7 @@ test menus                                                           PAGE   46
     1994 0000de00     0960          RETS
     1995                    
     1996 0000de10           SUM_COINS
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   47
@@ -2818,7 +2818,7 @@ test menus                                                           PAGE   47
          0000e080     0001  
     2037 0000e090     0960          RETS
     2038                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   48
@@ -2878,7 +2878,7 @@ test menus                                                           PAGE   48
     2075 0000e370     c005          JRUC    DH11            ;AND DO LIKE THE HOURS!
     2076                    
     2077                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   49
@@ -2938,7 +2938,7 @@ test menus                                                           PAGE   49
     2121                    
     2122                    
     2123 0000e5e0           P_TIME
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   50
@@ -2998,7 +2998,7 @@ test menus                                                           PAGE   50
     2163 0000e900           TOT_TIME
     2164 0000e900     098f          MMTM    SP,A0,A1
          0000e910     c000  
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   51
@@ -3058,7 +3058,7 @@ test menus                                                           PAGE   51
     2212 000007d0           M_SERV  TXTLINE "SERVICE CREDITS"
     2213                    
     2214                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   52
@@ -3118,7 +3118,7 @@ test menus                                                           PAGE   52
     2267                    
     2268              00ce  UM_WID   EQU     206
     2269              0072  UM_X     EQU     TIT_ULX+GAP+MB_XWID+(UM_WID/2)+C_KLUDGE
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   53
@@ -3178,7 +3178,7 @@ test menus                                                           PAGE   53
     2322              00fa  STM_WID EQU       250
     2323                    
     2324                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   54
@@ -3238,7 +3238,7 @@ test menus                                                           PAGE   54
     2377 00001fe0     000a          .WORD   10              ;HEIGHT OF SELECTION BAR
     2378 00001ff0     ffff          .WORD   -1              ;DISTANCE OF BAR FROM TOP OF TEXT (NEGATIVE)
     2379 00002000     0006          .WORD   BAR_DX  ;EXTRA X ON EACH SIDE.
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   55
@@ -3298,7 +3298,7 @@ test menus                                                           PAGE   55
     2432 00002580     000a          .WORD    10             ;HEIGHT OF SELECTION BAR
     2433 00002590     ffff          .WORD    -1             ;DISTANCE OF BAR FROM TOP OF TEXT (NEGATIVE)
     2434 000025a0     0006          .WORD    BAR_DX         ;EXTRA X ON EACH SIDE.
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   56
@@ -3358,7 +3358,7 @@ test menus                                                           PAGE   56
     2487 00002b80 00005370"         .long   diptst_mess
     2488 00002ba0 000053f0"         .LONG   MESS_CPUTEST
     2489 00002bc0 00005470"         .LONG   M_STEST
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   57
@@ -3418,7 +3418,7 @@ test menus                                                           PAGE   57
     2542                    
     2543 00002f80           CLCOIN_HELP
     2544 00002f80     0000          .WORD   0               ;CENTER JUSTIFY
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   58
@@ -3478,7 +3478,7 @@ test menus                                                           PAGE   58
     2597 00003350 000051f0"         .long   opmsgh2_s
     2598 00003370 00005250"         .long   opmsgh3_s
     2599                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   59
@@ -3538,7 +3538,7 @@ test menus                                                           PAGE   59
     2652 00004158       00           .BYTE           0
     2653 00004160                    .EVEN
     2654                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   60
@@ -3598,7 +3598,7 @@ test menus                                                           PAGE   60
     2707                    
     2708 000047a0       56  AH_1     .byte   "VIEW GAME"
     2709 000047e8       00           .BYTE   0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   61
@@ -3658,7 +3658,7 @@ test menus                                                           PAGE   61
     2762                    
     2763 00004ef0           MESS_DEF_ADJ    TXTLINE "DEFAULT ADJUSTMENTS"
     2764 00004f90           U_FACTORY       TXTLINE "FACTORY SETTINGS"
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   62
@@ -3718,7 +3718,7 @@ test menus                                                           PAGE   62
     2817 00005be0           MESS_CCNCONF
     2818 00005be0       43          .byte  "COIN COUNTERS CLEARED.",0,1
     2819 00005ca0                   .EVEN
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   63
@@ -3778,7 +3778,7 @@ test menus                                                           PAGE   63
     2872 00006a10       43  MEH_CLCOIN1      .byte "CLEAR OUT PAID",0
     2873 00006a90                            .EVEN
     2874 00006a90       43  MEH_CLCOIN2      .byte "CREDITS TOTAL",0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   64
@@ -3838,7 +3838,7 @@ test menus                                                           PAGE   64
     2927 00007420       55          .byte   "UTILITY MENU",0
     2928 00007490                   .even
     2929                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   65
@@ -3898,7 +3898,7 @@ test menus                                                           PAGE   65
     2982                            .IF     FULLPRICE
     2983                    
     2984                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   66
@@ -3958,7 +3958,7 @@ test menus                                                           PAGE   66
     3037 00008420     0003          .WORD   SHOW_2                  ; LINES TO SHOW ON
     3038 00008430 00013330"         .LONG   USA_ESLOT               ; QUARTER
     3039                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   67
@@ -4018,7 +4018,7 @@ test menus                                                           PAGE   67
     3092 00008cf0 000136b0"         .LONG   GERMAN_15                       ;1 DM / 5 DM
     3093                    
     3094 00008d10     003c          .WORD   60,12,24,0,10,0,0,2,2   ; L,C,R,4,U/C,U/B,MINUNITS
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   68
@@ -4078,7 +4078,7 @@ test menus                                                           PAGE   68
     3147 000095b0 00013730"         .LONG   FRENCH510
     3148                    
     3149                            .IF     FULLPRICE
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   69
@@ -4138,7 +4138,7 @@ test menus                                                           PAGE   69
     3202 00009e90     0003          .WORD   3,0,15,0,5,0,0,2,1                ;1/2x1F  3/5F
     3203 00009f20     0001          .WORD   1                               ;1 FRANC PER FRANC
     3204 00009f30     0000          .WORD   0                               ;DON'T DISPLAY COIN FRACTIONS
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   70
@@ -4198,7 +4198,7 @@ test menus                                                           PAGE   70
     3257                    
     3258                            .IF     FULLPRICE
     3259                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   71
@@ -4258,7 +4258,7 @@ test menus                                                           PAGE   71
     3312 0000af00     0002          .WORD   2,0,5,0                 ;COIN VALUE
     3313 0000af40 0000dc90"         .LONG   NULL_ST,POUND_TRAIL     ;CHARACTER STRINGS.
     3314 0000af80 00000001          .LONG   CSM_LIST
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   72
@@ -4318,7 +4318,7 @@ test menus                                                           PAGE   72
     3367 0000b680 00000001          .LONG   CSM_LIST
     3368 0000b6a0 0000ea60"         .LONG   SP_1                            ;TITLE OF COIN MODE
     3369 0000b6c0 0000fec0"         .LONG   SP_5100                         ;1 COIN PER CREDIT (SERIES OF ST
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   73
@@ -4378,7 +4378,7 @@ test menus                                                           PAGE   73
     3422                    
     3423                            .IF     FULLPRICE
     3424                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   74
@@ -4438,7 +4438,7 @@ test menus                                                           PAGE   74
     3477 0000c600 0000dc90"         .LONG   NULL_ST,FRANC_TRAIL        ;CHARACTER STRINGS.
     3478 0000c640 00000001          .LONG   CSM_LIST
     3479 0000c660 0000ed10"         .LONG   BEL_2                    ;TITLE OF COIN MODE
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   75
@@ -4498,7 +4498,7 @@ test menus                                                           PAGE   75
     3532                    
     3533 0000cdd0     0001          .WORD   1,0,1,0,2,0,0,1,1                  ;WILLY PRICING
     3534 0000ce60     0005          .WORD   5                               ;FIVE PER
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   76
@@ -4558,7 +4558,7 @@ test menus                                                           PAGE   76
     3587 0000d600 00000001          .LONG   CSM_LIST
     3588 0000d620 0000f010"         .LONG   DENMARK                 ;TITLE OF COIN MODE
     3589 0000d640 00010400"         .LONG   DKR_LIST                         ;1 COIN PER CREDIT (SERIES
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   77
@@ -4618,7 +4618,7 @@ test menus                                                           PAGE   77
     3642                            .WORD   USABASE+4, USABASE+4
     3643                    
     3644                    GERDIP  .WORD   GERBASE+0, GERBASE+1, GERBASE+2, GERBASE+3, GERBASE+4
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   78
@@ -4678,7 +4678,7 @@ test menus                                                           PAGE   78
     3697 0000dd50                   .EVEN
     3698                    
     3699 0000dd50       20  PESETA_TRAIL    .STRING "  PESETA"
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   79
@@ -4738,7 +4738,7 @@ test menus                                                           PAGE   79
     3752 0000e040                   .EVEN
     3753 0000e040       55  USA_2   .STRING "USA 2",0
     3754 0000e070                   .EVEN
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   80
@@ -4798,7 +4798,7 @@ test menus                                                           PAGE   80
     3807 0000e5b0       46  FRENCH_6 .STRING "FRANCE 6",0
     3808 0000e600                   .EVEN
     3809 0000e600       46  FRENCH_7 .STRING "FRANCE 7",0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   81
@@ -4858,7 +4858,7 @@ test menus                                                           PAGE   81
     3862                            .ENDIF
     3863                    
     3864 0000eba0       4a  JAP_1   .STRING "JAPAN 1"
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   82
@@ -4918,7 +4918,7 @@ test menus                                                           PAGE   82
     3917 0000f0a0                   .EVEN
     3918                    
     3919 0000f0a0           HUNGARY
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   83
@@ -4978,7 +4978,7 @@ test menus                                                           PAGE   83
     3972 0000f460 00010ac0" DM_7    .LONG   DM11
     3973 0000f480 00010cf0"         .LONG   DM75
     3974 0000f4a0 00000000          .LONG   0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   84
@@ -5038,7 +5038,7 @@ test menus                                                           PAGE   84
     4027 0000f940 00010f10"         .LONG   F15
     4028 0000f960 00011310"         .LONG   F310
     4029 0000f980 00011150"         .LONG   F4107
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   85
@@ -5098,7 +5098,7 @@ test menus                                                           PAGE   85
     4082 0000fe40 00000000          .LONG   0
     4083                    
     4084 0000fe60 00011e70" SP_4100 .LONG   SP_11
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   86
@@ -5158,7 +5158,7 @@ test menus                                                           PAGE   86
     4137                    
     4138 00010300 00012b90" NETH_HF .LONG   HF_11
     4139 00010320 00012c20"         .LONG   HF_32
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   87
@@ -5218,7 +5218,7 @@ test menus                                                           PAGE   87
     4192 00010ab8       00          .BYTE 0
     4193 00010ac0                   .EVEN
     4194                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   88
@@ -5278,7 +5278,7 @@ test menus                                                           PAGE   88
     4247 000114a0       31  F2X1F   .STRING  "1 CREDIT / 2 X 1F"
     4248 00011528       00          .BYTE   0
     4249 00011530                   .EVEN
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   89
@@ -5338,7 +5338,7 @@ test menus                                                           PAGE   89
     4302 00011d48       00          .BYTE 0
     4303 00011d50                   .EVEN
     4304 00011d50       33  UK_4202 .STRING "3 CREDITS / 50 P"
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   90
@@ -5398,7 +5398,7 @@ test menus                                                           PAGE   90
     4357 000127f0                   .EVEN
     4358                    
     4359 000127f0       31  BEL_1201 .STRING        "1 CREDIT / 2OF"
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   91
@@ -5458,7 +5458,7 @@ test menus                                                           PAGE   91
     4412                    
     4413 000130e0       34  ANT4DOL .STRING "4 CREDITS / 1 GUILDER"
     4414 00013188       00          .BYTE 0
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   92
@@ -5518,7 +5518,7 @@ test menus                                                           PAGE   92
     4467                    
     4468                            .IF     FULLPRICE
     4469 000138d0       31  SWISS15     .STRING   "1 F       5 F"
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   93
@@ -5578,7 +5578,7 @@ test menus                                                           PAGE   93
     4522 000142d0       31  DKRSLOT     .STRING   "1 KRONE       5 KRONE"
     4523 00014378       00              .BYTE 0
     4524 00014380                       .EVEN
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   94
@@ -5638,7 +5638,7 @@ test menus                                                           PAGE   94
     4577 00014f20       32          .STRING   "2 CREDITS / 50 P"
     4578 00014fa0       00          .BYTE     0,1
     4579 00014fb0                   .EVEN
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:33 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:36 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
 test menus                                                           PAGE   95

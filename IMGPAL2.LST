@@ -1,4 +1,4 @@
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:17 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:20 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    1
@@ -58,7 +58,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:17 2023
       53                    
       54 00001240           NEWILPAL:
       55 00001240     00ff          .word   255
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:17 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:20 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    2
@@ -118,7 +118,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:17 2023
      108 00002ad0     766e          .word   0766EH,06A72H,06E8DH,0764BH,0724DH,05693H,05E8EH,0662EH
      109 00002b50     6a2c          .word   06A2CH,05A31H,0660CH,05A2EH,0620BH,05A4CH,04E0FH,059CCH
      110 00002bd0     5dab          .word   05DABH,05609H,059CAH,059C8H,04E0BH,055ABH,051C8H,055A7H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:17 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:20 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    3

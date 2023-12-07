@@ -1,4 +1,4 @@
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    1
@@ -58,7 +58,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
       53 00001370           crtgrnyel:
       54 00001370     00fe          .word   254
       55 00001380     0000          .word   00H,05A27H,06220H,05E20H,06220H,05E00H,05DE6H,05DE0H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    2
@@ -118,7 +118,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
      108 00002c70     2dae          .word   02DAEH,05F36H,07799H,014ECH,05EDCH,04A91H,03A2EH,0214CH
      109 00002cf0     5f98          .word   05F98H,01822H,068E8H,064C7H,03446H,044A4H,03883H,04464H
      110 00002d70     3421          .word   03421H,02821H,01421H,05CA6H,044C5H,048A4H,04883H,04821H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    3
@@ -178,7 +178,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
      163 000044d0     5587          .word   05587H,055A6H,055A7H,055C6H,055C7H,055E7H,05588H,055A8H
      164 00004550     55a9          .word   055A9H,055C8H,06127H,055E8H,0520DH,05690H,05655H,05608H
      165 000045d0     5a0a          .word   05A0AH,0562DH,05629H,0562BH,0566AH,05A76H,058E6H,05927H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    4
@@ -238,7 +238,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
      218 00005ec0     60e5          .word   060E5H,058A4H,0D24H,04A2H,04AB6H,060H,05927H,01C20H
      219 00005f40     2a0b          .word   02A0BH,03AB0H,029AAH,06127H,06906H,05567H,0520DH,05F97H
      220 00005fc0     4f34          .word   04F34H,059AAH,05442H,0868H,065F1H,05690H,07AD5H,05464H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    5
@@ -298,7 +298,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
      273 00007720     562b          .word   0562BH,0420BH,03587H,055A7H,04D87H,041F3H,0252DH,038C5H
      274 000077a0     1862          .word   01862H,0292CH,014C9H,0C86H,01889H,01D2AH,01926H,0C42H
      275 00007820     2868          .word   02868H,0492AH,03902H,055C8H,02446H,040E6H,04907H,01022H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    6
@@ -358,7 +358,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
      328 00009110     68c7          .word   068C7H,061ACH,04B13H,07F97H,0360BH,0C21H,01103H,0442H
      329 00009190     0002          .word   02H,07A2EH,0328FH,01587H,02A4DH,075A7H,064A3H,0CECH
      330 00009210     7126          .word   07126H,079C9H,06E0AH,07EAEH,0628FH,06732H,06DA7H,01E0CH
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    7
@@ -418,7 +418,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
      383 0000a970     654c          .word   0654CH,064ECH,05CE6H,054C9H,048A9H,038ECH,0294CH,0296EH
      384 0000a9f0     44ec          .word   044ECH,02592H,01D72H,01970H,03468H,055A9H,03E78H,04AB9H
      385 0000aa70     4655          .word   04655H,04E78H,035F4H,04E56H,01D30H,03A15H,0194FH,040A7H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    8
@@ -478,7 +478,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
      438 0000c2c0           CRT_CLP_P:
      439 0000c2c0     00fe          .word   254
      440 0000c2d0     0000          .word   00H,06AD8H,06296H,06296H,066B7H,05E75H,06AF9H,05E75H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE    9
@@ -538,7 +538,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
      493 0000dbc0     2dae          .word   02DAEH,05F36H,07799H,014ECH,05EDCH,04A91H,03A2EH,0214CH
      494 0000dc40     5f98          .word   05F98H,01822H,068E8H,064C7H,03446H,044A4H,03883H,04464H
      495 0000dcc0     3421          .word   03421H,02821H,01421H,05CA6H,044C5H,048A4H,04883H,04821H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   10
@@ -598,7 +598,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
      548 0000f420     5587          .word   05587H,055A6H,055A7H,055C6H,055C7H,055E7H,05588H,055A8H
      549 0000f4a0     55a9          .word   055A9H,055C8H,06127H,055E8H,0520DH,05690H,05655H,05608H
      550 0000f520     5a0a          .word   05A0AH,0562DH,05629H,0562BH,0566AH,05A76H,058E6H,05927H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   11
@@ -658,7 +658,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
      603 00010e10     60e5          .word   060E5H,058A4H,0D24H,04A2H,04AB6H,060H,05927H,01C20H
      604 00010e90     2a0b          .word   02A0BH,03AB0H,029AAH,06127H,06906H,05567H,0520DH,05F97H
      605 00010f10     4f34          .word   04F34H,059AAH,05442H,0868H,065F1H,05690H,07AD5H,05464H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   12
@@ -718,7 +718,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
      658 00012670     562b          .word   0562BH,0420BH,03587H,055A7H,04D87H,041F3H,0252DH,038C5H
      659 000126f0     1862          .word   01862H,0292CH,014C9H,0C86H,01889H,01D2AH,01926H,0C42H
      660 00012770     2868          .word   02868H,0492AH,03902H,055C8H,02446H,040E6H,04907H,01022H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   13
@@ -778,7 +778,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
      713 00014060     68c7          .word   068C7H,061ACH,04B13H,07F97H,0360BH,0C21H,01103H,0442H
      714 000140e0     0002          .word   02H,07A2EH,0328FH,01587H,02A4DH,075A7H,064A3H,0CECH
      715 00014160     7126          .word   07126H,079C9H,06E0AH,07EAEH,0628FH,06732H,06DA7H,01E0CH
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   14
@@ -838,7 +838,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
      768 000158c0     654c          .word   0654CH,064ECH,05CE6H,054C9H,048A9H,038ECH,0294CH,0296EH
      769 00015940     44ec          .word   044ECH,02592H,01D72H,01970H,03468H,055A9H,03E78H,04AB9H
      770 000159c0     4655          .word   04655H,04E78H,035F4H,04E56H,01D30H,03A15H,0194FH,040A7H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   15
@@ -898,7 +898,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
      823 00017210           CRT_NEJ_P:
      824 00017210     00fe          .word   254
      825 00017220     0000          .word   00H,02115H,01CB3H,018D1H,020D4H,01891H,02996H,01871H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   16
@@ -958,7 +958,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
      878 00018b10     2dae          .word   02DAEH,05F36H,07799H,014ECH,05EDCH,04A91H,03A2EH,0214CH
      879 00018b90     5f98          .word   05F98H,01822H,068E8H,064C7H,03446H,044A4H,03883H,04464H
      880 00018c10     3421          .word   03421H,02821H,01421H,05CA6H,044C5H,048A4H,04883H,04821H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   17
@@ -1018,7 +1018,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
      933 0001a370     5587          .word   05587H,055A6H,055A7H,055C6H,055C7H,055E7H,05588H,055A8H
      934 0001a3f0     55a9          .word   055A9H,055C8H,06127H,055E8H,0520DH,05690H,05655H,05608H
      935 0001a470     5a0a          .word   05A0AH,0562DH,05629H,0562BH,0566AH,05A76H,058E6H,05927H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   18
@@ -1078,7 +1078,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
      988 0001bd60     60e5          .word   060E5H,058A4H,0D24H,04A2H,04AB6H,060H,05927H,01C20H
      989 0001bde0     2a0b          .word   02A0BH,03AB0H,029AAH,06127H,06906H,05567H,0520DH,05F97H
      990 0001be60     4f34          .word   04F34H,059AAH,05442H,0868H,065F1H,05690H,07AD5H,05464H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   19
@@ -1138,7 +1138,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     1043 0001d5c0     562b          .word   0562BH,0420BH,03587H,055A7H,04D87H,041F3H,0252DH,038C5H
     1044 0001d640     1862          .word   01862H,0292CH,014C9H,0C86H,01889H,01D2AH,01926H,0C42H
     1045 0001d6c0     2868          .word   02868H,0492AH,03902H,055C8H,02446H,040E6H,04907H,01022H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   20
@@ -1198,7 +1198,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     1098 0001efb0     68c7          .word   068C7H,061ACH,04B13H,07F97H,0360BH,0C21H,01103H,0442H
     1099 0001f030     0002          .word   02H,07A2EH,0328FH,01587H,02A4DH,075A7H,064A3H,0CECH
     1100 0001f0b0     7126          .word   07126H,079C9H,06E0AH,07EAEH,0628FH,06732H,06DA7H,01E0CH
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   21
@@ -1258,7 +1258,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     1153 00020810     654c          .word   0654CH,064ECH,05CE6H,054C9H,048A9H,038ECH,0294CH,0296EH
     1154 00020890     44ec          .word   044ECH,02592H,01D72H,01970H,03468H,055A9H,03E78H,04AB9H
     1155 00020910     4655          .word   04655H,04E78H,035F4H,04E56H,01D30H,03A15H,0194FH,040A7H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   22
@@ -1318,7 +1318,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     1208 00022160           CRT_UTA2P:
     1209 00022160     00fe          .word   254
     1210 00022170     0000          .word   00H,02108H,018C6H,018C6H,01CE7H,014A5H,0318CH,014A5H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   23
@@ -1378,7 +1378,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     1263 00023a60     2dae          .word   02DAEH,05F36H,07799H,014ECH,05EDCH,04A91H,03A2EH,0214CH
     1264 00023ae0     5f98          .word   05F98H,01822H,068E8H,064C7H,03446H,044A4H,03883H,04464H
     1265 00023b60     3421          .word   03421H,02821H,01421H,05CA6H,044C5H,048A4H,04883H,04821H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   24
@@ -1438,7 +1438,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     1318 00025110     294a          .word   0294AH,01C84H,02082H,02CC5H,034E5H,030C4H,02CA2H,02461H
     1319 00025190     2881          .word   02881H,02041H,0401H,0801H,01C21H,034A2H,03107H,03927H
     1320 00025210     1c41          .word   01C41H,01001H,02CA3H,05989H,01C61H,020A2H,034E4H,04105H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   25
@@ -1498,7 +1498,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     1373 00026560     316b          .word   0316BH,02CE6H,030C5H,038E5H,02CA4H,02484H,028A5H,02063H
     1374 000265e0     1062          .word   01062H,024A5H,04527H,04D69H,024E7H,04D27H,04106H,040E6H
     1375 00026660     3907          .word   03907H,020A5H,0518AH,024C6H,055CCH,05DCCH,04926H,01883H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   26
@@ -1558,7 +1558,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     1428 000279b0     316b          .word   0316BH,01020H,0420H,00H,0C42H,01463H,024C6H,01883H
     1429 00027a30     1c63          .word   01C63H,02484H,030C6H,03908H,03D4AH,0820H,0C40H,01441H
     1430 00027ab0     1c62          .word   01C62H,03129H,028C6H,01485H,0C21H,0392AH,030E7H,02CA5H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   27
@@ -1618,7 +1618,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     1483 00028e00     316b          .word   0316BH,03CC6H,05147H,05966H,05105H,048E4H,040C3H,03883H
     1484 00028e80     3862          .word   03862H,03084H,02C62H,03926H,040A4H,03CC5H,0821H,01842H
     1485 00028f00     1c21          .word   01C21H,038A4H,044C4H,01043H,0C43H,02464H,01C64H,02085H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   28
@@ -1678,7 +1678,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     1538 0002a250     316b          .word   0316BH,04DABH,05168H,05146H,05989H,05567H,04D25H,04505H
     1539 0002a2d0     40e4          .word   040E4H,04104H,04D26H,04926H,05DA9H,061AAH,04947H,03528H
     1540 0002a350     3108          .word   03108H,05568H,03907H,061ACH,061CBH,06A2EH,061EDH,0598AH
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   29
@@ -1738,7 +1738,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     1593 0002b6a0     316b          .word   0316BH,040C4H,04906H,04D26H,04528H,034C5H,02041H,03D07H
     1594 0002b720     4106          .word   04106H,04907H,04D47H,038C5H,038E5H,038C4H,0518BH,0556AH
     1595 0002b7a0     61cc          .word   061CCH,05147H,05D8AH,05D8BH,04D6AH,05168H,061AAH,04526H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   30
@@ -1798,7 +1798,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     1648 0002caf0     316b          .word   0316BH,038E5H,03483H,02061H,028A1H,030C3H,02C83H,02462H
     1649 0002cb70     30a4          .word   030A4H,01420H,01020H,01840H,0C20H,028A6H,030C5H,01841H
     1650 0002cbf0     4927          .word   04927H,03D27H,01443H,038E6H,01C62H,038A3H,044C4H,054E4H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   31
@@ -1858,7 +1858,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     1703 0002df40     316b          .word   0316BH,04D28H,040E6H,038C6H,03CE6H,04507H,030C6H,02CA5H
     1704 0002dfc0     5149          .word   05149H,05148H,03949H,05168H,04D69H,04528H,038E7H,04D49H
     1705 0002e040     40c7          .word   040C7H,04549H,04908H,0516AH,055CDH,028E7H,059ACH,05DEDH
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   32
@@ -1918,7 +1918,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     1758 0002f390     316b          .word   0316BH,03CE6H,03D2AH,04D6AH,04128H,04928H,04906H,03CC4H
     1759 0002f410     2c83          .word   02C83H,01C42H,030A4H,05168H,05968H,05989H,04D47H,05566H
     1760 0002f490     5946          .word   05946H,05947H,04926H,06128H,0656AH,04D26H,06A50H,072F6H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   33
@@ -1978,7 +1978,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     1813 000307e0     0000          .word   00H,05D6BH,0554AH,05DCCH,0512AH,040C7H,038A6H,04929H
     1814 00030860     4d09          .word   04D09H,0514AH,02CA4H,0594BH,034A6H,01441H,02463H,065ACH
     1815 000308e0     69cd          .word   069CDH,03085H,0658BH,06DEFH,06E0FH,05509H,061ACH,07274H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   34
@@ -2038,7 +2038,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     1868 00031b80     365c          .word   0365CH,0323EH,0365BH,041FAH,03A59H,035DCH,02E1AH,039BAH
     1869 00031c00     3219          .word   03219H,0317DH,041F5H,031BAH,03998H,03E13H,025DBH,01DBDH
     1870 00031c80     29ba          .word   029BAH,0317AH,031B8H,02E16H,0295CH,02DD7H,0259AH,025D7H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   35
@@ -2098,7 +2098,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     1923 00033580     6674          .word   06674H,02483H,05E51H,02927H,01CC5H,06A73H,072D3H,02062H
     1924 00033600     77df          .word   077DFH,018A4H,066D7H,072B7H,03D49H,01442H,02465H,051AEH
     1925 00033680     6a30          .word   06A30H,01883H,072F8H,0C41H,07AD5H,06A51H,018ABH,06A32H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   36
@@ -2158,7 +2158,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     1978 00034710     0000          .word   00H,07EFAH,076FAH,07AFAH,06EDAH,06ADAH,07B1AH,07F1AH
     1979 00034790     7efa          .word   07EFAH,07F1AH,072DAH,07EFAH,07F1AH,07F1AH,072FAH,066DAH
     1980 00034810     7f3a          .word   07F3AH,07F3AH,07F3AH,07F1AH,07F3AH,07F3AH,07F5AH,07F5AH
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   37
@@ -2218,7 +2218,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     2033 00035b50     003f          .word    63
     2034 00035b60     0000          .word   00H,05H,03E0H,02C0H,01E0H,02D6BH,07C00H,014A5H
     2035 00035be0     0000          .word   00H,07FFFH,07F60H,01B4H,0278H,0237H,0E9H,0216H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   38
@@ -2278,7 +2278,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     2088 00036cd0     64e8          .word   064E8H,06485H,06464H,05C43H,05001H,04C00H,04400H,04000H
     2089 00036d50     58e7          .word   058E7H,060E8H,05800H,06909H,03425H,02806H,04002H,058A6H
     2090 00036dd0     7a53          .word   07A53H,07EE0H,07A80H,07620H,06DA0H,06960H,06500H,05CE0H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   39
@@ -2338,7 +2338,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     2143                    
     2144 00037a70           fgpalgld:
     2145 00037a70     000a          .word    10
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   40
@@ -2398,7 +2398,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     2198 00038740     54e0          .word   054E0H,05100H,048A0H,04480H,04060H,03820H,03400H,03000H
     2199 000387c0     2800          .word   02800H,02000H,06E46H
     2200                    
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   41
@@ -2458,7 +2458,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     2253 00039840     2800          .word   02800H,02000H,06E47H
     2254                    
     2255 00039870           BLUE:
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   42
@@ -2518,7 +2518,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     2308                    
     2309 0003a8f0           OSGCYC3:
     2310 0003a8f0     002b          .word    43
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   43
@@ -2578,7 +2578,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     2363 0003b970           OSGCYC9:
     2364 0003b970     002b          .word    43
     2365 0003b980     212b          .word   0212BH,07F63H,07FA5H,07F85H,07F84H,07F64H,07F44H,07F24H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   44
@@ -2638,7 +2638,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     2418 0003cec0     416b          .word   0416BH,051ABH,05128H,030E7H,020C6H,06CE5H,05907H,044A6H
     2419 0003cf40     3465          .word   03465H,06928H,034A7H,02486H,075ABH,02488H,06506H,06147H
     2420 0003cfc0     40a3          .word   040A3H,038A5H,030E6H,05D06H,02886H,040E7H,07FE0H,00H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   45
@@ -2698,7 +2698,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     2473 0003e720     1483          .word   01483H,01H,02083H,03926H,0C41H,0358BH,0C64H,02507H
     2474 0003e7a0     30e3          .word   030E3H,01021H,02928H,0421H,0C42H,01CE8H,020E3H,049CBH
     2475 0003e820     3503          .word   03503H,02D27H,024E3H,0562EH,03527H,0520DH,0252AH,028C1H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   46
@@ -2758,7 +2758,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     2528 00040010     00f9          .word   249
     2529 00040020     0000          .word   00H,024C2H,031A5H,03E22H,03622H,04622H,03162H,01042H
     2530 000400a0     2502          .word   02502H,03E07H,03A02H,04602H,02D22H,041C2H,03DA2H,0822H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   47
@@ -2818,7 +2818,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     2583 00041940     2c90          .word   02C90H,02C30H,03051H,04D97H,03D14H,04115H,04555H,0598CH
     2584 000419c0     6462          .word   06462H,06929H,03C94H,03CD4H,038D3H,03873H,05E3BH,04D96H
     2585 00041a40     3492          .word   03492H,03091H,020AAH,0614BH,06CE6H,074C4H,070C4H,06928H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   48
@@ -2878,7 +2878,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     2638 00043190     76f8          .word   076F8H,06D85H,055EFH,0522FH,06ED5H,06922H,07562H,06585H
     2639 00043210     76f5          .word   076F5H,0675BH,069A2H,05230H,05E51H,06F9CH,0737CH,05293H
     2640 00043290     5dc8          .word   05DC8H,06DA2H,06E93H,06A94H,05EF5H,056F7H,06317H,06717H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   49
@@ -2938,7 +2938,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     2693 00044b50     5ed8          .word   05ED8H,0149CH,05EF5H,056D4H,052B3H,06B7BH,020F9H,0293FH
     2694 00044bd0     4e53          .word   04E53H,018BDH,04A71H,05F1AH,01CDAH,0317FH,04E72H,05273H
     2695 00044c50     5ab4          .word   05AB4H,056B3H,05692H,03E0EH,052B4H,04EB6H,03E32H,01CD1H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   50
@@ -2998,7 +2998,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     2748 000463b0     6182          .word   06182H,024E4H,05DE8H,06DE5H,071C3H,05942H,03C82H,04D68H
     2749 00046430     30c3          .word   030C3H,06D02H,061A6H,069A6H,06CE2H,0C44H,01463H,04946H
     2750 000464b0     454a          .word   0454AH,05D46H,030E4H,060E2H,068C2H,061A8H,058E4H,048A2H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   51
@@ -3058,7 +3058,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     2803 00047d60     258c          .word   0258CH,0216CH,01508H,0C86H,028ABH,02927H,0360FH,0589BH
     2804 00047de0     5618          .word   05618H,045EDH,03D14H,02D47H,010C3H,02DCEH,06F37H,01D4AH
     2805 00047e60     2dcc          .word   02DCCH,03E50H,01A0H,0140H,0160H,0779BH,0779BH
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   52
@@ -3118,7 +3118,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     2858 000495d0     59d0          .word   059D0H,07F3AH,04614H,03DD7H,03176H,03DB8H,02D35H,0733CH
     2859 00049650     3173          .word   03173H,03157H,0148EH,02912H,03DF6H,0771AH,0518EH,0250CH
     2860 000496d0     2d72          .word   02D72H,02D37H,020F0H,0618DH,0731EH,0512AH,06E11H,06215H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   53
@@ -3178,7 +3178,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     2913 0004ae80     00ff          .word   255
     2914 0004ae90     0000          .word   00H,041F1H,04A34H,039AFH,035AFH,039B0H,01CE9H,03DD0H
     2915 0004af10     14a7          .word   014A7H,0C64H,0292CH,01087H,01468H,01CAAH,0292DH,0250BH
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   54
@@ -3238,7 +3238,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     2968 0004c810     5a97          .word   05A97H,01023H,041D4H,052FAH,0471AH,062B3H,030E6H,05ED7H
     2969 0004c890     10e5          .word   010E5H,06F3BH,028EAH,01C86H,05679H,020E7H,066F9H,030A1H
     2970 0004c910     5295          .word   05295H,06AF7H,06B1AH,01084H,020C9H,035ADH,0C86H,060C0H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   55
@@ -3298,7 +3298,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     3023 0004e070     41f1          .word   041F1H,03D8FH,05254H,06AFBH,066DAH,0669AH,05676H,01CC8H
     3024 0004e0f0     45f3          .word   045F3H,05216H,05EB8H,05E97H,062D8H,04E33H,0731DH,06EFCH
     3025 0004e170     5db7          .word   05DB7H,05092H,04C50H,05051H,05452H,05CF5H,06A19H,06E7BH
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   56
@@ -3358,7 +3358,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     3078 0004fa70     4a98          .word   04A98H,06B99H,059EEH,0292EH,04657H,0154EH,0182H,05F37H
     3079 0004faf0     28c6          .word   028C6H,04128H,03907H,020C9H,04EB8H,0637DH,0C84H,04677H
     3080 0004fb70     05e5          .word   05E5H,035CCH,056D0H,0529AH,06BBBH,06B9BH,0679BH,06BBAH
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   57
@@ -3418,7 +3418,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     3133 000512c0     5490          .word   05490H,07EDCH,0448CH,07A3AH,0508FH,05E76H,05A73H,03962H
     3134 00051340     3542          .word   03542H,04A0BH,01142H,04630H,0490EH,054F0H,06A17H,034EBH
     3135 000513c0     49f1          .word   049F1H,07ADBH,048EFH,06554H,061F5H,05DF4H,06E78H,06996H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   58
@@ -3478,7 +3478,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     3188 00052cb0     720b          .word   0720BH,07317H,06FDFH,0777CH,055ABH,076D3H,061ECH,05D68H
     3189 00052d30     6f59          .word   06F59H,04235H,01CEFH,018AEH,018CDH,0C8CH,04A38H,073BFH
     3190 00052db0     527b          .word   0527BH,020EFH,014CCH,03E17H,073DFH
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   59
@@ -3538,7 +3538,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     3243 000544e0     20d3          .word   020D3H,02953H,02512H,0106DH,08A9H,0256EH,03176H,01870H
     3244 00054560     2532          .word   02532H,01D39H,02DDDH,029BBH,029D8H,0116CH,0224FH,02A33H
     3245 000545e0     00a6          .word   0A6H,0D89H,0160CH,02212H,02575H,0257AH,02598H,019B0H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   60
@@ -3598,7 +3598,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     3298 00055d80     00fd          .word   253
     3299 00055d90     0000          .word   00H,023H,0110EH,0468H,022H,08CDH,01995H,01596H
     3300 00055e10     0047          .word   047H,0889H,025FBH,01977H,01532H,045H,01D73H,019B6H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   61
@@ -3658,7 +3658,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     3353 00057480     0038          .word    56
     3354 00057490     252b          .word   0252BH,00H,04F3FH,04F1FH,0531FH,056FFH,056FEH,05AFEH
     3355 00057510     5efe          .word   05EFEH,0631EH,0671EH,06B3DH,06F5DH,0671CH,0631CH,05EFCH
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   62
@@ -3718,7 +3718,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     3408 00058860     7fff          .word   07FFFH,07FFFH,07FFFH,07FFFH,07FFFH,07FFFH,07FFFH,07FFFH
     3409 000588e0     7fff          .word   07FFFH,07FFFH,07FFFH,07FFFH,07FFFH,07FFFH,07FFFH,07FFFH
     3410 00058960     7fff          .word   07FFFH,07BFFH,07BDFH,077DFH,077BEH,07FFFH,07FFFH,06318H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   63
@@ -3778,7 +3778,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     3463 00059920     263a          .word   0263AH,02218H,01E18H,01DF8H
     3464                    
     3465 00059960           SGMD8WHT:
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   64
@@ -3838,7 +3838,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     3518 0005a2b0     0017          .word    23
     3519 0005a2c0     0000          .word   00H,0318CH,02D6BH,02D6BH,0294AH,0294AH,02529H,02529H
     3520 0005a340     2108          .word   02108H,02108H,01CE7H,01CE7H,018C6H,018C6H,014A5H,014A5H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   65
@@ -3898,7 +3898,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     3573 0005afb0     4163          .word   04163H,04542H,04122H,03922H,030A0H,024C0H,01C80H,01440H
     3574 0005b030     3d65          .word   03D65H,03925H,05A2DH,05A2BH,0560AH,051E7H,051C5H,049A6H
     3575 0005b0b0     4d83          .word   04D83H,04963H,04585H,04584H,03D42H,030E0H,030A1H,030E3H
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   66
@@ -3958,7 +3958,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     3628 0005c690     39a0          .word   039A0H,039C0H,03DE0H,04200H,04620H,04A40H,04E60H,05280H
     3629 0005c710     56a0          .word   056A0H,05AC0H,05EE1H,06302H,06723H,06B44H,06F65H,07386H
     3630 0005c790     77a7          .word   077A7H,07BC8H,07FE9H,07FEAH,07FEBH,07FECH,07FEDH,07FEEH
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   67
@@ -4018,7 +4018,7 @@ TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
     3683 0005dae0     5014          .word   05014H,05415H,05816H,05C17H,06018H,06038H,06459H,06479H
     3684 0005db60     6499          .word   06499H,068BAH,068DAH,068FAH,06D1BH,06D3BH,06D5BH,0717CH
     3685 0005dbe0     719c          .word   0719CH,071BCH,075DDH,075FDH,0761DH,07A3EH,07A5EH,07A7EH
-TMS340 COFF Macro Assembler Version 6.10     Tue Dec 05 14:31:16 2023
+TMS340 COFF Macro Assembler Version 6.10     Wed Dec 06 05:52:19 2023
  Copyright (c) 1985-1991  Texas Instruments Incorporated 
 
                                                                      PAGE   68

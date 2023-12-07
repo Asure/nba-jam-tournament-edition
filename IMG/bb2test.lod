@@ -207,6 +207,7 @@ ASM> TEXT.TBL
 COF>
 trogf15.img
 PON>
+***> 3ce9d69
 ---> FON150,FON151,FON152,FON153,FON154,FON155,FON156,FON157,FON158,FON159
 ---> FON15A,FON15B,FON15C,FON15CR,FON15D,FON15E,FON15F,FON15G,FON15H,FON15I
 ---> FON15J,FON15K,FON15L,FON15M,FON15N,FON15O,FON15P,FON15Q,FON15R,FON15S
@@ -242,11 +243,11 @@ CON>
 ball.img
 POF>
 ASM> ball.tbl
-***> 3d0b0e1
+;***> 3d0b0e1
 ---> ballshad1,ballshad2,ballshad3,ballshad4,ballshad6
 ---> ballshad7,ballshad8,ballshad9,ballshad10,ballshad11,ballshad12
 ---> ball12
-***> 3d0b607
+;***> 3d0b607
 ---> ball13
 ---> ball21,ball22,ball23
 ---> ball31,ball32,ball33
@@ -268,8 +269,10 @@ ASM> ball.tbl
 courtz.img
 POF>
 ASM> crowd.tbl
+***> 3d2d37d
 ---> sdcrwd1b,sdcrwd2b,sdcrwd3b,sdcrwd4b
 ---> sdcrwd5b,sdcrwd6b,sdcrwd7b,sdcrwd8b
+***> 3d86a19
 ---> sdcrwd1c,sdcrwd2c,sdcrwd3c,sdcrwd4c
 ---> nsdcrwd1b,nsdcrwd2b,nsdcrwd3b,nsdcrwd4b
 ---> sdcrwd5c,sdcrwd6c,sdcrwd7c

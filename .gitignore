@@ -1,7 +1,3 @@
 *.OBJ
 *.LST
 *.OUT
-*.pyc
-ROM/la*.*
-ROM/ROM*.*
-ROM/U*.*
