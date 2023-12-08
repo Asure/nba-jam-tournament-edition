@@ -10,6 +10,7 @@ IHDR SAG:L
 ---> LED_MAX
 ---> LED_0
 COF>
+***> 20006f6
 ---> LED_1,LED_2,LED_3,LED_4,LED_5,LED_6,LED_7,LED_8,LED_9
 ---> LED_10,LED_11,LED_12,LED_13,LED_14,LED_15,LED_16,LED_17,LED_18,LED_19
 ---> LED_20,LED_21,LED_22,LED_23,LED_24,LED_25,LED_26,LED_27,LED_28,LED_29
@@ -245,7 +246,9 @@ ASM> ball.tbl
 ***> 3d0b0e1
 ---> ballshad1,ballshad2,ballshad3,ballshad4,ballshad6
 ---> ballshad7,ballshad8,ballshad9,ballshad10,ballshad11,ballshad12
----> ball12,ball13
+---> ball12
+***> 3d0b607
+---> ball13
 ---> ball21,ball22,ball23
 ---> ball31,ball32,ball33
 ---> ball41,ball42,ball43

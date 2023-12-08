@@ -42,91 +42,91 @@ ballshad11:
 ballshad12:
 	.word   3,2,0,0
 	.long   03d0b2b2H
-	.word   01000H
+	.word   07000H
 ball12:
 	.word   11,11,5,10
 	.long   03d0b2b8H
-	.word   04000H
+	.word   07000H
 ball13:
 	.word   11,11,5,10
-	.long   03d0b49cH
-	.word   04000H
+	.long   03d0b607H
+	.word   07000H
 ball21:
 	.word   12,12,5,10
-	.long   03d0b680H
-	.word   04000H
+	.long   03d0b956H
+	.word   07000H
 ball22:
 	.word   12,12,5,10
-	.long   03d0b8c0H
-	.word   04000H
+	.long   03d0bd46H
+	.word   07000H
 ball23:
 	.word   12,12,5,10
-	.long   03d0bb00H
-	.word   04000H
+	.long   03d0c136H
+	.word   07000H
 ball31:
 	.word   13,13,6,11
-	.long   03d0bd40H
-	.word   04000H
+	.long   03d0c526H
+	.word   07000H
 ball32:
 	.word   13,13,6,11
-	.long   03d0bfe4H
-	.word   04000H
+	.long   03d0c9c5H
+	.word   07000H
 ball33:
 	.word   13,13,6,11
-	.long   03d0c288H
-	.word   04000H
+	.long   03d0ce64H
+	.word   07000H
 ball41:
 	.word   14,14,6,12
-	.long   03d0c52cH
-	.word   04000H
+	.long   03d0d303H
+	.word   07000H
 ball42:
 	.word   14,14,6,12
-	.long   03d0c83cH
-	.word   04000H
+	.long   03d0d85fH
+	.word   07000H
 ball43:
 	.word   14,14,6,12
-	.long   03d0cb4cH
-	.word   04000H
+	.long   03d0ddbbH
+	.word   07000H
 ball51:
 	.word   15,15,7,13
-	.long   03d0ce5cH
-	.word   04000H
+	.long   03d0e317H
+	.word   07000H
 ball52:
 	.word   15,15,7,13
-	.long   03d0d1e0H
-	.word   04000H
+	.long   03d0e93eH
+	.word   07000H
 ball53:
 	.word   15,15,7,13
-	.long   03d0d564H
-	.word   04000H
+	.long   03d0ef65H
+	.word   07000H
 ball61:
 	.word   16,16,8,14
-	.long   03d0d8e8H
-	.word   04000H
+	.long   03d0f58cH
+	.word   07000H
 ball62:
 	.word   16,16,8,14
-	.long   03d0dce8H
-	.word   04000H
+	.long   03d0fc8cH
+	.word   07000H
 ball63:
 	.word   16,16,8,14
-	.long   03d0e0e8H
-	.word   04000H
+	.long   03d1038cH
+	.word   07000H
 ball71:
 	.word   17,17,8,15
-	.long   03d0e4e8H
-	.word   04000H
+	.long   03d10a8cH
+	.word   07000H
 ball72:
 	.word   17,17,8,15
-	.long   03d0e96cH
-	.word   04000H
+	.long   03d11273H
+	.word   07000H
 ball73:
 	.word   17,17,8,15
-	.long   03d0edf0H
-	.word   04000H
+	.long   03d11a5aH
+	.word   07000H
 ball81:
 	.word   18,18,9,15
-	.long   03d0f274H
-	.word   04000H
+	.long   03d12241H
+	.word   07000H
 ball82:
 	.word   18,18,9,15
 	.long   03d0f784H

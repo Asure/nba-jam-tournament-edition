@@ -707,36 +707,36 @@ SIM_SAC:
 SMI_IND:
 	.word   48,61,0,61
 	.long   0427b028H
-	.word   07000H
+	.word   00H
 	.long   SMI_INDP
 STA_NEY:
 	.word   65,62,0,62
-	.long   04280038H
+	.long   04280ba8H
 	.word   00H
 	.long   STA_NEYP
 WEA_PHL:
 	.word   76,62,0,62
-	.long   04287e28H
+	.long   04288998H
 	.word   00H
 	.long   WEA_PHLP
 WEB_GLD:
 	.word   82,60,0,60
-	.long   04291168H
+	.long   04291cd8H
 	.word   00H
 	.long   WEB_GLDP
 WLS_ATL:
 	.word   53,60,0,60
-	.long   0429ab28H
+	.long   0429b698H
 	.word   00H
 	.long   WLS_ATLP
 DAY_MLW:
 	.word   52,61,0,61
-	.long   042a0e88H
+	.long   042a19f8H
 	.word   00H
 	.long   DAY_MLWP
 MOR_NEJ:
 	.word   75,60,0,60
-	.long   042a71a8H
+	.long   042a7d18H
 	.word   00H
 	.long   MOR_NEJP
 	.TEXT

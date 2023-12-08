@@ -1832,208 +1832,207 @@ ladderBMOD:
 dabullBMOD:
 	.word	720,360,30	;x size, y size, #blocks
 	.long	dabullBLKS, er2HDRS, er2PALS
-
 icHDRS:
 	.word	108,58	;x size, y size
-	.long	0569808BH	;address
+	.long	056991bbH	;address
 	.word	00H	;dma ctrl
 	.word	116,182
-	.long	056A444BH
+	.long	056A557bH
 	.word	00H
 	.word	64,61
-	.long	056CD80BH
+	.long	056Ce93bH
 	.word	00H
 	.word	156,38
-	.long	056D520BH
+	.long	056D633bH
 	.word	00H
 	.word	44,80
-	.long	056E0B4BH
+	.long	056E1c7bH
 	.word	06000H
 	.word	32,28
-	.long	056E5DCBH
+	.long	056E6efbH
 	.word	00H
 	.word	20,30
-	.long	056E79CBH
+	.long	056E8afbH
 	.word	00H
 	.word	72,37
-	.long	056E8C8BH
+	.long	056E9dbbH
 	.word	00H
 	.word	72,47
-	.long	056EDFCBH
+	.long	056Ef0fbH
 	.word	00H
 	.word	24,44
-	.long	056F498BH
+	.long	056F5abbH
 	.word	00H
 	.word	40,30
-	.long	056F6A8BH
+	.long	056F7bbbH
 	.word	00H
 	.word	72,33
-	.long	056F900BH
+	.long	056Fa13bH
 	.word	00H
 	.word	132,45
-	.long	056FDA4BH
+	.long	056Feb7bH
 	.word	00H
 	.word	200,41
-	.long	057093EBH
+	.long	0570a51bH
 	.word	00H
 	.word	124,18
-	.long	0571942BH
+	.long	0571a55bH
 	.word	00H
 	.word	88,63
-	.long	0571D9EBH
+	.long	0571eb1bH
 	.word	00H
 	.word	20,12
-	.long	0572872BH
+	.long	0572985bH
 	.word	00H
 	.word	20,46
-	.long	05728EABH
+	.long	05729fdbH
 	.word	00H
 	.word	44,39
-	.long	0572AB6BH
+	.long	0572bc9bH
 	.word	00H
 	.word	60,47
-	.long	0572E10BH
+	.long	0572f23bH
 	.word	00H
 	.word	52,36
-	.long	0573392BH
+	.long	05734a5bH
 	.word	00H
 	.word	36,38
-	.long	057373ABH
+	.long	057384dbH
 	.word	00H
 	.word	32,27
-	.long	05739E6BH
+	.long	0573af9bH
 	.word	00H
 	.word	88,74
-	.long	0573B96BH
+	.long	0573ca9bH
 	.word	00H
 	.word	60,70
-	.long	057484EBH
+	.long	0574961bH
 	.word	00H
 	.word	80,34
-	.long	0575082BH
+	.long	0575195bH
 	.word	00H
 	.word	88,49
-	.long	05755D2BH
+	.long	05756e5bH
 	.word	00H
 	.word	144,50
-	.long	0575E3EBH
+	.long	0575f51bH
 	.word	00H
 	.word	20,39
-	.long	0576C4EBH
+	.long	0576d61bH
 	.word	00H
 	.word	64,30
-	.long	0576DD4BH
+	.long	0576ee7bH
 	.word	00H
 	.word	12,12
-	.long	0577194BH
+	.long	05772a7bH
 	.word	07000H
 	.word	40,54
-	.long	05771D3BH
+	.long	05772e6bH
 	.word	00H
 	.word	40,31
-	.long	057760BBH
+	.long	057771ebH
 	.word	00H
 	.word	40,23
-	.long	0577877BH
+	.long	057798abH
 	.word	00H
 	.word	12,32
-	.long	0577A43BH
+	.long	0577b56bH
 	.word	00H
 	.word	44,63
-	.long	0577B03BH
+	.long	0577c16bH
 	.word	00H
 	.word	88,53
-	.long	057806DBH
+	.long	0578180bH
 	.word	00H
 	.word	84,137
-	.long	0578989BH
+	.long	0578a9cbH
 	.word	00H
 	.word	16,37
-	.long	057A003BH
+	.long	057A116bH
 	.word	07000H
 	.word	92,87
-	.long	057A106BH
+	.long	057A219bH
 	.word	00H
 	.word	44,63
-	.long	057B0A8BH
+	.long	057B1bbbH
 	.word	00H
 	.word	40,63
-	.long	057B612BH
+	.long	057B725bH
 	.word	00H
 	.word	164,79
-	.long	057BAFEBH
+	.long	057Bc11bH
 	.word	00H
 	.word	100,55
-	.long	057D44CBH
+	.long	057d55fbH
 	.word	00H
 	.word	176,33
-	.long	057DF0ABH
+	.long	057e01dbH
 	.word	00H
 	.word	128,48
-	.long	057EA62BH
+	.long	057Eb75bH
 	.word	00H
 	.word	16,40
-	.long	057F662BH
+	.long	057F775bH
 	.word	00H
 	.word	48,80
-	.long	057F7A2BH
+	.long	057F8b5bH
 	.word	00H
 	.word	60,39
-	.long	057FF22BH
+	.long	0580035bH
 	.word	00H
 	.word	8,20
-	.long	05803B4BH
+	.long	05804c7bH
 	.word	00H
 	.word	48,56
-	.long	0580404BH
+	.long	0580517bH
 	.word	00H
 	.word	112,66
-	.long	0580944BH
+	.long	0580a57bH
 	.word	00H
 	.word	72,61
-	.long	05817B4BH
+	.long	05818c7bH
 	.word	00H
 	.word	28,21
-	.long	0582048BH
+	.long	058215bbH
 	.word	00H
 	.word	56,32
-	.long	058216EBH
+	.long	0582281bH
 	.word	00H
 	.word	116,46
-	.long	05824EEBH
+	.long	0582601bH
 	.word	00H
 	.word	64,36
-	.long	0582F5ABH
+	.long	058306dbH
 	.word	00H
 	.word	28,24
-	.long	05833DABH
+	.long	05834edbH
 	.word	00H
 	.word	36,27
-	.long	058352ABH
+	.long	058363dbH
 	.word	06000H
 	.word	56,50
-	.long	05836973H
+	.long	05837aa3H
 	.word	00H
 	.word	28,31
-	.long	0583C0F3H
+	.long	0583d223H
 	.word	00H
 	.word	52,61
-	.long	0583DC13H
+	.long	0583ed43H
 	.word	00H
 	.word	60,114
-	.long	05843F33H
+	.long	05845063H
 	.word	06000H
 	.word	40,76
-	.long	0584DF83H
+	.long	0584f0b3H
 	.word	00H
 	.word	52,46
-	.long	05853E83H
+	.long	05854fb3H
 	.word	00H
 	.word	40,38
-	.long	05858943H
+	.long	05859a73H
 	.word	00H
 	.word	36,27
-	.long	0585B8C3H
+	.long	0585c9f3H
 	.word	00H
 chrvic1BLKS:
 	.word	04048H	;flags
@@ -2324,7 +2323,7 @@ tHDRS:
 	.long	0551AD87H
 	.word	06000H
 	.word	52,9
-	.long	05861233H
+	.long	05862363H
 	.word	01000H
 	.word	188,9
 	.long	0551BAD7H
@@ -2345,16 +2344,16 @@ tHDRS:
 	.long	0555B09BH
 	.word	05000H
 	.word	244,18
-	.long	05861407H
+	.long	05862537H
 	.word	04000H
 	.word	228,18
-	.long	058658A7H
+	.long	058669d7H
 	.word	04000H
 	.word	4,11
 	.long	0553C3DFH
 	.word	06000H
 	.word	168,24
-	.long	058698C7H
+	.long	0586a9f7H
 	.word	05000H
 	.word	8,71
 	.long	0553C4E7H
@@ -2450,22 +2449,22 @@ subsBMOD:
 
 hpHDRS:
 	.word	204,89	;x size, y size
-	.long	0586E787H	;address
+	.long	0586f8b7H	;address
 	.word	07000H	;dma ctrl
 	.word	88,52
-	.long	0588D7FBH
+	.long	0588e92bH
 	.word	06000H
 	.word	40,105
-	.long	0589433BH
+	.long	0589546bH
 	.word	07000H
 	.word	24,20
-	.long	0589B613H
+	.long	0589c743H
 	.word	06000H
 	.word	8,7
-	.long	0589C153H
+	.long	0589d283H
 	.word	01000H
 	.word	8,7
-	.long	0589C18BH
+	.long	0589d2bbH
 	.word	01000H
 viewfrtBLKS:
 	.word	04B40H	;flags
