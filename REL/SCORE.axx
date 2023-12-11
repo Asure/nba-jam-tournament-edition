@@ -1,0 +1,4108 @@
+	.file	"score.asm"
+	.title	"score stuff"
+	.width	132
+	.option	b,d,l,t
+	.mnolist
+
+
+	.include	"mproc.equ"
+	.include	"disp.equ"
+	.include	"gsp.equ"
+	.include	"sys.equ"
+	.include	"imgtbl.glo"
+	.include	"imgtbl2.glo"
+	.include	"game.equ"
+	.include	"shawn.hdr"
+	.include	"mac2.asm"
+	.include	"audit.equ"
+	.include	"leds.tbl"
+	.include	"city.tbl"
+	.include	"arrow.tbl"
+	.asg		0,SEQT
+	.include	"plyr.equ"
+
+	.ref	cntdown_snd,tune2_snd,snd_play1ovr
+	.ref	musicoff_snd
+	.ref	horn_snd
+
+showtm		.word	0fca1H,73,0812cH,0	;showtime
+tuneq2_snd	.word	0f3ffH,08H,08006H,0	;Quarter 2 tune
+tuneq3_snd	.word	0f3ffH,08H,08007H,0	;Quarter 3 tune
+tuneq4_snd	.word	0f3ffH,08H,08008H,0	;Quarter 4 tune
+tuneot_snd	.word	0f3ffH,08H,0800bH,0	;Quarter o.t. tune
+intoot_snd	.word	0f990H,40,08180H,0	;Into o.t.
+tick_snd	.word	0f3f7H,018H,08090H,0	;Tick snd
+tock_snd	.word	0f3f7H,018H,08091H,0	;Tock snd
+
+minute_snd
+	.word	0f97fH,1,081feH,1		;silence
+	.word	0f9f0H,80,08193H,0	;One minute speech call
+
+alert_snd	.word	0f3f7H,08H,08092H,0	;Alert snd
+warn_snd	.word	0fbf7H,018H,080a0H,0	;Warning on shot clock
+infoex_snd	.word	0f3ffH,08H,08097H,0	;Info box exit
+whstle_snd	.word	0f9f5H,030H,08148H,0	;Ref whistle at game start
+
+
+	.ref	RNDRNG0
+	.ref	lighten1
+	.ref	lighten2
+	.ref	lighten3
+	.ref	lighten4
+	.ref	lighten5
+	.ref	lighten6
+	.ref	lighten7
+
+	.ref	strongmen
+	.ref	get_but_val_down
+	.ref	get_start_cur
+	.ref	special_heads
+	.ref	plyrnumonfire
+	.ref	qtr_purchased,idiot_box
+	.ref	update_shoes
+	.ref	flash_bigtxt
+	.ref	setup_message,print_string_C2,print_string
+	.ref	copy_string,print_string_C
+	.ref	dec_to_asc
+	.ref	osgemd_ascii,sgmd8_ascii,osgmd8_ascii
+	.ref	lgmd_ascii,omlgmd_ascii,ogmd10_ascii
+	.ref	mess_line_spacing
+	.ref	mess_cursy
+	.ref	TWOPLAYERS
+	.ref	mess_objid
+
+	.ref	inc_player_stat
+	.ref	assist_plyr
+	.ref	blink_plyr
+	.ref	msg_ram
+ 	.ref	get_but_val_cur
+	.ref	start_animate
+	.ref	plyr_endofqrtr,WFLG
+	.ref	ballgoaltcnt
+	.ref	ballflash
+	.ref	PALRAM,PCNT,pal_clean
+	.ref	CRED_P,BINBCD,GAMSTATE,CR_STRTP,GET_ADJ,PSTATUS
+	.ref	P1DATA,P2DATA,P3DATA,P4DATA,OBJON,OBJOFF
+	.ref	init_t1a,init_t2a,init_t3a,init_t4a
+	.ref	timertcnt,prt_status
+	.ref	names,name_flop,name_cnt
+	.ref	plyrobj_t,PSTATUS2
+	.ref	anipt_getsclxy
+	.ref	CR_CONTP,inbound
+	.ref	HALT
+	.ref	OWINDOW,RD15FONT,AUD,WNDWON
+	.ref	CWINDOW,GETCPNT,LOWZ
+	.ref	HEXTOASC,WIPEOUT
+	.ref	STRCNRMO
+	.ref	plyrproc_t,pal_getf
+	.ref	team1,team2
+	.ref	gndpos_t
+	.ref	plyr_takeoutball3
+	.ref	ballpnumshot,ballpnum
+	.ref	pal_find
+	.ref	ballobj_p
+	.ref	get_all_buttons_down
+	.ref	get_all_starts_down
+	.ref	AUD1
+	.ref	baby_flag
+
+	
+
+	.def	LED_00,last_score,tvpanelon,LED_MAX
+	.def	sclockx
+	.def	arrow1t,arrow2t,arrow3t,arrow4t
+	.def	arrow1r,arrow2r,arrow3r,arrow4r
+	.def	arrow1r2p,arrow2r2p
+
+
+
+	BSSX	conttimers,16*4		;Continue timer value. 4 players
+	.bss	shotram,3*32
+	BSSX	shotimer,32
+	.bss	temp,16
+	BSSX	game_time,32		;mins,secs,10ths of sec each 8 bits
+	BSSX	clock_speed,16
+	BSSX	gmqrtr,16		;0-5 4=overtime,5=final score
+	.bss	bclok_imgs,32*4		;images for big clock at botm of scrn
+	.bss	clock_imgs,32*4		;images for main clock at top of scrn
+	.bss	score_imgs,32*2		;*Imgs for score table score (Must follow^)
+	BSSX	scores,16*2		;scores for both teams
+	.bss	tvpanelon,32		;!0=TV panel displayed, or proc pntr
+
+	.bss	msg_flop,16		;Flop message variable 0 or 1
+	BSSX	BTIME,16
+	BSSX	cntrs_delay,16		;Delay, for Jamies cntdwn
+	.bss	flsh_ptrs,6*32		;Bigscr imgs for red flash
+	.bss	last_score,32		;#scores for red flash
+	BSSX	clock_active,16		;0=clock tick down, 1=hold clock
+	BSSX	sc_proc,32		;0if not shot clock on scrn, proc ptr
+	BSSX	_4plyrsingame,16	;1=no stay on machine, 0=stay on
+
+	BSSX	p1taps,16		;Keep in order
+	BSSX	p2taps,16
+	BSSX	p3taps,16
+	BSSX	p4taps,16
+	BSSX	show_shot,16
+	BSSX	assistance_off,16	;1=turn help off
+	BSSX	plyr_tourn,16		;*4
+	BSSX	plyr_maxpower,16	;Powerup power - can't be pushed down
+
+
+BUYTICK	.EQU	110		;60
+SCRNTOP .EQU	100
+BRGHT	.EQU	02c2cH		;GREEN IN SCOREPAL
+COLORS	.EQU	00909H		;WHITE IN SCOREPAL
+COLORA	.EQU	03E3EH		;COLOR CYCLE IN SCOREPAL
+
+
+GND_Y		.equ	116-40
+GZBASE		.equ	894
+
+LEDOCTRL	.equ	DMAWNZ|03000H	;3 bits per pixel (In BB.asm)
+MSGOCTRL	.equ	DMAWNZ|06000H
+
+
+	.text
+
+
+timer_table
+
+	.asg	5100h,BASETM
+
+	.word	BASETM-BASETM*30/100	;1 (slowest)
+	.word	BASETM-BASETM*15/100	;2 (slower)
+	.word	BASETM			;3 (default)	;Approx 10 minutes
+	.word	BASETM+BASETM*15/100	;4 (faster)
+	.word	BASETM+BASETM*30/100	;5 (fastest)
+
+
+
+ SUBR	plyr_lost
+
+   	move	a8,a9
+	clr	a0
+	move	a0,*a13(PDATA)			;lost cntr
+	move	a0,*a13(PDATA+64),L		;Current red/white shoe pal
+	move	a0,*a13(PDATA+96),W		;lft/rgt 0=lft
+	move	a0,*a13(PDATA+112),W		;minimum duration
+	SLEEP	3*60				;Make sure plyr gets started
+
+	sll	5,a8
+	movi	plyrproc_t,a0			;*player process (4)
+	add	a8,a0
+	move	*a0,a0,L
+	move	a0,*a13(PDATA+32),L		;Keep player proc around
+
+	addi	plyrobj_t,a8
+	move	*a8,a8,L
+
+	sll	6,a9
+	move	a9,a11
+	move	a9,*a13(PDATA+128),W		;keep a9 around
+
+
+gdultop
+	SLEEPK	3				;15
+	calla	update_shoes
+	SLEEPK	3
+	calla	update_shoes
+
+	callr	maybe_replenish
+
+	move	*a8(OXPOS),a0
+
+ 	movi	lft_lst,a10			;off lft side
+
+	move	@TWOPLAYERS,a7			;0 = NO, 1 = YES 2 players
+	jrz	gdulnot2
+ 	movi	lft2_lst,a10			;off lft side
+gdulnot2
+
+	move	@WORLDTLX+16,a7
+	addk	10,a7				;0
+	cmp	a0,a7
+	jrgt	gduloffsc
+
+	movi	rgt_lst,a10			;off rgt side
+
+	move	@TWOPLAYERS,a14			;0 = NO, 1 = YES 2 players
+	jrz	gdulnot2a
+ 	movi	rgt2_lst,a10			;off lft side
+gdulnot2a
+
+
+	addi	15eh-10,a7			;164
+	cmp	a0,a7
+	jrlt	gduloffsc
+	clr	a0
+	move	a0,*a13(PDATA)			;zero lost cntr
+	jruc	gdultop
+
+maybe_replenish
+	PUSH	A9
+	move	*a13(PDATA+128),a9
+	move	@PSTATUS,a0
+	move	a9,a1
+	srl	6,a1
+	btst	a1,a0
+
+	move	*a13(PDATA+32),a0,L		;player proc
+	move	*a0(plyr_PDATA_p),a0,L
+	move	*a0(used_turbo),a2
+	jrle	gdulok
+	subk	1,a2
+	move	a2,*a0(used_turbo)
+	jruc	gdulno_refill
+
+gdulok	callr	replenish_turbo
+
+gdulno_refill
+	PULL	a9
+	rets
+
+gduloffsc
+
+	add	a9,a10
+	move	*a10+,a2,L			;get proper arw dir & # img
+	move	*a10,a0,L			;get x
+
+	move	a8,a10
+
+	movi	[100,0],a1
+	clr	a3
+	movi	DMAWNZ|M_SCRNREL|M_NOCOLL,a4
+	movi	arwid,a5
+	clr	a6
+	clr	a7
+	calla	BEGINOBJ2
+
+
+
+
+	move	a8,a9
+	move	a10,a8				;player img to stick to
+
+gdulmetop	inc	a10
+	move	a10,a0
+	andi	03h,a0		;7		;replenish rate when off scrn
+	jrnz	gdulme1
+
+	callr	maybe_replenish
+
+gdulme1
+	move	*a8(OXPOS),a0
+
+	move	@WORLDTLX+16,a7
+	cmp	a0,a7
+	jrgt	gduloffsc2l
+	addi	164h,a7
+	cmp	a0,a7
+	jrlt	gduloffsc2r
+	move	*a13(PDATA+112),a0		;minimum duration
+	inc	a0
+	move	a0,*a13(PDATA+112)
+	cmpi	15,a0
+	jrle	gdulzo
+	move	a9,a0
+   	calla	DELOBJ
+	clr	a0
+	move	a0,*a13(PDATA)			;zero lost cntr
+	move	a0,*a13(PDATA+112)
+	move	a11,a9
+
+	move	*a13(PDATA+32),a10,L
+	callr	arw_on1plyr
+
+	move	*a13(PDATA+32),a3,L
+	clr	a2
+	move	a2,*a3(plyr_offtime)
+
+	jruc	gdultop
+
+gduloffsc2l
+	sub	a0,a7
+	sra	3,a7
+
+	movi	40,a0			;move	*a9(OXPOS),a0
+	sub	a7,a0
+
+	move	*a13(PDATA+32),a3,L
+	move	*a3(plyr_num),a2
+
+	move	@PSTATUS,a14
+	btst	a2,a14
+	jrz	gdulnohelp
+
+	move	*a3(plyr_offtime),a2
+	inc	a2
+	move	a2,*a3(plyr_offtime)
+	cmpi	3*50*2+20-20,a2			;*1
+	jrlt	gdulnohelp
+
+	move	@gmqrtr,a2
+	jrnz	gdulnohelp
+
+	move	@inbound,a0
+	jrnn	gdulnohelp0
+
+	clr	a2
+	move	a2,*a3(plyr_offtime)
+
+	PUSH	a0,a1
+	movk	2,a0
+	move	*a3(plyr_num),a1
+	calla	idiot_box
+	PULL	a0,a1
+
+gdulnohelp0
+	clr	a2
+	move	a2,*a3(plyr_offtime)
+
+gdulnohelp
+	
+	move	@ballpnum,a3
+	jrn	gdulnoow			;No owner?
+
+	move	*a13(PDATA+32),a3,L
+	move	*a3(plyr_ownball),a14	;-=Teammate, 0=Neither, +=I have ball
+	jrnz	gdulnoow
+
+	move	*a3(plyr_num),a14
+	subk	2,a14
+	jrlt	gdulnoow
+	movk	1,a2
+	move	a2,*a3(plyr_offscrn)	;Player is offscrn, spd him up
+
+gdulnoow
+
+	move	*a13(PDATA+96),a2
+	sub	a0,a2
+	abs	a2
+	cmpi	2,a2
+	jrle	gduloffo
+
+	move	*a9(OXPOS),a1
+	cmp	a0,a1
+	jrz	gduloffo
+	jrlt	gduloff0
+	cmpi	0,a1
+	jrz	gduloff1
+
+	subk	1,a1
+	jruc	gduloff1
+gduloff0	addk	1,a1
+gduloff1	move	a1,*a9(OXPOS)
+	move	a1,*a13(PDATA+96)
+	jruc	gduloffo
+
+gduloffsc2r
+	sub	a7,a0
+	sra	3,a0
+
+	movi	325,a7			;move	*a9(OXPOS),a7
+	add	a7,a0
+
+
+	move	*a13(PDATA+32),a3,L
+	move	*a3(plyr_offtime),a2
+	inc	a2
+	move	a2,*a3(plyr_offtime)
+
+
+	cmpi	3*50*2+20-20,a2			;*1
+	jrlt	gdulnohelp1
+
+	move	@gmqrtr,a2
+	jrnz	gdulnohelp1
+
+	move	@inbound,a0
+	jrnn	gdulnohelp01
+
+
+
+	clr	a2
+	move	a2,*a3(plyr_offtime)
+
+	PUSH	a0,a1
+	movk	2,a0
+	move	*a3(plyr_num),a1
+	calla	idiot_box
+	PULL	a0,a1
+
+gdulnohelp01
+	clr	a2
+	move	a2,*a3(plyr_offtime)
+gdulnohelp1
+
+
+	
+	move	@ballpnum,a3
+	jrn	gdulnoow1			;No owner?
+
+	move	*a13(PDATA+32),a3,L
+	move	*a3(plyr_ownball),a14	;-=Teammate, 0=Neither, +=I have ball
+	jrnz	gdulnoow
+
+	move	*a3(plyr_num),a14
+	subk	2,a14
+	jrge	gdulnoow1
+	movk	1,a2
+	move	a2,*a3(plyr_offscrn)	;Player is offscrn, spd him up
+
+gdulnoow1
+
+	move	*a13(PDATA+96),a2
+	sub	a0,a2
+	abs	a2
+	cmpi	2,a2
+	jrle	gduloffo
+
+	move	*a9(OXPOS),a1
+	cmp	a0,a1
+	jrz	gduloffo
+	jrlt	gdulbff0
+
+	subk	1,a1
+	jruc	gdulbff1
+gdulbff0 
+	cmpi	365,a1
+	jrz	gdulbff1
+	addk	1,a1
+gdulbff1	move	a1,*a9(OXPOS)
+	move	a1,*a13(PDATA+96)
+
+gduloffo
+	move	*a13(PDATA+112),a0		;minimum duration
+	inc	a0
+	move	a0,*a13(PDATA+112)
+
+	move	*a8(OZPOS),a6
+	move	a6,*a9(OZPOS)
+
+	subi	GZBASE,a6		;-Base
+	jrge	gdulzok
+	clr	a6
+gdulzok
+	move	a6,a3
+	sra	1,a6			;Z/2
+	sra	3,a3			;Z/8
+	sub	a3,a6			;=Z/2.667
+	addi	GND_Y,a6
+	subi	34h,a6
+
+	move	@WORLDTLY+16,a0
+	abs	a0
+	add	a0,a6
+
+	move	a6,*a9(OYPOS)
+
+gdulzo	SLEEPK	1			;2
+	move	@HALT,a0
+	jrnz	gdulzo
+	jruc	gdulmetop
+
+
+lft_lst	.long	arrow1l,[40,0]		;4's
+	.long	arrow2l,[40,0]
+	.long	arrow3l,[40,0]
+	.long	arrow4l,[40,0]
+
+rgt_lst	.long	arrow1r,[325,0]		;360's
+	.long	arrow2r,[325,0]
+	.long	arrow3r,[325,0]
+	.long	arrow4r,[325,0]
+
+lft2_lst
+	.long	arrow1l2p,[40,0]		;4's
+	.long	arrow1l2p,[40,0]
+	.long	arrow2l2p,[40,0]
+	.long	arrow2l2p,[40,0]
+
+rgt2_lst
+	.long	arrow1r2p,[325,0]		;360's
+	.long	arrow1r2p,[325,0]
+	.long	arrow2r2p,[325,0]
+	.long	arrow2r2p,[325,0]
+
+
+ SUBR	arw_on1plyr
+
+
+	PUSH	a7,a8,a9,a11
+	move	@GAMSTATE,a0
+	subk	INAMODE,a0
+	jrz	spegx
+
+	move	*a10(plyr_PDATA_p),a0,L	;*PxDATA
+	move	*a0(head_arw_img),a0,L
+	move	*a0(OPLINK),a0,L
+
+	movi	ARWPID,a1
+	movi	arwon,a7
+	move	*a0(PA8),a8,L
+	move	*a0(PA9),a9,L
+	movi	2*60+15,a11		;1
+	calla	XFERPROC
+
+spegx
+	PULL	a7,a8,a9,a11
+	rets
+
+
+
+ SUBR	stick_number
+
+
+	PUSH	a7,a8,a9,a11
+	move	@GAMSTATE,a0
+	subk	INAMODE,a0
+	jrz	eqeax
+
+	move	*a10(head_arw_img),a9,L
+	move	*a9(OPLINK),a0,L
+
+	.if	DEBUG
+	calla	process_exist
+	jrnz	eqeaok
+	LOCKUP
+eqeaok
+	.endif
+ 
+	movi	ARWPID,a1
+	movi	arwon,a7
+	move	*a0(PA8),a8,L
+	move	*a0(PA9),a9,L
+	movi	4*60,a11
+	calla	XFERPROC
+
+eqeax
+	PULL	a7,a8,a9,a11
+	rets
+
+
+
+ SUBR	stick_numbers
+
+
+	clr	a3
+	movi	[-100,0],a1			;95
+	movi	plyrobj_t,a11
+	movi	arrow1t,a2
+	move	@plyrproc_t,a0,L
+	move	a0,*a13(PDATA+32),L		;Keep player proc around
+	cmpi	P1DATA,a10
+	jrz	qihryup
+
+	movk	1,a3
+	movi	plyrobj_t+32,a11
+	movi	arrow2t,a2
+
+
+	move	@TWOPLAYERS,a0		;0 = NO, 1 = YES 2 players
+	jrz	qihrnot2
+	movi	arrow1t2p,a2
+qihrnot2
+
+
+	move	@plyrproc_t+32,a0,L
+	move	a0,*a13(PDATA+32),L		;Keep player proc around
+	cmpi	P2DATA,a10
+	jrz	qihryup
+
+	movk	2,a3
+	movi	plyrobj_t+64,a11
+	movi	arrow3t,a2
+
+
+	move	@TWOPLAYERS,a0		;0 = NO, 1 = YES 2 players
+	jrz	qihrnot2a
+	movi	arrow2t2p,a2
+qihrnot2a
+
+
+
+	move	@plyrproc_t+64,a0,L
+	move	a0,*a13(PDATA+32),L		;Keep player proc around
+	cmpi	P3DATA,a10
+	jrz	qihryup
+
+	movk	3,a3
+	movi	plyrobj_t+96,a11
+	movi	arrow4t,a2
+
+
+	move	@TWOPLAYERS,a0		;0 = NO, 1 = YES 2 players
+	jrz	qihrnot2b
+	movi	arrow2t2p,a2
+qihrnot2b
+
+
+	move	@plyrproc_t+96,a0,L
+	move	a0,*a13(PDATA+32),L		;Keep player proc around
+qihryup
+	move	a3,*a13(PDATA+64)		;Plyr num
+	clr	a3
+	movi	DMAWNZ|M_NOCOLL|M_3D|M_NOSCALE,a4
+	movi	arwid,a5
+	clr	a6
+	clr	a7
+	calla	BEGINOBJ2
+
+	move	a8,a0
+	calla	OBJOFF
+
+	move	a8,*a10(head_arw_img),L
+
+	move	*a13(PDATA+32),a0,L		;Give arrow correct player pal!
+
+	move	a8,a9
+	move	*a11,a8,L			;player img to stick to
+
+	movi	4*60,a11
+
+arwon
+
+	move	@PSTATUS,a0
+	move	*a13(PDATA+64),a1
+	btst	a1,a0
+	jrz	qihrarwait				;Drone?
+
+	move	a9,a0
+	calla	OBJON
+
+
+qihrstktop
+
+
+	calla	anipt_getsclxy			;GETANIXY
+	srl	16,a0
+
+	move	*a8(OZPOS),A2
+	addk	30,a2
+	move	a2,*a9(OZPOS)
+
+	move	*a8(OXPOS),a2
+	subk	4,a2				;7
+	add	a0,a2
+	move	a2,*a9(OXPOS)
+
+	move	*a8(OPLINK),a0,L
+	move	*a0(plyr_headobj_p),a0,L
+	move	*a0(OYPOS),A2
+	subi	35,a2
+	move	a2,*a9(OYPOS)
+
+qihrwtlp
+	SLEEPK	1
+	move	@HALT,a0
+	jrnz	qihrwtlp
+	dsj	a11,qihrstktop
+
+	move	a9,a0
+	calla	OBJOFF
+
+qihrarwait	SLEEP	60				;07fffH
+	move	a9,a0
+	calla	OBJOFF
+	jruc	qihrarwait
+
+
+ SUBR	stick_cpu
+
+	move	@PSTATUS,a0
+	btst	a11,a0
+	janz	SUCIDE
+	move	@GAMSTATE,a0
+	cmpi	INAMODE,a0
+	jaz	SUCIDE
+
+	move	a10,*a13(PDATA),L
+
+	move	*a13(PROCID),a5			;get pid for stick img oid
+
+	movi	[-65,0],a1
+	movi	cpu,a2
+	clr	a3
+	movi	DMAWNZ|M_NOCOLL|M_3D|M_NOSCALE,a4
+	clr	a6
+	clr	a7
+	calla	BEGINOBJ2
+
+	move	a8,a9
+
+	sll	5,a11
+	addi	plyrobj_t,a11
+
+	move	*a11,a8,L			;player img to stick to
+
+	movi	60*15,a11
+oydwmetop
+	calla	anipt_getsclxy			;GETANIXY
+	srl	16,a0
+
+	move	*a8(OZPOS),A2
+	addk	3,a2
+	move	a2,*a9(OZPOS)
+
+	move	*a8(OXPOS),a2
+	subk	7,a2				;y
+	add	a0,a2
+	move	a2,*a9(OXPOS)
+
+	move	*a8(OPLINK),a0,L
+	move	*a0(plyr_headobj_p),a0,L
+	move	*a0(OYPOS),A2
+	addi	20,a2
+	move	a2,*a9(OYPOS)
+
+	move	*a13(PDATA),a0,L
+	move	*a0(ply_time),a0
+	cmpi	25,a0
+	jrlt	oydwmex
+
+	move	a9,a8
+	jauc	DELOBJDIE
+
+oydwmex	SLEEPK	1
+	move	@HALT,a0
+	jrnz	oydwmex
+	dsj	a11,oydwmetop
+	move	a9,a0
+	calla	DELOBJ	
+	DIE
+
+
+ SUBR	stick_spark
+
+	movi	DMAWNZ|M_NOCOLL|M_3D|M_NOSCALE,a4
+	move	*a13(PROCID),a5			;get pid for stick img oid
+	movi	[-65,0],a1
+	movi	lighten1,a2
+	clr	a3
+	clr	a6
+	clr	a7
+	calla	BEGINOBJ2
+
+	move	a8,a9
+
+	sll	5,a11
+	addi	plyrobj_t,a11
+
+	move	*a11,a8,L			;player img to stick to
+oepmmetop0
+	move	a9,a0
+	movi	400h,a14
+	move	a14,*a0(OYPOS)
+	calla	OBJOFF
+	movi	light_t,a10
+	movi	4*60,a0			;4*60,a0
+	calla	RNDRNG0
+	addi	30,a0			;30
+	calla	PRCSLP
+	move	a9,a0
+	calla	OBJON
+	movk	1,a0
+	move	a0,*a13(PDATA)
+oepmmetop
+
+	move	*a13(PDATA),a0
+	dec	a0
+	move	a0,*a13(PDATA)
+	jrnz	oepmcont
+	movk	3,a0
+	move	a0,*a13(PDATA)
+
+	move	*a10+,a0,L
+	jrz	oepmmetop0
+	SWAP	a8,a9
+	move	*a8(OFLAGS),a1
+	calla	obj_aniq
+	SWAP	a8,a9
+	move	*a10+,a0
+	move	a0,*a13(PDATA+16)
+	move	*a10+,a0
+	move	a0,*a13(PDATA+32)
+
+oepmcont
+
+	calla	anipt_getsclxy			;GETANIXY
+	srl	16,a0
+
+	move	*a8(OZPOS),a2
+	addk	3,a2
+	move	a2,*a9(OZPOS)
+
+	move	*a8(OXPOS),a2
+	addk	3,a2
+	add	a0,a2
+	move	*a13(PDATA+16),a0
+	sub	a0,a2
+	move	a2,*a9(OXPOS)
+
+	move	*a8(OPLINK),a0,L
+	move	*a0(plyr_headobj_p),a0,L
+	move	*a0(OYPOS),a2
+	addi	44h,a2
+	move	*a13(PDATA+32),a0
+	sub	a0,a2
+	move	a2,*a9(OYPOS)
+
+
+oepmmex	SLEEPK	1
+	jruc	oepmmetop
+
+
+light_t
+	LWW	lighten1,1,10
+	LWW	lighten2,-2,20
+	LWW	lighten3,-5,37
+	LWW	lighten4,2,44
+	LWW	lighten5,4,56
+	LWW	lighten6,4,65
+	LWW	lighten7,1,69
+	.long	0
+
+
+ SUBR	stick_spark2
+
+	movi	DMAWNZ|M_NOCOLL|M_3D|M_NOSCALE|M_FLIPH,a4
+	move	*a13(PROCID),a5			;get pid for stick img oid
+	movi	[-65,0],a1
+	movi	lighten1,a2
+	clr	a3
+	clr	a6
+	clr	a7
+	calla	BEGINOBJ2
+
+	move	a8,a9
+
+	sll	5,a11
+	addi	plyrobj_t,a11
+
+	move	*a11,a8,L			;player img to stick to
+usnwmetop0
+	move	a9,a0
+	movi	400h,a14
+	move	a14,*a0(OYPOS)
+	calla	OBJOFF
+	movi	light_t,a10
+	movi	4*60,a0			;4*60,a0
+	calla	RNDRNG0
+	addi	30,a0			;30
+	calla	PRCSLP
+	move	a9,a0
+	calla	OBJON
+	movk	1,a0
+	move	a0,*a13(PDATA)
+usnwmetop
+
+	move	*a13(PDATA),a0
+	dec	a0
+	move	a0,*a13(PDATA)
+	jrnz	usnwcont
+	movk	3,a0
+	move	a0,*a13(PDATA)
+
+	move	*a10+,a0,L
+	jrz	usnwmetop0
+	SWAP	a8,a9
+	move	*a8(OFLAGS),a1
+	calla	obj_aniq
+	SWAP	a8,a9
+	move	*a10+,a0
+	move	a0,*a13(PDATA+16)
+	move	*a10+,a0
+	move	a0,*a13(PDATA+32)
+
+usnwcont
+
+	calla	anipt_getsclxy			;GETANIXY
+	srl	16,a0
+
+	move	*a8(OZPOS),a2
+	addk	3,a2
+	move	a2,*a9(OZPOS)
+
+	move	*a8(OXPOS),a2
+	subk	7,a2
+	add	a0,a2
+	move	*a13(PDATA+16),a0
+	add	a0,a2
+	move	a2,*a9(OXPOS)
+
+	move	*a8(OPLINK),a0,L
+	move	*a0(plyr_headobj_p),a0,L
+	move	*a0(OYPOS),a2
+	addi	44h,a2
+	move	*a13(PDATA+32),a0
+	sub	a0,a2
+	addi	10,a2
+	move	a2,*a9(OYPOS)
+
+
+usnwmex	SLEEPK	1
+	jruc	usnwmetop
+
+
+ SUBR	cr_cntrs_update
+
+	move	@cntrs_delay,a0		;Selection screen delay
+	jrle	sktfcr1
+	dec	a0
+	move	a0,@cntrs_delay
+sktfx	rets
+
+sktfcr1
+	.if	IMGVIEW
+	rets				;Debug - no credit cntdwn
+	.endif
+
+	move	@GAMSTATE,a2
+	jrn	sktfx			;In diagnostics?
+	cmpi	INAMODE,a2
+	jreq	sktfx
+	cmpi	ININTRO,a2
+	jreq	sktfx			;In stats?
+	subk	INPLYRINFO,a2
+	jreq	sktfx			;In stats?
+
+	move	@name_cnt,a0
+	dec	a0
+	move	a0,@name_cnt
+	jrnz	main0
+	movi	110,a0			;Shorter time for player names message
+	move	a0,@name_cnt
+
+	move	@GAMSTATE,a0
+	subk	INGAME,a0		;If not ingame, don't change messages
+	jrne	main0
+
+	move	@name_flop,a0
+	XORK	1,a0
+	move	a0,@name_flop
+	jrnz	sktfshowpnames
+
+					;replace names with correct buyin message
+	movi	210,a0			;Longer time for buyin message / meter
+	move	a0,@name_cnt
+
+	movi	insert,a11
+	calla	CR_CONTP		;Credits to cont
+	jrlo	sktfno00			;No?
+	movi	start,a11
+sktfno00
+	movi	insert,a10
+	calla	CR_STRTP		;Credits to start
+	jrlo	sktfno1			;No?
+	movi	start,a10
+sktfno1
+
+	movi	P1DATA,a9
+	clr	a3
+	movk	4,a4
+
+	movi	LED_P,a0
+	calla	pal_getf
+	move	a0,a5
+
+sktfmsglp
+
+	.ref	pleasewt
+	move	@pleasewt,a14
+	btst	a3,a14
+	jrnz	sktfnxta
+
+
+	move	@TWOPLAYERS,a7			;0 = NO, 1 = YES 2 players
+	jrz	sktfnot2
+	cmpi	P1DATA,a9
+	jrz	sktfnxt
+	cmpi	P4DATA,a9
+	jrz	sktfnxt
+sktfnot2
+
+
+	move	*a9(ply_messages),a8,L
+	jrz	sktfnxt
+	move	a10,a0
+	move	@PSTATUS2,a14
+	btst	a3,a14
+	jrz	sktfno2			;This player has never been started
+	move	a11,a0
+sktfno2
+
+
+	movi	MSGOCTRL,a1
+	calla	obj_aniq_cnoff
+
+	move	*a9(ply_meter_imgs),a0,L
+	calla	OBJOFF
+	move	*a9(ply_meter_imgs+20h),a0,L
+	calla	OBJOFF
+	move	*a9(ply_meter_imgs+40h),a0,L
+	calla	OBJOFF
+
+sktfnxt
+	jruc	sktfnxta
+
+sktfnxta
+	addi	PDSIZE,a9
+	addk	1,a3
+	dsj	a4,sktfmsglp
+
+	jruc	main0
+
+sktfshowpnames
+
+	movi	scorep,a0
+	calla	pal_getf
+	move	a0,a5
+
+	movk	4,a4
+	movi	P1DATA,a9
+	movi	names,a10
+	clr	a3
+
+mgqrpnlp
+	move	@pleasewt,a14
+	btst	a3,a14      
+	jrnz	mgqrnxtpn
+
+
+	move	*a9(ply_messages),a8,L
+	jrz	mgqrnoani
+
+	move	a8,a0
+	calla	OBJOFF
+
+	move	*a9(ply_meter_imgs),a0,L
+	move	*a0(OYPOS),a14
+	cmpi	5,a14
+	jrnz	mgqrdip
+	movi	15,a14
+	jruc	mgqrdip2
+
+mgqrdip	movi	18,a14
+
+mgqrdip2	move	a14,*a0(OYPOS)
+	calla	OBJON
+
+	move	@TWOPLAYERS,a0
+	jrz	mgqrnot2p
+
+	cmpi	1,a3
+	jrz	mgqrnot2p
+	cmpi	2,a3
+	jrz	mgqrnot2p
+
+	move	a8,a0
+	calla	OBJOFF
+	jruc	mgqrinhr
+mgqrnot2p
+	movi	tocontrol,a0
+	movi	MSGOCTRL,a1
+	calla	obj_aniq_cnoff
+	jruc	mgqrinhr
+
+
+
+
+
+mgqrnoani
+
+	move	*a9(ply_time),a1
+	subk	23,a1
+	jrlt	mgqrnxtpn
+mgqrinhr
+	move	*a9(ply_meter_imgs),a8,L	;change box to name
+	move	a5,*a8(OPAL)
+mgqrani
+	move	*a10,a0,L
+	movi	MSGOCTRL,a1
+	calla	obj_aniq_cnoff
+
+mgqrnxtpn	addi	PDSIZE,a9
+	addk	1,a3
+	addk	32,a10
+	dsj	a4,mgqrpnlp
+
+main0	move	@timertcnt,a3		;>Update player timers
+	subk	1,a3
+	jrgt	mlp120
+
+
+	clr	a0
+	move	a0,@msg_ram,L
+	move	a0,@msg_ram+32,L
+	move	a0,@msg_ram+64,L
+	move	a0,@msg_ram+96,L
+
+	movi	msg_ram,a9
+	movk	4,a3			;# players
+	movi	P1DATA,a0
+mlp100
+	move	*a0(ply_time),a1
+	jrz	mlp103
+	cmpi	3500,a1
+	jrz	mlp103
+	move	a1,*a0(ply_time)
+	jrnz	mlp101
+
+
+mlp101
+mlp103	addi	PDSIZE,a0
+	dsj	a3,mlp100
+
+
+	move	@msg_flop,a0
+	XORK	1,a0
+	move	a0,@msg_flop
+	jrz	mlp105
+	movi	insert,a10
+	calla	CR_CONTP		;Credits to cont
+	jrlo	mgqrno			;No?
+	movi	start,a10
+mgqrno
+	movi	msg_ram,a9
+	movk	4,a3
+mgqrlp	move	*a9+,a2,L
+	jrz	mlp110
+	move	*a2(ply_meter_imgs),a0,L
+	calla	OBJOFF
+
+	move	*a2(ply_meter_imgs+020H),a8,L
+	move	a10,a0
+	movi	MSGOCTRL,a1
+	calla	obj_aniq_cnoff
+
+	movk	07h,a0 			;5
+	move	a0,*a8(OYPOS)
+	
+	move	*a2(ply_meter_imgs+040H),a0,L
+	calla	OBJOFF
+
+	dsj	a3,mgqrlp
+
+	jruc	mlp110
+
+
+meters_t
+	.long	0,METERb,METERg,METERy,METERr
+
+mlp105
+	movi	msg_ram,a9
+	movk	4,a3
+mgqrlp2	move	*a9+,a2,L
+	jrz	mlp110
+	move	*a2(ply_meter_imgs),a0,L
+	calla	OBJON
+
+	move	*a2(ply_meter_imgs+020H),a8,L
+	move	a3,a0
+	sll	5,a0
+	addi	meters_t,a0
+	move	*a0,a0,L
+
+
+	movi	MSGOCTRL,a1
+	calla	obj_aniq_cnoff
+
+	movk	17,a0			;11
+	move	a0,*a8(OYPOS)
+
+	move	*a2(ply_meter_imgs+040H),a0,L
+	calla	OBJON
+
+	dsj	a3,mgqrlp2
+
+mlp110
+	calla	prt_cr_timers
+
+	movi	80,a3			;Cr-timer rate of decline
+mlp120	move	a3,@timertcnt
+
+	rets
+
+
+
+ SUBR	score_showtvpanel2
+
+	move	@tvpanelon,a0,L
+	jrnz	fhmmdie
+
+	move	a13,@tvpanelon,L
+	movi	4*TSEC+10,a11		;12*
+	move	@game_time,a0,L
+	jrnz	scr1
+
+
+	movi	3*TSEC+10+30,a11
+
+	move	@gmqrtr,a0		;Ran out of time
+	subk	4,a0
+	jrlt	scr1
+	move	@scores,a0
+	move	@scores+16,a1
+	cmp	a0,a1
+	jreq	scr1
+
+
+
+	movi	6*TSEC+10+30,a11
+	jruc	scr1
+
+ SUBR	score_showtvpanel
+
+	move	@tvpanelon,a0,L
+	jrnz	fhmmdie
+
+	move	a13,@tvpanelon,L
+
+	SLEEP	40			;TSEC*2
+
+	movi	4*TSEC+10-70,a11
+
+ SUBR	scr1
+
+	move	a13,@tvpanelon,L
+	PUSH	A11
+	move	@bclok_imgs,a0,L
+	calla	ISOBJ
+	jrz	tv2
+	move	*a0(OIMG),a1,L
+	cmpi	clock2,a1
+	jrnz	tv2
+	movk	1,a0			;=clock already on scrn
+	jruc	tv3
+
+tv2
+	clr	a0
+tv3	callr	tv_score  		;display big tv look score plate
+	
+	PULL	A0
+	move	a11,a0
+	calla	PRCSLP
+	
+	move	@game_time,a0,L		;clock expired while panel was up
+	jrz	tv3a
+
+fhmmtv4	SLEEPK	1
+	move	@HALT,a0
+	jrnz	fhmmtv4
+
+tv3a	movi	CLSDEAD|tvid,a0
+	calla	obj_del1c
+	movi	CLSDEAD|tvscrid,a0
+	calla	obj_del1c
+
+	move	@game_time,a0,L		;clock expired while panel was up
+	jrz	tv4
+
+	movb	@game_time+24,a0
+	jrz	fhmmx
+
+tv4	movi	tvid,a0			;Delete big clock at botm of scrn
+	calla	KIL1C
+	movi	CLSDEAD|bclockid,a0
+	calla	obj_del1c
+
+fhmmx
+	clr	a0
+	move	a0,@tvpanelon,L
+
+fhmmdie	DIE
+
+
+
+
+ SUBR	update_scorebrd
+
+
+
+	PUSH	a8,a11
+
+	move	@GAMSTATE,a0
+	subk	INGAME,a0
+	jrne	xo
+
+
+	movi	CLSDEAD|creditid,a0
+	calla	obj_del1c		;kill credit/qrtr imgs
+
+	callr	prt_credits
+
+	calla	CR_STRTP		;Credits to start
+	jrlo	rnmyno			;No?
+	movi	start,a10
+	movi	insert,a3
+	jruc	rnmyyes
+rnmyno	movi	insert,a10
+	movi	start,a3
+rnmyyes
+
+	calla	CR_CONTP		;Credits to continue
+	jrlo	rnmyno2			;No?
+	movi	start,a11
+	movi	insert,a3
+	jruc	rnmyyes2
+rnmyno2	movi	insert,a11
+	movi	start,a3
+rnmyyes2
+
+
+	move	@TWOPLAYERS,a0
+	jrnz	rnmytag0
+
+	move	a10,a0
+	move	@PSTATUS2,a4
+	btst	0,a4
+	jrz	rnmyno3
+	move	a11,a0			;A continue
+rnmyno3
+	move	@P1DATA+ply_messages,a8,L
+	jrz	rnmytag
+	move	*a8(OIMG),a2,L
+	cmp	a3,a2
+	jrnz	rnmytag
+	movi	MSGOCTRL,a1
+	calla	obj_aniq_cnoff
+
+	jruc	rnmytag0
+
+rnmytag
+	move	@P1DATA+ply_meter_imgs+020H,a8,L
+	jrz	rnmytag0
+	move	*a8(OIMG),a1,L
+	cmpi	METERb,a1
+
+	jrz	rnmytag0
+	cmpi	METERb,a1
+	jrz	rnmytag0
+	cmp	a0,a1
+	jrz	rnmytag0			;already correct message
+	movi	MSGOCTRL,a1
+	calla	obj_aniq_cnoff
+
+
+rnmytag0
+	move	a10,a0
+	move	@PSTATUS2,a4
+	btst	1,a4
+	jrz	rnmyno3a
+	move	a11,a0
+rnmyno3a
+	move	@P2DATA+ply_messages,a8,L
+	jrz	rnmytag1
+	move	*a8(OIMG),a2,L
+	cmp	a3,a2
+	jrnz	rnmytag1
+	movi	MSGOCTRL,a1
+	calla	obj_aniq_cnoff
+	jruc	rnmytag1a
+rnmytag1
+	move	@P2DATA+ply_meter_imgs+020H,a8,L
+	jrz	rnmytag1a
+	move	*a8(OIMG),a1,L
+
+	cmpi	METERg,a1
+
+	jrz	rnmytag1a
+	cmpi	METERb,a1
+	jrz	rnmytag1a
+	cmp	a0,a1
+	jrz	rnmytag1a			;already correct message
+	movi	MSGOCTRL,a1
+	calla	obj_aniq_cnoff
+
+
+rnmytag1a
+	move	a10,a0
+	move	@PSTATUS2,a4
+	btst	2,a4
+	jrz	rnmyno3b
+	move	a11,a0
+rnmyno3b
+	move	@P3DATA+ply_messages,a8,L
+	jrz	rnmytag3
+	move	*a8(OIMG),a2,L
+	cmp	a3,a2
+	jrnz	rnmytag3	      
+	movi	MSGOCTRL,a1
+	calla	obj_aniq_cnoff
+	jruc	rnmytag2a
+rnmytag3
+	move	@P3DATA+ply_meter_imgs+020H,a8,L
+	jrz	rnmytag2a
+	move	*a8(OIMG),a1,L
+
+
+
+	move	@TWOPLAYERS,a14		;0 = NO, 1 = YES 2 players
+	jrz	rnmynot_2p5
+	cmpi	METERr,a1
+	jruc	rnmy2pf
+rnmynot_2p5
+
+
+	cmpi	METERy,a1
+rnmy2pf
+
+	jrz	rnmytag2a
+	cmpi	METERb,a1
+	jrz	rnmytag2a
+	cmp	a0,a1
+	jrz	rnmytag2a			;already correct message
+	movi	MSGOCTRL,a1
+	calla	obj_aniq_cnoff
+
+
+rnmytag2a
+	move	@TWOPLAYERS,a0
+	jrnz	xo
+
+	move	a10,a0
+	move	@PSTATUS2,a4
+	btst	3,a4
+	jrz	rnmyno3c
+	move	a11,a0
+rnmyno3c
+	move	@P4DATA+ply_messages,a8,L
+	jrz	rnmytag4
+	move	*a8(OIMG),a2,L
+	cmp	a3,a2
+	jrnz	xo
+	movi	MSGOCTRL,a1
+	calla	obj_aniq_cnoff
+	jruc	xo
+rnmytag4
+	move	@P4DATA+ply_meter_imgs+020H,a8,L
+	jrz	xo
+	move	*a8(OIMG),a1,L
+
+	cmpi	METERr,a1
+
+	jrz	xo
+	cmp	a0,a1
+	jrz	xo
+	movi	MSGOCTRL,a1
+	calla	obj_aniq_cnoff
+xo	PULL	a8,a11
+	rets
+
+
+ SUBR	prt_credits
+
+	PUSH	a8,a9
+	MOVK	ADJFREPL,A0
+	CALLA	GET_ADJ 	;SEE IF FREEPLAY......(Z BIT CLEAR IF SO!)
+	jrnz	freep
+
+	calla	CRED_P
+	calla	BINBCD
+	
+	move	a0,a9
+	sll	32-4,a0
+	srl	32-4-5,a0		;*32
+	addi	hrelnumbs,a0
+	move	*a0,a2,L
+	movi	0d7H,a0
+	movk	3,a1
+	sll	16,a0
+	sll	16,a1
+	movi	949,a3			;Z
+	movi	DMAWNZ|M_NOCOLL|M_SCRNREL,a4
+	movi	CLSDEAD|creditid,a5
+	clr	a6
+	clr	a7
+	calla	BEGINOBJ2
+	
+	srl	4,a9
+	sll	32-4,a9
+	srl	32-4-5,a9		;*32
+	addi	hrelnumbs,a9
+	move	*a9,a2,L
+	movi	0d7H-5,a0
+	movk	3,a1
+	sll	16,a0
+	sll	16,a1
+	calla	BEGINOBJ2
+	
+	movi	credit,a2
+	jruc	free1
+
+freep
+	movi	freeply,a2
+free1	movk	3,a1			;Y
+	movi	0b3H,a0
+	sll	16,a0
+	sll	16,a1
+	movi	949,a3			;Z
+	movi	DMAWNZ|M_NOCOLL|M_SCRNREL,a4
+	movi	CLSDEAD|creditid,a5
+	clr	a6
+	clr	a7
+	calla	BEGINOBJ2
+	PULL	a8,a9
+	rets
+
+hrelnumbs	.long	font60,font61,font62,font63,font64,font65,font66,font67
+	.long	font68,font69
+
+
+
+ SUBR	clock_strt
+
+
+	clr	a0
+	move	a0,@tvpanelon,L
+	move	a0,@ballflash
+
+	callr	prt_credits
+	callr	prt_qrtr
+
+	movi	clock_imgs,a10
+	movi	hrelinit_t,a11		;>Setup status images
+	jruc	hrelstatus
+hrellp
+	move	*a11+,a1		;Y
+	sll	16,a0
+	sll	16,a1
+	move	*a11+,a3		;Z
+	movi	DMAWNZ|M_NOCOLL|M_3DQ,a4
+	move	*a11+,a2,L
+	movi	CLSDEAD|gclockid,a5
+	clr	a6
+	clr	a7
+	calla	BEGINOBJ2
+	move	a0,*a10+,L
+	movi	gndpos_t+32*16,a1
+	move	a1,*a8(ODATA_p),L
+
+hrelstatus	move	*a11+,a0		;X
+	cmpi	4000,a0
+	jrne	hrellp			;!End?
+
+	movk	1,a0
+	move	a0,@clock_active
+
+hrellp1	calla	prt_top_clock
+hrellp1a	SLEEPK	1
+	move	@HALT,a0
+	jrnz	hrellp1a
+
+
+	.if	IMGVIEW
+	jruc	hrellp1a			;Debug - no time clock on
+	.endif
+
+	move	@clock_active,a0
+	jrnz	hrellp1a
+
+
+	movi	ADJSPEED,a0		;game timer speed (1-5)
+	calla	GET_ADJ
+	sll	4,a0			;x 16 bits
+	addi	timer_table-10h,a0
+	move	*a0,a1
+	move	@PSTATUS,a0
+	cmpi	0fH,a0
+	jrnz	hrelnot4
+	addi	200h,a1			;100h
+hrelnot4
+
+
+	move	@clock_speed,a0
+	add	a1,a0
+	move	a0,@clock_speed
+	jrnc	hrellp1a
+
+	movi	game_time,a10
+	movb	*a10,a0			;grab 10ths of second byte
+	jrz	hreltag
+	dec	a0
+	movb	a0,*a10
+	movb	@game_time+24,a0
+	jrz	hrellp1
+	jruc	hrellp1a
+hreltag	
+	movk	9,a0			;restuff 10ths of second
+	movb	a0,*a10
+	movb	*a10(8),a0		;grab seconds byte
+	jrz	hreltag1
+	dec	a0
+	movb	a0,*a10(8)
+	jruc	hrellp1
+hreltag1
+	movk	9,a0
+	movb	a0,*a10(8)		;restuff single seconds byte
+	movb	*a10(16),a0		;grab 10 seconds byte
+	jrz	hreltag2
+	dec	a0
+	movb	a0,*a10(16)
+	jruc	hrellp1
+hreltag2	
+
+
+	movb	*a10(24),a0		;Minute byte
+	cmpi	3,a0
+	jrhs	hrelnodaj
+	.ref	drone_adjskill
+	calla	drone_adjskill		;Pass A0
+hrelnodaj
+
+
+	movk	5,a0
+	movb	a0,*a10(16)		;restuff 10 seconds byte
+	movb	*a10(24),a0		;grab minute byte
+	jrz	hreltag3
+	dec	a0
+	movb	a0,*a10(24)
+	jrnz	hrellp1
+
+
+     	move	@clock_imgs+020H,a0,L
+	movi	186,a1
+	move	a1,*a0(OXPOS)
+	
+     	move	@clock_imgs+040H,a0,L
+	movi	194,a1
+	move	a1,*a0(OXPOS)
+
+     	move	@clock_imgs+060H,a0,L
+	movi	0cbH,a1
+	move	a1,*a0(OXPOS)
+
+     	move	@clock_imgs+00H,a0,L
+	movi	0d4H,a1
+	move	a1,*a0(OXPOS)
+
+	CREATE0	tick_tock
+
+	CREATE0	one_min_to_go
+
+
+	move	@bclok_imgs,a0,L
+	calla	ISOBJ
+	jrnz	hrelyes
+
+	CREATE	tvid,scr_clock
+
+	SLEEPK	2
+
+
+	move	@bclok_imgs,a0,L
+hrelyes	move	*a0(OIMG),a1,L
+	cmpi	clock,a1
+	jrnz	hrellp1
+
+
+	move	a0,a8
+	movi	clock2,a0
+	move	*a8(OCTRL),a1
+	calla	obj_aniq
+	move	@bclok_imgs+32,a1,L
+	movi	0136H,a0
+	move	a0,*a1(OXPOS)
+	move	@bclok_imgs+64,a1,L
+	movi	0116H,a0
+	move	a0,*a1(OXPOS)
+	move	@bclok_imgs+96,a1,L
+	movi	0120H,a0
+	move	a0,*a1(OXPOS)
+	jruc	hrellp1
+
+
+hreltag3
+
+     	move	@clock_imgs+020H,a0,L
+	movi	0c8H,a1
+	move	a1,*a0(OXPOS)
+	
+     	move	@clock_imgs+040H,a0,L
+	movi	0d0H,a1
+	move	a1,*a0(OXPOS)
+ 
+     	move	@clock_imgs+060H,a0,L
+	movi	0c4H,a1
+	move	a1,*a0(OXPOS)
+
+     	move	@clock_imgs+00H,a0,L
+	movi	0bbH,a1
+	move	a1,*a0(OXPOS)
+
+	move	@tvpanelon,a0,L
+	jrnz	hreltag4x
+
+
+	movi	tvid,a0			;Delete big clock at botm of scrn
+	calla	KIL1C
+	movi	CLSDEAD|bclockid,a0
+	calla	obj_del1c
+
+hreltag4x
+	movk	1,a0
+	move	a0,@clock_active
+	clr	a0
+	move	a0,@game_time,L
+
+	movi	horn_snd,a0
+	calla	snd_play1ovr
+
+	move	@_4plyrsingame,a0
+	jrnz	hrelskip
+	move	@PSTATUS,a0
+	cmpi	0fH,a0
+	jrz	hrelskip
+	movk	1,a0
+	move	a0,@_4plyrsingame
+hrelskip
+
+
+
+	JSRP	plyr_endofqrtr
+
+ SUBR	cliplockretp			;Restore point for clip lockup code
+
+	movk	1,a0
+	move	a0,@clock_active
+
+	movi	QRTRTIME,a0		;4 minutes, 0 secs, 0 tenths
+	move	@gmqrtr,a1
+	subk	4,a1
+	jrlt	hrelnotot
+
+	movi	intoot_snd,a0
+	calla	snd_play1
+
+	move	@tvpanelon,a0,L
+	jrz	hrelskp
+	calla	process_exist
+	jrz	hrelskp
+	movi	tv3a,a7
+	calla	XFERPROC
+
+hrelskp
+	
+	movi	QRTRTIME,a0		;2 minutes, 0 secs, 0 tenths
+	move	a0,@game_time,L
+	clr	a0
+	move	a0,@clock_speed
+	movi	P1DATA,a11		;A11=*plyr data
+	callr	refill_turbo
+	movi	P2DATA,a11		;A11=*plyr data
+	callr	refill_turbo
+	movi	P3DATA,a11		;A11=*plyr data
+	callr	refill_turbo
+	movi	P4DATA,a11		;A11=*plyr data
+	callr	refill_turbo
+	callr	prt_qrtr
+
+hrelkp	SLEEPK	1
+	move	@tvpanelon,a0,L
+	jrnz	hrelkp
+	
+	CREATE	tvid,scr_clock
+
+	move	@gmqrtr,a0
+	cmpi	2,a0
+	jrnz	hrelcc
+	PUSH	a0
+	CREATE0	do_show
+	PULL	a0
+hrelcc
+	sll	5,a0
+	addi	hreltune_t,a0
+	move	*a0,a0,L
+	calla	snd_play1ovr
+	
+	jruc	hrellp1
+
+
+do_show
+	SLEEP	120
+	movi	showtm,a0
+	calla	snd_play1ovr
+	DIE
+
+hrelnotot	move	a0,@game_time,L
+
+
+
+	movi	P1DATA,a11		;A11=*plyr data
+	callr	refill_turbo
+	movi	P2DATA,a11		;A11=*plyr data
+	callr	refill_turbo
+	movi	P3DATA,a11		;A11=*plyr data
+	callr	refill_turbo
+	movi	P4DATA,a11		;A11=*plyr data
+	callr	refill_turbo
+	callr	prt_qrtr
+
+
+	CREATE	tvid,scr_clock
+
+	move	@gmqrtr,a0
+	sll	5,a0
+	addi	hreltune_t,a0
+	move	*a0,a0,L
+	calla	snd_play1ovr
+
+	jruc	hrellp1
+
+hreltune_t	.long	tuneq2_snd,tuneq2_snd,tuneq3_snd,tuneq4_snd,tuneq4_snd
+	.long	tuneot_snd,tuneot_snd,tuneot_snd
+	.long	tuneot_snd,tuneot_snd,tuneot_snd
+	.long	tuneot_snd,tuneot_snd,tuneot_snd
+	.long	tuneot_snd,tuneot_snd,tuneot_snd
+
+ SUBRP	one_min_to_go
+
+hreltry_again
+	SLEEPK	1
+	movi	minute_snd,a0
+	calla	snd_play1
+	jrc	hreltry_again
+
+	DIE
+
+
+tick_tock
+
+
+	SLEEP	10*60
+hreltick	SLEEP	36
+	move	@game_time,a0,L
+	jaz	SUCIDE
+	move	@game_time+16,a0
+	jrnz	hreltick
+	move	@clock_active,a0
+	jrnz	hreltick
+
+	movi	tick_snd,a0
+	XORK	1,a9
+	jrz	hreltok
+	movi	tock_snd,a0
+hreltok	calla	snd_play1
+	jruc	hreltick
+
+
+qrtrt1	.long	qrtr1,qrtr2,qrtr3,qrtr4,qrtr4,qrtr4,qrtr4
+	.long	qrtr4,qrtr4,qrtr4,qrtr4,qrtr4,qrtr4,qrtr4,qrtr4
+	.long	qrtr4,qrtr4,qrtr4,qrtr4,qrtr4,qrtr4,qrtr4,qrtr4
+prt_qrtr
+	movi	CLSDEAD|qrtrid,a0
+	calla	obj_del1c		;kill credit/qrtr imgs
+	movi	[0b9H,0],a0
+	movi	[068H,0],a1
+	movi	987,a3
+	movi	DMAWNZ|M_NOCOLL|M_3DQ,a4
+	move	@gmqrtr,a2
+	sll	5,a2
+	addi	qrtrt1,a2
+	move	*a2,a2,L
+	movi	CLSDEAD|qrtrid,a5
+	clr	a6
+	clr	a7
+	calla	BEGINOBJ2
+	movi	gndpos_t+32*16,a1
+	move	a1,*a8(ODATA_p),L
+	rets
+
+
+	.asg	-3,X
+	.asg	94,Y
+	.asg	987,Z
+hrelinit_t
+	.word	X+190+1,Y-1,Z
+	.long	S_LED_0r			;red pal
+	.word	X+203+1,Y-1,Z
+	.long	S_LED_0r
+	.word	X+211+1,Y-1,Z
+	.long	S_LED_0r
+	.word	X+199+1,Y+1-1,Z
+	.long	colon
+	.word	X+170,Y+5,Z
+	.long	LED_00
+	.word	X+240,Y+5,Z
+	.long	LED_00
+
+	.word	4000
+
+
+		
+
+ SUBR	refill_turbo
+
+	clr	a2
+	cmpi	P1DATA,a11
+	jrz	hrel1
+	movk	1,a2
+	cmpi	P2DATA,a11
+	jrz	hrel1
+	movk	2,a2
+	cmpi	P3DATA,a11
+	jrz	hrel1
+	movk	3,a2
+hrel1
+
+
+
+	move	*a11(ply_meter_imgs+40h),a2,L	;LITUP img 
+	clr	a1
+	move	a1,*a2(OFSET)
+	movi	02fH,a2	;2f	 		;OSIZEX of litup meter img
+	move	a2,*a11(ply_turbo)		;max out turbo meter
+	movk	1,a2
+	move	a2,*a11(ply_turbo_dl)		;turbo cnt delay
+
+	rets
+
+ SUBRP	replenish_turbo
+	
+	move	*a0(ply_meter_imgs+40h),a2,L	;LITUP img 
+	move	*a2(OFSET),a1			;Need to shrink LITUP img
+	jrz	hrelx
+	subk	1,a1
+	move	a1,*a2(OFSET)
+	move	*a0(ply_turbo),a1
+	addk	1,a1
+	move	a1,*a0(ply_turbo)		;Turbo meter size to get smaller
+hrelx	rets
+
+
+
+
+ SUBR	score_add
+
+	move	a1,@clock_active
+	move	a0,@last_score,L		;Most recent team to score
+						;used for red flash
+	move	*a0,a14
+	add	a1,a14
+	move	a14,*a0
+
+	PUSH	a1,a7,a9
+
+	move	@ballpnumshot,a9
+	move	@plyrnumonfire,a0
+	cmp	a9,a0
+	jrnz	hrelnoaud
+
+	move	@GAMSTATE,a0
+	cmpi	INAMODE,a0
+	jrz	hrelnoaud
+
+	PUSH	a0,a3
+	move	@ballptsforshot,a1
+	movi	AUD_HOTSTRKPTS,a0
+	calla	AUD
+	PULL	a0,a3
+
+hrelnoaud
+
+
+	CREATE0	flsh_bgnd
+	CREATE0	start_animate
+
+	move	@assist_plyr,a1
+	jrz	hrelsx
+	dec	a1
+	movk	PS_ASSISTS,a0
+	calla	inc_player_stat
+hrelsx
+	PULL	a1,a7,a9
+
+	rets
+
+flsh_bgnd
+	.ref	ballptsforshot
+	move	@ballptsforshot,a0
+	cmpi	3,a0
+	jrnz	hrelf0
+
+	CREATE0	threepnts_drw
+
+
+hrelf0
+	SLEEPK	20
+
+
+	move	@game_time,a0,L
+	jaz	SUCIDE
+
+	clr	a1
+	sll	4,a9
+	addi	hrelx_t,a9
+	move	*a9,a0
+	sll	16,a0
+	movi	bbal_w,a2
+	movi	290,a3				;Z
+	movi	DMAWNZ|M_NOCOLL|M_SCRNREL,a4
+	movi	CLSDEAD,a5
+	clr	a6
+	clr	a7
+	calla	BEGINOBJ2
+	movk	8,a10
+hrelf1
+	move	@game_time,a0,L
+	jrz	hrelfout
+	move	a8,a0
+	calla	OBJON
+	SLEEPK	3
+	move	a8,a0
+	calla	OBJOFF
+	SLEEPK	3
+	dsj	a10,hrelf1
+
+hrelfout
+	move	a8,a0
+	calla	DELOBJ
+
+	DIE
+
+hrelx_t
+	.word	7,57h,0e9h,137h
+
+
+threepnts_drw
+	movi	[19,0],a1			;18
+	movi	[0c8H,0],a0
+	movi	threepnts,a2
+	movi	07590H,a3
+	movi	DMAWNZ|M_NOCOLL|M_SCRNREL,a4
+	movi	CLSDEAD,a5
+	clr	a6
+	clr	a7
+	calla	BEGINOBJ2
+	CREATE0	blink_plyr
+	move	a0,a9
+	SLEEP	150
+	move	a9,a0
+	calla	KILL
+	move	a8,a0
+	calla	DELOBJ
+	DIE
+
+tmodex	.long	[20,0],[6ch,0],[0d7h,0],[12eh,0]
+
+ SUBR	nosecrets_drw
+
+	sll	5,a8
+	addi	tmodex,a8
+	move	*a8,a0,L
+
+	movi	[202,0],a1			;18
+	movi	nosecrets,a2
+	movi	07590H,a3
+	movi	DMAWNZ|M_NOCOLL|M_SCRNREL,a4
+	movi	CLSDEAD,a5
+	clr	a6
+	clr	a7
+	calla	BEGINOBJ2
+
+	.ref	blink_plyr2
+
+	CREATE0	blink_plyr2
+	move	a0,a9
+	SLEEP	90
+	move	a9,a0
+	calla	KILL
+	move	a8,a0
+	calla	DELOBJ
+	DIE
+
+
+ SUBR	bracket_drw
+
+	clr	a0
+	movi	[1,0],a1
+	movi	bbal,a2				;bracket
+	movi	290,a3				;Z
+	movi	DMAWNZ|M_NOCOLL|M_SCRNREL,a4
+	movi	CLSDEAD,a5
+	clr	a6
+	clr	a7
+	calla	BEGINOBJ2
+
+hrelset	move	@ballpnum,a0
+	jrn	hrelfrbl
+	sll	4,a0
+	addi	hrelx_t2,a0
+	move	*a0,a0
+	move	a0,*a8(OXPOS)
+	SLEEPK	3
+	jruc	hrelset
+hrelfrbl	move	a8,a0
+	calla	OBJOFF
+
+hrelfrlp	SLEEPK	3
+
+	move	@ballpnum,a0
+	jrn	hrelfrlp
+	move	a8,a0
+	calla	OBJON
+	jruc	hrelset
+
+hrelx_t2	.word	7,57h,0eah,137h
+
+	
+ SUBRP	prt_top_clock
+
+	PUSH	a2,a3,a4,a5,a6,a7,a8
+
+	movb	@game_time+24,a0		;print minutes
+	jrnz	hreltag4
+	movb	@game_time+0,a0			;print 10ths of sec
+hreltag4	sll	5,a0
+	addi	leds,a0
+	move	*a0,a0,L
+	move	@clock_imgs+0,a8,L
+	move	*a8(OCTRL),a1
+	calla	obj_aniq
+
+	movb	@game_time+16,a0		;print 10 secs
+	sll	5,a0
+	addi	leds,a0
+	move	*a0,a0,L
+	move	@clock_imgs+020H,a8,L
+	move	*a8(OCTRL),a1
+	calla	obj_aniq
+
+	movb	@game_time+8,a0			;print secs
+	sll	5,a0
+	addi	leds,a0
+	move	*a0,a0,L
+	move	@clock_imgs+040H,a8,L
+	move	*a8(OCTRL),a1
+	calla	obj_aniq
+
+	PULL	a2,a3,a4,a5,a6,a7,a8
+	rets
+
+leds	.long	S_LED_0,S_LED_1,S_LED_2,S_LED_3,S_LED_4,S_LED_5,S_LED_6
+	.LONG	S_LED_7,S_LED_8,S_LED_9
+
+
+
+ SUBR	prt_cr_timers
+
+	PUSH	a8,a11
+
+
+	movi	P1DATA,a9
+	clr	a11
+prt05	move	@PSTATUS,a0		;Plyr start bits 0-3
+	btst	a11,a0
+	jrz	hrelnxt
+
+
+	move	*a9(ply_meter_imgs),a8,L
+	jrz	hrelnxt
+
+	move	*a8(OIMG),a0,L
+	cmpi	LED_00,a0
+	jrne	hrelnxt			;Not counter?
+
+	move	*a9(ply_time),a0
+	cmpi	1000,a0
+	jrlo	prt07
+	movi	LED_MAX,a0
+	jruc	prt09
+prt07
+	sll	5,a0
+	addi	LED_0,a0
+prt09	move	*a0,a0,L
+	move	a0,*a8(OSAG),L
+
+hrelnxt	addi	PDSIZE,a9
+	inc	a11
+	cmpi	4,a11
+	jrnz	prt05
+
+	PULL	a8,a11
+	rets
+
+
+
+ SUBR	prt_top_scores
+
+	PUSH	a2,a3,a4,a5,a6,a7,a8
+
+	move	@score_imgs,a8,L	;Team 1
+	move	@scores,a0
+	sll	5,a0
+	addi	LED_0,a0
+	move	*a0,a0,L
+	move	a0,*a8(OSAG),L
+
+	move	@score_imgs+32,a8,L	;Team 2
+	move	@scores+16,a0
+	sll	5,a0
+	addi	LED_0,a0
+	move	*a0,a0,L
+	move	a0,*a8(OSAG),L
+
+
+	move	@tvpanelon,a0,L
+	jrz	enprx
+	movi	3*60,a1			;Add time to score plate proc!
+	move	a1,*a0(PTIME)
+
+	callr	prt_bigscr
+
+	CREATE0	flash_red
+
+enprx	PULL	a2,a3,a4,a5,a6,a7,a8
+	rets
+
+
+
+ SUBRP	tv_score
+
+	move	a0,a0
+	jrnz	tv4x				;br=clock already on scrn
+	CREATE	tvid,scr_clock
+
+tv4x	movi	[9,0],a0
+	movi	[185,0],a1
+	movi	5000,a3
+	movi	DMAWNZ|M_NOCOLL|M_SCRNREL,a4
+	movi	metal1,a2
+	movi	CLSDEAD|tvid,a5
+	clr	a6
+	clr	a7
+	calla	BEGINOBJ2
+
+	movi	[9,0],a0
+	movi	[185,0],a1
+	movi	metal2,a2
+	calla	BEGINOBJ2
+
+	movi	[185,0],a1
+	move	@gmqrtr,a2
+	sll	5,a2
+
+
+	move	@game_time,a0,L
+	jrnz	mshbnotend
+
+	move	@scores,a4
+	move	@scores+16,a0
+	cmp	a0,a4
+	jrnz	mshbnotie
+	addi	tie_eqrtrt,a2
+	jruc	mshbtie
+mshbnotie
+	addi	eqrtrt,a2
+mshbtie	movi	[9,0],a0
+	move	*a2,a2,L
+	movi	DMAWNZ|M_NOCOLL|M_SCRNREL,a4
+	calla	BEGINOBJ2
+	jruc	mshbskip
+
+
+mshbnotend
+	addi	qrtrt,a2
+	movi	[9,0],a0
+	move	*a2,a2,L
+	calla	BEGINOBJ2
+
+	move	@gmqrtr,a2
+	subk	4,a2
+	jrge	mshbskip
+
+	movi	[9,0],a0
+	movi	[185,0],a1
+	movi	quarter,a2
+	calla	BEGINOBJ2
+
+mshbskip
+	movi	[64,0],a0
+	movi	[185,0],a1
+	move	@team1,a2
+	cmpi	27,a2
+	jrnz	mshbreg
+	
+	movi	[185-3,0],a1
+	movi	OSGEMD_J,a2
+	movi	GREENPAL,b0
+	calla	BEGINOBJP2
+	movi	[4ch,0],a0
+	movi	[185-3,0],a1
+	movi	OSGEMD_A,a2
+	movi	GREENPAL,b0
+	calla	BEGINOBJP2
+	movi	[5bh,0],a0
+	movi	[185-3,0],a1
+	movi	OSGEMD_M,a2
+	movi	GREENPAL,b0
+	calla	BEGINOBJP2
+	jruc	mshbnx
+mshbreg	
+	sll	5,a2
+	addi	team_nms,a2
+	move	*a2,a2,L
+	calla	BEGINOBJ2
+
+mshbnx
+	movi	[64,0],a0
+	movi	[185+19,0],a1
+	move	@team2,a2
+
+	cmpi	27,a2
+	jrnz	mshbreg2
+	
+	movi	[185+18,0],a1
+	movi	OSGEMD_J,a2
+	movi	GREENPAL,b0
+	calla	BEGINOBJP2
+	movi	[4ch,0],a0
+	movi	[185+18,0],a1
+	movi	OSGEMD_A,a2
+	movi	GREENPAL,b0
+	calla	BEGINOBJP2
+	movi	[5bh,0],a0
+	movi	[185+18,0],a1
+	movi	OSGEMD_M,a2
+	movi	GREENPAL,b0
+	calla	BEGINOBJP2
+	jruc	mshbnx2
+mshbreg2
+
+	sll	5,a2
+	addi	team_nms,a2
+	move	*a2,a2,L
+	calla	BEGINOBJ2
+mshbnx2
+	callr	prt_bigscr			;score routine will update
+						;these big digits
+	CREATE0	flash_red
+	rets
+
+	movi	5000,a3
+	movi	DMAWNZ|M_NOCOLL|M_SCRNREL,a4
+
+team_nms
+	.long	ATL,BOST,CHAR,CHI,CLEV,DAL,DEN,DET,GOLDN,HOU,IND,LA_CLIP
+	.long	LA_LAKS,MIAMI,MILW,MINN,NJ,NY,ORL,PHIL,PHX,PORT,SAC,SANANT
+	.long	SEA,UTAH,WASH
+
+
+
+const_on
+	setf	4,0,0
+	movk	M_CONNON,a0		;Replace non-zero data with constant
+	move	a0,*a8(OCTRL)		;Write 4 low bits
+	setf	16,1,0
+	rets
+
+
+const_off
+	setf	4,0,0
+	movk	M_WRNONZ,a0
+	move	a0,*a8(OCTRL)		;Write 4 low bits
+	setf	16,1,0
+	rets
+
+
+
+flash_red
+
+	SLEEPK	10
+	clr	a9	
+	move	@last_score,a0,L
+	jaz	SUCIDE
+	cmpi	scores,a0
+	jrz	mshbtm1
+	movi	96,a9
+mshbtm1	movk	10,a11
+	addi	flsh_ptrs,a9
+mshblp
+	movi	MD_16r,a0
+	calla	pal_getf
+	move	*a9,a8,L
+	move	a0,*a8(OPAL)
+	move	*a9(32),a8,L
+	move	a0,*a8(OPAL)
+	move	*a9(64),a8,L
+	move	a0,*a8(OPAL)
+	SLEEPK	5
+	movi	MD_16,a0
+	calla	pal_getf
+	move	*a9,a8,L
+	move	a0,*a8(OPAL)
+	move	*a9(32),a8,L
+	move	a0,*a8(OPAL)
+	move	*a9(64),a8,L
+	move	a0,*a8(OPAL)
+	SLEEPK	5
+	dsj	a11,mshblp
+
+	clr	a0
+	move	a0,@last_score,L
+	DIE
+		
+	
+
+
+ SUBRP	prt_bigscr
+
+	PUSH	a9,a10
+
+	clr	a0
+	movi	flsh_ptrs,a1
+	move	a1,a10
+	movk	6,b0
+zgbhclp	move	a0,*a1+,L
+	dsj	b0,zgbhclp
+
+
+	movi	CLSDEAD|tvscrid,a0
+	calla	obj_del1c
+
+
+	movi	5000,a3
+	movi	DMAWNZ|M_NOCOLL|M_SCRNREL,a4
+	movi	CLSDEAD|tvscrid,a5
+	clr	a6
+	clr	a7
+
+
+	move	@scores,a0		;Team 1
+	calla	BINBCD
+	move	a0,a9
+
+	srl	8,a0			;>Hundereds
+	jrz	zgbhnohun
+
+	sll	32-4,a0
+	srl	32-4-5,a0		;*32
+	addi	zgbhn_t,a0
+	move	*a0,a2,L
+
+	movi	[309-16,0],a0
+	movi	[184+1,0],a1
+	calla	BEGINOBJ2
+	move	a8,*a10,L
+zgbhnohun
+	addk	32,a10
+
+	move	a9,a0			;>Tens
+	srl	4,a0
+	jrz	zgbhnotens
+
+	sll	32-4,a0
+	srl	32-4-5,a0		;*32
+	addi	zgbhn_t,a0
+	move	*a0,a2,L
+
+	movi	[324-16,0],a0
+	movi	[184+1,0],a1
+	calla	BEGINOBJ2
+	move	a8,*a10,L
+zgbhnotens
+	addk	32,a10
+
+	sll	32-4,a9			;>Ones
+	srl	32-4-5,a9		;*32
+	addi	zgbhn_t,a9
+	move	*a9,a2,L
+
+	movi	[339-16,0],a0
+	movi	[184+1,0],a1
+	calla	BEGINOBJ2
+	move	a8,*a10+,L
+
+
+
+	move	@scores+16,a0		;Team 2
+	calla	BINBCD
+	move	a0,a9
+
+	srl	8,a0			;>Hundereds
+	jrz	zgbhnohun2
+
+	sll	32-4,a0
+	srl	32-4-5,a0		;*32
+	addi	zgbhn_t,a0
+	move	*a0,a2,L
+
+	movi	[309-16,0],a0
+	movi	[204,0],a1
+	calla	BEGINOBJ2
+	move	a8,*a10,L
+zgbhnohun2
+	addk	32,a10
+
+	move	a9,a0			;>Tens
+	srl	4,a0
+	jrz	zgbhnotens2
+
+	sll	32-4,a0
+	srl	32-4-5,a0		;*32
+	addi	zgbhn_t,a0
+	move	*a0,a2,L
+
+	movi	[324-16,0],a0
+	movi	[204,0],a1
+	calla	BEGINOBJ2
+	move	a8,*a10,L
+zgbhnotens2
+	addk	32,a10
+
+	sll	32-4,a9			;>Ones
+	srl	32-4-5,a9		;*32
+	addi	zgbhn_t,a9
+	move	*a9,a2,L
+
+	movi	[339-16,0],a0
+	movi	[204,0],a1
+	calla	BEGINOBJ2
+	move	a8,*a10+,L
+
+	PULL	a9,a10
+
+	rets
+
+
+zgbhn_t	.long	SMD16_0,SMD16_1,SMD16_2,SMD16_3,SMD16_4,SMD16_5,SMD16_6
+	.long	SMD16_7,SMD16_8,SMD16_9
+
+
+
+ SUBRP	scr_clock
+
+	movi	ogouinit_t,a11
+	movi	bclok_imgs,a10			;for holding onto img pointer
+	move	@game_time,a5,L
+	srl 	24,a5
+	jrnz	reg
+	movi	ogouinit_t2,a11
+	jruc	ogoustatus
+reg	movi	ogouinit_t,a11
+	jruc	ogoustatus
+ogoulp
+	move	*a11+,a1
+	sll	16,a0
+	sll	16,a1
+	move	*a11+,a3
+	movi	DMAWNZ|M_NOCOLL|M_SCRNREL,a4
+	move	*a11+,a2,L
+	movi	CLSDEAD|bclockid,a5
+	clr	a6
+	clr	a7
+	calla	BEGINOBJ2
+	move	a0,*a10+,L			;hold onto img pointer
+
+ogoustatus	move	*a11+,a0			;X
+	cmpi	4000,a0
+	jrne	ogoulp				;!End?
+
+	callr	prt_tvtime
+	movi	gclockid,a0
+	clr	a1
+	not	a1
+	calla	EXISTP
+	jrz	ogoulp1
+
+
+	move	@game_time,a1,L
+	jrz	ogoulp1
+
+
+	movk	3,a1
+	move	a1,*a0(PTIME)			;get in sync with top clock
+	SLEEPK	3
+ogoulp1
+	callr	prt_tvtime
+	SLEEPK	3
+
+	jruc	ogoulp1
+
+
+ SUBRP	prt_tvtime	
+
+	movb	@game_time+24,a0		;print minutes
+	jrnz	ogoutag4
+	movb	@game_time+0,a0			;print 10ths of sec
+ogoutag4	sll	5,a0
+	addi	numbs,a0
+	move	*a0,a0,L
+	move	@bclok_imgs+020H,a8,L
+	move	*a8(OCTRL),a1
+	calla	obj_aniq
+
+	movb	@game_time+16,a0		;print 10 secs
+	sll	5,a0
+	addi	numbs,a0
+	move	*a0,a0,L
+	move	@bclok_imgs+040H,a8,L
+	move	*a8(OCTRL),a1
+	calla	obj_aniq
+
+	movb	@game_time+8,a0			;print secs
+	sll	5,a0
+	addi	numbs,a0
+	move	*a0,a0,L
+	move	@bclok_imgs+060H,a8,L
+	move	*a8(OCTRL),a1
+	calla	obj_aniq
+	rets
+
+ogouinit_t
+	.word	9,185,5000
+	.long	clock
+	.word	305-26,230,5000
+	.long	font90
+	.word	315-21,230,5000
+	.long	font90
+	.word	325-21,230,5000
+	.long	font90
+
+	.word	4000
+
+ogouinit_t2
+	.word	9,185,5000
+	.long	clock2
+	.word	0130H,230,5000
+	.long	font90
+	.word	0116H,230,5000
+	.long	font90
+	.word	0120H,230,5000
+	.long	font90
+
+	.word	4000
+
+qrtrt	.long	one,two,three,four,overtime,DoubleOT,TripleOT,TripleOT
+	.long	TripleOT,final
+eqrtrt	.long	endof1,endof1,halftime,endof3,final,final,final,final,final
+	.long	final,final,final,final
+tie_eqrtrt
+	.long	endof1,endof1,halftime,endof3,endof4,overtime,DoubleOT,TripleOT
+	.long	TripleOT,TripleOT,TripleOT,TripleOT,TripleOT,TripleOT
+
+
+ SUBR	shot_clock
+
+
+	PUSH	a7,a8
+
+	move	a0,a8
+
+	movi	clockid,a0
+	calla	KIL1C 			;Kill existing shot clock proc
+	movi	CLSDEAD|clockid,a0
+	calla	obj_del1c		;Delete any 24 second shot clock imgs
+
+	CREATE	clockid,clock24
+	move	a0,@sc_proc,L
+
+	movi	[1,0],a0
+	move	a0,@shotimer,L
+
+	PULL	a7,a8
+     	rets
+
+
+ SUBRP	clock24 
+	clr	a10
+	movk	7,a9			;13
+
+	movi	game_time,a1
+	movb	*a1(8),a0		;restuff single seconds byte
+	movb	*a1(16),a2		;grab 10 seconds byte
+
+
+	movb	*a1(24),a3		;grab minutes byte
+	jrnz	dujplp
+
+	move	a2,a2
+	jrnz	dujpnot
+
+dujpnosc
+	clr	a0
+	move	a0,@sc_proc,L
+	DIE
+dujpnot
+	cmpi	1,a2
+	jrnz	dujplp
+	cmpi	5,a0
+	jrle	dujpnosc
+
+dujplp
+	SLEEP	40
+	move	@HALT,a0
+	jrnz	dujplp
+
+
+	dsj	a9,dujplp
+
+dujplp0	SLEEPK	10
+
+	move	@tvpanelon,a0,L
+	jrnz	dujplp0
+	move	@ballgoaltcnt,a0
+	jrgt	dujplp0
+	move	@ballpnum,a0
+	jrn	dujpskp
+	sll	5,a0
+	addi	plyrproc_t,a0
+	move	*a0,a0,L
+	move	*a0(plyr_jmpcnt),a14
+	jrnz	dujplp0
+	move	*a0(plyr_seqflgs),a0
+	btst	DUNK_B,a0
+	jrnz	dujplp0			;!Dunking?
+dujpskp
+	SLEEPK	10
+
+
+	movi	dujpinit_t,a11
+	movi	shotram,a10		;for holding onto img pointer
+	move	a8,a8
+	jrnz	hoopl
+	movi	dujpinit_t2,a11
+hoopl
+	jruc	dujpstatus
+
+	movi	dujpinit_t,a11
+	jruc	dujpstatus
+dujplp2
+	move	*a11+,a1		;Y
+	sll	16,a0
+	sll	16,a1
+	move	*a11+,a3		;Z
+	movi	DMAWNZ|M_NOCOLL|M_SCRNREL,a4
+	move	*a11+,a2,L
+	movi	CLSDEAD|clockid,a5
+	clr	a6
+	clr	a7
+	calla	BEGINOBJ2
+	move	a0,*a10+,L		;hold onto img pointer
+
+dujpstatus	move	*a11+,a0		;X
+	cmpi	4000,a0
+	jrne	dujplp2			;!End?
+
+dujplp3
+	move	@tvpanelon,a0,L
+	jrnz	dujpx
+
+	move	@shotram+32,a8,L		;first digit
+	move	@shotram+64,a9,L		;second digit
+	move	@shotimer,a2,L
+	clr	a0
+	movy	a2,a0
+	srl	11,a0
+	addi	bnumbs,a0
+	move	*a0,a0,L
+	move	*a8(OCTRL),a1
+	calla	obj_aniq
+
+	sll	16,a2
+	srl	11,a2
+	addi	bnumbs,a2
+	move	*a2,a0,L
+	move	a9,a8
+	move	*a8(OCTRL),a1
+	calla	obj_aniq
+
+dujplp3t	SLEEP	32
+	move	@HALT,a0
+	jrnz	dujplp3t
+
+	move	@shotimer,a0
+	jrz	dujptag
+	dec	a0
+	move	a0,@shotimer
+
+	cmpi	4,a0
+	jrgt	dujpnowarn
+
+	movi	warn_snd,a0
+	calla	snd_play1
+dujpnowarn
+
+	jruc	dujplp3
+dujptag	move	@shotimer+16,a0
+	jrz	dujptag1
+	dec	a0
+	move	a0,@shotimer+16
+	movk	9,a0
+	move	a0,@shotimer
+	jruc	dujplp3
+
+dujptag1
+
+	movi	horn_snd,a0
+	calla	snd_play1ovr
+
+dujptag1X
+	SLEEPK	1
+
+	move	@ballgoaltcnt,a0
+	jrgt	markdi
+
+	movk	1,a0
+	move	a0,@clock_active
+
+	CREATE0	shot_text
+
+	move	@ballpnum,a11
+	jrnn	dujpok1
+	move	@ballpnumshot,a11
+dujpok1
+	srl	1,a11
+	subk	1,a11
+	CREATE0	plyr_takeoutball3
+
+
+dujpshowstick
+	movi	P1DATA,a10
+	callr	stick_number
+	movi	P2DATA,a10
+	callr	stick_number
+	movi	P3DATA,a10
+	callr	stick_number
+	movi	P4DATA,a10
+	callr	stick_number
+
+ 
+	SLEEP	TSEC*3
+
+	clr	a0
+	move	a0,@clock_active
+
+sclockx	move	a10,a10
+	jrz	dujpx2
+dujpx	movi	CLSDEAD|clockid,a0
+	calla	obj_del1c		;Delete any 24 second shot clock imgs
+dujpx2	clr	a0
+	move	a0,@sc_proc,L
+dujpdie	DIE
+
+markdi	SLEEP	120
+	movi	clockid,a0
+	calla	KIL1C 			;Kill existing shot clock proc
+	movi	CLSDEAD|clockid,a0
+	calla	obj_del1c		;Delete any 24 second shot clock imgs
+      	jruc	dujpx2
+
+numbs	.long	font90,font91,font92,font93,font94,font95,font96,font97
+	.long	font98,font99
+bnumbs
+	.long	BigLED_0,BigLED_1,BigLED_2,BigLED_3,BigLED_4,BigLED_5
+	.long	BigLED_6,BigLED_7,BigLED_8,BigLED_9
+
+
+dujpinit_t
+	.word	013dH,0e0H,5000
+	.long	shotclok
+	.word	013dH+9,0d9H,5000
+	.long	BigLED_0		;font90r
+	.word	013dH+01cH,0d9H,5000
+	.long	BigLED_0		;font90r
+
+	.word	4000
+
+dujpinit_t2
+	.word	01cH,0e0H,5000
+	.long	shotclok
+	.word	024H,0d9H,5000
+	.long	BigLED_0		;font90r
+	.word	037H,0d9H,5000
+	.long	BigLED_0		;font90r
+
+	.word	4000
+		
+
+
+
+ SUBRP	shot_text
+
+	movi	lxhmln0_setup,a2
+	calla	setup_message
+
+	movi	CLSDEAD|123,a0
+	move	a0,@mess_objid
+
+	movi	120-8-44,a0
+	move	a0,@mess_cursy
+	movi	lxhmstr_shtclk1,a4
+	calla	print_string_C2
+
+	movi	120+8,a0
+	move	a0,@mess_cursy
+	movi	lxhmstr_shtclk2,a4
+	calla	print_string_C2
+
+	CREATE0	flash_bigtxt
+	move	a0,a9
+
+	movk	5,a10
+	CREATE0	doalert_snd
+
+	SLEEP	TSEC*2
+
+	move	a9,a0
+	calla	KILL
+
+	movi	CLSDEAD|123,a0
+	calla	obj_del1c		;delete text
+
+	DIE
+
+
+lxhmln0_setup
+	RJR_STR	omlgmd_ascii,12,1,200,6,LGMDRED2,0
+
+lxhmstr_shtclk1
+	.string	"SHOT  CLOCK",0
+lxhmstr_shtclk2
+	.string	"VIOLATION",0
+
+	.even
+
+
+
+ SUBR	show_ot_msg
+
+	SLEEP	60
+
+	movi	ksitln0_setup,a2
+	calla	setup_message
+
+	movi	CLSDEAD|123,a0
+	move	a0,@mess_objid
+
+	move	@gmqrtr,a0
+	subk	4,a0
+	sll	5,a0
+	movi	oty,a1
+	add	a0,a1
+	move	*a1,a2
+	move	a2,@mess_cursy
+	movi	otl1,a1
+	add	a0,a1
+	move	*a1,a4,L
+
+	PUSH	a0
+	calla	print_string_C2
+	PULL	a0
+
+	move	@mess_cursy,a1
+	addi	70,a1
+	move	a1,@mess_cursy
+
+	movi	otl2,a1
+	add	a0,a1
+	move	*a1,a4,L
+	jrz	ksitsl
+	calla	print_string_C2
+
+ksitsl
+	movk	5,a10			;8
+	CREATE0	doalert_snd
+	CREATE0	flash_bigtxt
+	move	a0,a9
+
+	SLEEP	TSEC*3+40-20
+
+	move	a9,a0
+	calla	KILL
+
+	movi	CLSDEAD|123,a0
+	calla	obj_del1c		;delete text
+
+	DIE
+
+ SUBR	doalert_snd
+	movi	whstle_snd,a0
+	calla	snd_play1ovr
+
+ksital	movi	alert_snd,a0
+	calla	snd_play1
+	SLEEP	20
+	dsj	a10,ksital
+	DIE
+
+
+oty	.long	120-8-44+30-22,120-8-44-22,120-8-44-22,120-8-44-22,120-8-44-22
+otl1	.long	ksitstr_shtclk2,ksitstr_shtclk1a,ksitstr_shtclk1b,ksitstr_shtclk1c
+otl2	.long	0,ksitstr_shtclk2,ksitstr_shtclk2,ksitstr_shtclk2
+
+ksitln0_setup
+	RJR_STR	lgmd_ascii,12,2,200,6,LGMDRED2,0
+
+ksitstr_shtclk1a
+	.string	"DOUBLE",0
+ksitstr_shtclk1b
+	.string	"TRIPLE",0
+ksitstr_shtclk1c
+	.string	"QUADRUPLE",0
+ksitstr_shtclk2
+	.string	"OVERTIME",0
+
+	.even
+
+	.def	plyrsdropped
+	.bss	plyrsdropped,16
+
+ SUBR	fix_dropout_msgs
+
+	calla	CR_STRTP		;Credits to start
+	jrlo	oeeyno			;No?
+	movi	start,a10
+	jruc	oeeyyes
+oeeyno	movi	insert,a10
+oeeyyes
+	calla	CR_CONTP		;Credits to continue
+	jrlo	oeeyno2			;No?
+	movi	start,a11
+	jruc	oeeyyes2
+oeeyno2	movi	insert,a11
+oeeyyes2
+
+
+	move	a10,a0
+	move	@PSTATUS2,a4
+	btst	0,a4
+	jrz	oeeyno3
+	move	a11,a0			;A continue
+oeeyno3
+	move	@P1DATA+ply_messages,a8,L
+	move	*a8(OIMG),a0,L
+	cmpi	please,a0
+	jrnz	oeeynx1
+	move	a11,a0
+	movi	MSGOCTRL,a1
+	calla	obj_aniq_cnoff
+
+oeeynx1
+	move	a10,a0
+	move	@PSTATUS2,a4
+	btst	1,a4
+	jrz	oeeyno3a
+	move	a11,a0			;A continue
+oeeyno3a
+	move	@P2DATA+ply_messages,a8,L
+	move	*a8(OIMG),a0,L
+	cmpi	please,a0
+	jrnz	oeeynx2
+	move	a11,a0
+	movi	MSGOCTRL,a1
+	calla	obj_aniq_cnoff
+
+oeeynx2
+	move	a10,a0
+	move	@PSTATUS2,a4
+	btst	2,a4
+	jrz	oeeyno3b
+	move	a11,a0			;A continue
+oeeyno3b
+	move	@P3DATA+ply_messages,a8,L
+	move	*a8(OIMG),a0,L
+	cmpi	please,a0
+	jrnz	oeeynx3
+	move	a11,a0
+	movi	MSGOCTRL,a1
+	calla	obj_aniq_cnoff
+
+oeeynx3
+	move	a10,a0
+	move	@PSTATUS2,a4
+	btst	3,a4
+	jrz	oeeyno3c
+	move	a11,a0			;A continue
+oeeyno3c
+	move	@P4DATA+ply_messages,a8,L
+	move	*a8(OIMG),a0,L
+	cmpi	please,a0
+	jrnz	oeeynx4
+	move	a11,a0
+	movi	MSGOCTRL,a1
+	calla	obj_aniq_cnoff
+oeeynx4
+
+	move	@PSTATUS,a0
+	move	@plyrsdropped,a1
+	btst	0,a1
+	jrz	oeeyn1
+	btst	0,a0
+	jrnz	oeeyn1
+	movi	P1DATA,a0
+	callr	do_drop
+oeeyn1
+	move	@PSTATUS,a0
+	move	@plyrsdropped,a1
+	btst	1,a1
+	jrz	oeeyn2
+	btst	1,a0
+	jrnz	oeeyn2
+	movi	P2DATA,a0
+	callr	do_drop
+oeeyn2
+	move	@PSTATUS,a0
+	move	@plyrsdropped,a1
+	btst	2,a1
+	jrz	oeeyn3
+	btst	2,a0
+	jrnz	oeeyn3
+	movi	P3DATA,a0
+	callr	do_drop
+oeeyn3
+	move	@PSTATUS,a0
+	move	@plyrsdropped,a1
+	btst	3,a1
+	jrz	oeeyn4
+	btst	3,a0
+	jrnz	oeeyn4
+	movi	P4DATA,a0
+	callr	do_drop
+oeeyn4    
+	callr	update_scorebrd		;make sure we show correct message
+	rets
+
+do_drop
+	move	a0,a7
+	cmpi	P1DATA,a0
+	jrnz	oeeytag01
+	movi	init_t1a,a11
+	movi	P1DATA+ply_messages,a9
+	movk	00eH,a4
+	clr	a5
+	jruc	oeeytago
+
+oeeytag01	cmpi	P2DATA,a0
+	jrnz	oeeytag02
+	movi	init_t2a,a11
+	movi	P2DATA+ply_messages,a9
+	movk	00dH,a4
+	movk	1,a5
+	jruc	oeeytago
+
+oeeytag02	cmpi	P3DATA,a0
+	jrnz	oeeytag03
+	movi	init_t3a,a11
+	movi	P3DATA+ply_messages,a9
+	movk	00bH,a4
+	movk	2,a5
+	jruc	oeeytago
+
+oeeytag03
+	movi	init_t4a,a11
+	movi	P4DATA+ply_messages,a9
+	movk	007H,a4
+	movk	3,a5
+
+oeeytago	move	a7,a3
+
+	move	*a9,a0,L
+	jrz	oeeytr
+	calla	DELOBJ
+oeeytr
+	clr	a2
+	move	*a3(ply_meter_imgs),a0,L
+	calla	OBJOFF
+	move	*a3(ply_meter_imgs+020H),a0,L
+	calla	OBJOFF
+	move	a2,*a3(ply_meter_imgs+020H),L
+	move	*a3(ply_meter_imgs+040H),a0,L
+	calla	OBJOFF
+
+	calla	prt_status
+	rets
+
+
+  SUBRP	ck_circle_stik
+	clr	a0
+	move	a0,*a13(PDATA)
+
+bnjplp	SLEEPK	1
+	move	@PSTATUS,a0
+	btst	a9,a0
+	jrz	bnjplp
+	move	a9,a0
+	calla	get_stick_val_cur
+	.ref	get_stick_val_cur
+
+	move	*a13(PDATA),a1
+	or	a0,a1
+	move	a1,*a13(PDATA)
+	cmpi	0fH,a1
+	jrnz	bnjplp
+	move	a9,a0
+	sll	4,a0
+	addi	p1taps,a0
+	move	*a0,a0
+	cmpi	15,a0
+	jrlt	bnjplp
+
+	movk	1,a0
+	move	a0,@show_shot
+	DIE
+
+
+ SUBR	flash_plyr_wht
+	clr	a0
+	move	a0,@p1taps
+	move	a0,@p2taps
+	move	a0,@p3taps
+	move	a0,@p4taps
+	move	a0,@show_shot
+	move	a0,@plyr_tourn
+	move	a0,@baby_flag
+	move	a0,@plyr_maxpower
+
+	clr	a9
+	CREATE0	ck_circle_stik
+	CREATE0	ck_baby
+	movk	1,a9
+	CREATE0	ck_circle_stik
+	CREATE0	ck_baby
+	movk	2,a9
+	CREATE0	ck_circle_stik
+	CREATE0	ck_baby
+	movk	3,a9
+	CREATE0	ck_circle_stik
+	CREATE0	ck_baby
+
+
+
+bqcglp	SLEEPK	1
+	clr	a0
+	calla	get_but_val_down
+	jrz	bqcgn1
+	move	@p1taps,a0
+	addk	1,a0
+	move	a0,@p1taps
+bqcgn1
+	movk	1,a0
+	calla	get_but_val_down
+	jrz	bqcgn2
+	move	@p2taps,a0
+	addk	1,a0
+	move	a0,@p2taps
+bqcgn2
+	movk	2,a0
+	calla	get_but_val_down
+	jrz	bqcgn3
+	move	@p3taps,a0
+	addk	1,a0
+	move	a0,@p3taps
+bqcgn3
+	movk	3,a0
+	calla	get_but_val_down
+	jrz	bqcgn4
+	move	@p4taps,a0
+	addk	1,a0
+	move	a0,@p4taps
+bqcgn4
+
+
+	clr	a0
+	calla	get_start_cur
+	jrnz	bqcgz1a
+	clr	a0
+	calla	get_but_val_cur
+	cmpi	7,a0
+	jrnz	bqcgz1a
+	clr	a0
+	calla	get_stick_val_cur
+	movk	1,a1
+	cmpi	2,a0
+	jrz	bqcgyesz
+bqcgz1a
+	movk	1,a0
+	calla	get_start_cur
+	jrz	bqcgz2a
+	movk	1,a0
+	calla	get_but_val_cur
+	cmpi	7,a0
+	jrnz	bqcgz2a
+	movk	1,a0
+	calla	get_stick_val_cur
+	movk	2,a1
+	cmpi	2,a0
+	jrz	bqcgyesz
+bqcgz2a
+	movk	2,a0
+	calla	get_start_cur
+	jrz	bqcgz3a
+	movk	2,a0
+	calla	get_but_val_cur
+	cmpi	7,a0
+	jrnz	bqcgz3a
+	movk	2,a0
+	calla	get_stick_val_cur
+	movk	4,a1
+	cmpi	2,a0
+	jrz	bqcgyesz
+bqcgz3a
+	movk	3,a0
+	calla	get_start_cur
+	jrz	bqcgz4a
+	movk	3,a0
+	calla	get_but_val_cur
+	cmpi	7,a0
+	jrnz	bqcgz4a
+	movk	3,a0
+	calla	get_stick_val_cur
+	movk	8,a1
+	cmpi	2,a0
+	jrnz	bqcgz4a
+bqcgyesz
+	move	@plyr_maxpower,a0
+	or	a1,a0
+	move	a0,@plyr_maxpower
+bqcgz4a
+
+
+	clr	a0
+	calla	get_but_val_cur
+	cmpi	7,a0
+	jrnz	bqcgn1a
+	clr	a0
+	calla	get_stick_val_cur
+	cmpi	8,a0
+	jrz	bqcgyest
+bqcgn1a
+	movk	1,a0
+	calla	get_but_val_cur
+	cmpi	7,a0
+	jrnz	bqcgn2a
+	movk	1,a0
+	calla	get_stick_val_cur
+	cmpi	8,a0
+	jrz	bqcgyest
+bqcgn2a
+	movk	2,a0
+	calla	get_but_val_cur
+	cmpi	7,a0
+	jrnz	bqcgn3a
+	movk	2,a0
+	calla	get_stick_val_cur
+	cmpi	8,a0
+	jrz	bqcgyest
+bqcgn3a
+	movk	3,a0
+	calla	get_but_val_cur
+	cmpi	7,a0
+	jrnz	bqcgn4a
+	movk	3,a0
+	calla	get_stick_val_cur
+	cmpi	8,a0
+	jrnz	bqcgn4a
+bqcgyest
+	movk	1,a0
+	move	a0,@plyr_tourn
+	movi	-1,a0
+	move	a0,@special_heads,L	;-1 = normal player head
+	move	a0,@special_heads+32,L	;-1 = normal player head
+bqcgn4a
+
+	.ref	inmatchup
+	move	@inmatchup,a0
+	jrnz	bqcglp
+	DIE
+
+ SUBR	doflshs
+
+	SLEEP	10
+
+bqcglpz	SLEEPK	1
+	move	@HALT,a0
+	jrnz	bqcglpz
+
+	SLEEP	2*60-50
+
+	CREATE0	secret_perc
+
+	CREATE0	assist_off
+	CREATE0	secret_1
+	CREATE0	secret_2
+	CREATE0	secret_3
+	CREATE0	secret_power
+	CREATE0	baby_message
+
+	MOVI	[3,9],A8		;START AT COLOR 60, CYCLE 1 COLOR
+	MOVI	SGMD8VIO,A9		;PAL NAME
+	MOVI	COLTAB_RNBW,A10		;TABLE TO CYCLE WITH
+	MOVK	4,A11			;RATE OF CYCLE IN TICKS
+	CREATE	CYCPID,CYCLE_TABLE	;START PROCESS TO DO CYCLE
+	clr	a9
+	move	a0,a11
+
+	move	@plyrbighead,a0
+	btst	0,a0
+	jrnz	bqcgt1f
+	move	@stlpower,a0
+	btst	0,a0
+	jrnz	bqcgt1f
+	move	@p1taps,a0
+	cmpi	24,a0
+	jrnz	bqcgt1
+bqcgt1f
+	move	@plyrobj_t,a8,L
+	CREATE0	flshme
+	movk	1,a9
+bqcgt1
+	move	@plyrbighead,a0
+	btst	1,a0
+	jrnz	bqcgt2f
+	move	@stlpower,a0
+	btst	1,a0
+	jrnz	bqcgt2f
+	move	@p2taps,a0
+	cmpi	8,a0
+	jrnz	bqcgt2
+bqcgt2f
+	move	@plyrobj_t+32,a8,L
+	CREATE0	flshme
+	movk	1,a9
+bqcgt2
+	move	@plyrbighead,a0
+	btst	2,a0
+	jrnz	bqcgt3f
+	move	@stlpower,a0
+	btst	2,a0
+	jrnz	bqcgt3f
+	move	@p3taps,a0
+	cmpi	8,a0
+	jrnz	bqcgt3
+bqcgt3f
+	move	@plyrobj_t+64,a8,L
+	CREATE0	flshme
+	movk	1,a9
+bqcgt3
+	move	@plyrbighead,a0
+	btst	3,a0
+	jrnz	bqcgt4f
+	move	@stlpower,a0
+	btst	3,a0
+	jrnz	bqcgt4f
+	move	@p4taps,a0
+	cmpi	8,a0
+	jrnz	bqcgt4
+bqcgt4f
+	move	@plyrobj_t+96,a8,L
+	CREATE0	flshme
+	movk	1,a9
+bqcgt4
+	move	a9,a9
+	jrz	bqcgxx
+
+	.ref	snd_play1ovrp
+	movi	win_snd,a0
+	calla	snd_play1ovrp
+
+bqcgxx
+	calla	pal_clean
+
+	SLEEP	TSEC*7
+
+	movi	CLSDEAD|123,a0
+	calla	obj_del1c		;delete text
+
+	move	a11,a0
+	calla	KILL
+
+	calla	pal_clean
+
+	DIE
+
+win_snd		.word	0f3ffH,08H,080a5H,0	;Winner snd/Suckup credits
+
+flshme
+	move	*a8(OPLINK),a0,L
+	move	*a0(plyr_headobj_p),a9,L
+
+	movi	0f8f8H,a2
+	move	a2,*a8(OCONST)
+	movi	03f3fH,a2
+	move	a2,*a9(OCONST)
+
+	movk	7,a10
+bqcgagain
+	callr	const_on
+	setf	4,0,0
+	movk	M_CONNON,a0		;Replace non-zero data with constant
+	move	a0,*a9(OCTRL)		;Write 4 low bits
+	setf	16,1,0
+
+	SLEEPK	3
+
+	callr	const_off
+	setf	4,0,0
+	movk	M_WRNONZ,a0
+	move	a0,*a9(OCTRL)		;Write 4 low bits
+	setf	16,1,0
+
+	SLEEPK	3
+
+	dsj	a10,bqcgagain
+	DIE
+
+
+ SUBR	tournament_on
+
+	move	@plyr_tourn,a0
+	jrnz	bqcgse2a
+
+	movk	ADJTOURNEY,a0		;Tournament mode?
+	calla	GET_ADJ			;0-1
+	jrz	bqcgse2a			;On? Br=yes
+	clrc
+	rets
+
+bqcgse2a
+	clr	a0
+	move	a0,@p1taps
+	move	a0,@p2taps
+	move	a0,@p3taps
+	move	a0,@p4taps
+	move	a0,@stlpower
+	setc				;Yes, tournament mode on!
+	rets
+
+
+ SUBRP	assist_off
+
+	clr	a0
+	move	a0,@assistance_off
+
+	callr	tournament_on
+	jrc	niixset2a
+
+	movk	ADJCOMPASS,a0		;Computer assistance
+	calla	GET_ADJ			;0-1
+	jrnz	niixset			;On? Br=yes
+
+	move	@p1taps,a0
+	cmpi	10,a0
+	jrz	niixset
+	move	@p1taps+16,a0
+	cmpi	10,a0
+	jrz	niixset
+	move	@p1taps+32,a0
+	cmpi	10,a0
+	jrz	niixset
+	move	@p1taps+48,a0
+	cmpi	10,a0
+	jrz	niixset
+
+	DIE
+
+niixset2a
+	movk	1,a0
+	move	a0,@assistance_off
+	movi	niixln0_setup,a2
+	calla	setup_message
+
+	movi	win_snd,a0
+	calla	snd_play1ovrp
+
+	movi	CLSDEAD|123,a0
+	move	a0,@mess_objid
+
+	movi	niixstr_secret2,a4
+	calla	print_string_C2
+
+	movi	niixln0_setup0,a2
+	calla	setup_message
+      
+	movi	CLSDEAD|123,a0
+	move	a0,@mess_objid
+
+	movi	niixstr_secret3,a4
+	jruc	niixsetin2
+niixset0
+	movk	1,a0
+	move	a0,@assistance_off
+	jruc	niixsetin
+niixset
+	movk	1,a0
+	move	a0,@assistance_off
+
+	move	@PSTATUS,a0
+	ANDK	03,a0
+	jrz	niixset2
+	move	@PSTATUS,a0
+	ANDK	0ch,a0
+	jrz	niixset2
+
+niixsetin
+	movi	niixln0_setup,a2
+	calla	setup_message
+
+	movi	win_snd,a0
+	calla	snd_play1ovrp
+
+	movi	CLSDEAD|123,a0
+	move	a0,@mess_objid
+
+	movi	niixstr_secret1,a4
+niixsetin2
+	calla	print_string_C2
+
+	SLEEP	TSEC*4
+
+	movi	CLSDEAD|123,a0
+	calla	obj_del1c		;delete text
+
+niixset2
+	calla	pal_clean
+
+	DIE
+
+
+niixln0_setup
+	RJR_STR	sgmd8_ascii,3,0,200,39+1+10,SGMD8VIO,0
+
+niixstr_secret1
+	.string	"ALL COMPUTER ASSISTANCE TURNED OFF!",0
+	.even
+
+niixln0_setup0
+	RJR_STR	sgmd8_ascii,3,0,200,39+1+20,SGMD8VIO,0
+
+niixstr_secret2
+	.string	"TOURNAMENT MODE",0
+	.even
+
+niixstr_secret3
+	.string	"NO CPU ASSISTANCE, POWERUPS, OR SECRETS ALLOWED!",0
+	.even
+
+
+
+ SUBRP	secret_perc
+
+	.ref	COLTAB_RNBW,CYCLE_TABLE
+
+	move	@show_shot,a0
+	jaz	SUCIDE
+
+	movi	win_snd,a0
+	calla	snd_play1ovrp
+
+	
+	movi	klkyln0_setup,a2
+	calla	setup_message
+
+	movi	CLSDEAD|123,a0
+	move	a0,@mess_objid
+
+	movi	klkystr_secret1,a4
+	calla	print_string_C2
+
+	SLEEP	TSEC*6
+
+	movi	CLSDEAD|123,a0
+	calla	obj_del1c		;delete text
+
+	calla	pal_clean
+
+	DIE
+
+
+klkyln0_setup
+	RJR_STR	sgmd8_ascii,3,0,200,39+1,SGMD8VIO,0
+
+klkystr_secret1
+	.string	"SHOT % DISPLAY ACTIVATED",0
+	.even
+
+
+ SUBR	cpu_subs
+	
+	SLEEP	37
+
+	movi	foehln0_setup,a2
+	move	a8,a8
+	jrz	foehok
+	movi	foehln0_setupa,a2
+foehok
+	calla	setup_message
+
+	movi	CLSDEAD|123,a0
+	move	a0,@mess_objid
+
+	movi	foehstr_subs,a4
+	calla	print_string_C2
+
+	DIE
+
+
+foehln0_setup
+	RJR_STR	sgmd8_ascii,3,0,100,105,SGMD8WHT,0
+foehln0_setupa
+	RJR_STR	sgmd8_ascii,3,0,300,105,SGMD8WHT,0
+
+foehstr_subs
+	.string	"CPU SUBSTITUTIONS:",0
+
+	.even
+
+
+ SUBRP	secret_1
+
+	callr	tournament_on
+	jac	SUCIDE
+
+
+	clr	a9
+qzfylp
+	move	a9,a1
+	sll	4,a1
+	addi	p1taps,a1
+	move	*a1,a0
+	cmpi	24,a0
+	jrnz	qzfynxt
+
+	movi	win_snd,a0
+	calla	snd_play1ovrp
+
+	move	a9,a0
+	sll	5,a0
+	addi	qzfymsgs_t,a0
+	move	*a0,a2,L
+
+	calla	setup_message
+
+	movi	CLSDEAD|124,a0
+	move	a0,@mess_objid
+
+    	movi	qzfyln1,a4
+	calla	print_string_C2
+
+qzfynxt	SLEEPK	1
+
+	inc	a9
+	cmpi	4,a9
+	jrnz	qzfylp
+
+	SLEEP	TSEC*4
+
+	movi	CLSDEAD|124,a0
+	calla	obj_del1c		;delete text
+
+	DIE
+	
+	
+qzfymsgs_t	.long	qzfyln1_setup,qzfyln2_setup,qzfyln3_setup,qzfyln4_setup
+
+qzfyln1_setup
+	RJR_STR	sgmd8_ascii,3,0,50,238,SGMD8WHT,0
+qzfyln2_setup
+	RJR_STR	sgmd8_ascii,3,0,150,238,SGMD8WHT,0
+qzfyln3_setup
+	RJR_STR	sgmd8_ascii,3,0,250,238,SGMD8WHT,0
+qzfyln4_setup
+	RJR_STR	sgmd8_ascii,3,0,350,238,SGMD8WHT,0
+
+qzfyln1
+;AM: This causes misalignment with prod.
+;copied the data from prod here
+	.string	"POWERUP G.T.",0		;More goaltends allowed
+;	.even
+
+
+ SUBRP	secret_power
+
+	callr	tournament_on
+	jac	SUCIDE
+
+	move	@strongmen,a0
+	jrz	oqyonotst
+	movk	3,a3
+	cmpi	2,a0
+	jrz	oqyotag1
+	movk	0cH,a3
+oqyotag1	move	@plyr_maxpower,a0
+	or	a3,a0
+	move	a0,@plyr_maxpower
+oqyonotst
+	clr	a9
+oqyolp
+	move	@plyr_maxpower,a0
+	btst	a9,a0
+	jrz	oqyonxt
+
+	movi	win_snd,a0
+	calla	snd_play1ovrp
+
+	move	a9,a0
+	sll	5,a0
+	addi	oqyomsgs_t,a0
+	move	*a0,a2,L
+
+	calla	setup_message
+
+	movi	CLSDEAD|124,a0
+	move	a0,@mess_objid
+
+    	movi	oqyoln1,a4
+	calla	print_string_C2
+
+oqyonxt	SLEEPK	1
+
+	inc	a9
+	cmpi	4,a9
+	jrnz	oqyolp
+
+	SLEEP	TSEC*4
+
+	movi	CLSDEAD|124,a0
+	calla	obj_del1c		;delete text
+
+	DIE
+	
+	
+oqyomsgs_t	.long	oqyoln1_setup,oqyoln2_setup,oqyoln3_setup,oqyoln4_setup
+
+oqyoln1_setup
+	RJR_STR	sgmd8_ascii,3,0,50,210,SGMD8WHT,0
+oqyoln2_setup
+	RJR_STR	sgmd8_ascii,3,0,150,210,SGMD8WHT,0
+oqyoln3_setup
+	RJR_STR	sgmd8_ascii,3,0,250,210,SGMD8WHT,0
+oqyoln4_setup
+	RJR_STR	sgmd8_ascii,3,0,350,210,SGMD8WHT,0
+
+oqyoln1
+	.string	"MAX POWER",0		;Can't be knocked down
+	.even
+
+
+ SUBRP	secret_2
+
+	clr	a9
+qznvlp
+	.ref	plyrbighead
+
+	move	@plyrbighead,a0
+	btst	a9,a0
+	jrz	qznvnxt
+
+	movi	win_snd,a0
+	calla	snd_play1ovrp
+
+	move	a9,a0
+	sll	5,a0
+	addi	qznvmsgs_t,a0
+	move	*a0,a2,L
+
+	calla	setup_message
+
+	movi	CLSDEAD|125,a0
+	move	a0,@mess_objid
+
+    	movi	qznvln1,a4
+
+
+
+
+
+
+	move	a9,a1
+	sll	4,a1
+	addi	p1taps,a1
+	move	*a1,a0
+	cmpi	6,a0
+	jrnz	qznvno
+    	movi	qznvln1a,a4
+qznvno
+
+
+
+
+
+
+
+
+	calla	print_string_C2
+
+qznvnxt	SLEEPK	1
+
+	inc	a9
+	cmpi	4,a9
+	jrnz	qznvlp
+
+	SLEEP	TSEC*4
+
+	movi	CLSDEAD|125,a0
+	calla	obj_del1c		;delete text
+
+	DIE
+
+qznvmsgs_t	.long	qznvln1_setup,qznvln2_setup,qznvln3_setup,qznvln4_setup
+
+qznvln1_setup
+	RJR_STR	sgmd8_ascii,3,0,50,196,SGMD8WHT,0
+qznvln2_setup
+	RJR_STR	sgmd8_ascii,3,0,150,196,SGMD8WHT,0
+qznvln3_setup
+	RJR_STR	sgmd8_ascii,3,0,250,196,SGMD8WHT,0
+qznvln4_setup
+	RJR_STR	sgmd8_ascii,3,0,350,196,SGMD8WHT,0
+
+qznvln1
+;	.string	"BIG HEAD qznv1",0  ;AM fixer screwed it up
+	.string	"BIG HEAD #1",0
+qznvln1a
+	.string	"HUGE HEAD",0
+	.even
+
+
+ SUBRP	secret_3
+
+	callr	tournament_on
+	jac	SUCIDE
+
+	move	@strongmen,a0
+	jrz	nevvnotst
+	movk	3,a3
+	cmpi	2,a0
+	jrz	nevvtag1
+	movk	0cH,a3
+nevvtag1	move	@stlpower,a0
+	or	a3,a0
+	move	a0,@stlpower
+nevvnotst
+
+
+	clr	a9
+nevvlp
+	.ref	stlpower
+
+	move	@stlpower,a0
+	btst	a9,a0
+	jrz	nevvnxt
+
+	movi	win_snd,a0
+	calla	snd_play1ovrp
+
+	move	a9,a0
+	sll	5,a0
+	addi	nevvmsgs_t,a0
+	move	*a0,a2,L
+
+	calla	setup_message
+
+	movi	CLSDEAD|125,a0
+	move	a0,@mess_objid
+
+    	movi	nevvln1,a4
+	calla	print_string_C2
+
+nevvnxt	SLEEPK	1
+
+	inc	a9
+	cmpi	4,a9
+	jrnz	nevvlp
+
+	SLEEP	TSEC*4
+
+	movi	CLSDEAD|125,a0
+	calla	obj_del1c		;delete text
+
+	DIE
+	
+nevvmsgs_t	.long	nevvln1_setup,nevvln2_setup,nevvln3_setup,nevvln4_setup
+
+nevvln1_setup
+	RJR_STR	sgmd8_ascii,3,0,50,224,SGMD8WHT,0
+nevvln2_setup
+	RJR_STR	sgmd8_ascii,3,0,150,224,SGMD8WHT,0
+nevvln3_setup
+	RJR_STR	sgmd8_ascii,3,0,250,224,SGMD8WHT,0
+nevvln4_setup
+	RJR_STR	sgmd8_ascii,3,0,350,224,SGMD8WHT,0
+
+nevvln1
+	.string	"QUICK HANDS",0			;More intercepts
+	.even
+
+
+
+ SUBRP	baby_message
+
+	callr	tournament_on
+	jac	SUCIDE
+
+	move	@baby_flag,a0
+	jaz	SUCIDE
+
+	movi	win_snd,a0
+	calla	snd_play1ovrp
+
+	movi	dbtmln0_setup,a2
+	calla	setup_message
+
+	movi	CLSDEAD|123,a0
+	move	a0,@mess_objid
+
+	movi	dbtmstr_secret1,a4
+	calla	print_string_C2
+
+	SLEEP	TSEC*6
+
+	movi	CLSDEAD|123,a0
+	calla	obj_del1c		;delete text
+
+	calla	pal_clean
+	DIE
+
+
+dbtmln0_setup
+	RJR_STR	sgmd8_ascii,3,0,200,39+1-10,SGMD8VIO,0
+
+dbtmstr_secret1
+	.string	"BABY SIZE PLAYERS",0
+	.even
+
+
+ck_baby
+
+	clr	a10
+	movi	butn_lst,a8
+
+cdfrlp	SLEEPK	1
+	move	a9,a0
+	calla	get_stick_val_cur
+	cmpi	0aH,a0			;down/right
+	jrnz	cdfrlp
+	move	a9,a0
+	calla	get_but_val_cur
+	jrnz	cdfrtag1
+	clr	a11
+	jruc	cdfrlp
+
+cdfrtag1	move	a11,a11
+	jrnz	cdfrlp
+
+	inc	a11
+
+	move	*a8,a1,W
+	zext	a1
+	cmp	a0,a1
+	jrz	cdfryes
+	movi	butn_lst,a8
+	jruc	cdfrlp
+cdfryes	addk	16,a8
+	move	*a8,a0
+	jrnz	cdfrlp
+	movk	1,a0
+	move	a0,@baby_flag
+
+	DIE
+
+butn_lst
+
+
+	.word	4,1,2,4,1,2,4,1,2,0
+
+	.end
+
+

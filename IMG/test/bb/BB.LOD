@@ -144,6 +144,7 @@ HDS6.IMG
 ---> wilkens10,wilkens11,wilkens12,wilkens13,wilkens14,wilkens15,wilkens16
 ASM> PLYRHD2.TBL
 HDS7.IMG
+***> 4e6c6ab
 ---> Lohaus2,Lohaus3,Lohaus4,Lohaus5,Lohaus6,Lohaus7,Lohaus8,Lohaus9,Lohaus1
 ---> Lohaus10,Lohaus11,Lohaus12,Lohaus13,Lohaus14,Lohaus15,Lohaus16
 ---> edwrd1,edwrd2,edwrd3,edwrd4,edwrd5
@@ -506,7 +507,10 @@ ASM> ARROW.TBL
 ;
 CITNAMES.IMG
 ASM> CITY.TBL
----> ATL,BOST,CHAR,CHI,CLEV,DAL,DEN,DET,GOLDN,HOU,IND
+***> 5411624
+---> ATL,BOST,CHAR,CHI,CLEV
+***> 5417de6
+---> DAL,DEN,DET,GOLDN,HOU,IND
 ---> LA_CLIP,LA_LAKS
 ---> MIAMI,MILW,MINN,NJ,NY,ORL,PHIL,PHX,PORT,SAC,SANANT,SEA,UTAH,WASH
 ---> SMD16_0,SMD16_1,SMD16_2,SMD16_3,SMD16_4,SMD16_5,SMD16_6,SMD16_7,SMD16_8
